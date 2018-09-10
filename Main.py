@@ -1,3 +1,4 @@
+import pickle
 import sys
 import os
 import csv
@@ -8,36 +9,25 @@ import git
 from git import Repo
 from jira import JIRA
 
+
 jira = JIRA(options={'server': 'https://issues.apache.org/jira'})
 LOG_FILENAME = 'bug_create.log'
 logging.basicConfig(filename=LOG_FILENAME, level=logging.DEBUG)
+cache_dir = os.getcwd()+'\\cache'
 all_tests = []
 all_commits = []
+bug_issues = []
 branch_inspected = 'master'
 repo = None
 git_dir = ''
 proj_name = ''
+MAX_ISSUES_TO_RETRIEVE =200
+JQL_QUERY ='project = TIKA AND issuetype = Bug AND text ~ test ORDER BY  createdDate ASC'
 
 
 def main(argv):
     bug_data_set = []
-    git_url = argv[0]
-    global all_commits
-    global all_tests
-    global repo
-    global git_dir
-    global proj_name
-    proj_name = git_url.rsplit('/', 1)[1]
-    try:
-        git.Git(os.getcwd()).clone(git_url)
-    except git.exc.GitCommandError:
-        pass
-    git_dir = os.getcwd() + '\\' + proj_name
-    # os.system('mvn install -f'+git_dir)
-    repo = Repo(git_dir)
-    bug_issues = jira.search_issues('project=' + proj_name + ' and type=bug', maxResults=2500)
-    all_tests = test_parser.get_tests('C:\\Users\\user\\Code\\Python\\BugMiner\\tikaCopy')
-    all_commits = list(repo.iter_commits(branch_inspected))
+    set_up(argv[0])
     for bug_issue in bug_issues:
         try:
             issue_tests = get_issue_tests(bug_issue)
@@ -61,27 +51,24 @@ def main(argv):
 def get_issue_tests(issue):
     ans = []
     test_names = []
-    test_words = ['test', 'TEST', 'Test']
     if hasattr(issue.fields, 'description') and issue.fields.description != None:
-        description = issue.fields.description.split(" ")
-        for word in description:
-            if any(x in word for x in test_words):
-                if not word in test_words:  # make sure word is not triviale test word
-                    test_names.append(word)
+        test_names.extend(extract_test_names(issue.fields.description))
     if hasattr(issue.fields, 'attachment'):
         attachments = issue.fields.attachment
         for attachment in attachments:
-            if any(x in attachment.filename for x in test_words):
-                if not attachment.filename in test_words:  # make sure attachment.filename is not triviale test word
-                    test_names.append(os.path.splitext(attachment.filename)[0])
+            test_names.extend(extract_test_names(attachment.filename))
+    if hasattr(issue.fields, 'comment'):
+        comments = issue.fields.comment
+        for comment in comments.comments:
+            test_names.extend(extract_test_names(comment.body))
 
     for test_name in test_names:
         for test in all_tests:
-            if test_name in test.get_name():
-                ans.append(test_name)
+            if test.is_associated(test_name):
+                ans.append(test)
                 break
     if len(ans) == 0:
-        raise bug.BugError('Couldn\'t find tests associated with ' + issue.key)
+        raise bug.BugError('Could not find tests associated with ' + issue.key)
     return ans
 
 
@@ -89,7 +76,7 @@ def get_issue_tests(issue):
 def get_issue_commits(issue):
     ans = []
     for commit in all_commits:
-        if issue.key in commit.message:
+        if is_associated_to_commit(issue,commit):
             ans.append(commit)
     if len(ans) == 0:
         raise bug.BugError('Couldn\'t find commits associated with ' + issue.key)
@@ -98,12 +85,15 @@ def get_issue_commits(issue):
 
 # Returns the commit that solved the bug
 def get_fixes(issue_commits, issue_tests):
-    ans = {}
-    test_cmd = 'mvn surefire:test -DfailIfNoTests=false -DtestFailureIgnore=true -Dtest='
+    ans = []
+    module_dir = git_dir
+    if not issue_tests[0].get_module()=='':
+        module_dir = issue_tests[0].get_module()
+    test_cmd = 'mvn surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
     for test in issue_tests:
         if not test_cmd.endswith('='):
             test_cmd += ','
-        test_cmd += test
+        test_cmd += test.get_name()
     for commit in issue_commits:
         tests_before = []
         tests_after = []
@@ -115,22 +105,100 @@ def get_fixes(issue_commits, issue_tests):
                     break
         if parent == None:
             continue
+
         try:
             repo.git.add('.')
             repo.git.commit('-m', 'BugDataMiner run')
-            repo.index.add('.')
-        except git.exc.GitCommandError:
+            repo.git.checkout(parent.hexsha)
+        except git.exc.GitCommandError as e:
             pass
-        repo.git.checkout(parent.hexsha)
-        os.system(test_cmd + ' -f ' + git_dir)
-        tests_before = test_parser.get_tests(project_dir=git_dir)
-        x = 1
+        os.system('mvn clean install -DskipTests'+' -f ' + module_dir)
+        os.system(test_cmd + ' -f ' + module_dir)
+        tests_before = test_parser.get_tests(project_dir=module_dir)
+        repo.git.checkout(commit.hexsha)
+        os.system('mvn clean install -DskipTests'+' -f ' + module_dir)
+        os.system(test_cmd + ' -f ' + module_dir)
+        tests_after = test_parser.get_tests(project_dir=module_dir)
+        for test in tests_after:
+            if test not in tests_before:
+                tup = (commit.hexsha, test.get_name(), 'Created in commit')
+                ans.append(tup)
+            else:
+                test_before = [t for t in tests_before if t==test][0]
+                if not test_before.passed:
+                    tup = ((commit.hexsha, test.get_name(), 'Fixed in commit'))
+                    ans.append(tup)
+    return ans
+
+
+# Return list of words in text that contains test words
+def extract_test_names(text):
+    ans = []
+    test_words = ['test', 'TEST', 'Test']
+    body = text.split(" ")
+    for word in body:
+        if any(x in word for x in test_words):
+            if not word in test_words:  # make sure attachment.filename is not triviale test word
+                ans.append(word)
+    return ans;
 
 
 # Return the test that the bug failed
 def get_test(issue, relevant_tests):
     pass
 
+def say_hello():
+    return 'hello'
+
+def set_up(git_url):
+    global all_commits
+    global all_tests
+    global repo
+    global git_dir
+    global proj_name
+    global bug_issues
+    all_test_cache = cache_dir+'\\all_tests.pkl'
+    all_commits_cache =  cache_dir+'\\all_commits.pkl'
+    bug_issues_cache = cache_dir + '\\bug_issues'
+    proj_name = git_url.rsplit('/', 1)[1]
+    try:
+        git.Git(os.getcwd()).clone(git_url)
+    except git.exc.GitCommandError:
+        pass
+    git_dir = os.getcwd() + '\\' + proj_name
+    # os.system('mvn install -f'+git_dir)
+    repo = Repo(git_dir)
+    all_tests = get_from_cache(all_test_cache,
+                               lambda: test_parser.get_tests(os.getcwd() + '\\' + proj_name + '_installed'))
+    # all_commits = get_from_cache(all_commits_cache,
+    #                            lambda: list(repo.iter_commits(branch_inspected)))
+    # bug_issues = get_from_cache(bug_issues_cache,
+    #                             lambda: jira.search_issues('project=' + proj_name + ' and type=bug', maxResults=2500))
+    all_commits = list(repo.iter_commits(branch_inspected))
+    bug_issues = jira.search_issues(JQL_QUERY, maxResults=MAX_ISSUES_TO_RETRIEVE)
+
+
+#Returns data stored in the cache dir. If not found, retrieves the data using the retrieve func
+def get_from_cache(cache_file_path, retrieve_func):
+    if os.path.isfile(cache_file_path):
+        cache_file = open(cache_file_path, 'rb')
+        ans = pickle.load(cache_file)
+        cache_file.close()
+        return ans
+    else:
+        data = retrieve_func()
+        cache_file = open(cache_file_path, 'wb')
+        pickle.dump(data, cache_file)
+        cache_file.close()
+        return data
+
+#Returns true if the commit message contains the issue key exclusively
+def is_associated_to_commit(issue, commit):
+    if issue.key in commit.message:
+        char_after_issue_key = commit.message[commit.message.find(issue.key)+len(issue.key)]
+        return not char_after_issue_key.isdigit()
+    else:
+        return False
 
 if __name__ == '__main__':
     main(sys.argv[1:]);

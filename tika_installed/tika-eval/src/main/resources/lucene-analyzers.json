@@ -1,0 +1,77 @@
+{
+  "analyzers": {
+    "general": {
+      "charfilters": [
+        {
+          "factory": "mapping",
+          "params": {
+            "mapping": "/lucene-char-mapping.txt"
+          }
+        }
+      ],
+      "tokenizer": {
+        "factory": "uax29urlemail",
+        "params": {}
+      },
+      "tokenfilters": [
+        {
+          "factory": "icufolding",
+          "params": {}
+        },
+        {
+          "factory": "cjkbigram",
+          "params": {
+            "outputUnigrams": "false"
+          }
+        }
+      ]
+    },
+    "common_tokens": {
+      "_comment" : "Use this analyzer for counting common tokens in a corpus.",
+      "_comment" : "This isn't used by tika-eval during profiling or comparing",
+      "tokenizer": {
+        "factory": "uax29urlemail",
+        "params": {}
+      },
+      "tokenfilters": [
+        {
+          "factory": "icufolding",
+          "params": {}
+        },
+        {
+          "factory": "alphaideograph",
+          "params": {}
+        },
+        {
+          "factory": "patternreplace",
+          "params": {
+            "pattern": "^[\\w+\\.]{1,30}@(?:\\w+\\.){1,10}\\w+$",
+            "replacement": "___email___",
+            "replace": "all"
+          }
+        },
+        {
+          "factory": "patternreplace",
+          "params": {
+            "pattern": "^(?:(?:ftp|https?):\\/\\/)?(?:\\w+\\.){1,10}\\w+$",
+            "replacement": "___url___",
+            "replace": "all"
+          }
+        },
+        {
+          "factory": "cjkbigram",
+          "params": {
+            "outputUnigrams": "false"
+          }
+        },
+        {
+          "factory": "cjkbigramawarelength",
+          "params": {
+            "min": 4,
+            "max": 20
+          }
+        }
+      ]
+    }
+  }
+}
