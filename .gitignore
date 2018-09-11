@@ -104,4 +104,4 @@ venv.bak/
 .mypy_cache/
 
 # tested proj files
-tested_proj/
+tested_project/
