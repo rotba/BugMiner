@@ -22,7 +22,6 @@ repo = None
 git_dir = ''
 proj_name = ''
 MAX_ISSUES_TO_RETRIEVE =200
-JQL_QUERY ='project = TIKA AND issuetype = Bug AND text ~ test ORDER BY  createdDate ASC'
 
 
 def main(argv):
@@ -33,7 +32,7 @@ def main(argv):
             issue_tests = get_issue_tests(bug_issue)
             issue_commits = get_issue_commits(bug_issue)
             fixes = get_fixes(issue_commits, issue_tests)
-            # diffs = get_diffs(commit, test)
+            diffs = get_diffs(commit, test)
             # bug = Bug(bug_issue, commit, test, diffs)
         except bug.BugError as e:
             logging.debug(e.msg)
@@ -175,6 +174,7 @@ def set_up(git_url):
     # bug_issues = get_from_cache(bug_issues_cache,
     #                             lambda: jira.search_issues('project=' + proj_name + ' and type=bug', maxResults=2500))
     all_commits = list(repo.iter_commits(branch_inspected))
+    JQL_QUERY = 'project = {} AND issuetype = Bug AND text ~ test ORDER BY  createdDate ASC'.format(proj_name)
     bug_issues = jira.search_issues(JQL_QUERY, maxResults=MAX_ISSUES_TO_RETRIEVE)
 
 

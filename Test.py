@@ -5,15 +5,16 @@ import Main
 class TestMain(unittest.TestCase):
 
     def setUp(self):
-        Main.set_up('https://github.com/apache/tika')
-        self.issue_1378 = Main.jira.issue('TIKA-1378')
-        self.issue_19 = Main.jira.issue('TIKA-19')
+        pass
 
     def tearDown(self):
         pass
 
     @unittest.skip("Long test")
     def test_issue_1378_get_issue_tests(self):
+        Main.set_up('https://github.com/apache/tika')
+        self.issue_1378 = Main.jira.issue('TIKA-1378')
+        self.issue_19 = Main.jira.issue('TIKA-19')
         try:
             tests = Main.get_issue_tests(self.issue_1378)
         except Main.bug.BugError as e:
@@ -25,6 +26,9 @@ class TestMain(unittest.TestCase):
 
     @unittest.skip("Long test")
     def test_issue_1378_get_issue_commits(self):
+        Main.set_up('https://github.com/apache/tika')
+        self.issue_1378 = Main.jira.issue('TIKA-1378')
+        self.issue_19 = Main.jira.issue('TIKA-19')
         try:
             commits = Main.get_issue_commits(self.issue_1378)
         except Main.bug.BugError as e:
@@ -36,6 +40,9 @@ class TestMain(unittest.TestCase):
 
     @unittest.skip("Long test")
     def test_issue_1378_get_fixes(self):
+        Main.set_up('https://github.com/apache/tika')
+        self.issue_1378 = Main.jira.issue('TIKA-1378')
+        self.issue_19 = Main.jira.issue('TIKA-19')
         commits = Main.get_issue_commits(self.issue_1378)
         tests = Main.get_issue_tests(self.issue_1378)
         fixes = Main.get_fixes(commits, tests)
@@ -46,6 +53,9 @@ class TestMain(unittest.TestCase):
 
     @unittest.skip("Not now")
     def test_a_issue_19_get_issue_tests(self):
+        Main.set_up('https://github.com/apache/tika')
+        self.issue_1378 = Main.jira.issue('TIKA-1378')
+        self.issue_19 = Main.jira.issue('TIKA-19')
         print('test_a_issue_19_get_issue_tests')
         issue = self.issue_19
         try:
@@ -58,6 +68,9 @@ class TestMain(unittest.TestCase):
         self.fail('get_issue_tests() did not associate TIKA-19 with TestParsers' )
 
     def test_b_issue_19_get_issue_commits(self):
+        Main.set_up('https://github.com/apache/tika')
+        self.issue_1378 = Main.jira.issue('TIKA-1378')
+        self.issue_19 = Main.jira.issue('TIKA-19')
         print('test_b_issue_19_get_issue_commits')
         issue = self.issue_19
         try:
@@ -71,6 +84,9 @@ class TestMain(unittest.TestCase):
 
 
     def test_c_issue_19_get_fixes(self):
+        Main.set_up('https://github.com/apache/tika')
+        self.issue_1378 = Main.jira.issue('TIKA-1378')
+        self.issue_19 = Main.jira.issue('TIKA-19')
         print('test_c_issue_19_get_fixes')
         issue = self.issue_19
         commits = Main.get_issue_commits(issue)
@@ -82,6 +98,9 @@ class TestMain(unittest.TestCase):
         self.fail('get_fixes() did not associate commit d7dabee5ce14240f3c5ba2f6147c963d03604dd3 with TestParsers' )
 
     def test_issue_19_is_associated_to_commit(self):
+        Main.set_up('https://github.com/apache/tika')
+        self.issue_1378 = Main.jira.issue('TIKA-1378')
+        self.issue_19 = Main.jira.issue('TIKA-19')
         print('test_issue_19_is_associated_to_commit')
         issue = self.issue_19
         associated_commits = []
@@ -94,6 +113,16 @@ class TestMain(unittest.TestCase):
         self.assertEqual(associated_commits[0].hexsha, 'd7dabee5ce14240f3c5ba2f6147c963d03604dd3',
                          'Excpected associated commit: d7dabee5ce14240f3c5ba2f6147c963d03604dd3 \n'+
                          'But got: ' + associated_commits[0].hexsha)
+
+    def test_issue_get_diffs(self):
+        print('test_issue_get_diffs')
+        Main.set_up('https://github.com/rotba/GitMavenTrackingProject.git')
+        all_commits = Main.all_commits
+        all_tests = Main.all_tests
+        commit = [c for c in all_commits if c.message=='\'NaimTest\' pass'][0]
+        test = [t for t in all_tests if t.get_name() == 'NaimTest'][0]
+        diffs = Main.get_diffs(commit, test)
+
 
     def test_say_hello(self):
         self.assertEqual(Main.say_hello(), 'hello')
