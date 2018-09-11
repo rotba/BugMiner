@@ -135,6 +135,12 @@ def get_fixes(issue_commits, issue_tests):
                     ans.append(tup)
     return ans
 
+#Retusn the diffs the solved the bug in test in commit
+def get_diffs(commit, test):
+    repo = Repo('/git/repository')
+    t = repo.head.commit.tree
+    all_diffs = repo.git.diff(t)
+    x=1
 
 # Return list of words in text that contains test words
 def extract_test_names(text):
@@ -167,7 +173,7 @@ def set_up(git_url):
     bug_issues_cache = cache_dir + '\\bug_issues'
     proj_name = git_url.rsplit('/', 1)[1]
     try:
-        git.Git(os.getcwd()).clone(git_url)
+        git.Git(os.getcwd()+'\\tested_project').clone(git_url)
     except git.exc.GitCommandError:
         pass
     git_dir = os.getcwd() + '\\tested_project\\' + proj_name

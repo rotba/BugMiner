@@ -67,6 +67,7 @@ class TestMain(unittest.TestCase):
                 return
         self.fail('get_issue_tests() did not associate TIKA-19 with TestParsers' )
 
+    @unittest.skip("Not now")
     def test_b_issue_19_get_issue_commits(self):
         Main.set_up('https://github.com/apache/tika')
         self.issue_1378 = Main.jira.issue('TIKA-1378')
@@ -82,7 +83,7 @@ class TestMain(unittest.TestCase):
                 return
         self.fail('get_issue_commits() did not associate TIKA-19 with commit d7dabee5ce14240f3c5ba2f6147c963d03604dd3' )
 
-
+    @unittest.skip("Not now")
     def test_c_issue_19_get_fixes(self):
         Main.set_up('https://github.com/apache/tika')
         self.issue_1378 = Main.jira.issue('TIKA-1378')
@@ -97,6 +98,7 @@ class TestMain(unittest.TestCase):
                 return
         self.fail('get_fixes() did not associate commit d7dabee5ce14240f3c5ba2f6147c963d03604dd3 with TestParsers' )
 
+    @unittest.skip("Not now")
     def test_issue_19_is_associated_to_commit(self):
         Main.set_up('https://github.com/apache/tika')
         self.issue_1378 = Main.jira.issue('TIKA-1378')
@@ -116,12 +118,13 @@ class TestMain(unittest.TestCase):
 
     def test_issue_get_diffs(self):
         print('test_issue_get_diffs')
-        Main.set_up('https://github.com/rotba/GitMavenTrackingProject.git')
+        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
         all_commits = Main.all_commits
         all_tests = Main.all_tests
         commit = [c for c in all_commits if c.message=='\'NaimTest\' pass'][0]
         test = [t for t in all_tests if t.get_name() == 'NaimTest'][0]
         diffs = Main.get_diffs(commit, test)
+        x=1
 
 
     def test_say_hello(self):
