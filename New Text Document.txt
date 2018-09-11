@@ -1,0 +1,3 @@
+1. What are the setup conventions?
+2. I tried to open the project form a different machine and had configuration problems, for example, the editor didn't recognize the imported modules from the project.
+In what way can you solve these problems and make a project location independent?

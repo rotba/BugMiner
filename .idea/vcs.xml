@@ -3,6 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/static_files/GitMavenTrackingProject" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/tika" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_project/tika" vcs="Git" />
   </component>
 </project>
