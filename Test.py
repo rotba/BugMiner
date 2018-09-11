@@ -93,7 +93,7 @@ class TestMain(unittest.TestCase):
         tests = Main.get_issue_tests(issue)
         fixes = Main.get_fixes(commits, tests)
         for fix in fixes:
-            if fix[0]=='d7dabee5ce14240f3c5ba2f6147c963d03604dd3' and fix[1]=='TestParsers':
+            if fix[0]=='d7dabee5ce14240f3c5ba2f6147c963d03604dd3' and 'TestParsers' in fix[1]:
                 return
         self.fail('get_fixes() did not associate commit d7dabee5ce14240f3c5ba2f6147c963d03604dd3 with TestParsers' )
 

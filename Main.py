@@ -3,8 +3,8 @@ import sys
 import os
 import csv
 import logging
-import test_parser
-import bug
+import mvn_reports_tests.test_parser as test_parser
+import bug.bug as bug
 import git
 from git import Repo
 from jira import JIRA
@@ -107,7 +107,13 @@ def get_fixes(issue_commits, issue_tests):
 
         try:
             repo.git.add('.')
+        except git.exc.GitCommandError as e:
+            pass
+        try:
             repo.git.commit('-m', 'BugDataMiner run')
+        except git.exc.GitCommandError as e:
+            pass
+        try:
             repo.git.checkout(parent.hexsha)
         except git.exc.GitCommandError as e:
             pass
@@ -124,7 +130,7 @@ def get_fixes(issue_commits, issue_tests):
                 ans.append(tup)
             else:
                 test_before = [t for t in tests_before if t==test][0]
-                if not test_before.passed:
+                if not test_before.passed():
                     tup = ((commit.hexsha, test.get_name(), 'Fixed in commit'))
                     ans.append(tup)
     return ans
@@ -164,11 +170,11 @@ def set_up(git_url):
         git.Git(os.getcwd()).clone(git_url)
     except git.exc.GitCommandError:
         pass
-    git_dir = os.getcwd() + '\\' + proj_name
+    git_dir = os.getcwd() + '\\tested_project\\' + proj_name
     # os.system('mvn install -f'+git_dir)
     repo = Repo(git_dir)
     all_tests = get_from_cache(all_test_cache,
-                               lambda: test_parser.get_tests(os.getcwd() + '\\' + proj_name + '_installed'))
+                               lambda: test_parser.get_tests(os.getcwd() + '\\tested_project\\' + proj_name + '_installed'))
     # all_commits = get_from_cache(all_commits_cache,
     #                            lambda: list(repo.iter_commits(branch_inspected)))
     # bug_issues = get_from_cache(bug_issues_cache,
