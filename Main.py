@@ -19,7 +19,7 @@ all_commits = []
 bug_issues = []
 branch_inspected = 'master'
 repo = None
-git_dir = ''
+proj_dir = ''
 proj_name = ''
 MAX_ISSUES_TO_RETRIEVE =200
 JQL_QUERY ='project = TIKA AND issuetype = Bug AND text ~ test ORDER BY  createdDate ASC'
@@ -86,7 +86,7 @@ def get_issue_commits(issue):
 # Returns the commit that solved the bug
 def get_fixes(issue_commits, issue_tests):
     ans = []
-    module_dir = git_dir
+    module_dir = proj_dir
     if not issue_tests[0].get_module()=='':
         module_dir = issue_tests[0].get_module()
     test_cmd = 'mvn surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
@@ -160,7 +160,7 @@ def set_up(git_url):
     global all_commits
     global all_tests
     global repo
-    global git_dir
+    global proj_dir
     global proj_name
     global bug_issues
     all_test_cache = cache_dir+'\\all_tests.pkl'
@@ -168,12 +168,13 @@ def set_up(git_url):
     bug_issues_cache = cache_dir + '\\bug_issues'
     proj_name = git_url.rsplit('/', 1)[1]
     try:
-        git.Git(os.getcwd()).clone(git_url)
+        pass
+        #git.Git(os.getcwd()+ '\\tested_project').clone(git_url)
     except git.exc.GitCommandError:
         pass
-    git_dir = os.getcwd() + '\\tested_project\\' + proj_name
-    # os.system('mvn install -f'+git_dir)
-    repo = Repo(git_dir)
+    proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
+    # os.system('mvn install -f'+proj_dir)
+    repo = Repo(proj_dir)
     all_tests = get_from_cache(all_test_cache,
                                lambda: test_parser.get_tests(os.getcwd() + '\\tested_project\\' + proj_name + '_installed'))
     # all_commits = get_from_cache(all_commits_cache,
