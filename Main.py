@@ -33,7 +33,7 @@ def main(argv):
     possible_bugs = extract_possible_bugs(bug_issues)
     for possible_bug in possible_bugs:
         try:
-            bugs = extract_bugs(possible_bug.issue, possible_bug.issue, possible_bug.issue.tests)
+            bugs = extract_bugs(possible_bug.issue, possible_bug.commit, possible_bug.tests)
             bug_data_set.extend(bugs)
         except my_bug.BugError as e:
             logging.debug(e.msg)
@@ -47,7 +47,8 @@ def main(argv):
 
 # Get string array representing possible test names
 def get_tests_from_issue_text(input_issue):
-    issue = jira.issue(input_issue.key)
+    #issue = jira.issue(input_issue.key)
+    issue = input_issue
     ans = []
     test_names = []
     if hasattr(issue.fields, 'description') and issue.fields.description != None:
@@ -84,6 +85,7 @@ def get_issue_commits(issue):
 
 # Returns the commit that solved the bug
 def extract_bugs(issue, commit, issue_tests):
+    print("working on issue " + issue.key)
     ans = []
     module_dir = proj_dir
     #if not issue_tests[0].get_module()=='':
@@ -138,12 +140,13 @@ def extract_bugs(issue, commit, issue_tests):
 def extract_possible_bugs(bug_issues):
     ans = []
     for bug_issue in bug_issues:
+        print("working on issue "+bug_issue.key)
         try:
             issue_tests = []
             issue_tests.append(get_tests_from_issue_text(bug_issue))
             issue_commits = get_issue_commits(bug_issue)
             for commit in issue_commits:
-                #issue_tests.append(get_tests_from_commit(commit))
+                issue_tests.append(get_tests_from_commit(commit))
                 ans.append(my_bug.Bug(bug_issue, commit, issue_tests, ''))
         except my_bug.BugError as e:
             logging.debug(e.msg)
@@ -158,8 +161,31 @@ def extract_test_names(text):
         if any(x in word for x in test_words):
             if not word in test_words:  # make sure attachment.filename is not triviale test word
                 ans.append(word)
-    return ans;
+    return ans
 
+
+def amir_filter():
+    filter(lambda c: any(map(lambda f: is_test_file(f) ,c.stats.files.keys())), git.Repo(r"C:\Users\user\Code\Python\BugMiner\tested_project\tika").iter_commits())
+
+def is_test_file(file):
+    name = os.path.basename(file.lower())
+    if not name.endswith('.java'):
+        return False
+    if name.endswith('test.java'):
+        return True
+    if name.startswith('test'):
+        return True
+    return False
+
+#Returns tests that have been changed in the commit
+def get_tests_from_commit(commit):
+    ans = []
+    for file in commit.stats.files.keys():
+        if is_test_file(file):
+            for test in all_tests:
+                if os.path.basename(file) in test.get_name():
+                    ans.append(test)
+    return ans
 
 def say_hello():
     return 'hello'
