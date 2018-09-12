@@ -2,36 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/libraries/Maven__org_opentest4j_opentest4j_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/GMT_P (3).iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/dep_1/GMT_P (1).iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/dep_2/GMT_P (2).iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BugMiner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BugMiner.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bug/bug.py" beforeDir="false" afterPath="$PROJECT_DIR$/bug/bug.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/tika" beforeDir="false" afterPath="$PROJECT_DIR$/results/tika" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/src/test/java/MainTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/surefire-reports/MainTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/surefire-reports/TEST-MainTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/test-classes/MainTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_1/target/surefire-reports/MainTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_1/target/surefire-reports/MainTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_1/target/surefire-reports/TEST-MainTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_1/target/surefire-reports/TEST-MainTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_2/target/surefire-reports/NaimTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_2/target/surefire-reports/NaimTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_2/target/surefire-reports/TEST-NaimTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed/sub_mod_2/target/surefire-reports/TEST-NaimTest.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +29,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/BugMinerTest$Test.coverage" NAME="Test Coverage Results" MODIFIED="1536774147042" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$tmp.coverage" NAME="tmp Coverage Results" MODIFIED="1536665877421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMinerTest$Main.coverage" NAME="Main Coverage Results" MODIFIED="1536774483466" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1536762596198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Test.coverage" NAME="Test Coverage Results" MODIFIED="1536759857417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -83,36 +74,54 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="-1558985220">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="391" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="391" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="192">
+              <caret line="222" selection-start-line="222" selection-end-line="222" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1536762596185" expanded="true" signature="7226:8051" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/logging/__init__.py">
+        <entry file="file://$PROJECT_DIR$/../BugMiner/venv/Lib/site-packages/git/objects/commit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="514">
-              <caret line="1944" column="4" selection-start-line="1944" selection-start-column="4" selection-end-line="1944" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bug/bug.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+            <state relative-caret-position="157">
+              <caret line="278" selection-start-line="278" selection-end-line="278" />
             </state>
           </provider>
         </entry>
@@ -132,7 +141,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mvn_reports_tests/test_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
+            <state relative-caret-position="1632">
               <caret line="96" selection-start-line="96" selection-end-line="96" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
@@ -142,10 +151,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../BugMiner/venv/Lib/site-packages/git/repo/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="510" selection-start-line="510" selection-end-line="510" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="88" selection-start-line="88" selection-end-line="88" />
+            <state relative-caret-position="149">
+              <caret line="142" column="34" selection-start-line="142" selection-start-column="8" selection-end-line="142" selection-end-column="34" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -189,8 +207,8 @@
         <option value="$PROJECT_DIR$/tmp.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/WatchResults.py" />
-        <option value="$PROJECT_DIR$/Test.py" />
         <option value="$PROJECT_DIR$/bug/bug.py" />
+        <option value="$PROJECT_DIR$/Test.py" />
         <option value="$PROJECT_DIR$/Main.py" />
       </list>
     </option>
@@ -212,31 +230,31 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
+              <item name="BugMinerTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BugMinerTest" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
-              <item name="bug" type="462c0819:PsiDirectoryNode" />
+              <item name="BugMinerTest" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BugMinerTest" type="462c0819:PsiDirectoryNode" />
+              <item name="diff" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BugMinerTest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -265,7 +283,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="https://github.com/apache/tika" />
+      <option name="PARAMETERS" value="https://github.com/rotba/GitMavenTrackingProject" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -287,7 +305,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test.py" />
-      <option name="PARAMETERS" value="TestMain.test_c_issue_19_exrtact_bugs" />
+      <option name="PARAMETERS" value="TestMain.test_get_tests_from_commit" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -361,8 +379,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20628998" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20842217" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -403,8 +422,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>32</line>
-          <option name="timeStamp" value="80" />
+          <line>222</line>
+          <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -428,6 +447,11 @@
       </expression>
     </expressions>
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>repo</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>data</expression-string>
         <language-id>Python</language-id>
@@ -494,13 +518,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/logging/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33014">
+          <caret line="1944" column="4" selection-start-line="1944" selection-start-column="4" selection-end-line="1944" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bug/bug.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mvn_reports_tests/test_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
+        <state relative-caret-position="1632">
           <caret line="96" selection-start-line="96" selection-end-line="96" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../BugMiner/venv/Lib/site-packages/git/cmd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="414" selection-start-line="414" selection-end-line="414" />
         </state>
       </provider>
     </entry>
@@ -516,35 +561,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
+        <state relative-caret-position="149">
+          <caret line="142" column="34" selection-start-line="142" selection-start-column="8" selection-end-line="142" selection-end-column="34" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/logging/__init__.py">
+    <entry file="file://$PROJECT_DIR$/../BugMiner/venv/Lib/site-packages/git/objects/commit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="1944" column="4" selection-start-line="1944" selection-start-column="4" selection-end-line="1944" selection-end-column="4" />
+        <state relative-caret-position="157">
+          <caret line="278" selection-start-line="278" selection-end-line="278" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bug/bug.py">
+    <entry file="file://$PROJECT_DIR$/../BugMiner/venv/Lib/site-packages/git/repo/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
+        <state relative-caret-position="157">
+          <caret line="510" selection-start-line="510" selection-end-line="510" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="192">
+          <caret line="222" selection-start-line="222" selection-end-line="222" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1536762596185" expanded="true" signature="7226:8051" ph="..." />
           </folding>
         </state>
       </provider>

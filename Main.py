@@ -7,6 +7,7 @@ import mvn_reports_tests.test_parser as test_parser
 import bug.bug as my_bug
 from diff.filediff import FileDiff
 import git
+import javalang
 from git import Repo
 from jira import JIRA
 from jira import exceptions as jira_exceptions
@@ -19,7 +20,7 @@ cache_dir = os.getcwd()+'\\cache'
 all_tests = []
 all_commits = []
 bug_issues = []
-branch_inspected = 'master'
+branch_inspected = 'fast'
 repo = None
 proj_dir = ''
 proj_dir_installed = ''
@@ -45,7 +46,7 @@ def main(argv):
 
 
 # Get string array representing possible test names
-def get_tests_from_issue_text(issue):
+def get_tests_from_issue_text(input_issue):
     issue = jira.issue(input_issue.key)
     ans = []
     test_names = []
@@ -69,6 +70,9 @@ def get_tests_from_issue_text(issue):
         raise my_bug.BugError('Could not find tests associated with ' + issue.key)
     return ans
 
+#Returns tests that had been changed through the commit
+def get_tests_from_commit(commit):
+    pass
 
 # Returns the commits relevant to bug_issue
 def get_issue_commits(issue):
@@ -142,7 +146,7 @@ def extract_possible_bugs(bug_issues):
             issue_tests.append(get_tests_from_issue_text(bug_issue))
             issue_commits = get_issue_commits(bug_issue)
             for commit in issue_commits:
-                #issue_tests.append(get_tests_from_commit(commit))
+                issue_tests.append(get_tests_from_commit(commit))
                 ans.append(my_bug.Bug(bug_issue, commit, issue_tests, ''))
         except my_bug.BugError as e:
             logging.debug(e.msg)
@@ -159,6 +163,26 @@ def extract_test_names(text):
                 ans.append(word)
     return ans;
 
+#Returns true if file is associated with a test file
+def is_test_file(file):
+    name = os.path.basename(file.lower())
+    if not name.endswith('.java'):
+        return False
+    if name.endswith('test.java'):
+        return True
+    if name.startswith('test'):
+        return True
+    return False
+
+#Returns tests that have been changed in the commit
+def get_tests_from_commit(commit):
+    ans = []
+    for file in commit.stats.files.keys():
+        if is_test_file(file):
+            for test in all_tests:
+                if os.path.basename(file) in test.get_name():
+                    ans.append(test)
+    return ans
 
 def say_hello():
     return 'hello'
