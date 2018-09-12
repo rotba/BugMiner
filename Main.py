@@ -7,6 +7,7 @@ import mvn_reports_tests.test_parser as test_parser
 import bug.bug as my_bug
 from diff.filediff import FileDiff
 import git
+import javalang
 from git import Repo
 from jira import JIRA
 from jira import exceptions as jira_exceptions
@@ -44,7 +45,6 @@ def main(argv):
     # pickle.dump(bug_data_set, res_file)
 
 
-
 # Get string array representing possible test names
 def get_tests_from_issue_text(input_issue):
     #issue = jira.issue(input_issue.key)
@@ -71,6 +71,9 @@ def get_tests_from_issue_text(input_issue):
         raise my_bug.BugError('Could not find tests associated with ' + issue.key)
     return ans
 
+#Returns tests that had been changed through the commit
+def get_tests_from_commit(commit):
+    pass
 
 # Returns the commits relevant to bug_issue
 def get_issue_commits(issue):
@@ -136,7 +139,7 @@ def extract_bugs(issue, commit, issue_tests):
                 ans.append(bug)
     return ans
 
-#Returns bug list of bugs that maybe are valid and analyzable
+#Return the diffs the solved the bug in test in commit
 def extract_possible_bugs(bug_issues):
     ans = []
     for bug_issue in bug_issues:
@@ -161,12 +164,9 @@ def extract_test_names(text):
         if any(x in word for x in test_words):
             if not word in test_words:  # make sure attachment.filename is not triviale test word
                 ans.append(word)
-    return ans
+    return ans;
 
-
-def amir_filter():
-    filter(lambda c: any(map(lambda f: is_test_file(f) ,c.stats.files.keys())), git.Repo(r"C:\Users\user\Code\Python\BugMiner\tested_project\tika").iter_commits())
-
+#Returns true if file is associated with a test file
 def is_test_file(file):
     name = os.path.basename(file.lower())
     if not name.endswith('.java'):
@@ -183,7 +183,7 @@ def get_tests_from_commit(commit):
     for file in commit.stats.files.keys():
         if is_test_file(file):
             for test in all_tests:
-                if os.path.basename(file) in test.get_name():
+                if os.path.basename(file).replace('.java', '') in test.get_name():
                     ans.append(test)
     return ans
 
