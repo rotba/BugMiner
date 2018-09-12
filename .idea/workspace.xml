@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_1/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
@@ -113,11 +110,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="176" column="4" selection-start-line="176" selection-start-column="4" selection-end-line="177" selection-end-column="53" />
+            <state relative-caret-position="149">
+              <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="42" selection-end-column="32" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1536753209496" expanded="true" signature="4497:4499" ph="..." />
               </folding>
             </state>
           </provider>
@@ -127,11 +123,11 @@
         <entry file="file://$PROJECT_DIR$/Test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="143" column="22" selection-start-line="143" selection-start-column="8" selection-end-line="143" selection-end-column="22" />
+              <caret line="141" column="22" selection-start-line="141" selection-start-column="8" selection-end-line="141" selection-end-column="22" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1536753004343" expanded="true" signature="96:115" ph="..." />
-                <marker date="1536753004343" expanded="true" signature="6640:6649" ph="..." />
+                <marker date="1536758586486" expanded="true" signature="96:115" ph="..." />
+                <marker date="1536758586486" expanded="true" signature="6452:6461" ph="..." />
               </folding>
             </state>
           </provider>
@@ -322,7 +318,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10394456" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -467,22 +462,21 @@
     <entry file="file://$PROJECT_DIR$/Test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="143" column="22" selection-start-line="143" selection-start-column="8" selection-end-line="143" selection-end-column="22" />
+          <caret line="141" column="22" selection-start-line="141" selection-start-column="8" selection-end-line="141" selection-end-column="22" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1536753004343" expanded="true" signature="96:115" ph="..." />
-            <marker date="1536753004343" expanded="true" signature="6640:6649" ph="..." />
+            <marker date="1536758586486" expanded="true" signature="96:115" ph="..." />
+            <marker date="1536758586486" expanded="true" signature="6452:6461" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="176" column="4" selection-start-line="176" selection-start-column="4" selection-end-line="177" selection-end-column="53" />
+        <state relative-caret-position="149">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="42" selection-end-column="32" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1536753209496" expanded="true" signature="4497:4499" ph="..." />
           </folding>
         </state>
       </provider>
