@@ -4,7 +4,7 @@ import sys
 import os
 import logging
 import mvn_reports_tests.test_parser as test_parser
-import bug.bug as bug
+import bug.bug as my_bug
 from diff.filediff import FileDiff
 import git
 from git import Repo
@@ -35,16 +35,22 @@ def main(argv):
             issue_tests =[]
             issue_tests.append(get_tests_from_issue_text(bug_issue))
             issue_commits = get_issue_commits(bug_issue)
+            issue_tests.append(get_tests_from_commit(commit))
             for commit in issue_commits:
-                issue_tests.append(get_tests_from_commit(commit))
-            fixes = get_fixes(issue_commits, issue_tests)
-            # bug = Bug(bug_issue, commit, test, diffs)
-        except bug.BugError as e:
+                
+                bug_data_set.extend(extract_bugs(bug_issue, commit, issue_tests))
+        except my_bug.BugError as e:
             logging.debug(e.msg)
+    res = open('results\\'+proj_name, 'w')
+    for bug in bug_data_set:
+        res.write(str(bug))
+    # res_file = open('results\\'+proj_name, 'wb')
+    # pickle.dump(bug_data_set, res_file)
 
 
 # Get string array representing possible test names
 def get_tests_from_issue_text(issue):
+    issue = jira.issue(input_issue.key)
     ans = []
     test_names = []
     if hasattr(issue.fields, 'description') and issue.fields.description != None:
@@ -64,7 +70,7 @@ def get_tests_from_issue_text(issue):
                 ans.append(test)
                 break
     if len(ans) == 0:
-        raise bug.BugError('Could not find tests associated with ' + issue.key)
+        raise my_bug.BugError('Could not find tests associated with ' + issue.key)
     return ans
 
 
@@ -75,65 +81,63 @@ def get_issue_commits(issue):
         if is_associated_to_commit(issue,commit):
             ans.append(commit)
     if len(ans) == 0:
-        raise bug.BugError('Couldn\'t find commits associated with ' + issue.key)
+        raise my_bug.BugError('Couldn\'t find commits associated with ' + issue.key)
     return ans
 
 
 # Returns the commit that solved the bug
-def get_fixes(issue_commits, issue_tests):
+def extract_bugs(issue, commit, issue_tests):
     ans = []
     module_dir = proj_dir
-    if not issue_tests[0].get_module()=='':
+    #if not issue_tests[0].get_module()=='':
+    if False:
         module_dir = issue_tests[0].get_module()
     test_cmd = 'mvn surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
     for test in issue_tests:
         if not test_cmd.endswith('='):
             test_cmd += ','
         test_cmd += test.get_name()
-    for commit in issue_commits:
         tests_before = []
         tests_after = []
         parent = None
-        for curr_parent in commit.parents:
-            for branch in curr_parent.repo.branches:
-                if branch.name == branch_inspected:
-                    parent = curr_parent
-                    break
-        if parent == None:
-            continue
-
-        try:
-            repo.git.add('.')
-        except git.exc.GitCommandError as e:
-            pass
-        try:
-            repo.git.commit('-m', 'BugDataMiner run')
-        except git.exc.GitCommandError as e:
-            pass
-        try:
-            repo.git.checkout(parent.hexsha)
-        except git.exc.GitCommandError as e:
-            pass
-        os.system('mvn clean install -DskipTests'+' -f ' + module_dir)
-        os.system(test_cmd + ' -f ' + module_dir)
-        tests_before = test_parser.get_tests(project_dir=module_dir)
-        repo.git.checkout(commit.hexsha)
-        os.system('mvn clean install -DskipTests'+' -f ' + module_dir)
-        os.system(test_cmd + ' -f ' + module_dir)
-        tests_after = test_parser.get_tests(project_dir=module_dir)
-        for test in tests_after:
-            if test not in tests_before:
-                tup = (commit.hexsha, test.get_name(), 'Created in commit')
-                ans.append(tup)
-            else:
-                test_before = [t for t in tests_before if t==test][0]
-                if not test_before.passed():
-                    tup = ((commit.hexsha, test.get_name(), 'Fixed in commit'))
-                    ans.append(tup)
+    for curr_parent in commit.parents:
+        for branch in curr_parent.repo.branches:
+            if branch.name == branch_inspected:
+                parent = curr_parent
+                break
+    if parent == None:
+        return ans
+    try:
+        repo.git.add('.')
+    except git.exc.GitCommandError as e:
+        pass
+    try:
+        repo.git.commit('-m', 'BugDataMiner run')
+    except git.exc.GitCommandError as e:
+        pass
+    try:
+        repo.git.checkout(parent.hexsha)
+    except git.exc.GitCommandError as e:
+        pass
+    os.system('mvn clean install -DskipTests'+' -f ' + module_dir)
+    os.system(test_cmd + ' -f ' + module_dir)
+    tests_before = test_parser.get_tests(project_dir=module_dir)
+    repo.git.checkout(commit.hexsha)
+    os.system('mvn clean install -DskipTests'+' -f ' + module_dir)
+    os.system(test_cmd + ' -f ' + module_dir)
+    tests_after = test_parser.get_tests(project_dir=module_dir)
+    for test in tests_after:
+        if test not in tests_before:
+            bug = my_bug.Bug(issue, commit, test, 'Created in commit')
+            ans.append(bug)
+        else:
+            test_before = [t for t in tests_before if t==test][0]
+            if not test_before.passed():
+                bug = my_bug.Bug(issue, commit, test, 'Fixed in commit')
+                ans.append(bug)
     return ans
 
-
-
+#Return the diffs the solved the bug in test in commit
 # Return list of words in text that contains test words
 def extract_test_names(text):
     ans = []
@@ -145,10 +149,6 @@ def extract_test_names(text):
                 ans.append(word)
     return ans;
 
-
-# Return the test that the bug failed
-def get_test(issue, relevant_tests):
-    pass
 
 def say_hello():
     return 'hello'
@@ -173,7 +173,7 @@ def set_up(git_url):
         logging.debug(e)
 
     proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
-    os.system('mvn install -f'+proj_dir)
+    #os.system('mvn install -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f '+proj_dir)
     if not os.path.isdir(proj_dir_installed):
         shutil.copytree(proj_dir, proj_dir_installed)
     repo = Repo(proj_dir)
@@ -181,12 +181,13 @@ def set_up(git_url):
         os.makedirs("cache")
     all_tests = get_from_cache(all_test_cache,
                                lambda: test_parser.get_tests(proj_dir_installed))
-    # all_commits = get_from_cache(all_commits_cache,
-    #                            lambda: list(repo.iter_commits(branch_inspected)))
+    #all_commits = get_from_cache(all_commits_cache,
+    #                           lambda: list(repo.iter_commits(branch_inspected)))
     # bug_issues = get_from_cache(bug_issues_cache,
     #                             lambda: jira.search_issues('project=' + proj_name + ' and type=bug', maxResults=2500))
     all_commits = list(repo.iter_commits(branch_inspected))
-    JQL_QUERY = 'project = {} AND issuetype = Bug AND text ~ test ORDER BY  createdDate ASC'.format(proj_name)
+    #JQL_QUERY = 'project = {} AND issuetype = Bug AND text ~ test ORDER BY  createdDate ASC'.format(proj_name)
+    JQL_QUERY = 'project = {} AND issuetype = Bug AND text ~ test AND key= "TIKA-19" ORDER BY  createdDate ASC'.format(proj_name)
     try:
         bug_issues = jira.search_issues(JQL_QUERY, maxResults=MAX_ISSUES_TO_RETRIEVE)
     except jira_exceptions.JIRAError as e:
