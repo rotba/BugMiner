@@ -2,35 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/libraries/Maven__org_opentest4j_opentest4j_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/GMT_P (3).iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/dep_1/GMT_P (1).iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/dep_2/GMT_P (2).iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/src/main/java/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/src/test/java/MainTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/classes/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/surefire-reports/MainTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/surefire-reports/TEST-MainTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject/target/test-classes/MainTest.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -88,11 +60,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="75" column="29" lean-forward="true" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
+            <state relative-caret-position="1292">
+              <caret line="76" column="29" lean-forward="true" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1536747632905" expanded="true" signature="6458:7283" ph="..." />
+                <marker date="1536748016823" expanded="true" signature="7075:7900" ph="..." />
               </folding>
             </state>
           </provider>
@@ -122,11 +94,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1054">
-              <caret line="83" column="20" lean-forward="true" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="20" />
+            <state relative-caret-position="1360">
+              <caret line="101" column="20" lean-forward="true" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="20" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
-                <marker date="1536666193977" expanded="true" signature="3532:3538" ph="..." />
               </folding>
             </state>
           </provider>
@@ -377,7 +348,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>133</line>
+          <line>134</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
       </breakpoints>
@@ -460,22 +431,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="83" column="20" lean-forward="true" selection-start-line="83" selection-start-column="13" selection-end-line="83" selection-end-column="20" />
+        <state relative-caret-position="1360">
+          <caret line="101" column="20" lean-forward="true" selection-start-line="101" selection-start-column="20" selection-end-line="101" selection-end-column="20" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-            <marker date="1536666193977" expanded="true" signature="3532:3538" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="75" column="29" lean-forward="true" selection-start-line="75" selection-start-column="29" selection-end-line="75" selection-end-column="29" />
+        <state relative-caret-position="1292">
+          <caret line="76" column="29" lean-forward="true" selection-start-line="76" selection-start-column="29" selection-end-line="76" selection-end-column="29" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1536747632905" expanded="true" signature="6458:7283" ph="..." />
+            <marker date="1536748016823" expanded="true" signature="7075:7900" ph="..." />
           </folding>
         </state>
       </provider>
