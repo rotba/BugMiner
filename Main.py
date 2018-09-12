@@ -20,7 +20,7 @@ cache_dir = os.getcwd()+'\\cache'
 all_tests = []
 all_commits = []
 bug_issues = []
-branch_inspected = 'fast'
+branch_inspected = 'master'
 repo = None
 proj_dir = ''
 proj_dir_installed = ''
@@ -180,7 +180,7 @@ def get_tests_from_commit(commit):
     for file in commit.stats.files.keys():
         if is_test_file(file):
             for test in all_tests:
-                if os.path.basename(file) in test.get_name():
+                if os.path.basename(file).replace('.java', '') in test.get_name():
                     ans.append(test)
     return ans
 
