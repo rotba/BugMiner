@@ -1,13 +1,14 @@
 import pickle
 import sys
 import os
-import csv
 import logging
 import mvn_reports_tests.test_parser as test_parser
 import bug.bug as bug
+from diff.filediff import FileDiff
 import git
 from git import Repo
 from jira import JIRA
+from jira import exceptions as jira_exceptions
 
 
 jira = JIRA(options={'server': 'https://issues.apache.org/jira'})
@@ -19,7 +20,8 @@ all_commits = []
 bug_issues = []
 branch_inspected = 'master'
 repo = None
-git_dir = ''
+proj_dir = ''
+proj_dir_installed = ''
 proj_name = ''
 MAX_ISSUES_TO_RETRIEVE =200
 
@@ -32,7 +34,7 @@ def main(argv):
             issue_tests = get_issue_tests(bug_issue)
             issue_commits = get_issue_commits(bug_issue)
             fixes = get_fixes(issue_commits, issue_tests)
-            diffs = get_diffs(commit, test)
+            #diffs = get_diffs(commit, test)
             # bug = Bug(bug_issue, commit, test, diffs)
         except bug.BugError as e:
             logging.debug(e.msg)
@@ -85,7 +87,7 @@ def get_issue_commits(issue):
 # Returns the commit that solved the bug
 def get_fixes(issue_commits, issue_tests):
     ans = []
-    module_dir = git_dir
+    module_dir = proj_dir
     if not issue_tests[0].get_module()=='':
         module_dir = issue_tests[0].get_module()
     test_cmd = 'mvn surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
@@ -135,12 +137,12 @@ def get_fixes(issue_commits, issue_tests):
                     ans.append(tup)
     return ans
 
-#Retusn the diffs the solved the bug in test in commit
-def get_diffs(commit, test):
-    repo = Repo('/git/repository')
-    t = repo.head.commit.tree
-    all_diffs = repo.git.diff(t)
-    x=1
+#Return the diffs the solved the bug in test in commit
+# def get_diffs(commit, test):
+#     all_diffs=commit.diff('HEAD~1')  # diff tree against previous tree
+#     java_diffs = [d for d in all_diffs if d.a_path.endswith('.java')]
+#     amir_diff = FileDiff(java_diffs[0])
+#     x=1
 
 # Return list of words in text that contains test words
 def extract_test_names(text):
@@ -165,29 +167,38 @@ def set_up(git_url):
     global all_commits
     global all_tests
     global repo
-    global git_dir
+    global proj_dir
+    global proj_dir_installed
     global proj_name
     global bug_issues
     all_test_cache = cache_dir+'\\all_tests.pkl'
     all_commits_cache =  cache_dir+'\\all_commits.pkl'
     bug_issues_cache = cache_dir + '\\bug_issues'
     proj_name = git_url.rsplit('/', 1)[1]
+    proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
+    proj_dir_installed = proj_dir+'_installed'
     try:
         git.Git(os.getcwd()+'\\tested_project').clone(git_url)
-    except git.exc.GitCommandError:
-        pass
-    git_dir = os.getcwd() + '\\tested_project\\' + proj_name
-    # os.system('mvn install -f'+git_dir)
-    repo = Repo(git_dir)
+    except git.exc.GitCommandError as e:
+        logging.debug(e)
+
+    #os.system('mvn install -f '+proj_dir)
+    #shutil.copytree(proj_dir, proj_dir_installed)
+    repo = Repo(proj_dir)
+    if not  os.path.isdir("cache"):
+        os.makedirs("cache")
     all_tests = get_from_cache(all_test_cache,
-                               lambda: test_parser.get_tests(os.getcwd() + '\\tested_project\\' + proj_name + '_installed'))
+                               lambda: test_parser.get_tests(proj_dir_installed))
     # all_commits = get_from_cache(all_commits_cache,
     #                            lambda: list(repo.iter_commits(branch_inspected)))
     # bug_issues = get_from_cache(bug_issues_cache,
     #                             lambda: jira.search_issues('project=' + proj_name + ' and type=bug', maxResults=2500))
     all_commits = list(repo.iter_commits(branch_inspected))
     JQL_QUERY = 'project = {} AND issuetype = Bug AND text ~ test ORDER BY  createdDate ASC'.format(proj_name)
-    bug_issues = jira.search_issues(JQL_QUERY, maxResults=MAX_ISSUES_TO_RETRIEVE)
+    try:
+        bug_issues = jira.search_issues(JQL_QUERY, maxResults=MAX_ISSUES_TO_RETRIEVE)
+    except jira_exceptions.JIRAError as e:
+        logging.debug(e)
 
 
 #Returns data stored in the cache dir. If not found, retrieves the data using the retrieve func
