@@ -1,4 +1,5 @@
 import pickle
+import shutil
 import sys
 import os
 import logging
@@ -31,25 +32,19 @@ def main(argv):
     set_up(argv[0])
     for bug_issue in bug_issues:
         try:
-            issue_tests = get_issue_tests(bug_issue)
+            issue_tests =[]
+            issue_tests.append(get_tests_from_issue_text(bug_issue))
             issue_commits = get_issue_commits(bug_issue)
+            for commit in issue_commits:
+                issue_tests.append(get_tests_from_commit(commit))
             fixes = get_fixes(issue_commits, issue_tests)
-            #diffs = get_diffs(commit, test)
             # bug = Bug(bug_issue, commit, test, diffs)
         except bug.BugError as e:
             logging.debug(e.msg)
 
-    # commits = extract_critical_commits(repo)
-    # with open("output.csv", "a") as output:
-    #     wr = csv.writer(output, dialect='excel')
-    #     wr.writerow(['commis\\tests'] + all_tests)
-    # for commit in commits:
-    #     if 'TIKA-2673' in commit.message:
-    #         tests_fixed_in_commit = get_tests_fixed_in_commit(commit, all_tests)
-
 
 # Get string array representing possible test names
-def get_issue_tests(issue):
+def get_tests_from_issue_text(issue):
     ans = []
     test_names = []
     if hasattr(issue.fields, 'description') and issue.fields.description != None:
@@ -137,12 +132,7 @@ def get_fixes(issue_commits, issue_tests):
                     ans.append(tup)
     return ans
 
-#Return the diffs the solved the bug in test in commit
-# def get_diffs(commit, test):
-#     all_diffs=commit.diff('HEAD~1')  # diff tree against previous tree
-#     java_diffs = [d for d in all_diffs if d.a_path.endswith('.java')]
-#     amir_diff = FileDiff(java_diffs[0])
-#     x=1
+
 
 # Return list of words in text that contains test words
 def extract_test_names(text):
@@ -178,12 +168,14 @@ def set_up(git_url):
     proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
     proj_dir_installed = proj_dir+'_installed'
     try:
-        pass
-        #git.Git(os.getcwd()+ '\\tested_project').clone(git_url)
+        git.Git(os.getcwd()+ '\\tested_project').clone(git_url)
+    except git.exc.GitCommandError as e:
         logging.debug(e)
 
     proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
-    # os.system('mvn install -f'+proj_dir)
+    os.system('mvn install -f'+proj_dir)
+    if not os.path.isdir(proj_dir_installed):
+        shutil.copytree(proj_dir, proj_dir_installed)
     repo = Repo(proj_dir)
     if not  os.path.isdir("cache"):
         os.makedirs("cache")

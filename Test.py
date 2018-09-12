@@ -39,6 +39,18 @@ class TestMain(unittest.TestCase):
         self.fail('get_issue_commits() did not associate TIKA-1378 with commit 65aea2b06b33c6b53999b6c52e017c38bf2af0b4' )
 
     @unittest.skip("Long test")
+    def test_issue_1378_get_tests_from_commit(self):
+        Main.set_up('https://github.com/apache/tika')
+        self.issue_1378 = Main.jira.issue('TIKA-1378')
+        commit = Main.repo.commit('65aea2b06b33c6b53999b6c52e017c38bf2af0b4')
+        res_tests = Main.get_tests_from_commit(commit)
+        for test in res_tests:
+            if commit.get_name() == '65aea2b06b33c6b53999b6c52e017c38bf2af0b4':
+                return
+        self.fail(
+            'get_issue_commits() did not associate TIKA-1378 with commit 65aea2b06b33c6b53999b6c52e017c38bf2af0b4')
+
+    @unittest.skip("Long test")
     def test_issue_1378_get_fixes(self):
         Main.set_up('https://github.com/apache/tika')
         self.issue_1378 = Main.jira.issue('TIKA-1378')
@@ -116,6 +128,7 @@ class TestMain(unittest.TestCase):
                          'Excpected associated commit: d7dabee5ce14240f3c5ba2f6147c963d03604dd3 \n'+
                          'But got: ' + associated_commits[0].hexsha)
 
+    @unittest.skip("Not relevant")
     def test_issue_get_diffs(self):
         print('test_issue_get_diffs')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
@@ -129,6 +142,8 @@ class TestMain(unittest.TestCase):
 
 
     def test_say_hello(self):
+        print("test_say_hello")
+        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
         self.assertEqual(Main.say_hello(), 'hello')
 
 
