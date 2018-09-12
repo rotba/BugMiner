@@ -13,8 +13,8 @@ from jira import exceptions as jira_exceptions
 
 
 jira = JIRA(options={'server': 'https://issues.apache.org/jira'})
-LOG_FILENAME = 'bug_create.log'
-logging.basicConfig(filename=LOG_FILENAME, level=logging.DEBUG)
+LOG_FILENAME = 'bugminer_log.log'
+logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO)
 cache_dir = os.getcwd()+'\\cache'
 all_tests = []
 all_commits = []
@@ -24,30 +24,29 @@ repo = None
 proj_dir = ''
 proj_dir_installed = ''
 proj_name = ''
-MAX_ISSUES_TO_RETRIEVE =200
-
+MAX_ISSUES_TO_RETRIEVE =2000
+JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
 
 def main(argv):
     bug_data_set = []
     set_up(argv[0])
-    for bug_issue in bug_issues:
+    possible_bugs = extract_possible_bugs(bug_issues)
+    for possible_bug in possible_bugs:
         try:
-            issue_tests = get_issue_tests(bug_issue)
-            issue_commits = get_issue_commits(bug_issue)
-            for commit in issue_commits:
-                bug_data_set.extend(extract_bugs(bug_issue, commit, issue_tests))
+            bugs = extract_bugs(possible_bug.issue, possible_bug.issue, possible_bug.issue.tests)
+            bug_data_set.extend(bugs)
         except my_bug.BugError as e:
             logging.debug(e.msg)
     res = open('results\\'+proj_name, 'w')
     for bug in bug_data_set:
-        res.write(str(bug))
+        res.write(str(bug)+'\n')
     # res_file = open('results\\'+proj_name, 'wb')
     # pickle.dump(bug_data_set, res_file)
 
 
 
 # Get string array representing possible test names
-def get_issue_tests(input_issue):
+def get_tests_from_issue_text(input_issue):
     issue = jira.issue(input_issue.key)
     ans = []
     test_names = []
@@ -135,6 +134,21 @@ def extract_bugs(issue, commit, issue_tests):
                 ans.append(bug)
     return ans
 
+#Returns bug list of bugs that maybe are valid and analyzable
+def extract_possible_bugs(bug_issues):
+    ans = []
+    for bug_issue in bug_issues:
+        try:
+            issue_tests = []
+            issue_tests.append(get_tests_from_issue_text(bug_issue))
+            issue_commits = get_issue_commits(bug_issue)
+            for commit in issue_commits:
+                #issue_tests.append(get_tests_from_commit(commit))
+                ans.append(my_bug.Bug(bug_issue, commit, issue_tests, ''))
+        except my_bug.BugError as e:
+            logging.debug(e.msg)
+    return ans
+
 # Return list of words in text that contains test words
 def extract_test_names(text):
     ans = []
@@ -158,6 +172,7 @@ def set_up(git_url):
     global proj_dir_installed
     global proj_name
     global bug_issues
+    global JQL_QUERY
     all_test_cache = cache_dir+'\\all_tests.pkl'
     all_commits_cache =  cache_dir+'\\all_commits.pkl'
     bug_issues_cache = cache_dir + '\\bug_issues'
@@ -183,8 +198,7 @@ def set_up(git_url):
     # bug_issues = get_from_cache(bug_issues_cache,
     #                             lambda: jira.search_issues('project=' + proj_name + ' and type=bug', maxResults=2500))
     all_commits = list(repo.iter_commits(branch_inspected))
-    #JQL_QUERY = 'project = {} AND issuetype = Bug AND text ~ test ORDER BY  createdDate ASC'.format(proj_name)
-    JQL_QUERY = 'project = {} AND issuetype = Bug AND text ~ test AND key= "TIKA-19" ORDER BY  createdDate ASC'.format(proj_name)
+    JQL_QUERY = JQL_QUERY.format(proj_name)
     try:
         bug_issues = jira.search_issues(JQL_QUERY, maxResults=MAX_ISSUES_TO_RETRIEVE)
     except jira_exceptions.JIRAError as e:
@@ -216,46 +230,4 @@ def is_associated_to_commit(issue, commit):
 if __name__ == '__main__':
     main(sys.argv[1:]);
 
-# #Returns tests that fixed in commit
-# def get_tests_fixed_in_commit(commit, all_tests):
-#     ans = []
-#     options = {
-#         'server': 'https://issues.apache.org/jira'}
-#     jira = JIRA(options)
-#     projects = jira.projects()
-#     if contains_jira_issue(commit):
-#         issue_id = get_jira_issue(commit)
-#         issue = jira.issue(issue_id)
-#         possible_test_names = get_possible_tests_names(issue)
-#         for possible_test_name in possible_test_names:
-#             for test_name in all_tests:
-#                 if possible_test_name in test_name:
-#                     ans.append(possible_test_name)
-#                     break
-#     return ans
 
-# Returns issue if on a commit that is associated with jiar issue
-# def get_jira_issue(commit):
-#     return commit.message.partition(' ')[0]
-
-# Returns tests exist in the HEAD of repo
-# def get_tests(repo):
-#     ans = []
-#     surefire_reports_dir =repo.working_tree_dir+"\\tika-parsers\\target\\surefire-reports" #should be replaced with somthing generic
-#     for filename in os.listdir(surefire_reports_dir):
-#         if filename.endswith(".xml"):
-#             abs_path = os.path.join(surefire_reports_dir, filename)
-#             tree = ET.parse(abs_path)
-#             root = tree.getroot()
-#             for testcase in root.findall('testcase'):
-#                 ans.append(testcase.get('classname')+'@'+testcase.get('name'))
-#     return ans
-
-# Returns true if the commit is associated to a jira issue
-# def contains_jira_issue(commit):
-#     return commit.message.startswith('TIKA')
-
-# Returns the commits in repo that has high liklihood of having a bug fix
-# def extract_critical_commits(repo):
-#     commits = list(repo.iter_commits('master'))
-#     return [commit for commit in commits if "fix" in commit.message]

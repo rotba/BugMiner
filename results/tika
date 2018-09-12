@@ -1,4 +1,8 @@
 description: Fixed in commit
+issue: TIKA-16
+commit: d7dabee5ce14240f3c5ba2f6147c963d03604dd3
+test: org.apache.tika.TestParsers
+description: Fixed in commit
 issue: TIKA-19
 commit: d7dabee5ce14240f3c5ba2f6147c963d03604dd3
 test: org.apache.tika.TestParsers
