@@ -106,3 +106,4 @@ venv.bak/
 
 # tested proj files
 tested_project/
+cache/

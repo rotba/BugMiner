@@ -47,7 +47,6 @@ def main(argv):
 
 # Get string array representing possible test names
 def get_tests_from_issue_text(input_issue):
-    #issue = jira.issue(input_issue.key)
     issue = input_issue
     ans = []
     test_names = []
@@ -67,8 +66,6 @@ def get_tests_from_issue_text(input_issue):
             if test.is_associated(test_name):
                 ans.append(test)
                 break
-    if len(ans) == 0:
-        raise my_bug.BugError('Could not find tests associated with ' + issue.key)
     return ans
 
 #Returns tests that had been changed through the commit
@@ -144,12 +141,15 @@ def extract_possible_bugs(bug_issues):
     ans = []
     for bug_issue in bug_issues:
         print("working on issue "+bug_issue.key)
+        issue_tests = []
         try:
-            issue_tests = []
             issue_tests.append(get_tests_from_issue_text(bug_issue))
             issue_commits = get_issue_commits(bug_issue)
             for commit in issue_commits:
                 issue_tests.append(get_tests_from_commit(commit))
+                if len(issue_tests) == 0:
+                    raise my_bug.BugError(
+                        'Didn\'t associate ' + bug_issue.key + ' with a test')
                 ans.append(my_bug.Bug(bug_issue, commit, issue_tests, ''))
         except my_bug.BugError as e:
             logging.debug(e.msg)
