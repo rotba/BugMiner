@@ -44,9 +44,8 @@ def main(argv):
     # pickle.dump(bug_data_set, res_file)
 
 
-
 # Get string array representing possible test names
-def get_tests_from_issue_text(input_issue):
+def get_tests_from_issue_text(issue):
     issue = jira.issue(input_issue.key)
     ans = []
     test_names = []
@@ -134,7 +133,7 @@ def extract_bugs(issue, commit, issue_tests):
                 ans.append(bug)
     return ans
 
-#Returns bug list of bugs that maybe are valid and analyzable
+#Return the diffs the solved the bug in test in commit
 def extract_possible_bugs(bug_issues):
     ans = []
     for bug_issue in bug_issues:

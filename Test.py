@@ -39,6 +39,18 @@ class TestMain(unittest.TestCase):
         self.fail('get_issue_commits() did not associate TIKA-1378 with commit 65aea2b06b33c6b53999b6c52e017c38bf2af0b4' )
 
     @unittest.skip("Long test")
+    def test_issue_1378_get_tests_from_commit(self):
+        Main.set_up('https://github.com/apache/tika')
+        self.issue_1378 = Main.jira.issue('TIKA-1378')
+        commit = Main.repo.commit('65aea2b06b33c6b53999b6c52e017c38bf2af0b4')
+        res_tests = Main.get_tests_from_commit(commit)
+        for test in res_tests:
+            if commit.get_name() == '65aea2b06b33c6b53999b6c52e017c38bf2af0b4':
+                return
+        self.fail(
+            'get_issue_commits() did not associate TIKA-1378 with commit 65aea2b06b33c6b53999b6c52e017c38bf2af0b4')
+
+    @unittest.skip("Long test")
     def test_issue_1378_get_fixes(self):
         Main.set_up('https://github.com/apache/tika')
         self.issue_1378 = Main.jira.issue('TIKA-1378')
@@ -118,15 +130,18 @@ class TestMain(unittest.TestCase):
     def test_issue_get_diffs(self):
         print('test_issue_get_diffs')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        commit_test_pass_hash = '1df5710687471a8b47dca2d6f39659efab9c1063'
         all_commits = Main.all_commits
         all_tests = Main.all_tests
-        commit = [c for c in all_commits if c.message=='\'NaimTest\' pass'][0]
+        commit = [c for c in all_commits if c.hexsha==commit_test_pass_hash][0]
         test = [t for t in all_tests if t.get_name() == 'NaimTest'][0]
         diffs = Main.get_diffs(commit, test)
         x=1
 
 
     def test_say_hello(self):
+        print("test_say_hello")
+        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
         self.assertEqual(Main.say_hello(), 'hello')
 
 
