@@ -21,7 +21,10 @@ bug_issues = []
 branch_inspected = 'master'
 repo = None
 proj_dir = ''
+<<<<<<< HEAD
+=======
 proj_dir_installed = ''
+>>>>>>> df58f4eb38b9b09fc35b08ab77e2800ed3453eeb
 proj_name = ''
 MAX_ISSUES_TO_RETRIEVE =200
 
@@ -168,7 +171,10 @@ def set_up(git_url):
     global all_tests
     global repo
     global proj_dir
+<<<<<<< HEAD
+=======
     global proj_dir_installed
+>>>>>>> df58f4eb38b9b09fc35b08ab77e2800ed3453eeb
     global proj_name
     global bug_issues
     all_test_cache = cache_dir+'\\all_tests.pkl'
@@ -178,15 +184,25 @@ def set_up(git_url):
     proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
     proj_dir_installed = proj_dir+'_installed'
     try:
+<<<<<<< HEAD
         pass
         #git.Git(os.getcwd()+ '\\tested_project').clone(git_url)
-        logging.debug(e)
-
+    except git.exc.GitCommandError:
+        pass
     proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
     # os.system('mvn install -f'+proj_dir)
     repo = Repo(proj_dir)
+=======
+        git.Git(os.getcwd()+'\\tested_project').clone(git_url)
+    except git.exc.GitCommandError as e:
+        logging.debug(e)
+
+    #os.system('mvn install -f '+proj_dir)
+    #shutil.copytree(proj_dir, proj_dir_installed)
+    repo = Repo(proj_dir)
     if not  os.path.isdir("cache"):
         os.makedirs("cache")
+>>>>>>> df58f4eb38b9b09fc35b08ab77e2800ed3453eeb
     all_tests = get_from_cache(all_test_cache,
                                lambda: test_parser.get_tests(proj_dir_installed))
     # all_commits = get_from_cache(all_commits_cache,
