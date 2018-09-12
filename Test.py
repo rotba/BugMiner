@@ -119,9 +119,10 @@ class TestMain(unittest.TestCase):
     def test_issue_get_diffs(self):
         print('test_issue_get_diffs')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        commit_test_pass_hash = '1df5710687471a8b47dca2d6f39659efab9c1063'
         all_commits = Main.all_commits
         all_tests = Main.all_tests
-        commit = [c for c in all_commits if c.message=='\'NaimTest\' pass'][0]
+        commit = [c for c in all_commits if c.hexsha==commit_test_pass_hash][0]
         test = [t for t in all_tests if t.get_name() == 'NaimTest'][0]
         diffs = Main.get_diffs(commit, test)
         x=1
