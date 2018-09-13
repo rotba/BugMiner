@@ -50,7 +50,7 @@ class TestMain(unittest.TestCase):
         self.fail(
             'get_issue_commits() did not associate TIKA-1378 with commit 65aea2b06b33c6b53999b6c52e017c38bf2af0b4')
 
-    @unittest.skip("Long test")
+    @unittest.skip("Master test")
     def test_issue_1378_get_fixes(self):
         Main.set_up('https://github.com/apache/tika')
         self.issue_1378 = Main.jira.issue('TIKA-1378')
@@ -63,7 +63,7 @@ class TestMain(unittest.TestCase):
                 return
         self.fail('get_fixes() did not associate commit 65aea2b06b33c6b53999b6c52e017c38bf2af0b4 with MicrosoftTranslatorTest' )
 
-    @unittest.skip("Long test")
+    @unittest.skip("Master test")
     def test_a_issue_19_get_issue_tests(self):
         Main.set_up('https://github.com/apache/tika')
         self.issue_19 = Main.jira.issue('TIKA-19')
@@ -78,7 +78,7 @@ class TestMain(unittest.TestCase):
                 return
         self.fail('get_issue_tests() did not associate TIKA-19 with TestParsers' )
 
-    @unittest.skip("Long test")
+    @unittest.skip("Master test")
     def test_b_issue_19_get_issue_commits(self):
         Main.set_up('https://github.com/apache/tika')
         self.issue_1378 = Main.jira.issue('TIKA-1378')
@@ -94,7 +94,7 @@ class TestMain(unittest.TestCase):
                 return
         self.fail('get_issue_commits() did not associate TIKA-19 with commit d7dabee5ce14240f3c5ba2f6147c963d03604dd3' )
 
-    @unittest.skip("Long test")
+    @unittest.skip("Master test")
     def test_c_issue_19_exrtact_bugs(self):
         Main.set_up('https://github.com/apache/tika')
         self.issue_19 = Main.jira.issue('TIKA-19')
@@ -108,10 +108,9 @@ class TestMain(unittest.TestCase):
                 return
         self.fail('get_fixes() did not associate commit d7dabee5ce14240f3c5ba2f6147c963d03604dd3 with TestParsers' )
 
-    @unittest.skip("Long test")
+    @unittest.skip("Master test")
     def test_issue_19_is_associated_to_commit(self):
         Main.set_up('https://github.com/apache/tika')
-        self.issue_1378 = Main.jira.issue('TIKA-1378')
         self.issue_19 = Main.jira.issue('TIKA-19')
         print('test_issue_19_is_associated_to_commit')
         issue = self.issue_19
@@ -149,6 +148,17 @@ class TestMain(unittest.TestCase):
                          'Only one test should be associated with 52e80f56a2f2877ff2261889b1dc180c51b72f6b')
         self.assertTrue('NaimTest' in tests[0].get_name(),
                          '\'NaimTest\' should be associated with 52e80f56a2f2877ff2261889b1dc180c51b72f6b')
+
+    def test_created_test_extract_bugs(self):
+        print('test_created_test_extract_bugs')
+        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        commit = [c for c in Main.all_commits if c.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b'][0]
+        tests = Main.get_tests_from_commit(commit)
+        res = Main.extract_bugs(None, commit, tests)
+        for bug in res:
+            if bug.commit.hexsha =='52e80f56a2f2877ff2261889b1dc180c51b72f6b' and 'NaimTest#newGooTest' in bug.test.get_name() and bug.msg =='Created in test':
+                return
+        self.fail('Didn\'t extracted created test - \'NaimTest#newGooTest\'')
 
 
     def test_say_hello(self):
