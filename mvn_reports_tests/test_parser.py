@@ -6,17 +6,20 @@ import csv
 
 class Class_Test:
 
-    def __init__(self, xml_doc_path):
+    def __init__(self, xml_doc_path, modlue_path):
+        self.xml = xml_doc_path
         self.success_testcases = []
         self.failed_testcases = []
         self.testcases = []
         self.time = 0.0
         self.maven_multiModuleProjectDirectory = ''
-        tree = ET.parse(xml_doc_path)
+        self.module_path = modlue_path
+        tree = ET.parse(self.xml)
         root = tree.getroot()
         self.name = root.get('name')
+        self.src_path = self.parse_src_path()
         for testcase in root.findall('testcase'):
-            m_test =Method_Test(testcase)
+            m_test =Method_Test(testcase, self)
             if m_test.test_passed:
                 self.success_testcases.append(m_test)
             else:
@@ -37,7 +40,15 @@ class Class_Test:
     def passed(self):
         return len(self.failed_testcases)==0
     def get_module(self):
-        return self.maven_multiModuleProjectDirectory
+        return self.module_path
+    def parse_src_path(self):
+        ans = self.module_path
+        ans+='\\src\\test\\java'
+        packages = self.name.split('.')
+        for p in packages:
+            ans+='\\'+p
+        return ans+'.java'
+
 
     #Returns true if the given test name is this test or it's one of its testcases
     def is_associated(self, test):
@@ -59,41 +70,50 @@ class Class_Test:
         else:
             return self.get_name()==other.get_name()
 
-class Method_Test:
-    def __init__(self, testcase):
-        self.name = testcase.get('name')
-        self.time = float(re.sub('[,]', '', testcase.get('time')))
+class Method_Test(object):
+    def __init__(self, testcase, parent):
+        self.parent = parent
+        self.testcase_tag = testcase
+        self.name = self.testcase_tag.get('name')
+        self.time = float(re.sub('[,]', '', self.testcase_tag.get('time')))
         self.test_passed = True
-        failure = testcase.find('failure')
+        failure = self.testcase_tag.find('failure')
         if not failure is None:
             self.test_passed = False
-        failure = testcase.find('error')
+        failure = self.testcase_tag.find('error')
         if not failure is None:
             self.test_passed = False
 
     def get_time(self):
         return self.time
     def get_name(self):
-        return self.name
+        return self.parent.get_name()+'#'+self.name
     def get_test_passed(self):
         return self.test_passed
+    def passed(self):
+        return self.passed()
     def __repr__(self):
         return str(self.get_name())
+    def __eq__(self, other):
+        if not isinstance(other, Method_Test):
+            return False
+        else:
+            return self.get_name()==other.get_name()
 
 #Return parsed tests of the reports dir
-def parse_tests(path_to_reports):
+def parse_tests(path_to_reports, project_dir):
     ans = []
     for filename in os.listdir(path_to_reports):
         if filename.endswith(".xml"):
-            ans.append(Class_Test(os.path.join(path_to_reports, filename)))
+            ans.append(Class_Test(os.path.join(path_to_reports, filename), project_dir))
     return ans;
 
 #Gets path to maven project directory and returns parsed
 def get_tests(project_dir):
     ans = []
-    path_to_reports =  os.path.join(project_dir, 'target\\surefire-reports')
+    path_to_reports = os.path.join(project_dir, 'target\\surefire-reports')
     if os.path.isdir(path_to_reports):
-        ans.extend(parse_tests(path_to_reports))
+        ans.extend(parse_tests(path_to_reports, project_dir))
     for filename in os.listdir(project_dir):
         file_abs_path = os.path.join(project_dir, filename)
         if os.path.isdir(file_abs_path):

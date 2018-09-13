@@ -85,55 +85,77 @@ def get_issue_commits(issue):
 def extract_bugs(issue, commit, tests):
     logging.info("extract_bugs(): working on issue " + issue.key)
     ans = []
-    module_dir = proj_dir
-    #if not tests[0].get_module()=='':
-    if False:
-        module_dir = tests[0].get_module()
-    test_cmd = 'mvn surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
-    for test in tests:
-        if not test_cmd.endswith('='):
-            test_cmd += ','
-        test_cmd += test.get_name()
-        tests_before = []
-        tests_after = []
-        parent = None
-    for curr_parent in commit.parents:
-        for branch in curr_parent.repo.branches:
-            if branch.name == branch_inspected:
-                parent = curr_parent
-                break
+    invalid_bugs = []
+    parent_tests = []
+    commit_tests = []
+    tests_classes_created_in_commit = []
+    testscases_created_in_commit = []
+    patched_test_classes = []
+    patched_testcases = []
+    module_dir = get_tests_module_dir(tests)
+    test_cmd = create_mvn_test_cmd(tests, module_dir)
+    parent = get_parent(commit)
     if parent == None:
         return ans
-    try:
-        repo.git.add('.')
-    except git.exc.GitCommandError as e:
-        pass
-    try:
-        repo.git.commit('-m', 'BugDataMiner run')
-    except git.exc.GitCommandError as e:
-        pass
-    try:
-        repo.git.checkout(parent.hexsha)
-    except git.exc.GitCommandError as e:
-        pass
-    os.system('mvn clean install -DskipTests'+' -f ' + module_dir)
-    os.system(test_cmd + ' -f ' + module_dir)
-    tests_before = test_parser.get_tests(project_dir=module_dir)
-    repo.git.checkout(commit.hexsha)
-    os.system('mvn clean install -DskipTests'+' -f ' + module_dir)
-    os.system(test_cmd + ' -f ' + module_dir)
-    tests_after = test_parser.get_tests(project_dir=module_dir)
-    for test in tests_after:
-        if test not in tests_before:
-            bug = my_bug.Bug(issue, commit, test, 'Created in commit')
-            logging.info("extract_bugs(): extracted bug " + str(bug))
+    prepare_project_repo_for_testing(commit)
+    os.system(test_cmd)
+    commit_tests = test_parser.get_tests(project_dir=module_dir)
+    repo.git.reset('--hard')
+    prepare_project_repo_for_testing(parent)
+    tests_classes_created_in_commit = get_commit_created_testcases(commit_tests)
+    testscases_created_in_commit = get_commit_created_testclasses(commit_tests)
+    #patched_test_classes = patch_test_classes(tests_classes_created_in_commit)
+    #patched_testcases = patch_testcases(testcases_created_in_commit)
+    for invalid_bug_test_class in list(tests_classes_created_in_commit-patched_test_classes):
+        bug = my_bug.Bug(issue, commit, invalid_bug_test_class, 'Invalid: couldn\'t patch test class')
+        invalid_bugs.append(bug)
+        tests_classes_created_in_commit.remove(invalid_bug_test_class)
+    for invalid_bug_testcase in list(testscases_created_in_commit-patched_testcases):
+        bug = my_bug.Bug(issue, commit, invalid_bug_testcase, 'Invalid: couldn\'t patch testcase')
+        invalid_bugs.append(bug)
+        tests_classes_created_in_commit.remove(invalid_bug_test_class)
+    os.system(test_cmd)
+    parent_tests = test_parser.get_tests(project_dir=module_dir)
+    for commit_test in commit_tests:
+        parent_test = [t for t in parent_tests if t.__eq__(commit_test)][0]
+        if parent_test.passed():
+            continue
+        if parent_test in patched_test_classes:
+            bug = my_bug.Bug(issue, commit, commit_test, 'Created test class')
             ans.append(bug)
-        else:
-            test_before = [t for t in tests_before if t==test][0]
-            if not test_before.passed():
-                bug = my_bug.Bug(issue, commit, test, 'Fixed in commit')
-                logging.info("extract_bugs(): extracted bug:\n " + str(bug))
-                ans.append(bug)
+            continue
+        for commit_testcase in commit_test.get_testcases():
+            parent_testcase = [tc for tc in parent_test.get_testcases() if tc.__eq__(commit_testcase)][0]
+            if parent_testcase.passed():
+                continue
+            else:
+                if parent_testcase in patched_testcases:
+                    bug = my_bug.Bug(issue, commit, commit_testcase, 'Created testcase')
+                    ans.append(bug)
+                else:
+                    bug = my_bug.Bug(issue, commit, commit_testcase, 'Regression testcase')
+                    ans.append(bug)
+
+        # if commit_test not in parent_tests:
+        #     bug = my_bug.Bug(issue, commit, commit_test, 'Created in commit')
+        #     logging.info("extract_bugs(): extracted bug " + str(bug))
+        #     ans.append(bug)
+        # else:
+        #     parent_test = [t for t in parent_tests if t==commit_test][0]
+        #     new_created_testcases = list(commit_test.get_testcases()-parent_test.get_testcases())
+        #     for new_created_testcase in new_created_testcases:
+        #         bug = my_bug.Bug(issue, commit, new_created_testcase, 'New testcase created in commit')
+        #         logging.info("extract_bugs(): extracted bug:\n " + str(bug))
+        #         ans.append(bug)
+        #     if not parent_test.passed():
+        #         bug = my_bug.Bug(issue, commit, commit_test, 'Fixed test class in commit')
+        #         logging.info("extract_bugs(): extracted bug:\n " + str(bug))
+        #         ans.append(bug)
+        #     for failed_testcase in parent_test.failed_testcases:
+        #         if failed_testcase in commit_test.success_testcases:
+        #             bug = my_bug.Bug(issue, commit, commit_test, 'Fixed test case in commit')
+        #             logging.info("extract_bugs(): extracted bug:\n " + str(bug))
+        #             ans.append(bug)
     return ans
 
 #Return the diffs the solved the bug in test in commit
@@ -186,6 +208,78 @@ def get_tests_from_commit(commit):
                 if os.path.basename(file).replace('.java', '') in test.get_name():
                     ans.append(test)
     return ans
+
+#Returns mvn command string that runns the given tests in the given module
+def create_mvn_test_cmd(tests, module):
+    ans = 'mvn test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
+    for test in tests:
+        if not ans.endswith('='):
+            ans += ','
+        ans += test.get_name()
+    ans+= '-f '+module
+    return ans
+
+#Returns the parent of the given commit in the inspected branch
+def get_parent(commit):
+    ans = None
+    for curr_parent in commit.parents:
+        for branch in curr_parent.repo.branches:
+            if branch.name == branch_inspected:
+                ans = curr_parent
+                break
+    return ans
+
+#Checkout to the given commit, cleans the project, and installs the project
+def prepare_project_repo_for_testing(parent, module):
+    repo.git.add('.')
+    try:
+        repo.git.commit('-m', 'BugDataMiner run')
+    except git.exc.GitCommandError as e:
+        if 'nothing to commit, working tree clean' in str(e):
+            pass
+        else:
+            raise e
+    repo.git.checkout(parent.hexsha)
+    os.system('mvn clean install -DskipTests' + ' -f ' + module)
+
+#Returns list of testcases that exist in commit_tests and not exist in the current state (commit)
+def get_commit_created_testcases(commit_tests):
+    ans = []
+    for test in commit_tests:
+        ans+=find_test_cases_diff(test, test.src_path)
+    return ans
+
+#Returns list of testclases that exist in commit_tests and not exist in the current state (commit)
+def get_commit_created_testclasses(commit_tests):
+    ans = []
+    for test in commit_tests:
+        if not os.path.isfile(test.src_path):
+            ans.append(test)
+    return ans
+
+#Returns list of strings describing tests or testcases that are not in module dir
+def find_test_cases_diff(commit_test_class, src_path):
+    ans = []
+    testcases_in_src = []
+    if os.path.isfile(src_path):
+        src_file = open(src_path, 'r')
+    else:
+        return ans
+    tree = javalang.parse.parse(src_file.read())
+    class_decl = [c for c in tree.children[2] if c.name in commit_test_class.get_name()][0]
+    for method in class_decl.methods:
+        testcases_in_src.append(commit_test_class.get_name()+'#'+method.name)
+    for testcase in commit_test_class.get_testcases():
+        i=0
+        for testcase_in_src in testcases_in_src:
+            if testcase_in_src in testcase.get_name():
+                continue
+            else:
+                i+=1
+                if i == len(testcases_in_src):
+                    ans.append(testcase)
+    return ans
+
 
 def say_hello():
     logging.info('hey')
@@ -253,6 +347,14 @@ def is_associated_to_commit(issue, commit):
         return not char_after_issue_key.isdigit()
     else:
         return False
+
+#Returns the lowest module dir path associated with tests
+def get_tests_module_dir(tests):
+    ans = proj_dir
+    # if not tests[0].get_module()=='':
+    if False:
+        ans = tests[0].get_module()
+    return ans
 
 if __name__ == '__main__':
     main(sys.argv[1:]);

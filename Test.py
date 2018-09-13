@@ -1,3 +1,4 @@
+import os
 import sys
 import unittest
 import Main
@@ -152,13 +153,41 @@ class TestMain(unittest.TestCase):
     def test_created_test_extract_bugs(self):
         print('test_created_test_extract_bugs')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        self.issue_19 = Main.jira.issue('TIKA-19')
         commit = [c for c in Main.all_commits if c.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b'][0]
         tests = Main.get_tests_from_commit(commit)
-        res = Main.extract_bugs(None, commit, tests)
+        res = Main.extract_bugs(self.issue_19, commit, tests)
         for bug in res:
             if bug.commit.hexsha =='52e80f56a2f2877ff2261889b1dc180c51b72f6b' and 'NaimTest#newGooTest' in bug.test.get_name() and bug.msg =='Created in test':
                 return
-        self.fail('Didn\'t extracted created test - \'NaimTest#newGooTest\'')
+        self.fail('Didn\'t extracted bug : created test - \'NaimTest#newGooTest\'')
+
+    def test_find_test_cases_diff(self):
+        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        commit = [c for c in Main.all_commits if c.hexsha == '14ef5aa7f71f2beb78f38227399ec4b3388b4127'][0]
+        test_report_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_2\target\surefire-reports\TEST-p_1.AssafTest.xml'
+        module_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_2'
+        Main.prepare_project_repo_for_testing(commit, module_path)
+        os.system('mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f '+module_path)
+        test = Main.test_parser.Class_Test(test_report_path,module_path)
+        expected_delta_testcase = [t for t in test.testcases if 'p_1.AssafTest#goo' in t.get_name()][0]
+        Main.prepare_project_repo_for_testing(commit.parents[0], module_path)
+        diff_testcases =Main.find_test_cases_diff(test, test.src_path)
+        self.assertTrue(expected_delta_testcase in diff_testcases)
+
+    def test_get_commit_created_testclasses(self):
+        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        commit = [c for c in Main.all_commits if c.hexsha == 'e00037324027af30134ee1554b93f5969f8f100e'][0]
+        test_report_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_1\target\surefire-reports\TEST-p_1.AmitTest.xml'
+        module_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_1'
+        Main.prepare_project_repo_for_testing(commit, module_path)
+        os.system(
+            'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
+        commit_tests = Main.test_parser.get_tests(module_path)
+        expected_delta_testclass = [t for t in commit_tests if 'p_1.AmitTest' in t.get_name()][0]
+        Main.prepare_project_repo_for_testing(commit.parents[0], module_path)
+        diff_testclasses = Main.get_commit_created_testclasses(commit_tests)
+        self.assertTrue(expected_delta_testclass in diff_testclasses)
 
 
     def test_say_hello(self):
