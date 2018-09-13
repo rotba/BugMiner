@@ -34,7 +34,7 @@ def main(argv):
     possible_bugs = extract_possible_bugs(bug_issues)
     for possible_bug in possible_bugs:
         try:
-            bugs = extract_bugs(possible_bug.issue, possible_bug.commit, possible_bug.tests)
+            bugs = extract_bugs(issue=possible_bug[0], commit=possible_bug[1], tests=possible_bug[2])
             bug_data_set.extend(bugs)
         except my_bug.BugError as e:
             logging.debug(e.msg)
@@ -78,21 +78,19 @@ def get_issue_commits(issue):
     for commit in all_commits:
         if is_associated_to_commit(issue,commit):
             ans.append(commit)
-    if len(ans) == 0:
-        raise my_bug.BugError('Couldn\'t find commits associated with ' + issue.key)
     return ans
 
 
 # Returns the commit that solved the bug
-def extract_bugs(issue, commit, issue_tests):
-    print("working on issue " + issue.key)
+def extract_bugs(issue, commit, tests):
+    logging.info("extract_bugs(): working on issue " + issue.key)
     ans = []
     module_dir = proj_dir
-    #if not issue_tests[0].get_module()=='':
+    #if not tests[0].get_module()=='':
     if False:
-        module_dir = issue_tests[0].get_module()
+        module_dir = tests[0].get_module()
     test_cmd = 'mvn surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
-    for test in issue_tests:
+    for test in tests:
         if not test_cmd.endswith('='):
             test_cmd += ','
         test_cmd += test.get_name()
@@ -128,11 +126,13 @@ def extract_bugs(issue, commit, issue_tests):
     for test in tests_after:
         if test not in tests_before:
             bug = my_bug.Bug(issue, commit, test, 'Created in commit')
+            logging.info("extract_bugs(): extracted bug " + str(bug))
             ans.append(bug)
         else:
             test_before = [t for t in tests_before if t==test][0]
             if not test_before.passed():
                 bug = my_bug.Bug(issue, commit, test, 'Fixed in commit')
+                logging.info("extract_bugs(): extracted bug:\n " + str(bug))
                 ans.append(bug)
     return ans
 
@@ -140,19 +140,19 @@ def extract_bugs(issue, commit, issue_tests):
 def extract_possible_bugs(bug_issues):
     ans = []
     for bug_issue in bug_issues:
-        print("working on issue "+bug_issue.key)
+        logging.info("extract_possible_bugs(): working on issue " + bug_issue.key)
         issue_tests = []
-        try:
-            issue_tests.append(get_tests_from_issue_text(bug_issue))
-            issue_commits = get_issue_commits(bug_issue)
-            for commit in issue_commits:
-                issue_tests.append(get_tests_from_commit(commit))
-                if len(issue_tests) == 0:
-                    raise my_bug.BugError(
-                        'Didn\'t associate ' + bug_issue.key + ' with a test')
-                ans.append(my_bug.Bug(bug_issue, commit, issue_tests, ''))
-        except my_bug.BugError as e:
-            logging.debug(e.msg)
+        issue_tests+=get_tests_from_issue_text(bug_issue)
+        issue_commits = get_issue_commits(bug_issue)
+        if len(issue_commits) ==0:
+            logging.debug('Couldn\'t find commits associated with ' + bug_issue.key)
+            continue
+        for commit in issue_commits:
+            issue_tests+=get_tests_from_commit(commit)
+            if len(issue_tests) == 0:
+                logging.info('Didn\'t associate ' + bug_issue.key + ' with any test')
+                continue
+            ans.append( (bug_issue, commit, issue_tests ) )
     return ans
 
 # Return list of words in text that contains test words
@@ -188,7 +188,8 @@ def get_tests_from_commit(commit):
     return ans
 
 def say_hello():
-    return 'hello'
+    logging.info('hey')
+    logging.info('brother')
 
 def set_up(git_url):
     global all_commits

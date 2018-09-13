@@ -1,15 +1,11 @@
 class Bug(object):
-    def __init__(self, issue, commit, tests, desc):
+    def __init__(self, issue, commit, test, desc):
         self.issue = issue
         self.commit = commit
-        self.tests = tests
+        self.test = test
         self.desc = desc
     def __str__(self):
-        str =  'description: '+self.desc+'\n'+'issue: '+self.issue.key+'\n'+'commit: '+self.commit.hexsha+'\n'
-        'tests: '
-        for test in self.tests:
-            str+='\n\t'+test.get_name()
-        return str
+        return 'description: '+self.desc+'\n'+'issue: '+self.issue.key+'\n'+'commit: '+self.commit.hexsha+'\n'+'test: '+self.test.get_name()
 
 class BugError(Exception):
     def __init__(self, msg):
