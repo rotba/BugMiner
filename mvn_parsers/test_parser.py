@@ -92,6 +92,10 @@ class Method_Test(object):
         return self.test_passed
     def passed(self):
         return self.passed()
+    def get_src_path(self):
+        return self.parent.src_path
+    def get_module(self):
+        return self.parent.get_module()
     def __repr__(self):
         return str(self.get_name())
     def __eq__(self, other):
@@ -119,6 +123,13 @@ def get_tests(project_dir):
         if os.path.isdir(file_abs_path):
             if not (filename=='src' or  filename=='.git'):
                 ans.extend(get_tests(file_abs_path))
+    return ans
+
+#Returns all testcases of given test classes
+def get_testcases(test_classes):
+    ans = []
+    for test_class in test_classes:
+        ans+= test_class.get_testcases()
     return ans
 
 def export_as_csv(tests):

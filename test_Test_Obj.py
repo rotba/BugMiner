@@ -1,6 +1,6 @@
 import os
 import unittest
-from mvn_reports_tests import test_parser
+from mvn_parsers import test_parser
 
 
 class TestTest_Obj(unittest.TestCase):

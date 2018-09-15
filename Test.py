@@ -2,7 +2,7 @@ import os
 import sys
 import unittest
 import Main
-
+from functools import reduce
 class TestMain(unittest.TestCase):
 
     def setUp(self):
@@ -189,9 +189,48 @@ class TestMain(unittest.TestCase):
         diff_testclasses = Main.get_commit_created_testclasses(commit_tests)
         self.assertTrue(expected_delta_testclass in diff_testclasses)
 
+    def test_patch_tescases(self):
+        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        commit = [c for c in Main.all_commits if c.hexsha == 'e00037324027af30134ee1554b93f5969f8f100e'][0]
+        parent = commit.parents[0]
+        test_report_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_1\target\surefire-reports\TEST-p_1.AmitTest.xml'
+        module_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_1'
+        Main.prepare_project_repo_for_testing(commit, module_path)
+        os.system(
+            'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
+        commit_tests = Main.test_parser.get_tests(module_path)
+        commit_testcases = Main.test_parser.get_testcases(commit_tests)
+        expected_delta_testcase = [t for t in commit_testcases if 'p_1.AmitTest#hoo' in t.get_name()][0]
+        Main.prepare_project_repo_for_testing(parent, module_path)
+        patched_tests = Main.patch_testcases(commit_testcases, commit, parent)
+        os.system(
+            'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
+        parent_tests = Main.test_parser.get_tests(module_path)
+        parent_testcases=Main.test_parser.get_testcases(parent_tests)
+        self.assertTrue(expected_delta_testcase in parent_testcases, "'p_1.AmitTest should have been patchd on the parent commit and exist")
+
 
     def test_say_hello(self):
         self.assertEqual(Main.say_hello(), 'hello')
+
+
+    def test_test_patch_tescases_not_compiling_testcases(self):
+        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        commit = [c for c in Main.all_commits if c.hexsha == 'a71cdc161b0d87e7ee808f5078ed5fefab758773'][0]
+        parent = commit.parents[0]
+        test_report_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_1\target\surefire-reports\TEST-p_1.AmitTest.xml'
+        module_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_1'
+        Main.prepare_project_repo_for_testing(commit, module_path)
+        os.system(
+            'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
+        commit_tests = Main.test_parser.get_tests(module_path)
+        commit_testcases = Main.test_parser.get_testcases(commit_tests)
+        expected_not_compiling_testcase = [t for t in commit_testcases if 'MainTest#gooTest' in t.get_name()][0]
+        commit_new_testcases = Main.get_commit_created_testcases(commit_tests)
+        Main.prepare_project_repo_for_testing(parent, module_path)
+        patched_testcases = Main.patch_testcases(commit_testcases, commit, parent)
+        self.assertTrue(not expected_not_compiling_testcase in list(commit_new_testcases-patched_testcases), "'p_1.MainTest#gooTest should have been picked as for compilation error")
+
 
 
 if __name__ == '__main__':
