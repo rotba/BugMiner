@@ -40,7 +40,8 @@ class Class_Test:
     def passed(self):
         return len(self.failed_testcases)==0
     def get_module(self):
-        return self.module_path
+        #return self.module_path
+        return r'C:\Users\user\Code\Python\BugMiner\tested_project\tika'
     def parse_src_path(self):
         ans = self.module_path
         ans+='\\src\\test\\java'

@@ -48,12 +48,13 @@ def main(argv):
 
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
 def extract_bugs(issue, commit, tests):
-    logging.info("extract_bugs(): working on issue " +' in commit '+commit.hexsha)
+    logging.info("extract_bugs(): working on issue " +issue.key+' in commit '+commit.hexsha)
     ans = []
     invalid_bugs = []
     parent = get_parent(commit)
     if parent == None:
         return ans
+    repo.git.checkout(commit)
     commit_testcases = test_parser.get_testcases(tests)
     dict_modules_testcases = divide_to_modules(commit_testcases)
     for module in dict_modules_testcases:
@@ -71,6 +72,8 @@ def extract_bugs(issue, commit, tests):
         lost_bug_testcases= [t for t in dict_modules_testcases[module] if not t.get_parent() in invalid_testclasses]
         invalid_bugs += list(map(
             lambda t: my_bug.Bug(issue, commit, t, 'Invalid: testcase is a part of file containing test case that generated compilation error'),lost_bug_testcases))
+        for bug in invalid_bugs:
+            logging.info('Extracted invalid bug:\n' + str(bug))
         ##should be removed in better versions
         os.system(test_cmd)
         parent_tests = test_parser.get_tests(module)
@@ -81,9 +84,11 @@ def extract_bugs(issue, commit, tests):
                 if testcase.passed() and not parent_testcase.passed():
                     if testcase in commit_new_testcases:
                         bug = my_bug.Bug(issue, commit, testcase, my_bug.created_msg)
+                        logging.info('Extracted bug:\n'+str(bug))
                         ans.append(bug)
                     else:
                         bug = my_bug.Bug(issue, commit, testcase, my_bug.regression_msg)
+                        logging.info('Extracted bug:\n' + str(bug))
                         ans.append(bug)
     return ans
 
@@ -94,7 +99,7 @@ def extract_possible_bugs(bug_issues):
     for bug_issue in bug_issues:
         logging.info("extract_possible_bugs(): working on issue " + bug_issue.key)
         issue_tests = []
-        issue_tests += get_tests_from_issue_text(bug_issue)
+        #issue_tests += get_tests_from_issue_text(bug_issue)
         issue_commits = get_issue_commits(bug_issue)
         if len(issue_commits) == 0:
             logging.debug('Couldn\'t find commits associated with ' + bug_issue.key)
@@ -157,6 +162,16 @@ def patch_testcases(commit_testcases, commit, prev_commit):
         repo.git.execute(['git', 'apply', '-R', dict_diff_patch[diff]])
         ans.remove(testcase)
     return ans
+
+
+# Creates patch representing the changes occured in file between commit and prev_commit
+def generate_patch(git_dir, prev_commit, commit, file, patch_name):
+    path_to_patch = patches_dir + '//' + patch_name + '.patch'
+    os.chdir(proj_dir)
+    cmd = ' '.join(['git', 'diff', prev_commit.hexsha, commit.hexsha, file, '>', path_to_patch])
+    os.system(cmd)
+    os.chdir(orig_wd)
+    return path_to_patch
 
 
 # returns list of patches that didn't compile from
@@ -373,16 +388,6 @@ def get_associated_test_case(diff, testcases):
 # Returns the files generated compilation error in the maven build report
 def end_of_compilation_errors(line):
     return '[INFO] -------------------------------------------------------------' in line
-
-
-# Creates patch representing the changes occured in file between commit and prev_commit
-def generate_patch(git_dir, prev_commit, commit, file, patch_name):
-    path_to_patch = patches_dir + '//' + patch_name + '.patch'
-    os.chdir(proj_dir)
-    cmd = ' '.join(['git', 'diff', prev_commit.hexsha, commit.hexsha, file, '>', path_to_patch])
-    os.system(cmd)
-    os.chdir(orig_wd)
-    return path_to_patch
 
 
 # Returns true iff the given report line is a report of compilation error

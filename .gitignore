@@ -36,7 +36,6 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
-Test.py
 htmlcov/
 .tox/
 .coverage
@@ -105,7 +104,6 @@ venv.bak/
 .mypy_cache/
 
 # tested proj files
-tested_project/
 cache/
 
 # log
