@@ -88,14 +88,16 @@ class Method_Test(object):
         return self.time
     def get_name(self):
         return self.parent.get_name()+'#'+self.name
-    def get_test_passed(self):
-        return self.test_passed
+    def get_class_relative_name(self):
+        return self.name
     def passed(self):
-        return self.passed()
+        return self.test_passed
     def get_src_path(self):
         return self.parent.src_path
     def get_module(self):
         return self.parent.get_module()
+    def get_parent(self):
+        return self.parent
     def __repr__(self):
         return str(self.get_name())
     def __eq__(self, other):
@@ -123,6 +125,20 @@ def get_tests(project_dir):
         if os.path.isdir(file_abs_path):
             if not (filename=='src' or  filename=='.git'):
                 ans.extend(get_tests(file_abs_path))
+    return ans
+
+#Gets path to maven project directory and returns parsed
+def get_cached_tests(cached_proj_dir ,project_dir):
+    ans = []
+    path_to_reports = os.path.join(cached_proj_dir, 'target\\surefire-reports')
+    if os.path.isdir(path_to_reports):
+        ans.extend(parse_tests(path_to_reports, project_dir))
+    for filename in os.listdir(cached_proj_dir):
+        file_abs_path = os.path.join(cached_proj_dir, filename)
+        project_dir_abs_path = os.path.join(project_dir, filename)
+        if os.path.isdir(file_abs_path):
+            if not (filename=='src' or  filename=='.git'):
+                ans.extend(get_cached_tests(file_abs_path, project_dir_abs_path))
     return ans
 
 #Returns all testcases of given test classes

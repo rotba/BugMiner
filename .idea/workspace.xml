@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Main.py" line="226" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/static_files/test_get_compilation_error_testcases_report.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bug/bug.py" beforeDir="false" afterPath="$PROJECT_DIR$/bug/bug.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cache/all_tests.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/cache/all_tests.pkl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvn_reports_tests/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/test_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/test_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_Test_Obj.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_Test_Obj.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/BugMinerTest$Test.coverage" NAME="Test Coverage Results" MODIFIED="1537039913103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMinerTest$Test.coverage" NAME="Test Coverage Results" MODIFIED="1537109490835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$tmp.coverage" NAME="tmp Coverage Results" MODIFIED="1536665877421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMinerTest$Main.coverage" NAME="Main Coverage Results" MODIFIED="1536774680671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMinerTest$Test_test_parser.coverage" NAME="Test_test_parser Coverage Results" MODIFIED="1536854063542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -79,22 +77,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="23" />
+          <entry key="py" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="23" />
+          <entry key="Python" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="10362" />
+          <entry key="py" value="14421" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="10362" />
+          <entry key="Python" value="14421" />
         </counts>
       </usages-collector>
     </session>
@@ -104,12 +102,38 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="318" selection-start-line="318" selection-end-line="318" />
+            <state relative-caret-position="-1146">
+              <caret line="376" selection-start-line="376" selection-end-line="376" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <marker date="1537039913055" expanded="true" signature="7671:7672" ph="..." />
-                <marker date="1537039913055" expanded="true" signature="13700:13889" ph="..." />
+                <element signature="e#3810#4529#0" />
+                <element signature="e#4680#5224#0" />
+                <element signature="e#5381#5509#0" />
+                <element signature="e#5607#6615#0" />
+                <element signature="e#6721#7032#0" />
+                <element signature="e#7140#7892#0" />
+                <element signature="e#4667#4999#0" />
+                <element signature="e#1442#2216#0" />
+                <element signature="e#2397#2532#0" />
+                <element signature="e#6132#6425#0" />
+                <element signature="e#6508#6725#0" />
+                <element signature="e#6818#7070#0" />
+                <element signature="e#7193#7435#0" />
+                <element signature="e#7529#7746#0" />
+                <element signature="e#8601#8767#0" />
+                <element signature="e#8900#9630#0" />
+                <element signature="e#10697#10752#0" />
+                <element signature="e#11505#11981#0" />
+                <element signature="e#11527#11686#0" />
+                <element signature="e#11716#11868#0" />
+                <element signature="e#12005#12083#0" />
+                <element signature="e#14027#14051#0" />
+                <element signature="e#14287#14657#0" />
+                <element signature="e#14642#14667#0" />
+                <element signature="e#15423#15766#0" />
+                <marker date="1537109490815" expanded="true" signature="10967:10968" ph="..." />
+                <marker date="1537109490815" expanded="true" signature="11356:11436" ph="..." />
+                <marker date="1537109490815" expanded="true" signature="14313:15270" ph="..." />
               </folding>
             </state>
           </provider>
@@ -118,13 +142,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="230" selection-start-line="230" selection-end-line="230" />
+            <state relative-caret-position="-958">
+              <caret line="128" column="4" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="34" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
-                <marker date="1537039149173" expanded="true" signature="7841:7842" ph="..." />
-                <marker date="1537039149173" expanded="true" signature="7841:11512" ph="..." />
+                <marker date="1537107855509" expanded="true" signature="7869:7870" ph="..." />
+                <marker date="1537107855509" expanded="true" signature="7869:11623" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/bug/bug.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="17" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -132,21 +165,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="95" selection-start-line="95" selection-end-line="95" />
+            <state relative-caret-position="253">
+              <caret line="138" selection-start-line="138" selection-end-line="138" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
-                <marker date="1537000809070" expanded="true" signature="1483:1672" ph="..." />
+                <marker date="1537101010914" expanded="true" signature="1483:1672" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -165,7 +189,6 @@
       <find>Bug</find>
       <find>issue_1378</find>
       <find>git_dir</find>
-      <find>open</find>
       <find>bug</find>
       <find>testcase</find>
       <find>test_after</find>
@@ -177,6 +200,17 @@
       <find>mvn_reports_tests</find>
       <find>prepare_project_repo_for_testing</find>
       <find>patch_testcases</find>
+      <find>open</find>
+      <find>map</find>
+      <find>divide_to_modules</find>
+      <find>find_test_cases_diff</find>
+      <find>for path, node in tree.filter(javalang.tree.ClassDeclaration):</find>
+      <find>node</find>
+      <find>get_tests_from_commit</find>
+      <find>is_test_file</find>
+      <find>all_tests</find>
+      <find>get_commit_created_testcases</find>
+      <find>get_compilation_error_testcases</find>
     </findStrings>
     <replaceStrings>
       <replace>issue_1378</replace>
@@ -202,11 +236,11 @@
         <option value="$PROJECT_DIR$/tmp.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/WatchResults.py" />
-        <option value="$PROJECT_DIR$/bug/bug.py" />
         <option value="$PROJECT_DIR$/mvn_reports_tests/test_Test_Obj.py" />
         <option value="$PROJECT_DIR$/test_Test_Obj.py" />
         <option value="$PROJECT_DIR$/mvn_reports_tests/test_parser.py" />
         <option value="$PROJECT_DIR$/mvn_parsers/compilation_error_parses.py" />
+        <option value="$PROJECT_DIR$/bug/bug.py" />
         <option value="$PROJECT_DIR$/mvn_parsers/test_parser.py" />
         <option value="$PROJECT_DIR$/Test.py" />
         <option value="$PROJECT_DIR$/Main.py" />
@@ -241,7 +275,7 @@
             <path>
               <item name="BugMinerTest" type="b2602c69:ProjectViewProjectNode" />
               <item name="BugMinerTest" type="462c0819:PsiDirectoryNode" />
-              <item name="mvn_parsers" type="462c0819:PsiDirectoryNode" />
+              <item name="bug" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -310,7 +344,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test.py" />
-      <option name="PARAMETERS" value="TestMain.test_test_patch_tescases_not_compiling_testcases" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -383,15 +417,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15506808" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10927505" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8698941" weight="0.31751227" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49621785" visible="true" weight="0.4140753" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8698941" visible="true" weight="0.31744313" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49621785" weight="0.5092091" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -424,20 +459,11 @@
     </ignored-roots>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>379</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>329</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="all_tests" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
@@ -449,37 +475,47 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>commit.diff(prev_commit)</expression-string>
+        <expression-string>commit.stats.files.keys()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>n_path in n_test_path</expression-string>
+        <expression-string>all_tests</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>path in test_path</expression-string>
+        <expression-string>testcase.get_name()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>repo</expression-string>
+        <expression-string>dict_diff_patch[diff]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>data</expression-string>
+        <expression-string>diff</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>data = data[1]</expression-string>
+        <expression-string>uncompiled_testcases</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>data = data[:10]</expression-string>
+        <expression-string>ans</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>list(set(ans) - set(uncompiled_testcases))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>list(ans - uncompiled_testcases)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -531,13 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33014">
           <caret line="1944" column="4" selection-start-line="1944" selection-start-column="4" selection-end-line="1944" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bug/bug.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -593,13 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="614" selection-start-line="614" selection-end-line="614" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -614,37 +636,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/subprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="838" selection-start-line="838" selection-end-line="838" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/diff/filediff.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="614" selection-start-line="614" selection-end-line="614" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bug/bug.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="213" selection-start-line="213" selection-end-line="213" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        <state relative-caret-position="253">
+          <caret line="138" selection-start-line="138" selection-end-line="138" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
-            <marker date="1537000809070" expanded="true" signature="1483:1672" ph="..." />
+            <marker date="1537101010914" expanded="true" signature="1483:1672" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="230" selection-start-line="230" selection-end-line="230" />
+        <state relative-caret-position="-958">
+          <caret line="128" column="4" selection-start-line="128" selection-start-column="4" selection-end-line="128" selection-end-column="34" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
-            <marker date="1537039149173" expanded="true" signature="7841:7842" ph="..." />
-            <marker date="1537039149173" expanded="true" signature="7841:11512" ph="..." />
+            <marker date="1537107855509" expanded="true" signature="7869:7870" ph="..." />
+            <marker date="1537107855509" expanded="true" signature="7869:11623" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="318" selection-start-line="318" selection-end-line="318" />
+        <state relative-caret-position="-1146">
+          <caret line="376" selection-start-line="376" selection-end-line="376" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <marker date="1537039913055" expanded="true" signature="7671:7672" ph="..." />
-            <marker date="1537039913055" expanded="true" signature="13700:13889" ph="..." />
+            <element signature="e#3810#4529#0" />
+            <element signature="e#4680#5224#0" />
+            <element signature="e#5381#5509#0" />
+            <element signature="e#5607#6615#0" />
+            <element signature="e#6721#7032#0" />
+            <element signature="e#7140#7892#0" />
+            <element signature="e#4667#4999#0" />
+            <element signature="e#1442#2216#0" />
+            <element signature="e#2397#2532#0" />
+            <element signature="e#6132#6425#0" />
+            <element signature="e#6508#6725#0" />
+            <element signature="e#6818#7070#0" />
+            <element signature="e#7193#7435#0" />
+            <element signature="e#7529#7746#0" />
+            <element signature="e#8601#8767#0" />
+            <element signature="e#8900#9630#0" />
+            <element signature="e#10697#10752#0" />
+            <element signature="e#11505#11981#0" />
+            <element signature="e#11527#11686#0" />
+            <element signature="e#11716#11868#0" />
+            <element signature="e#12005#12083#0" />
+            <element signature="e#14027#14051#0" />
+            <element signature="e#14287#14657#0" />
+            <element signature="e#14642#14667#0" />
+            <element signature="e#15423#15766#0" />
+            <marker date="1537109490815" expanded="true" signature="10967:10968" ph="..." />
+            <marker date="1537109490815" expanded="true" signature="11356:11436" ph="..." />
+            <marker date="1537109490815" expanded="true" signature="14313:15270" ph="..." />
           </folding>
         </state>
       </provider>

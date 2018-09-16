@@ -12,3 +12,7 @@ class BugError(Exception):
         self.msg = msg
     def __str__(self):
         return repr(self.value)
+
+created_msg = 'Created in commit'
+regression_msg = 'Regression test bug'
+invalid_msg = 'Invalid: testcase generated compilation error when patched'
