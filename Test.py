@@ -165,8 +165,8 @@ class TestMain(unittest.TestCase):
         print('test_find_test_cases_diff')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
         commit = [c for c in Main.all_commits if c.hexsha == '14ef5aa7f71f2beb78f38227399ec4b3388b4127'][0]
-        test_report_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_2\target\surefire-reports\TEST-p_1.AssafTest.xml'
-        module_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_2'
+        test_report_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_2\target\surefire-reports\TEST-p_1.AssafTest.xml'
+        module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_2'
         Main.prepare_project_repo_for_testing(commit, module_path)
         os.system('mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f '+module_path)
         test = Main.test_parser.Class_Test(test_report_path,module_path)
@@ -179,8 +179,8 @@ class TestMain(unittest.TestCase):
         print('test_get_commit_created_testclasses')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
         commit = [c for c in Main.all_commits if c.hexsha == 'e00037324027af30134ee1554b93f5969f8f100e'][0]
-        test_report_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_1\target\surefire-reports\TEST-p_1.AmitTest.xml'
-        module_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_1'
+        test_report_path = os.getcwd()+'r\tested_project\GitMavenTrackingProject\sub_mod_1\target\surefire-reports\TEST-p_1.AmitTest.xml'
+        module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1'
         Main.prepare_project_repo_for_testing(commit, module_path)
         os.system(
             'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
@@ -195,8 +195,8 @@ class TestMain(unittest.TestCase):
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
         commit = [c for c in Main.all_commits if c.hexsha == 'e00037324027af30134ee1554b93f5969f8f100e'][0]
         parent = commit.parents[0]
-        test_report_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_1\target\surefire-reports\TEST-p_1.AmitTest.xml'
-        module_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_1'
+        test_report_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1\target\surefire-reports\TEST-p_1.AmitTest.xml'
+        module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1'
         Main.prepare_project_repo_for_testing(commit, module_path)
         os.system(
             'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
@@ -217,8 +217,8 @@ class TestMain(unittest.TestCase):
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
         commit = [c for c in Main.all_commits if c.hexsha == 'a71cdc161b0d87e7ee808f5078ed5fefab758773'][0]
         parent = commit.parents[0]
-        test_report_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_1\target\surefire-reports\TEST-p_1.AmitTest.xml'
-        module_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_1'
+        test_report_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1\target\surefire-reports\TEST-p_1.AmitTest.xml'
+        module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1'
         Main.prepare_project_repo_for_testing(commit, module_path)
         os.system(
             'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
@@ -242,12 +242,12 @@ class TestMain(unittest.TestCase):
     def test_get_compilation_error_testcases(self):
         print('test_get_compilation_error_testcases')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
-        with open(r'C:\Users\user\Code\Python\BugMinerTest\static_files\test_get_compilation_error_testcases_report.txt','r') as report_file:
+        with open(os.getcwd()+r'\static_files\test_get_compilation_error_testcases_report.txt','r') as report_file:
             report = report_file.read()
         commit = [c for c in Main.all_commits if c.hexsha == 'a71cdc161b0d87e7ee808f5078ed5fefab758773'][0]
         parent = commit.parents[0]
-        cached_module_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject_installed\sub_mod_1'
-        module_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_1'
+        cached_module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject_installed\sub_mod_1'
+        module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1'
         commit_tests = Main.test_parser.get_cached_tests(cached_module_path, module_path)
         commit_testcases = Main.test_parser.get_testcases(commit_tests)
         expected_not_compiling_testcase = [t for t in commit_testcases if 'MainTest#gooTest' in t.get_name()][0]
@@ -257,14 +257,14 @@ class TestMain(unittest.TestCase):
         self.assertTrue(expected_not_compiling_testcase in compolation_error_testcases,
                         "'MainTest#gooTest should have been picked as for compilation error")
 
-    @unittest.skip("Long test")
+
     def test_extract_bugs(self):
         print('test_extract_bugs')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
-        exp_test_src_patch = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_1\src\test\java\MainTest.java'
+        exp_test_src_patch = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1\src\test\java\MainTest.java'
         commit = [c for c in Main.all_commits if c.hexsha == '1fd244f006c96fa820efa850f5f31e3f9a727d84'][0]
-        cached_module_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject_installed'
-        module_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject'
+        cached_module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject_installed'
+        module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject'
         tests = Main.test_parser.get_cached_tests(cached_module_path,module_path)
         commit_tests = list(filter(lambda t: 'NaimTest' in t.get_name() or 'MainTest' in t.get_name(), tests))
         res = Main.extract_bugs(None, commit, commit_tests)
@@ -276,11 +276,11 @@ class TestMain(unittest.TestCase):
     def test_get_commit_created_testcases(self):
         print('test_get_commit_created_testcases')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
-        exp_test_src_patch = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject\sub_mod_1\src\test\java\MainTest.java'
+        exp_test_src_patch = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1\src\test\java\MainTest.java'
         commit = [c for c in Main.all_commits if c.hexsha == '1fd244f006c96fa820efa850f5f31e3f9a727d84'][0]
         parent = commit.parents[0]
-        cached_module_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject_installed'
-        module_path = r'C:\Users\user\Code\Python\BugMinerTest\tested_project\GitMavenTrackingProject'
+        cached_module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject_installed'
+        module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject'
         tests = Main.test_parser.get_cached_tests(cached_module_path, module_path)
         testcases = Main.test_parser.get_testcases(tests)
         Main.prepare_project_repo_for_testing(parent, module_path)
