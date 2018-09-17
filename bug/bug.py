@@ -5,7 +5,7 @@ class Bug(object):
         self.test = test
         self.desc = desc
     def __str__(self):
-        return 'description: '+self.desc+'\n'+'issue: '+self.issue.key+'\n'+'commit: '+self.commit.hexsha+'\n'+'test: '+self.test.get_name()
+        return 'description: '+self.desc+'\n'+'issue: '+self.issue.key+'\n'+'commit: '+self.commit.hexsha+'\n'+'test: '+self.test.get_mvn_name()
 
 class BugError(Exception):
     def __init__(self, msg):

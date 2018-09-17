@@ -20,7 +20,7 @@ class TestMain(unittest.TestCase):
         except Main.bug.BugError as e:
             self.fail('get_issue_tests() did not associate TIKA-1378 with HtmlEncodingDetectorTest')
         for test in tests:
-            if 'MicrosoftTranslatorTest' in test.get_name():
+            if 'MicrosoftTranslatorTest' in test.get_mvn_name():
                 return
         self.fail('get_issue_tests() did not associate TIKA-1378 with HtmlEncodingDetectorTest' )
 
@@ -39,11 +39,11 @@ class TestMain(unittest.TestCase):
         self.fail('get_issue_commits() did not associate TIKA-1378 with commit 65aea2b06b33c6b53999b6c52e017c38bf2af0b4' )
 
     @unittest.skip("Long test")
-    def test_issue_1378_get_tests_from_commit(self):
+    def test_issue_1378_check_out_and_get_tests_from_commit(self):
         Main.set_up('https://github.com/apache/tika')
         self.issue_1378 = Main.jira.issue('TIKA-1378')
         commit = Main.repo.commit('65aea2b06b33c6b53999b6c52e017c38bf2af0b4')
-        res_tests = Main.get_tests_from_commit(commit)
+        res_tests = Main.check_out_and_get_tests_from_commit(commit)
         for test in res_tests:
             if commit.get_name() == '65aea2b06b33c6b53999b6c52e017c38bf2af0b4':
                 return
@@ -74,7 +74,7 @@ class TestMain(unittest.TestCase):
         except Main.bug.BugError as e:
             self.fail('get_issue_tests() did not associate TIKA-19 with TestParsers')
         for test in tests:
-            if 'TestParsers' in test.get_name():
+            if 'TestParsers' in test.get_mvn_name():
                 return
         self.fail('get_issue_tests() did not associate TIKA-19 with TestParsers' )
 
@@ -104,7 +104,7 @@ class TestMain(unittest.TestCase):
         tests = Main.get_issue_tests(issue)
         bugs = Main.extract_bugs(issue, commits[0], tests)
         for bug in bugs:
-            if bug.commit.hexsha=='d7dabee5ce14240f3c5ba2f6147c963d03604dd3' and 'TestParsers' in bug.test.get_name():
+            if bug.commit.hexsha=='d7dabee5ce14240f3c5ba2f6147c963d03604dd3' and 'TestParsers' in bug.test.get_mvn_name():
                 return
         self.fail('get_fixes() did not associate commit d7dabee5ce14240f3c5ba2f6147c963d03604dd3 with TestParsers' )
 
@@ -134,30 +134,31 @@ class TestMain(unittest.TestCase):
         all_commits = Main.all_commits
         all_tests = Main.all_tests
         commit = [c for c in all_commits if c.hexsha==commit_test_pass_hash][0]
-        test = [t for t in all_tests if t.get_name() == 'NaimTest'][0]
+        test = [t for t in all_tests if t.get_mvn_name() == 'NaimTest'][0]
         diffs = Main.get_diffs(commit, test)
         x=1
 
 
-    def test_get_tests_from_commit(self):
-        print('test_get_tests_from_commit')
+    def test_check_out_and_get_tests_from_commit(self):
+        print('test_check_out_and_get_tests_from_commit')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
         commit = [c for c in Main.all_commits if c.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b'][0]
-        tests = Main.get_tests_from_commit(commit)
+        tests = Main.check_out_and_get_tests_from_commit(commit)
         self.assertEqual(len(tests), 1,
                          'Only one test should be associated with 52e80f56a2f2877ff2261889b1dc180c51b72f6b')
-        self.assertTrue('NaimTest' in tests[0].get_name(),
+        self.assertTrue('NaimTest' in tests[0].get_mvn_name(),
                          '\'NaimTest\' should be associated with 52e80f56a2f2877ff2261889b1dc180c51b72f6b')
 
+    @unittest.skip("Null test")
     def test_created_test_extract_bugs(self):
         print('test_created_test_extract_bugs')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
         self.issue_19 = Main.jira.issue('TIKA-19')
         commit = [c for c in Main.all_commits if c.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b'][0]
-        tests = Main.get_tests_from_commit(commit)
+        tests = Main.check_out_and_get_tests_from_commit(commit)
         res = Main.extract_bugs(self.issue_19, commit, tests)
         for bug in res:
-            if bug.commit.hexsha =='52e80f56a2f2877ff2261889b1dc180c51b72f6b' and 'NaimTest#newGooTest' in bug.test.get_name() and bug.msg =='Created in test':
+            if bug.commit.hexsha =='52e80f56a2f2877ff2261889b1dc180c51b72f6b' and 'NaimTest#newGooTest' in bug.test.get_mvn_name() and bug.msg =='Created in test':
                 return
         self.fail('Did not extracted bug : created test - \'NaimTest#newGooTest\'')
 
@@ -165,14 +166,14 @@ class TestMain(unittest.TestCase):
         print('test_find_test_cases_diff')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
         commit = [c for c in Main.all_commits if c.hexsha == '14ef5aa7f71f2beb78f38227399ec4b3388b4127'][0]
-        test_report_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_2\target\surefire-reports\TEST-p_1.AssafTest.xml'
+        test_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_2\src\test\java\p_1\AssafTest.java'
         module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_2'
         Main.prepare_project_repo_for_testing(commit, module_path)
         os.system('mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f '+module_path)
-        test = Main.test_parser.TestClass(test_report_path, module_path)
-        expected_delta_testcase = [t for t in test.testcases if 'p_1.AssafTest#goo' in t.get_name()][0]
+        test = Main.test_parser.TestClass(test_path)
+        expected_delta_testcase = [t for t in test.testcases if 'p_1.AssafTest#goo' in t.get_mvn_name()][0]
         Main.prepare_project_repo_for_testing(commit.parents[0], module_path)
-        diff_testcases =Main.find_test_cases_diff(test, test.src_path)
+        diff_testcases =Main.find_test_cases_diff(test, test.get_path())
         self.assertTrue(expected_delta_testcase in diff_testcases)
 
     def test_get_commit_created_testclasses(self):
@@ -185,7 +186,7 @@ class TestMain(unittest.TestCase):
         os.system(
             'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
         commit_tests = Main.test_parser.get_tests(module_path)
-        expected_delta_testclass = [t for t in commit_tests if 'p_1.AmitTest' in t.get_name()][0]
+        expected_delta_testclass = [t for t in commit_tests if 'p_1.AmitTest' in t.get_mvn_name()][0]
         Main.prepare_project_repo_for_testing(commit.parents[0], module_path)
         diff_testclasses = Main.get_commit_created_testclasses(commit_tests)
         self.assertTrue(expected_delta_testclass in diff_testclasses)
@@ -202,7 +203,7 @@ class TestMain(unittest.TestCase):
             'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
         commit_tests = Main.test_parser.get_tests(module_path)
         commit_testcases = Main.test_parser.get_testcases(commit_tests)
-        expected_delta_testcase = [t for t in commit_testcases if 'p_1.AmitTest#hoo' in t.get_name()][0]
+        expected_delta_testcase = [t for t in commit_testcases if 'p_1.AmitTest#hoo' in t.get_mvn_name()][0]
         Main.prepare_project_repo_for_testing(parent, module_path)
         patched_tests = Main.patch_testcases(commit_testcases, commit, parent)
         os.system(
@@ -217,26 +218,25 @@ class TestMain(unittest.TestCase):
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
         commit = [c for c in Main.all_commits if c.hexsha == 'a71cdc161b0d87e7ee808f5078ed5fefab758773'][0]
         parent = commit.parents[0]
-        test_report_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1\target\surefire-reports\TEST-p_1.AmitTest.xml'
         module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1'
         Main.prepare_project_repo_for_testing(commit, module_path)
         os.system(
             'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
         commit_tests = Main.test_parser.get_tests(module_path)
         commit_testcases = Main.test_parser.get_testcases(commit_tests)
-        expected_not_compiling_testcase = [t for t in commit_testcases if 'MainTest#gooTest' in t.get_name()][0]
+        expected_not_compiling_testcase = [t for t in commit_testcases if 'MainTest#gooTest' in t.get_mvn_name()][0]
         commit_new_testcases = Main.get_commit_created_testcases(commit_testcases)
         Main.prepare_project_repo_for_testing(parent, module_path)
         patched_testcases = Main.patch_testcases(commit_testcases, commit, parent)
         not_compiling_testcases = [t for t in commit_new_testcases if not t in patched_testcases]
-        self.assertTrue(not expected_not_compiling_testcase in not_compiling_testcases, "'p_1.MainTest#gooTest should have been picked as for compilation error")
+        self.assertTrue(not expected_not_compiling_testcase in not_compiling_testcases, "'MainTest#gooTest should have been picked as for compilation error")
         os.system(
             'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
         parent_tests = Main.test_parser.get_tests(module_path)
         parent_testcases = Main.test_parser.get_testcases(parent_tests)
         self.assertTrue(len(parent_testcases)>0,
                         'Build probably failed')
-        self.assertTrue(not expected_not_compiling_testcase in parent_testcases, expected_not_compiling_testcase.get_name()+' shoukd have been unpatched')
+        self.assertTrue(not expected_not_compiling_testcase in parent_testcases, expected_not_compiling_testcase.get_mvn_name()+' should have been unpatched')
 
 
     def test_get_compilation_error_testcases(self):
@@ -246,27 +246,29 @@ class TestMain(unittest.TestCase):
             report = report_file.read()
         commit = [c for c in Main.all_commits if c.hexsha == 'a71cdc161b0d87e7ee808f5078ed5fefab758773'][0]
         parent = commit.parents[0]
-        cached_module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject_installed\sub_mod_1'
         module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1'
-        commit_tests = Main.test_parser.get_cached_tests(cached_module_path, module_path)
+        Main.repo.git.reset('--hard')
+        Main.repo.git.checkout(commit.hexsha)
+        commit_tests = Main.test_parser.get_tests(module_path)
         commit_testcases = Main.test_parser.get_testcases(commit_tests)
-        expected_not_compiling_testcase = [t for t in commit_testcases if 'MainTest#gooTest' in t.get_name()][0]
+        expected_not_compiling_testcase = [t for t in commit_testcases if 'MainTest#gooTest' in t.get_mvn_name()][0]
         Main.prepare_project_repo_for_testing(parent, module_path)
         commit_new_testcases = Main.get_commit_created_testcases(commit_testcases)
         compolation_error_testcases = Main.get_compilation_error_testcases(report, commit_new_testcases)
         self.assertTrue(expected_not_compiling_testcase in compolation_error_testcases,
                         "'MainTest#gooTest should have been picked as for compilation error")
 
-
+    @unittest.skip("Long test")
     def test_extract_bugs(self):
         print('test_extract_bugs')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
         exp_test_src_patch = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1\src\test\java\MainTest.java'
         commit = [c for c in Main.all_commits if c.hexsha == '1fd244f006c96fa820efa850f5f31e3f9a727d84'][0]
-        cached_module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject_installed'
         module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject'
-        tests = Main.test_parser.get_cached_tests(cached_module_path,module_path)
-        commit_tests = list(filter(lambda t: 'NaimTest' in t.get_name() or 'MainTest' in t.get_name(), tests))
+        Main.repo.git.reset('--hard')
+        Main.repo.git.checkout(commit.hexsha)
+        tests = Main.test_parser.get_tests(module_path)
+        commit_tests = list(filter(lambda t: 'NaimTest' in t.get_mvn_name() or 'MainTest' in t.get_mvn_name(), tests))
         res = Main.extract_bugs(None, commit, commit_tests)
         for bug in res:
             if bug.test.get_src_path() == exp_test_src_patch and bug.desc == my_bug.created_msg:
@@ -279,13 +281,14 @@ class TestMain(unittest.TestCase):
         exp_test_src_patch = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1\src\test\java\MainTest.java'
         commit = [c for c in Main.all_commits if c.hexsha == '1fd244f006c96fa820efa850f5f31e3f9a727d84'][0]
         parent = commit.parents[0]
-        cached_module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject_installed'
         module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject'
-        tests = Main.test_parser.get_cached_tests(cached_module_path, module_path)
+        Main.repo.git.reset('--hard')
+        Main.repo.git.checkout(commit.hexsha)
+        tests = Main.test_parser.get_tests(module_path)
         testcases = Main.test_parser.get_testcases(tests)
         Main.prepare_project_repo_for_testing(parent, module_path)
         new_testcases = Main.get_commit_created_testcases(testcases)
-        expected_new_testcase = [t for t in testcases if 'MainTest#foo_2' in t.get_name()][0]
+        expected_new_testcase = [t for t in testcases if 'MainTest#foo_2' in t.get_mvn_name()][0]
         self.assertTrue(expected_new_testcase in new_testcases, 'MainTest#foo_2 should be picked for being new test')
 
 

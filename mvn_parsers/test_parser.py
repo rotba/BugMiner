@@ -11,71 +11,114 @@ class TestClass:
         self.path = os.path.realpath(file_path)
         self.module = self.find_module(self.path)
         self.testcases = []
+        self.report = None
         with open(self.path, 'r') as src_file:
             self.tree = javalang.parse.parse(src_file.read())
         class_decls = [class_dec for _, class_dec in self.tree.filter(javalang.tree.ClassDeclaration)]
         for class_decl in class_decls:
             for method in class_decl.methods:
-                self.testcases.append(TestCase(method, class_decl,self))
+                self.testcases.append(TestCase(method, class_decl, self))
 
     def get_mvn_name(self):
-        relpath = os.path.relpath(self.path, self.module+'\\src\\test\\java').replace('.java', '')
+        relpath = os.path.relpath(self.path, self.module + '\\src\\test\\java').replace('.java', '')
         return relpath.replace('\\', '.')
+
     def get_path(self):
         return self.path
+
     def get_testcases(self):
         return self.testcases
+
     def get_module(self):
         return self.module
+
     def parse_src_path(self):
         ans = self.module_path
-        ans+='\\src\\test\\java'
+        ans += '\\src\\test\\java'
         packages = self.name.split('.')
         for p in packages:
-            ans+='\\'+p
-        return ans+'.java'
+            ans += '\\' + p
+        return ans + '.java'
+
     def get_report_path(self):
-        return self.module+'\\target\\surefire-reports\\'+'TEST-'+self.get_mvn_name()+'.xml'
+        return self.module + '\\target\\surefire-reports\\' + 'TEST-' + self.get_mvn_name() + '.xml'
+
+    def set_report(self, report):
+        self.report = report
+        for testcase in self.testcases:
+            testcase.set_report(report.get_testcase_report(testcase.get_mvn_name()))
+
+    def clear_report(self):
+        self.report=None
+        for t in self.testcases:
+            t.clear_report()
+
+    def get_report(self):
+        return self.report
+
     def __repr__(self):
         return str(self.get_path())
+
     def __eq__(self, other):
         if not isinstance(other, TestClass):
             return False
         else:
-            return self.get_path()==other.get_path()
+            return self.get_path() == other.get_path()
 
     def find_module(self, file_path):
         parent_dir = os.path.abspath(os.path.join(file_path, os.pardir))
-        while parent_dir!=None:
-            if os.path.isfile(parent_dir+'//pom.xml'):
+        while parent_dir != None:
+            if os.path.isfile(parent_dir + '//pom.xml'):
                 return parent_dir
             else:
                 parent_dir = os.path.abspath(os.path.join(parent_dir, os.pardir))
-        raise Exception(file_path+' is not part of a maven module')
+        raise Exception(file_path + ' is not part of a maven module')
+
 
 class TestCase(object):
-    def __init__(self, method, class_decl,parent):
+    def __init__(self, method, class_decl, parent):
         self.parent = parent
         self.method = method
         self.class_decl = class_decl
-        self.id = parent.get_path()+'#'+self.class_decl.name+'#'+method.name
+        self.id = parent.get_path() + '#' + self.class_decl.name + '#' + method.name
+        self.report = None
+
     def get_mvn_name(self):
-        return self.parent.get_mvn_name()+'#'+self.method.name
+        return self.parent.get_mvn_name() + '#' + self.method.name
+
     def get_path(self):
-        return self.parent.get_path
+        return self.parent.get_path()
+
     def get_id(self):
         return self.id
+
     def get_module(self):
         return self.parent.get_module()
+
+    def get_method(self):
+        return self.method
+
     def get_parent(self):
         return self.parent
+
+    def set_report(self, report):
+        self.report = report
+
+    def clear_report(self):
+        self.report = None
+
+    def passed(self):
+        return self.report.passed()
+
     def __repr__(self):
-        return str(self.get_path())
+        return self.id
+
     def __eq__(self, other):
         if not isinstance(other, TestCase):
             return False
         else:
-            return self.get_path()==other.get_path()
+            return self.get_id() == other.get_id()
+
 
 class TestClassReport:
     def __init__(self, xml_doc_path, modlue_path):
@@ -91,7 +134,7 @@ class TestClassReport:
         self.name = root.get('name')
         self.src_file_path = self.parse_src_path()
         for testcase in root.findall('testcase'):
-            m_test =TestCaseReport(testcase, self)
+            m_test = TestCaseReport(testcase, self)
             if m_test.test_passed:
                 self.success_testcases.append(m_test)
             else:
@@ -103,20 +146,25 @@ class TestClassReport:
         for property in properties:
             if property.get('name') == 'maven.multiModuleProjectDirectory':
                 self.maven_multiModuleProjectDirectory = property.get('value')
+
     def get_time(self):
         return self.time
+
     def get_name(self):
         return self.name
+
     def get_testcases(self):
         return self.testcases
+
     def passed(self):
-        return len(self.failed_testcases)==0
+        return len(self.failed_testcases) == 0
+
     def get_module(self):
         return self.module_path
 
-    #Returns true if the given test name is this test or it's one of its testcases
+    # Returns true if the given test name is this test or it's one of its testcases
     def is_associated(self, test):
-        if test =='test' or test =='TEST' or test =='Test':
+        if test == 'test' or test == 'TEST' or test == 'Test':
             return False
         if test in self.get_name():
             return True
@@ -132,10 +180,15 @@ class TestClassReport:
         return self.src_file_path
 
     def parse_src_path(self):
-        test_name = os.path.basename(self.xml_path).replace('TEST-','').replace('.java', '').replace('.xml', '')
+        test_name = os.path.basename(self.xml_path).replace('TEST-', '').replace('.java', '').replace('.xml', '')
         test_name = test_name.replace('.', '\\')
         test_name += '.java'
         return self.module_path + '\\src\\test\\java\\' + test_name
+
+    def get_testcase_report(self, testcase_mvn_name):
+        ans_singelton =  list(filter(lambda t: testcase_mvn_name.endswith(t.get_name()),self.testcases))
+        assert len(ans_singelton)==1
+        return ans_singelton[0]
 
 
 class TestCaseReport(object):
@@ -154,22 +207,27 @@ class TestCaseReport(object):
 
     def get_time(self):
         return self.time
+
     def get_name(self):
-        return self.parent.get_name()+'#'+self.name
+        return self.parent.get_name() + '#' + self.name
+
     def passed(self):
         return self.test_passed
+
     def get_src_path(self):
         return self.parent.src_path
+
     def get_module(self):
         return self.parent.get_module()
+
     def get_parent(self):
         return self.parent
+
     def __repr__(self):
         return str(self.get_name())
 
 
-
-#Return parsed tests of the reports dir
+# Return parsed tests of the reports dir
 def parse_tests_reports(path_to_reports, project_dir):
     ans = []
     for filename in os.listdir(path_to_reports):
@@ -177,23 +235,25 @@ def parse_tests_reports(path_to_reports, project_dir):
             ans.append(TestClass(os.path.join(path_to_reports, filename), project_dir))
     return ans
 
-#Gets path to maven project directory and returns parsed
+
+# Gets path to maven project directory and returns parsed
 def get_tests(project_dir):
     ans = []
-    if os.path.isdir(project_dir+'\\src\\test\java'):
-        ans.extend(parse_tests(project_dir+'\\src\\test\java'))
+    if os.path.isdir(project_dir + '\\src\\test\java'):
+        ans.extend(parse_tests(project_dir + '\\src\\test\java'))
     for filename in os.listdir(project_dir):
         file_abs_path = os.path.join(project_dir, filename)
         if os.path.isdir(file_abs_path):
-            if not (filename=='src' or  filename=='.git'):
+            if not (filename == 'src' or filename == '.git'):
                 ans.extend(get_tests(file_abs_path))
     return ans
 
-#Parses all the test java classes in a given directory
+
+# Parses all the test java classes in a given directory
 def parse_tests(tests_dir):
     ans = []
     for filename in os.listdir(tests_dir):
-        abs_path =os.path.join(tests_dir,filename)
+        abs_path = os.path.join(tests_dir, filename)
         if os.path.isdir(abs_path):
             ans.extend(parse_tests(abs_path))
         elif filename.endswith(".java"):
@@ -210,13 +270,13 @@ def get_tests_reports(project_dir):
     for filename in os.listdir(project_dir):
         file_abs_path = os.path.join(project_dir, filename)
         if os.path.isdir(file_abs_path):
-            if not (filename=='src' or  filename=='.git'):
+            if not (filename == 'src' or filename == '.git'):
                 ans.extend(get_tests_reports(file_abs_path))
     return ans
 
 
-#Gets path to maven project directory and returns parsed
-def get_cached_tests_reports(cached_proj_dir ,project_dir):
+# Gets path to maven project directory and returns parsed
+def get_cached_tests_reports(cached_proj_dir, project_dir):
     ans = []
     path_to_reports = os.path.join(cached_proj_dir, 'target\\surefire-reports')
     if os.path.isdir(path_to_reports):
@@ -225,17 +285,18 @@ def get_cached_tests_reports(cached_proj_dir ,project_dir):
         file_abs_path = os.path.join(cached_proj_dir, filename)
         project_dir_abs_path = os.path.join(project_dir, filename)
         if os.path.isdir(file_abs_path):
-            if not (filename=='src' or  filename=='.git'):
+            if not (filename == 'src' or filename == '.git'):
                 ans.extend(get_cached_tests_reports(file_abs_path, project_dir_abs_path))
     return ans
 
 
-#Returns all testcases of given test classes
+# Returns all testcases of given test classes
 def get_testcases(test_classes):
     ans = []
     for test_class in test_classes:
-        ans+= test_class.get_testcases()
+        ans += test_class.get_testcases()
     return ans
+
 
 def export_as_csv(tests):
     with open('all_tests.csv', 'a', newline='') as csvfile:
@@ -245,17 +306,14 @@ def export_as_csv(tests):
         for test in tests:
             writer.writerow({'test_name': test.get_name(), 'time': str(test.get_time())})
 
-def get_mvn_exclude_tests_list(tests,time):
+
+def get_mvn_exclude_tests_list(tests, time):
     count = 0
-    ans ='-Dtest='
+    ans = '-Dtest='
     for test in tests:
-        if test.get_time()>time:
-            if ans[len(ans)-1]!='=':
-                ans+=','
-            ans+='!'+test.get_name()
-            count+=1
+        if test.get_time() > time:
+            if ans[len(ans) - 1] != '=':
+                ans += ','
+            ans += '!' + test.get_name()
+            count += 1
     return ans
-
-
-
-

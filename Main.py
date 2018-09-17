@@ -47,7 +47,7 @@ def main(argv):
 
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
 def extract_bugs(issue, commit, tests):
-    logging.info("extract_bugs(): working on issue " +issue.key+' in commit '+commit.hexsha)
+    logging.info("extract_bugs(): working on issue " + issue.key + ' in commit ' + commit.hexsha)
     ans = []
     invalid_bugs = []
     parent = get_parent(commit)
@@ -57,32 +57,36 @@ def extract_bugs(issue, commit, tests):
     dict_modules_testcases = divide_to_modules(commit_testcases)
     for module in dict_modules_testcases:
         prepare_project_repo_for_testing(commit, module)
-        test_cmd = generate_mvn_test_cmd(tests, module)
+        test_cmd = generate_mvn_test_cmd(dict_modules_testcases[module], module)
         os.system(test_cmd)
+        attach_reports(dict_modules_testcases[module])
         repo.git.reset('--hard')
         prepare_project_repo_for_testing(parent, module)
         commit_new_testcases = get_commit_created_testcases(dict_modules_testcases[module])
         patched_testcases = patch_testcases(dict_modules_testcases[module], commit, parent)
-        invalid_bug_testcases = [t for t in commit_new_testcases if not t in patched_testcases ]
-        invalid_bugs = list(map(lambda t: my_bug.Bug(issue, commit, t,my_bug.invalid_msg), invalid_bug_testcases))
+        invalid_bug_testcases = [t for t in commit_new_testcases if not t in patched_testcases]
+        invalid_bugs = list(map(lambda t: my_bug.Bug(issue, commit, t, my_bug.invalid_msg), invalid_bug_testcases))
         ##should be removed in better versions
         invalid_testclasses = list(map(lambda t: t.get_parent, invalid_bug_testcases))
-        lost_bug_testcases= [t for t in dict_modules_testcases[module] if not t.get_parent() in invalid_testclasses]
+        lost_bug_testcases = [t for t in dict_modules_testcases[module] if not t.get_parent() in invalid_testclasses]
         invalid_bugs += list(map(
-            lambda t: my_bug.Bug(issue, commit, t, 'Invalid: testcase is a part of file containing test case that generated compilation error'),lost_bug_testcases))
+            lambda t: my_bug.Bug(issue, commit, t,
+                                 'Invalid: testcase is a part of file containing test case that generated compilation error'),
+            lost_bug_testcases))
         for bug in invalid_bugs:
             logging.info('Extracted invalid bug:\n' + str(bug))
         ##should be removed in better versions
         os.system(test_cmd)
         parent_tests = test_parser.get_tests(module)
         parent_testcases = test_parser.get_testcases(parent_tests)
+        attach_reports(parent_testcases)
         for testcase in dict_modules_testcases[module]:
             if testcase in parent_testcases:
                 parent_testcase = [t for t in parent_testcases if t == testcase][0]
                 if testcase.passed() and not parent_testcase.passed():
                     if testcase in commit_new_testcases:
                         bug = my_bug.Bug(issue, commit, testcase, my_bug.created_msg)
-                        logging.info('Extracted bug:\n'+str(bug))
+                        logging.info('Extracted bug:\n' + str(bug))
                         ans.append(bug)
                     else:
                         bug = my_bug.Bug(issue, commit, testcase, my_bug.regression_msg)
@@ -101,7 +105,7 @@ def extract_possible_bugs(bug_issues):
             logging.debug('Couldn\'t find commits associated with ' + bug_issue.key)
             continue
         for commit in issue_commits:
-            issue_tests = get_tests_from_commit(commit)
+            issue_tests = check_out_and_get_tests_from_commit(commit)
             if len(issue_tests) == 0:
                 logging.info('Didn\'t associate ' + bug_issue.key + ' with any test')
                 continue
@@ -110,7 +114,9 @@ def extract_possible_bugs(bug_issues):
 
 
 # Returns tests that have been changed in the commit in the current state of the project
-def get_tests_from_commit(commit):
+def check_out_and_get_tests_from_commit(commit):
+    repo.git.reset('--hard')
+    repo.git.checkout(commit.hexsha)
     ans = []
     for file in commit.stats.files.keys():
         if is_test_file(file):
@@ -121,9 +127,8 @@ def get_tests_from_commit(commit):
 # Returns list of testcases that exist in commit_tests and not exist in the current state (commit)
 def get_commit_created_testcases(testcases):
     ans = []
-    testcases_in_src = []
     for testcase in testcases:
-        src_path = testcase.get_src_path()
+        src_path = testcase.get_path()
         if os.path.isfile(src_path):
             with open(src_path, 'r') as src_file:
                 tree = javalang.parse.parse(src_file.read())
@@ -131,7 +136,7 @@ def get_commit_created_testcases(testcases):
             ans.append(testcase)
             continue
         class_decls = [class_dec for _, class_dec in tree.filter(javalang.tree.ClassDeclaration)]
-        if not any([testcase_in_class(c,testcase) for c in class_decls]):
+        if not any([testcase_in_class(c, testcase) for c in class_decls]):
             ans.append(testcase)
     return ans
 
@@ -140,7 +145,7 @@ def get_commit_created_testcases(testcases):
 def get_commit_created_testclasses(commit_tests):
     ans = []
     for test in commit_tests:
-        if not os.path.isfile(test.src_path):
+        if not os.path.isfile(test.get_path()):
             ans.append(test)
     return ans
 
@@ -153,9 +158,9 @@ def patch_testcases(commit_testcases, commit, prev_commit):
     dict_diff_patch = {}
     set_up_patches_dir()
     for diff in commit.diff(prev_commit):
-        associeted_testcases = get_associated_test_case(diff,commit_testcases)
+        associeted_testcases = get_associated_test_case(diff, commit_testcases)
         if not len(associeted_testcases) == 0:
-            test_path = associeted_testcases[0].get_src_path()
+            test_path = associeted_testcases[0].get_path()
             patch_path = generate_patch(proj_dir, prev_commit, commit, test_path, os.path.basename(test_path))
             repo.git.execute(['git', 'apply', patch_path])
             dict_diff_testcases[diff] = associeted_testcases
@@ -208,7 +213,7 @@ def get_error_test_case(line, testcases):
     else:
         raise FileNotFoundError('in get_error_test_case(), \'path\' not found')
     method = get_compilation_error_method(tree, error_line)
-    return [t for t in testcases if method.name == t.get_class_relative_name()][0]
+    return [t for t in testcases if method.name == t.get_method().name][0]
 
 
 # Checkout to the given commit, cleans the project, and installs the project
@@ -223,6 +228,16 @@ def prepare_project_repo_for_testing(parent, module):
             raise e
     repo.git.checkout(parent.hexsha)
     os.system('mvn clean install -DskipTests' + ' -f ' + module)
+
+
+# attaches reports to all the test claases  of all the testscases
+def attach_reports(testcases):
+    for t in testcases:
+        t.get_parent().clear_report()
+    for t in testcases:
+        test_class = t.get_parent()
+        if test_class.get_report() is None:
+            test_class.set_report(test_parser.TestClassReport(test_class.get_report_path(), test_class.get_module()))
 
 
 # Get string array representing possible test names
@@ -283,12 +298,12 @@ def is_test_file(file):
 
 
 # Returns mvn command string that runns the given tests in the given module
-def generate_mvn_test_cmd(tests, module):
+def generate_mvn_test_cmd(testcases, module):
     ans = 'mvn test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
-    for test in tests:
+    for test in testcases:
         if not ans.endswith('='):
             ans += ','
-        ans += test.get_name()
+        ans += test.get_mvn_name()
     ans += ' -f ' + module
     return ans
 
@@ -307,7 +322,7 @@ def get_parent(commit):
 # Returns true if testcase is in class_decl
 def testcase_in_class(class_decl, testcase):
     method_names = list(map(lambda m: class_decl.name + '#' + m.name, class_decl.methods))
-    return any(testcase.get_name().endswith(m_name) for m_name in method_names)
+    return any(testcase.get_mvn_name().endswith(m_name) for m_name in method_names)
 
 
 # Returns list of strings describing tests or testcases that are not in module dir
@@ -319,13 +334,13 @@ def find_test_cases_diff(commit_test_class, src_path):
             tree = javalang.parse.parse(src_file.read())
     else:
         return commit_test_class.get_testcases()
-    class_decl = [c for c in tree.children[2] if c.name in commit_test_class.get_name()][0]
+    class_decl = [c for c in tree.children[2] if c.name in commit_test_class.get_mvn_name()][0]
     for method in class_decl.methods:
-        testcases_in_src.append(commit_test_class.get_name() + '#' + method.name)
+        testcases_in_src.append(commit_test_class.get_mvn_name() + '#' + method.name)
     for testcase in commit_test_class.get_testcases():
         i = 0
         for testcase_in_src in testcases_in_src:
-            if testcase_in_src in testcase.get_name():
+            if testcase_in_src in testcase.get_mvn_name():
                 continue
             else:
                 i += 1
@@ -345,10 +360,10 @@ def are_associated_test_paths(path, test_path):
 def get_compilation_error_testcases(report, testcases):
     ans = []
     report_lines = report.splitlines()
-    i=0
+    i = 0
     while i < len(report_lines):
         if '[ERROR] COMPILATION ERROR :' in report_lines[i]:
-            i+=2
+            i += 2
             while not end_of_compilation_errors(report_lines[i]):
                 if is_compilation_error_report(report_lines[i]):
                     compilation_error_testcase = get_error_test_case(report_lines[i], testcases)
@@ -374,7 +389,7 @@ def divide_to_modules(tests):
 def get_associated_test_case(diff, testcases):
     ans = []
     for testcase in testcases:
-        if are_associated_test_paths(diff.a_path, testcase.get_src_path()):
+        if are_associated_test_paths(diff.a_path, testcase.get_path()):
             ans.append(testcase)
     return ans
 
@@ -395,9 +410,9 @@ def get_compilation_error_method(tree, error_line):
     for path, node in tree.filter(javalang.tree.ClassDeclaration):
         for method in node.methods:
             if get_method_line_position(method) < error_line:
-                if ans==None:
-                    ans =method
-                elif get_method_line_position(ans)<get_method_line_position(method):
+                if ans == None:
+                    ans = method
+                elif get_method_line_position(ans) < get_method_line_position(method):
                     ans = method
     return ans
 
