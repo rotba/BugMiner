@@ -169,7 +169,7 @@ class TestMain(unittest.TestCase):
         module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_2'
         Main.prepare_project_repo_for_testing(commit, module_path)
         os.system('mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f '+module_path)
-        test = Main.test_parser.Class_Test(test_report_path,module_path)
+        test = Main.test_parser.TestClass(test_report_path, module_path)
         expected_delta_testcase = [t for t in test.testcases if 'p_1.AssafTest#goo' in t.get_name()][0]
         Main.prepare_project_repo_for_testing(commit.parents[0], module_path)
         diff_testcases =Main.find_test_cases_diff(test, test.src_path)

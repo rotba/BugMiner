@@ -15,7 +15,6 @@ jira = JIRA(options={'server': 'https://issues.apache.org/jira'})
 LOG_FILENAME = 'bugminer_log.log'
 logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO)
 cache_dir = os.getcwd() + '\\cache'
-all_tests = []
 all_commits = []
 bug_issues = []
 branch_inspected = 'master'
@@ -54,7 +53,6 @@ def extract_bugs(issue, commit, tests):
     parent = get_parent(commit)
     if parent == None:
         return ans
-    repo.git.checkout(commit)
     commit_testcases = test_parser.get_testcases(tests)
     dict_modules_testcases = divide_to_modules(commit_testcases)
     for module in dict_modules_testcases:
@@ -98,18 +96,25 @@ def extract_possible_bugs(bug_issues):
     ans = []
     for bug_issue in bug_issues:
         logging.info("extract_possible_bugs(): working on issue " + bug_issue.key)
-        issue_tests = []
-        #issue_tests += get_tests_from_issue_text(bug_issue)
         issue_commits = get_issue_commits(bug_issue)
         if len(issue_commits) == 0:
             logging.debug('Couldn\'t find commits associated with ' + bug_issue.key)
             continue
         for commit in issue_commits:
-            issue_tests += get_tests_from_commit(commit)
+            issue_tests = get_tests_from_commit(commit)
             if len(issue_tests) == 0:
                 logging.info('Didn\'t associate ' + bug_issue.key + ' with any test')
                 continue
             ans.append((bug_issue, commit, issue_tests))
+    return ans
+
+
+# Returns tests that have been changed in the commit in the current state of the project
+def get_tests_from_commit(commit):
+    ans = []
+    for file in commit.stats.files.keys():
+        if is_test_file(file):
+            ans.append(test_parser.TestClass(os.path.join(repo.working_dir, file)))
     return ans
 
 
@@ -275,17 +280,6 @@ def is_test_file(file):
     if name.startswith('test'):
         return True
     return False
-
-
-# Returns tests that have been changed in the commit
-def get_tests_from_commit(commit):
-    ans = []
-    for file in commit.stats.files.keys():
-        if is_test_file(file):
-            for test in all_tests:
-                if os.path.basename(file).replace('.java', '') in test.get_name():
-                    ans.append(test)
-    return ans
 
 
 # Returns mvn command string that runns the given tests in the given module
@@ -457,7 +451,6 @@ def set_up_patches_dir():
 
 def set_up(git_url):
     global all_commits
-    global all_tests
     global repo
     global proj_dir
     global proj_dir_installed
@@ -465,7 +458,6 @@ def set_up(git_url):
     global proj_name
     global bug_issues
     global JQL_QUERY
-    all_test_cache = cache_dir + '\\all_tests.pkl'
     all_commits_cache = cache_dir + '\\all_commits.pkl'
     bug_issues_cache = cache_dir + '\\bug_issues'
     proj_name = git_url.rsplit('/', 1)[1]
@@ -484,7 +476,6 @@ def set_up(git_url):
     repo = Repo(proj_dir)
     if not os.path.isdir("cache"):
         os.makedirs("cache")
-    all_tests = test_parser.get_cached_tests(proj_dir_installed, proj_dir)
     all_commits = list(repo.iter_commits(branch_inspected))
     JQL_QUERY = JQL_QUERY.format(proj_name)
     try:

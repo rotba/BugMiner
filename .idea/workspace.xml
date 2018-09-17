@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvn_parsers/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/test_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static_files/GitMavenTrackingProject" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/GitMavenTrackingProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_Test_Obj.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_Test_Obj.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/tika" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/tika_installed" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika_installed" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/tika_installed/CHANGES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika_installed/CHANGES.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/tika_installed/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika_installed/LICENSE.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/tika_installed/NOTICE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika_installed/NOTICE.txt" afterDir="false" />
@@ -21,47 +27,50 @@
     <SUITE FILE_PATH="coverage/BugMinerTest$Test.coverage" NAME="Test Coverage Results" MODIFIED="1537109490835" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$tmp.coverage" NAME="tmp Coverage Results" MODIFIED="1536665877421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMinerTest$Main.coverage" NAME="Main Coverage Results" MODIFIED="1536774680671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMiner$Test_test_parser.coverage" NAME="Test_test_parser Coverage Results" MODIFIED="1537189344462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMinerTest$Test_test_parser.coverage" NAME="Test_test_parser Coverage Results" MODIFIED="1536854063542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1537117369026" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1537189556799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Test.coverage" NAME="Test Coverage Results" MODIFIED="1537112093607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="859684521">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="2" />
           <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.42" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="py" value="21" />
+          <entry key="py" value="22" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="21" />
+          <entry key="Python" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="dummy" value="17" />
           <entry key="gitignore" value="39" />
-          <entry key="py" value="4876" />
+          <entry key="py" value="7484" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="39" />
-          <entry key="Python" value="4876" />
+          <entry key="PLAIN_TEXT" value="56" />
+          <entry key="Python" value="7484" />
         </counts>
       </usages-collector>
     </session>
@@ -103,39 +112,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+            <state relative-caret-position="130">
+              <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
-                <element signature="e#4680#5224#0" />
-                <element signature="e#5381#5509#0" />
-                <element signature="e#5607#6615#0" />
-                <element signature="e#7020#7264#0" />
-                <element signature="e#6721#7032#0" />
-                <element signature="e#7140#7892#0" />
-                <element signature="e#8030#8362#0" />
-                <element signature="e#8465#9239#0" />
-                <element signature="e#9320#9456#0" />
-                <element signature="e#9549#9841#0" />
-                <element signature="e#9926#10143#0" />
-                <element signature="e#10238#10490#0" />
-                <element signature="e#10861#11107#0" />
-                <element signature="e#10957#11174#0" />
-                <element signature="e#11270#11436#0" />
-                <element signature="e#11581#12364#0" />
-                <element signature="e#12484#12594#0" />
-                <element signature="e#12731#13321#0" />
-                <element signature="e#13436#13614#0" />
-                <element signature="e#13726#13889#0" />
-                <element signature="e#14007#14092#0" />
-                <element signature="e#14619#14652#0" />
-                <element signature="e#14784#15154#0" />
-                <element signature="e#15245#15270#0" />
-                <element signature="e#15426#15769#0" />
-                <element signature="e#15892#16099#0" />
-                <element signature="e#16198#16317#0" />
-                <element signature="e#16372#16517#0" />
-                <element signature="e#16545#17922#0" />
               </folding>
             </state>
           </provider>
@@ -144,7 +124,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
+            <state relative-caret-position="171">
               <caret line="259" selection-start-line="259" selection-end-line="259" />
             </state>
           </provider>
@@ -162,12 +142,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="43" column="72" selection-start-line="43" selection-start-column="72" selection-end-line="43" selection-end-column="72" />
+            <state relative-caret-position="397">
+              <caret line="197" column="43" selection-start-line="197" selection-start-column="43" selection-end-line="197" selection-end-column="43" />
               <folding>
                 <element signature="e#0#34#0" expanded="true" />
-                <marker date="1537115984480" expanded="true" signature="1421:1430" ph="..." />
+                <marker date="1537188744042" expanded="true" signature="661:807" ph="..." />
+                <marker date="1537188744042" expanded="true" signature="1206:1304" ph="..." />
+                <marker date="1537188744042" expanded="true" signature="1926:1928" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test_Test_Obj.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="545">
+              <caret line="113" column="87" selection-start-line="113" selection-start-column="87" selection-end-line="113" selection-end-column="87" />
             </state>
           </provider>
         </entry>
@@ -183,12 +174,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Bug</find>
-      <find>issue_1378</find>
-      <find>git_dir</find>
-      <find>bug</find>
-      <find>testcase</find>
-      <find>test_after</find>
       <find>test_before</find>
       <find>filter</find>
       <find>any</find>
@@ -204,7 +189,6 @@
       <find>for path, node in tree.filter(javalang.tree.ClassDeclaration):</find>
       <find>node</find>
       <find>is_test_file</find>
-      <find>all_tests</find>
       <find>get_commit_created_testcases</find>
       <find>get_compilation_error_testcases</find>
       <find>r'C:\Users\user\Code\Python\BugMinerTest</find>
@@ -212,6 +196,14 @@
       <find>module</find>
       <find>generate_patch</find>
       <find>get_tests_from_commit</find>
+      <find>join</find>
+      <find>javalang</find>
+      <find>test_obj_1</find>
+      <find>test_obj_2</find>
+      <find>get_tests</find>
+      <find>parse_tests</find>
+      <find>all_tests</find>
+      <find>get_tests_from_issue_text</find>
     </findStrings>
     <replaceStrings>
       <replace>issue_1378</replace>
@@ -226,6 +218,8 @@
       <replace>generate_mvn_test_cmd</replace>
       <replace>os.getcwd()'</replace>
       <replace>os.getcwd()+'</replace>
+      <replace>test_report_1</replace>
+      <replace>test_report_2</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -240,12 +234,12 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/WatchResults.py" />
         <option value="$PROJECT_DIR$/mvn_reports_tests/test_Test_Obj.py" />
-        <option value="$PROJECT_DIR$/test_Test_Obj.py" />
         <option value="$PROJECT_DIR$/mvn_reports_tests/test_parser.py" />
         <option value="$PROJECT_DIR$/mvn_parsers/compilation_error_parses.py" />
         <option value="$PROJECT_DIR$/bug/bug.py" />
         <option value="$PROJECT_DIR$/Test.py" />
         <option value="$PROJECT_DIR$/mvn_parsers/test_parser.py" />
+        <option value="$PROJECT_DIR$/test_Test_Obj.py" />
         <option value="$PROJECT_DIR$/Main.py" />
       </list>
     </option>
@@ -283,7 +277,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../BugMinerTest" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -364,7 +358,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_Test_Obj.py" />
-      <option name="PARAMETERS" value="" />
+      <option name="PARAMETERS" value="TestTest_Obj.test_get_tests" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -418,7 +412,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.110341154" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11140725" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -460,6 +454,7 @@
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="all_tests" />
+        <watch expression="repo" />
       </configuration>
     </watches-manager>
   </component>
@@ -472,6 +467,21 @@
       </expression>
     </expressions>
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>list(map(lambda tc: tc.get_id, self.test_2.get_testcases()))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>commit</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>commit.stats</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>commit.stats.files.keys()</expression-string>
         <language-id>Python</language-id>
@@ -499,21 +509,6 @@
       </expression>
       <expression>
         <expression-string>uncompiled_testcases</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>ans</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>list(set(ans) - set(uncompiled_testcases))</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>list(ans - uncompiled_testcases)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -596,13 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test_Test_Obj.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="77" column="150" selection-start-line="77" selection-start-column="150" selection-end-line="77" selection-end-column="150" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mvn_parsers/compilation_error_parses.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydev_imps/_pydev_execfile.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -646,6 +634,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/git/cmd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="824" selection-start-line="824" selection-end-line="824" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bug/bug.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -655,64 +650,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="43" column="72" selection-start-line="43" selection-start-column="72" selection-end-line="43" selection-end-column="72" />
+        <state relative-caret-position="397">
+          <caret line="197" column="43" selection-start-line="197" selection-start-column="43" selection-end-line="197" selection-end-column="43" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
-            <marker date="1537115984480" expanded="true" signature="1421:1430" ph="..." />
+            <marker date="1537188744042" expanded="true" signature="661:807" ph="..." />
+            <marker date="1537188744042" expanded="true" signature="1206:1304" ph="..." />
+            <marker date="1537188744042" expanded="true" signature="1926:1928" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/git/cmd.py">
+    <entry file="file://$PROJECT_DIR$/test_Test_Obj.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="824" selection-start-line="824" selection-end-line="824" />
+        <state relative-caret-position="545">
+          <caret line="113" column="87" selection-start-line="113" selection-start-column="87" selection-end-line="113" selection-end-column="87" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
+        <state relative-caret-position="171">
           <caret line="259" selection-start-line="259" selection-end-line="259" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
+        <state relative-caret-position="130">
+          <caret line="54" column="18" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="18" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-            <element signature="e#4680#5224#0" />
-            <element signature="e#5381#5509#0" />
-            <element signature="e#5607#6615#0" />
-            <element signature="e#7020#7264#0" />
-            <element signature="e#6721#7032#0" />
-            <element signature="e#7140#7892#0" />
-            <element signature="e#8030#8362#0" />
-            <element signature="e#8465#9239#0" />
-            <element signature="e#9320#9456#0" />
-            <element signature="e#9549#9841#0" />
-            <element signature="e#9926#10143#0" />
-            <element signature="e#10238#10490#0" />
-            <element signature="e#10861#11107#0" />
-            <element signature="e#10957#11174#0" />
-            <element signature="e#11270#11436#0" />
-            <element signature="e#11581#12364#0" />
-            <element signature="e#12484#12594#0" />
-            <element signature="e#12731#13321#0" />
-            <element signature="e#13436#13614#0" />
-            <element signature="e#13726#13889#0" />
-            <element signature="e#14007#14092#0" />
-            <element signature="e#14619#14652#0" />
-            <element signature="e#14784#15154#0" />
-            <element signature="e#15245#15270#0" />
-            <element signature="e#15426#15769#0" />
-            <element signature="e#15892#16099#0" />
-            <element signature="e#16198#16317#0" />
-            <element signature="e#16372#16517#0" />
-            <element signature="e#16545#17922#0" />
           </folding>
         </state>
       </provider>
