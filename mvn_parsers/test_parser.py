@@ -17,7 +17,8 @@ class TestClass:
         class_decls = [class_dec for _, class_dec in self.tree.filter(javalang.tree.ClassDeclaration)]
         for class_decl in class_decls:
             for method in class_decl.methods:
-                self.testcases.append(TestCase(method, class_decl, self))
+                if self.is_valid_testcase(method):
+                    self.testcases.append(TestCase(method, class_decl, self))
 
     def get_mvn_name(self):
         relpath = os.path.relpath(self.path, self.module + '\\src\\test\\java').replace('.java', '')
@@ -46,7 +47,11 @@ class TestClass:
     def set_report(self, report):
         self.report = report
         for testcase in self.testcases:
-            testcase.set_report(report.get_testcase_report(testcase.get_mvn_name()))
+            try:
+                testcase.set_report(report.get_testcase_report(testcase.get_mvn_name()))
+            except TestParserException as e:
+                self.report =None
+                raise e
 
     def clear_report(self):
         self.report=None
@@ -55,6 +60,9 @@ class TestClass:
 
     def get_report(self):
         return self.report
+
+    def get_tree(self):
+        return self.tree
 
     def __repr__(self):
         return str(self.get_path())
@@ -73,6 +81,9 @@ class TestClass:
             else:
                 parent_dir = os.path.abspath(os.path.join(parent_dir, os.pardir))
         raise Exception(file_path + ' is not part of a maven module')
+
+    def is_valid_testcase(self, method):
+        return method.name!='SetUp' and method.name!='TearDown'
 
 
 class TestCase(object):
@@ -105,6 +116,9 @@ class TestCase(object):
         self.report = report
 
     def clear_report(self):
+        self.report = None
+
+    def get_report(self):
         self.report = None
 
     def passed(self):
@@ -187,7 +201,8 @@ class TestClassReport:
 
     def get_testcase_report(self, testcase_mvn_name):
         ans_singelton =  list(filter(lambda t: testcase_mvn_name.endswith(t.get_name()),self.testcases))
-        assert len(ans_singelton)==1
+        if not len(ans_singelton)==1:
+            raise TestParserException(str(len(ans_singelton))+' possible testcases reports for '+testcase_mvn_name)
         return ans_singelton[0]
 
 
@@ -297,6 +312,48 @@ def get_testcases(test_classes):
         ans += test_class.get_testcases()
     return ans
 
+# Returns TestCase object representing the testcase in file_path that contains line
+def get_line_testcase(path, line):
+    if not os.path.isfile(path):
+        raise FileNotFoundError
+    if not path.endswith('.java'):
+        raise TestParserException('Cannot parse files that are not java files')
+    testclass = TestClass(path)
+    class_decl = get_compilation_error_class_decl(testclass.get_tree(), line)
+    method = get_compilation_error_method(testclass.get_tree(), line)
+    return TestCase(method,class_decl,testclass)
+
+# Returns the method name of the method containing the compilation error
+def get_compilation_error_method(tree, error_line):
+    ans = None
+    for path, node in tree.filter(javalang.tree.ClassDeclaration):
+        for method in node.methods:
+            if get_method_line_position(method) < error_line:
+                if ans == None:
+                    ans = method
+                elif get_method_line_position(ans) < get_method_line_position(method):
+                    ans = method
+    return ans
+
+# Returns the method name of the method containing the compilation error
+def get_compilation_error_class_decl(tree, error_line):
+    ans = None
+    for path, node in tree.filter(javalang.tree.ClassDeclaration):
+        if get_class_line_position(node) < error_line:
+            if ans == None:
+                ans = node
+            elif get_class_line_position(node) < get_class_line_position(node):
+                ans = node
+    return ans
+
+# Returns the line in which the method starts
+def get_method_line_position(method):
+    return method.position[0]
+
+# Returns the line in which the class starts
+def get_class_line_position(class_decl):
+    return class_decl.position[0]
+
 
 def export_as_csv(tests):
     with open('all_tests.csv', 'a', newline='') as csvfile:
@@ -317,3 +374,11 @@ def get_mvn_exclude_tests_list(tests, time):
             ans += '!' + test.get_name()
             count += 1
     return ans
+
+class TestParserException(Exception):
+    def __init__(self, msg):
+        self.msg = msg
+    def __str__(self):
+        return repr(self.msg)
+
+

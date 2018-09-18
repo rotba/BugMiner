@@ -11,7 +11,7 @@ class BugError(Exception):
     def __init__(self, msg):
         self.msg = msg
     def __str__(self):
-        return repr(self.value)
+        return repr(self.msg)
 
 created_msg = 'Created in commit'
 regression_msg = 'Regression test bug'

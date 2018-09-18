@@ -43,7 +43,8 @@ class TestMain(unittest.TestCase):
         Main.set_up('https://github.com/apache/tika')
         self.issue_1378 = Main.jira.issue('TIKA-1378')
         commit = Main.repo.commit('65aea2b06b33c6b53999b6c52e017c38bf2af0b4')
-        res_tests = Main.check_out_and_get_tests_from_commit(commit)
+        res_tests_paths = Main.get_tests_paths_from_commit(commit)
+        res_tests = list(map(lambda t_path: Main.test_parser.TestClass(t_path), res_tests_paths))
         for test in res_tests:
             if commit.get_name() == '65aea2b06b33c6b53999b6c52e017c38bf2af0b4':
                 return
@@ -110,9 +111,9 @@ class TestMain(unittest.TestCase):
 
     @unittest.skip("Master test")
     def test_issue_19_is_associated_to_commit(self):
+        print('test_issue_19_is_associated_to_commit')
         Main.set_up('https://github.com/apache/tika')
         self.issue_19 = Main.jira.issue('TIKA-19')
-        print('test_issue_19_is_associated_to_commit')
         issue = self.issue_19
         associated_commits = []
         all_commits = Main.all_commits
@@ -143,7 +144,8 @@ class TestMain(unittest.TestCase):
         print('test_check_out_and_get_tests_from_commit')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
         commit = [c for c in Main.all_commits if c.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b'][0]
-        tests = Main.check_out_and_get_tests_from_commit(commit)
+        tests_paths = Main.get_tests_paths_from_commit(commit)
+        tests = list(map(lambda t_path: Main.test_parser.TestClass(t_path), tests_paths))
         self.assertEqual(len(tests), 1,
                          'Only one test should be associated with 52e80f56a2f2877ff2261889b1dc180c51b72f6b')
         self.assertTrue('NaimTest' in tests[0].get_mvn_name(),
@@ -155,8 +157,8 @@ class TestMain(unittest.TestCase):
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
         self.issue_19 = Main.jira.issue('TIKA-19')
         commit = [c for c in Main.all_commits if c.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b'][0]
-        tests = Main.check_out_and_get_tests_from_commit(commit)
-        res = Main.extract_bugs(self.issue_19, commit, tests)
+        tests_paths = Main.get_tests_paths_from_commit(commit)
+        res = Main.extract_bugs(self.issue_19, commit, tests_paths)
         for bug in res:
             if bug.commit.hexsha =='52e80f56a2f2877ff2261889b1dc180c51b72f6b' and 'NaimTest#newGooTest' in bug.test.get_mvn_name() and bug.msg =='Created in test':
                 return
@@ -258,22 +260,22 @@ class TestMain(unittest.TestCase):
         self.assertTrue(expected_not_compiling_testcase in compolation_error_testcases,
                         "'MainTest#gooTest should have been picked as for compilation error")
 
-    @unittest.skip("Long test")
+
     def test_extract_bugs(self):
         print('test_extract_bugs')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
-        exp_test_src_patch = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1\src\test\java\MainTest.java'
-        commit = [c for c in Main.all_commits if c.hexsha == '1fd244f006c96fa820efa850f5f31e3f9a727d84'][0]
-        module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject'
+        issue = Main.jira.issue('TIKA-19')
+        exp_testcase_id = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#fooTest'
+        commit = [c for c in Main.all_commits if c.hexsha == '19f6c78889f9e929bc964d420315a043b62c7967'][0]
+        module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1'
         Main.repo.git.reset('--hard')
         Main.repo.git.checkout(commit.hexsha)
-        tests = Main.test_parser.get_tests(module_path)
-        commit_tests = list(filter(lambda t: 'NaimTest' in t.get_mvn_name() or 'MainTest' in t.get_mvn_name(), tests))
-        res = Main.extract_bugs(None, commit, commit_tests)
+        tests_paths = Main.get_tests_paths_from_commit(commit)
+        res = Main.extract_bugs(issue, commit, tests_paths)
         for bug in res:
-            if bug.test.get_src_path() == exp_test_src_patch and bug.desc == my_bug.created_msg:
+            if bug.test.get_id() == exp_testcase_id and bug.desc == my_bug.created_msg:
                 return
-        self.fail('Did not extracted the bug from the file -'+ exp_test_src_patch)
+        self.fail('Did not extracted the bug of testcase -'+ exp_testcase_id)
 
     def test_get_commit_created_testcases(self):
         print('test_get_commit_created_testcases')
