@@ -27,7 +27,7 @@ valid_bugs_csv_path= ''
 invalid_bugs_csv_path = ''
 dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
-JQL_QUERY = 'project = {} AND issuekey=TIKA-16 AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
+JQL_QUERY = 'project = {} AND (issuekey =TIKA-107 OR issuekey =TIKA-56) AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
 
 
 def main(argv):
@@ -95,6 +95,8 @@ def extract_bugs(issue, commit, tests_paths):
                     else:
                         bug = my_bug.Bug(issue, commit, testcase, my_bug.regression_msg)
                         valid_bugs.append(bug)
+        git_cmds_wrapper(lambda: repo.git.reset('--hard'))
+        git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
 
         return (valid_bugs, invalid_bugs)
 
@@ -359,14 +361,15 @@ def git_cmds_wrapper(git_cmd):
         if 'Another git process seems to be running in this repository, e.g.' in str(e):
             logging.info(str(e))
             time.sleep(2)
-            git_cmds_wrapper(lambda : git_cmd)
+            git_cmds_wrapper(lambda : git_cmd())
         elif 'nothing to commit, working tree clean' in str(e):
             pass
         elif 'Please move or remove them before you switch branches.' in str(e):
             logging.info(str(e))
-            time.sleep(2)
             git_cmds_wrapper(lambda: repo.git.reset('--hard'))
-            git_cmds_wrapper(lambda: git_cmd)
+            git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
+            time.sleep(2)
+            git_cmds_wrapper(lambda: git_cmd())
         elif 'already exists and is not an empty directory.' in str(e):
             pass
         else:
