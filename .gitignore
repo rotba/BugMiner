@@ -36,7 +36,6 @@ pip-log.txt
 pip-delete-this-directory.txt
 
 # Unit test / coverage reports
-Test.py
 htmlcov/
 .tox/
 .coverage
@@ -106,6 +105,3 @@ venv.bak/
 
 # tested proj files
 cache/
-
-# log
-bugminer_log.txt
