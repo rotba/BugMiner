@@ -18,24 +18,23 @@ bug_issues = []
 branch_inspected = 'master'
 repo = None
 proj_dir = ''
-proj_dir_installed = ''
 proj_name = ''
 orig_wd = os.getcwd()
 patches_dir = ''
-results_dir = ''
+proj_results_dir = ''
 cache_dir = ''
 csv_results_path= ''
 dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
-JQL_QUERY = 'project = {} AND issuekey =TIKA-16 AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
+JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
 
 
 def main(argv):
     bug_data_set = []
     set_up(argv[0])
     csv_handler = my_bug.Bug_csv_report_handler(csv_results_path)
-    #possible_bugs =get_from_cache(os.path.join(cache_dir, 'possible_bugs.pkl'), lambda :extract_possible_bugs(bug_issues))
-    possible_bugs =extract_possible_bugs(bug_issues)
+    possible_bugs =get_from_cache(os.path.join(cache_dir, 'possible_bugs.pkl'), lambda :extract_possible_bugs(bug_issues))
+    #possible_bugs =extract_possible_bugs(bug_issues)
     for possible_bug in possible_bugs:
         bugs = extract_bugs(issue=dict_key_issue[possible_bug[0]], commit=repo.commit(possible_bug[1]), tests_paths=possible_bug[2])
         bug_data_set.extend(bugs)
@@ -50,6 +49,7 @@ def main(argv):
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
 def extract_bugs(issue, commit, tests_paths):
     logging.info("extract_bugs(): working on issue " + issue.key+' in commit ' + commit.hexsha)
+    invalid_bug_csv_handler = my_bug.Bug_csv_report_handler(os.path.join(proj_results_dir, 'invalid_bugs.csv'))
     ans = []
     invalid_bugs = []
     parent = get_parent(commit)
@@ -101,6 +101,7 @@ def extract_bugs(issue, commit, tests_paths):
     for b in invalid_bugs:
         logging.info(str(b))
     logging.info('#############INVALID BUGS#############')
+    invalid_bug_csv_handler.add_bugs(invalid_bugs)
     return ans
 
 # Attaches reports to testcases and returns the testcases that reports were successfully attached to them.
@@ -379,9 +380,8 @@ def set_up(git_url):
     global dict_hash_commit
     global repo
     global proj_dir
-    global proj_dir_installed
     global patches_dir
-    global results_dir
+    global proj_results_dir
     global proj_name
     global JQL_QUERY
     global csv_results_path
@@ -389,11 +389,12 @@ def set_up(git_url):
     cache_dir = os.getcwd() + '\\cache'
     proj_name = git_url.rsplit('/', 1)[1]
     proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
-    proj_dir_installed = proj_dir + '_installed'
     patches_dir = proj_dir + '\\patches'
     results_dir = os.path.join(os.getcwd(), 'results')
     proj_results_dir = os.path.join(results_dir, proj_name)
     csv_results_path = os.path.join(proj_results_dir, 'bug_table.csv')
+    if os.path.isfile(csv_results_path):
+        raise Exception('The csv results of an old BugMiner running is in the project results dir ('+proj_results_dir+')\n please save it in a different directory before running BugMiner')
     LOG_FILENAME = os.path.join(proj_results_dir,'log.log')
     logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO)
     git_cmds_wrapper(lambda: git.Git(os.getcwd() + '\\tested_project').clone(git_url))
