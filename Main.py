@@ -27,7 +27,7 @@ valid_bugs_csv_path= ''
 invalid_bugs_csv_path = ''
 dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
-JQL_QUERY = 'project = {} AND (issuekey =TIKA-107 OR issuekey =TIKA-56) AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
+JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
 
 
 def main(argv):
@@ -35,8 +35,8 @@ def main(argv):
     set_up(argv[0])
     valid_bugs_csv_handler = my_bug.Bug_csv_report_handler(valid_bugs_csv_path)
     invalid_bugs_csv_handler = my_bug.Bug_csv_report_handler(invalid_bugs_csv_path)
-    #possible_bugs =get_from_cache(os.path.join(cache_dir, 'possible_bugs.pkl'), lambda :extract_possible_bugs(bug_issues))
-    possible_bugs =extract_possible_bugs(bug_issues)
+    possible_bugs =get_from_cache(os.path.join(cache_dir, 'possible_bugs.pkl'), lambda :extract_possible_bugs(bug_issues))
+    #possible_bugs =extract_possible_bugs(bug_issues)
     for possible_bug in possible_bugs:
         valid_and_invalid_bugs = extract_bugs(issue=dict_key_issue[possible_bug[0]], commit=repo.commit(possible_bug[1]), tests_paths=possible_bug[2])
         bug_data_set.extend(valid_and_invalid_bugs[0])
