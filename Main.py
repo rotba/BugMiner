@@ -119,13 +119,6 @@ def attach_reports(testcases, issue, commit, invalid_bugs):
             invalid_bugs.append(invalid_bug)
     return ans
 
-# attaches reports to all the test claases  of all the testscases. handles
-def attach_report(testcase):
-    test_class = testcase.get_parent()
-    if not os.path.isfile(test_class.get_report_path()):
-        raise my_bug.BugError('Unexpected: No report for '+str(test_class))
-    test_class.set_report(test_parser.TestClassReport(test_class.get_report_path(), test_class.get_module()))
-
 # Returns tupls of (issue,commit,tests) that may contain bugs
 def extract_possible_bugs(bug_issues):
     ans = []
