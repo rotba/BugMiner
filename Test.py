@@ -2,6 +2,8 @@ import os
 import unittest
 import Main
 import bug.bug as my_bug
+
+
 class TestMain(unittest.TestCase):
 
     def setUp(self):
@@ -178,6 +180,7 @@ class TestMain(unittest.TestCase):
         diff_testcases =Main.find_test_cases_diff(test, test.get_path())
         self.assertTrue(expected_delta_testcase in diff_testcases)
 
+    @unittest.skip("commit_created_testclasses() was deleted")
     def test_get_commit_created_testclasses(self):
         print('test_get_commit_created_testclasses')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
@@ -214,7 +217,6 @@ class TestMain(unittest.TestCase):
         parent_testcases=Main.test_parser.get_testcases(parent_tests)
         self.assertTrue(expected_delta_testcase in parent_testcases, "'p_1.AmitTest should have been patchd on the parent commit and exist")
 
-
     def test_patch_tescases_not_compiling_testcases(self):
         print('test_patch_tescases_not_compiling_testcases')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
@@ -227,7 +229,7 @@ class TestMain(unittest.TestCase):
         commit_tests = Main.test_parser.get_tests(module_path)
         commit_testcases = Main.test_parser.get_testcases(commit_tests)
         expected_not_compiling_testcase = [t for t in commit_testcases if 'MainTest#gooTest' in t.get_mvn_name()][0]
-        commit_new_testcases = Main.get_commit_created_testcases(commit_testcases)
+        commit_new_testcases = Main.get_delta_testcases(commit_testcases)
         Main.prepare_project_repo_for_testing(parent, module_path)
         patched_testcases = Main.patch_testcases(commit_testcases, commit, parent)
         not_compiling_testcases = [t for t in commit_new_testcases if not t in patched_testcases]
@@ -240,24 +242,22 @@ class TestMain(unittest.TestCase):
                         'Build probably failed')
         self.assertTrue(not expected_not_compiling_testcase in parent_testcases, expected_not_compiling_testcase.get_mvn_name()+' should have been unpatched')
 
-
-    def test_get_compilation_error_testcases(self):
+    @unittest.skip("Coupled with patch_testcases")
+    def test_get_uncompiled_testcases(self):
         print('test_get_compilation_error_testcases')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
-        with open(os.getcwd()+r'\static_files\test_get_compilation_error_testcases_report.txt','r') as report_file:
-            report = report_file.read()
         commit = [c for c in Main.all_commits if c.hexsha == 'a71cdc161b0d87e7ee808f5078ed5fefab758773'][0]
         parent = commit.parents[0]
-        module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1'
+        module_path = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_1'
         Main.repo.git.reset('--hard')
         Main.repo.git.checkout(commit.hexsha)
         commit_tests = Main.test_parser.get_tests(module_path)
         commit_testcases = Main.test_parser.get_testcases(commit_tests)
         expected_not_compiling_testcase = [t for t in commit_testcases if 'MainTest#gooTest' in t.get_mvn_name()][0]
         Main.prepare_project_repo_for_testing(parent, module_path)
-        commit_new_testcases = Main.get_commit_created_testcases(commit_testcases)
-        compolation_error_testcases = Main.get_compilation_error_testcases(report, commit_new_testcases)
-        self.assertTrue(expected_not_compiling_testcase in compolation_error_testcases,
+        delta_testcases = Main.get_delta_testcases(commit_testcases)
+        compilation_error_testcases = Main.get_uncompiled_testcases([delta_testcases])
+        self.assertTrue(expected_not_compiling_testcase in compilation_error_testcases,
                         "'MainTest#gooTest should have been picked as for compilation error")
 
 
@@ -289,7 +289,7 @@ class TestMain(unittest.TestCase):
         tests = Main.test_parser.get_tests(module_path)
         testcases = Main.test_parser.get_testcases(tests)
         Main.prepare_project_repo_for_testing(parent, module_path)
-        new_testcases = Main.get_commit_created_testcases(testcases)
+        new_testcases = Main.get_delta_testcases(testcases)
         expected_new_testcase = [t for t in testcases if 'MainTest#foo_2' in t.get_mvn_name()][0]
         self.assertTrue(expected_new_testcase in new_testcases, 'MainTest#foo_2 should be picked for being new test')
 

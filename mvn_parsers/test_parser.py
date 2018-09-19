@@ -1,8 +1,6 @@
 import xml.etree.ElementTree as ET
 import re
 import os
-import csv
-
 import javalang
 
 
@@ -64,15 +62,6 @@ class TestClass:
     def get_tree(self):
         return self.tree
 
-    def __repr__(self):
-        return str(self.get_path())
-
-    def __eq__(self, other):
-        if not isinstance(other, TestClass):
-            return False
-        else:
-            return self.get_path() == other.get_path()
-
     def find_module(self, file_path):
         parent_dir = os.path.abspath(os.path.join(file_path, os.pardir))
         while parent_dir != None:
@@ -84,6 +73,15 @@ class TestClass:
 
     def is_valid_testcase(self, method):
         return method.name!='SetUp' and method.name!='TearDown'
+
+    def __repr__(self):
+        return str(self.get_path())
+
+    def __eq__(self, other):
+        if not isinstance(other, TestClass):
+            return False
+        else:
+            return self.get_path() == other.get_path()
 
 
 class TestCase(object):
@@ -290,19 +288,50 @@ def get_tests_reports(project_dir):
     return ans
 
 
-# Gets path to maven project directory and returns parsed
-def get_cached_tests_reports(cached_proj_dir, project_dir):
+# Returns the files generated compilation error in the maven build report
+def get_compilation_error_testcases(build_report, testcases):
     ans = []
-    path_to_reports = os.path.join(cached_proj_dir, 'target\\surefire-reports')
-    if os.path.isdir(path_to_reports):
-        ans.extend(parse_tests_reports(path_to_reports, project_dir))
-    for filename in os.listdir(cached_proj_dir):
-        file_abs_path = os.path.join(cached_proj_dir, filename)
-        project_dir_abs_path = os.path.join(project_dir, filename)
-        if os.path.isdir(file_abs_path):
-            if not (filename == 'src' or filename == '.git'):
-                ans.extend(get_cached_tests_reports(file_abs_path, project_dir_abs_path))
+    report_lines = build_report.splitlines()
+    i = 0
+    while i < len(report_lines):
+        if '[ERROR] COMPILATION ERROR :' in report_lines[i]:
+            i += 2
+            while not end_of_compilation_errors(report_lines[i]):
+                if is_compilation_error_report(report_lines[i]):
+                    compilation_error_testcase = get_error_test_case(report_lines[i], testcases)
+                    if not compilation_error_testcase== None and not compilation_error_testcase in ans:
+                        ans.append(compilation_error_testcase)
+                i += 1
+        else:
+            i += 1
     return ans
+
+# Gets the test case associated with the compilation error
+def get_error_test_case(line, testcases):
+    ans = None
+    path = ''
+    error_address = ''
+    parts = line.split(' ')
+    path_and_error_address = parts[1].split(':')
+    error_address = path_and_error_address[len(path_and_error_address) - 1]
+    error_line = int(error_address.strip('[]').split(',')[0])
+    path = ':'.join(path_and_error_address[:-1])
+    if path.startswith('/') or path.startswith('\\'):
+        path = path[1:]
+    error_testcase = get_line_testcase(path, error_line)
+    if error_testcase in testcases:
+        return [t for t in testcases if t == error_testcase][0]
+    else:
+        return None
+
+
+# Returns the files generated compilation error in the maven build report
+def end_of_compilation_errors(line):
+    return '[INFO] -------------------------------------------------------------' in line
+
+# Returns true iff the given report line is a report of compilation error
+def is_compilation_error_report(line):
+    return line.startswith('[ERROR]')
 
 
 # Returns all testcases of given test classes
@@ -362,6 +391,28 @@ def export_as_csv(tests):
         writer.writeheader()
         for test in tests:
             writer.writerow({'test_name': test.get_name(), 'time': str(test.get_time())})
+
+# Returns mvn command string that runns the given tests in the given module
+def generate_mvn_test_cmd(testcases, module):
+    ans = 'mvn test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
+    for test in testcases:
+        if not ans.endswith('='):
+            ans += ','
+        ans += test.get_mvn_name()
+    ans += ' -f ' + module
+    return ans
+
+# Returns mvn command string that compiles the given the given module
+def generate_mvn_test_compile_cmd(module):
+    ans = 'mvn test-compile'
+    ans += ' -f ' + module
+    return ans
+
+# Returns mvn command string that cleans the given the given module
+def generate_mvn_clean_cmd(module):
+    ans = 'mvn clean'
+    ans += ' -f ' + module
+    return ans
 
 
 def get_mvn_exclude_tests_list(tests, time):

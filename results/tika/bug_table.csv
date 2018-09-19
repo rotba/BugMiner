@@ -1,0 +1,2 @@
+issue,commit,testcase,description
+TIKA-16,d7dabee5ce14240f3c5ba2f6147c963d03604dd3,C:\Users\user\Code\Python\BugMiner\tested_project\tika\src\test\java\org\apache\tika\utils\MimeTypesUtilsTest.java#MimeTypesUtilsTest#test,Regression test bug

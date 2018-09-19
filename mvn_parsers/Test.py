@@ -122,6 +122,24 @@ class TestTest_Obj(unittest.TestCase):
         self.assertTrue(exp_6 in tests_paths)
         self.assertTrue(exp_7 in tests_paths)
 
+    @unittest.skip("Important test but will require some time to validate")
+    def test_get_compilation_error_testcases(self):
+        print('test_get_compilation_error_testcases')
+        with open(os.getcwd()+r'\static_files\test_get_compilation_error_testcases_report.txt','r') as report_file:
+            report = report_file.read()
+        commit = [c for c in Main.all_commits if c.hexsha == 'a71cdc161b0d87e7ee808f5078ed5fefab758773'][0]
+        parent = commit.parents[0]
+        module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1'
+        Main.repo.git.reset('--hard')
+        Main.repo.git.checkout(commit.hexsha)
+        commit_tests = Main.test_parser.get_tests(module_path)
+        commit_testcases = Main.test_parser.get_testcases(commit_tests)
+        expected_not_compiling_testcase = [t for t in commit_testcases if 'MainTest#gooTest' in t.get_mvn_name()][0]
+        Main.prepare_project_repo_for_testing(parent, module_path)
+        commit_new_testcases = Main.get_commit_created_testcases(commit_testcases)
+        compolation_error_testcases = Main.get_compilation_error_testcases(report, commit_new_testcases)
+        self.assertTrue(expected_not_compiling_testcase in compolation_error_testcases,
+                        "'MainTest#gooTest should have been picked as for compilation error")
 
 if __name__ == '__main__':
     unittest.main()
