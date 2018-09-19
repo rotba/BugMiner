@@ -105,7 +105,6 @@ venv.bak/
 .mypy_cache/
 
 # tested proj files
-tested_project/
 cache/
 
 # log

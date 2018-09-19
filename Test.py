@@ -257,7 +257,7 @@ class TestMain(unittest.TestCase):
         self.assertTrue(expected_not_compiling_testcase in compolation_error_testcases,
                         "'MainTest#gooTest should have been picked as for compilation error")
 
-    @unittest.skip("Long test")
+
     def test_extract_bugs(self):
         print('test_extract_bugs')
         Main.set_up('https://github.com/rotba/GitMavenTrackingProject')

@@ -1,0 +1,16 @@
+sub_mod_2/src/test/java/NaimTest.java
+=======================================================
+lhs: 100644 | c0b695f5c43569cbcaa374d5bfe7841227bfb439
+rhs: 100644 | ef02aaea93d8cf90526ececd41f7d0e56a5c2163
+---@@ -13,4 +13,8 @@ class NaimTest {
+     void newGooTest() {
+         assertEquals(m.goo(),0, "hey brother");
+     }
++    @Test
++    void boo() {
++        assertEquals(m.goo(),0, "hey brother");
++    }
+ }
+\ No newline at end of file
+
+---

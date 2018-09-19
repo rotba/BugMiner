@@ -112,7 +112,7 @@ def parse_tests(path_to_reports, project_dir):
     for filename in os.listdir(path_to_reports):
         if filename.endswith(".xml"):
             ans.append(Class_Test(os.path.join(path_to_reports, filename), project_dir))
-    return ans;
+    return ans
 
 #Gets path to maven project directory and returns parsed
 def get_tests(project_dir):

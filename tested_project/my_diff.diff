@@ -1,0 +1,14 @@
+diff --git a/sub_mod_2/src/test/java/NaimTest.java b/sub_mod_2/src/test/java/NaimTest.java
+index c0b695f..ef02aae 100644
+--- a/sub_mod_2/src/test/java/NaimTest.java
++++ b/sub_mod_2/src/test/java/NaimTest.java
+@@ -13,4 +13,8 @@ class NaimTest {
+     void newGooTest() {
+         assertEquals(m.goo(),0, "hey brother");
+     }
++    @Test
++    void boo() {
++        assertEquals(m.goo(),0, "hey brother");
++    }
+ }
+\ No newline at end of file
