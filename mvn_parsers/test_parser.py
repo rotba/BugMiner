@@ -44,13 +44,13 @@ class TestClass:
 
     def set_report(self, report):
         self.report = report
-        for testcase in self.testcases:
-            try:
-                testcase.set_report(report.get_testcase_report(testcase.get_mvn_name()))
-            except TestParserException as e:
-                self.report =None
-                raise e
 
+    def attach_report_to_testcase(self, testcase):
+        try:
+            testcase.set_report(self.report.get_testcase_report(testcase.get_mvn_name()))
+        except TestParserException as e:
+            self.report = None
+            raise e
     def clear_report(self):
         self.report=None
         for t in self.testcases:

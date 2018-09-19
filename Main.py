@@ -27,7 +27,7 @@ valid_bugs_csv_path= ''
 invalid_bugs_csv_path = ''
 dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
-JQL_QUERY = 'project = {} AND (issuekey =TIKA-107 OR issuekey =TIKA-56) AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
+JQL_QUERY = 'project = {} AND issuekey =TIKA-16 AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
 
 
 def main(argv):
@@ -105,20 +105,26 @@ def extract_bugs(issue, commit, tests_paths):
 def attach_reports(testcases, issue, commit, invalid_bugs):
     ans = []
     for testcase in testcases:
-        if testcase.get_parent().get_report() is None:
-            try:
-                attach_report(testcase)
-                ans.append(testcase)
-            except test_parser.TestParserException as e:
-                invalid_bug = my_bug.Bug(issue, commit, testcase, 'Invalid, '+str(e))
-                invalid_bugs.append(invalid_bug)
-            except my_bug.BugError as e:
-                invalid_bug = my_bug.Bug(issue, commit, testcase, 'Invalid, '+str(e))
-                invalid_bugs.append(invalid_bug)
-        else:
+        testclass = testcase.get_parent()
+        if testclass.get_report() is None:
+            testclass.set_report(test_parser.TestClassReport(testclass.get_report_path(), testclass.get_module()))
+        try:
+            testclass.attach_report_to_testcase(testcase)
             ans.append(testcase)
+        except test_parser.TestParserException as e:
+            invalid_bug = my_bug.Bug(issue, commit, testcase, 'Invalid, '+str(e))
+            invalid_bugs.append(invalid_bug)
+        except my_bug.BugError as e:
+            invalid_bug = my_bug.Bug(issue, commit, testcase, 'Invalid, '+str(e))
+            invalid_bugs.append(invalid_bug)
     return ans
 
+# attaches reports to all the test claases  of all the testscases. handles
+def attach_report(testcase):
+    test_class = testcase.get_parent()
+    if not os.path.isfile(test_class.get_report_path()):
+        raise my_bug.BugError('Unexpected: No report for '+str(test_class))
+    test_class.set_report(test_parser.TestClassReport(test_class.get_report_path(), test_class.get_module()))
 
 # Returns tupls of (issue,commit,tests) that may contain bugs
 def extract_possible_bugs(bug_issues):
@@ -224,12 +230,7 @@ def get_uncompiled_testcases(testcases_groups):
     return ans
 
 
-# attaches reports to all the test claases  of all the testscases. handles
-def attach_report(testcase):
-    test_class = testcase.get_parent()
-    if not os.path.isfile(test_class.get_report_path()):
-        raise my_bug.BugError('Unexpected: No report for '+str(test_class))
-    test_class.set_report(test_parser.TestClassReport(test_class.get_report_path(), test_class.get_module()))
+
 
 
 # Returns the commits relevant to bug_issue

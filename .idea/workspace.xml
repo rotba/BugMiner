@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/test_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/tika/bug_table.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/tika/bug_table.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/results/tika/invalid_bugs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/tika/invalid_bugs.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/tika_installed" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,10 +19,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/BugMinerTest$Test.coverage" NAME="Test Coverage Results" MODIFIED="1537361891873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMinerTest$Test.coverage" NAME="Test Coverage Results" MODIFIED="1537369707810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$tmp.coverage" NAME="tmp Coverage Results" MODIFIED="1536665877421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BugMinerTest$Main.coverage" NAME="Main Coverage Results" MODIFIED="1536774680671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Test_test_parser.coverage" NAME="Test_test_parser Coverage Results" MODIFIED="1537189344462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMinerTest$Main.coverage" NAME="Main Coverage Results" MODIFIED="1537369841363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMinerTest$Test_test_parser.coverage" NAME="Test_test_parser Coverage Results" MODIFIED="1536854063542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1537359363737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Test.coverage" NAME="Test Coverage Results" MODIFIED="1537345875723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -89,23 +94,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="14430" />
+          <entry key="py" value="14538" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="14430" />
+          <entry key="Python" value="14538" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="401" selection-start-line="401" selection-end-line="401" />
+            <state relative-caret-position="138">
+              <caret line="109" column="94" lean-forward="true" selection-start-line="109" selection-start-column="94" selection-end-line="109" selection-end-column="94" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -113,11 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="278" lean-forward="true" selection-start-line="278" selection-end-line="278" />
+            <state relative-caret-position="4726">
+              <caret line="278" selection-start-line="278" selection-end-line="278" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -137,10 +142,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5185">
-              <caret line="308" selection-start-line="308" selection-end-line="308" />
+            <state relative-caret-position="180">
+              <caret line="49" column="43" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="43" />
               <folding>
-                <element signature="e#0#34#0" expanded="true" />
+                <marker date="1537369334662" expanded="true" signature="1509:1709" ph="..." />
               </folding>
             </state>
           </provider>
@@ -166,14 +171,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>atta</find>
       <find>Main.extract_bugs</find>
       <find>patch_testcases</find>
       <find>get_uncompiled_testcases</find>
       <find>generate_mvn</find>
       <find>get_compilation_error_method</find>
       <find>get_method_line_position</find>
-      <find>get_testcase_report</find>
       <find>file_deleted_in_commit</find>
       <find>get_commit_created_testcases</find>
       <find>get_commit_created_testclasses</find>
@@ -196,6 +199,8 @@
       <find>installed</find>
       <find>proj_dir_installed</find>
       <find>results_dir</find>
+      <find>get_testcase_report</find>
+      <find>attach_report</find>
     </findStrings>
     <replaceStrings>
       <replace>issue_1378</replace>
@@ -234,11 +239,11 @@
         <option value="$PROJECT_DIR$/mvn_reports_tests/test_parser.py" />
         <option value="$PROJECT_DIR$/mvn_parsers/compilation_error_parses.py" />
         <option value="$PROJECT_DIR$/test_Test_Obj.py" />
-        <option value="$PROJECT_DIR$/mvn_parsers/test_parser.py" />
         <option value="$PROJECT_DIR$/bug/bug.py" />
         <option value="$PROJECT_DIR$/mvn_parsers/Test.py" />
-        <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/Test.py" />
+        <option value="$PROJECT_DIR$/mvn_parsers/test_parser.py" />
+        <option value="$PROJECT_DIR$/Main.py" />
       </list>
     </option>
   </component>
@@ -299,7 +304,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Test">
+  <component name="RunManager" selected="Python.Main">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -448,16 +453,31 @@
       <path value="$PROJECT_DIR$/tested_project/GitMavenTrackingProject" />
       <path value="$PROJECT_DIR$/tested_project/GitMavenTrackingProject_installed" />
       <path value="$PROJECT_DIR$/static_files/GitMavenTrackingProject" />
+      <path value="$PROJECT_DIR$/tested_project/tika_installed" />
     </ignored-roots>
   </component>
   <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="PythonConfigurationType">
-        <watch expression="all_tests" />
-        <watch expression="repo" />
-        <watch expression="report_lines[i]" />
-      </configuration>
-    </watches-manager>
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>69</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mvn_parsers/test_parser.py</url>
+          <line>200</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
@@ -478,6 +498,11 @@
       </expression>
     </expressions>
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>os.getcwd() + '\\tested_project'</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>test_cmd</expression-string>
         <language-id>Python</language-id>
@@ -515,11 +540,6 @@
       </expression>
       <expression>
         <expression-string>dict_diff_patch[diff]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>diff</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -644,16 +664,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/git/cmd.py" />
-    <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5185">
-          <caret line="308" selection-start-line="308" selection-end-line="308" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bug/bug.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1071">
@@ -668,22 +678,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
+    <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="401" selection-start-line="401" selection-end-line="401" />
+        <state relative-caret-position="180">
+          <caret line="49" column="43" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="43" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1537369334662" expanded="true" signature="1509:1709" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="278" lean-forward="true" selection-start-line="278" selection-end-line="278" />
+        <state relative-caret-position="4726">
+          <caret line="278" selection-start-line="278" selection-end-line="278" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="109" column="94" lean-forward="true" selection-start-line="109" selection-start-column="94" selection-end-line="109" selection-end-column="94" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
