@@ -1,0 +1,3 @@
+[submodule "mvn_parsers/static_files/GitMavenTrackingProject"]
+	path = mvn_parsers/static_files/GitMavenTrackingProject
+	url = https://github.com/rotba/GitMavenTrackingProject
