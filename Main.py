@@ -187,10 +187,37 @@ def patch_testcases(commit_testcases, commit, prev_commit):
             dict_diff_patch[diff] = patch_path
             ans.extend(associeted_testcases)
     not_compiling_testcases = get_uncompiled_testcases(list(dict_diff_testcases.values()))
+    unpatch_testcases(not_compiling_testcases)
     for testcase in not_compiling_testcases:
-        diff = [d for d in dict_diff_testcases.keys() if testcase in dict_diff_testcases[d]][0]
-        git_cmds_wrapper(lambda: repo.git.execute(['git', 'apply', '-R', dict_diff_patch[diff]]))
         ans.remove(testcase)
+    return ans
+
+# Removes the testcases from their files
+def unpatch_testcases(testcases):
+    dict_file_testcases = divide_to_files(testcases)
+    for file in dict_file_testcases.keys():
+        positions_to_delete = list(map(lambda t:t.get_lines_range(),dict_file_testcases[file]))
+        with open(file, 'r') as f:
+            lines = f.readlines()
+        with open(file, 'w') as f:
+            i=1
+            for line in lines:
+                if any(p[0]<=i<=p[1] for p in positions_to_delete):
+                    f.write('')
+                else:
+                    f.write(line)
+                i+=1
+
+
+
+# Returns dictionary mapping path to group of associated testcases
+def divide_to_files(testcases):
+    ans = {}
+    for testcase in testcases:
+        path_to_file = testcase.get_path()
+        if not path_to_file in ans.keys():
+            ans[path_to_file] = []
+        ans[path_to_file].append(testcase)
     return ans
 
 

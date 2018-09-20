@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/tika/invalid_bugs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/results/tika/invalid_bugs.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/test_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +21,8 @@
     <SUITE FILE_PATH="coverage/BugMiner$Test_test_parser.coverage" NAME="Test_test_parser Coverage Results" MODIFIED="1537189344462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMinerTest$Test_test_parser.coverage" NAME="Test_test_parser Coverage Results" MODIFIED="1536854063542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1537371725813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BugMiner$Test.coverage" NAME="Test Coverage Results" MODIFIED="1537428747361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Test_mvn_parsers.coverage" NAME="Test_mvn_parsers Coverage Results" MODIFIED="1537431752147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvn_parsers" />
+    <SUITE FILE_PATH="coverage/BugMiner$Test.coverage" NAME="Test Coverage Results" MODIFIED="1537466447698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="859684521">
@@ -42,27 +45,27 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="2" />
-          <entry key="py" value="37" />
+          <entry key="py" value="57" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="37" />
+          <entry key="Python" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="21" />
           <entry key="gitignore" value="39" />
-          <entry key="py" value="14194" />
+          <entry key="py" value="15213" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="60" />
-          <entry key="Python" value="14194" />
+          <entry key="Python" value="15213" />
         </counts>
       </usages-collector>
     </session>
@@ -104,8 +107,78 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6681">
-              <caret line="405" selection-start-line="405" selection-end-line="405" />
+            <state relative-caret-position="369">
+              <caret line="203" selection-start-line="203" selection-end-line="203" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+                <marker date="1537465541213" expanded="true" signature="9502:9728" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Test.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="294" column="27" selection-start-line="294" selection-start-column="27" selection-end-line="294" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/unittest/case.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="614" selection-start-line="614" selection-end-line="614" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="129" column="30" selection-start-line="129" selection-start-column="30" selection-end-line="129" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+                <marker date="1537465960356" expanded="true" signature="732:881" ph="..." />
+                <marker date="1537465960356" expanded="true" signature="1735:1926" ph="..." />
+                <marker date="1537465960356" expanded="true" signature="2669:2672" ph="..." />
+                <marker date="1537465960356" expanded="true" signature="3508:3514" ph="..." />
+                <marker date="1537465960356" expanded="true" signature="12575:12580" ph="..." />
+                <marker date="1537465960356" expanded="true" signature="14527:14528" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/javalang/tree.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="124">
+              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/javalang/ast.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="81">
+              <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/javalang/ast.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -114,65 +187,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4624">
-              <caret line="275" column="71" selection-start-line="275" selection-start-column="71" selection-end-line="275" selection-end-column="71" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/git/cmd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8670">
-              <caret line="547" selection-start-line="547" selection-end-line="547" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py">
+        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/javalang/tokenizer.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
               <caret line="12" selection-start-line="12" selection-end-line="12" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-                <marker date="1537348414225" expanded="true" signature="732:881" ph="..." />
-                <marker date="1537348414225" expanded="true" signature="1735:1926" ph="..." />
-                <marker date="1537348414225" expanded="true" signature="2669:2672" ph="..." />
-                <marker date="1537348414225" expanded="true" signature="3508:3514" ph="..." />
-                <marker date="1537348414225" expanded="true" signature="12271:12276" ph="..." />
-                <marker date="1537348414225" expanded="true" signature="14223:14224" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mvn_parsers/Test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="92" selection-start-line="7" selection-start-column="92" selection-end-line="7" selection-end-column="92" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bug/bug.py">
+        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/javalang/parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="42" selection-start-line="42" selection-end-line="42" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <marker date="1537353379915" expanded="true" signature="240:493" ph="..." />
-              </folding>
+            <state relative-caret-position="-182">
+              <caret line="802" column="43" selection-start-line="802" selection-start-column="43" selection-end-line="802" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/javalang/util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="127" column="46" selection-start-line="127" selection-start-column="40" selection-end-line="127" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -188,17 +224,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Main.extract_bugs</find>
-      <find>patch_testcases</find>
-      <find>get_uncompiled_testcases</find>
-      <find>generate_mvn</find>
-      <find>get_compilation_error_method</find>
-      <find>get_method_line_position</find>
-      <find>get_testcase_report</find>
-      <find>file_deleted_in_commit</find>
       <find>get_commit_created_testcases</find>
       <find>get_commit_created_testclasses</find>
-      <find>generate_patch</find>
       <find>end_of_compilation_errors</find>
       <find>is_compilation_error_report</find>
       <find>get_error_test_case</find>
@@ -218,6 +245,15 @@
       <find>proj_dir_installed</find>
       <find>results_dir</find>
       <find>res</find>
+      <find>generate_patch</find>
+      <find>javal</find>
+      <find>JavaToken</find>
+      <find>.tokens</find>
+      <find>self.tokens</find>
+      <find>self.tokens =</find>
+      <find>23</find>
+      <find>method_declarator</find>
+      <find>modifiers</find>
     </findStrings>
     <replaceStrings>
       <replace>issue_1378</replace>
@@ -256,11 +292,14 @@
         <option value="$PROJECT_DIR$/mvn_reports_tests/test_parser.py" />
         <option value="$PROJECT_DIR$/mvn_parsers/compilation_error_parses.py" />
         <option value="$PROJECT_DIR$/test_Test_Obj.py" />
-        <option value="$PROJECT_DIR$/mvn_parsers/test_parser.py" />
         <option value="$PROJECT_DIR$/bug/bug.py" />
-        <option value="$PROJECT_DIR$/Main.py" />
-        <option value="$PROJECT_DIR$/Test.py" />
         <option value="$PROJECT_DIR$/mvn_parsers/Test.py" />
+        <option value="$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/javalang/tokenizer.py" />
+        <option value="$PROJECT_DIR$/venv/Lib/site-packages/javalang/parser.py" />
+        <option value="$PROJECT_DIR$/venv/Lib/site-packages/javalang/tokenizer.py" />
+        <option value="$PROJECT_DIR$/Main.py" />
+        <option value="$PROJECT_DIR$/mvn_parsers/test_parser.py" />
+        <option value="$PROJECT_DIR$/Test.py" />
       </list>
     </option>
   </component>
@@ -270,9 +309,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1990" />
+    <option name="y" value="30" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
@@ -294,6 +333,32 @@
               <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
               <item name="mvn_parsers" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+              <item name="Lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+              <item name="Lib" type="462c0819:PsiDirectoryNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
+              <item name="Lib" type="462c0819:PsiDirectoryNode" />
+              <item name="site-packages" type="462c0819:PsiDirectoryNode" />
+              <item name="javalang" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -302,6 +367,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="MethodDeclaration&#9;null&#9;null&#10;JavaToken&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -326,7 +392,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.Test">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -436,16 +502,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16944024" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11940298" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3298731" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8698941" weight="0.45008183" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49621785" weight="0.5417349" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8698941" visible="true" weight="0.4496208" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49621785" weight="0.40628386" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -478,9 +544,37 @@
     </ignored-roots>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <condition expression="position[0] == 23" language="Python" />
+          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/javalang/tokenizer.py</url>
+          <line>12</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/javalang/parse.py</url>
+          <line>50</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <condition expression="id(self.value) == 2361177296512" language="Python" />
+          <url>file://$PROJECT_DIR$/venv/Lib/site-packages/javalang/util.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/javalang/ast.py</url>
+          <line>26</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="repo" />
+        <watch expression="t.get_mvn_name()" />
+        <watch expression="testcase.method.body" />
       </configuration>
     </watches-manager>
   </component>
@@ -497,6 +591,36 @@
     </expressions>
     <expressions id="breakpointCondition">
       <expression>
+        <expression-string>&quot;methoddecl&quot; in str(self.__class__).lower()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>position and position[0] == 23</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>position[0] == 23</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>id(self.value) == 2361177296512</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>id(self.value) ==</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>id()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>issue.key =='TIKA-107'</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -511,47 +635,47 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>test_cmd</expression-string>
+        <expression-string>self.tokens.list[self.tokens.marker]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>list(map(lambda tc: tc.get_id, self.test_2.get_testcases()))</expression-string>
+        <expression-string>self.tokens.list[self.tokens.marker - 1]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>commit</expression-string>
+        <expression-string>self.tokens.list[self.tokens.marker - 1].position</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>commit.stats</expression-string>
+        <expression-string>self.tokens.list[self.tokens.marker + 1]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>commit.stats.files.keys()</expression-string>
+        <expression-string>self.list[self.tokens.marker + 1]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>all_tests</expression-string>
+        <expression-string>self.tokens.marker</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>testcase.get_name()</expression-string>
+        <expression-string>self.tokens</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>dict_diff_patch[diff]</expression-string>
+        <expression-string>&quot;methoddecl&quot; in str(self.__class__).lower()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>diff</expression-string>
+        <expression-string>str(self.__class__)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -635,13 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="614" selection-start-line="614" selection-end-line="614" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/genericpath.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -670,13 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/ntpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/xml/etree/ElementTree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -691,46 +801,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6681">
-          <caret line="405" selection-start-line="405" selection-end-line="405" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4624">
-          <caret line="275" column="71" selection-start-line="275" selection-start-column="71" selection-end-line="275" selection-end-column="71" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/git/cmd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8670">
           <caret line="547" selection-start-line="547" selection-end-line="547" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-            <marker date="1537348414225" expanded="true" signature="732:881" ph="..." />
-            <marker date="1537348414225" expanded="true" signature="1735:1926" ph="..." />
-            <marker date="1537348414225" expanded="true" signature="2669:2672" ph="..." />
-            <marker date="1537348414225" expanded="true" signature="3508:3514" ph="..." />
-            <marker date="1537348414225" expanded="true" signature="12271:12276" ph="..." />
-            <marker date="1537348414225" expanded="true" signature="14223:14224" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -749,6 +823,144 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="92" selection-start-line="7" selection-start-column="92" selection-end-line="7" selection-end-column="92" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="577" selection-start-line="577" selection-end-line="577" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/javalang/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-123">
+          <caret line="90" column="8" selection-start-line="90" selection-start-column="8" selection-end-line="90" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/javalang/parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="94" column="42" selection-start-line="94" selection-start-column="42" selection-end-line="94" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/javalang/parse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/javalang/tokenizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/javalang/parse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="52" column="20" selection-start-line="52" selection-start-column="20" selection-end-line="52" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/javalang/tree.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/javalang/ast.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/javalang/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="127" column="46" selection-start-line="127" selection-start-column="40" selection-end-line="127" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/javalang/ast.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/javalang/tokenizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/javalang/parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-182">
+          <caret line="802" column="43" selection-start-line="802" selection-start-column="43" selection-end-line="802" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/_pydevd_bundle/pydevd_frame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="129" column="30" selection-start-line="129" selection-start-column="30" selection-end-line="129" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <marker date="1537465960356" expanded="true" signature="732:881" ph="..." />
+            <marker date="1537465960356" expanded="true" signature="1735:1926" ph="..." />
+            <marker date="1537465960356" expanded="true" signature="2669:2672" ph="..." />
+            <marker date="1537465960356" expanded="true" signature="3508:3514" ph="..." />
+            <marker date="1537465960356" expanded="true" signature="12575:12580" ph="..." />
+            <marker date="1537465960356" expanded="true" signature="14527:14528" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="203" selection-start-line="203" selection-end-line="203" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+            <marker date="1537465541213" expanded="true" signature="9502:9728" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="614" selection-start-line="614" selection-end-line="614" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="294" column="27" selection-start-line="294" selection-start-column="27" selection-end-line="294" selection-end-column="27" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
