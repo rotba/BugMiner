@@ -6,7 +6,7 @@ import test_parser
 class TestTest_Obj(unittest.TestCase):
 
     def setUp(self):
-        test_doc_1 = os.getcwd() + r'\static_files\\TEST-org.apache.tika.cli.TikaCLIBatchCommandLineTest.xml'
+        test_doc_1 = os.getcwd() + r'\static_files\TEST-org.apache.tika.cli.TikaCLIBatchCommandLineTest.xml'
         test_doc_2 = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_2\target\surefire-reports\TEST-p_1.AssafTest.xml'
         self.test_report_1 = test_parser.TestClassReport(test_doc_1, '')
         self.test_report_2 = test_parser.TestClassReport(test_doc_2,
