@@ -132,7 +132,7 @@ def extract_possible_bugs(bug_issues):
         for commit in issue_commits:
             issue_tests = get_tests_paths_from_commit(commit)
             if len(issue_tests) == 0:
-                logging.info('Didn\'t associate ' + bug_issue.key + ' with any test')
+                logging.info('Didn\'t associate ' + bug_issue.key + ' and commit '+commit.hexsha+' with any test')
                 continue
             ans.append((bug_issue.key, commit.hexsha, issue_tests))
     return ans
@@ -401,12 +401,14 @@ def set_up(git_url):
         raise Exception('The csv results of an old BugMiner running is in the project results dir ('+proj_results_dir+')\n please save it in a different directory before running BugMiner')
     if os.path.isfile(invalid_bugs_csv_path):
         raise Exception('The csv results of an old BugMiner running is in the project results dir ('+proj_results_dir+')\n please save it in a different directory before running BugMiner')
-    git_cmds_wrapper(lambda: git.Git(os.getcwd() + '\\tested_project').clone(git_url))
     proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
     if not os.path.isdir(proj_results_dir):
         os.makedirs(proj_results_dir)
     LOG_FILENAME = os.path.join(proj_results_dir, 'log.log')
     logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO)
+    logging.info('Started cloning '+git_url+'... ')
+    git_cmds_wrapper(lambda: git.Git(os.getcwd() + '\\tested_project').clone(git_url))
+    logging.info('Finshed cloning '+git_url+'...')
     repo = Repo(proj_dir)
     if not os.path.isdir("cache"):
         os.makedirs("cache")
