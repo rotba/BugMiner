@@ -5,6 +5,7 @@ import test_parser
 
 class TestTest_Obj(unittest.TestCase):
 
+    os.system('mvn clean install -f '+os.getcwd() + r'\static_files\GitMavenTrackingProject')
     def setUp(self):
         test_doc_1 = os.getcwd() + r'\static_files\TEST-org.apache.tika.cli.TikaCLIBatchCommandLineTest.xml'
         test_doc_2 = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_2\target\surefire-reports\TEST-p_1.AssafTest.xml'
