@@ -401,12 +401,12 @@ def set_up(git_url):
         raise Exception('The csv results of an old BugMiner running is in the project results dir ('+proj_results_dir+')\n please save it in a different directory before running BugMiner')
     if os.path.isfile(invalid_bugs_csv_path):
         raise Exception('The csv results of an old BugMiner running is in the project results dir ('+proj_results_dir+')\n please save it in a different directory before running BugMiner')
-    LOG_FILENAME = os.path.join(proj_results_dir,'log.log')
-    logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO)
     git_cmds_wrapper(lambda: git.Git(os.getcwd() + '\\tested_project').clone(git_url))
     proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
     if not os.path.isdir(proj_results_dir):
         os.makedirs(proj_results_dir)
+    LOG_FILENAME = os.path.join(proj_results_dir, 'log.log')
+    logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO)
     repo = Repo(proj_dir)
     if not os.path.isdir("cache"):
         os.makedirs("cache")

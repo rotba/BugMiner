@@ -271,9 +271,9 @@ class TestMain(unittest.TestCase):
         Main.repo.git.reset('--hard')
         Main.repo.git.checkout(commit.hexsha)
         tests_paths = Main.get_tests_paths_from_commit(commit)
-        res = Main.extract_bugs(issue, commit, tests_paths)
+        res = Main.extract_bugs(issue, commit, tests_paths)[0]
         for bug in res:
-            if bug.test.get_id() == exp_testcase_id and bug.desc == my_bug.created_msg:
+            if bug.test.get_id() == exp_testcase_id and bug.desctiption == my_bug.created_msg:
                 return
         self.fail('Did not extracted the bug of testcase -'+ exp_testcase_id)
 
