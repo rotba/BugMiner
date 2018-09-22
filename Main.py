@@ -29,23 +29,29 @@ invalid_bugs_csv_path = ''
 dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
+USE_CACHE = True
+GENERATE_CSV = True
 
 
 def main(argv):
     bug_data_set = []
     set_up(argv)
-    #valid_bugs_csv_handler = my_bug.Bug_csv_report_handler(valid_bugs_csv_path)
-    #invalid_bugs_csv_handler = my_bug.Bug_csv_report_handler(invalid_bugs_csv_path)
-    #possible_bugs =get_from_cache(os.path.join(cache_dir, 'possible_bugs.pkl'), lambda :extract_possible_bugs(bug_issues))
-    possible_bugs =extract_possible_bugs(bug_issues)
+    if GENERATE_CSV:
+        valid_bugs_csv_handler = my_bug.Bug_csv_report_handler(valid_bugs_csv_path)
+        invalid_bugs_csv_handler = my_bug.Bug_csv_report_handler(invalid_bugs_csv_path)
+    if USE_CACHE:
+        possible_bugs =get_from_cache(os.path.join(cache_dir, 'possible_bugs.pkl'), lambda :extract_possible_bugs(bug_issues))
+    else:
+        possible_bugs =extract_possible_bugs(bug_issues)
     for possible_bug in possible_bugs:
         try:
             valid_and_invalid_bugs = extract_bugs(issue=dict_key_issue[possible_bug[0]], commit=repo.commit(possible_bug[1]), tests_paths=possible_bug[2])
             bug_data_set.extend(valid_and_invalid_bugs[0])
+            if GENERATE_CSV:
+                valid_bugs_csv_handler.add_bugs(valid_and_invalid_bugs[0])
+                invalid_bugs_csv_handler.add_bugs(valid_and_invalid_bugs[1])
         except my_bug.BugError as e:
             logging.info(e.msg)
-        #valid_bugs_csv_handler.add_bugs(valid_and_invalid_bugs[0])
-        #invalid_bugs_csv_handler.add_bugs(valid_and_invalid_bugs[1])
     # res = open('results\\' + proj_name, 'w')
     # for bug in bug_data_set:
     #     res.write(str(bug) + '\n')
@@ -75,7 +81,7 @@ def extract_bugs(issue, commit, tests_paths):
         git_cmds_wrapper(lambda: repo.git.reset('--hard'))
         prepare_project_repo_for_testing(parent, module)
         delta_testcases = get_delta_testcases(commit_valid_testcases)
-        patched_testcases = patch_testcases(commit_valid_testcases, commit, parent)
+        patched_testcases = patch_testcases(commit_valid_testcases, commit, parent, module)
         invalid_bug_testcases = [t for t in delta_testcases if not t in patched_testcases]
         invalid_bugs += list(map(lambda t: my_bug.Bug(issue, commit, t, my_bug.invalid_msg), invalid_bug_testcases))
         os.system(test_cmd)
@@ -109,7 +115,10 @@ def attach_reports(testcases, issue, commit, invalid_bugs):
     for testcase in testcases:
         testclass = testcase.get_parent()
         if testclass.get_report() is None:
-            testclass.set_report(test_parser.TestClassReport(testclass.get_report_path(), testclass.get_module()))
+            try:
+                testclass.set_report(test_parser.TestClassReport(testclass.get_report_path(), testclass.get_module()))
+            except test_parser.TestParserException as e:
+                raise my_bug.BugError('Can not attach report to '+testclass.get_mvn_name()+'. '+e.msg)
         try:
             testclass.attach_report_to_testcase(testcase)
             ans.append(testcase)
@@ -172,11 +181,13 @@ def get_delta_testcases(testcases):
     return ans
 
 
-# Patches tests in the project
-def patch_testcases(commit_testcases, commit, prev_commit):
+# Patches tests in the project. Returns the patches that didn't generate compilation errors
+def patch_testcases(commit_testcases, commit, prev_commit, module_path):
     ans = []
     dict_diff_testcases = {}
     dict_diff_patch = {}
+    dict_file_diff = {}
+    not_compiling_testcases = []
     set_up_patches_dir()
     for diff in commit.diff(prev_commit):
         associeted_testcases = get_associated_test_case(diff, commit_testcases)
@@ -186,12 +197,49 @@ def patch_testcases(commit_testcases, commit, prev_commit):
             git_cmds_wrapper(lambda :repo.git.execute(['git', 'apply', patch_path]))
             dict_diff_testcases[diff] = associeted_testcases
             dict_diff_patch[diff] = patch_path
+            dict_file_diff[test_path] = diff
             ans.extend(associeted_testcases)
-    not_compiling_testcases = get_uncompiled_testcases(list(dict_diff_testcases.values()))
-    unpatch_testcases(not_compiling_testcases)
-    for testcase in not_compiling_testcases:
-        ans.remove(testcase)
+    clean_cmd = test_parser.generate_mvn_clean_cmd(module_path)
+    os.system(clean_cmd)
+    test_compile_cmd = test_parser.generate_mvn_test_compile_cmd(module_path)
+    with os.popen(test_compile_cmd) as proc:
+        build_report = proc.read()
+    compilation_error_report = test_parser.get_compilation_error_report(build_report)
+    if not len(compilation_error_report) == 0:
+        compilation_errors = test_parser.get_compilation_errors(compilation_error_report)
+        dict_file_errors = divide_errors_to_files(compilation_errors)
+        for file in dict_file_errors:
+            error_testclass = test_parser.TestClass(file)
+            for error in dict_file_errors[file]:
+                if is_unrelated_testcase(error, error_testclass):
+                    diff = dict_file_diff[error.path]
+                    git_cmds_wrapper(lambda: repo.git.execute(['git', 'apply', '-R', dict_diff_patch[diff]]))
+                    for testcase in dict_diff_testcases[diff]:
+                        ans.remove(testcase)
+                    continue
+                else:
+                    tmp = [tc for tc in error_testclass.get_testcases() if tc.contains_line(error.line)]
+                    assert len(tmp)==1
+                    not_compiling_testcases.append(tmp[0])
+        still_patched_not_compiling_testcases = list(filter(lambda  t: t in ans,not_compiling_testcases))
+        unpatch_testcases(still_patched_not_compiling_testcases)
+        for testcase in still_patched_not_compiling_testcases:
+            ans.remove(testcase)
     return ans
+
+# Returns true if the given compilation error report object is unrelated to any testcase in it's file
+def is_unrelated_testcase(error, error_testclass):
+    return not any([t.contains_line(error.line) for t in error_testclass.get_testcases()])
+
+# Returns dictionary mapping file path to it's related compilation error in the given errors
+def divide_errors_to_files(compilation_errors):
+    ans = {}
+    for error in compilation_errors:
+        if not error.path in ans.keys():
+            ans[error.path] = []
+        ans[error.path].append(error)
+    return ans
+
 
 # Removes the testcases from their files
 def unpatch_testcases(testcases):
@@ -240,25 +288,27 @@ def prepare_project_repo_for_testing(parent, module):
 
 
 # returns list of patches that didn't compile from
-def get_uncompiled_testcases(testcases_groups):
+def get_uncompiled_testcases(testcases_diff_groups):
     ans = []
-    for testcases_group in testcases_groups:
-        clean_cmd = test_parser.generate_mvn_clean_cmd(testcases_group[0].get_module())
+    for testcases_diff_group in testcases_diff_groups:
+        associated_file = testcases_diff_group[0].get_path()
+        clean_cmd = test_parser.generate_mvn_clean_cmd(testcases_diff_group[0].get_module())
         os.system(clean_cmd)
-        test_compile_cmd = test_parser.generate_mvn_test_compile_cmd(testcases_group[0].get_module())
+        test_compile_cmd = test_parser.generate_mvn_test_compile_cmd(testcases_diff_group[0].get_module())
         with os.popen(test_compile_cmd) as proc:
             build_report = proc.read()
             compilation_error_report = test_parser.get_compilation_error_report(build_report)
             if not len(compilation_error_report)==0:
                 error_testcases = test_parser.get_compilation_error_testcases(compilation_error_report)
-                relevant_error_testcases = list(filter(lambda t: t in testcases_group,error_testcases))
-                if len(relevant_error_testcases)==0:
-                    raise my_bug.BugError(
-                        'Patching generated compilation error not associated to testcases.'+
-                        '\nCompilation error report:\n'+
-                        reduce((lambda x, y: x +'\n'+ y), compilation_error_report))
-                else:
-                    ans+=relevant_error_testcases
+                if any(t.get_path() == associated_file for t in error_testcases):
+                    if len(relevant_error_testcases)==0:
+                        raise my_bug.BugError(
+                            'Patching generated compilation error not associated to testcases.'+
+                            '\nCompilation error report:\n'+
+                            reduce((lambda x, y: x +'\n'+ y), compilation_error_report))
+                    else:
+                        ans+=relevant_error_testcases
+                relevant_error_testcases = list(filter(lambda t: t in testcases_diff_group,error_testcases))
     return ans
 
 

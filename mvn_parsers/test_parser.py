@@ -129,6 +129,10 @@ class TestCase(object):
                 lower_position = annotation.position[0]
         return (lower_position, self.method.end_position[0])
 
+    def contains_line(self, line):
+        range = self.get_lines_range()
+        return range[0]<=line<=range[1]
+
     def __repr__(self):
         return self.id
 
@@ -141,6 +145,8 @@ class TestCase(object):
 
 class TestClassReport:
     def __init__(self, xml_doc_path, modlue_path):
+        if not os.path.isfile(xml_doc_path):
+            raise TestParserException('No such report file :'+xml_doc_path)
         self.xml_path = xml_doc_path
         self.success_testcases = []
         self.failed_testcases = []
@@ -246,6 +252,27 @@ class TestCaseReport(object):
     def __repr__(self):
         return str(self.get_name())
 
+class CompilationErrorReport(object):
+    def __init__(self, compilation_error_report_line):
+        self._path = ''
+        self._error_line = ''
+        parts = compilation_error_report_line.split(' ')
+        path_and_error_address = parts[1].split(':')
+        error_address = path_and_error_address[len(path_and_error_address) - 1]
+        self._error_line = int(error_address.strip('[]').split(',')[0])
+        self._path = ':'.join(path_and_error_address[:-1])
+        if self._path.startswith('/') or self._path.startswith('\\'):
+            self._path = self._path[1:]
+        self._path = os.path.realpath(self._path)
+
+    @property
+    def path(self):
+        return self._path
+
+    @property
+    def line(self):
+        return self._error_line
+
 
 # Return parsed tests of the reports dir
 def parse_tests_reports(path_to_reports, project_dir):
@@ -303,6 +330,14 @@ def get_compilation_error_testcases(compilation_error_report):
             compilation_error_testcase = get_error_test_case(line)
             if not compilation_error_testcase == None and not compilation_error_testcase in ans:
                 ans.append(compilation_error_testcase)
+    return ans
+
+# Returns list of cimpilation error reports objects
+def get_compilation_errors(compilation_error_report):
+    ans = []
+    for line in compilation_error_report:
+        if is_error_report_line(line):
+            ans.append(CompilationErrorReport(line))
     return ans
 
 # Returns lines list describing to compilation error in th build report
@@ -455,4 +490,3 @@ class TestParserException(Exception):
         self.msg = msg
     def __str__(self):
         return repr(self.msg)
-
