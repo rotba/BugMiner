@@ -7,6 +7,7 @@ import time
 import mvn_parsers.test_parser as test_parser
 import bug.bug as my_bug
 import git
+from functools import reduce
 import javalang
 from git import Repo
 from jira import JIRA
@@ -38,7 +39,10 @@ def main(argv):
     #possible_bugs =get_from_cache(os.path.join(cache_dir, 'possible_bugs.pkl'), lambda :extract_possible_bugs(bug_issues))
     possible_bugs =extract_possible_bugs(bug_issues)
     for possible_bug in possible_bugs:
-        valid_and_invalid_bugs = extract_bugs(issue=dict_key_issue[possible_bug[0]], commit=repo.commit(possible_bug[1]), tests_paths=possible_bug[2])
+        try:
+            valid_and_invalid_bugs = extract_bugs(issue=dict_key_issue[possible_bug[0]], commit=repo.commit(possible_bug[1]), tests_paths=possible_bug[2])
+        except my_bug.BugError as e:
+            logging.info(e.msg)
         bug_data_set.extend(valid_and_invalid_bugs[0])
         #valid_bugs_csv_handler.add_bugs(valid_and_invalid_bugs[0])
         #invalid_bugs_csv_handler.add_bugs(valid_and_invalid_bugs[1])
@@ -248,7 +252,10 @@ def get_uncompiled_testcases(testcases_groups):
             if not len(compilation_error_report)==0:
                 error_testcases = test_parser.get_compilation_error_testcases(compilation_error_report, testcases_group)
                 if len(error_testcases)==0:
-                    raise my_bug.BugError('Patching generated compilation error not associated to testcases')
+                    raise my_bug.BugError(
+                        """Patching generated compilation error not associated to testcases
+                        Compilation error report:\n"""+
+                        reduce((lambda x, y: x +'\n'+ y), compilation_error_report))
                 else:
                     ans+=error_testcases
     return ans
