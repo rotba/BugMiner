@@ -244,7 +244,13 @@ def get_uncompiled_testcases(testcases_groups):
         test_compile_cmd = test_parser.generate_mvn_test_compile_cmd(testcases_group[0].get_module())
         with os.popen(test_compile_cmd) as proc:
             build_report = proc.read()
-            ans += test_parser.get_compilation_error_testcases(build_report, testcases_group)
+            compilation_error_report = test_parser.get_compilation_error_report(build_report)
+            if not len(compilation_error_report)==0:
+                error_testcases = test_parser.get_compilation_error_testcases(compilation_error_report, testcases_group)
+                if len(error_testcases)==0:
+                    raise my_bug.BugError('Patching generated compilation error not associated to testcases')
+                else:
+                    ans+=error_testcases
     return ans
 
 

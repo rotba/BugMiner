@@ -296,18 +296,27 @@ def get_tests_reports(project_dir):
 
 
 # Returns the files generated compilation error in the maven build report
-def get_compilation_error_testcases(build_report, testcases):
+def get_compilation_error_testcases(compilation_error_report):
+    ans = []
+    for line in compilation_error_report:
+        if is_error_report_line(line):
+            compilation_error_testcase = get_error_test_case(line)
+            if not compilation_error_testcase == None and not compilation_error_testcase in ans:
+                ans.append(compilation_error_testcase)
+    return ans
+
+# Returns lines list describing to compilation error in th build report
+def get_compilation_error_report(build_report):
     ans = []
     report_lines = build_report.splitlines()
     i = 0
     while i < len(report_lines):
         if '[ERROR] COMPILATION ERROR :' in report_lines[i]:
+            ans.append(report_lines[i])
+            ans.append(report_lines[i+1])
             i += 2
             while not end_of_compilation_errors(report_lines[i]):
-                if is_compilation_error_report(report_lines[i]):
-                    compilation_error_testcase = get_error_test_case(report_lines[i], testcases)
-                    if not compilation_error_testcase== None and not compilation_error_testcase in ans:
-                        ans.append(compilation_error_testcase)
+                ans.append(report_lines[i])
                 i += 1
         else:
             i += 1
@@ -337,7 +346,7 @@ def end_of_compilation_errors(line):
     return '[INFO] -------------------------------------------------------------' in line
 
 # Returns true iff the given report line is a report of compilation error
-def is_compilation_error_report(line):
+def is_error_report_line(line):
     return line.startswith('[ERROR]')
 
 
@@ -438,5 +447,4 @@ class TestParserException(Exception):
         self.msg = msg
     def __str__(self):
         return repr(self.msg)
-
 
