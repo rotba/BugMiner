@@ -41,9 +41,9 @@ def main(argv):
     for possible_bug in possible_bugs:
         try:
             valid_and_invalid_bugs = extract_bugs(issue=dict_key_issue[possible_bug[0]], commit=repo.commit(possible_bug[1]), tests_paths=possible_bug[2])
+            bug_data_set.extend(valid_and_invalid_bugs[0])
         except my_bug.BugError as e:
             logging.info(e.msg)
-        bug_data_set.extend(valid_and_invalid_bugs[0])
         #valid_bugs_csv_handler.add_bugs(valid_and_invalid_bugs[0])
         #invalid_bugs_csv_handler.add_bugs(valid_and_invalid_bugs[1])
     # res = open('results\\' + proj_name, 'w')
@@ -251,13 +251,14 @@ def get_uncompiled_testcases(testcases_groups):
             compilation_error_report = test_parser.get_compilation_error_report(build_report)
             if not len(compilation_error_report)==0:
                 error_testcases = test_parser.get_compilation_error_testcases(compilation_error_report)
-                if len(error_testcases)==0:
+                relevant_error_testcases = list(filter(lambda t: t in testcases_group,error_testcases))
+                if len(relevant_error_testcases)==0:
                     raise my_bug.BugError(
-                        """Patching generated compilation error not associated to testcases
-                        Compilation error report:\n"""+
+                        'Patching generated compilation error not associated to testcases.'+
+                        '\nCompilation error report:\n'+
                         reduce((lambda x, y: x +'\n'+ y), compilation_error_report))
                 else:
-                    ans+=error_testcases
+                    ans+=relevant_error_testcases
     return ans
 
 
