@@ -22,7 +22,7 @@ class Bug(object):
     def desctiption(self):
         return copy.deepcopy(self._desc)
     def __str__(self):
-        return 'description: '+self._desc+'\n'+'issue: '+self.issue.key+'\n'+'commit: '+self._commit.hexsha+'\n'+'test: '+self._test.get_id()
+        return 'description: '+self._desc+', issue: '+self.issue.key+' ,commit: '+self._commit.hexsha+' ,test: '+self._test.get_id()
 
 class Bug_csv_report_handler(object):
     def __init__(self, path):
@@ -61,5 +61,5 @@ class BugError(Exception):
 
 created_msg = 'Created in commit'
 regression_msg = 'Regression test bug'
-invalid_msg = 'Invalid: testcase generated compilation error when patched'
+invalid_msg = 'Invalid, testcase generated compilation error when patched'
 

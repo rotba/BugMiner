@@ -32,16 +32,16 @@ JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" OR
 
 def main(argv):
     bug_data_set = []
-    set_up(argv[0])
-    valid_bugs_csv_handler = my_bug.Bug_csv_report_handler(valid_bugs_csv_path)
-    invalid_bugs_csv_handler = my_bug.Bug_csv_report_handler(invalid_bugs_csv_path)
-    possible_bugs =get_from_cache(os.path.join(cache_dir, 'possible_bugs.pkl'), lambda :extract_possible_bugs(bug_issues))
-    #possible_bugs =extract_possible_bugs(bug_issues)
+    set_up(argv)
+    #valid_bugs_csv_handler = my_bug.Bug_csv_report_handler(valid_bugs_csv_path)
+    #invalid_bugs_csv_handler = my_bug.Bug_csv_report_handler(invalid_bugs_csv_path)
+    #possible_bugs =get_from_cache(os.path.join(cache_dir, 'possible_bugs.pkl'), lambda :extract_possible_bugs(bug_issues))
+    possible_bugs =extract_possible_bugs(bug_issues)
     for possible_bug in possible_bugs:
         valid_and_invalid_bugs = extract_bugs(issue=dict_key_issue[possible_bug[0]], commit=repo.commit(possible_bug[1]), tests_paths=possible_bug[2])
         bug_data_set.extend(valid_and_invalid_bugs[0])
-        valid_bugs_csv_handler.add_bugs(valid_and_invalid_bugs[0])
-        invalid_bugs_csv_handler.add_bugs(valid_and_invalid_bugs[1])
+        #valid_bugs_csv_handler.add_bugs(valid_and_invalid_bugs[0])
+        #invalid_bugs_csv_handler.add_bugs(valid_and_invalid_bugs[1])
     # res = open('results\\' + proj_name, 'w')
     # for bug in bug_data_set:
     #     res.write(str(bug) + '\n')
@@ -74,11 +74,6 @@ def extract_bugs(issue, commit, tests_paths):
         patched_testcases = patch_testcases(commit_valid_testcases, commit, parent)
         invalid_bug_testcases = [t for t in delta_testcases if not t in patched_testcases]
         invalid_bugs += list(map(lambda t: my_bug.Bug(issue, commit, t, my_bug.invalid_msg), invalid_bug_testcases))
-        ##should be removed in better versions
-        invalid_testclasses = list(map(lambda t: t.get_parent, invalid_bug_testcases))
-        lost_bug_testcases = [t for t in dict_modules_testcases[module] if not t.get_parent() in invalid_testclasses]
-        invalid_bugs += list(map(lambda t: my_bug.Bug(issue, commit, t,'Invalid, testcase is a part of file containing test case that generated compilation error'),lost_bug_testcases))
-        ##should be removed in better versions
         os.system(test_cmd)
         parent_valid_testcases = []
         parent_tests = test_parser.get_tests(module)
@@ -97,7 +92,10 @@ def extract_bugs(issue, commit, tests_paths):
                         valid_bugs.append(bug)
         git_cmds_wrapper(lambda: repo.git.reset('--hard'))
         git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
-
+        for b in valid_bugs:
+            logging.info(str(b))
+        for b in invalid_bugs:
+            logging.info(str(b))
         return (valid_bugs, invalid_bugs)
 
 # Attaches reports to testcases and returns the testcases that reports were successfully attached to them.
@@ -402,7 +400,7 @@ def git_cmds_wrapper(git_cmd):
         else:
             raise e
 
-def set_up(git_url):
+def set_up(argv):
     global all_commits
     global bug_issues
     global dict_key_issue
@@ -417,7 +415,7 @@ def set_up(git_url):
     global invalid_bugs_csv_path
     global cache_dir
     cache_dir = os.getcwd() + '\\cache'
-    proj_name = git_url.rsplit('/', 1)[1]
+    proj_name = argv[1].rsplit('/', 1)[1]
     proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
     patches_dir = proj_dir + '\\patches'
     results_dir = os.path.join(os.getcwd(), 'results')
@@ -432,15 +430,18 @@ def set_up(git_url):
     if not os.path.isdir(proj_results_dir):
         os.makedirs(proj_results_dir)
     LOG_FILENAME = os.path.join(proj_results_dir, 'log.log')
-    logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO)
-    logging.info('Started cloning '+git_url+'... ')
-    git_cmds_wrapper(lambda: git.Git(os.getcwd() + '\\tested_project').clone(git_url))
-    logging.info('Finshed cloning '+git_url+'...')
+    logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO, format='%(asctime)s %(message)s')
+    logging.info('Started cloning '+argv[1]+'... ')
+    git_cmds_wrapper(lambda: git.Git(os.getcwd() + '\\tested_project').clone(argv[1]))
+    logging.info('Finshed cloning '+argv[1]+'...')
     repo = Repo(proj_dir)
     if not os.path.isdir("cache"):
         os.makedirs("cache")
     all_commits = list(repo.iter_commits(branch_inspected))
     JQL_QUERY = JQL_QUERY.format(proj_name)
+    if len(argv)>2:
+        tmp = 'issuekey = {} AND '.format(argv[2])+JQL_QUERY
+        JQL_QUERY = tmp
     try:
         bug_issues = jira.search_issues(JQL_QUERY, maxResults=MAX_ISSUES_TO_RETRIEVE)
     except jira_exceptions.JIRAError as e:
@@ -450,4 +451,4 @@ def set_up(git_url):
 
 
 if __name__ == '__main__':
-    main(sys.argv[1:]);
+    main(sys.argv);
