@@ -135,7 +135,7 @@ class TestMain(unittest.TestCase):
     @unittest.skip("Not relevant")
     def test_issue_get_diffs(self):
         print('test_issue_get_diffs')
-        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        Main.set_up(['','https://github.com/rotba/GitMavenTrackingProject'])
         commit_test_pass_hash = '1df5710687471a8b47dca2d6f39659efab9c1063'
         all_commits = Main.all_commits
         all_tests = Main.all_tests
@@ -146,7 +146,7 @@ class TestMain(unittest.TestCase):
 
     def test_check_out_and_get_tests_from_commit(self):
         print('test_check_out_and_get_tests_from_commit')
-        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        Main.set_up(['', 'https://github.com/rotba/GitMavenTrackingProject'])
         commit = [c for c in Main.all_commits if c.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b'][0]
         tests_paths = Main.get_tests_paths_from_commit(commit)
         tests = list(map(lambda t_path: Main.test_parser.TestClass(t_path), tests_paths))
@@ -158,7 +158,7 @@ class TestMain(unittest.TestCase):
     @unittest.skip("Null test")
     def test_created_test_extract_bugs(self):
         print('test_created_test_extract_bugs')
-        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        Main.set_up(['', 'https://github.com/rotba/GitMavenTrackingProject'])
         self.issue_19 = Main.jira.issue('TIKA-19')
         commit = [c for c in Main.all_commits if c.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b'][0]
         tests_paths = Main.get_tests_paths_from_commit(commit)
@@ -170,7 +170,7 @@ class TestMain(unittest.TestCase):
 
     def test_find_test_cases_diff(self):
         print('test_find_test_cases_diff')
-        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        Main.set_up(['', 'https://github.com/rotba/GitMavenTrackingProject'])
         commit = [c for c in Main.all_commits if c.hexsha == '14ef5aa7f71f2beb78f38227399ec4b3388b4127'][0]
         test_path = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_2\src\test\java\p_1\AssafTest.java'
         module_path = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_2'
@@ -186,7 +186,7 @@ class TestMain(unittest.TestCase):
     @unittest.skip("commit_created_testclasses() was deleted")
     def test_get_commit_created_testclasses(self):
         print('test_get_commit_created_testclasses')
-        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        Main.set_up(['', 'https://github.com/rotba/GitMavenTrackingProject'])
         commit = [c for c in Main.all_commits if c.hexsha == 'e00037324027af30134ee1554b93f5969f8f100e'][0]
         test_report_path = os.getcwd() + 'r\tested_project\GitMavenTrackingProject\sub_mod_1\target\surefire-reports\TEST-p_1.AmitTest.xml'
         module_path = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_1'
@@ -201,7 +201,7 @@ class TestMain(unittest.TestCase):
 
     def test_patch_tescases(self):
         print('test_patch_tescases')
-        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        Main.set_up(['', 'https://github.com/rotba/GitMavenTrackingProject'])
         commit = [c for c in Main.all_commits if c.hexsha == 'e00037324027af30134ee1554b93f5969f8f100e'][0]
         parent = commit.parents[0]
         test_report_path = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_1\target\surefire-reports\TEST-p_1.AmitTest.xml'
@@ -223,7 +223,7 @@ class TestMain(unittest.TestCase):
 
     def test_patch_tescases_not_compiling_testcases(self):
         print('test_patch_tescases_not_compiling_testcases')
-        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        Main.set_up(['', 'https://github.com/rotba/GitMavenTrackingProject'])
         commit = [c for c in Main.all_commits if c.hexsha == 'a71cdc161b0d87e7ee808f5078ed5fefab758773'][0]
         parent = commit.parents[0]
         module_path = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_1'
@@ -250,7 +250,7 @@ class TestMain(unittest.TestCase):
 
     def test_patch_tescases_not_compiling_testcases_exclusive_patching(self):
         print('test_patch_tescases_not_compiling_testcases')
-        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        Main.set_up(['', 'https://github.com/rotba/GitMavenTrackingProject'])
         commit = [c for c in Main.all_commits if c.hexsha == 'e4d2bb8efdfa576632b99d0e91b35cf0262e70be'][0]
         parent = commit.parents[0]
         module_path = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_2'
@@ -277,7 +277,7 @@ class TestMain(unittest.TestCase):
     @unittest.skip("Coupled with patch_testcases")
     def test_get_uncompiled_testcases(self):
         print('test_get_compilation_error_testcases')
-        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        Main.set_up(['', 'https://github.com/rotba/GitMavenTrackingProject'])
         commit = [c for c in Main.all_commits if c.hexsha == 'a71cdc161b0d87e7ee808f5078ed5fefab758773'][0]
         parent = commit.parents[0]
         module_path = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_1'
@@ -294,7 +294,7 @@ class TestMain(unittest.TestCase):
 
     def test_extract_bugs_1(self):
         print('test_extract_bugs')
-        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        Main.set_up(['', 'https://github.com/rotba/GitMavenTrackingProject'])
         issue = Main.jira.issue('TIKA-19')
         exp_testcase_id = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#fooTest'
         commit = [c for c in Main.all_commits if c.hexsha == '19f6c78889f9e929bc964d420315a043b62c7967'][0]
@@ -310,7 +310,7 @@ class TestMain(unittest.TestCase):
 
     def test_extract_bugs_2(self):
         print('test_extract_bugs')
-        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        Main.set_up(['', 'https://github.com/rotba/GitMavenTrackingProject'])
         issue = Main.jira.issue('TIKA-19')
         exp_testcase_id = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#fooTest'
         commit = [c for c in Main.all_commits if c.hexsha == '19f6c78889f9e929bc964d420315a043b62c7967'][0]
@@ -319,14 +319,14 @@ class TestMain(unittest.TestCase):
         Main.repo.git.checkout(commit.hexsha)
         tests_paths = Main.get_tests_paths_from_commit(commit)
         res = Main.extract_bugs(issue, commit, tests_paths)[0]
-        for bug in res[0]:
+        for bug in res:
             if bug.test.get_id() == exp_testcase_id and bug.desctiption == my_bug.created_msg:
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
     def test_get_commit_created_testcases(self):
         print('test_get_commit_created_testcases')
-        Main.set_up('https://github.com/rotba/GitMavenTrackingProject')
+        Main.set_up(['','https://github.com/rotba/GitMavenTrackingProject'])
         exp_test_src_patch = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_1\src\test\java\MainTest.java'
         commit = [c for c in Main.all_commits if c.hexsha == '1fd244f006c96fa820efa850f5f31e3f9a727d84'][0]
         parent = commit.parents[0]
