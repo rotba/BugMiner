@@ -250,7 +250,7 @@ def get_uncompiled_testcases(testcases_groups):
             build_report = proc.read()
             compilation_error_report = test_parser.get_compilation_error_report(build_report)
             if not len(compilation_error_report)==0:
-                error_testcases = test_parser.get_compilation_error_testcases(compilation_error_report, testcases_group)
+                error_testcases = test_parser.get_compilation_error_testcases(compilation_error_report)
                 if len(error_testcases)==0:
                     raise my_bug.BugError(
                         """Patching generated compilation error not associated to testcases

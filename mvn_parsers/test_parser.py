@@ -323,7 +323,7 @@ def get_compilation_error_report(build_report):
     return ans
 
 # Gets the test case associated with the compilation error
-def get_error_test_case(line, testcases):
+def get_error_test_case(line):
     ans = None
     path = ''
     error_address = ''
@@ -334,20 +334,28 @@ def get_error_test_case(line, testcases):
     path = ':'.join(path_and_error_address[:-1])
     if path.startswith('/') or path.startswith('\\'):
         path = path[1:]
-    error_testcase = get_line_testcase(path, error_line)
-    if error_testcase in testcases:
-        return [t for t in testcases if t == error_testcase][0]
-    else:
-        return None
+    return get_line_testcase(path, error_line)
 
 
 # Returns the files generated compilation error in the maven build report
 def end_of_compilation_errors(line):
     return '[INFO] -------------------------------------------------------------' in line
 
-# Returns true iff the given report line is a report of compilation error
+# Returns true iff the given report line is a report of compilation error file
 def is_error_report_line(line):
-    return line.startswith('[ERROR]')
+    if line.startswith('[ERROR]'):
+        words = line.split(' ')
+        if len(words)<2:
+            return False
+        if words[1][0]=='/':
+            words[1] = words[1][1:]
+        if not ':' in words[1]:
+            return False
+        if words[1].find('.java')==-1:
+            return False
+        should_be_a_path = words[1][:words[1].find('.java')+len('.java')]
+        return os.path.isfile(should_be_a_path)
+    return False
 
 
 # Returns all testcases of given test classes
