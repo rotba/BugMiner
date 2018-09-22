@@ -29,8 +29,8 @@ invalid_bugs_csv_path = ''
 dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
-USE_CACHE = True
-GENERATE_CSV = True
+USE_CACHE = False
+GENERATE_CSV = False
 
 
 def main(argv):
