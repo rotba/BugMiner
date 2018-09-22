@@ -1,12 +1,13 @@
 import os
 import unittest
-from mvn_parsers import test_parser
+import test_parser
 
 
 class TestTest_Obj(unittest.TestCase):
 
+    os.system('mvn clean install -f '+os.getcwd() + r'\static_files\GitMavenTrackingProject')
     def setUp(self):
-        test_doc_1 = os.getcwd() + r'\static_files\\TEST-org.apache.tika.cli.TikaCLIBatchCommandLineTest.xml'
+        test_doc_1 = os.getcwd() + r'\static_files\TEST-org.apache.tika.cli.TikaCLIBatchCommandLineTest.xml'
         test_doc_2 = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_2\target\surefire-reports\TEST-p_1.AssafTest.xml'
         self.test_report_1 = test_parser.TestClassReport(test_doc_1, '')
         self.test_report_2 = test_parser.TestClassReport(test_doc_2,
@@ -40,7 +41,7 @@ class TestTest_Obj(unittest.TestCase):
     def test_get_testcases(self):
         expected_testcase_id = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#hoo'
         self.assertTrue(expected_testcase_id in list(map(lambda tc: tc.get_id(), self.test_2.get_testcases())))
-        self.assertEqual(len(self.test_2.get_testcases()), 1, "p_1.AmitTest should have only one method")
+        self.assertEqual(len(self.test_2.get_testcases()), 2, "p_1.AmitTest should have only one method")
 
     def test_get_report_path(self):
         expected_report_path = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_1\target\surefire-reports\TEST-p_1.AmitTest.xml'

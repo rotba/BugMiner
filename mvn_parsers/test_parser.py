@@ -122,6 +122,13 @@ class TestCase(object):
     def passed(self):
         return self.report.passed()
 
+    def get_lines_range(self):
+        lower_position = self.method.position[0]
+        for annotation in self.method.annotations:
+            if annotation.position[0]< lower_position:
+                lower_position = annotation.position[0]
+        return (lower_position, self.method.end_position[0])
+
     def __repr__(self):
         return self.id
 

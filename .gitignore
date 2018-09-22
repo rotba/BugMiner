@@ -106,5 +106,10 @@ venv.bak/
 # tested proj files
 cache/
 
-# log
-bugminer_log.txt
+# results
+results/
+
+#stuff
+ignore_me
+
+tested_project/
