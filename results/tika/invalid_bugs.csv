@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 issue,commit,testcase,description
 TIKA-16,d7dabee5ce14240f3c5ba2f6147c963d03604dd3,C:\Users\user\Code\Python\BugMinerTest\tested_project\tika\src\test\java\org\apache\tika\TestParsers.java#TestParsers#setUp,"Invalid, '0 possible testcases reports for org.apache.tika.TestParsers#setUp'"
 TIKA-16,d7dabee5ce14240f3c5ba2f6147c963d03604dd3,C:\Users\user\Code\Python\BugMinerTest\tested_project\tika\src\test\java\org\apache\tika\TestParsers.java#TestParsers#getTestFile,"Invalid, '0 possible testcases reports for org.apache.tika.TestParsers#getTestFile'"
@@ -15,6 +16,8 @@ TIKA-16,d7dabee5ce14240f3c5ba2f6147c963d03604dd3,C:\Users\user\Code\Python\BugMi
 TIKA-16,d7dabee5ce14240f3c5ba2f6147c963d03604dd3,C:\Users\user\Code\Python\BugMinerTest\tested_project\tika\src\test\java\org\apache\tika\TestParsers.java#TestParsers#getTestFile,"Invalid, testcase is a part of file containing test case that generated compilation error"
 TIKA-16,d7dabee5ce14240f3c5ba2f6147c963d03604dd3,C:\Users\user\Code\Python\BugMinerTest\tested_project\tika\src\test\java\org\apache\tika\utils\MimeTypesUtilsTest.java#MimeTypesUtilsTest#test,"Invalid, testcase is a part of file containing test case that generated compilation error"
 =======
+=======
+>>>>>>> origin/master
 issue,commit,testcase,description,,,,,,,,,,,,,,,,
 TIKA-10,d363b828bc6e714aa5f4ffedfbd1d09e1880f9ee,C:\Users\user\Code\Python\BugMiner\tested_project\tika\src\test\java\org\apache\tika\TestParsers.java#TestParsers#setUp,"Invalid, 'Unexpected: No report for C:\\Users\\user\\Code\\Python\\BugMiner\\tested_project\\tika\\src\\test\\java\\org\\apache\\tika\\TestParsers.java'",,,,,,,,,,,,,,,,404
 TIKA-10,d363b828bc6e714aa5f4ffedfbd1d09e1880f9ee,C:\Users\user\Code\Python\BugMiner\tested_project\tika\src\test\java\org\apache\tika\TestParsers.java#TestParsers#testPDFExtraction,"Invalid, 'Unexpected: No report for C:\\Users\\user\\Code\\Python\\BugMiner\\tested_project\\tika\\src\\test\\java\\org\\apache\\tika\\TestParsers.java'",,,,,,,,,,,,,,,,400
@@ -820,4 +823,7 @@ TIKA-391,6f48f57a6a0f21e6589a1d512a25574425dcc4cb,C:\Users\user\Code\Python\BugM
 TIKA-391,6f48f57a6a0f21e6589a1d512a25574425dcc4cb,C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-core\src\test\java\org\apache\tika\mime\MimeTypesReaderTest.java#MimeTypesReaderTest#setUp,"Invalid, testcase is a part of file containing test case that generated compilation error",,,,,,,,,,,,,,,,
 TIKA-391,6f48f57a6a0f21e6589a1d512a25574425dcc4cb,C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-core\src\test\java\org\apache\tika\mime\MimeTypesReaderTest.java#MimeTypesReaderTest#testHtmlMatches,"Invalid, testcase is a part of file containing test case that generated compilation error",,,,,,,,,,,,,,,,
 TIKA-391,6f48f57a6a0f21e6589a1d512a25574425dcc4cb,C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-core\src\test\java\org\apache\tika\mime\MimeTypesReaderTest.java#MimeTypesReaderTest#testExcelMatches,"Invalid, testcase is a part of file containing test case that generated compilation error",,,,,,,,,,,,,,,,
+<<<<<<< HEAD
+>>>>>>> origin/master
+=======
 >>>>>>> origin/master
