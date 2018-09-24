@@ -31,8 +31,8 @@ invalid_bugs_csv_handler = None
 dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
-USE_CACHE = True
-GENERATE_CSV = True
+USE_CACHE = False
+GENERATE_CSV = False
 
 
 def main(argv):
@@ -53,6 +53,8 @@ def main(argv):
             logging.info(e.msg)
         except test_parser.TestParserException as e:
             logging.info(e.msg)
+        except git.exc.GitCommandError as e:
+            logging.info(str(e))
     # res = open('results\\' + proj_name, 'w')
     # for bug in bug_data_set:
     #     res.write(str(bug) + '\n')
