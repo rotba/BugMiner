@@ -5,7 +5,7 @@ import test_parser
 
 class TestTest_Obj(unittest.TestCase):
 
-    #os.system('mvn clean install -f '+os.getcwd() + r'\static_files\GitMavenTrackingProject')
+    # os.system('mvn clean install -f '+os.getcwd() + r'\static_files\GitMavenTrackingProject')
     def setUp(self):
         test_doc_1 = os.getcwd() + r'\static_files\TEST-org.apache.tika.cli.TikaCLIBatchCommandLineTest.xml'
         test_doc_2 = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_2\target\surefire-reports\TEST-p_1.AssafTest.xml'
@@ -16,6 +16,11 @@ class TestTest_Obj(unittest.TestCase):
             os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_2\src\test\java\NaimTest.java')
         self.test_2 = test_parser.TestClass(
             os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_1\src\test\java\p_1\AmitTest.java')
+        self.test_2 = test_parser.TestClass(
+            os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_1\src\test\java\p_1\AmitTest.java')
+        self.test_3 = test_parser.TestClass(
+            os.getcwd() + r'\static_files\tika_1\src\test\java\org\apache\tika\parser\AutoDetectParserTest.java')
+        self.testcase_1 = [t for t in self.test_3.get_testcases() if t.get_id().endswith('None_assertAutoDetect(String, String, String)')][0]
 
     def tearDown(self):
         pass
@@ -114,19 +119,18 @@ class TestTest_Obj(unittest.TestCase):
         self.assertFalse(self.test_report_1.is_associated(t_not_associated_name_1))
         self.assertFalse(self.test_report_1.is_associated(t_not_associated_name_2))
 
-    @unittest.skip("Test nor ready")
     def test_star_line_end_line(self):
-        testcases_1 = self.test_1.get_testcases()
-        testcases_2 = self.test_2.get_testcases()
+        self.assertTrue(self.testcase_1.start_line == 103, 'result - start_line : '+str(self.testcase_1.start_line))
+        self.assertTrue(self.testcase_1.end_line == 127, 'result - end_line : '+str(self.testcase_1.end_line))
 
     @unittest.skip("Important test but will require some time to validate")
     def test_get_compilation_error_testcases(self):
         print('test_get_compilation_error_testcases')
-        with open(os.getcwd()+r'\static_files\test_get_compilation_error_testcases_report.txt','r') as report_file:
+        with open(os.getcwd() + r'\static_files\test_get_compilation_error_testcases_report.txt', 'r') as report_file:
             report = report_file.read()
         commit = [c for c in Main.all_commits if c.hexsha == 'a71cdc161b0d87e7ee808f5078ed5fefab758773'][0]
         parent = commit.parents[0]
-        module_path = os.getcwd()+r'\tested_project\GitMavenTrackingProject\sub_mod_1'
+        module_path = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_1'
         Main.repo.git.reset('--hard')
         Main.repo.git.checkout(commit.hexsha)
         commit_tests = Main.test_parser.get_tests(module_path)
@@ -137,6 +141,7 @@ class TestTest_Obj(unittest.TestCase):
         compolation_error_testcases = Main.get_compilation_error_testcases(report, commit_new_testcases)
         self.assertTrue(expected_not_compiling_testcase in compolation_error_testcases,
                         "'MainTest#gooTest should have been picked as for compilation error")
+
 
 if __name__ == '__main__':
     unittest.main()
