@@ -26,6 +26,8 @@ proj_results_dir = ''
 cache_dir = ''
 valid_bugs_csv_path= ''
 invalid_bugs_csv_path = ''
+valid_bugs_csv_handler = None
+invalid_bugs_csv_handler = None
 dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
@@ -36,9 +38,6 @@ GENERATE_CSV = True
 def main(argv):
     bug_data_set = []
     set_up(argv)
-    if GENERATE_CSV:
-        valid_bugs_csv_handler = my_bug.Bug_csv_report_handler(valid_bugs_csv_path)
-        invalid_bugs_csv_handler = my_bug.Bug_csv_report_handler(invalid_bugs_csv_path)
     if USE_CACHE:
         possible_bugs =get_from_cache(os.path.join(cache_dir, 'possible_bugs.pkl'), lambda :extract_possible_bugs(bug_issues))
     else:
@@ -97,7 +96,7 @@ def extract_bugs(issue, commit, tests_paths):
         for testcase in commit_valid_testcases:
             if testcase in parent_valid_testcases:
                 parent_testcase = [t for t in parent_valid_testcases if t == testcase][0]
-                if testcase.passed() and not parent_testcase.passed():
+                if testcase.passed and not parent_testcase.passed:
                     if testcase in delta_testcases:
                         bug = my_bug.Bug(issue, commit, testcase, my_bug.created_msg)
                         valid_bugs.append(bug)
@@ -117,12 +116,12 @@ def extract_bugs(issue, commit, tests_paths):
 def attach_reports(testcases, issue, commit, invalid_bugs):
     ans = []
     for testcase in testcases:
-        testclass = testcase.get_parent()
-        if testclass.get_report() is None:
+        testclass = testcase.parent
+        if testclass.report is None:
             try:
-                testclass.set_report(test_parser.TestClassReport(testclass.get_report_path(), testclass.get_module()))
+                testclass.report =test_parser.TestClassReport(testclass.get_report_path(), testclass.module)
             except test_parser.TestParserException as e:
-                raise my_bug.BugError('Can not attach report to '+testclass.get_mvn_name()+'. '+e.msg)
+                raise my_bug.BugError('Can not attach report to '+testclass.mvn_name+'. '+e.msg)
         try:
             testclass.attach_report_to_testcase(testcase)
             ans.append(testcase)
@@ -172,7 +171,7 @@ def get_tests_paths_from_commit(commit):
 def get_delta_testcases(testcases):
     ans = []
     for testcase in testcases:
-        src_path = testcase.get_path()
+        src_path = testcase.src_path
         if os.path.isfile(src_path):
             with open(src_path, 'r') as src_file:
                 tree = javalang.parse.parse(src_file.read())
@@ -196,7 +195,7 @@ def patch_testcases(commit_testcases, commit, prev_commit, module_path):
     for diff in commit.diff(prev_commit):
         associeted_testcases = get_associated_test_case(diff, commit_testcases)
         if not len(associeted_testcases) == 0:
-            test_path = associeted_testcases[0].get_path()
+            test_path = associeted_testcases[0].src_path
             patch_path = generate_patch(proj_dir, prev_commit, commit, test_path, os.path.basename(test_path))
             git_cmds_wrapper(lambda :repo.git.execute(['git', 'apply', patch_path]))
             dict_diff_testcases[diff] = associeted_testcases
@@ -222,7 +221,7 @@ def patch_testcases(commit_testcases, commit, prev_commit, module_path):
                         ans.remove(testcase)
                     continue
                 else:
-                    tmp = [tc for tc in error_testclass.get_testcases() if tc.contains_line(error.line)]
+                    tmp = [tc for tc in error_testclass.testcases if tc.contains_line(error.line)]
                     assert len(tmp)==1
                     not_compiling_testcases.append(tmp[0])
         still_patched_not_compiling_testcases = list(filter(lambda  t: t in ans,not_compiling_testcases))
@@ -233,7 +232,7 @@ def patch_testcases(commit_testcases, commit, prev_commit, module_path):
 
 # Returns true if the given compilation error report object is unrelated to any testcase in it's file
 def is_unrelated_testcase(error, error_testclass):
-    return not any([t.contains_line(error.line) for t in error_testclass.get_testcases()])
+    return not any([t.contains_line(error.line) for t in error_testclass.testcases])
 
 # Returns dictionary mapping file path to it's related compilation error in the given errors
 def divide_errors_to_files(compilation_errors):
@@ -267,7 +266,7 @@ def unpatch_testcases(testcases):
 def divide_to_files(testcases):
     ans = {}
     for testcase in testcases:
-        path_to_file = testcase.get_path()
+        path_to_file = testcase.src_path
         if not path_to_file in ans.keys():
             ans[path_to_file] = []
         ans[path_to_file].append(testcase)
@@ -295,16 +294,16 @@ def prepare_project_repo_for_testing(parent, module):
 def get_uncompiled_testcases(testcases_diff_groups):
     ans = []
     for testcases_diff_group in testcases_diff_groups:
-        associated_file = testcases_diff_group[0].get_path()
-        clean_cmd = test_parser.generate_mvn_clean_cmd(testcases_diff_group[0].get_module())
+        associated_file = testcases_diff_group[0].src_path
+        clean_cmd = test_parser.generate_mvn_clean_cmd(testcases_diff_group[0].module)
         os.system(clean_cmd)
-        test_compile_cmd = test_parser.generate_mvn_test_compile_cmd(testcases_diff_group[0].get_module())
+        test_compile_cmd = test_parser.generate_mvn_test_compile_cmd(testcases_diff_group[0].module)
         with os.popen(test_compile_cmd) as proc:
             build_report = proc.read()
             compilation_error_report = test_parser.get_compilation_error_report(build_report)
             if not len(compilation_error_report)==0:
                 error_testcases = test_parser.get_compilation_error_testcases(compilation_error_report)
-                if any(t.get_path() == associated_file for t in error_testcases):
+                if any(t.src_path == associated_file for t in error_testcases):
                     if len(relevant_error_testcases)==0:
                         raise my_bug.BugError(
                             'Patching generated compilation error not associated to testcases.'+
@@ -354,7 +353,7 @@ def get_parent(commit):
 # Returns true if testcase is in class_decl
 def testcase_in_class(class_decl, testcase):
     method_names = list(map(lambda m: class_decl.name + '#' + m.name, class_decl.methods))
-    return any(testcase.get_mvn_name().endswith(m_name) for m_name in method_names)
+    return any(testcase.mvn_name.endswith(m_name) for m_name in method_names)
 
 
 # Returns list of strings describing tests or testcases that are not in module dir
@@ -365,14 +364,14 @@ def find_test_cases_diff(commit_test_class, src_path):
         with open(src_path, 'r') as src_file:
             tree = javalang.parse.parse(src_file.read())
     else:
-        return commit_test_class.get_testcases()
-    class_decl = [c for c in tree.children[2] if c.name in commit_test_class.get_mvn_name()][0]
+        return commit_test_class.testcases
+    class_decl = [c for c in tree.children[2] if c.name in commit_test_class.mvn_name][0]
     for method in class_decl.methods:
-        testcases_in_src.append(commit_test_class.get_mvn_name() + '#' + method.name)
-    for testcase in commit_test_class.get_testcases():
+        testcases_in_src.append(commit_test_class.mvn_name + '#' + method.name)
+    for testcase in commit_test_class.testcases:
         i = 0
         for testcase_in_src in testcases_in_src:
-            if testcase_in_src in testcase.get_mvn_name():
+            if testcase_in_src in testcase.mvn_name:
                 continue
             else:
                 i += 1
@@ -392,9 +391,9 @@ def are_associated_test_paths(path, test_path):
 def divide_to_modules(tests):
     ans = {}
     for test in tests:
-        if not test.get_module() in ans.keys():
-            ans[test.get_module()] = []
-        ans[test.get_module()].append(test)
+        if not test.module in ans.keys():
+            ans[test.module] = []
+        ans[test.module].append(test)
     return ans
 
 
@@ -402,7 +401,7 @@ def divide_to_modules(tests):
 def get_associated_test_case(diff, testcases):
     ans = []
     for testcase in testcases:
-        if are_associated_test_paths(diff.a_path, testcase.get_path()):
+        if are_associated_test_paths(diff.a_path, testcase.src_path):
             ans.append(testcase)
     return ans
 
@@ -473,8 +472,8 @@ def set_up(argv):
     global proj_results_dir
     global proj_name
     global JQL_QUERY
-    global valid_bugs_csv_path
-    global invalid_bugs_csv_path
+    global valid_bugs_csv_handler
+    global invalid_bugs_csv_handler
     global cache_dir
     cache_dir = os.getcwd() + '\\cache'
     proj_name = argv[1].rsplit('/', 1)[1]
@@ -499,6 +498,9 @@ def set_up(argv):
     repo = Repo(proj_dir)
     if not os.path.isdir("cache"):
         os.makedirs("cache")
+    if GENERATE_CSV:
+        valid_bugs_csv_handler = my_bug.Bug_csv_report_handler(valid_bugs_csv_path)
+        invalid_bugs_csv_handler = my_bug.Bug_csv_report_handler(invalid_bugs_csv_path)
     all_commits = list(repo.iter_commits(branch_inspected))
     JQL_QUERY = JQL_QUERY.format(proj_name)
     if len(argv)>2:
