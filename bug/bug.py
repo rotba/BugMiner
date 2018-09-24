@@ -22,7 +22,7 @@ class Bug(object):
     def desctiption(self):
         return copy.deepcopy(self._desc)
     def __str__(self):
-        return 'description: '+self._desc+', issue: '+self.issue.key+' ,commit: '+self._commit.hexsha+' ,test: '+self._test.get_id()
+        return 'description: '+self._desc+', issue: '+self.issue.key+' ,commit: '+self._commit.hexsha+' ,test: '+self._test.IIDD
 
 class Bug_csv_report_handler(object):
     def __init__(self, path):
@@ -49,7 +49,7 @@ class Bug_csv_report_handler(object):
     def generate_csv_tupple(self, bug):
         return {'issue': bug.issue.key,
                 'commit': bug.commit.hexsha,
-                'testcase': bug.test.get_id(),
+                'testcase': bug.test.IIDD,
                 'description': bug.desctiption}
 
 class BugError(Exception):

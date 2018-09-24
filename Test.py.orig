@@ -22,7 +22,7 @@ class TestMain(unittest.TestCase):
         except Main.bug.BugError as e:
             self.fail('get_issue_tests() did not associate TIKA-1378 with HtmlEncodingDetectorTest')
         for test in tests:
-            if 'MicrosoftTranslatorTest' in test.get_mvn_name():
+            if 'MicrosoftTranslatorTest' in test.mvn_name:
                 return
         self.fail('get_issue_tests() did not associate TIKA-1378 with HtmlEncodingDetectorTest')
 
@@ -50,7 +50,7 @@ class TestMain(unittest.TestCase):
         res_tests_paths = Main.get_tests_paths_from_commit(commit)
         res_tests = list(map(lambda t_path: Main.test_parser.TestClass(t_path), res_tests_paths))
         for test in res_tests:
-            if commit.get_name() == '65aea2b06b33c6b53999b6c52e017c38bf2af0b4':
+            if commit.name == '65aea2b06b33c6b53999b6c52e017c38bf2af0b4':
                 return
         self.fail(
             'get_issue_commits() did not associate TIKA-1378 with commit 65aea2b06b33c6b53999b6c52e017c38bf2af0b4')
@@ -80,7 +80,7 @@ class TestMain(unittest.TestCase):
         except Main.bug.BugError as e:
             self.fail('get_issue_tests() did not associate TIKA-19 with TestParsers')
         for test in tests:
-            if 'TestParsers' in test.get_mvn_name():
+            if 'TestParsers' in test.mvn_name:
                 return
         self.fail('get_issue_tests() did not associate TIKA-19 with TestParsers')
 
@@ -111,7 +111,7 @@ class TestMain(unittest.TestCase):
         tests = Main.get_issue_tests(issue)
         bugs = Main.extract_bugs(issue, commits[0], tests)
         for bug in bugs:
-            if bug.commit.hexsha == 'd7dabee5ce14240f3c5ba2f6147c963d03604dd3' and 'TestParsers' in bug.test.get_mvn_name():
+            if bug.commit.hexsha == 'd7dabee5ce14240f3c5ba2f6147c963d03604dd3' and 'TestParsers' in bug.test.mvn_name:
                 return
         self.fail('get_fixes() did not associate commit d7dabee5ce14240f3c5ba2f6147c963d03604dd3 with TestParsers')
 
@@ -140,7 +140,7 @@ class TestMain(unittest.TestCase):
         all_commits = Main.all_commits
         all_tests = Main.all_tests
         commit = [c for c in all_commits if c.hexsha == commit_test_pass_hash][0]
-        test = [t for t in all_tests if t.get_mvn_name() == 'NaimTest'][0]
+        test = [t for t in all_tests if t.mvn_name == 'NaimTest'][0]
         diffs = Main.get_diffs(commit, test)
         x = 1
 
@@ -152,7 +152,7 @@ class TestMain(unittest.TestCase):
         tests = list(map(lambda t_path: Main.test_parser.TestClass(t_path), tests_paths))
         self.assertEqual(len(tests), 1,
                          'Only one test should be associated with 52e80f56a2f2877ff2261889b1dc180c51b72f6b')
-        self.assertTrue('NaimTest' in tests[0].get_mvn_name(),
+        self.assertTrue('NaimTest' in tests[0].mvn_name,
                         '\'NaimTest\' should be associated with 52e80f56a2f2877ff2261889b1dc180c51b72f6b')
 
     @unittest.skip("Null test")
@@ -164,7 +164,7 @@ class TestMain(unittest.TestCase):
         tests_paths = Main.get_tests_paths_from_commit(commit)
         res = Main.extract_bugs(self.issue_19, commit, tests_paths)
         for bug in res:
-            if bug.commit.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b' and 'NaimTest#newGooTest' in bug.test.get_mvn_name() and bug.msg == 'Created in test':
+            if bug.commit.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b' and 'NaimTest#newGooTest' in bug.test.mvn_name and bug.msg == 'Created in test':
                 return
         self.fail('Did not extracted bug : created test - \'NaimTest#newGooTest\'')
 
@@ -178,9 +178,9 @@ class TestMain(unittest.TestCase):
         os.system(
             'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
         test = Main.test_parser.TestClass(test_path)
-        expected_delta_testcase = [t for t in test.testcases if 'p_1.AssafTest#goo' in t.get_mvn_name()][0]
+        expected_delta_testcase = [t for t in test.testcases if 'p_1.AssafTest#goo' in t.mvn_name][0]
         Main.prepare_project_repo_for_testing(commit.parents[0], module_path)
-        diff_testcases = Main.find_test_cases_diff(test, test.get_path())
+        diff_testcases = Main.find_test_cases_diff(test, test.src_path)
         self.assertTrue(expected_delta_testcase in diff_testcases)
 
     @unittest.skip("commit_created_testclasses() was deleted")
@@ -194,7 +194,7 @@ class TestMain(unittest.TestCase):
         os.system(
             'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
         commit_tests = Main.test_parser.get_tests(module_path)
-        expected_delta_testclass = [t for t in commit_tests if 'p_1.AmitTest' in t.get_mvn_name()][0]
+        expected_delta_testclass = [t for t in commit_tests if 'p_1.AmitTest' in t.mvn_name][0]
         Main.prepare_project_repo_for_testing(commit.parents[0], module_path)
         diff_testclasses = Main.get_commit_created_testclasses(commit_tests)
         self.assertTrue(expected_delta_testclass in diff_testclasses)
@@ -211,7 +211,7 @@ class TestMain(unittest.TestCase):
             'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
         commit_tests = Main.test_parser.get_tests(module_path)
         commit_testcases = Main.test_parser.get_testcases(commit_tests)
-        expected_delta_testcase = [t for t in commit_testcases if 'p_1.AmitTest#hoo' in t.get_mvn_name()][0]
+        expected_delta_testcase = [t for t in commit_testcases if 'p_1.AmitTest#hoo' in t.mvn_name][0]
         Main.prepare_project_repo_for_testing(parent, module_path)
         patched_tests = Main.patch_testcases(commit_testcases, commit, parent)
         os.system(
@@ -232,7 +232,7 @@ class TestMain(unittest.TestCase):
             'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
         commit_tests = Main.test_parser.get_tests(module_path)
         commit_testcases = Main.test_parser.get_testcases(commit_tests)
-        expected_not_compiling_testcase = [t for t in commit_testcases if 'MainTest#gooTest' in t.get_mvn_name()][0]
+        expected_not_compiling_testcase = [t for t in commit_testcases if 'MainTest#gooTest' in t.mvn_name][0]
         commit_new_testcases = Main.get_delta_testcases(commit_testcases)
         Main.prepare_project_repo_for_testing(parent, module_path)
         patched_testcases = Main.patch_testcases(commit_testcases, commit, parent)
@@ -246,7 +246,7 @@ class TestMain(unittest.TestCase):
         self.assertTrue(len(parent_testcases) > 0,
                         'Build probably failed')
         self.assertTrue(not expected_not_compiling_testcase in parent_testcases,
-                        expected_not_compiling_testcase.get_mvn_name() + ' should have been unpatched')
+                        expected_not_compiling_testcase.mvn_name + ' should have been unpatched')
 
     def test_patch_tescases_not_compiling_testcases_exclusive_patching(self):
         print('test_patch_tescases_not_compiling_testcases')
@@ -259,8 +259,8 @@ class TestMain(unittest.TestCase):
             'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
         commit_tests = Main.test_parser.get_tests(module_path)
         commit_testcases = Main.test_parser.get_testcases(commit_tests)
-        expected_not_compiling_delta_testcase = [t for t in commit_testcases if 'p_1.AssafTest#notCompTest' in t.get_mvn_name()][0]
-        expected_compiling_delta_testcase = [t for t in commit_testcases if 'p_1.AssafTest#compTest' in t.get_mvn_name()][0]
+        expected_not_compiling_delta_testcase = [t for t in commit_testcases if 'p_1.AssafTest#notCompTest' in t.mvn_name][0]
+        expected_compiling_delta_testcase = [t for t in commit_testcases if 'p_1.AssafTest#compTest' in t.mvn_name][0]
         Main.prepare_project_repo_for_testing(parent, module_path)
         delta_testcases = Main.get_delta_testcases(commit_testcases)
         patched_testcases = Main.patch_testcases(commit_testcases, commit, parent)
@@ -285,7 +285,7 @@ class TestMain(unittest.TestCase):
         Main.repo.git.checkout(commit.hexsha)
         commit_tests = Main.test_parser.get_tests(module_path)
         commit_testcases = Main.test_parser.get_testcases(commit_tests)
-        expected_not_compiling_testcase = [t for t in commit_testcases if 'MainTest#gooTest' in t.get_mvn_name()][0]
+        expected_not_compiling_testcase = [t for t in commit_testcases if 'MainTest#gooTest' in t.mvn_name][0]
         Main.prepare_project_repo_for_testing(parent, module_path)
         delta_testcases = Main.get_delta_testcases(commit_testcases)
         compilation_error_testcases = Main.get_uncompiled_testcases([delta_testcases])
@@ -304,7 +304,7 @@ class TestMain(unittest.TestCase):
         tests_paths = Main.get_tests_paths_from_commit(commit)
         res = Main.extract_bugs(issue, commit, tests_paths)[0]
         for bug in res:
-            if bug.test.get_id() == exp_testcase_id and bug.desctiption == my_bug.created_msg:
+            if bug.test.IIDD == exp_testcase_id and bug.desctiption == my_bug.created_msg:
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
@@ -325,7 +325,7 @@ class TestMain(unittest.TestCase):
         res = Main.extract_bugs(issue, commit, tests_paths)[0]
         for bug in res:
 >>>>>>> origin/master
-            if bug.test.get_id() == exp_testcase_id and bug.desctiption == my_bug.created_msg:
+            if bug.test.IIDD == exp_testcase_id and bug.desctiption == my_bug.created_msg:
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
@@ -342,7 +342,7 @@ class TestMain(unittest.TestCase):
         testcases = Main.test_parser.get_testcases(tests)
         Main.prepare_project_repo_for_testing(parent, module_path)
         new_testcases = Main.get_delta_testcases(testcases)
-        expected_new_testcase = [t for t in testcases if 'MainTest#foo_2' in t.get_mvn_name()][0]
+        expected_new_testcase = [t for t in testcases if 'MainTest#foo_2' in t.mvn_name][0]
         self.assertTrue(expected_new_testcase in new_testcases, 'MainTest#foo_2 should be picked for being new test')
 
 

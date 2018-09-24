@@ -6,36 +6,52 @@ import javalang
 
 class TestClass:
     def __init__(self, file_path):
-        self.path = os.path.realpath(file_path)
-        self.module = self.find_module(self.path)
-        self.testcases = []
-        self.report = None
-        with open(self.path, 'r') as src_file:
+        self._path = os.path.realpath(file_path)
+        self._module = self.find_module(self._path)
+        self._mvn_name = self.generate_mvn_name()
+        self._testcases = []
+        self._report = None
+        with open(self._path, 'r') as src_file:
             try:
-                self.tree = javalang.parse.parse(src_file.read())
+                self._tree = javalang.parse.parse(src_file.read())
             except UnicodeDecodeError as e:
                 raise TestParserException('Java file parsing problem:'+'\n'+str(e))
         class_decls = [class_dec for _, class_dec in self.tree.filter(javalang.tree.ClassDeclaration)]
         for class_decl in class_decls:
             for method in class_decl.methods:
                 if self.is_valid_testcase(method):
-                    self.testcases.append(TestCase(method, class_decl, self))
+                    self._testcases.append(TestCase(method, class_decl, self))
 
-    def get_mvn_name(self):
-        relpath = os.path.relpath(self.path, self.module + '\\src\\test\\java').replace('.java', '')
-        return relpath.replace('\\', '.')
+    @property
+    def mvn_name(self):
+        return self._mvn_name
 
-    def get_path(self):
-        return self.path
+    @property
+    def src_path(self):
+        return self._path
 
-    def get_testcases(self):
-        return self.testcases
+    @property
+    def testcases(self):
+        return self._testcases
 
-    def get_module(self):
-        return self.module
+    @property
+    def module(self):
+        return self._module
+
+    @property
+    def report(self):
+        return self._report
+
+    @report.setter
+    def report(self, report):
+        self._report = report
+
+    @property
+    def tree(self):
+        return self._tree
 
     def parse_src_path(self):
-        ans = self.module_path
+        ans = self.module
         ans += '\\src\\test\\java'
         packages = self.name.split('.')
         for p in packages:
@@ -43,14 +59,11 @@ class TestClass:
         return ans + '.java'
 
     def get_report_path(self):
-        return self.module + '\\target\\surefire-reports\\' + 'TEST-' + self.get_mvn_name() + '.xml'
-
-    def set_report(self, report):
-        self.report = report
+        return self.module + '\\target\\surefire-reports\\' + 'TEST-' + self.mvn_name + '.xml'
 
     def attach_report_to_testcase(self, testcase):
         try:
-            testcase.set_report(self.report.get_testcase_report(testcase.get_mvn_name()))
+            testcase.report = self.report.get_testcase_report(testcase.mvn_name)
         except TestParserException as e:
             self.report = None
             raise e
@@ -59,12 +72,6 @@ class TestClass:
         self.report = None
         for t in self.testcases:
             t.clear_report()
-
-    def get_report(self):
-        return self.report
-
-    def get_tree(self):
-        return self.tree
 
     def find_module(self, file_path):
         parent_dir = os.path.abspath(os.path.join(file_path, os.pardir))
@@ -79,52 +86,77 @@ class TestClass:
         return method.name.lower() != 'setup' and method.name.lower() != 'teardown' and\
                len(method.parameters)==0 and method.return_type==None
 
+    def generate_mvn_name(self):
+        relpath = os.path.relpath(self.src_path, self.module + '\\src\\test\\java').replace('.java', '')
+        return relpath.replace('\\', '.')
+
     def __repr__(self):
-        return str(self.get_path())
+        return str(self.src_path)
 
     def __eq__(self, other):
         if not isinstance(other, TestClass):
             return False
         else:
-            return self.get_path() == other.get_path()
+            return self.src_path == other.src_path
 
 
 class TestCase(object):
     def __init__(self, method, class_decl, parent):
-        self.parent = parent
-        self.method = method
+        self._parent = parent
+        self._method = method
+        self._mvn_name = self.parent.mvn_name + '#' + self.method.name
         self.class_decl = class_decl
-        self.id = self.generate_id()
-        self.report = None
+        self._id = self.generate_id()
+        self._report = None
         self._start_line = self.method.position[0]
         self._end_line = self.find_end_line(self._start_line)
         assert self._end_line != -1
 
-    def get_mvn_name(self):
-        return self.parent.get_mvn_name() + '#' + self.method.name
+    @property
+    def mvn_name(self):
+        return self._mvn_name
 
-    def get_path(self):
-        return self.parent.get_path()
+    @property
+    def src_path(self):
+        return self.parent.src_path
 
-    def get_id(self):
-        return self.id
+    @property
+    def IIDD(self):
+        return self._id
 
-    def get_module(self):
-        return self.parent.get_module()
+    @property
+    def module(self):
+        return self.parent.module
 
-    def get_method(self):
-        return self.method
+    @property
+    def method(self):
+        return self._method
 
-    def get_parent(self):
-        return self.parent
+    @property
+    def parent(self):
+        return self._parent
 
-    def set_report(self, report):
-        self.report = report
+    @property
+    def report(self):
+        return self._report
+
+    @report.setter
+    def report(self, report):
+        self._report = report
+
+    @property
+    def start_line(self):
+        return self._start_line
+
+    @property
+    def end_line(self):
+        return self._end_line
+
+    @property
+    def passed(self):
+        return self.report.passed
 
     def clear_report(self):
-        self.report = None
-
-    def get_report(self):
         self.report = None
 
     def generate_id(self):
@@ -139,18 +171,8 @@ class TestCase(object):
                 for param in param_iter:
                     parameters += ', ' + param.type.name
             parameters += ')'
-        return self.parent.get_path() + '#' + self.class_decl.name + '#' + ret_type + '_' + self.method.name + parameters
+        return self.parent.src_path + '#' + self.class_decl.name + '#' + ret_type + '_' + self.method.name + parameters
 
-    @property
-    def start_line(self):
-        return self._start_line
-
-    @property
-    def end_line(self):
-        return self._end_line
-
-    def passed(self):
-        return self.report.passed()
 
     def get_lines_range(self):
         lower_position = self.method.position[0]
@@ -166,7 +188,7 @@ class TestCase(object):
     def find_end_line(self, line_num):
         brackets_stack = []
         open_position = (-1, -1)
-        with open(self.get_path(), 'r') as j_file:
+        with open(self.src_path, 'r') as j_file:
             lines = j_file.readlines()
         i = 1
         for line in lines:
@@ -212,7 +234,7 @@ class TestCase(object):
         if not isinstance(other, TestCase):
             return False
         else:
-            return self.get_id() == other.get_id()
+            return self.IIDD == other.IIDD
 
 
 class TestClassReport:
@@ -222,68 +244,73 @@ class TestClassReport:
         self.xml_path = xml_doc_path
         self.success_testcases = []
         self.failed_testcases = []
-        self.testcases = []
-        self.time = 0.0
+        self._testcases = []
+        self._time = 0.0
         self.maven_multiModuleProjectDirectory = ''
-        self.module_path = modlue_path
+        self._module_path = modlue_path
         tree = ET.parse(self.xml_path)
         root = tree.getroot()
-        self.name = root.get('name')
-        self.src_file_path = self.parse_src_path()
+        self._name = root.get('name')
+        self._src_file_path = self.parse_src_path()
         for testcase in root.findall('testcase'):
             m_test = TestCaseReport(testcase, self)
-            if m_test.test_passed:
+            if m_test.passed:
                 self.success_testcases.append(m_test)
             else:
                 self.failed_testcases.append(m_test)
-            self.testcases.append(m_test)
-            self.time += m_test.get_time()
+            self._testcases.append(m_test)
+            self._time += m_test.time
         properties_root = root.find('properties')
         properties = properties_root.findall('property')
         for property in properties:
             if property.get('name') == 'maven.multiModuleProjectDirectory':
                 self.maven_multiModuleProjectDirectory = property.get('value')
 
-    def get_time(self):
-        return self.time
+    @property
+    def time(self):
+        return self._time
 
-    def get_name(self):
-        return self.name
+    @property
+    def name(self):
+        return self._name
 
-    def get_testcases(self):
-        return self.testcases
+    @property
+    def testcases(self):
+        return self._testcases
 
     def passed(self):
         return len(self.failed_testcases) == 0
 
-    def get_module(self):
-        return self.module_path
+    @property
+    def module(self):
+        return self._module_path
+
+    @property
+    def src_path(self):
+        return self._src_file_path
 
     # Returns true if the given test name is this test or it's one of its testcases
     def is_associated(self, test):
         if test == 'test' or test == 'TEST' or test == 'Test':
             return False
-        if test in self.get_name():
+        if test in self.name:
             return True
-        for testcase in self.get_testcases():
-            if test in testcase.get_name():
+        for testcase in self.testcases:
+            if test in testcase.name:
                 return True
         return False
 
     def __repr__(self):
-        return str(self.get_name())
-
-    def get_src_file_path(self):
-        return self.src_file_path
+        return str(self.name)
 
     def parse_src_path(self):
         test_name = os.path.basename(self.xml_path).replace('TEST-', '').replace('.java', '').replace('.xml', '')
         test_name = test_name.replace('.', '\\')
         test_name += '.java'
-        return self.module_path + '\\src\\test\\java\\' + test_name
+        return self.module + '\\src\\test\\java\\' + test_name
 
     def get_testcase_report(self, testcase_mvn_name):
-        ans_singelton = list(filter(lambda t: testcase_mvn_name.endswith(t.get_name()), self.testcases))
+        ans_singelton = list(filter(lambda t: testcase_mvn_name.endswith(t.name), self.testcases))
         if not len(ans_singelton) == 1:
             raise TestParserException(str(len(ans_singelton)) + ' possible testcases reports for ' + testcase_mvn_name)
         return ans_singelton[0]
@@ -291,38 +318,44 @@ class TestClassReport:
 
 class TestCaseReport(object):
     def __init__(self, testcase, parent):
-        self.parent = parent
+        self._parent = parent
         self.testcase_tag = testcase
-        self.name = self.testcase_tag.get('name')
-        self.time = float(re.sub('[,]', '', self.testcase_tag.get('time')))
-        self.test_passed = True
+        self._name = self.parent.name + '#'+self.testcase_tag.get('name')
+        self._time = float(re.sub('[,]', '', self.testcase_tag.get('time')))
+        self._test_passed = True
         failure = self.testcase_tag.find('failure')
         if not failure is None:
-            self.test_passed = False
+            self._test_passed = False
         failure = self.testcase_tag.find('error')
         if not failure is None:
-            self.test_passed = False
+            self._test_passed = False
 
-    def get_time(self):
-        return self.time
+    @property
+    def time(self):
+        return self._time
 
-    def get_name(self):
-        return self.parent.get_name() + '#' + self.name
+    @property
+    def name(self):
+        return  self._name
 
+    @property
     def passed(self):
-        return self.test_passed
+        return self._test_passed
 
-    def get_src_path(self):
+    @property
+    def src_path(self):
         return self.parent.src_path
 
-    def get_module(self):
-        return self.parent.get_module()
+    @property
+    def module(self):
+        return self.parent.module
 
-    def get_parent(self):
-        return self.parent
+    @property
+    def parent(self):
+        return self._parent
 
     def __repr__(self):
-        return str(self.get_name())
+        return str(self.name)
 
 
 class CompilationErrorReport(object):
@@ -474,7 +507,7 @@ def is_error_report_line(line):
 def get_testcases(test_classes):
     ans = []
     for test_class in test_classes:
-        ans += test_class.get_testcases()
+        ans += test_class.testcases
     return ans
 
 
@@ -485,8 +518,8 @@ def get_line_testcase(path, line):
     if not path.endswith('.java'):
         raise TestParserException('Cannot parse files that are not java files')
     testclass = TestClass(path)
-    class_decl = get_compilation_error_class_decl(testclass.get_tree(), line)
-    method = get_compilation_error_method(testclass.get_tree(), line)
+    class_decl = get_compilation_error_class_decl(testclass.tree(), line)
+    method = get_compilation_error_method(testclass.tree(), line)
     return TestCase(method, class_decl, testclass)
 
 
@@ -531,20 +564,20 @@ def export_as_csv(tests):
         writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         writer.writeheader()
         for test in tests:
-            writer.writerow({'test_name': test.get_name(), 'time': str(test.get_time())})
+            writer.writerow({'test_name': test.name, 'time': str(test.time)})
 
 
 # Returns mvn command string that runns the given tests in the given module
 def generate_mvn_test_cmd(testcases, module):
     testclasses = []
     for testcase in testcases:
-        if not testcase.get_parent() in testclasses:
-            testclasses.append(testcase.get_parent())
+        if not testcase.parent in testclasses:
+            testclasses.append(testcase.parent)
     ans = 'mvn test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
     for testclass in testclasses:
         if not ans.endswith('='):
             ans += ','
-        ans += testclass.get_mvn_name()
+        ans += testclass.mvn_name
     ans += ' -f ' + module
     return ans
 
@@ -567,10 +600,10 @@ def get_mvn_exclude_tests_list(tests, time):
     count = 0
     ans = '-Dtest='
     for test in tests:
-        if test.get_time() > time:
+        if test.time > time:
             if ans[len(ans) - 1] != '=':
                 ans += ','
-            ans += '!' + test.get_name()
+            ans += '!' + test.name
             count += 1
     return ans
 
