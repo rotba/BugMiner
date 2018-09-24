@@ -90,11 +90,11 @@ class TestCase(object):
         self.parent = parent
         self.method = method
         self.class_decl = class_decl
-        self.id = parent.get_path() + '#' + self.class_decl.name + '#' + method.name
+        self.id = self.generate_id()
         self.report = None
         self._start_line = self.method.position[0]
         self._end_line = self.find_end_line(self._start_line)
-        assert self._end_line!=-1
+        assert self._end_line != -1
 
     def get_mvn_name(self):
         return self.parent.get_mvn_name() + '#' + self.method.name
@@ -123,6 +123,20 @@ class TestCase(object):
     def get_report(self):
         self.report = None
 
+    def generate_id(self):
+        ret_type = str(self.method.return_type)
+        if len(self.method.parameters) == 0:
+            parameters = '()'
+        else:
+            parameters = '(' + self.method.parameters[0].type.name
+            if len(self.method.parameters) > 1:
+                param_iter = iter(self.method.parameters)
+                next(param_iter)
+                for param in param_iter:
+                    parameters += ', ' + param.type.name
+            parameters += ')'
+        return self.parent.get_path() + '#' + self.class_decl.name + '#' + ret_type + '_' + self.method.name + parameters
+
     @property
     def start_line(self):
         return self._start_line
@@ -147,25 +161,27 @@ class TestCase(object):
 
     def find_end_line(self, line_num):
         brackets_stack = []
-        start_line = ''
+        open_position = (-1, -1)
         with open(self.get_path(), 'r') as j_file:
             lines = j_file.readlines()
         i = 1
         for line in lines:
-            if i == line_num:
-                start_line = line
-                break
-            else:
+            if i < line_num:
                 i += 1
-        j = 1
-        for letter in start_line:
-            if '{' == letter:
-                brackets_stack.append('{')
+                continue
+            j = 1
+            for letter in line:
+                if '{' == letter:
+                    brackets_stack.append('{')
+                    break
+                else:
+                    j += 1
+            if len(brackets_stack) == 1:
+                open_position = (i, j)
                 break
-            j += 1
-        if len(brackets_stack) == 0:
+            i+=1
+        if open_position[0] == -1 or open_position[1] == -1:
             return -1
-        open_position = (i, j)
         i = 1
         for line in lines:
             if i < open_position[0]:
