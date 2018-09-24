@@ -11,7 +11,10 @@ class TestClass:
         self.testcases = []
         self.report = None
         with open(self.path, 'r') as src_file:
-            self.tree = javalang.parse.parse(src_file.read())
+            try:
+                self.tree = javalang.parse.parse(src_file.read())
+            except UnicodeDecodeError as e:
+                raise TestParserException('Java file parsing problem:'+'\n'+str(e))
         class_decls = [class_dec for _, class_dec in self.tree.filter(javalang.tree.ClassDeclaration)]
         for class_decl in class_decls:
             for method in class_decl.methods:
@@ -73,7 +76,8 @@ class TestClass:
         raise Exception(file_path + ' is not part of a maven module')
 
     def is_valid_testcase(self, method):
-        return method.name != 'SetUp' and method.name != 'TearDown'
+        return method.name.lower() != 'setup' and method.name.lower() != 'teardown' and\
+               len(method.parameters)==0 and method.return_type==None
 
     def __repr__(self):
         return str(self.get_path())
@@ -532,11 +536,15 @@ def export_as_csv(tests):
 
 # Returns mvn command string that runns the given tests in the given module
 def generate_mvn_test_cmd(testcases, module):
+    testclasses = []
+    for testcase in testcases:
+        if not testcase.get_parent() in testclasses:
+            testclasses.append(testcase.get_parent())
     ans = 'mvn test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
-    for test in testcases:
+    for testclass in testclasses:
         if not ans.endswith('='):
             ans += ','
-        ans += test.get_mvn_name()
+        ans += testclass.get_mvn_name()
     ans += ' -f ' + module
     return ans
 

@@ -52,6 +52,8 @@ def main(argv):
                 invalid_bugs_csv_handler.add_bugs(valid_and_invalid_bugs[1])
         except my_bug.BugError as e:
             logging.info(e.msg)
+        except test_parser.TestParserException as e:
+            logging.info(e.msg)
     # res = open('results\\' + proj_name, 'w')
     # for bug in bug_data_set:
     #     res.write(str(bug) + '\n')
@@ -103,9 +105,9 @@ def extract_bugs(issue, commit, tests_paths):
         git_cmds_wrapper(lambda: repo.git.reset('--hard'))
         git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
         for b in valid_bugs:
-            logging.info(str(b))
+            logging.info('VALID BUG: '+str(b))
         for b in invalid_bugs:
-            logging.info(str(b))
+            logging.info('INVALID BUG: '+str(b))
         return (valid_bugs, invalid_bugs)
 
 # Attaches reports to testcases and returns the testcases that reports were successfully attached to them.
