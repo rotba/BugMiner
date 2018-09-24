@@ -51,8 +51,9 @@ class TestClass:
         except TestParserException as e:
             self.report = None
             raise e
+
     def clear_report(self):
-        self.report=None
+        self.report = None
         for t in self.testcases:
             t.clear_report()
 
@@ -72,7 +73,7 @@ class TestClass:
         raise Exception(file_path + ' is not part of a maven module')
 
     def is_valid_testcase(self, method):
-        return method.name!='SetUp' and method.name!='TearDown'
+        return method.name != 'SetUp' and method.name != 'TearDown'
 
     def __repr__(self):
         return str(self.get_path())
@@ -91,6 +92,9 @@ class TestCase(object):
         self.class_decl = class_decl
         self.id = parent.get_path() + '#' + self.class_decl.name + '#' + method.name
         self.report = None
+        self._start_line = self.method.position[0]
+        self._end_line = self.find_end_line(self._start_line)
+        assert self._end_line!=-1
 
     def get_mvn_name(self):
         return self.parent.get_mvn_name() + '#' + self.method.name
@@ -119,19 +123,67 @@ class TestCase(object):
     def get_report(self):
         self.report = None
 
+    @property
+    def start_line(self):
+        return self._start_line
+
+    @property
+    def end_line(self):
+        return self._end_line
+
     def passed(self):
         return self.report.passed()
 
     def get_lines_range(self):
         lower_position = self.method.position[0]
         for annotation in self.method.annotations:
-            if annotation.position[0]< lower_position:
+            if annotation.position[0] < lower_position:
                 lower_position = annotation.position[0]
-        return (lower_position, self.method.end_position[0])
+        return (lower_position, self.end_line)
 
     def contains_line(self, line):
         range = self.get_lines_range()
-        return range[0]<=line<=range[1]
+        return range[0] <= line <= range[1]
+
+    def find_end_line(self, line_num):
+        brackets_stack = []
+        start_line = ''
+        with open(self.get_path(), 'r') as j_file:
+            lines = j_file.readlines()
+        i = 1
+        for line in lines:
+            if i == line_num:
+                start_line = line
+                break
+            else:
+                i += 1
+        j = 1
+        for letter in start_line:
+            if '{' == letter:
+                brackets_stack.append('{')
+                break
+            j += 1
+        if len(brackets_stack) == 0:
+            return -1
+        open_position = (i, j)
+        i = 1
+        for line in lines:
+            if i < open_position[0]:
+                i += 1
+                continue
+            j = 1
+            for letter in line:
+                if i == open_position[0] and j <= open_position[1]:
+                    j += 1
+                    continue
+                if letter == '{':
+                    brackets_stack.append('{')
+                if letter == '}':
+                    brackets_stack.pop()
+                if len(brackets_stack) == 0:
+                    return i
+                j += 1
+            i += 1
 
     def __repr__(self):
         return self.id
@@ -146,7 +198,7 @@ class TestCase(object):
 class TestClassReport:
     def __init__(self, xml_doc_path, modlue_path):
         if not os.path.isfile(xml_doc_path):
-            raise TestParserException('No such report file :'+xml_doc_path)
+            raise TestParserException('No such report file :' + xml_doc_path)
         self.xml_path = xml_doc_path
         self.success_testcases = []
         self.failed_testcases = []
@@ -211,9 +263,9 @@ class TestClassReport:
         return self.module_path + '\\src\\test\\java\\' + test_name
 
     def get_testcase_report(self, testcase_mvn_name):
-        ans_singelton =  list(filter(lambda t: testcase_mvn_name.endswith(t.get_name()),self.testcases))
-        if not len(ans_singelton)==1:
-            raise TestParserException(str(len(ans_singelton))+' possible testcases reports for '+testcase_mvn_name)
+        ans_singelton = list(filter(lambda t: testcase_mvn_name.endswith(t.get_name()), self.testcases))
+        if not len(ans_singelton) == 1:
+            raise TestParserException(str(len(ans_singelton)) + ' possible testcases reports for ' + testcase_mvn_name)
         return ans_singelton[0]
 
 
@@ -251,6 +303,7 @@ class TestCaseReport(object):
 
     def __repr__(self):
         return str(self.get_name())
+
 
 class CompilationErrorReport(object):
     def __init__(self, compilation_error_report_line):
@@ -332,6 +385,7 @@ def get_compilation_error_testcases(compilation_error_report):
                 ans.append(compilation_error_testcase)
     return ans
 
+
 # Returns list of cimpilation error reports objects
 def get_compilation_errors(compilation_error_report):
     ans = []
@@ -339,6 +393,7 @@ def get_compilation_errors(compilation_error_report):
         if is_error_report_line(line):
             ans.append(CompilationErrorReport(line))
     return ans
+
 
 # Returns lines list describing to compilation error in th build report
 def get_compilation_error_report(build_report):
@@ -348,7 +403,7 @@ def get_compilation_error_report(build_report):
     while i < len(report_lines):
         if '[ERROR] COMPILATION ERROR :' in report_lines[i]:
             ans.append(report_lines[i])
-            ans.append(report_lines[i+1])
+            ans.append(report_lines[i + 1])
             i += 2
             while not end_of_compilation_errors(report_lines[i]):
                 ans.append(report_lines[i])
@@ -356,6 +411,7 @@ def get_compilation_error_report(build_report):
         else:
             i += 1
     return ans
+
 
 # Gets the test case associated with the compilation error
 def get_error_test_case(line):
@@ -376,19 +432,20 @@ def get_error_test_case(line):
 def end_of_compilation_errors(line):
     return '[INFO] -------------------------------------------------------------' in line
 
+
 # Returns true iff the given report line is a report of compilation error file
 def is_error_report_line(line):
     if line.startswith('[ERROR]'):
         words = line.split(' ')
-        if len(words)<2:
+        if len(words) < 2:
             return False
-        if words[1][0]=='/':
+        if words[1][0] == '/':
             words[1] = words[1][1:]
         if not ':' in words[1]:
             return False
-        if words[1].find('.java')==-1:
+        if words[1].find('.java') == -1:
             return False
-        should_be_a_path = words[1][:words[1].find('.java')+len('.java')]
+        should_be_a_path = words[1][:words[1].find('.java') + len('.java')]
         return os.path.isfile(should_be_a_path)
     return False
 
@@ -400,6 +457,7 @@ def get_testcases(test_classes):
         ans += test_class.get_testcases()
     return ans
 
+
 # Returns TestCase object representing the testcase in file_path that contains line
 def get_line_testcase(path, line):
     if not os.path.isfile(path):
@@ -409,7 +467,8 @@ def get_line_testcase(path, line):
     testclass = TestClass(path)
     class_decl = get_compilation_error_class_decl(testclass.get_tree(), line)
     method = get_compilation_error_method(testclass.get_tree(), line)
-    return TestCase(method,class_decl,testclass)
+    return TestCase(method, class_decl, testclass)
+
 
 # Returns the method name of the method containing the compilation error
 def get_compilation_error_method(tree, error_line):
@@ -423,6 +482,7 @@ def get_compilation_error_method(tree, error_line):
                     ans = method
     return ans
 
+
 # Returns the method name of the method containing the compilation error
 def get_compilation_error_class_decl(tree, error_line):
     ans = None
@@ -434,9 +494,11 @@ def get_compilation_error_class_decl(tree, error_line):
                 ans = node
     return ans
 
+
 # Returns the line in which the method starts
 def get_method_line_position(method):
     return method.position[0]
+
 
 # Returns the line in which the class starts
 def get_class_line_position(class_decl):
@@ -451,6 +513,7 @@ def export_as_csv(tests):
         for test in tests:
             writer.writerow({'test_name': test.get_name(), 'time': str(test.get_time())})
 
+
 # Returns mvn command string that runns the given tests in the given module
 def generate_mvn_test_cmd(testcases, module):
     ans = 'mvn test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
@@ -461,11 +524,13 @@ def generate_mvn_test_cmd(testcases, module):
     ans += ' -f ' + module
     return ans
 
+
 # Returns mvn command string that compiles the given the given module
 def generate_mvn_test_compile_cmd(module):
     ans = 'mvn test-compile'
     ans += ' -f ' + module
     return ans
+
 
 # Returns mvn command string that cleans the given the given module
 def generate_mvn_clean_cmd(module):
@@ -485,8 +550,10 @@ def get_mvn_exclude_tests_list(tests, time):
             count += 1
     return ans
 
+
 class TestParserException(Exception):
     def __init__(self, msg):
         self.msg = msg
+
     def __str__(self):
         return repr(self.msg)

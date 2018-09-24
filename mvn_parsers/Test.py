@@ -5,7 +5,7 @@ import test_parser
 
 class TestTest_Obj(unittest.TestCase):
 
-    os.system('mvn clean install -f '+os.getcwd() + r'\static_files\GitMavenTrackingProject')
+    #os.system('mvn clean install -f '+os.getcwd() + r'\static_files\GitMavenTrackingProject')
     def setUp(self):
         test_doc_1 = os.getcwd() + r'\static_files\TEST-org.apache.tika.cli.TikaCLIBatchCommandLineTest.xml'
         test_doc_2 = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_2\target\surefire-reports\TEST-p_1.AssafTest.xml'
@@ -104,24 +104,20 @@ class TestTest_Obj(unittest.TestCase):
         self.assertFalse(self.test_report_1.is_associated(t_not_associated_name_1))
         self.assertFalse(self.test_report_1.is_associated(t_not_associated_name_2))
 
-    def test_get_tests(self):
-        tests = test_parser.get_tests(os.getcwd() + r'\static_files\GitMavenTrackingProject')
-        exp_1 = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_1\src\test\java\MainTest.java'
-        exp_2 = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_1\src\test\java\p_1\AmitTest.java'
-        exp_3 = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_2\src\test\java\NaimTest.java'
-        exp_4 = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_2\src\test\java\p_1\AssafTest.java'
-        exp_5 = os.getcwd() + r'\static_files\GitMavenTrackingProject\src\test\java\Main_1_Test.java'
-        exp_6 = os.getcwd() + r'\static_files\GitMavenTrackingProject\src\test\java\Main_2_Test.java'
-        exp_7 = os.getcwd() + r'\static_files\GitMavenTrackingProject\src\test\java\p_1\MainTest.java'
-        tests_paths = list(map(lambda t: t.get_path(), tests))
-        self.assertEqual(len(tests_paths), 7)
-        self.assertTrue(exp_1 in tests_paths)
-        self.assertTrue(exp_2 in tests_paths)
-        self.assertTrue(exp_3 in tests_paths)
-        self.assertTrue(exp_4 in tests_paths)
-        self.assertTrue(exp_5 in tests_paths)
-        self.assertTrue(exp_6 in tests_paths)
-        self.assertTrue(exp_7 in tests_paths)
+    def test_report_is_associated(self):
+        t_associated_name_1 = 'testTwoDirsNoFlags'
+        t_associated_name_2 = 'TikaCLIBatchCommandLineTest'
+        t_not_associated_name_1 = 'testHeyDirsNoFlags'
+        t_not_associated_name_2 = 'TikaBrotherCLIBatchCommandLineTest'
+        self.assertTrue(self.test_report_1.is_associated(t_associated_name_1))
+        self.assertTrue(self.test_report_1.is_associated(t_associated_name_2))
+        self.assertFalse(self.test_report_1.is_associated(t_not_associated_name_1))
+        self.assertFalse(self.test_report_1.is_associated(t_not_associated_name_2))
+
+    @unittest.skip("Test nor ready")
+    def test_star_line_end_line(self):
+        testcases_1 = self.test_1.get_testcases()
+        testcases_2 = self.test_2.get_testcases()
 
     @unittest.skip("Important test but will require some time to validate")
     def test_get_compilation_error_testcases(self):
