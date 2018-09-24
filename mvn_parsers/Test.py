@@ -6,6 +6,7 @@ import test_parser
 class TestTest_Obj(unittest.TestCase):
 
     # os.system('mvn clean install -f '+os.getcwd() + r'\static_files\GitMavenTrackingProject')
+    # os.system('mvn clean install -f ' + os.getcwd() + r'\static_files\tika_1')
     def setUp(self):
         test_doc_1 = os.getcwd() + r'\static_files\TEST-org.apache.tika.cli.TikaCLIBatchCommandLineTest.xml'
         test_doc_2 = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_2\target\surefire-reports\TEST-p_1.AssafTest.xml'
@@ -20,7 +21,7 @@ class TestTest_Obj(unittest.TestCase):
             os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_1\src\test\java\p_1\AmitTest.java')
         self.test_3 = test_parser.TestClass(
             os.getcwd() + r'\static_files\tika_1\src\test\java\org\apache\tika\parser\AutoDetectParserTest.java')
-        self.testcase_1 = [t for t in self.test_3.get_testcases() if t.get_id().endswith('None_assertAutoDetect(String, String, String)')][0]
+        self.testcase_1 = [t for t in self.test_3.get_testcases() if t.get_id().endswith('None_testExcel()')][0]
 
     def tearDown(self):
         pass
@@ -44,7 +45,7 @@ class TestTest_Obj(unittest.TestCase):
         self.assertTrue(expected_method_name in list(map(lambda m: m.get_mvn_name(), self.test_2.get_testcases())))
 
     def test_get_testcases(self):
-        expected_testcase_id = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#hoo'
+        expected_testcase_id = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#None_hoo()'
         self.assertTrue(expected_testcase_id in list(map(lambda tc: tc.get_id(), self.test_2.get_testcases())))
         self.assertEqual(len(self.test_2.get_testcases()), 2, "p_1.AmitTest should have only one method")
 
@@ -120,8 +121,8 @@ class TestTest_Obj(unittest.TestCase):
         self.assertFalse(self.test_report_1.is_associated(t_not_associated_name_2))
 
     def test_star_line_end_line(self):
-        self.assertTrue(self.testcase_1.start_line == 103, 'result - start_line : '+str(self.testcase_1.start_line))
-        self.assertTrue(self.testcase_1.end_line == 127, 'result - end_line : '+str(self.testcase_1.end_line))
+        self.assertTrue(self.testcase_1.start_line == 130, 'result - start_line : '+str(self.testcase_1.start_line))
+        self.assertTrue(self.testcase_1.end_line == 132, 'result - end_line : '+str(self.testcase_1.end_line))
 
     @unittest.skip("Important test but will require some time to validate")
     def test_get_compilation_error_testcases(self):
