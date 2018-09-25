@@ -75,11 +75,14 @@ class TestClass:
 
     def find_module(self, file_path):
         parent_dir = os.path.abspath(os.path.join(file_path, os.pardir))
-        while parent_dir != None:
+        is_root = False
+        while not is_root:
             if os.path.isfile(parent_dir + '//pom.xml'):
                 return parent_dir
             else:
-                parent_dir = os.path.abspath(os.path.join(parent_dir, os.pardir))
+                tmp = os.path.abspath(os.path.join(parent_dir, os.pardir))
+                is_root =  tmp == parent_dir
+                parent_dir = tmp
         raise Exception(file_path + ' is not part of a maven module')
 
     def is_valid_testcase(self, method):

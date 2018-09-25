@@ -31,7 +31,8 @@ invalid_bugs_csv_handler = None
 dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
-USE_CACHE = False
+EARLIEST_BUG = 651
+USE_CACHE = True
 GENERATE_CSV = False
 
 
@@ -40,6 +41,7 @@ def main(argv):
     set_up(argv)
     if USE_CACHE:
         possible_bugs =get_from_cache(os.path.join(cache_dir, 'possible_bugs.pkl'), lambda :extract_possible_bugs(bug_issues))
+        possible_bugs = list(filter(lambda pb: bugs_filter(pb), possible_bugs))
     else:
         possible_bugs =extract_possible_bugs(bug_issues)
     for possible_bug in possible_bugs:
@@ -54,12 +56,9 @@ def main(argv):
         except test_parser.TestParserException as e:
             logging.info(e.msg)
         except git.exc.GitCommandError as e:
-            logging.info(str(e))
-    # res = open('results\\' + proj_name, 'w')
-    # for bug in bug_data_set:
-    #     res.write(str(bug) + '\n')
-    # res_file = open('results\\'+proj_name, 'wb')
-    # pickle.dump(bug_data_set, res_file)
+            logging.info('SHOULD NOT HAPPEN '+str(e))
+        except Exception as e:
+            logging.info('SHOULD NOT HAPPEN '+str(e))
 
 
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
@@ -461,6 +460,15 @@ def git_cmds_wrapper(git_cmd):
         else:
             raise e
 
+# Returns boolean. Filter the bugs to inspect
+def bugs_filter(possible_bug):
+    if EARLIEST_BUG>0:
+        key = possible_bug[0]
+        number = int(key.split('-')[1])
+        return number>=EARLIEST_BUG
+    return True
+
+
 def set_up(argv):
     global all_commits
     global bug_issues
@@ -483,9 +491,9 @@ def set_up(argv):
     proj_results_dir = os.path.join(results_dir, proj_name)
     valid_bugs_csv_path = os.path.join(proj_results_dir, 'bug_table.csv')
     invalid_bugs_csv_path = os.path.join(proj_results_dir, 'invalid_bugs.csv')
-    if os.path.isfile(valid_bugs_csv_path):
+    if GENERATE_CSV and os.path.isfile(valid_bugs_csv_path):
         raise Exception('The csv results of an old BugMiner running is in the project results dir ('+proj_results_dir+')\n please save it in a different directory before running BugMiner')
-    if os.path.isfile(invalid_bugs_csv_path):
+    if GENERATE_CSV and os.path.isfile(invalid_bugs_csv_path):
         raise Exception('The csv results of an old BugMiner running is in the project results dir ('+proj_results_dir+')\n please save it in a different directory before running BugMiner')
     if not os.path.isdir(proj_results_dir):
         os.makedirs(proj_results_dir)
