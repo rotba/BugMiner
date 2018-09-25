@@ -1,5 +1,6 @@
 import pickle
 import shutil
+import subprocess
 import sys
 import os
 import logging
@@ -31,9 +32,9 @@ invalid_bugs_csv_handler = None
 dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
-EARLIEST_BUG = 651
-USE_CACHE = True
-GENERATE_CSV = True
+EARLIEST_BUG = 0
+USE_CACHE = False
+GENERATE_CSV = False
 
 
 def main(argv):
@@ -57,8 +58,8 @@ def main(argv):
             logging.info(e.msg)
         except git.exc.GitCommandError as e:
             logging.info('SHOULD NOT HAPPEN '+str(e))
-        except Exception as e:
-            logging.info('SHOULD NOT HAPPEN '+str(e))
+        # except Exception as e:
+        #     logging.info('SHOULD NOT HAPPEN '+str(e))
 
 
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
@@ -76,9 +77,8 @@ def extract_bugs(issue, commit, tests_paths):
     dict_modules_testcases = divide_to_modules(commit_testcases)
     for module in dict_modules_testcases:
         commit_valid_testcases = []
-        prepare_project_repo_for_testing(commit, module)
-        test_cmd = test_parser.generate_mvn_test_cmd(dict_modules_testcases[module], module)
-        os.system(test_cmd)
+        os.system('mvn clean -f ' + module)
+        run_mvn_tests(dict_modules_testcases[module], module)
         commit_valid_testcases = attach_reports(dict_modules_testcases[module], issue, commit, invalid_bugs)
         git_cmds_wrapper(lambda: repo.git.reset('--hard'))
         prepare_project_repo_for_testing(parent, module)
@@ -86,7 +86,7 @@ def extract_bugs(issue, commit, tests_paths):
         patched_testcases = patch_testcases(commit_valid_testcases, commit, parent, module)
         invalid_bug_testcases = [t for t in delta_testcases if not t in patched_testcases]
         invalid_bugs += list(map(lambda t: my_bug.Bug(issue, commit, t, my_bug.invalid_msg), invalid_bug_testcases))
-        os.system(test_cmd)
+        run_mvn_tests(dict_modules_testcases[module], module)
         parent_valid_testcases = []
         parent_tests = test_parser.get_tests(module)
         all_parent_testcases = test_parser.get_testcases(parent_tests)
@@ -109,6 +109,23 @@ def extract_bugs(issue, commit, tests_paths):
         for b in invalid_bugs:
             logging.info('INVALID BUG: '+str(b))
         return (valid_bugs, invalid_bugs)
+
+# Handles running maven. Will try to run the smallest module possib;e
+def run_mvn_tests(testcases, module):
+    test_cmd = test_parser.generate_mvn_test_cmd(testcases, module)
+    with os.popen(test_cmd) as proc:
+        build_report = proc.read()
+    if len(test_parser.get_compilation_error_report(build_report)) == 0:
+        return
+    else:
+        logging.info('BUILD FALUIRE:\n' + build_report)
+        test_cmd = test_parser.generate_mvn_test_cmd(testcases, proj_dir)
+        with os.popen(test_cmd) as proc:
+            build_report = proc.read()
+        if not len(test_parser.get_compilation_error_report(build_report)) == 0:
+            raise my_bug.BugError('BUILD FALUIRE:\n' + build_report)
+
+
 
 # Attaches reports to testcases and returns the testcases that reports were successfully attached to them.
 # Handles exceptions, updates invalid_bugs
@@ -282,11 +299,11 @@ def generate_patch(git_dir, prev_commit, commit, file, patch_name):
     return path_to_patch
 
 # Checkout to the given commit, cleans the project, and installs the project
-def prepare_project_repo_for_testing(parent, module):
+def prepare_project_repo_for_testing(commit, module):
     repo.git.add('.')
     git_cmds_wrapper(lambda: repo.git.commit('-m', 'BugDataMiner run'))
-    git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha))
-    os.system('mvn clean install -DskipTests' + ' -f ' + module)
+    git_cmds_wrapper(lambda: repo.git.checkout(commit.hexsha))
+    os.system('mvn clean -f ' + module)
 
 
 # returns list of patches that didn't compile from
