@@ -489,10 +489,13 @@ def set_up(argv):
         raise Exception('The csv results of an old BugMiner running is in the project results dir ('+proj_results_dir+')\n please save it in a different directory before running BugMiner')
     if not os.path.isdir(proj_results_dir):
         os.makedirs(proj_results_dir)
+    if not os.path.isdir(os.getcwd() + '\\tested_project'):
+        os.makedirs(os.getcwd() + '\\tested_project')
     proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
     LOG_FILENAME = os.path.join(proj_results_dir, 'log.log')
     logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO, format='%(asctime)s %(message)s')
     logging.info('Started cloning '+argv[1]+'... ')
+    git_cmds_wrapper(lambda: git.Git(os.getcwd() + '\\tested_project').init())
     git_cmds_wrapper(lambda: git.Git(os.getcwd() + '\\tested_project').clone(argv[1]))
     logging.info('Finshed cloning '+argv[1]+'...')
     repo = Repo(proj_dir)
