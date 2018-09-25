@@ -33,7 +33,7 @@ MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
 EARLIEST_BUG = 651
 USE_CACHE = True
-GENERATE_CSV = False
+GENERATE_CSV = True
 
 
 def main(argv):
