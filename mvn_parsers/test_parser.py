@@ -621,8 +621,11 @@ def generate_mvn_test_cmd(testcases, module):
     for testcase in testcases:
         if not testcase.parent in testclasses:
             testclasses.append(testcase.parent)
-    ans = 'mvn -pl :{} -am clean test -fn'.format(
-        os.path.basename(module))
+    if module==proj_dir:
+        ans = 'mvn clean test -fn'
+    else:
+        ans = 'mvn -pl :{} -am clean test -fn'.format(
+            os.path.basename(module))
     # ans = 'mvn test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
     # for testclass in testclasses:
     #     if not ans.endswith('='):
