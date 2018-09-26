@@ -82,7 +82,7 @@ def extract_bugs(issue, commit, tests_paths):
         git_cmds_wrapper(lambda: repo.git.reset('--hard'))
         git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha))
         delta_testcases = get_delta_testcases(commit_valid_testcases)
-        # modified_testcases = get_delta_testcases(commit_valid_testcases)
+        # modified_testcases = get_modified_testcases(commit_valid_testcases)
         patched_testcases = patch_testcases(commit_valid_testcases, commit, parent, module)
         invalid_bug_testcases = [t for t in delta_testcases if not t in patched_testcases]
         invalid_bugs += list(map(lambda t: my_bug.Bug(issue, commit, t, my_bug.comp_error_msg), invalid_bug_testcases))

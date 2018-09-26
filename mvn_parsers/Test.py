@@ -124,6 +124,10 @@ class TestTest_Obj(unittest.TestCase):
         self.assertTrue(self.testcase_1.start_line == 130, 'result - start_line : '+str(self.testcase_1.start_line))
         self.assertTrue(self.testcase_1.end_line == 132, 'result - end_line : '+str(self.testcase_1.end_line))
 
+    def test_has_the_same_code(self):
+        self.assertTrue(self.testcase_1.start_line == 130, 'result - start_line : '+str(self.testcase_1.start_line))
+        self.assertTrue(self.testcase_1.end_line == 132, 'result - end_line : '+str(self.testcase_1.end_line))
+
     @unittest.skip("Important test but will require some time to validate")
     def test_get_compilation_error_testcases(self):
         print('test_get_compilation_error_testcases')
