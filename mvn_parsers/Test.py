@@ -5,8 +5,8 @@ import test_parser
 
 class TestTest_Obj(unittest.TestCase):
 
-    os.system('mvn clean install -f '+os.getcwd() + r'\static_files\GitMavenTrackingProject')
-    os.system('mvn clean install -f ' + os.getcwd() + r'\static_files\tika_1')
+    # os.system('mvn clean install -f '+os.getcwd() + r'\static_files\GitMavenTrackingProject')
+    # os.system('mvn clean install -f ' + os.getcwd() + r'\static_files\tika_1')
     def setUp(self):
         test_doc_1 = os.getcwd() + r'\static_files\TEST-org.apache.tika.cli.TikaCLIBatchCommandLineTest.xml'
         test_doc_2 = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_2\target\surefire-reports\TEST-p_1.AssafTest.xml'
@@ -21,7 +21,14 @@ class TestTest_Obj(unittest.TestCase):
             os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_1\src\test\java\p_1\AmitTest.java')
         self.test_3 = test_parser.TestClass(
             os.getcwd() + r'\static_files\tika_1\src\test\java\org\apache\tika\parser\AutoDetectParserTest.java')
+        self.test_4 = test_parser.TestClass(
+            os.getcwd() + r'\static_files\tika_1\src\test\java\org\apache\tika\sax\AppendableAdaptorTest.java')
+        self.test_5 = test_parser.TestClass(
+            os.getcwd() + r'\static_files\tika_1\src\test\java\org\apache\tika\sax _1\AppendableAdaptorTest.java')
         self.testcase_1 = [t for t in self.test_3.testcases if t.IIDD.endswith('None_testExcel()')][0]
+        self.testcase_2 = [t for t in self.test_4.testcases if t.IIDD.endswith('None_testAppendChar()')][0]
+        self.testcase_3 = [t for t in self.test_5.testcases if t.IIDD.endswith('None_testAppendChar()')][0]
+        self.testcase_4 = [t for t in self.test_5.testcases if t.IIDD.endswith('None_testAppendString()')][0]
 
     def tearDown(self):
         pass
@@ -125,8 +132,8 @@ class TestTest_Obj(unittest.TestCase):
         self.assertTrue(self.testcase_1.end_line == 132, 'result - end_line : '+str(self.testcase_1.end_line))
 
     def test_has_the_same_code(self):
-        self.assertTrue(self.testcase_1.start_line == 130, 'result - start_line : '+str(self.testcase_1.start_line))
-        self.assertTrue(self.testcase_1.end_line == 132, 'result - end_line : '+str(self.testcase_1.end_line))
+        self.assertTrue(self.testcase_2.has_the_same_code_as(self.testcase_3))
+        self.assertFalse(self.testcase_2.has_the_same_code_as(self.testcase_4))
 
     @unittest.skip("Important test but will require some time to validate")
     def test_get_compilation_error_testcases(self):

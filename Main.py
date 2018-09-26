@@ -33,7 +33,7 @@ dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
 EARLIEST_BUG = 0
-USE_CACHE = False
+USE_CACHE = True
 GENERATE_CSV = False
 
 
@@ -71,6 +71,7 @@ def extract_bugs(issue, commit, tests_paths):
     if parent == None:
         return (valid_bugs, invalid_bugs)
     git_cmds_wrapper(lambda: repo.git.reset('--hard'))
+    git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
     git_cmds_wrapper(lambda: repo.git.checkout(commit.hexsha))
     commit_tests_object = list(map(lambda t_path: test_parser.TestClass(t_path),tests_paths))
     commit_testcases = test_parser.get_testcases(commit_tests_object)
@@ -126,12 +127,13 @@ def run_mvn_tests(testcases, module):
     if len(test_parser.get_compilation_error_report(build_report)) == 0:
         return
     else:
-        logging.info('SUBMODULE BUILD FALUIRE ON MODULE {}:\n'.format(module) + build_report)
-        test_cmd = test_parser.generate_mvn_test_cmd(testcases, proj_dir)
-        with os.popen(test_cmd) as proc:
-            build_report = proc.read()
-        if not len(test_parser.get_compilation_error_report(build_report)) == 0:
-            raise my_bug.BugError('PARENT BUILD FALUIRE:\n' + build_report)
+        raise my_bug.BugError('SUBMODULE BUILD FALUIRE ON MODULE {}:\n'.format(module) + build_report)
+        # logging.info('SUBMODULE BUILD FALUIRE ON MODULE {}:\n'.format(module) + build_report)
+        # test_cmd = test_parser.generate_mvn_test_cmd(testcases, proj_dir)
+        # with os.popen(test_cmd) as proc:
+        #     build_report = proc.read()
+        # if not len(test_parser.get_compilation_error_report(build_report)) == 0:
+        #     raise my_bug.BugError('PARENT BUILD FALUIRE:\n' + build_report)
 
 
 

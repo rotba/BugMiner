@@ -171,6 +171,16 @@ class TestCase(object):
     def clear_report(self):
         self.report = None
 
+    def has_the_same_code_as(self, other):
+        if len(self.method.body)==len(other.method.body):
+            i=0
+            while i< len(self.method.body):
+                if not self.method.body[i] == other.method.body[i]:
+                    return False
+            return True
+        else:
+            return False
+
     def generate_id(self):
         ret_type = str(self.method.return_type)
         if len(self.method.parameters) == 0:
