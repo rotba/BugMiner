@@ -77,11 +77,10 @@ def extract_bugs(issue, commit, tests_paths):
     dict_modules_testcases = divide_to_modules(commit_testcases)
     for module in dict_modules_testcases:
         commit_valid_testcases = []
-        os.system('mvn clean -f ' + module)
         run_mvn_tests(dict_modules_testcases[module], module)
         commit_valid_testcases = attach_reports(dict_modules_testcases[module], issue, commit, invalid_bugs)
         git_cmds_wrapper(lambda: repo.git.reset('--hard'))
-        prepare_project_repo_for_testing(parent, module)
+        git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha))
         delta_testcases = get_delta_testcases(commit_valid_testcases)
         patched_testcases = patch_testcases(commit_valid_testcases, commit, parent, module)
         invalid_bug_testcases = [t for t in delta_testcases if not t in patched_testcases]
@@ -503,6 +502,7 @@ def set_up(argv):
     cache_dir = os.getcwd() + '\\cache'
     proj_name = argv[1].rsplit('/', 1)[1]
     proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
+    test_parser.proj_dir = proj_dir
     patches_dir = proj_dir + '\\patches'
     results_dir = os.path.join(os.getcwd(), 'results')
     proj_results_dir = os.path.join(results_dir, proj_name)
