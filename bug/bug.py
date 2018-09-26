@@ -59,7 +59,9 @@ class BugError(Exception):
         return repr(self.msg)
 
 
-created_msg = 'Created in commit'
+delta_msg = 'Delta test bug'
 regression_msg = 'Regression test bug'
-invalid_msg = 'Invalid, testcase generated compilation error when patched'
+comp_error_msg = 'Invalid, testcase generated compilation error when patched'
+rt_error_msg = 'Invalid, runtime exception in parent testing'
+delta_passed = 'Invalid, Delta testcase that passed in parent'
 

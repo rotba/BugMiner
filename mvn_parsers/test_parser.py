@@ -160,6 +160,14 @@ class TestCase(object):
     def passed(self):
         return self.report.passed
 
+    @property
+    def failed(self):
+        return self.report.failed
+
+    @property
+    def has_error(self):
+        return self.report.has_error
+
     def clear_report(self):
         self.report = None
 
@@ -326,13 +334,16 @@ class TestCaseReport(object):
         self.testcase_tag = testcase
         self._name = self.parent.name + '#'+self.testcase_tag.get('name')
         self._time = float(re.sub('[,]', '', self.testcase_tag.get('time')))
-        self._test_passed = True
+        self._passed = False
+        self._failed = False
+        self._has_error = False
         failure = self.testcase_tag.find('failure')
         if not failure is None:
-            self._test_passed = False
-        failure = self.testcase_tag.find('error')
-        if not failure is None:
-            self._test_passed = False
+            self._failed = True
+        error = self.testcase_tag.find('error')
+        if not error is None:
+            self._has_error = True
+        self._passed = not self._failed and not self._has_error
 
     @property
     def time(self):
@@ -344,7 +355,15 @@ class TestCaseReport(object):
 
     @property
     def passed(self):
-        return self._test_passed
+        return self._passed
+
+    @property
+    def failed(self):
+        return self._failed
+
+    @property
+    def has_error(self):
+        return self._has_error
 
     @property
     def src_path(self):
@@ -366,10 +385,13 @@ class CompilationErrorReport(object):
     def __init__(self, compilation_error_report_line):
         self._path = ''
         self._error_line = ''
+        self._error_col = ''
+        self.str = compilation_error_report_line
         parts = compilation_error_report_line.split(' ')
         path_and_error_address = parts[1].split(':')
         error_address = path_and_error_address[len(path_and_error_address) - 1]
         self._error_line = int(error_address.strip('[]').split(',')[0])
+        self._error_col = int(error_address.strip('[]').split(',')[1])
         self._path = ':'.join(path_and_error_address[:-1])
         if self._path.startswith('/') or self._path.startswith('\\'):
             self._path = self._path[1:]
@@ -382,6 +404,19 @@ class CompilationErrorReport(object):
     @property
     def line(self):
         return self._error_line
+
+    @property
+    def column(self):
+        return self._error_col
+
+    def __repr__(self) -> str:
+        return self.str
+
+    def __eq__(self, o: object) -> bool:
+        if not isinstance(o, CompilationErrorReport):
+            return False
+        else:
+            return self.path == o.path and self.line == o.line and self.column == o.column
 
 
 # Return parsed tests of the reports dir
@@ -448,7 +483,9 @@ def get_compilation_errors(compilation_error_report):
     ans = []
     for line in compilation_error_report:
         if is_error_report_line(line):
-            ans.append(CompilationErrorReport(line))
+            error = CompilationErrorReport(line)
+            if not error in ans:
+                ans.append(error)
     return ans
 
 
@@ -465,10 +502,8 @@ def get_compilation_error_report(build_report):
             while not end_of_compilation_errors(report_lines[i]):
                 ans.append(report_lines[i])
                 i += 1
-        else:
-            i += 1
-        if report_lines[i].endswith('Compilation failure'):
-            while not end_of_compilation_errors(report_lines[i]):
+        elif report_lines[i].endswith('Compilation failure'):
+            while i < len(report_lines) and not end_of_compilation_errors(report_lines[i]):
                 if is_error_report_line(report_lines[i]):
                     ans.append(report_lines[i])
                 i += 1
@@ -502,6 +537,8 @@ def is_error_report_line(line):
     if line.startswith('[ERROR]'):
         words = line.split(' ')
         if len(words) < 2:
+            return False
+        if len(words[1])<1:
             return False
         if words[1][0] == '/':
             words[1] = words[1][1:]

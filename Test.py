@@ -305,7 +305,7 @@ class TestMain(unittest.TestCase):
         tests_paths = Main.get_tests_paths_from_commit(commit)
         res = Main.extract_bugs(issue, commit, tests_paths)[0]
         for bug in res:
-            if bug.test.IIDD == exp_testcase_id and bug.desctiption == my_bug.created_msg:
+            if bug.test.IIDD == exp_testcase_id and bug.desctiption == my_bug.delta_msg:
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
@@ -321,7 +321,56 @@ class TestMain(unittest.TestCase):
         tests_paths = Main.get_tests_paths_from_commit(commit)
         res = Main.extract_bugs(issue, commit, tests_paths)[0]
         for bug in res:
-            if bug.test.IIDD == exp_testcase_id and bug.desctiption == my_bug.created_msg:
+            if bug.test.IIDD == exp_testcase_id and bug.desctiption == my_bug.delta_msg:
+                return
+        self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
+
+    def test_extract_bugs_pick_up_failures(self):
+        print('test_extract_bugs_pick_up_failures')
+        Main.set_up(['', 'https://github.com/rotba/GitMavenTrackingProject'])
+        issue = Main.jira.issue('TIKA-19')
+        exp_testcase_id = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#None_RTerrorTest()'
+        commit = [c for c in Main.all_commits if c.hexsha == '1d3c81c1f7a4722408264cc5279df7abb22a3c04'][0]
+        module_path = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_1'
+        Main.repo.git.reset('--hard')
+        Main.repo.git.checkout(commit.hexsha)
+        tests_paths = Main.get_tests_paths_from_commit(commit)
+        res = Main.extract_bugs(issue, commit, tests_paths)[1]
+        for bug in res:
+            if bug.test.IIDD == exp_testcase_id and bug.desctiption == my_bug.rt_error_msg:
+                return
+        self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
+
+    def test_extract_bugs_delta_testcases_that_passed_in_parrent(self):
+        print('test_extract_bugs_pick_up_failures')
+        Main.set_up(['', 'https://github.com/rotba/GitMavenTrackingProject'])
+        issue = Main.jira.issue('TIKA-19')
+        exp_testcase_id = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#None_deltaPassedTest()'
+        commit = [c for c in Main.all_commits if c.hexsha == 'd03e45c84ad903435fae8f1814a56569906663eb'][0]
+        module_path = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_1'
+        Main.repo.git.reset('--hard')
+        Main.repo.git.checkout(commit.hexsha)
+        tests_paths = Main.get_tests_paths_from_commit(commit)
+        res = Main.extract_bugs(issue, commit, tests_paths)[1]
+        for bug in res:
+            if bug.test.IIDD == exp_testcase_id and bug.desctiption == my_bug.delta_passed:
+                return
+        self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
+
+    @unittest.skip('Not handled yey')
+    def test_extract_bugs_pick_up_failures_change_inly_in_src(self):
+        print('test_extract_bugs_pick_up_failures')
+        Main.set_up(['', 'https://github.com/rotba/GitMavenTrackingProject'])
+        issue = Main.jira.issue('TIKA-19')
+        exp_testcase_id = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#None_RTerrorTest()'
+        commit = [c for c in Main.all_commits if c.hexsha == '5fb9ab18c99088ecad3f67df97c2bc530180a499'][0]
+        module_path = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_1'
+        Main.repo.git.reset('--hard')
+        Main.repo.git.checkout(commit.hexsha)
+        tests_paths = Main.get_tests_paths_from_commit(commit)
+        res = Main.extract_bugs(issue, commit, tests_paths)[0]
+        for bug in res:
+            if bug.test.IIDD == exp_testcase_id and bug.desctiption == my_bug.rt_error_msg:
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 

@@ -33,8 +33,8 @@ dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
 EARLIEST_BUG = 0
-USE_CACHE = False
-GENERATE_CSV = False
+USE_CACHE = True
+GENERATE_CSV = True
 
 
 def main(argv):
@@ -84,7 +84,7 @@ def extract_bugs(issue, commit, tests_paths):
         delta_testcases = get_delta_testcases(commit_valid_testcases)
         patched_testcases = patch_testcases(commit_valid_testcases, commit, parent, module)
         invalid_bug_testcases = [t for t in delta_testcases if not t in patched_testcases]
-        invalid_bugs += list(map(lambda t: my_bug.Bug(issue, commit, t, my_bug.invalid_msg), invalid_bug_testcases))
+        invalid_bugs += list(map(lambda t: my_bug.Bug(issue, commit, t, my_bug.comp_error_msg), invalid_bug_testcases))
         run_mvn_tests(dict_modules_testcases[module], module)
         parent_valid_testcases = []
         parent_tests = test_parser.get_tests(module)
@@ -94,13 +94,20 @@ def extract_bugs(issue, commit, tests_paths):
         for testcase in commit_valid_testcases:
             if testcase in parent_valid_testcases:
                 parent_testcase = [t for t in parent_valid_testcases if t == testcase][0]
-                if testcase.passed and not parent_testcase.passed:
+                if testcase.passed and parent_testcase.failed:
                     if testcase in delta_testcases:
-                        bug = my_bug.Bug(issue, commit, testcase, my_bug.created_msg)
+                        bug = my_bug.Bug(issue, commit, testcase, my_bug.delta_msg)
                         valid_bugs.append(bug)
                     else:
                         bug = my_bug.Bug(issue, commit, testcase, my_bug.regression_msg)
                         valid_bugs.append(bug)
+                elif testcase.passed and parent_testcase.has_error:
+                    bug = my_bug.Bug(issue, commit, testcase, my_bug.rt_error_msg)
+                    invalid_bugs.append(bug)
+                elif testcase.passed and parent_testcase.passed:
+                    bug = my_bug.Bug(issue, commit, testcase, my_bug.delta_passed)
+                    invalid_bugs.append(bug)
+
         git_cmds_wrapper(lambda: repo.git.reset('--hard'))
         git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
         for b in valid_bugs:
@@ -230,6 +237,8 @@ def patch_testcases(commit_testcases, commit, prev_commit, module_path):
             error_testclass = test_parser.TestClass(file)
             for error in dict_file_errors[file]:
                 if is_unrelated_testcase(error, error_testclass):
+                    logging.info(file+' is not compiling because compilation error not related to testcases: '+error)
+                    logging.info(build_report)
                     diff = dict_file_diff[error.path]
                     git_cmds_wrapper(lambda: repo.git.execute(['git', 'apply', '-R', dict_diff_patch[diff]]))
                     for testcase in dict_diff_testcases[diff]:
