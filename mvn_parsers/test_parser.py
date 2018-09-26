@@ -467,6 +467,13 @@ def get_compilation_error_report(build_report):
                 i += 1
         else:
             i += 1
+        if report_lines[i].endswith('Compilation failure'):
+            while not end_of_compilation_errors(report_lines[i]):
+                if is_error_report_line(report_lines[i]):
+                    ans.append(report_lines[i])
+                i += 1
+        else:
+            i += 1
     return ans
 
 
