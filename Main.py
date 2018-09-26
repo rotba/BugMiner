@@ -33,8 +33,8 @@ dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
 EARLIEST_BUG = 0
-USE_CACHE = True
-GENERATE_CSV = True
+USE_CACHE = False
+GENERATE_CSV = False
 
 
 def main(argv):
@@ -82,7 +82,7 @@ def extract_bugs(issue, commit, tests_paths):
         git_cmds_wrapper(lambda: repo.git.reset('--hard'))
         git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha))
         delta_testcases = get_delta_testcases(commit_valid_testcases)
-        # modified_testcases = get_delta_testcases(commit_valid_testcases)
+        # modified_testcases = get_modified_testcases(commit_valid_testcases)
         patched_testcases = patch_testcases(commit_valid_testcases, commit, parent, module)
         invalid_bug_testcases = [t for t in delta_testcases if not t in patched_testcases]
         invalid_bugs += list(map(lambda t: my_bug.Bug(issue, commit, t, my_bug.comp_error_msg), invalid_bug_testcases))
@@ -126,12 +126,12 @@ def run_mvn_tests(testcases, module):
     if len(test_parser.get_compilation_error_report(build_report)) == 0:
         return
     else:
-        logging.info('BUILD FALUIRE:\n' + build_report)
+        logging.info('SUBMODULE BUILD FALUIRE ON MODULE {}:\n'.format(module) + build_report)
         test_cmd = test_parser.generate_mvn_test_cmd(testcases, proj_dir)
         with os.popen(test_cmd) as proc:
             build_report = proc.read()
         if not len(test_parser.get_compilation_error_report(build_report)) == 0:
-            raise my_bug.BugError('BUILD FALUIRE:\n' + build_report)
+            raise my_bug.BugError('PARENT BUILD FALUIRE:\n' + build_report)
 
 
 
