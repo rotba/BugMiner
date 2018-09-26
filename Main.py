@@ -58,8 +58,8 @@ def main(argv):
             logging.info(e.msg)
         except git.exc.GitCommandError as e:
             logging.info('SHOULD NOT HAPPEN '+str(e))
-        # except Exception as e:
-        #     logging.info('SHOULD NOT HAPPEN '+str(e))
+        except Exception as e:
+             logging.info('SHOULD NOT HAPPEN '+str(e))
 
 
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
@@ -82,6 +82,7 @@ def extract_bugs(issue, commit, tests_paths):
         git_cmds_wrapper(lambda: repo.git.reset('--hard'))
         git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha))
         delta_testcases = get_delta_testcases(commit_valid_testcases)
+        # modified_testcases = get_delta_testcases(commit_valid_testcases)
         patched_testcases = patch_testcases(commit_valid_testcases, commit, parent, module)
         invalid_bug_testcases = [t for t in delta_testcases if not t in patched_testcases]
         invalid_bugs += list(map(lambda t: my_bug.Bug(issue, commit, t, my_bug.comp_error_msg), invalid_bug_testcases))
@@ -105,8 +106,9 @@ def extract_bugs(issue, commit, tests_paths):
                     bug = my_bug.Bug(issue, commit, testcase, my_bug.rt_error_msg)
                     invalid_bugs.append(bug)
                 elif testcase.passed and parent_testcase.passed:
-                    bug = my_bug.Bug(issue, commit, testcase, my_bug.delta_passed)
-                    invalid_bugs.append(bug)
+                    if testcase in delta_testcases:
+                        bug = my_bug.Bug(issue, commit, testcase, my_bug.delta_passed)
+                        invalid_bugs.append(bug)
 
         git_cmds_wrapper(lambda: repo.git.reset('--hard'))
         git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
@@ -203,6 +205,22 @@ def get_delta_testcases(testcases):
         class_decls = [class_dec for _, class_dec in tree.filter(javalang.tree.ClassDeclaration)]
         if not any([testcase_in_class(c, testcase) for c in class_decls]):
             ans.append(testcase)
+    return ans
+
+
+# Returns list of testcases that exist in commit_tests and in the current state and are modied(commit)
+def get_modified_testcases(testcases):
+    ans = []
+    for testcase in testcases:
+        src_path = testcase.src_path
+        if os.path.isfile(src_path):
+            testclass = test_parser.TestClass(src_path)
+            if testcase in testclass.testcases:
+                tmp = [t for t in testclass.testcases if t==testcase]
+                assert len(tmp)==1
+                if not testcase.has_the_same_code(tmp[0]):
+                    ans.append(testcase)
+
     return ans
 
 
