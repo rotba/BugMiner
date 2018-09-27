@@ -1,149 +1,20 @@
+import filecmp
 import os
 import unittest
 import Main
+import shutil
 import bug.bug as my_bug
 
 
 class TestMain(unittest.TestCase):
 
     def setUp(self):
-        Main.GENERATE_CSV=False
+        Main.GENERATE_DATA=False
         Main.USE_CACHE = False
 
     def tearDown(self):
         pass
 
-    @unittest.skip("Long test")
-    def test_issue_1378_get_issue_tests(self):
-        Main.set_up('https://github.com/apache/tika')
-        self.issue_1378 = Main.jira.issue('TIKA-1378')
-        self.issue_19 = Main.jira.issue('TIKA-19')
-        try:
-            tests = Main.get_issue_tests(self.issue_1378)
-        except Main.bug.BugError as e:
-            self.fail('get_issue_tests() did not associate TIKA-1378 with HtmlEncodingDetectorTest')
-        for test in tests:
-            if 'MicrosoftTranslatorTest' in test.mvn_name:
-                return
-        self.fail('get_issue_tests() did not associate TIKA-1378 with HtmlEncodingDetectorTest')
-
-    @unittest.skip("Long test")
-    def test_issue_1378_get_issue_commits(self):
-        Main.set_up('https://github.com/apache/tika')
-        self.issue_1378 = Main.jira.issue('TIKA-1378')
-        self.issue_19 = Main.jira.issue('TIKA-19')
-        try:
-            commits = Main.get_issue_commits(self.issue_1378)
-        except Main.bug.BugError as e:
-            self.fail(
-                'get_issue_commits() did not associate TIKA-1378 with commit 65aea2b06b33c6b53999b6c52e017c38bf2af0b4')
-        for commit in commits:
-            if commit.hexsha == '65aea2b06b33c6b53999b6c52e017c38bf2af0b4':
-                return
-        self.fail(
-            'get_issue_commits() did not associate TIKA-1378 with commit 65aea2b06b33c6b53999b6c52e017c38bf2af0b4')
-
-    @unittest.skip("Long test")
-    def test_issue_1378_check_out_and_get_tests_from_commit(self):
-        Main.set_up('https://github.com/apache/tika')
-        self.issue_1378 = Main.jira.issue('TIKA-1378')
-        commit = Main.repo.commit('65aea2b06b33c6b53999b6c52e017c38bf2af0b4')
-        res_tests_paths = Main.get_tests_paths_from_commit(commit)
-        res_tests = list(map(lambda t_path: Main.test_parser.TestClass(t_path), res_tests_paths))
-        for test in res_tests:
-            if commit.name == '65aea2b06b33c6b53999b6c52e017c38bf2af0b4':
-                return
-        self.fail(
-            'get_issue_commits() did not associate TIKA-1378 with commit 65aea2b06b33c6b53999b6c52e017c38bf2af0b4')
-
-    @unittest.skip("Master test")
-    def test_issue_1378_get_fixes(self):
-        Main.set_up('https://github.com/apache/tika')
-        self.issue_1378 = Main.jira.issue('TIKA-1378')
-        self.issue_19 = Main.jira.issue('TIKA-19')
-        commits = Main.get_issue_commits(self.issue_1378)
-        tests = Main.get_issue_tests(self.issue_1378)
-        fixes = Main.get_fixes(commits, tests)
-        for fix in fixes:
-            if fix[0] == '65aea2b06b33c6b53999b6c52e017c38bf2af0b4' and fix[1] == 'MicrosoftTranslatorTest':
-                return
-        self.fail(
-            'get_fixes() did not associate commit 65aea2b06b33c6b53999b6c52e017c38bf2af0b4 with MicrosoftTranslatorTest')
-
-    @unittest.skip("Master test")
-    def test_a_issue_19_get_issue_tests(self):
-        Main.set_up('https://github.com/apache/tika')
-        self.issue_19 = Main.jira.issue('TIKA-19')
-        print('test_a_issue_19_get_issue_tests')
-        issue = self.issue_19
-        try:
-            tests = Main.get_issue_tests(issue)
-        except Main.bug.BugError as e:
-            self.fail('get_issue_tests() did not associate TIKA-19 with TestParsers')
-        for test in tests:
-            if 'TestParsers' in test.mvn_name:
-                return
-        self.fail('get_issue_tests() did not associate TIKA-19 with TestParsers')
-
-    @unittest.skip("Master test")
-    def test_b_issue_19_get_issue_commits(self):
-        Main.set_up('https://github.com/apache/tika')
-        self.issue_1378 = Main.jira.issue('TIKA-1378')
-        self.issue_19 = Main.jira.issue('TIKA-19')
-        print('test_b_issue_19_get_issue_commits')
-        issue = self.issue_19
-        try:
-            commits = Main.get_issue_commits(issue)
-        except Main.bug.BugError as e:
-            self.fail(
-                'get_issue_commits() did not associate TIKA-19 with commit d7dabee5ce14240f3c5ba2f6147c963d03604dd3')
-        for commit in commits:
-            if commit.hexsha == 'd7dabee5ce14240f3c5ba2f6147c963d03604dd3':
-                return
-        self.fail('get_issue_commits() did not associate TIKA-19 with commit d7dabee5ce14240f3c5ba2f6147c963d03604dd3')
-
-    @unittest.skip("Master test")
-    def test_c_issue_19_exrtact_bugs(self):
-        Main.set_up('https://github.com/apache/tika')
-        self.issue_19 = Main.jira.issue('TIKA-19')
-        print('test_c_issue_19_get_fixes')
-        issue = self.issue_19
-        commits = Main.get_issue_commits(issue)
-        tests = Main.get_issue_tests(issue)
-        bugs = Main.extract_bugs(issue, commits[0], tests)
-        for bug in bugs:
-            if bug.commit.hexsha == 'd7dabee5ce14240f3c5ba2f6147c963d03604dd3' and 'TestParsers' in bug.test.mvn_name:
-                return
-        self.fail('get_fixes() did not associate commit d7dabee5ce14240f3c5ba2f6147c963d03604dd3 with TestParsers')
-
-    @unittest.skip("Master test")
-    def test_issue_19_is_associated_to_commit(self):
-        print('test_issue_19_is_associated_to_commit')
-        Main.set_up('https://github.com/apache/tika')
-        self.issue_19 = Main.jira.issue('TIKA-19')
-        issue = self.issue_19
-        associated_commits = []
-        all_commits = Main.all_commits
-        for commit in all_commits:
-            if Main.is_associated_to_commit(issue, commit):
-                associated_commits.append(commit)
-        self.assertTrue(len(associated_commits) == 1,
-                        'Excpected associated commits: 1 and got: ' + str(len(associated_commits)))
-        self.assertEqual(associated_commits[0].hexsha, 'd7dabee5ce14240f3c5ba2f6147c963d03604dd3',
-                         'Excpected associated commit: d7dabee5ce14240f3c5ba2f6147c963d03604dd3 \n' +
-                         'But got: ' + associated_commits[0].hexsha)
-
-    @unittest.skip("Not relevant")
-    def test_issue_get_diffs(self):
-        print('test_issue_get_diffs')
-        Main.set_up(['','https://github.com/rotba/GitMavenTrackingProject'])
-        commit_test_pass_hash = '1df5710687471a8b47dca2d6f39659efab9c1063'
-        all_commits = Main.all_commits
-        all_tests = Main.all_tests
-        commit = [c for c in all_commits if c.hexsha == commit_test_pass_hash][0]
-        test = [t for t in all_tests if t.mvn_name == 'NaimTest'][0]
-        diffs = Main.get_diffs(commit, test)
-        x = 1
 
     def test_check_out_and_get_tests_from_commit(self):
         print('test_check_out_and_get_tests_from_commit')
@@ -165,7 +36,7 @@ class TestMain(unittest.TestCase):
         tests_paths = Main.get_tests_paths_from_commit(commit)
         res = Main.extract_bugs(self.issue_19, commit, tests_paths)
         for bug in res:
-            if bug.commit.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b' and 'NaimTest#newGooTest' in bug.test.mvn_name and bug.msg == 'Created in test':
+            if bug.commit.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b' and 'NaimTest#newGooTest' in bug.bugged_testcase.mvn_name and bug.msg == 'Created in test':
                 return
         self.fail('Did not extracted bug : created test - \'NaimTest#newGooTest\'')
 
@@ -275,6 +146,42 @@ class TestMain(unittest.TestCase):
         self.assertTrue(not expected_compiling_delta_testcase in not_compiling_testcases,
                         "'p_1.AssafTest#compTest' should have been patched")
 
+    def test_get_bug_patches(self):
+        print('test_get_bug_patches')
+        Main.set_up(['', 'https://github.com/rotba/GitMavenTrackingProject'])
+        test_dir =os.path.join( os.getcwd(),r'test_files/test_get_bug_patches')
+        if not os.path.exists(test_dir):
+            os.makedirs(test_dir)
+        else:
+            shutil.rmtree(test_dir)
+            os.makedirs(test_dir)
+        commit = [c for c in Main.all_commits if c.hexsha == 'e4d2bb8efdfa576632b99d0e91b35cf0262e70be'][0]
+        parent = commit.parents[0]
+        module_path = os.getcwd() + r'\tested_project\GitMavenTrackingProject\sub_mod_2'
+        Main.prepare_project_repo_for_testing(commit, module_path)
+        os.system(
+            'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
+        commit_tests = Main.test_parser.get_tests(module_path)
+        dict = {}
+        for testclass in commit_tests:
+            dict[testclass.id] = test_dir
+        commit_testcases = Main.test_parser.get_testcases(commit_tests)
+        expected_not_compiling_delta_testcase = [t for t in commit_testcases if 'p_1.AssafTest#notCompTest' in t.mvn_name][0]
+        expected_compiling_delta_testcase = [t for t in commit_testcases if 'p_1.AssafTest#compTest' in t.mvn_name][0]
+        Main.prepare_project_repo_for_testing(parent, module_path)
+        delta_testcases = Main.get_delta_testcases(commit_testcases)
+        patched_testcases = Main.patch_testcases(commit_testcases, commit, parent, module_path)
+        dict_test_case_patch = Main.get_bug_patches(patched_testcases, dict)
+        patch_file_path = expected_compiling_delta_testcase.src_path
+        expected_patched_file_path =os.path.join(test_dir,'expected.java')
+        shutil.copyfile(patch_file_path, expected_patched_file_path)
+        Main.prepare_project_repo_for_testing(parent, module_path)
+        Main.git_cmds_wrapper(lambda: Main.repo.git.execute(['git', 'apply', dict_test_case_patch[expected_compiling_delta_testcase.id]]))
+        result_patched_file_path = os.path.join(test_dir, 'result.java')
+        shutil.copyfile(patch_file_path, result_patched_file_path)
+        self.assertTrue(filecmp.cmp(expected_patched_file_path, result_patched_file_path))
+        shutil.rmtree(test_dir)
+
     @unittest.skip("Coupled with patch_testcases")
     def test_get_uncompiled_testcases(self):
         print('test_get_compilation_error_testcases')
@@ -303,9 +210,9 @@ class TestMain(unittest.TestCase):
         Main.repo.git.reset('--hard')
         Main.repo.git.checkout(commit.hexsha)
         tests_paths = Main.get_tests_paths_from_commit(commit)
-        res = Main.extract_bugs(issue, commit, tests_paths)[0]
+        res = Main.extract_bugs(issue, commit, tests_paths)
         for bug in res:
-            if bug.test.IIDD == exp_testcase_id and bug.desctiption == my_bug.delta_msg:
+            if bug.valid==True and bug.bugged_testcase.id == exp_testcase_id and bug.type == my_bug.Bug_type.DELTA:
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
@@ -319,9 +226,9 @@ class TestMain(unittest.TestCase):
         Main.repo.git.reset('--hard')
         Main.repo.git.checkout(commit.hexsha)
         tests_paths = Main.get_tests_paths_from_commit(commit)
-        res = Main.extract_bugs(issue, commit, tests_paths)[0]
+        res = Main.extract_bugs(issue, commit, tests_paths)
         for bug in res:
-            if bug.test.IIDD == exp_testcase_id and bug.desctiption == my_bug.delta_msg:
+            if bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type == my_bug.Bug_type.DELTA:
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
@@ -335,9 +242,10 @@ class TestMain(unittest.TestCase):
         Main.repo.git.reset('--hard')
         Main.repo.git.checkout(commit.hexsha)
         tests_paths = Main.get_tests_paths_from_commit(commit)
-        res = Main.extract_bugs(issue, commit, tests_paths)[1]
+        res = Main.extract_bugs(issue, commit, tests_paths)
         for bug in res:
-            if bug.test.IIDD == exp_testcase_id and bug.desctiption == my_bug.rt_error_msg:
+            if not bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type==my_bug.Bug_type.REGRESSION\
+                and bug.desctiption.startswith(my_bug.invalid_rt_error_desc):
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
@@ -351,9 +259,10 @@ class TestMain(unittest.TestCase):
         Main.repo.git.reset('--hard')
         Main.repo.git.checkout(commit.hexsha)
         tests_paths = Main.get_tests_paths_from_commit(commit)
-        res = Main.extract_bugs(issue, commit, tests_paths)[1]
+        res = Main.extract_bugs(issue, commit, tests_paths)
         for bug in res:
-            if bug.test.IIDD == exp_testcase_id and bug.desctiption == my_bug.delta_passed:
+            if not bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type==my_bug.Bug_type.DELTA\
+                    and bug.desctiption == my_bug.invalid_passed_desc:
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
@@ -370,7 +279,7 @@ class TestMain(unittest.TestCase):
         tests_paths = Main.get_tests_paths_from_commit(commit)
         res = Main.extract_bugs(issue, commit, tests_paths)[0]
         for bug in res:
-            if bug.test.IIDD == exp_testcase_id and bug.desctiption == my_bug.rt_error_msg:
+            if bug.bugged_testcase.id == exp_testcase_id and bug.desctiption == my_bug.invalid_delta_rt_error_desc:
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
@@ -389,6 +298,25 @@ class TestMain(unittest.TestCase):
         new_testcases = Main.get_delta_testcases(testcases)
         expected_new_testcase = [t for t in testcases if 'MainTest#foo_2' in t.mvn_name][0]
         self.assertTrue(expected_new_testcase in new_testcases, 'MainTest#foo_2 should be picked for being new test')
+
+    def test_generated_data(self):
+        print('test_generated_data')
+        Main.USE_CACHE=False
+        Main.GENERATE_DATA = True
+        Main.main(['','https://github.com/apache/tika','TIKA-56'])
+        expected_issue_dir = os.path.join(Main.data_dir,'TIKA-56')
+        expected_commit_dir = os.path.join(expected_issue_dir, 'b12c01d9b56053554cec501aab0530f7f4352daf')
+        expected_testclass_dir = os.path.join(expected_commit_dir, 'tika#org.apache.tika.mime.TestMimeTypes')
+        expected_testcase_pickle = os.path.join(expected_testclass_dir, 'testCaseSensitivity.pickle')
+        expected_report_xml = os.path.join(expected_testclass_dir, 'TEST-org.apache.tika.mime.TestMimeTypes.xml')
+        expected_patch = os.path.join(expected_testclass_dir, 'patch.patch')
+        self.assertTrue(os.path.isdir(expected_issue_dir))
+        self.assertTrue(os.path.isdir(expected_commit_dir))
+        self.assertTrue(os.path.isdir(expected_testclass_dir))
+        self.assertTrue(os.path.isfile(expected_testcase_pickle))
+        self.assertTrue(os.path.isfile(expected_report_xml))
+        self.assertTrue(os.path.isfile(expected_patch))
+        shutil.rmtree(Main.data_dir)
 
 
 if __name__ == '__main__':

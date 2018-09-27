@@ -12,6 +12,7 @@ class TestClass:
         self._mvn_name = self.generate_mvn_name()
         self._testcases = []
         self._report = None
+        self._id = '#'.join([os.path.basename(self.module), self.mvn_name])
         with open(self._path, 'r') as src_file:
             try:
                 self._tree = javalang.parse.parse(src_file.read())
@@ -50,6 +51,10 @@ class TestClass:
     @property
     def tree(self):
         return self._tree
+
+    @property
+    def id(self):
+        return self._id
 
     def parse_src_path(self):
         ans = self.module
@@ -101,7 +106,7 @@ class TestClass:
         if not isinstance(other, TestClass):
             return False
         else:
-            return self.src_path == other.src_path
+            return self.id == other.id
 
 
 class TestCase(object):
@@ -125,7 +130,7 @@ class TestCase(object):
         return self.parent.src_path
 
     @property
-    def IIDD(self):
+    def id(self):
         return self._id
 
     @property
@@ -170,6 +175,19 @@ class TestCase(object):
 
     def clear_report(self):
         self.report = None
+
+    def get_error(self):
+        return self.report.get_error()
+
+    def has_the_same_code_as(self, other):
+        if len(self.method.body)==len(other.method.body):
+            i=0
+            while i< len(self.method.body):
+                if not self.method.body[i] == other.method.body[i]:
+                    return False
+            return True
+        else:
+            return False
 
     def generate_id(self):
         ret_type = str(self.method.return_type)
@@ -246,7 +264,7 @@ class TestCase(object):
         if not isinstance(other, TestCase):
             return False
         else:
-            return self.IIDD == other.IIDD
+            return self.id == other.id
 
 
 class TestClassReport:
@@ -340,8 +358,8 @@ class TestCaseReport(object):
         failure = self.testcase_tag.find('failure')
         if not failure is None:
             self._failed = True
-        error = self.testcase_tag.find('error')
-        if not error is None:
+        self.error = self.testcase_tag.find('error')
+        if not self.error is None:
             self._has_error = True
         self._passed = not self._failed and not self._has_error
 
@@ -377,6 +395,9 @@ class TestCaseReport(object):
     def parent(self):
         return self._parent
 
+    def get_error(self):
+        return self.error.text
+
     def __repr__(self):
         return str(self.name)
 
@@ -410,6 +431,9 @@ class CompilationErrorReport(object):
         return self._error_col
 
     def __repr__(self) -> str:
+        return self.str
+
+    def __str__(self):
         return self.str
 
     def __eq__(self, o: object) -> bool:
