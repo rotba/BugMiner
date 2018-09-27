@@ -25,10 +25,10 @@ class TestTest_Obj(unittest.TestCase):
             os.getcwd() + r'\static_files\tika_1\src\test\java\org\apache\tika\sax\AppendableAdaptorTest.java')
         self.test_5 = test_parser.TestClass(
             os.getcwd() + r'\static_files\tika_1\src\test\java\org\apache\tika\sax _1\AppendableAdaptorTest.java')
-        self.testcase_1 = [t for t in self.test_3.testcases if t.IIDD.endswith('None_testExcel()')][0]
-        self.testcase_2 = [t for t in self.test_4.testcases if t.IIDD.endswith('None_testAppendChar()')][0]
-        self.testcase_3 = [t for t in self.test_5.testcases if t.IIDD.endswith('None_testAppendChar()')][0]
-        self.testcase_4 = [t for t in self.test_5.testcases if t.IIDD.endswith('None_testAppendString()')][0]
+        self.testcase_1 = [t for t in self.test_3.testcases if t.id.endswith('None_testExcel()')][0]
+        self.testcase_2 = [t for t in self.test_4.testcases if t.id.endswith('None_testAppendChar()')][0]
+        self.testcase_3 = [t for t in self.test_5.testcases if t.id.endswith('None_testAppendChar()')][0]
+        self.testcase_4 = [t for t in self.test_5.testcases if t.id.endswith('None_testAppendString()')][0]
 
     def tearDown(self):
         pass
@@ -53,7 +53,7 @@ class TestTest_Obj(unittest.TestCase):
 
     def test_get_testcases(self):
         expected_testcase_id = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#None_hoo()'
-        self.assertTrue(expected_testcase_id in list(map(lambda tc: tc.IIDD, self.test_2.testcases)))
+        self.assertTrue(expected_testcase_id in list(map(lambda tc: tc.id, self.test_2.testcases)))
         self.assertEqual(len(self.test_2.testcases), 2, "p_1.AmitTest should have only one method")
 
     def test_get_report_path(self):
