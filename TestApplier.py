@@ -21,7 +21,7 @@ class TestApplier(unittest.TestCase):
         expected_requested_path = os.path.join(test_dir, 'test_init')
         expected_repo_path = os.path.join(expected_requested_path, 'tika')
         expected_data_path = os.path.join(expected_requested_path, 'data')
-        applier = Applier.Applier('https://github.com/apache/tika', expected_requested_path)
+        applier = Applier.Applier('https://github.com/apache/tika', expected_requested_path, 'TIKA-56')
         self.assertTrue(os.path.isdir(expected_repo_path))
         self.assertTrue(os.path.isdir(expected_data_path))
 

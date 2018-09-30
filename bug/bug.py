@@ -125,6 +125,9 @@ class Bug_data_handler(object):
     def fetch_all_data(self, db_path):
         copytree(db_path,self.path)
 
+    def fetch_issue_data(self, db_path, issue):
+        copytree(os.path.join(db_path, issue), os.path.join(self.path, issue))
+
     # Gets all the bugs in issue_key in fixed commit_hexsha
     def get_bugs(self, issue_key, commit_hexsha):
         ans = []
@@ -160,6 +163,7 @@ class Bug_data_handler(object):
             filename = os.fsdecode(file)
             if filename.endswith(".patch"):
                 return os.path.join(testclass_path, filename)
+
 
 
 class Bug_csv_report_handler(object):

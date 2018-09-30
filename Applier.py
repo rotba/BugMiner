@@ -2,7 +2,7 @@ import os
 import git
 import bug.bug as my_bug
 
-db = os.path.join(os.getcwd(), 'results')
+DATABASE = os.path.join(os.getcwd(), 'results')
 
 class Applier(object):
 
@@ -21,9 +21,9 @@ class Applier(object):
                 pass
         self._repo = git.Repo(os.path.join(self._path, proj_name))
         if not issue == None:
-            self._data_handler.fetch_issue_data(issue)
+            self._data_handler.fetch_issue_data(os.path.join(DATABASE, proj_name + '\\data'), issue)
         else:
-            self._data_handler.fetch_all_data(os.path.join(db, proj_name+'\\data'))
+            self._data_handler.fetch_all_data(os.path.join(DATABASE, proj_name + '\\data'))
 
     #Applies the bug on the project
     def apply(self, bug):
