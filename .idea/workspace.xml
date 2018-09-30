@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Applier.py" beforeDir="false" afterPath="$PROJECT_DIR$/Applier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestApplier.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestApplier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestMain.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika" beforeDir="false" afterPath="$PROJECT_DIR$/expected_requested_path/data/tika" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/TIKA-216.tgz" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/WFPC2u5780205r_c0fx.fits" beforeDir="false" />
@@ -682,7 +679,9 @@
       <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/src/main/java/org/apache/tika/xmp/convert/TikaToXMP.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/src/test/java/org/apache/tika/xmp/TikaToXMPTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/src/test/java/org/apache/tika/xmp/XMPMetadataTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvn_parsers/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/test_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_files/test_get_bug_patches_2/expected.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_files/test_get_bug_patches_2/patch.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test_files/test_get_bug_patches_2/result.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/src/test/java/p_1/AssafTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/src/test/java/p_1/AssafTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
@@ -976,7 +975,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1296" />
