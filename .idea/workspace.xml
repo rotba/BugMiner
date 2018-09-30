@@ -2,11 +2,687 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Applier.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestMain.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestApplier.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bug/bug.py" beforeDir="false" afterPath="$PROJECT_DIR$/bug/bug.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvn_parsers/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvn_parsers/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/test_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/TIKA-216.tgz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/WFPC2u5780205r_c0fx.fits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/Zamora2010.dif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEAC3.ac3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEAR.ear" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEMF.emf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEMLX.emlx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEML_embedded_xhtml_and_img.eml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEPUB.epub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL-charts.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL-formats.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL-formats.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL.strict.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL.xlsb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL2003.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_1img.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_1img.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_4.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_5.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_95.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_big_numbers.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_big_numbers.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_charts.xlsb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_charts.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_custom_props.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_custom_props.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_diagramData.xlsb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_diagramData.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_embeddedPDF_mac.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_embeddedPDF_mac.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_embeddedPDF_windows.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_embeddedPDF_windows.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_embeded.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_embeded.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_headers_footers.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_headers_footers.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_hyperlinks.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_hyperlinks.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_labels-govdocs-515858.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_macro.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_macro.xlsm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_phonetic.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_phonetic.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_poi-61034.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_poi.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_protected_passtika.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_protected_passtika.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_textbox.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_textbox.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEXCEL_various.xlsb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEmailWithPNGAtt.eml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEmbedded.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testEndNoteImportFile.enw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testExcel_embeddedPDF.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testExcel_embeddedPDF.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testException1.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testException2.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testExtraSpaces.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testFITS.fits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testFITS_ShorterHeader.fits" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testFLAC.flac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testFLAC.oga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testFLV.flv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testFOXMAIL.box" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testFontAfterBufferedText.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testFooter.ods" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testFooter.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testFreeBSD-x86-64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testGIF.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testGRAPHVIZd.dot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testGRAPHVIZdc.dot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testGRAPHVIZg.dot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testGROOVY.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testGroupWiseEml.eml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testH.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHFA.hfa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHTML.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHTMLBadScript.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHTMLGoodScript.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHTMLNoisyMetaEncoding_1.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHTMLNoisyMetaEncoding_2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHTMLNoisyMetaEncoding_3.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHTMLNoisyMetaEncoding_4.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHTML_charset_utf16le.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHTML_charset_utf8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHTML_embedded_img.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHTML_embedded_img_in_js.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHTML_head.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHTML_utf8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHWP_3.0.hwp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testHWP_5.0.hwp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testICNS.icns" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testICNS_basic.icns" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testICalendar.ics" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testINDD.indd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testIPA.ipa" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testISATab_BII-I-1/a_bii-s-2_metabolite profiling_NMR spectroscopy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testISATab_BII-I-1/a_metabolome.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testISATab_BII-I-1/a_microarray.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testISATab_BII-I-1/a_proteome.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testISATab_BII-I-1/a_transcriptome.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testISATab_BII-I-1/i_investigation.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testISATab_BII-I-1/s_BII-S-1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testISATab_BII-I-1/s_BII-S-2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJAR.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJAR_with_HTML.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJAR_with_PEHDR.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJAVA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJAVAPROPS.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJBIG2.jb2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJNILIB.jnilib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJPEG.jp2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJPEG.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJPEG_EXIF.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJPEG_EXIF_emptyDateTime.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJPEG_GEO.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJPEG_GEO_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJPEG_commented.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJPEG_commented_pspcs2mac.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJPEG_commented_xnviewmp026.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJPEG_oddTagComponent.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJS.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJS_HTML.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testJournalParser.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testKML.kml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testKMZ.kmz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testKeynote.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testKeynote2013.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testLZ4-framed.lz4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testLZMA_oom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testLinux-arm-32le" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testLinux-mips-32be" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testLinux-mips-32le" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testLinux-ppc-32be" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testLinux-x86-32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testLinux-x86-64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testLotus123-lotusftp.123" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testLotus123-lotusftp.wk4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testLotus123.wk1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testLotus123.wk3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testLotus123.wks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testLotusEml.eml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMATLAB.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMATLAB_barcast.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMATLAB_wtsgaus.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMBOX_complex.mbox" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMBOX_lengthy_x-headers.mbox" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMHTMLFirefox.mhtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMID.mid" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMIF.mif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMKV.mkv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMP3i18n.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMP3i18n_truncated.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMP3id3v1.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMP3id3v1_v2.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMP3id3v2.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMP3id3v24.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMP3lyrics.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMP3noid3.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMP3truncated.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMP4.m4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMP4_truncated.m4a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSChart-govdocs-428996.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSChart-govdocs-428996.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSChart-govdocs-428996.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSChart-govdocs-428996.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSEquation-govdocs-863534.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSG.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSG_Appointment.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSG_Contact.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSG_Post.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSG_StickyNote.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSG_Task.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSG_att_doc.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSG_att_msg.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSG_chinese.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSG_forwarded.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSOwnerFile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMSWriteFile.wri" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMYSQL.MYD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMYSQL.MYI" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMYSQL.frm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMasterFooter.odp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMasterSlideTable.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testMessageNews.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testNLS1.nls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testNLS2.nls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testNPEOpenDocument.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testNakedUTF16BOM.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testNumbers.numbers" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testNumbers2013.numbers" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testNumbersCharts.numbers" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOCR.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOCR.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOCR.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOCR.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOCR_spacing.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOCTET_header.dbase3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testODFwithOOo3.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testODT-TIKA-6000.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testODTEmbedded.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testODTNoMeta.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testODTStyles2.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testODTStyles3.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testODTnotaZipFile.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOPUS.opus" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOneNote.one" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOpenOffice2.odf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOpenOffice2.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOptionalHyphen.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOptionalHyphen.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOptionalHyphen.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOptionalHyphen.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOptionalHyphen.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOptionalHyphen.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testOverlappingText.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPBM.pbm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPCX.pcx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF-custommetadata.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDFEmbeddingAndEmbedded.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDFFileEmbInAnnotation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDFPackage.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDFTripleLangTitle.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDFTwoTextBoxes.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDFVarious.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_JBIG2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_PDFEncodedStringInXMP.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_Version.10.x.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_Version.11.x.PDFA-1b.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_Version.4.x.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_Version.5.x.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_Version.6.x.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_Version.7.x.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_Version.8.x.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_Version.9.x.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_XFA_govdocs1_258578.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_acroform3.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_bad_page_303226.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_bom.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_bookmarks.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_childAttachments.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_diffTitles.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_multiFormatEmbFiles.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_no_extract_no_accessibility_owner_empty.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_no_extract_no_accessibility_owner_user.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_no_extract_yes_accessibility_owner_empty.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_no_extract_yes_accessibility_owner_user.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_protected.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPDF_twoAuthors.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPGM.pgm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPICT.pct" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPKCS17Sig-v2.xml.p7m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPKCS17Sig-v3.xml.p7m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPKCS17Sig-v4.xml.p7m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPKCS17Sig.xml.p7m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPNG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPM.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT.potm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT.ppsm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT.ppsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT.pptm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT.thmx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT.xps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPTX_Thumbnail.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPTX_overlappingRelations.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_2imgs.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_2imgs.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_EmbeddedPDF.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_EmbeddedPDF.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_autodate.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_autodate.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_charts.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_comment.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_comment.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_custom_props.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_custom_props.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_diagramData.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_embedded2.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_embeddedMP3.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_embedded_two_slides.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_embeded.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_embeded.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_groups.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_groups.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_macros.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_macros.pptm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_masterFooter.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_masterFooter.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_masterText.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_masterText.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_masterText2.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_masterText2.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_oleWorkbook.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_oleWorkbook.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_protected_passtika.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_protected_passtika.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_skipBadCompressedObject.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_various.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_various.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPPT_various2.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPROJECT2003.mpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPROJECT2007.mpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPSD.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPSD2.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPST.pst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPST_variousBodyTypes.pst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPUBLISHER.pub" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPageNumber.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPages.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPages2013.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPagesComments.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPagesHeadersFootersAlphaLower.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPagesHeadersFootersAlphaUpper.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPagesHeadersFootersFootnotes.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPagesHeadersFootersRomanLower.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPagesHeadersFootersRomanUpper.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPagesLayout.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPagesPwdProtected.pages" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPhoneNumberExtractor.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testPopupAnnotation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testQUATTRO.qpw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testQUATTRO.wb3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testQuattro.wb1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testQuattro.wb2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testQuattro.wq1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testQuattro.wq2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRDF.rdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822-CC-BCC" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822-big" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822-limitedheaders" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822-mixed-simple" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822-mixed-with-pdf-inline" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822-multipart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822-txt-body" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822_base64" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822_date_utf8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822_dkim.eml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822_eml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822_encrypted_zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822_i18nheaders" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822_normal_zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822_oddfrom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822_quoted" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822_simple_inline_body.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRFC822_x-.eml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTF-ms932.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTF.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFBoldItalic.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFBoldPlain.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFControls.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFCorruptListOverride.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFEmbeddedFiles.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFEmbeddedLink.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFHexEscapeInsideWord.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFHyperlink.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFIgnoredControlWord.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFInvalidUnicode.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFJapanese.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFListLibreOffice.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFListMicrosoftWord.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFListOverride.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFNewlines.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFRegularImages.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFTableCellSeparation.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFTableCellSeparation2.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFUmlautSpaces.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFUmlautSpaces2.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFUnicodeGothic.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFUnicodeUCNControlWordCharacterDoubling.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFVarious.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFWindowsCodepage1250.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFWithCurlyBraces.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFWord2010CzechCharacters.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRTFWordPadCzechCharacters.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testRotated.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testSAS.sas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testSAS.sas7bdat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testSAS.sd2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testSAS.xpt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testSAS2.sas" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testSQLITE3.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testSVG.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testSVG.svgz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testSnappy-framed.sz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testSolaris-x86-32" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testSqlite3b.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testStandardsExtractor.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testStarOffice-5.2-calc.sdc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testStarOffice-5.2-draw.sda" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testStarOffice-5.2-impress.sdd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testStarOffice-5.2-writer.sdw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testStataDTA.dta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testStataDTA.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testStyles.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTAR_no_magic.tar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTEI.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTIFF.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTIFF_multipage.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTSD_broken_pdf.tsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTXT-tika.axx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTXT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTXT.zlib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTXT.zlib0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTXT.zlib5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTXT.zlib9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTXTNonASCIIUTF8.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTXT_win-1252.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTables.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTextBoxes.key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testThunderbirdEml.eml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTinyPE.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testTrueType3.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testUserDefinedCharset.mhtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testVCalendar.vcs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testVISIO.vsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testVISIO.vsdm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testVISIO.vsdx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testVISIO.vssm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testVISIO.vssx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testVISIO.vstm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testVISIO.vstx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testVORBIS.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testVORCalcTemplate.vor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testVORDrawTemplate.vor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testVORImpressTemplate.vor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testVORWriterTemplate.vor" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testVideoMp4.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWAR.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWAV.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWEBARCHIVE.webarchive" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWEBM.webm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWEBP.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWINMAIL.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWMA.wma" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWMF.wmf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWMF_charset.wmf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWMV.wmv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD2003.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD6.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_1img.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_1img.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_2003ml.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_2006ml.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_2006ml.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_2006ml.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_3imgs.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_3imgs.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_boldHyperlink.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_boldHyperlink.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_bold_character_runs.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_bold_character_runs.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_bold_character_runs2.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_bold_character_runs2.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_charts.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_closingSmartQInHyperLink.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_custom_props.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_custom_props.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_diagramData.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_embedded_pdf.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_embedded_pdf.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_embedded_pics.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_embedded_rtf.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_embeded.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_embeded.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_header_hyperlink.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_macros.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_macros.docm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_missing_ooxml_bean1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_missing_text.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_multi_authors.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_multi_authors.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_no_format.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_no_format.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_null_style.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_numbered_list.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_numbered_list.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_override_list_numbering.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_override_list_numbering.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_phonetic.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_phonetic.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_protected_passtika.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_protected_passtika.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_specialControlCharacter1415.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_tabular_symbol.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_template.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_template.dotx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_text_box.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_totalTimeOutOfRange.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_truncated.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_various.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORD_various.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORKS.wps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORKS2000.wps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORKSSpreadsheet7.0.xlr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORKSWordProcessor3.0.wps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWORKSWordProcessor4.0.wps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWebVTT.vtt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWebVTT_header.vtt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWebVTT_simple.vtt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWebp_Alpha_Lossless.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWebp_Alpha_Lossy.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWindows-x86-32.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWindowsMediaMeta.asx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWordArt.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWordPerfect.wpd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWordPerfect_42.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWordPerfect_5_0.wp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testWordPerfect_5_1.wp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testXHTML.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testXLSX_Thumbnail.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testXML.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testXML2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testXML3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testXMP.xmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testXPS_various.xps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testXXE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testZIP_corrupted_oom.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testZSTD.zstd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testZ_oom.Z" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testZipEncrypted.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/test_TIKA-1251.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/test_embedded_zip.pptx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/test_list_override.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/test_mat_text.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/test_recursive_embedded.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/test_recursive_embedded.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/test_recursive_embedded_npe.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testiBooks.ibooks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testsolidworksAssembly2013SP2.SLDASM" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testsolidworksAssembly2014SP0.SLDASM" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testsolidworksDrawing2013SP2.SLDDRW" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testsolidworksDrawing2014SP0.SLDDRW" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testsolidworksPart2013SP2.SLDPRT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/testsolidworksPart2014SP0.SLDPRT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-documents/tika434.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-properties/StringsConfig-full.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-properties/StringsConfig-partial.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-properties/TesseractOCRConfig-full.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-parsers/src/test/resources/test-properties/TesseractOCRConfig-partial.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-serialization/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-serialization/src/main/java/org/apache/tika/metadata/serialization/JsonMetadata.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-serialization/src/main/java/org/apache/tika/metadata/serialization/JsonMetadataBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-serialization/src/main/java/org/apache/tika/metadata/serialization/JsonMetadataDeserializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-serialization/src/main/java/org/apache/tika/metadata/serialization/JsonMetadataList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-serialization/src/main/java/org/apache/tika/metadata/serialization/JsonMetadataSerializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-serialization/src/main/java/org/apache/tika/metadata/serialization/JsonStreamingSerializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-serialization/src/main/java/org/apache/tika/metadata/serialization/PrettyMetadataKeyComparator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-serialization/src/test/java/org/apache/tika/metadata/serialization/JsonMetadataListTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-serialization/src/test/java/org/apache/tika/metadata/serialization/JsonMetadataTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/DefaultInputStreamFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/HTMLHelper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/InputStreamFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/MetadataList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/ServerStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/ServerStatusWatcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/ServerTimeouts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/TaskStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/TikaLoggingFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/TikaServerCli.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/TikaServerParseException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/TikaServerParseExceptionMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/TikaServerWatchDog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/URLEnabledInputStreamFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/resource/DetectorResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/resource/LanguageResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/resource/MetadataResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/resource/RecursiveMetadataResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/resource/TikaDetectors.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/resource/TikaMimeTypes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/resource/TikaParsers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/resource/TikaResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/resource/TikaVersion.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/resource/TikaWelcome.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/resource/TranslateResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/resource/UnpackerResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/writer/CSVMessageBodyWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/writer/JSONMessageBodyWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/writer/MetadataListMessageBodyWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/writer/TarWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/writer/TextMessageBodyWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/writer/XMPMessageBodyWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/java/org/apache/tika/server/writer/ZipWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/resources/tikaserver-template.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/main/resources/tikaserver-version.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/CXFTestBase.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/DetectorResourceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/LanguageResourceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/MetadataResourceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/RecursiveMetadataResourceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/ServerStatusTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/StackTraceOffTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/StackTraceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/TikaDetectorsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/TikaMimeTypesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/TikaParsersTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/TikaResourceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/TikaServerIntegrationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/TikaVersionTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/TikaWelcomeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/TranslateResourceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/java/org/apache/tika/server/UnpackerResourceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/2exe.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/2pic.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/2pic.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/CDEC_WEATHER_2010_03_02" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/Doc1_ole.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/english.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/foo.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/french.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/mock/heavy_hand_100.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/mock/heavy_hang_30000.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/mock/null_pointer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/mock/real_oom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/mock/system_exit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/mock/thread_interrupt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/org/apache/tika/server/tika-config-for-server-tests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/password.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/pic.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/pic.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/test.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/testHTML.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/testOCR.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/testPDFTwoTextBoxes.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/testRTF_npeFromWMFInTikaServer.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-server/src/test/resources/test_recursive_embedded.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/java/org/apache/tika/language/translate/AbstractTranslator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/java/org/apache/tika/language/translate/CachedTranslator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/java/org/apache/tika/language/translate/ExternalTranslator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/java/org/apache/tika/language/translate/GoogleTranslator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/java/org/apache/tika/language/translate/JoshuaNetworkTranslator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/java/org/apache/tika/language/translate/Lingo24Translator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/java/org/apache/tika/language/translate/MicrosoftTranslator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/java/org/apache/tika/language/translate/MosesTranslator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/java/org/apache/tika/language/translate/YandexTranslator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/resources/META-INF/services/org.apache.tika.language.translate.Translator" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/resources/org/apache/tika/language/translate/translator.google.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/resources/org/apache/tika/language/translate/translator.joshua.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/resources/org/apache/tika/language/translate/translator.lingo24.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/resources/org/apache/tika/language/translate/translator.microsoft.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/resources/org/apache/tika/language/translate/translator.moses.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/main/resources/org/apache/tika/language/translate/translator.yandex.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/test/java/org/apache/tika/language/translate/CachedTranslatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/test/java/org/apache/tika/language/translate/GoogleTranslatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/test/java/org/apache/tika/language/translate/JoshuaNetworkTranslatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/test/java/org/apache/tika/language/translate/Lingo24TranslatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/test/java/org/apache/tika/language/translate/MicrosoftTranslatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/test/java/org/apache/tika/language/translate/MosesTranslatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-translate/src/test/java/org/apache/tika/language/translate/YandexTranslatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/src/main/java/org/apache/tika/xmp/XMPMetadata.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/src/main/java/org/apache/tika/xmp/convert/AbstractConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/src/main/java/org/apache/tika/xmp/convert/GenericConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/src/main/java/org/apache/tika/xmp/convert/ITikaToXMPConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/src/main/java/org/apache/tika/xmp/convert/MSOfficeBinaryConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/src/main/java/org/apache/tika/xmp/convert/MSOfficeXMLConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/src/main/java/org/apache/tika/xmp/convert/Namespace.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/src/main/java/org/apache/tika/xmp/convert/OpenDocumentConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/src/main/java/org/apache/tika/xmp/convert/RTFConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/src/main/java/org/apache/tika/xmp/convert/TikaToXMP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/src/test/java/org/apache/tika/xmp/TikaToXMPTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/expected_requested_path/data/tika/tika-xmp/src/test/java/org/apache/tika/xmp/XMPMetadataTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/src/test/java/p_1/AssafTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/src/test/java/p_1/AssafTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
@@ -23,8 +699,10 @@
     <SUITE FILE_PATH="coverage/BugMinerTest$Main.coverage" NAME="Main Coverage Results" MODIFIED="1537369841363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$tmp.coverage" NAME="tmp Coverage Results" MODIFIED="1536665877421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Test_test_parser.coverage" NAME="Test_test_parser Coverage Results" MODIFIED="1537189344462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMiner$TestMain.coverage" NAME="TestMain Coverage Results" MODIFIED="1538300116229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMinerTest$Test_test_parser.coverage" NAME="Test_test_parser Coverage Results" MODIFIED="1536854063542" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1538061589179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1538302909657" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMiner$TestApplier.coverage" NAME="TestApplier Coverage Results" MODIFIED="1538307236150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Test_mvn_parsers.coverage" NAME="Test_mvn_parsers Coverage Results" MODIFIED="1537964938112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvn_parsers" />
     <SUITE FILE_PATH="coverage/BugMiner$Test.coverage" NAME="Test Coverage Results" MODIFIED="1538060931154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -50,27 +728,27 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="py" value="50" />
+          <entry key="py" value="57" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="50" />
+          <entry key="Python" value="57" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="33" />
+          <entry key="dummy" value="37" />
           <entry key="gitignore" value="39" />
-          <entry key="py" value="25085" />
+          <entry key="py" value="27293" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="72" />
-          <entry key="Python" value="25085" />
+          <entry key="PLAIN_TEXT" value="76" />
+          <entry key="Python" value="27293" />
         </counts>
       </usages-collector>
     </session>
@@ -138,35 +816,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Main.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Applier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
+            <state relative-caret-position="267">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
+                <marker date="1538306573012" expanded="true" signature="112:113" ph="..." />
+                <marker date="1538306573012" expanded="true" signature="112:118" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/git/repo/base.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TestApplier.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="465" selection-start-line="465" selection-end-line="465" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="435" column="21" selection-start-line="435" selection-start-column="21" selection-end-line="435" selection-end-column="21" />
+            <state relative-caret-position="462">
+              <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
               <folding>
-                <element signature="e#0#34#0" expanded="true" />
-                <marker date="1538061403737" expanded="true" signature="5137:5143" ph="..." />
+                <element signature="e#0#14#0" expanded="true" />
+                <marker date="1538307236129" expanded="true" signature="266:285" ph="..." />
               </folding>
             </state>
           </provider>
@@ -175,26 +846,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bug/bug.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="420">
+              <caret line="152" selection-start-line="152" selection-end-line="152" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1538061568397" expanded="true" signature="2013:2308" ph="..." />
-                <marker date="1538061568397" expanded="true" signature="2369:2603" ph="..." />
-                <marker date="1538061568397" expanded="true" signature="2712:3841" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="917">
-              <caret line="301" column="27" selection-start-line="301" selection-start-column="8" selection-end-line="301" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-                <marker date="1538060459995" expanded="true" signature="252:259" ph="..." />
               </folding>
             </state>
           </provider>
@@ -211,9 +866,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>results_dir</find>
-      <find>get_testcase_report</find>
-      <find>attach_report</find>
       <find>set_up</find>
       <find>Main.set_up('https://github.com/rotba/GitMavenTrackingProject')</find>
       <find>patchin</find>
@@ -229,7 +881,6 @@
       <find>extract</find>
       <find>target_dir</find>
       <find>testclass</find>
-      <find>generate_patch</find>
       <find>get_bug_patches</find>
       <find>Testclass</find>
       <find>dict_testclass_bug_dir</find>
@@ -241,6 +892,10 @@
       <find>test_extract_bugs_pick_up_failures</find>
       <find>Com</find>
       <find>attach_reports</find>
+      <find>generate_patch</find>
+      <find>copytree</find>
+      <find>apply</find>
+      <find>fsencode</find>
     </findStrings>
     <replaceStrings>
       <replace>issue_1378</replace>
@@ -262,9 +917,9 @@
       <replace>Main.set_up(['','https://github.com/rotba/GitMavenTrackingProject'])</replace>
       <replace>testcases_diff_groups</replace>
       <replace>testcases_diff_group</replace>
-      <replace>self._path</replace>
       <replace>self._error_line</replace>
       <replace>open_bracket_line</replace>
+      <replace>self._path</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\user\Code\Python\BugMiner\mvn_reports_tests</dir>
@@ -288,8 +943,10 @@
         <option value="$PROJECT_DIR$/mvn_parsers/Test.py" />
         <option value="$PROJECT_DIR$/Test.py" />
         <option value="$PROJECT_DIR$/mvn_parsers/test_parser.py" />
-        <option value="$PROJECT_DIR$/bug/bug.py" />
         <option value="$PROJECT_DIR$/Main.py" />
+        <option value="$PROJECT_DIR$/Applier.py" />
+        <option value="$PROJECT_DIR$/bug/bug.py" />
+        <option value="$PROJECT_DIR$/TestApplier.py" />
       </list>
     </option>
   </component>
@@ -311,6 +968,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -320,29 +978,36 @@
             </path>
             <path>
               <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
-              <item name="bug" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
               <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
-              <item name="mvn_parsers" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.7 (BugMiner) &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.7 (BugMiner) &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="venv" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/TestApplier.py" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\Code\Python\BugMiner" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\Code\Python\BugMiner\mvn_parsers" />
       <recent name="C:\Users\user\Code\Python\BugMinerTest" />
@@ -360,7 +1025,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.TestApplier">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -396,8 +1061,30 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\user\Code\Python\BugMiner\TestMain.py" />
       <option name="PARAMETERS" value="TestMain.test_generated_data" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestApplier" type="PythonConfigurationType" factoryName="Python">
+      <module name="BugMiner" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\user\Code\Python\BugMiner\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TestApplier.py" />
+      <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -451,6 +1138,7 @@
     </configuration>
     <list>
       <item itemvalue="Python.Main" />
+      <item itemvalue="Python.TestApplier" />
       <item itemvalue="Python.Test_mvn_parsers" />
       <item itemvalue="Python.Test" />
       <item itemvalue="Python.tmp" />
@@ -479,16 +1167,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1288" y="-98" width="1296" height="1000" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="1000" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2079288" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21116506" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32871974" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6323752" visible="true" weight="0.32756633" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49621785" weight="0.26297578" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49621785" weight="0.33910036" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
@@ -523,6 +1211,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/TestApplier.py</url>
+          <line>30</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -690,7 +1385,6 @@ print(ans)</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/ntpath.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/unittest/case.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -707,52 +1401,85 @@ print(ans)</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/git/repo/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
+        <state relative-caret-position="247">
           <caret line="465" selection-start-line="465" selection-end-line="465" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test.py">
+    <entry file="file://$PROJECT_DIR$/TestMain.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="917">
           <caret line="301" column="27" selection-start-line="301" selection-start-column="8" selection-end-line="301" selection-end-column="27" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
-            <marker date="1538060459995" expanded="true" signature="252:259" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="435" column="21" selection-start-line="435" selection-start-column="21" selection-end-line="435" selection-end-column="21" />
+        <state relative-caret-position="146">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
-            <marker date="1538061403737" expanded="true" signature="5137:5143" ph="..." />
+            <marker date="1538301837495" expanded="true" signature="5137:5143" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/os.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="210" selection-start-line="210" selection-end-line="210" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="112" selection-start-line="112" selection-end-line="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="233" column="83" selection-start-line="233" selection-start-column="37" selection-end-line="233" selection-end-column="83" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Applier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1538306573012" expanded="true" signature="112:113" ph="..." />
+            <marker date="1538306573012" expanded="true" signature="112:118" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bug/bug.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
+        <state relative-caret-position="420">
+          <caret line="152" selection-start-line="152" selection-end-line="152" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1538061568397" expanded="true" signature="2013:2308" ph="..." />
-            <marker date="1538061568397" expanded="true" signature="2369:2603" ph="..." />
-            <marker date="1538061568397" expanded="true" signature="2712:3841" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
+    <entry file="file://$PROJECT_DIR$/TestApplier.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="59" column="12" selection-start-line="59" selection-start-column="12" selection-end-line="59" selection-end-column="12" />
+        <state relative-caret-position="462">
+          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#14#0" expanded="true" />
+            <marker date="1538307236129" expanded="true" signature="266:285" ph="..." />
           </folding>
         </state>
       </provider>

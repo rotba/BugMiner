@@ -87,7 +87,7 @@ class Bug_data_handler(object):
             if not testcase.parent in testclasses:
                 testclasses.append(testcase.parent)
         for testclass in testclasses:
-            testclass_path = self.get_testclass_path(issue,commit, testclass)
+            testclass_path = self.get_testclass_path(issue.key,commit.hexsha, testclass.id)
             report_copy_path = os.path.join(testclass_path, os.path.basename(testclass.get_report_path()))
             shutil.copyfile(testclass.get_report_path(), report_copy_path)
 
@@ -98,8 +98,8 @@ class Bug_data_handler(object):
 
 
    # Gets the path to the directory of the testclass in the given commit and issue
-    def get_testclass_path(self, issue, commit, testclass):
-        return os.path.join(self.path,'/'.join([issue.key,commit.hexsha, testclass.id]))
+    def get_testclass_path(self, issue_key, commit_hexsha, testclass_id):
+        return os.path.join(self.path,'/'.join([issue_key,commit_hexsha, testclass_id]))
 
     # Gets the path to the directory of the testclass in the given commit and issue
     def get_bug_path(self, bug):
@@ -120,6 +120,46 @@ class Bug_data_handler(object):
                 os.makedirs(path_to_testclass_dir)
                 ans[testclass.id] = path_to_testclass_dir
         return ans
+
+    # Gets all the data from fb_path
+    def fetch_all_data(self, db_path):
+        copytree(db_path,self.path)
+
+    # Gets all the bugs in issue_key in fixed commit_hexsha
+    def get_bugs(self, issue_key, commit_hexsha):
+        ans = []
+        issue_dir = os.path.join(self.path, issue_key)
+        commit_dir = os.path.join(issue_dir, commit_hexsha)
+        if not os.path.isdir(commit_dir):
+            return ans
+        directory = os.fsencode(commit_dir)
+        for file in os.listdir(directory):
+            filename = os.fsdecode(file)
+            full_file_path = os.path.join(commit_dir, filename)
+            if os.path.isdir(full_file_path):
+                ans+= self.get_testclass_bugs(full_file_path)
+        return ans
+
+    # Returns all teh bugs in testcalss path
+    def get_testclass_bugs(self, testclass_path):
+        ans = []
+        directory = os.fsencode(testclass_path)
+        for file in os.listdir(directory):
+            filename = os.fsdecode(file)
+            if filename.endswith(".pickle"):
+                full_path = os.path.join(testclass_path, filename)
+                with open(full_path, 'rb') as bug_file:
+                    ans.append(pickle.load(bug_file))
+        return ans
+
+    # Gets the patch applying bug
+    def get_patch(self, bug):
+        testclass_path = self.get_testclass_path(bug.issue, bug.commit, bug.bugged_testcase.parent.id)
+        directory = os.fsencode(testclass_path)
+        for file in os.listdir(directory):
+            filename = os.fsdecode(file)
+            if filename.endswith(".patch"):
+                return os.path.join(testclass_path, filename)
 
 
 class Bug_csv_report_handler(object):
@@ -197,3 +237,13 @@ def create_bug(issue, commit, parent, testcase, parent_testcase, type) -> Bug:
                    type=type,valid=False,desc=invalid_not_fixed__error_desc+' '+testcase.get_error())
     else:
         assert 0==1
+
+# copy directory from stackoverflow
+def copytree(src, dst, symlinks=False, ignore=None):
+    for item in os.listdir(src):
+        s = os.path.join(src, item)
+        d = os.path.join(dst, item)
+        if os.path.isdir(s) and not os.path.isdir(d):
+            shutil.copytree(s, d, symlinks, ignore)
+        elif os.path.isfile(s) and not os.path.isfile(d):
+            shutil.copy2(s, d)
