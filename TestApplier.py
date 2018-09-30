@@ -27,15 +27,16 @@ class TestApplier(unittest.TestCase):
 
     def test_apply(self):
         applier = Applier.Applier('https://github.com/apache/tika', os.path.join(test_dir, 'test_init'))
-        testcase_id = 'C:\\Users\\TEMP\\BugMiner\\tested_project\\tika\\src\\test\\java\\org\\apache\\tika\\mime\\TestMimeTypes.java#TestMimeTypes#None_testCaseSensitivity()'
+        testcase_id = 'C:\\Users\\user\\Code\\Python\\BugMiner\\tested_project\\tika\\src\\test\\java\\org\\apache\\tika\\mime\\TestMimeTypes.java#TestMimeTypes#None_testCaseSensitivity()'
         bugs = applier.get_bugs('TIKA-56', 'b12c01d9b56053554cec501aab0530f7f4352daf')
         bug = [b for b in bugs if b.bugged_testcase.id == testcase_id ][0]
         applier.apply(bug)
-        os.system('mvn test -f '+applier.proj_dir)
+        os.system('mvn test -f '+applier.proj_dir+' -fn')
         testclasses = test_parser.get_tests(applier.proj_dir)
         testcases = test_parser.get_testcases(testclasses)
-        testcase = [t for t in testcases if t.id == testcase_id]
-        self.assertFalse(testcase.failed)
+        testcase = [t for t in testcases if t.id.endswith('TestMimeTypes#None_testCaseSensitivity()')][0]
+        testcase.parent.look_for_report()
+        self.assertTrue(testcase.failed)
 
 
 

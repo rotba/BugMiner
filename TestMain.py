@@ -146,8 +146,8 @@ class TestMain(unittest.TestCase):
         self.assertTrue(not expected_compiling_delta_testcase in not_compiling_testcases,
                         "'p_1.AssafTest#compTest' should have been patched")
 
-    def test_get_bug_patches(self):
-        print('test_get_bug_patches')
+    def test_get_bug_patches_1(self):
+        print('test_get_bug_patches_1')
         Main.set_up(['', 'https://github.com/rotba/GitMavenTrackingProject'])
         test_dir =os.path.join( os.getcwd(),r'test_files/test_get_bug_patches')
         if not os.path.exists(test_dir):
@@ -181,6 +181,40 @@ class TestMain(unittest.TestCase):
         shutil.copyfile(patch_file_path, result_patched_file_path)
         self.assertTrue(filecmp.cmp(expected_patched_file_path, result_patched_file_path))
         shutil.rmtree(test_dir)
+
+    def test_get_bug_patches_2(self):
+        print('test_get_bug_patches_2')
+        Main.set_up(['', 'https://github.com/apache/tika'])
+        test_dir =os.path.join( os.getcwd(),r'test_files/test_get_bug_patches_2')
+        if not os.path.exists(test_dir):
+            os.makedirs(test_dir)
+        else:
+            shutil.rmtree(test_dir)
+            os.makedirs(test_dir)
+        commit = [c for c in Main.all_commits if c.hexsha == 'b12c01d9b56053554cec501aab0530f7f4352daf'][0]
+        parent = commit.parents[0]
+        module_path = os.getcwd() + r'\tested_project\tika'
+        Main.prepare_project_repo_for_testing(commit, module_path)
+        os.system(
+            'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
+        commit_tests = Main.test_parser.get_tests(module_path)
+        dict = {}
+        for testclass in commit_tests:
+            dict[testclass.id] = test_dir
+        commit_testcases = Main.test_parser.get_testcases(commit_tests)
+        expected_delta_testcase = [t for t in commit_testcases if 'testCaseSensitivity' in t.mvn_name][0]
+        Main.prepare_project_repo_for_testing(parent, module_path)
+        delta_testcases = Main.get_delta_testcases(commit_testcases)
+        patched_testcases = Main.patch_testcases(commit_testcases, commit, parent, module_path)
+        dict_test_case_patch = Main.get_bug_patches(patched_testcases, dict)
+        patch_file_path = expected_delta_testcase.src_path
+        expected_patched_file_path =os.path.join(test_dir,'expected.java')
+        shutil.copyfile(patch_file_path, expected_patched_file_path)
+        Main.prepare_project_repo_for_testing(parent, module_path)
+        Main.git_cmds_wrapper(lambda: Main.repo.git.execute(['git', 'apply', dict_test_case_patch[expected_delta_testcase.id]]))
+        result_patched_file_path = os.path.join(test_dir, 'result.java')
+        shutil.copyfile(patch_file_path, result_patched_file_path)
+        self.assertTrue(filecmp.cmp(expected_patched_file_path, result_patched_file_path))
 
     @unittest.skip("Coupled with patch_testcases")
     def test_get_uncompiled_testcases(self):
@@ -316,7 +350,7 @@ class TestMain(unittest.TestCase):
         self.assertTrue(os.path.isfile(expected_testcase_pickle))
         self.assertTrue(os.path.isfile(expected_report_xml))
         self.assertTrue(os.path.isfile(expected_patch))
-        shutil.rmtree(Main.data_dir)
+        # shutil.rmtree(Main.data_dir)
 
 
 if __name__ == '__main__':

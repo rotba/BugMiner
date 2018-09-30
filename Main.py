@@ -142,7 +142,7 @@ def attach_reports(testcases):
         testclass = testcase.parent
         if testclass.report is None:
             try:
-                testclass.report =test_parser.TestClassReport(testclass.get_report_path(), testclass.module)
+                testclass.report = test_parser.TestClassReport(testclass.get_report_path(), testclass.module)
             except test_parser.TestParserException as e:
                 raise my_bug.BugError('Can not attach report to '+testclass.mvn_name+'. '+e.msg)
         testclass.attach_report_to_testcase(testcase)
@@ -275,8 +275,10 @@ def get_bug_patches(patched_testcases, dict_testclass_dir):
         if not testcase.parent in testclasses:
             testclasses.append(testcase.parent)
     for testclass in testclasses:
+        git_cmds_wrapper(lambda :repo.git.add('.'))
         patch = generate_patch(git_dir=proj_dir, file=testclass.src_path,patch_name='patch',
                                target_dir=dict_testclass_dir[testclass.id])
+        git_cmds_wrapper(lambda: repo.git.reset())
         for testcase in patched_testcases:
             if testcase in testclass.testcases:
                 ans[testcase.id] = patch
@@ -331,7 +333,7 @@ def generate_patch(git_dir,file, patch_name, target_dir, prev_commit=None, commi
     path_to_patch = target_dir + '//' + patch_name + '.patch'
     os.chdir(git_dir)
     if prev_commit==None or commit==None:
-        cmd = ' '.join(['git', 'diff', file, '>', path_to_patch])
+        cmd = ' '.join(['git', 'diff','HEAD', file, '>', path_to_patch])
     else:
         cmd = ' '.join(['git', 'diff', prev_commit.hexsha, commit.hexsha, file, '>', path_to_patch])
     os.system(cmd)

@@ -29,6 +29,8 @@ class Applier(object):
     def apply(self, bug):
         buggy_commit = bug.parent
         patch_path = self.data_handler.get_patch(bug)
+        self._repo.git.reset('--hard')
+        self._repo.git.clean('-xdf')
         self._repo.git.checkout(buggy_commit)
         self._repo.git.execute(['git', 'apply', patch_path])
 
@@ -42,4 +44,4 @@ class Applier(object):
 
     @property
     def proj_dir(self):
-        return self._repo.git_dir
+        return self._repo.git_dir.strip('.git')

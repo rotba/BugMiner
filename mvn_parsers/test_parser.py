@@ -74,6 +74,15 @@ class TestClass:
             self.report = None
             raise e
 
+    # Looking for report, and if finds one, attach it to the self and al it's testcases
+    def look_for_report(self):
+        try:
+            self.report =  TestClassReport(self.get_report_path(), self.module)
+            for t in self.testcases:
+                self.attach_report_to_testcase(t)
+        except TestParserException:
+            pass
+
     def clear_report(self):
         self.report = None
         for t in self.testcases:
