@@ -16,6 +16,7 @@ class Bug(object):
         self._type = type
         self._desc = desc
         self._valid = valid
+        self._has_annotations = 'Test' in list(map(lambda a: a.name, self._bugged_testcase.method.annotations))
 
     @property
     def issue(self):
@@ -41,6 +42,10 @@ class Bug(object):
     @property
     def valid(self):
         return self._valid
+    @property
+    def has_test_annotation(self):
+        return self._has_annotations
+    
     def __str__(self):
         return 'type: ' + self.type.value + ' ,issue: ' + self.issue + ' ,commit: ' + self._commit_hexsha+ ' ,parent: ' + self.parent+ ' ,test: ' + self.bugged_testcase.id + ' description: ' + self._desc
 
@@ -170,7 +175,7 @@ class Bug_csv_report_handler(object):
     def __init__(self, path):
         self._writer = None
         self._path = path
-        self._fieldnames = ['valid','type','issue', 'commit','parent', 'testcase', 'description']
+        self._fieldnames = ['valid','type','issue', 'commit','parent', 'testcase', 'has_test_annotation','description']
         with open(self._path, 'w+', newline='') as csv_output:
             writer = csv.DictWriter(csv_output, fieldnames=self._fieldnames)
             writer.writeheader()
@@ -195,6 +200,7 @@ class Bug_csv_report_handler(object):
                 'commit': bug.commit,
                 'parent': bug.parent,
                 'testcase': bug.bugged_testcase.id,
+                'has_test_annotation': bug.has_test_annotation,
                 'description': bug.desctiption}
 
 class BugError(Exception):
