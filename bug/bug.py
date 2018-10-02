@@ -13,6 +13,7 @@ class Bug(object):
         self._parent_hexsha = parent_hexsha
         self._fixed_testcase = fixed_testcase
         self._bugged_testcase = bugged_testcase
+        self._module = os.path.basename(bugged_testcase.module)
         self._type = type
         self._desc = desc
         self._valid = valid
@@ -45,7 +46,10 @@ class Bug(object):
     @property
     def has_test_annotation(self):
         return self._has_annotations
-    
+    @property
+    def module(self):
+        return self._module
+
     def __str__(self):
         return 'type: ' + self.type.value + ' ,issue: ' + self.issue + ' ,commit: ' + self._commit_hexsha+ ' ,parent: ' + self.parent+ ' ,test: ' + self.bugged_testcase.id + ' description: ' + self._desc
 
@@ -55,6 +59,7 @@ class Bug_data_handler(object):
         self._path = path
         self._valid_bugs_csv_handler = Bug_csv_report_handler(os.path.join(self._path, 'valid_bugs.csv'))
         self._invalid_bugs_csv_handler = Bug_csv_report_handler(os.path.join(self._path, 'invalid_bugs.csv'))
+        self._time_csv_handler = Time_csv_report_handler(os.path.join(self._path, 'times.csv'))
 
     @property
     def path(self):
@@ -67,6 +72,10 @@ class Bug_data_handler(object):
         else:
             self._invalid_bugs_csv_handler.add_bug(bug)
         self._store_bug(bug)
+
+    # Adds row to the time tanle
+    def add_time(self, issue_key, commit_hexsha, module, time):
+        self._time_csv_handler.add_row(issue_key, commit_hexsha, module, time)
 
     # Stores bug in it's direcrtory
     def _store_bug(self,bug):
@@ -169,16 +178,41 @@ class Bug_data_handler(object):
             if filename.endswith(".patch"):
                 return os.path.join(testclass_path, filename)
 
+    # Gets valid_bugs_tuiplles
+    def get_valid_bugs(self):
+        ans = []
+        with open(self._valid_bugs_csv_handler.path, 'r') as f:
+            reader = csv.reader(f)
+            ans = list(reader)
+        return ans
+
+    # Gets invalid_bugs_tuiplles
+    def get_invalid_bugs(self):
+        ans = []
+        with open(self._invalid_bugs_csv_handler.path, 'r') as f:
+            reader = csv.reader(f)
+            ans = list(reader)
+        return ans
+
+    # Gets invalid_bugs_tuiplles
+    def get_times(self):
+        ans = []
+        with open(self._time_csv_handler.path, 'r') as f:
+            reader = csv.reader(f)
+            ans = list(reader)
+        return ans
+
 
 
 class Bug_csv_report_handler(object):
     def __init__(self, path):
         self._writer = None
         self._path = path
-        self._fieldnames = ['valid','type','issue', 'commit','parent', 'testcase', 'has_test_annotation','description']
-        with open(self._path, 'w+', newline='') as csv_output:
-            writer = csv.DictWriter(csv_output, fieldnames=self._fieldnames)
-            writer.writeheader()
+        self._fieldnames = ['valid','type','issue','module','commit','parent', 'testcase', 'has_test_annotation','description']
+        if not os.path.exists(path):
+            with open(self._path, 'w+', newline='') as csv_output:
+                writer = csv.DictWriter(csv_output, fieldnames=self._fieldnames)
+                writer.writeheader()
      #Adds bug to the csv file
     def add_bug(self, bug):
         with open(self._path, 'a', newline='') as csv_output:
@@ -197,11 +231,43 @@ class Bug_csv_report_handler(object):
         return {'valid': bug.valid,
                 'type': bug.type.value,
                 'issue': bug.issue,
+                'module': bug.module,
                 'commit': bug.commit,
                 'parent': bug.parent,
-                'testcase': bug.bugged_testcase.id,
+                'testcase': bug.bugged_testcase.mvn_name,
                 'has_test_annotation': bug.has_test_annotation,
                 'description': bug.desctiption}
+
+    @property
+    def path(self):
+        return self._path
+
+class Time_csv_report_handler(object):
+    def __init__(self, path):
+        self._writer = None
+        self._path = path
+        self._fieldnames = ['issue', 'commit','module', 'time']
+        if not os.path.exists(path):
+            with open(self._path, 'w+', newline='') as csv_output:
+                writer = csv.DictWriter(csv_output, fieldnames=self._fieldnames)
+                writer.writeheader()
+     #Adds bug to the csv file
+    def add_row(self, issue_key, commit_hexsha, module, time):
+        with open(self._path, 'a', newline='') as csv_output:
+            writer = csv.DictWriter(csv_output, fieldnames=self._fieldnames)
+            writer.writerow(self.generate_csv_tupple(issue_key, commit_hexsha, module, time))
+
+
+    # Generated csv bug tupple
+    def generate_csv_tupple(self, issue_key, commit_hexsha, module, time):
+        return {'issue': issue_key,
+                'commit': commit_hexsha,
+                'module': module,
+                'time': time}
+
+    @property
+    def path(self):
+        return self._path
 
 class BugError(Exception):
     def __init__(self, msg):

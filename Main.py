@@ -13,6 +13,7 @@ import javalang
 from git import Repo
 from jira import JIRA
 from jira import exceptions as jira_exceptions
+import time
 
 jira = JIRA(options={'server': 'https://issues.apache.org/jira'})
 all_commits = []
@@ -76,6 +77,7 @@ def extract_bugs(issue, commit, tests_paths):
     commit_testcases = test_parser.get_testcases(commit_tests_object)
     dict_modules_testcases = divide_to_modules(commit_testcases)
     for module in dict_modules_testcases:
+        start_time = time.time()
         commit_valid_testcases = []
         run_mvn_tests(dict_modules_testcases[module], module)
         commit_valid_testcases = attach_reports(dict_modules_testcases[module])
@@ -107,14 +109,17 @@ def extract_bugs(issue, commit, tests_paths):
                     bug = my_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
                                             parent_testcase=parent_testcase, type=my_bug.Bug_type.REGRESSION)
                     ans.append(bug)
+        end_time = time.time()
+        if GENERATE_DATA:
+            bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time-start_time)
 
-        for b in list(filter(lambda b: b.valid, ans,)):
-            logging.info('VALID BUG: '+str(b))
-        for b in list(filter(lambda b: not b.valid, ans )):
-            logging.info('INVALID BUG: ' + str(b))
-        git_cmds_wrapper(lambda: repo.git.reset('--hard'))
-        git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
-        return ans
+    for b in list(filter(lambda b: b.valid, ans,)):
+        logging.info('VALID BUG: '+str(b))
+    for b in list(filter(lambda b: not b.valid, ans )):
+        logging.info('INVALID BUG: ' + str(b))
+    git_cmds_wrapper(lambda: repo.git.reset('--hard'))
+    git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
+    return ans
 
 # Handles running maven. Will try to run the smallest module possib;e
 def run_mvn_tests(testcases, module):
