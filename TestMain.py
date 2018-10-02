@@ -85,7 +85,7 @@ class TestMain(unittest.TestCase):
         commit_testcases = Main.test_parser.get_testcases(commit_tests)
         expected_delta_testcase = [t for t in commit_testcases if 'p_1.AmitTest#hoo' in t.mvn_name][0]
         Main.prepare_project_repo_for_testing(parent, module_path)
-        patched_tests = Main.patch_testcases(commit_testcases, commit, parent, module_path)
+        patched_tests = Main.patch_testcases(commit_testcases, commit, parent, module_path)[0]
         os.system(
             'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
         parent_tests = Main.test_parser.get_tests(module_path)
@@ -107,7 +107,7 @@ class TestMain(unittest.TestCase):
         expected_not_compiling_testcase = [t for t in commit_testcases if 'MainTest#gooTest' in t.mvn_name][0]
         commit_new_testcases = Main.get_delta_testcases(commit_testcases)
         Main.prepare_project_repo_for_testing(parent, module_path)
-        patched_testcases = Main.patch_testcases(commit_testcases, commit, parent, module_path)
+        patched_testcases = Main.patch_testcases(commit_testcases, commit, parent, module_path)[0]
         not_compiling_testcases = [t for t in commit_new_testcases if not t in patched_testcases]
         self.assertTrue(not expected_not_compiling_testcase in not_compiling_testcases,
                         "'MainTest#gooTest should have been picked as for compilation error")
@@ -135,7 +135,7 @@ class TestMain(unittest.TestCase):
         expected_compiling_delta_testcase = [t for t in commit_testcases if 'p_1.AssafTest#compTest' in t.mvn_name][0]
         Main.prepare_project_repo_for_testing(parent, module_path)
         delta_testcases = Main.get_delta_testcases(commit_testcases)
-        patched_testcases = Main.patch_testcases(commit_testcases, commit, parent, module_path)
+        patched_testcases = Main.patch_testcases(commit_testcases, commit, parent, module_path)[0]
         not_compiling_testcases = [t for t in delta_testcases if not t in patched_testcases]
         self.assertTrue(expected_not_compiling_delta_testcase in not_compiling_testcases,
                         "'p_1.AssafTest#notCompTest' should have been picked for compilation error")
@@ -170,7 +170,7 @@ class TestMain(unittest.TestCase):
         expected_compiling_delta_testcase = [t for t in commit_testcases if 'p_1.AssafTest#compTest' in t.mvn_name][0]
         Main.prepare_project_repo_for_testing(parent, module_path)
         delta_testcases = Main.get_delta_testcases(commit_testcases)
-        patched_testcases = Main.patch_testcases(commit_testcases, commit, parent, module_path)
+        patched_testcases = Main.patch_testcases(commit_testcases, commit, parent, module_path)[0]
         dict_test_case_patch = Main.get_bug_patches(patched_testcases, dict)
         patch_file_path = expected_compiling_delta_testcase.src_path
         expected_patched_file_path =os.path.join(test_dir,'expected.java')
@@ -205,7 +205,7 @@ class TestMain(unittest.TestCase):
         expected_delta_testcase = [t for t in commit_testcases if 'testCaseSensitivity' in t.mvn_name][0]
         Main.prepare_project_repo_for_testing(parent, module_path)
         delta_testcases = Main.get_delta_testcases(commit_testcases)
-        patched_testcases = Main.patch_testcases(commit_testcases, commit, parent, module_path)
+        patched_testcases = Main.patch_testcases(commit_testcases, commit, parent, module_path)[0]
         dict_test_case_patch = Main.get_bug_patches(patched_testcases, dict)
         patch_file_path = expected_delta_testcase.src_path
         expected_patched_file_path =os.path.join(test_dir,'expected.java')

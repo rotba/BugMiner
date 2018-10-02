@@ -1,12 +1,24 @@
 import os
 import sys
 from functools import reduce
-
 from openpyxl import load_workbook
 from bug.bug import Bug_data_handler
+
+def get_module(path):
+    if not path == 'testcase':
+        parts = path.split('\\')
+        i=0
+        while i < len(parts)-1:
+            if parts[i+1] == 'src':
+                return parts[i]
+            i+=1
+    return ''
+
+
 ISSUE_COLUMN = 2
 COMMIT_COLUMN = 4
 MODULE_COLUMN = 3
+TESTCASE_COLUMN = 5
 template_path = os.path.join(os.getcwd(), 'static_files\\watch.xlsx')
 data_handler = Bug_data_handler(sys.argv[1])
 wb = load_workbook(template_path)
@@ -46,16 +58,21 @@ all_commits+=valid_commits
 for tup in invalid_bugs_tups:
     if not tup[COMMIT_COLUMN] in all_commits:
         all_commits.append(tup[COMMIT_COLUMN])
+
 for tup in valid_bugs_tups:
-    module_inspection_id = tup[ISSUE_COLUMN]+'#'+tup[COMMIT_COLUMN]+'#'+tup[MODULE_COLUMN]
+    module_inspection_id = tup[ISSUE_COLUMN]+'#'+tup[COMMIT_COLUMN]+'#'+get_module(tup[TESTCASE_COLUMN])
     if not module_inspection_id in valid_module_inspections:
         valid_module_inspections.append(module_inspection_id)
 all_module_inspections+=valid_module_inspections
+
 for tup in invalid_bugs_tups:
-    module_inspection_id = tup[ISSUE_COLUMN] + '#' + tup[COMMIT_COLUMN] + '#' + tup[MODULE_COLUMN]
+    module_inspection_id = tup[ISSUE_COLUMN] + '#' + tup[COMMIT_COLUMN] + '#' + get_module(tup[TESTCASE_COLUMN])
     if not module_inspection_id in all_module_inspections:
         all_module_inspections.append(module_inspection_id)
 
+tmp = list(set(all_module_inspections) - set(valid_module_inspections))
+invalid_module_inspections = list(map(lambda x:x.split('#'),tmp))
+invalid_module_inspections.sort()
 module_times = list(map(lambda tup: float(tup[3]), times_tups[1:]))
 commit_times = {}
 for tup in times_tups[1:]:
@@ -77,3 +94,5 @@ report_ws['C20'] = reduce(lambda x, y: x + y, issues_times.values()) / len(issue
 report_ws['C21'] = reduce(lambda x, y: x + y, commit_times.values()) / len(commit_times.values())
 report_ws['C22'] = reduce(lambda x, y: x + y, module_times) / len(module_times)
 wb.save(os.path.join(data_handler.path, 'watch.xlsx'))
+
+

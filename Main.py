@@ -27,14 +27,14 @@ patches_dir = ''
 proj_results_dir = ''
 cache_dir = ''
 data_dir = ''
-bug_data_handler= ''
+bug_data_handler = ''
 valid_bugs_csv_handler = None
 invalid_bugs_csv_handler = None
 dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
 EARLIEST_BUG = 0
-USE_CACHE = False
+USE_CACHE = True
 GENERATE_DATA = True
 
 
@@ -42,13 +42,15 @@ def main(argv):
     bug_data_set = []
     set_up(argv)
     if USE_CACHE:
-        possible_bugs =get_from_cache(os.path.join(cache_dir, 'possible_bugs.pkl'), lambda :extract_possible_bugs(bug_issues))
+        possible_bugs = get_from_cache(os.path.join(cache_dir, 'possible_bugs.pkl'),
+                                       lambda: extract_possible_bugs(bug_issues))
         possible_bugs = list(filter(lambda pb: bugs_filter(pb), possible_bugs))
     else:
-        possible_bugs =extract_possible_bugs(bug_issues)
+        possible_bugs = extract_possible_bugs(bug_issues)
     for possible_bug in possible_bugs:
         try:
-            bugs = extract_bugs(issue=dict_key_issue[possible_bug[0]], commit=repo.commit(possible_bug[1]), tests_paths=possible_bug[2])
+            bugs = extract_bugs(issue=dict_key_issue[possible_bug[0]], commit=repo.commit(possible_bug[1]),
+                                tests_paths=possible_bug[2])
             if GENERATE_DATA:
                 bug_data_handler.add_bugs(bugs)
         except my_bug.BugError as e:
@@ -56,14 +58,14 @@ def main(argv):
         except test_parser.TestParserException as e:
             logging.info(e.msg)
         except git.exc.GitCommandError as e:
-            logging.info('SHOULD NOT HAPPEN '+str(e))
-        except Exception as e:
-            logging.info('SHOULD NOT HAPPEN '+str(e))
+            logging.info('SHOULD NOT HAPPEN ' + str(e))
+        # except Exception as e:
+        #      logging.info('SHOULD NOT HAPPEN ' + str(e))
 
 
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
 def extract_bugs(issue, commit, tests_paths):
-    logging.info("extract_bugs(): working on issue " + issue.key+' in commit ' + commit.hexsha)
+    logging.info("extract_bugs(): working on issue " + issue.key + ' in commit ' + commit.hexsha)
     ans = []
     parent = get_parent(commit)
     if parent == None:
@@ -71,55 +73,68 @@ def extract_bugs(issue, commit, tests_paths):
     git_cmds_wrapper(lambda: repo.git.reset('--hard'))
     git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
     git_cmds_wrapper(lambda: repo.git.checkout(commit.hexsha))
-    commit_tests_object = list(map(lambda t_path: test_parser.TestClass(t_path),tests_paths))
+    commit_tests_object = list(map(lambda t_path: test_parser.TestClass(t_path), tests_paths))
     if GENERATE_DATA:
         dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(issue, commit, commit_tests_object)
     commit_testcases = test_parser.get_testcases(commit_tests_object)
     dict_modules_testcases = divide_to_modules(commit_testcases)
     for module in dict_modules_testcases:
-        start_time = time.time()
-        commit_valid_testcases = []
-        run_mvn_tests(dict_modules_testcases[module], module)
-        commit_valid_testcases = attach_reports(dict_modules_testcases[module])
-        git_cmds_wrapper(lambda: repo.git.reset('--hard'))
-        git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha))
-        delta_testcases = get_delta_testcases(commit_valid_testcases)
-        # modified_testcases = get_modified_testcases(commit_valid_testcases)
-        patched_testcases = patch_testcases(commit_valid_testcases, commit, parent, module)
-        if GENERATE_DATA:
-            dict_testcase_patch = get_bug_patches(patched_testcases, dict_testclass_bug_dir)
-        invalid_bug_testcases = [t for t in delta_testcases if not t in patched_testcases]
-        ans += list(map(lambda t: my_bug.Bug(issue, commit, t, my_bug.invalid_delta_comp_error_desc), invalid_bug_testcases))
-        run_mvn_tests(dict_modules_testcases[module], module)
-        parent_valid_testcases = []
-        parent_tests = test_parser.get_tests(module)
-        all_parent_testcases = test_parser.get_testcases(parent_tests)
-        relevant_parent_testcases = list(filter(lambda t: t in commit_valid_testcases,all_parent_testcases))
-        parent_valid_testcases = attach_reports(relevant_parent_testcases)
-        if GENERATE_DATA:
-            bug_data_handler.attach_reports(issue, commit, parent_valid_testcases)
-        for testcase in commit_valid_testcases:
-            if testcase in parent_valid_testcases:
-                parent_testcase = [t for t in parent_valid_testcases if t == testcase][0]
-                if testcase in delta_testcases:
-                    bug = my_bug.create_bug(issue=issue, commit=commit,parent=parent, testcase=testcase,
-                                            parent_testcase=parent_testcase, type=my_bug.Bug_type.DELTA)
-                    ans.append(bug)
+        try:
+            start_time = time.time()
+            commit_valid_testcases = []
+            run_mvn_tests(dict_modules_testcases[module], module)
+            commit_valid_testcases = attach_reports(dict_modules_testcases[module])
+            git_cmds_wrapper(lambda: repo.git.reset('--hard'))
+            git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha))
+            delta_testcases = get_delta_testcases(commit_valid_testcases)
+            # modified_testcases = get_modified_testcases(commit_valid_testcases)
+            (patched_testcases, unpatchable_testcases) = patch_testcases(commit_valid_testcases, commit, parent, module)
+            if GENERATE_DATA:
+                dict_testcase_patch = get_bug_patches(patched_testcases, dict_testclass_bug_dir)
+            for unpatchable_testcase in unpatchable_testcases:
+                if unpatchable_testcase[0] in delta_testcases:
+                    ans.append(my_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=unpatchable_testcase[0],fixed_testcase= unpatchable_testcase[0],
+                                          type=my_bug.Bug_type.DELTA,valid=False,desc=unpatchable_testcase[1]))
                 else:
-                    bug = my_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
-                                            parent_testcase=parent_testcase, type=my_bug.Bug_type.REGRESSION)
-                    ans.append(bug)
-        end_time = time.time()
-        if GENERATE_DATA:
-            bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time-start_time)
+                    ans.append(my_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
+                                          bugged_testcase=unpatchable_testcase[0], fixed_testcase=unpatchable_testcase[0],
+                                          type=my_bug.Bug_type.REGRESSION, valid=False, desc=unpatchable_testcase[1]))
+            run_mvn_tests(dict_modules_testcases[module], module)
+            parent_valid_testcases = []
+            parent_tests = test_parser.get_tests(module)
+            all_parent_testcases = test_parser.get_testcases(parent_tests)
+            relevant_parent_testcases = list(filter(lambda t: t in commit_valid_testcases, all_parent_testcases))
+            parent_valid_testcases = attach_reports(relevant_parent_testcases)
+            if GENERATE_DATA:
+                bug_data_handler.attach_reports(issue, commit, parent_valid_testcases)
+            for testcase in commit_valid_testcases:
+                if testcase in parent_valid_testcases:
+                    parent_testcase = [t for t in parent_valid_testcases if t == testcase][0]
+                    if testcase in delta_testcases:
+                        bug = my_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
+                                                parent_testcase=parent_testcase, type=my_bug.Bug_type.DELTA)
+                        ans.append(bug)
+                    else:
+                        bug = my_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
+                                                parent_testcase=parent_testcase, type=my_bug.Bug_type.REGRESSION)
+                        ans.append(bug)
+            end_time = time.time()
+            if GENERATE_DATA:
+                bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time)
+        except my_bug.BugError as e:
+            end_time = time.time()
+            if GENERATE_DATA:
+                bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time, 'Failed - '+e.msg)
 
-    for b in list(filter(lambda b: b.valid, ans,)):
-        logging.info('VALID BUG: '+str(b))
-    for b in list(filter(lambda b: not b.valid, ans )):
+
+    for b in list(filter(lambda b: b.valid, ans, )):
+        logging.info('VALID BUG: ' + str(b))
+    for b in list(filter(lambda b: not b.valid, ans)):
         logging.info('INVALID BUG: ' + str(b))
     git_cmds_wrapper(lambda: repo.git.reset('--hard'))
     git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
     return ans
+
 
 # Handles running maven. Will try to run the smallest module possib;e
 def run_mvn_tests(testcases, module):
@@ -130,13 +145,6 @@ def run_mvn_tests(testcases, module):
         return
     else:
         raise my_bug.BugError('SUBMODULE BUILD FALUIRE ON MODULE {}:\n'.format(module) + build_report)
-        # logging.info('SUBMODULE BUILD FALUIRE ON MODULE {}:\n'.format(module) + build_report)
-        # test_cmd = test_parser.generate_mvn_test_cmd(testcases, proj_dir)
-        # with os.popen(test_cmd) as proc:
-        #     build_report = proc.read()
-        # if not len(test_parser.get_compilation_error_report(build_report)) == 0:
-        #     raise my_bug.BugError('PARENT BUILD FALUIRE:\n' + build_report)
-
 
 
 # Attaches reports to testcases and returns the testcases that reports were successfully attached to them.
@@ -149,11 +157,12 @@ def attach_reports(testcases):
             try:
                 testclass.report = test_parser.TestClassReport(testclass.get_report_path(), testclass.module)
             except test_parser.TestParserException as e:
-                raise my_bug.BugError('Can not attach report to '+testclass.mvn_name+'. '+e.msg)
+                raise my_bug.BugError('Can not attach report to ' + testclass.mvn_name + '. ' + e.msg)
         testclass.attach_report_to_testcase(testcase)
         ans.append(testcase)
 
     return ans
+
 
 # Returns tupls of (issue,commit,tests) that may contain bugs
 def extract_possible_bugs(bug_issues):
@@ -167,7 +176,7 @@ def extract_possible_bugs(bug_issues):
         for commit in issue_commits:
             issue_tests = get_tests_paths_from_commit(commit)
             if len(issue_tests) == 0:
-                logging.info('Didn\'t associate ' + bug_issue.key + ' and commit '+commit.hexsha+' with any test')
+                logging.info('Didn\'t associate ' + bug_issue.key + ' and commit ' + commit.hexsha + ' with any test')
                 continue
             ans.append((bug_issue.key, commit.hexsha, issue_tests))
     return ans
@@ -182,7 +191,7 @@ def get_tests_paths_from_commit(commit):
             try:
                 diff = list(filter(lambda d: d.a_path == file, diff_index))[0]
             except IndexError as e:
-                logging.info('No diff for '+file+' in commit '+commit.hexsha)
+                logging.info('No diff for ' + file + ' in commit ' + commit.hexsha)
                 return ans
             if not diff.deleted_file:
                 ans.append(os.path.join(repo.working_dir, file))
@@ -214,8 +223,8 @@ def get_modified_testcases(testcases):
         if os.path.isfile(src_path):
             testclass = test_parser.TestClass(src_path)
             if testcase in testclass.testcases:
-                tmp = [t for t in testclass.testcases if t==testcase]
-                assert len(tmp)==1
+                tmp = [t for t in testclass.testcases if t == testcase]
+                assert len(tmp) == 1
                 if not testcase.has_the_same_code(tmp[0]):
                     ans.append(testcase)
     return ans
@@ -224,6 +233,7 @@ def get_modified_testcases(testcases):
 # Patches tests in the project. Returns the patches that didn't generate compilation errors
 def patch_testcases(commit_testcases, commit, prev_commit, module_path):
     ans = []
+    unpatchable_testcases = []
     dict_diff_testcases = {}
     dict_diff_patch = {}
     dict_file_diff = {}
@@ -236,7 +246,7 @@ def patch_testcases(commit_testcases, commit, prev_commit, module_path):
             patch_path = generate_patch(git_dir=proj_dir, prev_commit=prev_commit,
                                         commit=commit, file=test_path,
                                         patch_name=os.path.basename(test_path), target_dir=patches_dir)
-            git_cmds_wrapper(lambda :repo.git.execute(['git', 'apply', patch_path]))
+            git_cmds_wrapper(lambda: repo.git.execute(['git', 'apply', patch_path]))
             dict_diff_testcases[diff] = associeted_testcases
             dict_diff_patch[diff] = patch_path
             dict_file_diff[test_path] = diff
@@ -254,34 +264,35 @@ def patch_testcases(commit_testcases, commit, prev_commit, module_path):
             error_testclass = test_parser.TestClass(file)
             for error in dict_file_errors[file]:
                 if is_unrelated_testcase(error, error_testclass):
-                    logging.info(file+' is not compiling because compilation error not related to testcases: '+str(error))
-                    logging.info(build_report)
                     diff = dict_file_diff[error.path]
                     git_cmds_wrapper(lambda: repo.git.execute(['git', 'apply', '-R', dict_diff_patch[diff]]))
                     for testcase in dict_diff_testcases[diff]:
+                        unpatchable_testcases.append((testcase,'Testclass file is not compiling because compilation error not related to testcases: ' + str(
+                                                          error)))
                         ans.remove(testcase)
                     continue
                 else:
                     tmp = [tc for tc in error_testclass.testcases if tc.contains_line(error.line)]
-                    assert len(tmp)==1
+                    assert len(tmp) == 1
+                    unpatchable_testcases.append((tmp[0],'Generated compilation error'))
                     not_compiling_testcases.append(tmp[0])
-        still_patched_not_compiling_testcases = list(filter(lambda  t: t in ans,not_compiling_testcases))
+        still_patched_not_compiling_testcases = list(filter(lambda t: t in ans, not_compiling_testcases))
         unpatch_testcases(still_patched_not_compiling_testcases)
         for testcase in still_patched_not_compiling_testcases:
             ans.remove(testcase)
-    return ans
+    return (ans, unpatchable_testcases)
 
 
 # Returns dictionary that maps patched testcase to its patch
 def get_bug_patches(patched_testcases, dict_testclass_dir):
-    ans ={}
+    ans = {}
     testclasses = []
     for testcase in patched_testcases:
         if not testcase.parent in testclasses:
             testclasses.append(testcase.parent)
     for testclass in testclasses:
-        git_cmds_wrapper(lambda :repo.git.add('.'))
-        patch = generate_patch(git_dir=proj_dir, file=testclass.src_path,patch_name='patch',
+        git_cmds_wrapper(lambda: repo.git.add('.'))
+        patch = generate_patch(git_dir=proj_dir, file=testclass.src_path, patch_name='patch',
                                target_dir=dict_testclass_dir[testclass.id])
         git_cmds_wrapper(lambda: repo.git.reset())
         for testcase in patched_testcases:
@@ -293,6 +304,7 @@ def get_bug_patches(patched_testcases, dict_testclass_dir):
 # Returns true if the given compilation error report object is unrelated to any testcase in it's file
 def is_unrelated_testcase(error, error_testclass):
     return not any([t.contains_line(error.line) for t in error_testclass.testcases])
+
 
 # Returns dictionary mapping file path to it's related compilation error in the given errors
 def divide_errors_to_files(compilation_errors):
@@ -308,18 +320,17 @@ def divide_errors_to_files(compilation_errors):
 def unpatch_testcases(testcases):
     dict_file_testcases = divide_to_files(testcases)
     for file in dict_file_testcases.keys():
-        positions_to_delete = list(map(lambda t:t.get_lines_range(),dict_file_testcases[file]))
+        positions_to_delete = list(map(lambda t: t.get_lines_range(), dict_file_testcases[file]))
         with open(file, 'r') as f:
             lines = f.readlines()
         with open(file, 'w') as f:
-            i=1
+            i = 1
             for line in lines:
-                if any(p[0]<=i<=p[1] for p in positions_to_delete):
+                if any(p[0] <= i <= p[1] for p in positions_to_delete):
                     f.write('')
                 else:
                     f.write(line)
-                i+=1
-
+                i += 1
 
 
 # Returns dictionary mapping path to group of associated testcases
@@ -334,16 +345,17 @@ def divide_to_files(testcases):
 
 
 # Creates patch representing the changes occured in file between commit and prev_commit
-def generate_patch(git_dir,file, patch_name, target_dir, prev_commit=None, commit=None):
+def generate_patch(git_dir, file, patch_name, target_dir, prev_commit=None, commit=None):
     path_to_patch = target_dir + '//' + patch_name + '.patch'
     os.chdir(git_dir)
-    if prev_commit==None or commit==None:
-        cmd = ' '.join(['git', 'diff','HEAD', file, '>', path_to_patch])
+    if prev_commit == None or commit == None:
+        cmd = ' '.join(['git', 'diff', 'HEAD', file, '>', path_to_patch])
     else:
         cmd = ' '.join(['git', 'diff', prev_commit.hexsha, commit.hexsha, file, '>', path_to_patch])
     os.system(cmd)
     os.chdir(orig_wd)
     return path_to_patch
+
 
 # Checkout to the given commit, cleans the project, and installs the project
 def prepare_project_repo_for_testing(commit, module):
@@ -364,21 +376,18 @@ def get_uncompiled_testcases(testcases_diff_groups):
         with os.popen(test_compile_cmd) as proc:
             build_report = proc.read()
             compilation_error_report = test_parser.get_compilation_error_report(build_report)
-            if not len(compilation_error_report)==0:
+            if not len(compilation_error_report) == 0:
                 error_testcases = test_parser.get_compilation_error_testcases(compilation_error_report)
                 if any(t.src_path == associated_file for t in error_testcases):
-                    if len(relevant_error_testcases)==0:
+                    if len(relevant_error_testcases) == 0:
                         raise my_bug.BugError(
-                            'Patching generated compilation error not associated to testcases.'+
-                            '\nCompilation error report:\n'+
-                            reduce((lambda x, y: x +'\n'+ y), compilation_error_report))
+                            'Patching generated compilation error not associated to testcases.' +
+                            '\nCompilation error report:\n' +
+                            reduce((lambda x, y: x + '\n' + y), compilation_error_report))
                     else:
-                        ans+=relevant_error_testcases
-                relevant_error_testcases = list(filter(lambda t: t in testcases_diff_group,error_testcases))
+                        ans += relevant_error_testcases
+                relevant_error_testcases = list(filter(lambda t: t in testcases_diff_group, error_testcases))
     return ans
-
-
-
 
 
 # Returns the commits relevant to bug_issue
@@ -469,7 +478,6 @@ def get_associated_test_case(diff, testcases):
     return ans
 
 
-
 # Returns data stored in the cache dir. If not found, retrieves the data using the retrieve func
 def get_from_cache(cache_file_path, retrieve_func):
     if os.path.isfile(cache_file_path):
@@ -502,7 +510,8 @@ def set_up_patches_dir():
         shutil.rmtree(patches_dir)
         os.makedirs(patches_dir)
 
-#Wraps git command. Handles excpetions mainly
+
+# Wraps git command. Handles excpetions mainly
 def git_cmds_wrapper(git_cmd):
     try:
         git_cmd()
@@ -510,7 +519,7 @@ def git_cmds_wrapper(git_cmd):
         if 'Another git process seems to be running in this repository, e.g.' in str(e):
             logging.info(str(e))
             time.sleep(2)
-            git_cmds_wrapper(lambda : git_cmd())
+            git_cmds_wrapper(lambda: git_cmd())
         elif 'nothing to commit, working tree clean' in str(e):
             pass
         elif 'Please move or remove them before you switch branches.' in str(e):
@@ -524,14 +533,14 @@ def git_cmds_wrapper(git_cmd):
         else:
             raise e
 
+
 # Returns boolean. Filter the bugs to inspect
 def bugs_filter(possible_bug):
-    if EARLIEST_BUG>0:
+    if EARLIEST_BUG > 0:
         key = possible_bug[0]
         number = int(key.split('-')[1])
-        return number>=EARLIEST_BUG
+        return number >= EARLIEST_BUG
     return True
-
 
 
 def set_up(argv):
@@ -550,10 +559,8 @@ def set_up(argv):
     global cache_dir
     global data_dir
     git_url = urllib.parse.urlparse(argv[1])
-    jira_url = urllib.parse.urlparse(argv[2])
     proj_name = os.path.basename(git_url.path)
-    jira_proj_name = os.path.basename(jira_url.path)
-    cache_dir = os.path.join(os.getcwd() , 'cache\\{}'.format(proj_name))
+    cache_dir = os.path.join(os.getcwd(), 'cache\\{}'.format(proj_name))
     proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
     test_parser.proj_dir = proj_dir
     patches_dir = proj_dir + '\\patches'
@@ -564,6 +571,8 @@ def set_up(argv):
         os.makedirs(proj_results_dir)
     if not os.path.isdir(os.getcwd() + '\\tested_project'):
         os.makedirs(os.getcwd() + '\\tested_project')
+    if not os.path.isdir(cache_dir):
+        os.makedirs(cache_dir)
     if GENERATE_DATA:
         if os.path.isdir(data_dir):
             raise my_bug.BugError('The data currently in the project result dir ({}) will be overwritten.'
@@ -573,18 +582,22 @@ def set_up(argv):
     proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
     LOG_FILENAME = os.path.join(proj_results_dir, 'log.log')
     logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO, format='%(asctime)s %(message)s')
-    logging.info('Started cloning '+argv[1]+'... ')
+    logging.info('Started cloning ' + argv[1] + '... ')
     git_cmds_wrapper(lambda: git.Git(os.getcwd() + '\\tested_project').init())
-    git_cmds_wrapper(lambda: git.Git(os.getcwd() + '\\tested_project').clone(urllib.parse.urlunparse(git_url).replace('\\','/')))
-    logging.info('Finshed cloning '+argv[1]+'...')
+    git_cmds_wrapper(
+        lambda: git.Git(os.getcwd() + '\\tested_project').clone(urllib.parse.urlunparse(git_url).replace('\\', '/').replace('////','//')))
+    logging.info('Finshed cloning ' + argv[1] + '...')
     repo = Repo(proj_dir)
     if not os.path.isdir("cache"):
         os.makedirs("cache")
     all_commits = list(repo.iter_commits(branch_inspected))
-    JQL_QUERY = JQL_QUERY.format(jira_proj_name)
-    if len(argv)>3:
-        tmp = 'issuekey = {} AND '.format(argv[3])+JQL_QUERY
-        JQL_QUERY = tmp
+    if len(argv)>2:
+        jira_url = urllib.parse.urlparse(argv[2])
+        jira_proj_name = os.path.basename(jira_url.path)
+        JQL_QUERY = JQL_QUERY.format(jira_proj_name)
+        if len(argv) > 3:
+            tmp = 'issuekey = {} AND '.format(argv[3]) + JQL_QUERY
+            JQL_QUERY = tmp
     try:
         bug_issues = jira.search_issues(JQL_QUERY, maxResults=MAX_ISSUES_TO_RETRIEVE)
     except jira_exceptions.JIRAError as e:

@@ -51,7 +51,7 @@ class Bug(object):
         return self._module
 
     def __str__(self):
-        return 'type: ' + self.type.value + ' ,issue: ' + self.issue + ' ,commit: ' + self._commit_hexsha+ ' ,parent: ' + self.parent+ ' ,test: ' + self.bugged_testcase.id + ' description: ' + self._desc
+        return 'type: ' + self.type.value + ' ,issue: ' + self.issue + ' ,commit: ' + self._commit_hexsha+ ' ,parent: ' + self.parent+ ' ,test: ' + self.bugged_testcase.mvn_name + ' description: ' + self._desc
 
 
 class Bug_data_handler(object):
@@ -74,8 +74,8 @@ class Bug_data_handler(object):
         self._store_bug(bug)
 
     # Adds row to the time tanle
-    def add_time(self, issue_key, commit_hexsha, module, time):
-        self._time_csv_handler.add_row(issue_key, commit_hexsha, module, time)
+    def add_time(self, issue_key, commit_hexsha, module, time, desctiption = ''):
+        self._time_csv_handler.add_row(issue_key, commit_hexsha, module, time, desctiption)
 
     # Stores bug in it's direcrtory
     def _store_bug(self,bug):
@@ -246,24 +246,25 @@ class Time_csv_report_handler(object):
     def __init__(self, path):
         self._writer = None
         self._path = path
-        self._fieldnames = ['issue', 'commit','module', 'time']
+        self._fieldnames = ['issue', 'commit','module', 'time', 'description']
         if not os.path.exists(path):
             with open(self._path, 'w+', newline='') as csv_output:
                 writer = csv.DictWriter(csv_output, fieldnames=self._fieldnames)
                 writer.writeheader()
      #Adds bug to the csv file
-    def add_row(self, issue_key, commit_hexsha, module, time):
+    def add_row(self, issue_key, commit_hexsha, module, time, description):
         with open(self._path, 'a', newline='') as csv_output:
             writer = csv.DictWriter(csv_output, fieldnames=self._fieldnames)
-            writer.writerow(self.generate_csv_tupple(issue_key, commit_hexsha, module, time))
+            writer.writerow(self.generate_csv_tupple(issue_key, commit_hexsha, module, time, description))
 
 
     # Generated csv bug tupple
-    def generate_csv_tupple(self, issue_key, commit_hexsha, module, time):
+    def generate_csv_tupple(self, issue_key, commit_hexsha, module, time, description):
         return {'issue': issue_key,
                 'commit': commit_hexsha,
                 'module': module,
-                'time': time}
+                'time': time,
+                'description': description}
 
     @property
     def path(self):
