@@ -1,6 +1,5 @@
 import pickle
 import shutil
-import subprocess
 import sys
 import os
 import logging
@@ -13,6 +12,7 @@ import javalang
 from git import Repo
 from jira import JIRA
 from jira import exceptions as jira_exceptions
+import urllib.parse
 
 jira = JIRA(options={'server': 'https://issues.apache.org/jira'})
 all_commits = []
@@ -21,6 +21,7 @@ branch_inspected = 'master'
 repo = None
 proj_dir = ''
 proj_name = ''
+jira_proj_name = ''
 orig_wd = os.getcwd()
 patches_dir = ''
 proj_results_dir = ''
@@ -539,12 +540,16 @@ def set_up(argv):
     global patches_dir
     global proj_results_dir
     global proj_name
+    global jira_proj_name
     global JQL_QUERY
     global bug_data_handler
     global cache_dir
     global data_dir
-    cache_dir = os.getcwd() + '\\cache'
-    proj_name = argv[1].rsplit('/', 1)[1]
+    git_url = urllib.parse.urlparse(argv[1])
+    jira_url = urllib.parse.urlparse(argv[2])
+    proj_name = os.path.basename(git_url.path)
+    jira_proj_name = os.path.basename(jira_url.path)
+    cache_dir = os.path.join(os.getcwd() , 'cache\\{}'.format(proj_name))
     proj_dir = os.getcwd() + '\\tested_project\\' + proj_name
     test_parser.proj_dir = proj_dir
     patches_dir = proj_dir + '\\patches'
@@ -566,15 +571,15 @@ def set_up(argv):
     logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO, format='%(asctime)s %(message)s')
     logging.info('Started cloning '+argv[1]+'... ')
     git_cmds_wrapper(lambda: git.Git(os.getcwd() + '\\tested_project').init())
-    git_cmds_wrapper(lambda: git.Git(os.getcwd() + '\\tested_project').clone(argv[1]))
+    git_cmds_wrapper(lambda: git.Git(os.getcwd() + '\\tested_project').clone(urllib.parse.urlunparse(git_url).replace('\\','/')))
     logging.info('Finshed cloning '+argv[1]+'...')
     repo = Repo(proj_dir)
     if not os.path.isdir("cache"):
         os.makedirs("cache")
     all_commits = list(repo.iter_commits(branch_inspected))
-    JQL_QUERY = JQL_QUERY.format(proj_name)
-    if len(argv)>2:
-        tmp = 'issuekey = {} AND '.format(argv[2])+JQL_QUERY
+    JQL_QUERY = JQL_QUERY.format(jira_proj_name)
+    if len(argv)>3:
+        tmp = 'issuekey = {} AND '.format(argv[3])+JQL_QUERY
         JQL_QUERY = tmp
     try:
         bug_issues = jira.search_issues(JQL_QUERY, maxResults=MAX_ISSUES_TO_RETRIEVE)

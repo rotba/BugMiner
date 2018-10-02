@@ -337,7 +337,7 @@ class TestMain(unittest.TestCase):
         print('test_generated_data')
         Main.USE_CACHE=False
         Main.GENERATE_DATA = True
-        Main.main(['','https://github.com/apache/tika','TIKA-56'])
+        Main.main(['','https://github.com/apache/tika','http:\issues.apache.org\jira\projects\TIKA','TIKA-56'])
         expected_issue_dir = os.path.join(Main.data_dir,'TIKA-56')
         expected_commit_dir = os.path.join(expected_issue_dir, 'b12c01d9b56053554cec501aab0530f7f4352daf')
         expected_testclass_dir = os.path.join(expected_commit_dir, 'tika#org.apache.tika.mime.TestMimeTypes')
@@ -351,8 +351,6 @@ class TestMain(unittest.TestCase):
         self.assertTrue(os.path.isfile(expected_report_xml))
         self.assertTrue(os.path.isfile(expected_patch))
         # shutil.rmtree(Main.data_dir)
-
-
 
 
 if __name__ == '__main__':
