@@ -324,3 +324,10 @@ def copytree(src, dst, symlinks=False, ignore=None):
             shutil.copytree(s, d, symlinks, ignore)
         elif os.path.isfile(s) and not os.path.isfile(d):
             shutil.copy2(s, d)
+
+# Returns the ype of the bug
+def determine_type(testcase, delta_testcases):
+    if testcase in delta_testcases:
+        return Bug_type.DELTA
+    else:
+        return Bug_type.REGRESSION

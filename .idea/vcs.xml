@@ -15,7 +15,12 @@
     <mapping directory="$PROJECT_DIR$/tested_project" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/GitMavenTrackingProject" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/cayenne" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_project/chainsaw" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_project/commons-lang" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_project/commons-math" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/distributedlog" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_project/maven-indexer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_project/maven-site-plugin" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/tika" vcs="Git" />
   </component>
 </project>

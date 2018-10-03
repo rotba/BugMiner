@@ -17,7 +17,7 @@ import urllib.parse
 jira = JIRA(options={'server': 'https://issues.apache.org/jira'})
 all_commits = []
 bug_issues = []
-branch_inspected = 'master'
+branch_inspected = ''
 repo = None
 proj_dir = ''
 proj_name = ''
@@ -32,9 +32,9 @@ valid_bugs_csv_handler = None
 invalid_bugs_csv_handler = None
 dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
-JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/11" ORDER BY  createdDate ASC'
+JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/03" ORDER BY  createdDate ASC'
 EARLIEST_BUG = 0
-USE_CACHE = True
+USE_CACHE = False
 GENERATE_DATA = True
 
 
@@ -59,8 +59,8 @@ def main(argv):
             logging.info(e.msg)
         except git.exc.GitCommandError as e:
             logging.info('SHOULD NOT HAPPEN ' + str(e))
-        # except Exception as e:
-        #      logging.info('SHOULD NOT HAPPEN ' + str(e))
+        except Exception as e:
+          logging.info('SHOULD NOT HAPPEN ' + str(e))
 
 
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
@@ -70,9 +70,7 @@ def extract_bugs(issue, commit, tests_paths):
     parent = get_parent(commit)
     if parent == None:
         return ans
-    git_cmds_wrapper(lambda: repo.git.reset('--hard'))
-    git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
-    git_cmds_wrapper(lambda: repo.git.checkout(commit.hexsha))
+    git_cmds_wrapper(lambda: repo.git.checkout(commit.hexsha, '-f'))
     commit_tests_object = list(map(lambda t_path: test_parser.TestClass(t_path), tests_paths))
     if GENERATE_DATA:
         dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(issue, commit, commit_tests_object)
@@ -82,42 +80,38 @@ def extract_bugs(issue, commit, tests_paths):
         try:
             start_time = time.time()
             commit_valid_testcases = []
+            test_parser.change_poms(test_parser.change_surefire_ver ,module)
             run_mvn_tests(dict_modules_testcases[module], module)
-            commit_valid_testcases = attach_reports(dict_modules_testcases[module])
+            (commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
             git_cmds_wrapper(lambda: repo.git.reset('--hard'))
             git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha))
-            delta_testcases = get_delta_testcases(commit_valid_testcases)
-            # modified_testcases = get_modified_testcases(commit_valid_testcases)
+            delta_testcases = get_delta_testcases(dict_modules_testcases[module])
             (patched_testcases, unpatchable_testcases) = patch_testcases(commit_valid_testcases, commit, parent, module)
             if GENERATE_DATA:
                 dict_testcase_patch = get_bug_patches(patched_testcases, dict_testclass_bug_dir)
             for unpatchable_testcase in unpatchable_testcases:
-                if unpatchable_testcase[0] in delta_testcases:
-                    ans.append(my_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=unpatchable_testcase[0],fixed_testcase= unpatchable_testcase[0],
-                                          type=my_bug.Bug_type.DELTA,valid=False,desc=unpatchable_testcase[1]))
-                else:
-                    ans.append(my_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
-                                          bugged_testcase=unpatchable_testcase[0], fixed_testcase=unpatchable_testcase[0],
-                                          type=my_bug.Bug_type.REGRESSION, valid=False, desc=unpatchable_testcase[1]))
+                ans.append(my_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=unpatchable_testcase[0],fixed_testcase= unpatchable_testcase[0],
+                                      type=my_bug.determine_type(unpatchable_testcase[0], delta_testcases),valid=False,desc=unpatchable_testcase[1]))
+            for no_report_testcase in no_report_testcases:
+                ans.append(my_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=no_report_testcase,fixed_testcase= no_report_testcase,
+                                          type=my_bug.determine_type(no_report_testcase, delta_testcases),valid=False,desc='No report'))
             run_mvn_tests(dict_modules_testcases[module], module)
-            parent_valid_testcases = []
-            parent_tests = test_parser.get_tests(module)
+            #parent_tests = test_parser.get_tests(module)
+            parent_tests = list(map(lambda t_path: test_parser.TestClass(t_path), tests_paths))
             all_parent_testcases = test_parser.get_testcases(parent_tests)
             relevant_parent_testcases = list(filter(lambda t: t in commit_valid_testcases, all_parent_testcases))
-            parent_valid_testcases = attach_reports(relevant_parent_testcases)
+            (parent_valid_testcases, no_report_testcases) = attach_reports(relevant_parent_testcases)
+            for no_report_testcase in no_report_testcases:
+                ans.append(my_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=no_report_testcase,fixed_testcase= no_report_testcase,
+                                          type=my_bug.determine_type(no_report_testcase, delta_testcases),valid=False,desc='No report'))
             if GENERATE_DATA:
                 bug_data_handler.attach_reports(issue, commit, parent_valid_testcases)
             for testcase in commit_valid_testcases:
                 if testcase in parent_valid_testcases:
                     parent_testcase = [t for t in parent_valid_testcases if t == testcase][0]
-                    if testcase in delta_testcases:
-                        bug = my_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
-                                                parent_testcase=parent_testcase, type=my_bug.Bug_type.DELTA)
-                        ans.append(bug)
-                    else:
-                        bug = my_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
-                                                parent_testcase=parent_testcase, type=my_bug.Bug_type.REGRESSION)
-                        ans.append(bug)
+                    bug = my_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
+                                            parent_testcase=parent_testcase, type=my_bug.determine_type(testcase, delta_testcases))
+                    ans.append(bug)
             end_time = time.time()
             if GENERATE_DATA:
                 bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time)
@@ -132,7 +126,6 @@ def extract_bugs(issue, commit, tests_paths):
     for b in list(filter(lambda b: not b.valid, ans)):
         logging.info('INVALID BUG: ' + str(b))
     git_cmds_wrapper(lambda: repo.git.reset('--hard'))
-    git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
     return ans
 
 
@@ -140,7 +133,9 @@ def extract_bugs(issue, commit, tests_paths):
 def run_mvn_tests(testcases, module):
     test_cmd = test_parser.generate_mvn_test_cmd(testcases, module)
     with os.popen(test_cmd) as proc:
-        build_report = proc.read()
+        with open('tmp_file.txt', 'w+') as tmp_file:
+            duplicate_stdout(proc, tmp_file)
+            build_report = tmp_file.read()
     if len(test_parser.get_compilation_error_report(build_report)) == 0:
         return
     else:
@@ -150,16 +145,24 @@ def run_mvn_tests(testcases, module):
 # Attaches reports to testcases and returns the testcases that reports were successfully attached to them.
 # Handles exceptions, updates invalid_bugs
 def attach_reports(testcases):
-    ans = []
+    attatched = []
+    no_attatched = []
+    ans = (attatched, no_attatched)
     for testcase in testcases:
         testclass = testcase.parent
         if testclass.report is None:
             try:
                 testclass.report = test_parser.TestClassReport(testclass.get_report_path(), testclass.module)
+                testclass.attach_report_to_testcase(testcase)
+                attatched.append(testcase)
             except test_parser.TestParserException as e:
-                raise my_bug.BugError('Can not attach report to ' + testclass.mvn_name + '. ' + e.msg)
-        testclass.attach_report_to_testcase(testcase)
-        ans.append(testcase)
+                for t in testclass.testcases:
+                    if t in testcases:
+                        no_attatched.append(t)
+                continue
+        else:
+            testclass.attach_report_to_testcase(testcase)
+            attatched.append(testcase)
 
     return ans
 
@@ -171,7 +174,7 @@ def extract_possible_bugs(bug_issues):
         logging.info("extract_possible_bugs(): working on issue " + bug_issue.key)
         issue_commits = get_issue_commits(bug_issue)
         if len(issue_commits) == 0:
-            logging.debug('Couldn\'t find commits associated with ' + bug_issue.key)
+            logging.info('Couldn\'t find commits associated with ' + bug_issue.key)
             continue
         for commit in issue_commits:
             issue_tests = get_tests_paths_from_commit(commit)
@@ -496,6 +499,9 @@ def get_from_cache(cache_file_path, retrieve_func):
 # Returns true if the commit message contains the issue key exclusively
 def is_associated_to_commit(issue, commit):
     if issue.key in commit.message:
+        index_of_char_after_issue_key = commit.message.find(issue.key) + len(issue.key)
+        if index_of_char_after_issue_key == len(commit.message):
+            return True
         char_after_issue_key = commit.message[commit.message.find(issue.key) + len(issue.key)]
         return not char_after_issue_key.isdigit()
     else:
@@ -542,6 +548,16 @@ def bugs_filter(possible_bug):
         return number >= EARLIEST_BUG
     return True
 
+def duplicate_stdout(proc, file):
+    while(True):
+        line = proc.readline()
+        if line == '':
+            break
+        sys.stdout.write(line)
+        file.write(line)
+
+
+
 
 def set_up(argv):
     global all_commits
@@ -558,6 +574,7 @@ def set_up(argv):
     global bug_data_handler
     global cache_dir
     global data_dir
+    global branch_inspected
     git_url = urllib.parse.urlparse(argv[1])
     proj_name = os.path.basename(git_url.path)
     cache_dir = os.path.join(os.getcwd(), 'cache\\{}'.format(proj_name))
@@ -590,6 +607,7 @@ def set_up(argv):
     repo = Repo(proj_dir)
     if not os.path.isdir("cache"):
         os.makedirs("cache")
+    branch_inspected = str(repo.branches[0])
     all_commits = list(repo.iter_commits(branch_inspected))
     if len(argv)>2:
         jira_url = urllib.parse.urlparse(argv[2])

@@ -1,4 +1,5 @@
 import xml.etree.ElementTree as ET
+from xml.dom.minidom import parse, parseString, getDOMImplementation, Document
 import re
 import os
 import javalang
@@ -106,6 +107,8 @@ class TestClass:
 
     def generate_mvn_name(self):
         relpath = os.path.relpath(self.src_path, self.module + '\\src\\test\\java').replace('.java', '')
+        if relpath.startswith('..\\'):
+            relpath = relpath[3:]
         return relpath.replace('\\', '.')
 
     def __repr__(self):
@@ -464,8 +467,11 @@ def parse_tests_reports(path_to_reports, project_dir):
 # Gets path to maven project directory and returns parsed
 def get_tests(project_dir):
     ans = []
-    if os.path.isdir(project_dir + '\\src\\test\java'):
-        ans.extend(parse_tests(project_dir + '\\src\\test\java'))
+    if os.path.isdir(project_dir + '\\src\\test'):
+        if os.path.isdir(project_dir + '\\src\\test\\java'):
+            ans.extend(parse_tests(project_dir + '\\src\\test\\java'))
+        else:
+            ans.extend(parse_tests(project_dir + '\\src\\test'))
     for filename in os.listdir(project_dir):
         file_abs_path = os.path.join(project_dir, filename)
         if os.path.isdir(file_abs_path):
@@ -659,11 +665,12 @@ def generate_mvn_test_cmd(testcases, module):
     else:
         ans = 'mvn -pl :{} -am clean test -fn'.format(
             os.path.basename(module))
-    # ans = 'mvn test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
-    # for testclass in testclasses:
-    #     if not ans.endswith('='):
-    #         ans += ','
-    #     ans += testclass.mvn_name
+    #ans = 'mvn test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
+    ans += ' -Dtest='
+    for testclass in testclasses:
+         if not ans.endswith('='):
+             ans += ','
+         ans += testclass.mvn_name
     ans += ' -f ' + proj_dir
     return ans
 
@@ -694,6 +701,98 @@ def get_mvn_exclude_tests_list(tests, time):
             ans += '!' + test.name
             count += 1
     return ans
+
+# Changes all the pom files in a module recursively
+def get_all_pom_paths(module_dir):
+    ans = []
+    if os.path.isfile(os.path.join(module_dir, 'pom.xml')):
+        ans.append(os.path.join(module_dir, 'pom.xml'))
+    for file in os.listdir(module_dir):
+        full_path = os.path.join(module_dir, file)
+        if os.path.isdir(full_path):
+            ans.extend(get_all_pom_paths(full_path))
+    return ans
+
+# Changes surefire version in a pom
+def change_surefire_ver(module, version):
+    poms = get_all_pom_paths(module)
+    new_file_lines = []
+    for pom in poms:
+        xmlFile = parse(pom)
+        build = xmlFile.getElementsByTagName('build')
+        if len(build) == 0:
+            pass
+            # create build
+        assert len(build) == 1
+        tmp = build[0].getElementsByTagName('plugins')
+        plugins = list(filter(lambda t: t.parentNode.localName=='build', tmp))
+        if len(plugins) == 0:
+            pass
+            # create plugins
+        assert len(plugins) == 1
+        surefire_plugin = None
+        for plugin in plugins[0].getElementsByTagName('plugin'):
+            arifact_id_sing  = list(filter(lambda child: child.localName=='artifactId', plugin.childNodes))
+            if len(arifact_id_sing) == 0:
+                continue
+            assert len(arifact_id_sing) == 1
+            if arifact_id_sing[0].firstChild.data=='maven-surefire-plugin':
+                surefire_plugin = plugin
+                break
+        if surefire_plugin==None:
+            # create surefire_plugin
+            pass
+        surefire_version = None
+        surefire_version_sing = list(
+            filter(lambda child: child.localName== 'version', surefire_plugin.childNodes))
+        if len(surefire_version_sing)==0:
+            new_ver = surefire_plugin.ownerDocument.createElement(tagName='version')
+            new_ver_text = new_ver.ownerDocument.createTextNode(version)
+            new_ver.appendChild(new_ver_text)
+            surefire_plugin.appendChild(new_ver)
+            surefire_version_sing = [new_ver]
+        assert len(surefire_version_sing) == 1
+        surefire_version = surefire_version_sing[0]
+        surefire_version.firstChild.data = version
+        with open(pom[:-4]+'2.xml', 'w+') as f:
+            f.write(xmlFile.toprettyxml())
+
+        dom = parse(pom)
+        # with open(pom, 'r') as old_file:
+        #     lines = old_file.readlines()
+        # it = iter(lines)
+        # for line in it:
+        #     if '<plugins>' in line:
+        #         new_file_lines.append(line)
+        #         line =next(it)
+        #         while not line == '<plugins>':
+        #             new_file_lines.append(line)
+        #             if '<plugin>' in line:
+        #                 line = next(it)
+        #                 new_file_lines.append(line)
+        #                 curr_plugin = []
+        #                 while not line == '<plugin>':
+        #                     curr_plugin.append(line)
+        #                     line = next(it)
+        #                 curr_plugin.append(line)
+        #                 if any(['<artifactId>maven-surefire-plugin</artifactId>' in l for l in curr_plugin ]):
+        #                     for l in curr_plugin:
+        #                         if '<version>' in l:
+        #                             curr_plugin.remove(l)
+        #                             break
+        #                     num_of_spaces = len(curr_plugin[0]) - len(len(curr_plugin[0]).lstrip)
+        #                     curr_plugin.add(''*num_of_spaces+'<version>'+version+'</version>')
+        #                 new_file_lines.extend(curr_plugin)
+        #         new_file_lines.append(line)
+        #     else:
+        #         new_file_lines.append(line)
+    x=1
+
+
+
+
+
+
 
 
 class TestParserException(Exception):

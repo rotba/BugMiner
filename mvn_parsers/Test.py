@@ -135,6 +135,15 @@ class TestTest_Obj(unittest.TestCase):
         self.assertTrue(self.testcase_2.has_the_same_code_as(self.testcase_3))
         self.assertFalse(self.testcase_2.has_the_same_code_as(self.testcase_4))
 
+    def test_change_surefire_ver(self):
+        module = self.test_4.module
+        test_parser.change_surefire_ver(module,'2.22')
+        with open(self.test_4.get_xml_path(), 'r') as xml_file:
+            lines = xml_file.readlines()
+            self.assertTrue(lines[262] =='          <version>2.22</version>')
+
+
+
     @unittest.skip("Important test but will require some time to validate")
     def test_get_compilation_error_testcases(self):
         print('test_get_compilation_error_testcases')
