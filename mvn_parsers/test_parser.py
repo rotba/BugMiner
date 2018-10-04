@@ -667,7 +667,7 @@ def generate_mvn_test_cmd(testcases, module):
         ans = 'mvn -pl :{} -am clean test -fn'.format(
             os.path.basename(module))
     #ans = 'mvn test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
-    ans += ' -Dtest='
+    ans += ' -DfailIfNoTests=false -Dtest='
     for testclass in testclasses:
          if not ans.endswith('='):
              ans += ','
@@ -716,54 +716,20 @@ def get_all_pom_paths(module_dir):
 str
 # Changes surefire version in a pom
 def change_surefire_ver(module, version):
-    with open(r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\common-math\hey_brother.txt', 'r') as f:
-        str = f.read()
-        copy_str =''
-        for char in str[::]:
-            if 125<=ord(char)<=225:
-                copy_str += 'X'
-            else:
-                copy_str += char
-        x=1
-
     poms = get_all_pom_paths(module)
     new_file_lines = []
     for pom in poms:
-        parser = SAX.make_parser()
-        xmlFile = parse(pom, parser=parser)
+        xmlFile = parse(pom)
         tmp_build_list = xmlFile.getElementsByTagName('build')
         build_list = list(filter(lambda b: not b.parentNode == None and b.parentNode.localName=='project' ,tmp_build_list))
         if len(build_list) == 0:
             continue
         assert len(build_list) == 1
-        tmp = build_list[0].getElementsByTagName('plugins')
-        plugins = list(filter(lambda t: t.parentNode.localName=='build', tmp))
-        if len(plugins) == 0:
+        plugins_tags = build_list[0].getElementsByTagName('plugins')
+        if len(plugins_tags) ==0:
             continue
-        assert len(plugins) == 1
-        surefire_plugin = None
-        for plugin in plugins[0].getElementsByTagName('plugin'):
-            arifact_id_sing  = list(filter(lambda child: child.localName=='artifactId', plugin.childNodes))
-            if len(arifact_id_sing) == 0:
-                continue
-            assert len(arifact_id_sing) == 1
-            if arifact_id_sing[0].firstChild.data=='maven-surefire-plugin':
-                surefire_plugin = plugin
-                break
-        if surefire_plugin==None:
-            continue
-        surefire_version = None
-        surefire_version_sing = list(
-            filter(lambda child: child.localName== 'version', surefire_plugin.childNodes))
-        if len(surefire_version_sing)==0:
-            new_ver = surefire_plugin.ownerDocument.createElement(tagName='version')
-            new_ver_text = new_ver.ownerDocument.createTextNode(version)
-            new_ver.appendChild(new_ver_text)
-            surefire_plugin.appendChild(new_ver)
-            surefire_version_sing = [new_ver]
-        assert len(surefire_version_sing) == 1
-        surefire_version = surefire_version_sing[0]
-        surefire_version.firstChild.data = version
+        for plugins_tag in plugins_tags:
+            change_plugin_version_if_exists(plugins_tag,'maven-surefire-plugin', version)
         os.remove(pom)
         with open(pom, 'w+') as f:
             str = xmlFile.toprettyxml()
@@ -804,6 +770,32 @@ def change_surefire_ver(module, version):
         #     else:
         #         new_file_lines.append(line)
     x=1
+
+# changes the plugin version of 'plugin_artifact_id' to 'version'. Does nothing if the 'plugin_artifact_id' is not in plugins_tag
+def change_plugin_version_if_exists(plugins_tag, plugin_artifact_id, version):
+    plugin_p = None
+    for plugin in plugins_tag.getElementsByTagName('plugin'):
+        arifact_id_sing = list(filter(lambda child: child.localName == 'artifactId', plugin.childNodes))
+        if len(arifact_id_sing) == 0:
+            return
+        assert len(arifact_id_sing) == 1
+        if arifact_id_sing[0].firstChild.data == plugin_artifact_id:
+            plugin_p = plugin
+            break
+    if plugin_p == None:
+        return
+    version_v = None
+    surefire_version_sing = list(
+        filter(lambda child: child.localName == 'version', plugin_p.childNodes))
+    if len(surefire_version_sing) == 0:
+        new_ver = plugin_p.ownerDocument.createElement(tagName='version')
+        new_ver_text = new_ver.ownerDocument.createTextNode(version)
+        new_ver.appendChild(new_ver_text)
+        plugin_p.appendChild(new_ver)
+        surefire_version_sing = [new_ver]
+    assert len(surefire_version_sing) == 1
+    version_v = surefire_version_sing[0]
+    version_v.firstChild.data = version
 
 
 

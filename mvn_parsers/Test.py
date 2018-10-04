@@ -3,12 +3,12 @@ import sys
 import unittest
 import test_parser
 
-
+orig_wd = os.getcwd()
 class TestTest_Obj(unittest.TestCase):
-
     # os.system('mvn clean install -f '+os.getcwd() + r'\static_files\GitMavenTrackingProject')
     # os.system('mvn clean install -f ' + os.getcwd() + r'\static_files\tika_1')
     def setUp(self):
+        os.chdir(orig_wd)
         test_doc_1 = os.getcwd() + r'\static_files\TEST-org.apache.tika.cli.TikaCLIBatchCommandLineTest.xml'
         test_doc_2 = os.getcwd() + r'\static_files\GitMavenTrackingProject\sub_mod_2\target\surefire-reports\TEST-p_1.AssafTest.xml'
         self.test_report_1 = test_parser.TestClassReport(test_doc_1, '')
@@ -137,12 +137,14 @@ class TestTest_Obj(unittest.TestCase):
         self.assertFalse(self.testcase_2.has_the_same_code_as(self.testcase_4))
 
     def test_change_surefire_ver_1(self):
-        # test_dir = r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\test_files\test_change_surefire_ver'
         module = r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\tika'
+        curr_wd = os.getcwd()
+        os.chdir(module)
+        os.system('git checkout HEAD -f')
         mvn_help_cmd = 'mvn help:describe -DgroupId=org.apache.maven.plugins -DartifactId=maven-surefire-plugin'
         excpected_version = '2.22.0'
-        test_parser.change_surefire_ver(module,excpected_version)
         poms = test_parser.get_all_pom_paths(module)
+        test_parser.change_surefire_ver(module,excpected_version)
         self.assertTrue(len(poms)>0)
         for pom in poms:
             print('#### checking '+pom+' ######')
@@ -161,14 +163,18 @@ class TestTest_Obj(unittest.TestCase):
                 assert len(version_line_sing) == 1
                 version_line = version_line_sing[0]
                 self.assertEqual(version_line.lstrip('Version: ').rstrip('\n'),excpected_version)
+        os.system('git checkout HEAD -f')
+        os.chdir(curr_wd)
 
     def test_change_surefire_ver_2(self):
-        # test_dir = r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\test_files\test_change_surefire_ver'
         module = r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\common-math'
+        curr_wd = os.getcwd()
+        os.chdir(module)
+        os.system('git checkout 35414bc4f4ef03ef12e99c027398e5dc84682a9e -f')
         mvn_help_cmd = 'mvn help:describe -DgroupId=org.apache.maven.plugins -DartifactId=maven-surefire-plugin'
         excpected_version = '2.22.0'
-        test_parser.change_surefire_ver(module,excpected_version)
         poms = test_parser.get_all_pom_paths(module)
+        test_parser.change_surefire_ver(module,excpected_version)
         self.assertTrue(len(poms)>0)
         for pom in poms:
             print('#### checking '+pom+' ######')
@@ -187,6 +193,7 @@ class TestTest_Obj(unittest.TestCase):
                 assert len(version_line_sing) == 1
                 version_line = version_line_sing[0]
                 self.assertEqual(version_line.lstrip('Version: ').rstrip('\n'),excpected_version)
+        os.chdir(curr_wd)
 
 
 
