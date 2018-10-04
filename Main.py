@@ -1,6 +1,7 @@
 import pickle
 import shutil
 import sys
+import traceback
 import os
 import logging
 import time
@@ -35,7 +36,7 @@ MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/03" ORDER BY  createdDate ASC'
 surefire_version = '2.22.0'
 EARLIEST_BUG = 0
-USE_CACHE = True
+USE_CACHE = False
 GENERATE_DATA = True
 
 
@@ -55,13 +56,13 @@ def main(argv):
             if GENERATE_DATA:
                 bug_data_handler.add_bugs(bugs)
         except my_bug.BugError as e:
-            logging.info(e.msg)
+            logging.info('BUG ERROR  '+e.msg+'\n'+traceback.format_exc())
         except test_parser.TestParserException as e:
-            logging.info(e.msg)
+            logging.info('TEST PARSER ERROR  '+e.msg+'\n'+traceback.format_exc())
         except git.exc.GitCommandError as e:
-            logging.info('SHOULD NOT HAPPEN ' + str(e))
+            logging.info('SHOULD NOT HAPPEN GIT ' + str(e)+'\n'+traceback.format_exc())
         except Exception as e:
-          logging.info('SHOULD NOT HAPPEN ' + str(e))
+          logging.info('SHOULD NOT HAPPEN EXCEPRION ' + str(e)+'\n'+traceback.format_exc())
 
 
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
@@ -84,8 +85,7 @@ def extract_bugs(issue, commit, tests_paths):
             test_parser.change_surefire_ver(proj_dir, surefire_version)
             run_mvn_tests(dict_modules_testcases[module], module)
             (commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
-            git_cmds_wrapper(lambda: repo.git.reset('--hard'))
-            git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha))
+            git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha, '-f'))
             delta_testcases = get_delta_testcases(dict_modules_testcases[module])
             (patched_testcases, unpatchable_testcases) = patch_testcases(commit_valid_testcases, commit, parent, module)
             if GENERATE_DATA:
@@ -96,6 +96,7 @@ def extract_bugs(issue, commit, tests_paths):
             for no_report_testcase in no_report_testcases:
                 ans.append(my_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=no_report_testcase,fixed_testcase= no_report_testcase,
                                           type=my_bug.determine_type(no_report_testcase, delta_testcases),valid=False,desc='No report'))
+            test_parser.change_surefire_ver(proj_dir, surefire_version)
             run_mvn_tests(dict_modules_testcases[module], module)
             #parent_tests = test_parser.get_tests(module)
             parent_tests = list(map(lambda t_path: test_parser.TestClass(t_path), tests_paths))
@@ -165,8 +166,12 @@ def attach_reports(testcases):
                         no_attatched.append(t)
                 continue
         else:
-            testclass.attach_report_to_testcase(testcase)
-            attatched.append(testcase)
+            try:
+                testclass.attach_report_to_testcase(testcase)
+                attatched.append(testcase)
+            except test_parser.TestParserException as e:
+                logging.info(str(e)+' the testcalss of this testcase had his report attached. So this testcase must have gotten report')
+                no_attatched.append(testcase)
 
     return ans
 
