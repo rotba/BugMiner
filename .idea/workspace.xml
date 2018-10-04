@@ -5,8 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvn_parsers/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/test_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/src/test/java/p_1/AssafTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/src/test/java/p_1/AssafTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
@@ -153,7 +151,7 @@
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="9014">
-              <caret line="558" selection-start-line="558" selection-end-line="558" />
+              <caret line="563" selection-start-line="563" selection-end-line="563" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -572,7 +570,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>128</line>
+          <line>129</line>
           <option name="timeStamp" value="105" />
         </line-breakpoint>
       </breakpoints>
@@ -859,7 +857,7 @@ print(ans)</expression-string>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9014">
-          <caret line="558" selection-start-line="558" selection-end-line="558" />
+          <caret line="563" selection-start-line="563" selection-end-line="563" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
