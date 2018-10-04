@@ -136,9 +136,35 @@ class TestTest_Obj(unittest.TestCase):
         self.assertTrue(self.testcase_2.has_the_same_code_as(self.testcase_3))
         self.assertFalse(self.testcase_2.has_the_same_code_as(self.testcase_4))
 
-    def test_change_surefire_ver(self):
+    def test_change_surefire_ver_1(self):
         # test_dir = r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\test_files\test_change_surefire_ver'
         module = r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\tika'
+        mvn_help_cmd = 'mvn help:describe -DgroupId=org.apache.maven.plugins -DartifactId=maven-surefire-plugin'
+        excpected_version = '2.22.0'
+        test_parser.change_surefire_ver(module,excpected_version)
+        poms = test_parser.get_all_pom_paths(module)
+        self.assertTrue(len(poms)>0)
+        for pom in poms:
+            print('#### checking '+pom+' ######')
+            if(os.path.normcase(r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\tika\tika-dotnet\pom.xml') ==os.path.normcase(pom)):
+                print('#### passing ' + pom + ' ######')
+                continue
+            module_path = os.path.abspath(os.path.join(pom, os.pardir))
+            with os.popen(mvn_help_cmd+' -f '+module_path) as proc:
+                tmp_file_path = 'tmp_file.txt'
+                with open(tmp_file_path, "w+") as tmp_file:
+                    duplicate_stdout(proc, tmp_file)
+                with open(tmp_file_path, "r") as tmp_file:
+                    duplicate_stdout(proc, tmp_file)
+                    build_report = tmp_file.readlines()
+                version_line_sing = list(filter(lambda l: l.startswith('Version: '),build_report))
+                assert len(version_line_sing) == 1
+                version_line = version_line_sing[0]
+                self.assertEqual(version_line.lstrip('Version: ').rstrip('\n'),excpected_version)
+
+    def test_change_surefire_ver_2(self):
+        # test_dir = r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\test_files\test_change_surefire_ver'
+        module = r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\common-math'
         mvn_help_cmd = 'mvn help:describe -DgroupId=org.apache.maven.plugins -DartifactId=maven-surefire-plugin'
         excpected_version = '2.22.0'
         test_parser.change_surefire_ver(module,excpected_version)

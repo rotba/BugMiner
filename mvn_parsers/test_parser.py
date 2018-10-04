@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
-from xml.dom.minidom import parse, parseString, getDOMImplementation, Document
+import xml.sax as SAX
+from xml.dom.minidom import parse
 import re
 import os
 import javalang
@@ -99,7 +100,7 @@ class TestClass:
                 tmp = os.path.abspath(os.path.join(parent_dir, os.pardir))
                 is_root =  tmp == parent_dir
                 parent_dir = tmp
-        raise Exception(file_path + ' is not part of a maven module')
+        raise TestParserException(file_path + ' is not part of a maven module')
 
     def is_valid_testcase(self, method):
         return method.name.lower() != 'setup' and method.name.lower() != 'teardown' and\
@@ -712,13 +713,24 @@ def get_all_pom_paths(module_dir):
         if os.path.isdir(full_path):
             ans.extend(get_all_pom_paths(full_path))
     return ans
-
+str
 # Changes surefire version in a pom
 def change_surefire_ver(module, version):
+    with open(r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\common-math\hey_brother.txt', 'r') as f:
+        str = f.read()
+        copy_str =''
+        for char in str[::]:
+            if 125<=ord(char)<=225:
+                copy_str += 'X'
+            else:
+                copy_str += char
+        x=1
+
     poms = get_all_pom_paths(module)
     new_file_lines = []
     for pom in poms:
-        xmlFile = parse(pom)
+        parser = SAX.make_parser()
+        xmlFile = parse(pom, parser=parser)
         tmp_build_list = xmlFile.getElementsByTagName('build')
         build_list = list(filter(lambda b: not b.parentNode == None and b.parentNode.localName=='project' ,tmp_build_list))
         if len(build_list) == 0:
@@ -754,9 +766,15 @@ def change_surefire_ver(module, version):
         surefire_version.firstChild.data = version
         os.remove(pom)
         with open(pom, 'w+') as f:
+            str = xmlFile.toprettyxml()
+            copy_str = ''
+            for char in str[::]:
+                if 125 <= ord(char) <= 225:
+                    copy_str += 'X'
+                else:
+                    copy_str += char
             f.write(xmlFile.toprettyxml())
 
-        dom = parse(pom)
         # with open(pom, 'r') as old_file:
         #     lines = old_file.readlines()
         # it = iter(lines)

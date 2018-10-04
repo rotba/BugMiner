@@ -35,7 +35,7 @@ MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/03" ORDER BY  createdDate ASC'
 surefire_version = '2.22.0'
 EARLIEST_BUG = 0
-USE_CACHE = True
+USE_CACHE = False
 GENERATE_DATA = True
 
 
@@ -55,13 +55,13 @@ def main(argv):
             if GENERATE_DATA:
                 bug_data_handler.add_bugs(bugs)
         except my_bug.BugError as e:
-            logging.info(e.msg)
+            logging.info('BUG ERROR  '+e.msg)
         except test_parser.TestParserException as e:
-            logging.info(e.msg)
+            logging.info('TEST PARSER ERROR  '+e.msg)
         except git.exc.GitCommandError as e:
-            logging.info('SHOULD NOT HAPPEN ' + str(e))
+            logging.info('SHOULD NOT HAPPEN GIT ' + str(e))
         except Exception as e:
-          logging.info('SHOULD NOT HAPPEN ' + str(e))
+          logging.info('SHOULD NOT HAPPEN EXCEPRION ' + str(e))
 
 
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
