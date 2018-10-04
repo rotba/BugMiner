@@ -1,19 +1,10 @@
 [INFO] Scanning for projects...
-[WARNING] 
-[WARNING] Some problems were encountered while building the effective model for org.apache.tika:tika:jar:0.1-SNAPSHOT
-[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 672, column 12
-[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-jar-plugin is missing. @ line 732, column 12
-[WARNING] 
-[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
-[WARNING] 
-[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
-[WARNING] 
 [INFO] 
-[INFO] ------------------------< org.apache.tika:tika >------------------------
-[INFO] Building Apache Tika 0.1-SNAPSHOT
-[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] ----------------------< org.apache.tika:tika-xmp >----------------------
+[INFO] Building Apache Tika XMP 2.0.0-SNAPSHOT
+[INFO] -------------------------------[ bundle ]-------------------------------
 [INFO] 
-[INFO] --- maven-help-plugin:3.1.0:describe (default-cli) @ tika ---
+[INFO] --- maven-help-plugin:3.1.0:describe (default-cli) @ tika-xmp ---
 [INFO] org.apache.maven.plugins:maven-surefire-plugin:2.22.0
 
 Name: Maven Surefire Plugin
@@ -38,6 +29,6 @@ For more information, run 'mvn help:describe [...] -Ddetail'
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 3.657 s
-[INFO] Finished at: 2018-10-04T10:49:31+03:00
+[INFO] Total time: 5.921 s
+[INFO] Finished at: 2018-10-04T11:41:44+03:00
 [INFO] ------------------------------------------------------------------------

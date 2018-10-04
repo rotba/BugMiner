@@ -1,0 +1,98 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.tika:tika:jar:0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 224, column 15
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-surefire-plugin is missing. @ line 232, column 17
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ------------------------< org.apache.tika:tika >------------------------
+[INFO] Building Apache Tika 0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ tika ---
+[INFO] Deleting C:\Users\user\Code\Python\BugMiner\tested_project\tika\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ tika ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 2 resources to org/apache/tika
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.3:run (add-project-files) @ tika ---
+[INFO] Executing tasks
+     [copy] Copying 3 files to C:\Users\user\Code\Python\BugMiner\tested_project\tika\target\classes\META-INF
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ tika ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+[INFO] Compiling 55 source files to C:\Users\user\Code\Python\BugMiner\tested_project\tika\target\classes
+[WARNING] /C:/Users/user/Code/Python/BugMiner/tested_project/tika/src/main/java/org/apache/tika/utils/ParseUtils.java: Some input files use unchecked or unsafe operations.
+[WARNING] /C:/Users/user/Code/Python/BugMiner/tested_project/tika/src/main/java/org/apache/tika/utils/ParseUtils.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ tika ---
+[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 11 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ tika ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding Cp1252, i.e. build is platform dependent!
+[INFO] Compiling 10 source files to C:\Users\user\Code\Python\BugMiner\tested_project\tika\target\test-classes
+[WARNING] /C:/Users/user/Code/Python/BugMiner/tested_project/tika/src/test/java/org/apache/tika/TestParsers.java: C:\Users\user\Code\Python\BugMiner\tested_project\tika\src\test\java\org\apache\tika\TestParsers.java uses unchecked or unsafe operations.
+[WARNING] /C:/Users/user/Code/Python/BugMiner/tested_project/tika/src/test/java/org/apache/tika/TestParsers.java: Recompile with -Xlint:unchecked for details.
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ tika ---
+[INFO] Surefire report directory: C:\Users\user\Code\Python\BugMiner\tested_project\tika\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running org.apache.tika.mime.TestMimeTypes
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 1.038 sec <<< FAILURE!
+testCaseSensitivity(org.apache.tika.mime.TestMimeTypes)  Time elapsed: 0.015 sec  <<< FAILURE!
+junit.framework.AssertionFailedError: expected:<application/pdf -- null
+Aliases: 
+	application/x-pdf
+Patterns:
+	*.pdf
+Magics:  
+	[50/(FALSE OR [0:0(string)-null#160260441645])]
+> but was:<application/octet-stream -- null
+Aliases:  NONE
+Patterns:
+	*.bin
+Magics:  
+	[50/(((((FALSE OR [0:0(string)-null#7966]) OR [0:0(host16)-null#7967]) OR [0:0(host16)-null#8191]) OR [0:0(string)-null#-225]) OR [0:0(host16)-null#-13563])]
+>
+	at junit.framework.Assert.fail(Assert.java:47)
+	at junit.framework.Assert.failNotEquals(Assert.java:282)
+	at junit.framework.Assert.assertEquals(Assert.java:64)
+	at junit.framework.Assert.assertEquals(Assert.java:71)
+	at org.apache.tika.mime.TestMimeTypes.testCaseSensitivity(TestMimeTypes.java:47)
+
+
+Results :
+
+Failed tests:   testCaseSensitivity(org.apache.tika.mime.TestMimeTypes): expected:<application/pdf -- null(..)
+
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 15.078 s
+[INFO] Finished at: 2018-10-04T11:58:39+03:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.12.4:test (default-test) on project tika: There are test failures.
+[ERROR] 
+[ERROR] Please refer to C:\Users\user\Code\Python\BugMiner\tested_project\tika\target\surefire-reports for the individual test results.
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Build failures were ignored.

@@ -6,6 +6,7 @@
     <mapping directory="$PROJECT_DIR$/expected_requested_path/data" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/expected_requested_path/data/tika" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/expected_requested_path/tika" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mvn_parsers/static_files/tika" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/results/tika" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/results/tika/tika" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test_files/test_init" vcs="Git" />

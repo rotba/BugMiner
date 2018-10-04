@@ -137,15 +137,18 @@ class TestTest_Obj(unittest.TestCase):
         self.assertFalse(self.testcase_2.has_the_same_code_as(self.testcase_4))
 
     def test_change_surefire_ver(self):
-        test_dir = r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\test_files\test_change_surefire_ver'
+        # test_dir = r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\test_files\test_change_surefire_ver'
+        module = r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\tika'
         mvn_help_cmd = 'mvn help:describe -DgroupId=org.apache.maven.plugins -DartifactId=maven-surefire-plugin'
         excpected_version = '2.22.0'
-        module = self.test_4.module
-        
         test_parser.change_surefire_ver(module,excpected_version)
         poms = test_parser.get_all_pom_paths(module)
         self.assertTrue(len(poms)>0)
         for pom in poms:
+            print('#### checking '+pom+' ######')
+            if(os.path.normcase(r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\tika\tika-dotnet\pom.xml') ==os.path.normcase(pom)):
+                print('#### passing ' + pom + ' ######')
+                continue
             module_path = os.path.abspath(os.path.join(pom, os.pardir))
             with os.popen(mvn_help_cmd+' -f '+module_path) as proc:
                 tmp_file_path = 'tmp_file.txt'

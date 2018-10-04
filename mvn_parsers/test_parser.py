@@ -719,16 +719,15 @@ def change_surefire_ver(module, version):
     new_file_lines = []
     for pom in poms:
         xmlFile = parse(pom)
-        build = xmlFile.getElementsByTagName('build')
-        if len(build) == 0:
-            pass
-            # create build
-        assert len(build) == 1
-        tmp = build[0].getElementsByTagName('plugins')
+        tmp_build_list = xmlFile.getElementsByTagName('build')
+        build_list = list(filter(lambda b: not b.parentNode == None and b.parentNode.localName=='project' ,tmp_build_list))
+        if len(build_list) == 0:
+            continue
+        assert len(build_list) == 1
+        tmp = build_list[0].getElementsByTagName('plugins')
         plugins = list(filter(lambda t: t.parentNode.localName=='build', tmp))
         if len(plugins) == 0:
-            pass
-            # create plugins
+            continue
         assert len(plugins) == 1
         surefire_plugin = None
         for plugin in plugins[0].getElementsByTagName('plugin'):
@@ -740,8 +739,7 @@ def change_surefire_ver(module, version):
                 surefire_plugin = plugin
                 break
         if surefire_plugin==None:
-            # create surefire_plugin
-            pass
+            continue
         surefire_version = None
         surefire_version_sing = list(
             filter(lambda child: child.localName== 'version', surefire_plugin.childNodes))
@@ -754,7 +752,7 @@ def change_surefire_ver(module, version):
         assert len(surefire_version_sing) == 1
         surefire_version = surefire_version_sing[0]
         surefire_version.firstChild.data = version
-        os.rename(pom, pom[:-4]+'_old.xml')
+        os.remove(pom)
         with open(pom, 'w+') as f:
             f.write(xmlFile.toprettyxml())
 

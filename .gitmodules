@@ -1,3 +1,6 @@
 [submodule "mvn_parsers/static_files/GitMavenTrackingProject"]
 	path = mvn_parsers/static_files/GitMavenTrackingProject
 	url = https://github.com/rotba/GitMavenTrackingProject
+[submodule "mvn_parsers\\static_files\\tika"]
+	path = mvn_parsers\\static_files\\tika
+	url = https://github.com/apache/tika
