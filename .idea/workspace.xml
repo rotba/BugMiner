@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bug/bug.py" beforeDir="false" afterPath="$PROJECT_DIR$/bug/bug.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/src/test/java/p_1/AssafTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/src/test/java/p_1/AssafTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
@@ -14,7 +13,6 @@
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/test-classes/NaimTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/commons-math/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/distributedlog/distributedlog-core/src/test/java/org/apache/distributedlog/TestBKDistributedLogManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/distributedlog/distributedlog-core/src/test/java/org/apache/distributedlog/TestBKDistributedLogManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp_file.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,9 +115,9 @@
     <session id="1756668375">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -135,27 +133,39 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="pstat" value="5" />
-          <entry key="py" value="15" />
+          <entry key="py" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="Profiler Session" value="2" />
-          <entry key="Python" value="15" />
+          <entry key="Python" value="16" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
+            <state relative-caret-position="-129">
               <caret line="553" selection-start-line="553" selection-end-line="553" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bug/bug.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="382">
+              <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -252,10 +262,10 @@
         <option value="$PROJECT_DIR$/Applier.py" />
         <option value="$PROJECT_DIR$/generate_watch.py" />
         <option value="$PROJECT_DIR$/TestMain.py" />
-        <option value="$PROJECT_DIR$/bug/bug.py" />
         <option value="$PROJECT_DIR$/mvn_parsers/test_parser.py" />
         <option value="$PROJECT_DIR$/mvn_parsers/Test.py" />
         <option value="$PROJECT_DIR$/Main.py" />
+        <option value="$PROJECT_DIR$/bug/bug.py" />
       </list>
     </option>
   </component>
@@ -277,7 +287,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -288,27 +297,13 @@
             <path>
               <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
               <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
-              <item name="mvn_parsers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 (BugMiner) &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 (BugMiner) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
+              <item name="bug" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -506,8 +501,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15085287" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15245202" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -524,12 +520,12 @@
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49924356" weight="0.32827735" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="12" weight="0.3289689" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32936078" />
-      <window_info anchor="right" id="Coverage" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -775,10 +771,6 @@ print(ans)</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="75" selection-start-line="75" selection-end-line="75" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-            <marker date="1538479433205" expanded="true" signature="175:354" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -833,8 +825,6 @@ print(ans)</expression-string>
           <caret line="788" selection-start-line="788" selection-end-line="788" />
           <folding>
             <element signature="e#0#34#0" expanded="true" />
-            <marker date="1538592067192" expanded="true" signature="22233:25905" ph="..." />
-            <marker date="1538592067192" expanded="true" signature="25942:25947" ph="..." />
           </folding>
         </state>
       </provider>
@@ -849,25 +839,25 @@ print(ans)</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bug/bug.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="94" column="27" selection-start-line="94" selection-start-column="17" selection-end-line="94" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.2/system/snapshots/BugMiner.pstat">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
+        <state relative-caret-position="-129">
           <caret line="553" selection-start-line="553" selection-end-line="553" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bug/bug.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="35" column="36" lean-forward="true" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
