@@ -30,10 +30,10 @@ class Bug(object):
         return self._parent_hexsha
     @property
     def bugged_testcase(self):
-        return copy.deepcopy(self._bugged_testcase)
+        return self._bugged_testcase
     @property
     def fixed_testcase(self):
-        return copy.deepcopy(self._bugged_testcase)
+        return self._bugged_testcase
     @property
     def desctiption(self):
         return self._desc
