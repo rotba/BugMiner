@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mvn_parsers/static_files/tika" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvn_parsers/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/static_files/tika" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika/tika-parent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/static_files/tika/tika-parent/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika/tika-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/static_files/tika/tika-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvn_parsers/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/test_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvn_parsers/tmp_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/tmp_file.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/src/test/java/p_1/AssafTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/src/test/java/p_1/AssafTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -155,8 +144,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
+            <state relative-caret-position="245">
+              <caret line="47" selection-start-line="47" selection-end-line="47" />
             </state>
           </provider>
         </entry>
@@ -870,8 +859,8 @@ print(ans)</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="245">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
         </state>
       </provider>
     </entry>
