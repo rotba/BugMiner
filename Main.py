@@ -33,8 +33,9 @@ invalid_bugs_csv_handler = None
 dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/03" ORDER BY  createdDate ASC'
+surefire_version = '2.22.0'
 EARLIEST_BUG = 0
-USE_CACHE = False
+USE_CACHE = True
 GENERATE_DATA = True
 
 
@@ -80,6 +81,7 @@ def extract_bugs(issue, commit, tests_paths):
         try:
             start_time = time.time()
             commit_valid_testcases = []
+            test_parser.change_surefire_ver(proj_dir, surefire_version)
             run_mvn_tests(dict_modules_testcases[module], module)
             (commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
             git_cmds_wrapper(lambda: repo.git.reset('--hard'))
@@ -132,7 +134,10 @@ def extract_bugs(issue, commit, tests_paths):
 def run_mvn_tests(testcases, module):
     test_cmd = test_parser.generate_mvn_test_cmd(testcases, module)
     with os.popen(test_cmd) as proc:
-        with open('tmp_file.txt', 'w+') as tmp_file:
+        tmp_file_path = 'tmp_file.txt'
+        with open(tmp_file_path, "w+") as tmp_file:
+            duplicate_stdout(proc, tmp_file)
+        with open(tmp_file_path, "r") as tmp_file:
             duplicate_stdout(proc, tmp_file)
             build_report = tmp_file.read()
     if len(test_parser.get_compilation_error_report(build_report)) == 0:
@@ -604,8 +609,8 @@ def set_up(argv):
         lambda: git.Git(os.getcwd() + '\\tested_project').clone(urllib.parse.urlunparse(git_url).replace('\\', '/').replace('////','//')))
     logging.info('Finshed cloning ' + argv[1] + '...')
     repo = Repo(proj_dir)
-    if not os.path.isdir("cache"):
-        os.makedirs("cache")
+    if not os.path.isdir(cache_dir):
+        os.makedirs(cache_dir)
     branch_inspected = str(repo.branches[0])
     all_commits = list(repo.iter_commits(branch_inspected))
     if len(argv)>2:
@@ -618,7 +623,7 @@ def set_up(argv):
     try:
         bug_issues = jira.search_issues(JQL_QUERY, maxResults=MAX_ISSUES_TO_RETRIEVE)
     except jira_exceptions.JIRAError as e:
-        logging.debug(e)
+        logging.info(e)
     for issue in bug_issues:
         dict_key_issue[issue.key] = issue
 

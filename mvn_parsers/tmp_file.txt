@@ -1,0 +1,34 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< org.apache.tika:tika-xmp >----------------------
+[INFO] Building Apache Tika XMP 2.0.0-SNAPSHOT
+[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] 
+[INFO] --- maven-help-plugin:3.1.0:describe (default-cli) @ tika-xmp ---
+[INFO] org.apache.maven.plugins:maven-surefire-plugin:2.22.0
+
+Name: Maven Surefire Plugin
+Description: Maven Surefire MOJO in maven-surefire-plugin.
+Group Id: org.apache.maven.plugins
+Artifact Id: maven-surefire-plugin
+Version: 2.22.0
+Goal Prefix: surefire
+
+This plugin has 2 goals:
+
+surefire:help
+  Description: Display help information on maven-surefire-plugin.
+    Call mvn surefire:help -Ddetail=true -Dgoal=<goal-name> to display
+    parameter details.
+
+surefire:test
+  Description: Run tests using Surefire.
+
+For more information, run 'mvn help:describe [...] -Ddetail'
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 5.921 s
+[INFO] Finished at: 2018-10-04T11:41:44+03:00
+[INFO] ------------------------------------------------------------------------
