@@ -663,7 +663,7 @@ def generate_mvn_test_cmd(testcases, module):
     if module==proj_dir:
         ans = 'mvn clean test -fn'
     else:
-        ans = 'mvn -pl :{} -am clean test -fn'.format(
+        ans = 'mvn -pl :{} -am clean test -fn '.format(
             os.path.basename(module))
     #ans = 'mvn test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -Dtest='
     ans += ' -Dtest='
