@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/mvn_parsers/Test.py" line="159" />
+    <bookmark url="file://$PROJECT_DIR$/mvn_parsers/Test.py" line="161" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvn_parsers/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/pom2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/pom2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvn_parsers/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/test_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp_file.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,13 +62,13 @@
         <counts>
           <entry key="dummy" value="37" />
           <entry key="gitignore" value="39" />
-          <entry key="py" value="28308" />
+          <entry key="py" value="28329" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="76" />
-          <entry key="Python" value="28308" />
+          <entry key="Python" value="28329" />
         </counts>
       </usages-collector>
     </session>
@@ -158,8 +151,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mvn_parsers/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="144" column="35" selection-start-line="144" selection-start-column="35" selection-end-line="144" selection-end-column="35" />
+            <state relative-caret-position="119">
+              <caret line="143" column="8" selection-start-line="143" selection-start-column="8" selection-end-line="143" selection-end-column="8" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -554,6 +547,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15245202" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -605,7 +599,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mvn_parsers/Test.py</url>
-          <line>154</line>
+          <line>156</line>
           <option name="timeStamp" value="101" />
         </line-breakpoint>
       </breakpoints>
@@ -895,8 +889,8 @@ print(ans)</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/mvn_parsers/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="144" column="35" selection-start-line="144" selection-start-column="35" selection-end-line="144" selection-end-column="35" />
+        <state relative-caret-position="119">
+          <caret line="143" column="8" selection-start-line="143" selection-start-column="8" selection-end-line="143" selection-end-column="8" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

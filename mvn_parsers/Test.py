@@ -141,6 +141,7 @@ class TestTest_Obj(unittest.TestCase):
         mvn_help_cmd = 'mvn help:describe -DgroupId=org.apache.maven.plugins -DartifactId=maven-surefire-plugin'
         excpected_version = '2.22.0'
         module = self.test_4.module
+        
         test_parser.change_surefire_ver(module,excpected_version)
         poms = test_parser.get_all_pom_paths(module)
         self.assertTrue(len(poms)>0)
