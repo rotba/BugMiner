@@ -80,7 +80,6 @@ def extract_bugs(issue, commit, tests_paths):
         try:
             start_time = time.time()
             commit_valid_testcases = []
-            test_parser.change_poms(test_parser.change_surefire_ver ,module)
             run_mvn_tests(dict_modules_testcases[module], module)
             (commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
             git_cmds_wrapper(lambda: repo.git.reset('--hard'))
