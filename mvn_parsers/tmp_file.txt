@@ -1,0 +1,43 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.tika:tika:jar:0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ line 672, column 12
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-jar-plugin is missing. @ line 732, column 12
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO] 
+[INFO] ------------------------< org.apache.tika:tika >------------------------
+[INFO] Building Apache Tika 0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-help-plugin:3.1.0:describe (default-cli) @ tika ---
+[INFO] org.apache.maven.plugins:maven-surefire-plugin:2.22.0
+
+Name: Maven Surefire Plugin
+Description: Maven Surefire MOJO in maven-surefire-plugin.
+Group Id: org.apache.maven.plugins
+Artifact Id: maven-surefire-plugin
+Version: 2.22.0
+Goal Prefix: surefire
+
+This plugin has 2 goals:
+
+surefire:help
+  Description: Display help information on maven-surefire-plugin.
+    Call mvn surefire:help -Ddetail=true -Dgoal=<goal-name> to display
+    parameter details.
+
+surefire:test
+  Description: Run tests using Surefire.
+
+For more information, run 'mvn help:describe [...] -Ddetail'
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 3.657 s
+[INFO] Finished at: 2018-10-04T10:49:31+03:00
+[INFO] ------------------------------------------------------------------------

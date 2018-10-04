@@ -133,7 +133,10 @@ def extract_bugs(issue, commit, tests_paths):
 def run_mvn_tests(testcases, module):
     test_cmd = test_parser.generate_mvn_test_cmd(testcases, module)
     with os.popen(test_cmd) as proc:
-        with open('tmp_file.txt', 'w+') as tmp_file:
+        tmp_file_path = 'tmp_file.txt'
+        with open(tmp_file_path, "w+") as tmp_file:
+            duplicate_stdout(proc, tmp_file)
+        with open(tmp_file_path, "r") as tmp_file:
             duplicate_stdout(proc, tmp_file)
             build_report = tmp_file.read()
     if len(test_parser.get_compilation_error_report(build_report)) == 0:

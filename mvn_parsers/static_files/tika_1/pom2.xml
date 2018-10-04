@@ -698,6 +698,9 @@
           
 				<artifactId>maven-surefire-plugin</artifactId>
 				
+		  
+				<version>2.22.0</version>
+				
           
 				<configuration>
 					
@@ -723,7 +726,6 @@
 				</configuration>
 				
         
-				<version>2.22</version>
 			</plugin>
 			
       

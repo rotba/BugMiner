@@ -1,4 +1,5 @@
 import os
+import sys
 import unittest
 import test_parser
 
@@ -136,11 +137,26 @@ class TestTest_Obj(unittest.TestCase):
         self.assertFalse(self.testcase_2.has_the_same_code_as(self.testcase_4))
 
     def test_change_surefire_ver(self):
+        test_dir = r'C:\Users\user\Code\Python\BugMiner\mvn_parsers\static_files\test_files\test_change_surefire_ver'
+        mvn_help_cmd = 'mvn help:describe -DgroupId=org.apache.maven.plugins -DartifactId=maven-surefire-plugin'
+        excpected_version = '2.22.0'
         module = self.test_4.module
-        test_parser.change_surefire_ver(module,'2.22')
-        with open(self.test_4.get_xml_path(), 'r') as xml_file:
-            lines = xml_file.readlines()
-            self.assertTrue(lines[262] =='          <version>2.22</version>')
+        test_parser.change_surefire_ver(module,excpected_version)
+        poms = test_parser.get_all_pom_paths(module)
+        self.assertTrue(len(poms)>0)
+        for pom in poms:
+            module_path = os.path.abspath(os.path.join(pom, os.pardir))
+            with os.popen(mvn_help_cmd+' -f '+module_path) as proc:
+                tmp_file_path = 'tmp_file.txt'
+                with open(tmp_file_path, "w+") as tmp_file:
+                    duplicate_stdout(proc, tmp_file)
+                with open(tmp_file_path, "r") as tmp_file:
+                    duplicate_stdout(proc, tmp_file)
+                    build_report = tmp_file.readlines()
+                version_line_sing = list(filter(lambda l: l.startswith('Version: '),build_report))
+                assert len(version_line_sing) == 1
+                version_line = version_line_sing[0]
+                self.assertEqual(version_line.lstrip('Version: ').rstrip('\n'),excpected_version)
 
 
 
@@ -162,6 +178,15 @@ class TestTest_Obj(unittest.TestCase):
         compolation_error_testcases = Main.get_compilation_error_testcases(report, commit_new_testcases)
         self.assertTrue(expected_not_compiling_testcase in compolation_error_testcases,
                         "'MainTest#gooTest should have been picked as for compilation error")
+
+
+def duplicate_stdout(proc, file):
+    while(True):
+        line = proc.readline()
+        if line == '':
+            break
+        sys.stdout.write(line)
+        file.write(line)
 
 
 if __name__ == '__main__':

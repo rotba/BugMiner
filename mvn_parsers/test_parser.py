@@ -754,7 +754,8 @@ def change_surefire_ver(module, version):
         assert len(surefire_version_sing) == 1
         surefire_version = surefire_version_sing[0]
         surefire_version.firstChild.data = version
-        with open(pom[:-4]+'2.xml', 'w+') as f:
+        os.rename(pom, pom[:-4]+'_old.xml')
+        with open(pom, 'w+') as f:
             f.write(xmlFile.toprettyxml())
 
         dom = parse(pom)
