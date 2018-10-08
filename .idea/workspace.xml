@@ -1,26 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/mvn_parsers/Test.py" line="197" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BugMiner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BugMiner.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Applier.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvn_parsers/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/common-math" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/static_files/common-math" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvn_parsers/test_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/test_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvn_parsers/tmp_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mvn_parsers/tmp_file.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-bundle/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-bundle/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-dotnet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-dotnet/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-parent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-parent/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-parsers/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-parsers/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-parsers/src/test/java/org/apache/tika/parser/html/HtmlParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-parsers/src/test/java/org/apache/tika/parser/html/HtmlParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-xmp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-xmp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py.orig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test.py.orig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestApplier.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bug/bug.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/diff/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/diff/commitsdiff.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/diff/filediff.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate_watch.py" beforeDir="false" afterPath="$PROJECT_DIR$/generate_watch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/Test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/my_diff.diff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/src/main/java/p_1/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/src/test/java/Main_1_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/src/test/java/Main_2_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/src/test/java/p_1/MainTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/sub_mod_1/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/sub_mod_1/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/sub_mod_1/src/main/java/p_1/Amit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/sub_mod_1/src/test/java/MainTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/sub_mod_1/src/test/java/p_1/AmitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/sub_mod_2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/sub_mod_2/src/main/java/Naim.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/sub_mod_2/src/main/java/p_1/Assaf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/sub_mod_2/src/test/java/NaimTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject/sub_mod_2/src/test/java/p_1/AssafTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/TEST-org.apache.tika.cli.TikaCLIBatchCommandLineTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/common-math" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/test_get_compilation_error_testcases_report.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/CHANGES.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/NOTICE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/patches/MimeTypeTest.java.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/patches/MimeTypesTest.java.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/patches/PatternsTest.java.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/pom2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/pom_old.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/assembly/bin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/assembly/src.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/config/TikaConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/exception/TikaException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/metadata/CreativeCommons.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/metadata/DublinCore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/metadata/HttpHeaders.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/metadata/MSOffice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/metadata/Metadata.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/metadata/SpellCheckedMetadata.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/metadata/TikaMetadataKeys.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/metadata/TikaMimeKeys.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/metadata/package.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/mime/Clause.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/mime/HexCoDec.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/mime/Magic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/mime/MagicClause.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/mime/MagicMatch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/mime/MimeType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/mime/MimeTypeException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/mime/MimeTypes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/mime/MimeTypesFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/mime/MimeTypesReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/mime/Operator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/mime/Patterns.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/AutoDetectParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/EmptyParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/ErrorParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/Parser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/ParserDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/ParserPostProcessor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/html/HtmlParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/microsoft/ExcelParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/microsoft/FilteredStringWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/microsoft/OfficeParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/microsoft/PPTConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/microsoft/PowerPointExtractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/microsoft/PowerPointParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/microsoft/Slide.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/microsoft/TextBox.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/microsoft/Word6CHPBinTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/microsoft/Word6Extractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/microsoft/WordParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/microsoft/WordTextBuffer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/microsoft/WordTextPiece.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/opendocument/OpenOfficeEntityResolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/opendocument/OpenOfficeParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/pdf/PDF2XHTML.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/pdf/PDFParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/rtf/RTFParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/txt/TXTParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/parser/xml/XMLParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/sax/AppendableAdaptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/sax/ContentHandlerDecorator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/sax/TeeContentHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/sax/WriteOutContentHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/sax/XHTMLContentHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/utils/ParseUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/utils/RegexUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/utils/RereadableInputStream.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/utils/StringUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/java/org/apache/tika/utils/Utils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/resources/mime/tika-mimetypes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/main/resources/tika-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/site/SITE-README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/site/apt/index.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/site/resources/tika.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/site/resources/tika.xcf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/TestParsers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/TestRereadableInputStream.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/metadata/TestMetadata.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/metadata/TestSpellCheckedMetadata.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/mime/MimeTypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/mime/MimeTypesTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/mime/PatternsTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/mime/TestMimeTypes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/parser/AutoDetectParserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/parser/html/HtmlParserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/parser/microsoft/ExcelParserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/parser/microsoft/PowerPointParserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/parser/microsoft/WordParserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/parser/txt/TXTParserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/sax _1/AppendableAdaptorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/java/org/apache/tika/sax/AppendableAdaptorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/resources/log4j/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/resources/test-documents/test-documents.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/resources/test-documents/testEXCEL.xls" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/resources/test-documents/testHTML.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/resources/test-documents/testHTML_utf8.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/resources/test-documents/testOpenOffice2.odt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/resources/test-documents/testPDF.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/resources/test-documents/testPPT.ppt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/resources/test-documents/testRTF.rtf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/resources/test-documents/testTXT.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/resources/test-documents/testWORD.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/static_files/tika_1/src/test/resources/test-documents/testXML.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/test_parser.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvn_parsers/tmp_file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/org/apache/tika/parser/ner/opennlp/ner-date.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/org/apache/tika/parser/ner/opennlp/ner-location.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/org/apache/tika/parser/ner/opennlp/ner-organization.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/org/apache/tika/parser/ner/opennlp/ner-person.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static_files/watch.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/watch.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/MavenProj/sub_mod_2/src/test/java/p_1/AssafTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/MavenProj/sub_mod_2/src/test/java/p_1/AssafTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/MavenProj/sub_mod_2/target/test-classes/NaimTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp_file.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp_file.txt.orig" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,52 +180,53 @@
     <SUITE FILE_PATH="coverage/BugMiner$generate_watch.coverage" NAME="generate_watch Coverage Results" MODIFIED="1538479433243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$TestApplier.coverage" NAME="TestApplier Coverage Results" MODIFIED="1538312311785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1538661272871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BugMiner$Test.coverage" NAME="Test Coverage Results" MODIFIED="1538060931154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Test_mvn_parsers.coverage" NAME="Test_mvn_parsers Coverage Results" MODIFIED="1538659435918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvn_parsers" />
+    <SUITE FILE_PATH="coverage/BugMiner$Test.coverage" NAME="Test Coverage Results" MODIFIED="1538996237558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="859684521">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
-          <entry key="project.open.time.1" value="3" />
+          <entry key="project.closed" value="14" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="3" />
           <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.19" value="2" />
           <entry key="project.open.time.22" value="3" />
           <entry key="project.open.time.23" value="1" />
-          <entry key="project.open.time.26" value="1" />
+          <entry key="project.open.time.26" value="2" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.42" value="1" />
-          <entry key="project.opened" value="17" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gitignore" value="1" />
-          <entry key="py" value="72" />
-          <entry key="txt" value="1" />
+          <entry key="py" value="87" />
+          <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="72" />
+          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="Python" value="87" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="37" />
+          <entry key="dummy" value="41" />
           <entry key="gitignore" value="39" />
-          <entry key="py" value="29633" />
+          <entry key="py" value="30731" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="76" />
-          <entry key="Python" value="29633" />
+          <entry key="PLAIN_TEXT" value="80" />
+          <entry key="Python" value="30731" />
         </counts>
       </usages-collector>
     </session>
@@ -157,8 +300,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="168" selection-start-line="168" selection-end-line="168" />
+            <state relative-caret-position="276">
+              <caret line="593" column="71" selection-start-line="593" selection-start-column="71" selection-end-line="593" selection-end-column="71" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -167,45 +310,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvn_parsers/Test.py">
+        <entry file="file://$PROJECT_DIR$/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="175" column="21" selection-start-line="175" selection-start-column="21" selection-end-line="175" selection-end-column="21" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/unittest/case.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1434">
-              <caret line="614" selection-start-line="614" selection-end-line="614" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TestMain.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="249" selection-start-line="249" selection-end-line="249" />
+            <state relative-caret-position="154">
+              <caret line="337" selection-start-line="337" selection-end-line="337" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="355" selection-start-line="355" selection-end-line="355" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -222,28 +332,13 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>JQL_QUERY</find>
-      <find>cache_dir</find>
-      <find>`</find>
-      <find>main</find>
-      <find>patch_testcases</find>
-      <find>mvn_name</find>
-      <find>add_ti</find>
-      <find>Main.patch_testcases</find>
-      <find>generate_csv_tupple</find>
-      <find>branch_inspected</find>
-      <find>get_parent</find>
-      <find>run</find>
-      <find>generate_mvn</find>
       <find>tree</find>
       <find>REPORT</find>
       <find>CLASSREPORT</find>
       <find>it.__next__()</find>
-      <find>test_parser</find>
       <find>dupli</find>
       <find>build</find>
       <find>change_surefire_ver</find>
-      <find>proj_dir</find>
       <find>Exce</find>
       <find>duplicate_stdout</find>
       <find>surefire_plugin</find>
@@ -252,6 +347,21 @@
       <find>change_plugin_version_if_exists</find>
       <find>test_extract_bugs_2</find>
       <find>attach_reports</find>
+      <find>mvnpy</find>
+      <find>GitMavenTrackingProject</find>
+      <find>test_pa</find>
+      <find>mvn_repo</find>
+      <find>proj_dir</find>
+      <find>get_testcases</find>
+      <find>extra</find>
+      <find>my_bug</find>
+      <find>get_tests</find>
+      <find>test_par</find>
+      <find>CompilationErrorReport</find>
+      <find>test_parser</find>
+      <find>dump</find>
+      <find>urlparse</find>
+      <find>parse</find>
     </findStrings>
     <replaceStrings>
       <replace>issue_1378</replace>
@@ -280,6 +390,9 @@
       <replace>build_list</replace>
       <replace>super_module</replace>
       <replace>traceback.format_exc()</replace>
+      <replace>MavenProj</replace>
+      <replace>mvn_repo.repo_dir</replace>
+      <replace>Main.my_bug</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\Users\user\Code\Python\BugMiner\mvn_reports_tests</dir>
@@ -302,14 +415,18 @@
         <option value="$PROJECT_DIR$/mvn_reports_tests/test_parser.py" />
         <option value="$PROJECT_DIR$/mvn_parsers/compilation_error_parses.py" />
         <option value="$PROJECT_DIR$/test_Test_Obj.py" />
-        <option value="$PROJECT_DIR$/Test.py" />
         <option value="$PROJECT_DIR$/TestApplier.py" />
         <option value="$PROJECT_DIR$/Applier.py" />
-        <option value="$PROJECT_DIR$/generate_watch.py" />
         <option value="$PROJECT_DIR$/TestMain.py" />
         <option value="$PROJECT_DIR$/bug/bug.py" />
         <option value="$PROJECT_DIR$/mvn_parsers/test_parser.py" />
         <option value="$PROJECT_DIR$/mvn_parsers/Test.py" />
+        <option value="$PROJECT_DIR$/generate_watch.py" />
+        <option value="$PROJECT_DIR$/../mvnpy/mvnpy/test_parser.py" />
+        <option value="$PROJECT_DIR$/../mvnpy/mvnpy/Repo.py" />
+        <option value="$PROJECT_DIR$/Test.py" />
+        <option value="$PROJECT_DIR$/../mvnpy/mvnpy/mvn.py" />
+        <option value="$PROJECT_DIR$/../mvnpy/mvnpy/CompilationErrorObject.py" />
         <option value="$PROJECT_DIR$/Main.py" />
       </list>
     </option>
@@ -340,26 +457,6 @@
               <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
               <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
-              <item name="mvn_parsers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 (BugMiner) &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 3.7 (BugMiner) &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -369,7 +466,7 @@
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="testma&#9;FILE&#9;file://C:/Users/TEMP/BugMiner/TestMain.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mvnpy/mvnpy" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -395,7 +492,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.Test">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -403,35 +500,13 @@
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:\Users\user\AppData\Local\Programs\Python\Python37\python3.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="https:\github.com\apache\tika http:\issues.apache.org\jira\projects\TIKA TIKA-889" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="TestApplier" type="PythonConfigurationType" factoryName="Python">
-      <module name="BugMiner" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\user\Code\Python\BugMiner\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TestApplier.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -440,86 +515,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="TestMain" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="Test" type="PythonConfigurationType" factoryName="Python">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TestMain.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test_mvn_parsers" type="PythonConfigurationType" factoryName="Python">
-      <module name="BugMiner" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mvn_parsers" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mvn_parsers/Test.py" />
-      <option name="PARAMETERS" value="TestTest_Obj.test_change_surefire_ver_1 TestTest_Obj.test_change_surefire_ver_2" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="generate_watch" type="PythonConfigurationType" factoryName="Python">
-      <module name="BugMiner" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\TEMP\BugMiner\venv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\user\Anaconda2\python2.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_watch.py" />
-      <option name="PARAMETERS" value="C:\Users\TEMP\BugMiner\results\tika\data" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="tmp" type="PythonConfigurationType" factoryName="Python">
-      <module name="BugMiner" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\user\Code\Python\BugMiner\venv\Scripts\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tmp.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -530,11 +539,7 @@
     </configuration>
     <list>
       <item itemvalue="Python.Main" />
-      <item itemvalue="Python.generate_watch" />
-      <item itemvalue="Python.TestApplier" />
-      <item itemvalue="Python.Test_mvn_parsers" />
-      <item itemvalue="Python.TestMain" />
-      <item itemvalue="Python.tmp" />
+      <item itemvalue="Python.Test" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -561,14 +566,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15245202" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10660981" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32871974" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6323752" weight="0.3575298" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49621785" visible="true" weight="0.4182015" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6323752" visible="true" weight="0.4734561" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49621785" weight="0.4171181" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
@@ -600,6 +606,22 @@
       <path value="$PROJECT_DIR$/static_files/GitMavenTrackingProject" />
       <path value="$PROJECT_DIR$/tested_project/tika_installed" />
       <path value="$PROJECT_DIR$/mvn_parsers/static_files/GitMavenTrackingProject" />
+      <path value="$PROJECT_DIR$/expected_requested_path" />
+      <path value="$PROJECT_DIR$/expected_requested_path/data" />
+      <path value="$PROJECT_DIR$/expected_requested_path/data/tika" />
+      <path value="$PROJECT_DIR$/expected_requested_path/tika" />
+      <path value="$PROJECT_DIR$/mvn_parsers/static_files/common-math" />
+      <path value="$PROJECT_DIR$/mvn_parsers/static_files/tika" />
+      <path value="$PROJECT_DIR$/results/tika" />
+      <path value="$PROJECT_DIR$/results/tika/tika" />
+      <path value="$PROJECT_DIR$/test_files/test_init/data" />
+      <path value="$PROJECT_DIR$/test_files/test_init/data/tika" />
+      <path value="$PROJECT_DIR$/tested_project/cayenne" />
+      <path value="$PROJECT_DIR$/tested_project/chainsaw" />
+      <path value="$PROJECT_DIR$/tested_project/commons-lang" />
+      <path value="$PROJECT_DIR$/tested_project/distributedlog" />
+      <path value="$PROJECT_DIR$/tested_project/maven-indexer" />
+      <path value="$PROJECT_DIR$/tested_project/maven-site-plugin" />
     </ignored-roots>
   </component>
   <component name="XDebuggerManager">
@@ -607,8 +629,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>85</line>
-          <option name="timeStamp" value="135" />
+          <line>593</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -688,47 +710,47 @@ print(ans)</expression-string>
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>git_url.geturl().replace('\\', '/').replace('////','//')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>urlparse(git_url.geturl())</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>git_url.geturl()</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>urlparse(git_url.geturl()).replace('\\', '/').replace('////','//')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>git_url</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>urlparse(git_url)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>str(urlparse(str(git_url)))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>urlparse(str(git_url))</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>os.getcwd()</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>plugins[0].getElementsByTagName('plugin')</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>plugins[1].getElementsByTagName('plugin')</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>ord('&gt;')</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>ord('&lt;')</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>ord(str[3])</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>str[3]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>int(str[3])</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>str</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -756,13 +778,7 @@ print(ans)</expression-string>
     <entry file="file://$PROJECT_DIR$/mvn_parsers/compilation_error_parses.py" />
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/git/diff.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/subprocess.py" />
-    <entry file="file://$PROJECT_DIR$/diff/filediff.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/diff/filediff.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/genericpath.py" />
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/models.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/csv.py" />
@@ -784,20 +800,8 @@ print(ans)</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Applier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="8" selection-start-line="4" selection-end-line="4" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestApplier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" column="101" selection-start-line="23" selection-start-column="101" selection-end-line="23" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Applier.py" />
+    <entry file="file://$PROJECT_DIR$/TestApplier.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
@@ -809,13 +813,6 @@ print(ans)</expression-string>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="148">
           <caret line="311" selection-start-line="311" selection-end-line="311" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generate_watch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="75" selection-start-line="75" selection-end-line="75" />
         </state>
       </provider>
     </entry>
@@ -854,16 +851,7 @@ print(ans)</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bug/bug.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="651">
-          <caret line="325" column="30" selection-start-line="325" selection-start-column="30" selection-end-line="325" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/bug/bug.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/xml/dom/pulldom.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -871,37 +859,60 @@ print(ans)</expression-string>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py" />
+    <entry file="file://$PROJECT_DIR$/mvn_parsers/Test.py" />
+    <entry file="file://$PROJECT_DIR$/generate_watch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="10" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../mvnpy/mvnpy/CompilationErrorObject.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../mvnpy/mvnpy/mvn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../mvnpy/mvnpy/Repo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2731">
+          <caret line="168" selection-start-line="168" selection-end-line="168" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tmp_file.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/unittest/case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1434">
+        <state relative-caret-position="151">
           <caret line="614" selection-start-line="614" selection-end-line="614" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvn_parsers/test_parser.py">
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/urlparse.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="355" selection-start-line="355" selection-end-line="355" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="152">
+          <caret line="181" selection-start-line="181" selection-end-line="181" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvn_parsers/Test.py">
+    <entry file="file://$PROJECT_DIR$/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="175" column="21" selection-start-line="175" selection-start-column="21" selection-end-line="175" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TestMain.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="249" selection-start-line="249" selection-end-line="249" />
+        <state relative-caret-position="154">
+          <caret line="337" selection-start-line="337" selection-end-line="337" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
@@ -910,8 +921,8 @@ print(ans)</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="168" selection-start-line="168" selection-end-line="168" />
+        <state relative-caret-position="276">
+          <caret line="593" column="71" selection-start-line="593" selection-start-column="71" selection-end-line="593" selection-end-column="71" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>

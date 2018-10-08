@@ -2,96 +2,68 @@
 [INFO] ------------------------------------------------------------------------
 [INFO] Reactor Build Order:
 [INFO] 
-[INFO] Apache Tika parent                                                 [pom]
-[INFO] Apache Tika core                                                [bundle]
-[INFO] Apache Tika parsers                                             [bundle]
+[INFO] GMT_P                                                              [pom]
+[INFO] sub_mod_2                                                          [jar]
 [INFO] 
-[INFO] --------------------< org.apache.tika:tika-parent >---------------------
-[INFO] Building Apache Tika parent 1.3-SNAPSHOT                           [1/3]
+[INFO] ----------------------------< GMT_P:GMT_P >-----------------------------
+[INFO] Building GMT_P 1.0-SNAPSHOT                                        [1/2]
 [INFO] --------------------------------[ pom ]---------------------------------
 [INFO] 
-[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ tika-parent ---
-[INFO] Deleting C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-parent\target
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ GMT_P ---
 [INFO] 
-[INFO] --- maven-remote-resources-plugin:1.2.1:process (default) @ tika-parent ---
+[INFO] --------------------------< GMT_P:sub_mod_2 >---------------------------
+[INFO] Building sub_mod_2 1.0-SNAPSHOT                                    [2/2]
+[INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
-[INFO] ---------------------< org.apache.tika:tika-core >----------------------
-[INFO] Building Apache Tika core 1.3-SNAPSHOT                             [2/3]
-[INFO] -------------------------------[ bundle ]-------------------------------
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ sub_mod_2 ---
 [INFO] 
-[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ tika-core ---
-[INFO] Deleting C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-core\target
-[INFO] 
-[INFO] --- maven-remote-resources-plugin:1.2.1:process (default) @ tika-core ---
-[INFO] 
-[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ tika-core ---
-[debug] execute contextualize
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ sub_mod_2 ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] Copying 29 resources
-[INFO] Copying 3 resources
+[INFO] skip non existing resourceDirectory C:\Users\user\Code\Python\BugMiner\tested_project\MavenProj\sub_mod_2\src\main\resources
 [INFO] 
-[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ tika-core ---
-[INFO] Compiling 171 source files to C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-core\target\classes
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ sub_mod_2 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to C:\Users\user\Code\Python\BugMiner\tested_project\MavenProj\sub_mod_2\target\classes
 [INFO] 
-[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ tika-core ---
-[debug] execute contextualize
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ sub_mod_2 ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] Copying 36 resources
-[INFO] Copying 3 resources
+[INFO] skip non existing resourceDirectory C:\Users\user\Code\Python\BugMiner\tested_project\MavenProj\sub_mod_2\src\test\resources
 [INFO] 
-[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ tika-core ---
-[INFO] Compiling 34 source files to C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-core\target\test-classes
-[INFO] 
-[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ tika-core ---
-[INFO] 
-[INFO] --------------------< org.apache.tika:tika-parsers >--------------------
-[INFO] Building Apache Tika parsers 1.3-SNAPSHOT                          [3/3]
-[INFO] -------------------------------[ bundle ]-------------------------------
-[INFO] 
-[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ tika-parsers ---
-[INFO] Deleting C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-parsers\target
-[INFO] 
-[INFO] --- maven-remote-resources-plugin:1.2.1:process (default) @ tika-parsers ---
-[INFO] 
-[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ tika-parsers ---
-[debug] execute contextualize
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] Copying 4 resources
-[INFO] Copying 3 resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ tika-parsers ---
-[INFO] Compiling 133 source files to C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-parsers\target\classes
-[INFO] 
-[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ tika-parsers ---
-[debug] execute contextualize
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] Copying 300 resources
-[INFO] Copying 3 resources
-[INFO] 
-[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ tika-parsers ---
-[INFO] Compiling 75 source files to C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-parsers\target\test-classes
-[INFO] 
-[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ tika-parsers ---
-[INFO] 
-[INFO] -------------------------------------------------------
-[INFO]  T E S T S
-[INFO] -------------------------------------------------------
-[INFO] Running org.apache.tika.parser.html.HtmlParserTest
-[INFO] Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.036 s - in org.apache.tika.parser.html.HtmlParserTest
-[INFO] 
-[INFO] Results:
-[INFO] 
-[INFO] Tests run: 30, Failures: 0, Errors: 0, Skipped: 0
-[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ sub_mod_2 ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to C:\Users\user\Code\Python\BugMiner\tested_project\MavenProj\sub_mod_2\target\test-classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/user/Code/Python/BugMiner/tested_project/MavenProj/sub_mod_2/src/test/java/p_1/AssafTest.java:[22,23] cannot find symbol
+  symbol:   method notComp()
+  location: variable a of type p_1.Assaf
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
 [INFO] ------------------------------------------------------------------------
 [INFO] Reactor Summary:
 [INFO] 
-[INFO] Apache Tika parent 1.3-SNAPSHOT .................... SUCCESS [  1.703 s]
-[INFO] Apache Tika core ................................... SUCCESS [ 27.998 s]
-[INFO] Apache Tika parsers 1.3-SNAPSHOT ................... SUCCESS [ 37.306 s]
+[INFO] GMT_P 1.0-SNAPSHOT ................................. SUCCESS [  0.625 s]
+[INFO] sub_mod_2 1.0-SNAPSHOT ............................. FAILURE [  3.805 s]
 [INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
+[INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 01:08 min
-[INFO] Finished at: 2018-10-04T17:01:57+03:00
+[INFO] Total time: 4.695 s
+[INFO] Finished at: 2018-10-08T14:06:43+03:00
 [INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:testCompile (default-testCompile) on project sub_mod_2: Compilation failure
+[ERROR] /C:/Users/user/Code/Python/BugMiner/tested_project/MavenProj/sub_mod_2/src/test/java/p_1/AssafTest.java:[22,23] cannot find symbol
+[ERROR]   symbol:   method notComp()
+[ERROR]   location: variable a of type p_1.Assaf
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[ERROR] 
+[ERROR] After correcting the problems, you can resume the build with the command
+[ERROR]   mvn <goals> -rf :sub_mod_2
+[INFO] Build failures were ignored.
