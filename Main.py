@@ -36,7 +36,7 @@ MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/03" ORDER BY  createdDate ASC'
 surefire_version = '2.22.0'
 EARLIEST_BUG = 0
-USE_CACHE = False
+USE_CACHE = True
 GENERATE_DATA = True
 
 
