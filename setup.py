@@ -1,10 +1,10 @@
 from setuptools import setup, find_packages
 
-install_requires = ['GitPython', 'javalang', 'distance', 'jira']
+install_requires = ['GitPython', 'javalang', 'distance', 'jira', 'mvnpy', 'urlparse']
 
 setup(
     name='BugMiner',
-    version='1.0.0',
+    version='1.0.1',
     packages=find_packages(),
     url='https://github.com/rotba/BugMiner',
     license='',

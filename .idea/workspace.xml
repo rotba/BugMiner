@@ -10,6 +10,7 @@
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/GitMavenTrackingProject/sub_mod_2/target/test-classes/NaimTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/commons-math/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/commons-math/src/test/java/org/apache/commons/math3/linear/SingularValueDecompositionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/commons-math/src/test/java/org/apache/commons/math3/linear/SingularValueDecompositionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/distributedlog/distributedlog-core/src/test/java/org/apache/distributedlog/TestBKDistributedLogManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/distributedlog/distributedlog-core/src/test/java/org/apache/distributedlog/TestBKDistributedLogManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp_file.txt" afterDir="false" />
     </list>
@@ -291,7 +292,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1296" />
