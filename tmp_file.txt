@@ -1,69 +1,76 @@
 [INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.tika:tika-core:bundle:0.4-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.felix:maven-bundle-plugin is missing. @ org.apache.tika:tika-core:[unknown-version], C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-core\pom.xml, line 129, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.tika:tika-parsers:bundle:0.4-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.felix:maven-bundle-plugin is missing. @ org.apache.tika:tika-parsers:[unknown-version], C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-parsers\pom.xml, line 425, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.tika:tika-app:bundle:0.4-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.felix:maven-bundle-plugin is missing. @ org.apache.tika:tika-app:[unknown-version], C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-app\pom.xml, line 134, column 12
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.tika:tika-reactor:pom:0.4-SNAPSHOT
+[WARNING] 'parent.relativePath' of POM org.apache.tika:tika-parent:0.4-SNAPSHOT (C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-parent\pom.xml) points at org.apache.tika:tika-reactor instead of org.apache:apache, please verify your project structure @ org.apache.tika:tika-parent:0.4-SNAPSHOT, C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-parent\pom.xml, line 31, column 10
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-site-plugin is missing. @ org.apache.tika:tika-reactor:[unknown-version], C:\Users\user\Code\Python\BugMiner\tested_project\tika\pom.xml, line 188, column 12
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-deploy-plugin is missing. @ org.apache.tika:tika-reactor:[unknown-version], C:\Users\user\Code\Python\BugMiner\tested_project\tika\pom.xml, line 154, column 12
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
 [INFO] ------------------------------------------------------------------------
 [INFO] Reactor Build Order:
 [INFO] 
-[INFO] GMT_P                                                              [pom]
-[INFO] sub_mod_2                                                          [jar]
+[INFO] Apache Tika parent                                                 [pom]
+[INFO] Apache Tika core                                                [bundle]
 [INFO] 
-[INFO] ----------------------------< GMT_P:GMT_P >-----------------------------
-[INFO] Building GMT_P 1.0-SNAPSHOT                                        [1/2]
+[INFO] --------------------< org.apache.tika:tika-parent >---------------------
+[INFO] Building Apache Tika parent 0.4-SNAPSHOT                           [1/2]
 [INFO] --------------------------------[ pom ]---------------------------------
 [INFO] 
-[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ GMT_P ---
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ tika-parent ---
 [INFO] 
-[INFO] --------------------------< GMT_P:sub_mod_2 >---------------------------
-[INFO] Building sub_mod_2 1.0-SNAPSHOT                                    [2/2]
-[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] ---------------------< org.apache.tika:tika-core >----------------------
+[INFO] Building Apache Tika core 0.4-SNAPSHOT                             [2/2]
+[INFO] -------------------------------[ bundle ]-------------------------------
 [INFO] 
-[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ sub_mod_2 ---
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ tika-core ---
+[INFO] Deleting C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-core\target
 [INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ sub_mod_2 ---
+[INFO] --- maven-resources-plugin:2.3:resources (default-resources) @ tika-core ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory C:\Users\user\Code\Python\BugMiner\tested_project\MavenProj\sub_mod_2\src\main\resources
+[INFO] Copying 4 resources
 [INFO] 
-[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ sub_mod_2 ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 2 source files to C:\Users\user\Code\Python\BugMiner\tested_project\MavenProj\sub_mod_2\target\classes
+[INFO] --- maven-compiler-plugin:2.0.2:compile (default-compile) @ tika-core ---
+[INFO] Compiling 81 source files to C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-core\target\classes
 [INFO] 
-[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ sub_mod_2 ---
+[INFO] --- maven-resources-plugin:2.3:testResources (default-testResources) @ tika-core ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory C:\Users\user\Code\Python\BugMiner\tested_project\MavenProj\sub_mod_2\src\test\resources
+[INFO] Copying 11 resources
 [INFO] 
-[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ sub_mod_2 ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 2 source files to C:\Users\user\Code\Python\BugMiner\tested_project\MavenProj\sub_mod_2\target\test-classes
-[INFO] -------------------------------------------------------------
-[ERROR] COMPILATION ERROR : 
-[INFO] -------------------------------------------------------------
-[ERROR] /C:/Users/user/Code/Python/BugMiner/tested_project/MavenProj/sub_mod_2/src/test/java/p_1/AssafTest.java:[22,23] cannot find symbol
-  symbol:   method notComp()
-  location: variable a of type p_1.Assaf
-[INFO] 1 error
-[INFO] -------------------------------------------------------------
+[INFO] --- maven-compiler-plugin:2.0.2:testCompile (default-testCompile) @ tika-core ---
+[INFO] Compiling 14 source files to C:\Users\user\Code\Python\BugMiner\tested_project\tika\tika-core\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ tika-core ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.tika.detect.TypeDetectorTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s - in org.apache.tika.detect.TypeDetectorTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
 [INFO] ------------------------------------------------------------------------
 [INFO] Reactor Summary:
 [INFO] 
-[INFO] GMT_P 1.0-SNAPSHOT ................................. SUCCESS [  0.625 s]
-[INFO] sub_mod_2 1.0-SNAPSHOT ............................. FAILURE [  3.805 s]
+[INFO] Apache Tika parent 0.4-SNAPSHOT .................... SUCCESS [  0.406 s]
+[INFO] Apache Tika core 0.4-SNAPSHOT ...................... SUCCESS [ 12.763 s]
 [INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
+[INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 4.695 s
-[INFO] Finished at: 2018-10-08T14:06:43+03:00
+[INFO] Total time: 16.752 s
+[INFO] Finished at: 2018-10-08T17:03:33+03:00
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:testCompile (default-testCompile) on project sub_mod_2: Compilation failure
-[ERROR] /C:/Users/user/Code/Python/BugMiner/tested_project/MavenProj/sub_mod_2/src/test/java/p_1/AssafTest.java:[22,23] cannot find symbol
-[ERROR]   symbol:   method notComp()
-[ERROR]   location: variable a of type p_1.Assaf
-[ERROR] 
-[ERROR] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-[ERROR] 
-[ERROR] After correcting the problems, you can resume the build with the command
-[ERROR]   mvn <goals> -rf :sub_mod_2
-[INFO] Build failures were ignored.

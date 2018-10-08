@@ -7,7 +7,7 @@ import logging
 import time
 from mvnpy import TestObjects
 from mvnpy import Repo as MavenRepo
-from mvnpy import bug as my_bug
+from mvnpy import bug as mvn_bug
 from mvnpy import mvn
 import git
 from functools import reduce
@@ -58,7 +58,7 @@ def main(argv):
                                 tests_paths=possible_bug[2])
             if GENERATE_DATA:
                 bug_data_handler.add_bugs(bugs)
-        except my_bug.BugError as e:
+        except mvn_bug.BugError as e:
             logging.info('BUG ERROR  '+e.msg+'\n'+traceback.format_exc())
         except TestObjects.TestParserException as e:
             logging.info('TEST PARSER ERROR  '+e.msg+'\n'+traceback.format_exc())
@@ -94,11 +94,11 @@ def extract_bugs(issue, commit, tests_paths):
             if GENERATE_DATA:
                 dict_testcase_patch = get_bug_patches(patched_testcases, dict_testclass_bug_dir)
             for unpatchable_testcase in unpatchable_testcases:
-                ans.append(my_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=unpatchable_testcase[0],fixed_testcase= unpatchable_testcase[0],
-                                      type=my_bug.bug.determine_type(unpatchable_testcase[0], delta_testcases),valid=False,desc=unpatchable_testcase[1]))
+                ans.append(mvn_bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=unpatchable_testcase[0],fixed_testcase= unpatchable_testcase[0],
+                                      type=mvn_bug.determine_type(unpatchable_testcase[0], delta_testcases),valid=False,desc=unpatchable_testcase[1]))
             for no_report_testcase in no_report_testcases:
-                ans.append(my_bug.bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=no_report_testcase,fixed_testcase= no_report_testcase,
-                                          type=my_bug.bug.determine_type(no_report_testcase, delta_testcases),valid=False,desc='No report'))
+                ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=no_report_testcase,fixed_testcase= no_report_testcase,
+                                          type=mvn_bug.determine_type(no_report_testcase, delta_testcases),valid=False,desc='No report'))
             mvn_repo.change_surefire_ver(surefire_version)
             run_mvn_tests(dict_modules_testcases[module], module)
             #parent_tests = test_parser.get_tests(module)
@@ -107,20 +107,20 @@ def extract_bugs(issue, commit, tests_paths):
             relevant_parent_testcases = list(filter(lambda t: t in commit_valid_testcases, all_parent_testcases))
             (parent_valid_testcases, no_report_testcases) = attach_reports(relevant_parent_testcases)
             for no_report_testcase in no_report_testcases:
-                ans.append(my_bug.bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=no_report_testcase,fixed_testcase= no_report_testcase,
-                                          type=my_bug.bug.determine_type(no_report_testcase, delta_testcases),valid=False,desc='No report'))
+                ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=no_report_testcase,fixed_testcase= no_report_testcase,
+                                          type=mvn_bug.determine_type(no_report_testcase, delta_testcases),valid=False,desc='No report'))
             if GENERATE_DATA:
                 bug_data_handler.attach_reports(issue, commit, parent_valid_testcases)
             for testcase in commit_valid_testcases:
                 if testcase in parent_valid_testcases:
                     parent_testcase = [t for t in parent_valid_testcases if t == testcase][0]
-                    bug = my_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
-                                            parent_testcase=parent_testcase, type=my_bug.determine_type(testcase, delta_testcases))
+                    bug = mvn_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
+                                            parent_testcase=parent_testcase, type=mvn_bug.determine_type(testcase, delta_testcases))
                     ans.append(bug)
             end_time = time.time()
             if GENERATE_DATA:
                 bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time)
-        except my_bug.BugError as e:
+        except mvn_bug.BugError as e:
             end_time = time.time()
             if GENERATE_DATA:
                 bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time, 'Failed - '+e.msg)
@@ -140,7 +140,7 @@ def run_mvn_tests(testcases, module):
     if len(mvn.get_compilation_error_report(build_report)) == 0:
         return
     else:
-        raise my_bug.BugError('SUBMODULE BUILD FALUIRE ON MODULE {}:\n'.format(module) + build_report)
+        raise mvn_bug.BugError('SUBMODULE BUILD FALUIRE ON MODULE {}:\n'.format(module) + build_report)
 
 
 # Attaches reports to testcases and returns the testcases that reports were successfully attached to them.
@@ -382,7 +382,7 @@ def get_uncompiled_testcases(testcases_diff_groups):
             error_testcases = mvn.get_compilation_error_testcases(compilation_error_report)
             if any(t.src_path == associated_file for t in error_testcases):
                 if len(relevant_error_testcases) == 0:
-                    raise my_bug.BugError(
+                    raise mvn_bug.BugError(
                         'Patching generated compilation error not associated to testcases.' +
                         '\nCompilation error report:\n' +
                         reduce((lambda x, y: x + '\n' + y), compilation_error_report))
@@ -583,10 +583,10 @@ def set_up(argv):
         os.makedirs(cache_dir)
     if GENERATE_DATA:
         if os.path.isdir(data_dir):
-            raise my_bug.BugError('The data currently in the project result dir ({}) will be overwritten.'
+            raise mvn_bug.BugError('The data currently in the project result dir ({}) will be overwritten.'
                                   ' Please backup it in another directory'.format(proj_results_dir))
         os.makedirs(data_dir)
-        bug_data_handler = my_bug.Bug_data_handler(data_dir)
+        bug_data_handler = mvn_bug.Bug_data_handler(data_dir)
     LOG_FILENAME = os.path.join(proj_results_dir, 'log.log')
     logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO, format='%(asctime)s %(message)s')
     logging.info('Started cloning ' + argv[1] + '... ')

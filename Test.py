@@ -244,7 +244,7 @@ class TestMain(unittest.TestCase):
         tests_paths = Main.get_tests_paths_from_commit(commit)
         res = Main.extract_bugs(issue, commit, tests_paths)
         for bug in res:
-            if bug.valid==True and bug.bugged_testcase.id == exp_testcase_id and bug.type == Main.my_bug.Bug_type.DELTA:
+            if bug.valid==True and bug.bugged_testcase.id == exp_testcase_id and bug.type == Main.mvn_bug_type.DELTA:
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
@@ -260,7 +260,7 @@ class TestMain(unittest.TestCase):
         tests_paths = Main.get_tests_paths_from_commit(commit)
         res = Main.extract_bugs(issue, commit, tests_paths)
         for bug in res:
-            if bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type == Main.my_bug.Bug_type.DELTA:
+            if bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type == Main.mvn_bug_type.DELTA:
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
@@ -276,8 +276,8 @@ class TestMain(unittest.TestCase):
         tests_paths = Main.get_tests_paths_from_commit(commit)
         res = Main.extract_bugs(issue, commit, tests_paths)
         for bug in res:
-            if not bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type==Main.my_bug.Bug_type.REGRESSION\
-                and bug.desctiption.startswith(Main.my_bug.invalid_rt_error_desc):
+            if not bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type==Main.mvn_bug_type.REGRESSION\
+                and bug.desctiption.startswith(Main.mvn_bug.invalid_rt_error_desc):
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
@@ -293,8 +293,8 @@ class TestMain(unittest.TestCase):
         tests_paths = Main.get_tests_paths_from_commit(commit)
         res = Main.extract_bugs(issue, commit, tests_paths)
         for bug in res:
-            if not bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type==Main.my_bug.Bug_type.DELTA\
-                    and bug.desctiption == Main.my_bug.invalid_passed_desc:
+            if not bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type==Main.mvn_bug_type.DELTA\
+                    and bug.desctiption == Main.mvn_bug.invalid_passed_desc:
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
@@ -311,7 +311,7 @@ class TestMain(unittest.TestCase):
         tests_paths = Main.get_tests_paths_from_commit(commit)
         res = Main.extract_bugs(issue, commit, tests_paths)[0]
         for bug in res:
-            if bug.bugged_testcase.id == exp_testcase_id and bug.desctiption == Main.my_bug.invalid_delta_rt_error_desc:
+            if bug.bugged_testcase.id == exp_testcase_id and bug.desctiption == Main.mvn_bug.invalid_delta_rt_error_desc:
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
