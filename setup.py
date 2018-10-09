@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-install_requires = ['GitPython', 'javalang', 'distance', 'jira', 'mvnpy', 'urlparse']
+install_requires = ['GitPython', 'javalang', 'distance', 'jira', 'mvnpy']
 
 setup(
     name='BugMiner',
