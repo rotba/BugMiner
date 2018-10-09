@@ -5,6 +5,7 @@ import traceback
 import os
 import logging
 import time
+import copy
 from mvnpy import TestObjects
 from mvnpy import Repo as MavenRepo
 from mvnpy import bug as mvn_bug
@@ -31,6 +32,7 @@ patches_dir = ''
 proj_results_dir = ''
 cache_dir = ''
 data_dir = ''
+tmp_files_dir = ''
 bug_data_handler = ''
 valid_bugs_csv_handler = None
 invalid_bugs_csv_handler = None
@@ -84,6 +86,7 @@ def extract_bugs(issue, commit, tests_paths):
     for module in dict_modules_testcases:
         try:
             start_time = time.time()
+            module_bugs = []
             commit_valid_testcases = []
             mvn_repo.change_surefire_ver(surefire_version)
             run_mvn_tests(dict_modules_testcases[module], module)
@@ -116,7 +119,15 @@ def extract_bugs(issue, commit, tests_paths):
                     parent_testcase = [t for t in parent_valid_testcases if t == testcase][0]
                     bug = mvn_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
                                             parent_testcase=parent_testcase, type=mvn_bug.determine_type(testcase, delta_testcases))
-                    ans.append(bug)
+                    module_bugs.append(bug)
+            passed_delta_bugs = list(filter(lambda b: b.type ==mvn_bug.Bug_type.DELTA and b.desctiption ==mvn_bug.invalid_passed_desc, module_bugs))
+            passed_delta_testcases = list(map(lambda b: b.bugged_testcase,passed_delta_bugs))
+            dict_testcases_files = store_test_files(passed_delta_testcases)
+            try:
+                ans += try_grandparents(issue=issue,testcases=passed_delta_testcases,dict_testcases_files=dict_testcases_files , commit=commit, parent=parent)
+            except Exception as e:
+                logging.info('SHOULD NOT HAPPEN EXCEPRION ' + str(e) + '\n' + traceback.format_exc())
+            ans+=module_bugs
             end_time = time.time()
             if GENERATE_DATA:
                 bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time)
@@ -133,6 +144,40 @@ def extract_bugs(issue, commit, tests_paths):
     git_cmds_wrapper(lambda: repo.git.reset('--hard'))
     return ans
 
+# Tries to run the tests in grandparents commits
+def try_grandparents(issue ,parent, commit, testcases,dict_testcases_files):
+    ans = []
+    testcases_copy = list(map(lambda t: copy.deepcopy(t), testcases))
+    i=0
+    typs = [mvn_bug.Bug_type.DELTA_2,mvn_bug.Bug_type.DELTA_3]
+    curr_comit = parent
+    while i < 2:
+        curr_parent = get_parent(curr_comit)
+        git_cmds_wrapper(lambda: repo.git.checkout(curr_parent.hexsha, '-f'))
+        mvn_repo.change_surefire_ver(surefire_version)
+        for testcase in testcases_copy:
+            if os.path.isfile(testcase.src_path):
+                os.remove(testcase.src_path)
+            shutil.copyfile(dict_testcases_files[testcase.id], testcase.src_path)
+        run_mvn_tests(testcases_copy, testcases_copy[0].module)
+        (grand_parent_valid_testcases, no_report_testcases) = attach_reports(testcases_copy)
+        for testcase in testcases:
+            if testcase in grand_parent_valid_testcases:
+                grand_parent_testcase = [t for t in grand_parent_valid_testcases if t == testcase][0]
+                bug = mvn_bug.create_bug(issue=issue, commit=commit, parent=curr_parent, testcase=testcase,
+                                         parent_testcase=grand_parent_testcase,
+                                         type=typs[i])
+                if bug.valid:
+                    testcases_copy.remove(testcase)
+                    ans.append(bug)
+        if len(testcases_copy) ==0:
+            break
+        curr_comit = curr_parent
+        i+=1
+
+    return ans
+
+
 
 # Handles running maven. Will try to run the smallest module possib;e
 def run_mvn_tests(testcases, module):
@@ -148,6 +193,8 @@ def run_mvn_tests(testcases, module):
 def attach_reports(testcases):
     attatched = []
     no_attatched = []
+    for testcase in testcases:
+        testcase.parent.clear_report()
     ans = (attatched, no_attatched)
     for testcase in testcases:
         testclass = testcase.parent
@@ -188,6 +235,19 @@ def extract_possible_bugs(bug_issues):
                 continue
             ans.append((bug_issue.key, commit.hexsha, issue_tests))
     return ans
+
+# Returns dictionar mapping testcases to the file currently contains them.
+def store_test_files(passed_delta_testcases):
+    ans = {}
+    for testcase in passed_delta_testcases:
+        source = testcase.src_path
+        destination = os.path.join(tmp_files_dir, os.path.basename(testcase.src_path))
+        if not destination in ans.values():
+            shutil.copy2(source, destination)
+        ans[testcase.id] = destination
+    return ans
+
+
 
 
 # Returns tests that have been changed in the commit in the current state of the project
@@ -564,12 +624,14 @@ def set_up(argv):
     global JQL_QUERY
     global bug_data_handler
     global cache_dir
+    global tmp_files_dir
     global data_dir
     global branch_inspected
     global mvn_repo
     git_url = urlparse(argv[1])
     proj_name = os.path.basename(git_url.path)
     cache_dir = os.path.join(os.getcwd(), 'cache\\{}'.format(proj_name))
+    tmp_files_dir = os.path.join(os.getcwd(), 'tmp_files\\{}'.format(proj_name))
     mvn_repo = MavenRepo.Repo(os.getcwd() + '\\tested_project\\' + proj_name)
     patches_dir = mvn_repo.repo_dir + '\\patches'
     results_dir = os.path.join(os.getcwd(), 'results')
@@ -581,6 +643,11 @@ def set_up(argv):
         os.makedirs(os.getcwd() + '\\tested_project')
     if not os.path.isdir(cache_dir):
         os.makedirs(cache_dir)
+    if not os.path.isdir(tmp_files_dir):
+        os.makedirs(tmp_files_dir)
+    else:
+        shutil.rmtree(tmp_files_dir)
+        os.makedirs(tmp_files_dir)
     if GENERATE_DATA:
         if os.path.isdir(data_dir):
             raise mvn_bug.BugError('The data currently in the project result dir ({}) will be overwritten.'
