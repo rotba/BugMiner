@@ -124,9 +124,10 @@ def extract_bugs(issue, commit, tests_paths):
             passed_delta_testcases = list(map(lambda b: b.bugged_testcase,passed_delta_bugs))
             dict_testcases_files = store_test_files(passed_delta_testcases)
             try:
-                ans += try_grandparents(issue=issue,testcases=passed_delta_testcases,dict_testcases_files=dict_testcases_files , commit=commit, parent=parent)
+                if len(passed_delta_bugs)>0:
+                    ans += try_grandparents(issue=issue,testcases=passed_delta_testcases,dict_testcases_files=dict_testcases_files , commit=commit, parent=parent)
             except Exception as e:
-                logging.info('SHOULD NOT HAPPEN EXCEPRION ' + str(e) + '\n' + traceback.format_exc())
+                logging.info('SHOULD NOT HAPPEN EXCEPRION DELTA TO THE POWER ' + str(e) + '\n' + traceback.format_exc())
             ans+=module_bugs
             end_time = time.time()
             if GENERATE_DATA:
