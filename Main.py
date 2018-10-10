@@ -6,6 +6,7 @@ import os
 import logging
 import time
 import copy
+from termcolor import colored
 from mvnpy import TestObjects
 from mvnpy import Repo as MavenRepo
 from mvnpy import bug as mvn_bug
@@ -88,6 +89,7 @@ def extract_bugs(issue, commit, tests_paths):
             start_time = time.time()
             module_bugs = []
             commit_valid_testcases = []
+            print(colored('### Running tests in commit ###', 'green'))
             mvn_repo.change_surefire_ver(surefire_version)
             run_mvn_tests(dict_modules_testcases[module], module)
             (commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
@@ -102,6 +104,7 @@ def extract_bugs(issue, commit, tests_paths):
             for no_report_testcase in no_report_testcases:
                 ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=no_report_testcase,fixed_testcase= no_report_testcase,
                                           type=mvn_bug.determine_type(no_report_testcase, delta_testcases),valid=False,desc='No report'))
+            print(colored('### Running tests in parent ###', 'green'))
             mvn_repo.change_surefire_ver(surefire_version)
             run_mvn_tests(dict_modules_testcases[module], module)
             #parent_tests = test_parser.get_tests(module)

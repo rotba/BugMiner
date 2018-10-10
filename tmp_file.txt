@@ -1,72 +1,93 @@
 [INFO] Scanning for projects...
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Build Order:
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.commons:commons-math:jar:2.2-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-idea-plugin is missing. @ org.apache.commons:commons-parent:15, C:\Users\user\.m2\repository\org\apache\commons\commons-parent\15\commons-parent-15.pom, line 329, column 15
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
 [INFO] 
-[INFO] GMT_P                                                              [pom]
-[INFO] sub_mod_1                                                          [jar]
-[INFO] 
-[INFO] ----------------------------< GMT_P:GMT_P >-----------------------------
-[INFO] Building GMT_P 1.0-SNAPSHOT                                        [1/2]
-[INFO] --------------------------------[ pom ]---------------------------------
-[INFO] 
-[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ GMT_P ---
-[INFO] 
-[INFO] --------------------------< GMT_P:sub_mod_1 >---------------------------
-[INFO] Building sub_mod_1 1.0-SNAPSHOT                                    [2/2]
+[INFO] ------------------< org.apache.commons:commons-math >-------------------
+[INFO] Building Commons Math 2.2-SNAPSHOT
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
-[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ sub_mod_1 ---
-[INFO] Deleting C:\Users\user\Code\Python\BugMiner\tested_project\MavenProj\sub_mod_1\target
+[INFO] --- maven-clean-plugin:2.4:clean (default-clean) @ commons-math ---
+[INFO] Deleting C:\Users\user\Code\Python\BugMiner\tested_project\commons-math\target
 [INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ sub_mod_1 ---
+[INFO] --- maven-antrun-plugin:1.3:run (javadoc.resources) @ commons-math ---
+[INFO] Executing tasks
+     [copy] Copying 2 files to C:\Users\user\Code\Python\BugMiner\tested_project\commons-math\target\apidocs\META-INF
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.0:process (default) @ commons-math ---
+[INFO] Setting property: classpath.resource.loader.class => 'org.codehaus.plexus.velocity.ContextClassLoaderResourceLoader'.
+[INFO] Setting property: velocimacro.messages.on => 'false'.
+[INFO] Setting property: resource.loader => 'classpath'.
+[INFO] Setting property: resource.manager.logwhenfound => 'false'.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.1:resources (default-resources) @ commons-math ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory C:\Users\user\Code\Python\BugMiner\tested_project\MavenProj\sub_mod_1\src\main\resources
+[INFO] Copying 2 resources to META-INF
+[INFO] Copying 1 resource to META-INF/localization
 [INFO] 
-[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ sub_mod_1 ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 2 source files to C:\Users\user\Code\Python\BugMiner\tested_project\MavenProj\sub_mod_1\target\classes
+[INFO] --- maven-compiler-plugin:2.1:compile (default-compile) @ commons-math ---
+[INFO] Compiling 435 source files to C:\Users\user\Code\Python\BugMiner\tested_project\commons-math\target\classes
 [INFO] 
-[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ sub_mod_1 ---
+[INFO] --- maven-bundle-plugin:1.4.3:manifest (bundle-manifest) @ commons-math ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.4.1:testResources (default-testResources) @ commons-math ---
 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-[INFO] skip non existing resourceDirectory C:\Users\user\Code\Python\BugMiner\tested_project\MavenProj\sub_mod_1\src\test\resources
+[INFO] Copying 11 resources
 [INFO] 
-[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ sub_mod_1 ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 2 source files to C:\Users\user\Code\Python\BugMiner\tested_project\MavenProj\sub_mod_1\target\test-classes
+[INFO] --- maven-compiler-plugin:2.1:testCompile (default-testCompile) @ commons-math ---
+[INFO] Compiling 283 source files to C:\Users\user\Code\Python\BugMiner\tested_project\commons-math\target\test-classes
 [INFO] 
-[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ sub_mod_1 ---
+[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ commons-math ---
 [INFO] 
 [INFO] -------------------------------------------------------
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
-[INFO] Running p_1.AmitTest
-[ERROR] Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.115 s <<< FAILURE! - in p_1.AmitTest
-[ERROR] delta_3_Test  Time elapsed: 0.042 s  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <0> but was: <1>
-	at p_1.AmitTest.delta_3_Test(AmitTest.java:30)
+[INFO] Running org.apache.commons.math.optimization.MultiStartUnivariateRealOptimizerTest
+[ERROR] Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.172 s <<< FAILURE! - in org.apache.commons.math.optimization.MultiStartUnivariateRealOptimizerTest
+[ERROR] testQuinticMin(org.apache.commons.math.optimization.MultiStartUnivariateRealOptimizerTest)  Time elapsed: 0.11 s  <<< FAILURE!
+java.lang.AssertionError: expected:<-0.2719561270319131> but was:<-0.27195612525275803>
+	at org.apache.commons.math.optimization.MultiStartUnivariateRealOptimizerTest.testQuinticMin(MultiStartUnivariateRealOptimizerTest.java:87)
+
+[ERROR] testSinMin(org.apache.commons.math.optimization.MultiStartUnivariateRealOptimizerTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: 
+	at org.apache.commons.math.optimization.MultiStartUnivariateRealOptimizerTest.testSinMin(MultiStartUnivariateRealOptimizerTest.java:52)
+
+[INFO] Running org.apache.commons.math.optimization.univariate.BrentOptimizerTest
+[ERROR] Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.002 s <<< FAILURE! - in org.apache.commons.math.optimization.univariate.BrentOptimizerTest
+[ERROR] testQuinticMinStatistics(org.apache.commons.math.optimization.univariate.BrentOptimizerTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: 
+	at org.apache.commons.math.optimization.univariate.BrentOptimizerTest.testQuinticMinStatistics(BrentOptimizerTest.java:112)
+
+[ERROR] testSinMin(org.apache.commons.math.optimization.univariate.BrentOptimizerTest)  Time elapsed: 0 s  <<< FAILURE!
+java.lang.AssertionError: expected:<4.71238898038469> but was:<4.712388978923624>
+	at org.apache.commons.math.optimization.univariate.BrentOptimizerTest.testSinMin(BrentOptimizerTest.java:54)
 
 [INFO] 
 [INFO] Results:
 [INFO] 
 [ERROR] Failures: 
-[ERROR]   AmitTest.delta_3_Test:30 expected: <0> but was: <1>
+[ERROR]   MultiStartUnivariateRealOptimizerTest.testQuinticMin:87 expected:<-0.2719561270319131> but was:<-0.27195612525275803>
+[ERROR]   MultiStartUnivariateRealOptimizerTest.testSinMin:52
+[ERROR]   BrentOptimizerTest.testQuinticMinStatistics:112
+[ERROR]   BrentOptimizerTest.testSinMin:54 expected:<4.71238898038469> but was:<4.712388978923624>
 [INFO] 
-[ERROR] Tests run: 5, Failures: 1, Errors: 0, Skipped: 0
+[ERROR] Tests run: 7, Failures: 4, Errors: 0, Skipped: 0
 [INFO] 
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Summary:
-[INFO] 
-[INFO] GMT_P 1.0-SNAPSHOT ................................. SUCCESS [  0.468 s]
-[INFO] sub_mod_1 1.0-SNAPSHOT ............................. FAILURE [  8.533 s]
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time: 9.307 s
-[INFO] Finished at: 2018-10-09T18:20:01+03:00
+[INFO] Total time: 01:12 min
+[INFO] Finished at: 2018-10-10T14:54:28+03:00
 [INFO] ------------------------------------------------------------------------
-[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.0:test (default-test) on project sub_mod_1: There are test failures.
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:2.22.0:test (default-test) on project commons-math: There are test failures.
 [ERROR] 
-[ERROR] Please refer to C:\Users\user\Code\Python\BugMiner\tested_project\MavenProj\sub_mod_1\target\surefire-reports for the individual test results.
+[ERROR] Please refer to C:\Users\user\Code\Python\BugMiner\tested_project\commons-math\target\surefire-reports for the individual test results.
 [ERROR] Please refer to dump files (if any exist) [date]-jvmRun[N].dump, [date].dumpstream and [date]-jvmRun[N].dumpstream.
 [ERROR] -> [Help 1]
 [ERROR] 
@@ -75,7 +96,4 @@ org.opentest4j.AssertionFailedError: expected: <0> but was: <1>
 [ERROR] 
 [ERROR] For more information about the errors and possible solutions, please read the following articles:
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
-[ERROR] 
-[ERROR] After correcting the problems, you can resume the build with the command
-[ERROR]   mvn <goals> -rf :sub_mod_1
 [INFO] Build failures were ignored.
