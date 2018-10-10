@@ -1,51 +1,66 @@
 [INFO] Scanning for projects...
-[WARNING] 
-[WARNING] Some problems were encountered while building the effective model for commons-lang:commons-lang:jar:2.4-SNAPSHOT
-[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-compiler-plugin is missing. @ org.apache.commons:commons-parent:4, C:\Users\amirelm\.m2\repository\org\apache\commons\commons-parent\4\commons-parent-4.pom, line 135, column 15
-[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-idea-plugin is missing. @ org.apache.commons:commons-parent:4, C:\Users\amirelm\.m2\repository\org\apache\commons\commons-parent\4\commons-parent-4.pom, line 160, column 15
-[WARNING] 
-[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
-[WARNING] 
-[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
-[WARNING] 
 [INFO] 
-[INFO] ---------------------< commons-lang:commons-lang >----------------------
-[INFO] Building Commons Lang 2.4-SNAPSHOT
+[INFO] ------------------< org.apache.commons:commons-lang3 >------------------
+[INFO] Building Apache Commons Lang 3.6-SNAPSHOT
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO] 
-[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ commons-lang ---
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ commons-lang3 ---
+[INFO] Deleting C:\Users\TEMP\BugMiner\tested_project\commons-lang\target
 [INFO] 
-[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ commons-lang ---
-[WARNING] Using platform encoding (Cp1255 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] --- maven-enforcer-plugin:1.4.1:enforce (enforce-maven-3) @ commons-lang3 ---
+[INFO] 
+[INFO] --- build-helper-maven-plugin:1.10:parse-version (parse-version) @ commons-lang3 ---
+[INFO] 
+[INFO] --- maven-antrun-plugin:1.8:run (javadoc.resources) @ commons-lang3 ---
+[INFO] Executing tasks
+
+main:
+     [copy] Copying 2 files to C:\Users\TEMP\BugMiner\tested_project\commons-lang\target\apidocs\META-INF
+[INFO] Executed tasks
+[INFO] 
+[INFO] --- maven-remote-resources-plugin:1.5:process (process-resource-bundles) @ commons-lang3 ---
+[INFO] 
+[INFO] --- buildnumber-maven-plugin:1.4:create (default) @ commons-lang3 ---
+[INFO] Executing: cmd.exe /X /C "git rev-parse --verify HEAD"
+[INFO] Working directory: C:\Users\TEMP\BugMiner\tested_project\commons-lang
+[INFO] Storing buildNumber: b0bcf4f60a1e92480d78e44e3fda6e42cfc1b207 at timestamp: 1539173603409
+[WARNING] Cannot get the branch information from the git repository: 
+Detecting the current branch failed: fatal: ref HEAD is not a symbolic ref
+
+[INFO] Executing: cmd.exe /X /C "git rev-parse --verify HEAD"
+[INFO] Working directory: C:\Users\TEMP\BugMiner\tested_project\commons-lang
+[INFO] Storing buildScmBranch: UNKNOWN
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:resources (default-resources) @ commons-lang3 ---
+[INFO] Using 'ISO-8859-1' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\TEMP\BugMiner\tested_project\commons-lang\src\main\resources
 [INFO] Copying 2 resources to META-INF
 [INFO] 
-[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ commons-lang ---
+[INFO] --- maven-compiler-plugin:3.5.1:compile (default-compile) @ commons-lang3 ---
 [INFO] Changes detected - recompiling the module!
-[WARNING] File encoding has not been set, using platform encoding Cp1255, i.e. build is platform dependent!
-[INFO] Compiling 87 source files to C:\Users\TEMP\BugMiner\tested_project\commons-lang\target\classes
-[WARNING] /C:/Users/TEMP/BugMiner/tested_project/commons-lang/src/java/org/apache/commons/lang/Entities.java:[97,30] unmappable character for encoding Cp1255
-[WARNING] /C:/Users/TEMP/BugMiner/tested_project/commons-lang/src/java/org/apache/commons/lang/Entities.java:[112,31] unmappable character for encoding Cp1255
-[WARNING] /C:/Users/TEMP/BugMiner/tested_project/commons-lang/src/java/org/apache/commons/lang/Entities.java:[113,31] unmappable character for encoding Cp1255
-[WARNING] /C:/Users/TEMP/BugMiner/tested_project/commons-lang/src/java/org/apache/commons/lang/Entities.java:[114,30] unmappable character for encoding Cp1255
-[WARNING] /C:/Users/TEMP/BugMiner/tested_project/commons-lang/src/java/org/apache/commons/lang/Entities.java:[115,29] unmappable character for encoding Cp1255
-[WARNING] /C:/Users/TEMP/BugMiner/tested_project/commons-lang/src/java/org/apache/commons/lang/Entities.java:[116,31] unmappable character for encoding Cp1255
-[WARNING] /C:/Users/TEMP/BugMiner/tested_project/commons-lang/src/java/org/apache/commons/lang/Entities.java:[117,30] unmappable character for encoding Cp1255
-[WARNING] /C:/Users/TEMP/BugMiner/tested_project/commons-lang/src/java/org/apache/commons/lang/Entities.java:[118,30] unmappable character for encoding Cp1255
-[WARNING] /C:/Users/TEMP/BugMiner/tested_project/commons-lang/src/java/org/apache/commons/lang/Entities.java:[146,30] unmappable character for encoding Cp1255
-[WARNING] /C:/Users/TEMP/BugMiner/tested_project/commons-lang/src/java/org/apache/commons/lang/Entities.java:[147,29] unmappable character for encoding Cp1255
-[WARNING] /C:/Users/TEMP/BugMiner/tested_project/commons-lang/src/java/org/apache/commons/lang/Entities.java:[150,29] unmappable character for encoding Cp1255
+[INFO] Compiling 144 source files to C:\Users\TEMP\BugMiner\tested_project\commons-lang\target\classes
+[INFO] /C:/Users/TEMP/BugMiner/tested_project/commons-lang/src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java: C:\Users\TEMP\BugMiner\tested_project\commons-lang\src\main\java\org\apache\commons\lang3\time\FastDatePrinter.java uses or overrides a deprecated API.
+[INFO] /C:/Users/TEMP/BugMiner/tested_project/commons-lang/src/main/java/org/apache/commons/lang3/time/FastDatePrinter.java: Recompile with -Xlint:deprecation for details.
+[INFO] /C:/Users/TEMP/BugMiner/tested_project/commons-lang/src/main/java/org/apache/commons/lang3/text/StrBuilder.java: C:\Users\TEMP\BugMiner\tested_project\commons-lang\src\main\java\org\apache\commons\lang3\text\StrBuilder.java uses unchecked or unsafe operations.
+[INFO] /C:/Users/TEMP/BugMiner/tested_project/commons-lang/src/main/java/org/apache/commons/lang3/text/StrBuilder.java: Recompile with -Xlint:unchecked for details.
 [INFO] 
-[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ commons-lang ---
-[WARNING] Using platform encoding (Cp1255 actually) to copy filtered resources, i.e. build is platform dependent!
-[INFO] skip non existing resourceDirectory C:\Users\TEMP\BugMiner\tested_project\commons-lang\src\test\resources
+[INFO] --- maven-bundle-plugin:3.0.1:manifest (bundle-manifest) @ commons-lang3 ---
 [INFO] 
-[INFO] --- maven-compiler-plugin:3.1:testCompile (default-testCompile) @ commons-lang ---
+[INFO] --- animal-sniffer-maven-plugin:1.15:check (checkAPIcompatibility) @ commons-lang3 ---
+[INFO] Checking unresolved references to org.codehaus.mojo.signature:java17:1.0
+[INFO] 
+[INFO] --- maven-resources-plugin:2.7:testResources (default-testResources) @ commons-lang3 ---
+[INFO] Using 'ISO-8859-1' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] Copying 2 resources to META-INF
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.5.1:testCompile (default-testCompile) @ commons-lang3 ---
 [INFO] Changes detected - recompiling the module!
-[WARNING] File encoding has not been set, using platform encoding Cp1255, i.e. build is platform dependent!
-[INFO] Compiling 146 source files to C:\Users\TEMP\BugMiner\tested_project\commons-lang\target\test-classes
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time: 5.914 s
-[INFO] Finished at: 2018-10-10T10:07:22+03:00
-[INFO] ------------------------------------------------------------------------
+[INFO] Compiling 163 source files to C:\Users\TEMP\BugMiner\tested_project\commons-lang\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.0:test (default-test) @ commons-lang3 ---
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.apache.commons.lang3.RandomStringUtilsTest
