@@ -32,7 +32,7 @@ Example on apache\tika project:
 
     python Main.py https:\github.com\apache\tika http:\issues.apache.org\jira\projects\TIKA
 
-If one desires to extract bugs from a specific issue, one can run
+If one desires to extract bugs from a specific issue, for example TIKA-56 issue, one can run:
 
     python Main.py https:\github.com\apache\tika http:\issues.apache.org\jira\projects\TIKA TIKA-56
 
