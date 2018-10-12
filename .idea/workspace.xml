@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/MavenProj/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/MavenProj/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-bundle-it/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-bundle-it/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-bundle/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-bundle/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-parent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-parent/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-parsers/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-parsers/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-parsers/src/test/java/org/apache/tika/parser/microsoft/PowerPointParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-parsers/src/test/java/org/apache/tika/parser/microsoft/PowerPointParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-parsers/src/test/java/org/apache/tika/parser/microsoft/WordParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-parsers/src/test/java/org/apache/tika/parser/microsoft/WordParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-parsers/src/test/java/org/apache/tika/parser/microsoft/ooxml/OOXMLParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-parsers/src/test/java/org/apache/tika/parser/microsoft/ooxml/OOXMLParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-parsers/src/test/java/org/apache/tika/parser/pdf/PDFParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-parsers/src/test/java/org/apache/tika/parser/pdf/PDFParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp_file.txt" afterDir="false" />
-    </list>
+    <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +25,7 @@
     <session id="859684521">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
+          <entry key="project.closed" value="18" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.16" value="1" />
@@ -156,7 +139,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
+            <state relative-caret-position="59">
               <caret line="102" column="108" lean-forward="true" selection-start-line="102" selection-start-column="108" selection-end-line="102" selection-end-column="108" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -432,14 +415,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1108742" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32871974" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6323752" visible="true" weight="0.4127844" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6323752" weight="0.4127844" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49621785" weight="0.42361864" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -799,7 +781,7 @@ print(ans)</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
+        <state relative-caret-position="59">
           <caret line="102" column="108" lean-forward="true" selection-start-line="102" selection-start-column="108" selection-end-line="102" selection-end-column="108" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
