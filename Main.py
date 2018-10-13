@@ -193,10 +193,8 @@ def try_grandparents(issue ,parent, commit, testcases,dict_testcases_files):
 # Handles running maven. Will try to run the smallest module possib;e
 def run_mvn_tests(testcases, module):
     build_report = mvn_repo.test(testcases=testcases, module=module, time_limit = LIMIT_TIME_FOR_BUILD)
-    if len(mvn.get_compilation_error_report(build_report)) == 0:
-        return
-    else:
-        raise mvn_bug.BugError('SUBMODULE BUILD FALUIRE ON MODULE {}:\n'.format(module) + build_report)
+    if mvn.has_compilation_error(build_report):
+        raise mvn.MVNError(msg='Failed due to compilation error', report=build_report)
 
 
 # Attaches reports to testcases and returns the testcases that reports were successfully attached to them.
@@ -600,8 +598,9 @@ def git_cmds_wrapper(git_cmd):
             pass
         elif 'Please move or remove them before you switch branches.' in str(e):
             logging.info(str(e))
-            git_cmds_wrapper(lambda: repo.git.reset('--hard'))
+            git_cmds_wrapper(lambda:repo.index.add('.'))
             git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
+            git_cmds_wrapper(lambda: repo.git.reset('--hard'))
             time.sleep(2)
             git_cmds_wrapper(lambda: git_cmd())
         elif 'already exists and is not an empty directory.' in str(e):
