@@ -42,8 +42,9 @@ MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/03" ORDER BY  createdDate ASC'
 surefire_version = '2.22.0'
 EARLIEST_BUG = 0
-USE_CACHE = True
+USE_CACHE = False
 GENERATE_DATA = True
+LIMIT_TIME_FOR_BUILD = 180
 
 
 def main(argv):
@@ -137,8 +138,14 @@ def extract_bugs(issue, commit, tests_paths):
                 bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time)
         except mvn_bug.BugError as e:
             end_time = time.time()
+            logging.info('failed inspecting module : '+ module)
             if GENERATE_DATA:
                 bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time, 'Failed - '+e.msg)
+        except mvn.MVNError as e:
+            end_time = time.time()
+            logging.info('failed inspecting module : ' + module)
+            if GENERATE_DATA:
+                bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time, 'Failed: '+str(e))
 
 
     for b in list(filter(lambda b: b.valid, ans, )):
@@ -185,7 +192,7 @@ def try_grandparents(issue ,parent, commit, testcases,dict_testcases_files):
 
 # Handles running maven. Will try to run the smallest module possib;e
 def run_mvn_tests(testcases, module):
-    build_report = mvn_repo.test(testcases=testcases, module=module)
+    build_report = mvn_repo.test(testcases=testcases, module=module, time_limit = LIMIT_TIME_FOR_BUILD)
     if len(mvn.get_compilation_error_report(build_report)) == 0:
         return
     else:
@@ -684,6 +691,7 @@ def set_up(argv):
         logging.info(e)
     for issue in bug_issues:
         dict_key_issue[issue.key] = issue
+
 
 
 if __name__ == '__main__':
