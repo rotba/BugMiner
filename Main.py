@@ -6,6 +6,7 @@ import os
 import logging
 import time
 import copy
+from termcolor import colored
 from mvnpy import TestObjects
 from mvnpy import Repo as MavenRepo
 from mvnpy import bug as mvn_bug
@@ -41,8 +42,9 @@ MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/03" ORDER BY  createdDate ASC'
 surefire_version = '2.22.0'
 EARLIEST_BUG = 0
-USE_CACHE = True
+USE_CACHE = False
 GENERATE_DATA = True
+LIMIT_TIME_FOR_BUILD = 180
 
 
 def main(argv):
@@ -88,6 +90,7 @@ def extract_bugs(issue, commit, tests_paths):
             start_time = time.time()
             module_bugs = []
             commit_valid_testcases = []
+            print(colored('### Running tests in commit ###', 'green'))
             mvn_repo.change_surefire_ver(surefire_version)
             run_mvn_tests(dict_modules_testcases[module], module)
             (commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
@@ -102,6 +105,7 @@ def extract_bugs(issue, commit, tests_paths):
             for no_report_testcase in no_report_testcases:
                 ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=no_report_testcase,fixed_testcase= no_report_testcase,
                                           type=mvn_bug.determine_type(no_report_testcase, delta_testcases),valid=False,desc='No report'))
+            print(colored('### Running tests in parent ###', 'green'))
             mvn_repo.change_surefire_ver(surefire_version)
             run_mvn_tests(dict_modules_testcases[module], module)
             #parent_tests = test_parser.get_tests(module)
@@ -134,8 +138,14 @@ def extract_bugs(issue, commit, tests_paths):
                 bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time)
         except mvn_bug.BugError as e:
             end_time = time.time()
+            logging.info('failed inspecting module : '+ module)
             if GENERATE_DATA:
                 bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time, 'Failed - '+e.msg)
+        except mvn.MVNError as e:
+            end_time = time.time()
+            logging.info('failed inspecting module : ' + module)
+            if GENERATE_DATA:
+                bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time, 'Failed: '+str(e))
 
 
     for b in list(filter(lambda b: b.valid, ans, )):
@@ -182,11 +192,9 @@ def try_grandparents(issue ,parent, commit, testcases,dict_testcases_files):
 
 # Handles running maven. Will try to run the smallest module possib;e
 def run_mvn_tests(testcases, module):
-    build_report = mvn_repo.test(testcases=testcases, module=module)
-    if len(mvn.get_compilation_error_report(build_report)) == 0:
-        return
-    else:
-        raise mvn_bug.BugError('SUBMODULE BUILD FALUIRE ON MODULE {}:\n'.format(module) + build_report)
+    build_report = mvn_repo.test(testcases=testcases, module=module, time_limit = LIMIT_TIME_FOR_BUILD)
+    if mvn.has_compilation_error(build_report):
+        raise mvn.MVNError(msg='Failed due to compilation error', report=build_report)
 
 
 # Attaches reports to testcases and returns the testcases that reports were successfully attached to them.
@@ -590,8 +598,9 @@ def git_cmds_wrapper(git_cmd):
             pass
         elif 'Please move or remove them before you switch branches.' in str(e):
             logging.info(str(e))
-            git_cmds_wrapper(lambda: repo.git.reset('--hard'))
+            git_cmds_wrapper(lambda:repo.index.add('.'))
             git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
+            git_cmds_wrapper(lambda: repo.git.reset('--hard'))
             time.sleep(2)
             git_cmds_wrapper(lambda: git_cmd())
         elif 'already exists and is not an empty directory.' in str(e):
@@ -681,6 +690,7 @@ def set_up(argv):
         logging.info(e)
     for issue in bug_issues:
         dict_key_issue[issue.key] = issue
+
 
 
 if __name__ == '__main__':
