@@ -92,10 +92,13 @@ def extract_bugs(issue, commit, tests_paths):
             commit_valid_testcases = []
             print(colored('### Running tests in commit ###', 'green'))
             mvn_repo.change_surefire_ver(surefire_version)
-            run_mvn_tests(dict_modules_testcases[module], module)
+            build_log = run_mvn_tests(dict_modules_testcases[module], module)
             (commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
+            if len(commit_valid_testcases) ==0:
+                raise mvn.MVNError(msg='No reports', report=build_log)
             git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha, '-f'))
             delta_testcases = get_delta_testcases(dict_modules_testcases[module])
+            print(colored('### Patching delta testcases###', 'green'))
             (patched_testcases, unpatchable_testcases) = patch_testcases(commit_valid_testcases, commit, parent, module)
             if GENERATE_DATA:
                 dict_testcase_patch = get_bug_patches(patched_testcases, dict_testclass_bug_dir)
@@ -138,7 +141,7 @@ def extract_bugs(issue, commit, tests_paths):
                 bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time)
         except mvn_bug.BugError as e:
             end_time = time.time()
-            logging.info('failed inspecting module : '+ module)
+            logging.info('failed inspecting module : '+ module+'. The reason is: '+e.msg)
             if GENERATE_DATA:
                 bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time, 'Failed - '+e.msg)
         except mvn.MVNError as e:
@@ -195,6 +198,7 @@ def run_mvn_tests(testcases, module):
     build_report = mvn_repo.test(testcases=testcases, module=module, time_limit = LIMIT_TIME_FOR_BUILD)
     if mvn.has_compilation_error(build_report):
         raise mvn.MVNError(msg='Failed due to compilation error', report=build_report)
+    return build_report
 
 
 # Attaches reports to testcases and returns the testcases that reports were successfully attached to them.
