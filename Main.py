@@ -11,6 +11,7 @@ from mvnpy import TestObjects
 from mvnpy import Repo as MavenRepo
 from mvnpy import bug as mvn_bug
 from mvnpy import mvn
+from diff import commitsdiff, filediff
 import git
 from functools import reduce
 import javalang
@@ -18,6 +19,7 @@ from git import Repo
 from jira import JIRA
 from jira import exceptions as jira_exceptions
 from urlparse import urlparse
+from diff.commit import Commit
 
 
 jira = JIRA(options={'server': 'https://issues.apache.org/jira'})
@@ -44,6 +46,7 @@ surefire_version = '2.22.0'
 EARLIEST_BUG = 0
 USE_CACHE = False
 GENERATE_DATA = True
+TRACE = False
 LIMIT_TIME_FOR_BUILD = 180
 
 
@@ -109,6 +112,8 @@ def extract_bugs(issue, commit, tests_paths):
                 ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=no_report_testcase,fixed_testcase= no_report_testcase,
                                           type=mvn_bug.determine_type(no_report_testcase, delta_testcases),valid=False,desc='No report'))
             print(colored('### Running tests in parent ###', 'green'))
+            if TRACE:
+                mvn_repo.setup_tracer()
             mvn_repo.change_surefire_ver(surefire_version)
             run_mvn_tests(dict_modules_testcases[module], module)
             #parent_tests = test_parser.get_tests(module)
@@ -125,7 +130,8 @@ def extract_bugs(issue, commit, tests_paths):
                 if testcase in parent_valid_testcases:
                     parent_testcase = [t for t in parent_valid_testcases if t == testcase][0]
                     bug = mvn_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
-                                            parent_testcase=parent_testcase, type=mvn_bug.determine_type(testcase, delta_testcases))
+                                            parent_testcase=parent_testcase, type=mvn_bug.determine_type(testcase, delta_testcases),
+                                            traces=mvn_repo.get_trace(parent_testcase.mvn_name), bugged_components=get_bugged_components(commit_fix = commit, commit_bug = parent))
                     module_bugs.append(bug)
             passed_delta_bugs = list(filter(lambda b: b.type ==mvn_bug.Bug_type.DELTA and b.desctiption ==mvn_bug.invalid_passed_desc, module_bugs))
             passed_delta_testcases = list(map(lambda b: b.bugged_testcase,passed_delta_bugs))
@@ -230,6 +236,34 @@ def attach_reports(testcases):
                 no_attatched.append(testcase)
 
     return ans
+
+
+# Returns a list of methods that are associated with a change in the diff of the commits
+def get_bugged_components(commit_fix, commit_bug, module):
+    ans  = []
+    commit_diff = commitsdiff.CommitsDiff(
+        commit_a= Commit.init_commit_by_git_commit(commit_fix, 0), commit_b=Commit.init_commit_by_git_commit(commit_bug, 0))
+    for file_diff in commit_diff.diffs:
+        methods_range = []
+        if not file_diff.file_name.endswith('.java'):
+            continue
+        j_file = os.path.join(repo.working_tree_dir, file_diff.file_name)
+        with open(j_file, 'r') as src_file:
+            try:
+                tree = javalang.parse.parse(src_file.read())
+            except UnicodeDecodeError as e:
+                logging.info('get_bugged_components() failedm could not parse {}'.format(j_file))
+                continue
+        class_decls = [class_dec for _, class_dec in tree.filter(javalang.tree.ClassDeclaration)]
+        for class_decl in class_decls:
+            for method in class_decl.methods:
+                methods_range.append((mvn.generate_mvn_class_names(src_path = j_file, module=module)+'#'+method.name,method.position[0], find_end_line(j_file, method.position[0])))
+        for tup in methods_range:
+            if any(tup[1]<=line_num<=tup[2] for line_num in file_diff.before_indices):
+                ans.append(tup[0])
+    return set(ans)
+
+
 
 
 # Returns tupls of (issue,commit,tests) that may contain bugs
@@ -621,6 +655,47 @@ def bugs_filter(possible_bug):
         return number >= EARLIEST_BUG
     return True
 
+def find_end_line(src_path, line_num):
+    brackets_stack = []
+    open_position = (-1, -1)
+    with open(src_path, 'r') as j_file:
+        lines = j_file.readlines()
+    i = 1
+    for line in lines:
+        if i < line_num:
+            i += 1
+            continue
+        j = 1
+        for letter in line:
+            if '{' == letter:
+                brackets_stack.append('{')
+                break
+            else:
+                j += 1
+        if len(brackets_stack) == 1:
+            open_position = (i, j)
+            break
+        i+=1
+    if open_position[0] == -1 or open_position[1] == -1:
+        return -1
+    i = 1
+    for line in lines:
+        if i < open_position[0]:
+            i += 1
+            continue
+        j = 1
+        for letter in line:
+            if i == open_position[0] and j <= open_position[1]:
+                j += 1
+                continue
+            if letter == '{':
+                brackets_stack.append('{')
+            if letter == '}':
+                brackets_stack.pop()
+            if len(brackets_stack) == 0:
+                return i
+            j += 1
+    i += 1
 
 
 

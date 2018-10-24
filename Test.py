@@ -1,6 +1,9 @@
 import filecmp
 import os
 import unittest
+
+import git
+
 import Main
 import shutil
 
@@ -364,6 +367,53 @@ class TestMain(unittest.TestCase):
         self.assertTrue(os.path.isfile(expected_report_xml))
         self.assertTrue(os.path.isfile(expected_patch))
         # shutil.rmtree(Main.data_dir)
+
+    def test_get_bugged_components_1(self):
+        print('test_get_changed_mehods')
+        repo_path = os.path.join(os.getcwd(),'tested_project\MavenProj')
+        Main.USE_CACHE=False
+        Main.GENERATE_DATA = False
+        repo = git.Repo(repo_path)
+        repo.git.add('.')
+        repo.git.clean('-xdf')
+        repo.git.checkout('master', '-f')
+        commits = list(filter(lambda c: (
+                    'b9bccfb7a5dc2bf3537d59341ac2622713393065' in c.hexsha or '6553c2aabc39f8749bae6939f4e8c216a0b08050' in c.hexsha),
+                              list(repo.iter_commits())))
+        commit_fix = commits[0]
+        commit_bug = commits[1]
+        Main.repo = repo
+        repo.git.add('.')
+        repo.git.clean('-xdf')
+        repo.git.checkout(commit_bug, '-f')
+        changed_methods = Main.get_bugged_components(commit_fix=commit_fix, commit_bug=commit_bug, module=os.path.join(repo_path,'sub_mod_1'))
+        self.assertTrue(len(changed_methods) == 2)
+        self.assertTrue('Main#foo' in changed_methods)
+        self.assertTrue('Main#goo' in changed_methods)
+
+    def test_get_bugged_components_2(self):
+        print('test_get_changed_mehods')
+        repo_path = os.path.join(os.getcwd(),'tested_project\MavenProj')
+        Main.USE_CACHE=False
+        Main.GENERATE_DATA = False
+        repo = git.Repo(repo_path)
+        repo.git.add('.')
+        repo.git.clean('-xdf')
+        repo.git.checkout('master', '-f')
+        commits = list(filter(lambda c: (
+                    '2e1ab62576cf3a76067b794bce8a603d3b877309' in c.hexsha or 'c3ce28f10eade94a6ebf2c280c29c432e378be69' in c.hexsha),
+                              list(repo.iter_commits())))
+        commit_fix = commits[0]
+        commit_bug = commits[1]
+        Main.repo = repo
+        repo.git.add('.')
+        repo.git.clean('-xdf')
+        repo.git.checkout(commit_bug, '-f')
+        changed_methods = Main.get_bugged_components(commit_fix=commit_fix, commit_bug=commit_bug, module=os.path.join(repo_path,'sub_mod_1'))
+        self.assertTrue(len(changed_methods) == 2)
+        self.assertTrue('Main#foo' in changed_methods)
+        self.assertTrue('Main#goo' in changed_methods)
+
 
 
 if __name__ == '__main__':
