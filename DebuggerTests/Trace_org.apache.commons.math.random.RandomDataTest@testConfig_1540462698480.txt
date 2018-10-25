@@ -1,9 +1,0 @@
-[inst2] + org.apache.commons.math.random.RandomDataTest@testConfig
-[inst2] + org.apache.commons.math.random.RandomDataImpl@reSeed
-[inst2] + org.apache.commons.math.random.RandomDataImpl@nextUniform
-[inst2] + org.apache.commons.math.random.RandomDataImpl@getRan
-[inst2] + org.apache.commons.math.random.RandomDataImpl@nextSecureHexString
-[inst2] + org.apache.commons.math.random.RandomDataImpl@getSecRan
-[inst2] + org.apache.commons.math.random.RandomDataImpl@reSeedSecure
-[inst2] + org.apache.commons.math.random.RandomDataImpl@nextLong
-[inst2] + org.apache.commons.math.random.RandomDataImpl@nextSecureLong
