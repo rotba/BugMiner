@@ -65,19 +65,19 @@ class FileDiff(object):
             for method in class_decl.methods:
                 method_start = method.position[0]
                 method_end = find_end_line(before_content_text, method.position[0])
-                method_sig = method.name
+                method_sig = generate_method_signiture(method)
                 before_methods[method_sig] = []
-                for i in range(method_start-1, method_end-1):
+                for i in range(method_start-1, method_end):
                     before_methods[method_sig].append(self.before_contents[i])
         class_decls = [class_dec for _, class_dec in tree_2.filter(javalang.tree.ClassDeclaration)]
         for class_decl in class_decls:
             for method in class_decl.methods:
                 method_start = method.position[0]
-                method_end = find_end_line(before_content_text, method.position[0])
-                method_sig = method.name
+                method_end = find_end_line(after_content_text, method.position[0])
+                method_sig = generate_method_signiture(method)
                 after_methods[method_sig] = []
-                for i in range(method_start-1, method_end-1):
-                    after_methods[method_sig].append(self.before_contents[i])
+                for i in range(method_start-1, method_end):
+                    after_methods[method_sig].append(self.after_contents[i])
         for method in before_methods.keys():
             if method in after_methods.keys():
                 m_before_no_whitespace = list(filter(lambda l: len(l)>0, before_methods[method]))
@@ -86,7 +86,7 @@ class FileDiff(object):
                     for i in range(0,len(m_after_no_whitespace)):
                         if not m_after_no_whitespace[i] == m_before_no_whitespace[i]:
                             ans.append(method)
-                            continue
+                            break
                 else:
                     ans.append(method)
         return ans
@@ -105,7 +105,7 @@ def get_methods_lines(contents):
 def find_end_line(src_text, line_num):
     brackets_stack = []
     open_position = (-1, -1)
-    lines = src_text.readlines()
+    lines = src_text.split('\n')
     i = 1
     for line in lines:
         if i < line_num:
@@ -141,4 +141,22 @@ def find_end_line(src_text, line_num):
             if len(brackets_stack) == 0:
                 return i
             j += 1
-    i += 1
+        i += 1
+
+#Generates string representation of java method signiture
+def generate_method_signiture(method):
+    if method.return_type is None:
+        ret_type = 'void'
+    else:
+        ret_type = method.return_type.name
+    if len(method.parameters) == 0:
+        parameters = '()'
+    else:
+        parameters = '(' + method.parameters[0].type.name
+        if len(method.parameters) > 1:
+            param_iter = iter(method.parameters)
+            next(param_iter)
+            for param in param_iter:
+                parameters += ', ' + param.type.name
+        parameters += ')'
+    return ret_type + '_' + method.name + parameters

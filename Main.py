@@ -131,7 +131,7 @@ def extract_bugs(issue, commit, tests_paths):
                     parent_testcase = [t for t in parent_valid_testcases if t == testcase][0]
                     bug = mvn_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
                                             parent_testcase=parent_testcase, type=mvn_bug.determine_type(testcase, delta_testcases),
-                                            traces=mvn_repo.get_trace(parent_testcase.mvn_name), bugged_components=get_bugged_components(commit_fix = commit, commit_bug = parent))
+                                            traces=mvn_repo.get_trace(parent_testcase.mvn_name), bugged_components=get_bugged_components(commit_fix = commit, commit_bug = parent, module=module))
                     module_bugs.append(bug)
             passed_delta_bugs = list(filter(lambda b: b.type ==mvn_bug.Bug_type.DELTA and b.desctiption ==mvn_bug.invalid_passed_desc, module_bugs))
             passed_delta_testcases = list(map(lambda b: b.bugged_testcase,passed_delta_bugs))
@@ -242,26 +242,14 @@ def attach_reports(testcases):
 def get_bugged_components(commit_fix, commit_bug, module):
     ans  = []
     commit_diff = commitsdiff.CommitsDiff(
-        commit_a= Commit.init_commit_by_git_commit(commit_fix, 0), commit_b=Commit.init_commit_by_git_commit(commit_bug, 0))
+        commit_a= Commit.init_commit_by_git_commit(commit_bug, 0), commit_b=Commit.init_commit_by_git_commit(commit_fix, 0))
     for file_diff in commit_diff.diffs:
-        methods_range = []
-        if not file_diff.file_name.endswith('.java'):
-            continue
-        j_file = os.path.join(repo.working_tree_dir, file_diff.file_name)
-        with open(j_file, 'r') as src_file:
-            try:
-                tree = javalang.parse.parse(src_file.read())
-            except UnicodeDecodeError as e:
-                logging.info('get_bugged_components() failedm could not parse {}'.format(j_file))
-                continue
-        class_decls = [class_dec for _, class_dec in tree.filter(javalang.tree.ClassDeclaration)]
-        for class_decl in class_decls:
-            for method in class_decl.methods:
-                methods_range.append((mvn.generate_mvn_class_names(src_path = j_file, module=module)+'#'+method.name,method.position[0], find_end_line(j_file, method.position[0])))
-        for tup in methods_range:
-            if any(tup[1]<=line_num<=tup[2] for line_num in file_diff.before_indices):
-                ans.append(tup[0])
-    return set(ans)
+        if file_diff.file_name.endswith('.java'):
+            file_path = os.path.join(repo.working_tree_dir, file_diff.file_name)
+            ans += list(
+                map(lambda m: mvn.generate_mvn_class_names(src_path=file_path, module=module)+'#'+m,file_diff.changed_methods)
+            )
+    return ans
 
 
 

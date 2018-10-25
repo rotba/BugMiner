@@ -237,7 +237,7 @@ class TestMain(unittest.TestCase):
                         "'MainTest#gooTest should have been picked as for compilation error")
 
     def test_extract_bugs_1(self):
-        print('test_extract_bugs')
+        print('test_extract_bugs_1')
         Main.set_up(['', 'https://github.com/rotba/MavenProj'])
         issue = Main.jira.issue('TIKA-19')
         exp_testcase_id = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#None_fooTest()'
@@ -349,8 +349,8 @@ class TestMain(unittest.TestCase):
         expected_new_testcase = [t for t in testcases if 'MainTest#foo_2' in t.mvn_name][0]
         self.assertTrue(expected_new_testcase in new_testcases, 'MainTest#foo_2 should be picked for being new test')
 
-    def test_generated_data(self):
-        print('test_generated_data')
+    def test_generate_data(self):
+        print('test_generate_data')
         Main.USE_CACHE=False
         Main.GENERATE_DATA = True
         Main.main(['','https://github.com/apache/tika','http:\issues.apache.org\jira\projects\TIKA','TIKA-56'])
@@ -366,6 +366,19 @@ class TestMain(unittest.TestCase):
         self.assertTrue(os.path.isfile(expected_testcase_pickle))
         self.assertTrue(os.path.isfile(expected_report_xml))
         self.assertTrue(os.path.isfile(expected_patch))
+        # shutil.rmtree(Main.data_dir)
+
+    def test_generate_matrix(self):
+        print('test_generate_matrix')
+        Main.USE_CACHE=False
+        Main.GENERATE_DATA = True
+        Main.TRACE = True
+        Main.main(['','https://github.com/apache/commons-math','http:\issues.apache.org\jira\projects\MATH','MATH-153'])
+        expected_issue_dir = os.path.join(Main.data_dir,'MATH-153')
+        expected_commit_dir = os.path.join(expected_issue_dir, '409d56d206891f76a3e751e4dcdcd22a8c898acc')
+        expected_testclass_dir = os.path.join(expected_commit_dir, 'commons-math#org.apache.commons.math.random.RandomDataTest')
+        expected_matrix_file = os.path.join(expected_testclass_dir, 'Matrix_testNextLongExtremeValues.txt')
+        self.assertTrue(os.path.isfile(expected_matrix_file))
         # shutil.rmtree(Main.data_dir)
 
     def test_get_bugged_components_1(self):
@@ -388,8 +401,8 @@ class TestMain(unittest.TestCase):
         repo.git.checkout(commit_bug, '-f')
         changed_methods = Main.get_bugged_components(commit_fix=commit_fix, commit_bug=commit_bug, module=os.path.join(repo_path,'sub_mod_1'))
         self.assertTrue(len(changed_methods) == 2)
-        self.assertTrue('Main#foo' in changed_methods)
-        self.assertTrue('Main#goo' in changed_methods)
+        self.assertTrue('Main#int_foo()' in changed_methods)
+        self.assertTrue('Main#void_goo()' in changed_methods)
 
     def test_get_bugged_components_2(self):
         print('test_get_changed_mehods')
@@ -411,8 +424,8 @@ class TestMain(unittest.TestCase):
         repo.git.checkout(commit_bug, '-f')
         changed_methods = Main.get_bugged_components(commit_fix=commit_fix, commit_bug=commit_bug, module=os.path.join(repo_path,'sub_mod_1'))
         self.assertTrue(len(changed_methods) == 2)
-        self.assertTrue('Main#foo' in changed_methods)
-        self.assertTrue('Main#goo' in changed_methods)
+        self.assertTrue('Main#int_foo()' in changed_methods)
+        self.assertTrue('Main#void_goo()' in changed_methods)
 
 
 
