@@ -1,5 +1,4 @@
 from diff.filediff import FileDiff
-from commit import Commit
 
 
 class CommitsDiff(object):
@@ -10,7 +9,7 @@ class CommitsDiff(object):
 if __name__ == "__main__":
     import git
     import gc
-
+    from commit import Commit
     repo = git.Repo(r'c:\temp\tika')
     commits = list(repo.iter_commits())
     for i in range(100, 300):

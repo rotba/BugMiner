@@ -85,10 +85,10 @@ class FileDiff(object):
                 if len(m_after_no_whitespace) == len(m_after_no_whitespace):
                     for i in range(0,len(m_after_no_whitespace)):
                         if not m_after_no_whitespace[i] == m_before_no_whitespace[i]:
-                            ans.append(method)
+                            ans.append(str(method))
                             break
                 else:
-                    ans.append(method)
+                    ans.append(str(method))
         return ans
 
 
@@ -159,4 +159,6 @@ def generate_method_signiture(method):
             for param in param_iter:
                 parameters += ', ' + param.type.name
         parameters += ')'
-    return ret_type + '_' + method.name + parameters
+    #TODO IN ORDER TO DISTUNGUISH BTWEEN METHODS WITH EQUAL NAME THE TRACER SHOULD TAKE IN TO ACCOUNT THE FULL SIGNATURE
+    #return ret_type + '_' + method.name + parameters
+    return method.name
