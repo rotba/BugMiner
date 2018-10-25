@@ -89,6 +89,7 @@ class FileDiff(object):
                             continue
                 else:
                     ans.append(method)
+        return ans
 
 
 

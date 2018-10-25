@@ -655,51 +655,6 @@ def bugs_filter(possible_bug):
         return number >= EARLIEST_BUG
     return True
 
-def find_end_line(src_path, line_num):
-    brackets_stack = []
-    open_position = (-1, -1)
-    with open(src_path, 'r') as j_file:
-        lines = j_file.readlines()
-    i = 1
-    for line in lines:
-        if i < line_num:
-            i += 1
-            continue
-        j = 1
-        for letter in line:
-            if '{' == letter:
-                brackets_stack.append('{')
-                break
-            else:
-                j += 1
-        if len(brackets_stack) == 1:
-            open_position = (i, j)
-            break
-        i+=1
-    if open_position[0] == -1 or open_position[1] == -1:
-        return -1
-    i = 1
-    for line in lines:
-        if i < open_position[0]:
-            i += 1
-            continue
-        j = 1
-        for letter in line:
-            if i == open_position[0] and j <= open_position[1]:
-                j += 1
-                continue
-            if letter == '{':
-                brackets_stack.append('{')
-            if letter == '}':
-                brackets_stack.pop()
-            if len(brackets_stack) == 0:
-                return i
-            j += 1
-    i += 1
-
-
-
-
 def set_up(argv):
     global all_commits
     global bug_issues
