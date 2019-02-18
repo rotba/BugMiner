@@ -201,7 +201,7 @@ def try_grandparents(issue ,parent, commit, testcases,dict_testcases_files):
 
 # Handles running maven. Will try to run the smallest module possib;e
 def run_mvn_tests(testcases, module):
-    build_report = mvn_repo.test(testcases=testcases, module=module, time_limit = LIMIT_TIME_FOR_BUILD)
+    build_report = mvn_repo.test(tests=testcases, module=module, time_limit = LIMIT_TIME_FOR_BUILD)
     if mvn.has_compilation_error(build_report):
         raise mvn.MVNError(msg='Failed due to compilation error', report=build_report)
     return build_report

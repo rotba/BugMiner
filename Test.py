@@ -366,7 +366,7 @@ class TestMain(unittest.TestCase):
         self.assertTrue(os.path.isfile(expected_testcase_pickle))
         self.assertTrue(os.path.isfile(expected_report_xml))
         self.assertTrue(os.path.isfile(expected_patch))
-        # shutil.rmtree(Main.data_dir)
+        #shutil.rmtree(Main.data_dir)
 
     def test_generate_matrix(self):
         print('test_generate_matrix')
