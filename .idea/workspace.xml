@@ -292,7 +292,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1466000" />
+    <option name="totallyTimeSpent" value="2054000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -305,6 +305,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16471216" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -312,7 +313,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32871974" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6323752" weight="0.41170096" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.5736246" visible="true" weight="0.32502708" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5736246" weight="0.32502708" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
