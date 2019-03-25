@@ -282,6 +282,24 @@ class TestMain(unittest.TestCase):
                 return
         self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
+    def test_extract_bugs_5(self):
+        print('test_extract_bugs_5')
+        Main.branch_inspected = 'test_extract_bugs_5'
+        Main.set_up(['', 'https://github.com/rotba/MavenProj'])
+        issue = Main.jira.issue('TIKA-19')
+        exp_testcase_id = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\src\test\java\p_1\AmitTest.java#Amit_ESTest#None_test0()'
+        commit = [c for c in Main.all_commits if c.hexsha == '23270ce01dbf36cd0cf2ccc9438dce641822abb8'][0]
+        module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
+        Main.repo.git.reset('--hard')
+        Main.repo.git.checkout(commit.hexsha)
+        tests_paths = Main.get_tests_paths_from_commit(commit)
+        Main.GENERATE_TESTS = True
+        res = Main.extract_bugs(issue, commit, tests_paths)
+        for bug in res:
+            if bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type == Main.mvn_bug.Bug_type.GEN:
+                return
+        self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
+
     def test_extract_bugs_pick_up_failures(self):
         print('test_extract_bugs_pick_up_failures')
         Main.set_up(['', 'https://github.com/rotba/MavenProj'])

@@ -20,7 +20,7 @@ from jira import JIRA
 from jira import exceptions as jira_exceptions
 from urlparse import urlparse
 from diff.commit import Commit
-
+import re
 
 jira = JIRA(options={'server': 'https://issues.apache.org/jira'})
 all_commits = []
@@ -43,9 +43,11 @@ dict_key_issue = {}
 MAX_ISSUES_TO_RETRIEVE = 2000
 JQL_QUERY = 'project = {} AND issuetype = Bug AND createdDate <= "2018/10/03" ORDER BY  createdDate ASC'
 surefire_version = '2.22.0'
+evosuite_surefire_version = '2.17'
 EARLIEST_BUG = 0
 USE_CACHE = False
 GENERATE_DATA = True
+GENERATE_TESTS = False
 TRACE = False
 LIMIT_TIME_FOR_BUILD = 180
 
@@ -66,13 +68,13 @@ def main(argv):
             if GENERATE_DATA:
                 bug_data_handler.add_bugs(bugs)
         except mvn_bug.BugError as e:
-            logging.info('BUG ERROR  '+e.msg+'\n'+traceback.format_exc())
+            logging.info('BUG ERROR  ' + e.msg + '\n' + traceback.format_exc())
         except TestObjects.TestParserException as e:
-            logging.info('TEST PARSER ERROR  '+e.msg+'\n'+traceback.format_exc())
+            logging.info('TEST PARSER ERROR  ' + e.msg + '\n' + traceback.format_exc())
         except git.exc.GitCommandError as e:
-            logging.info('SHOULD NOT HAPPEN GIT ' + str(e)+'\n'+traceback.format_exc())
+            logging.info('SHOULD NOT HAPPEN GIT ' + str(e) + '\n' + traceback.format_exc())
         except Exception as e:
-          logging.info('SHOULD NOT HAPPEN EXCEPRION ' + str(e)+'\n'+traceback.format_exc())
+            logging.info('SHOULD NOT HAPPEN EXCEPRION ' + str(e) + '\n' + traceback.format_exc())
 
 
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
@@ -93,69 +95,99 @@ def extract_bugs(issue, commit, tests_paths):
             start_time = time.time()
             module_bugs = []
             commit_valid_testcases = []
+            if GENERATE_TESTS:
+                print(colored('### Generating tests ###', 'blue'))
+                bugged_classes = list(map(lambda c: re.sub('\#.*','',c), get_bugged_components(commit_fix=commit, commit_bug=parent, module=module)))
+                mvn_repo.generate_tests(classes=bugged_classes, module=module)
+                dict_modules_testcases[module]+= mvn_repo.get_generated_testcases(module=module)
             print(colored('### Running tests in commit ###', 'green'))
             mvn_repo.change_surefire_ver(surefire_version)
             build_log = run_mvn_tests(dict_modules_testcases[module], module)
             (commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
-            if len(commit_valid_testcases) ==0:
+            if GENERATE_TESTS:
+                mvn_repo.change_surefire_ver(evosuite_surefire_version)
+                print(colored('### Running generated tests ###', 'blue'))
+                build_log = run_mvn_tests(dict_modules_testcases[module],module)
+                (gen_commit_valid_testcases, gen_no_report_testcases) = attach_reports(dict_modules_testcases[module])
+                commit_tests_object+=gen_commit_valid_testcases
+                no_report_testcases+=gen_no_report_testcases
+            if len(commit_valid_testcases) == 0:
                 raise mvn.MVNError(msg='No reports', report=build_log)
             git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha, '-f'))
             delta_testcases = get_delta_testcases(dict_modules_testcases[module])
             print(colored('### Patching delta testcases###', 'green'))
+            if GENERATE_TESTS:
+                mvn_repo.setup_tests_generator(module)
             (patched_testcases, unpatchable_testcases) = patch_testcases(commit_valid_testcases, commit, parent, module)
             if GENERATE_DATA:
                 dict_testcase_patch = get_bug_patches(patched_testcases, dict_testclass_bug_dir)
             for unpatchable_testcase in unpatchable_testcases:
-                ans.append(mvn_bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=unpatchable_testcase[0],fixed_testcase= unpatchable_testcase[0],
-                                      type=mvn_bug.determine_type(unpatchable_testcase[0], delta_testcases),valid=False,desc=unpatchable_testcase[1]))
+                ans.append(mvn_bug(issue_key=issue.key, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
+                                   bugged_testcase=unpatchable_testcase[0], fixed_testcase=unpatchable_testcase[0],
+                                   type=mvn_bug.determine_type(unpatchable_testcase[0], delta_testcases), valid=False,
+                                   desc=unpatchable_testcase[1]))
             for no_report_testcase in no_report_testcases:
-                ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=no_report_testcase,fixed_testcase= no_report_testcase,
-                                          type=mvn_bug.determine_type(no_report_testcase, delta_testcases),valid=False,desc='No report'))
+                ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
+                                       bugged_testcase=no_report_testcase, fixed_testcase=no_report_testcase,
+                                       type=mvn_bug.determine_type(no_report_testcase, delta_testcases), valid=False,
+                                       desc='No report'))
             print(colored('### Running tests in parent ###', 'green'))
             if TRACE:
                 mvn_repo.setup_tracer()
             mvn_repo.change_surefire_ver(surefire_version)
             run_mvn_tests(dict_modules_testcases[module], module)
-            #parent_tests = test_parser.get_tests(module)
+            if GENERATE_TESTS:
+                mvn_repo.change_surefire_ver(evosuite_surefire_version)
+                run_mvn_tests([], module)
+            # parent_tests = test_parser.get_tests(module)
             parent_tests = list(map(lambda t_path: TestObjects.TestClass(t_path), tests_paths))
             all_parent_testcases = mvn.get_testcases(parent_tests)
             relevant_parent_testcases = list(filter(lambda t: t in commit_valid_testcases, all_parent_testcases))
             (parent_valid_testcases, no_report_testcases) = attach_reports(relevant_parent_testcases)
             for no_report_testcase in no_report_testcases:
-                ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha,commit_hexsha=commit.hexsha, bugged_testcase=no_report_testcase,fixed_testcase= no_report_testcase,
-                                          type=mvn_bug.determine_type(no_report_testcase, delta_testcases),valid=False,desc='No report'))
+                ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
+                                       bugged_testcase=no_report_testcase, fixed_testcase=no_report_testcase,
+                                       type=mvn_bug.determine_type(no_report_testcase, delta_testcases), valid=False,
+                                       desc='No report'))
             if GENERATE_DATA:
                 bug_data_handler.attach_reports(issue, commit, parent_valid_testcases)
             for testcase in commit_valid_testcases:
                 if testcase in parent_valid_testcases:
                     parent_testcase = [t for t in parent_valid_testcases if t == testcase][0]
                     bug = mvn_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
-                                            parent_testcase=parent_testcase, type=mvn_bug.determine_type(testcase, delta_testcases),
-                                            traces=mvn_repo.get_trace(parent_testcase.mvn_name), bugged_components=get_bugged_components(commit_fix = commit, commit_bug = parent, module=module))
+                                             parent_testcase=parent_testcase,
+                                             type=mvn_bug.determine_type(testcase, delta_testcases),
+                                             traces=mvn_repo.get_trace(parent_testcase.mvn_name),
+                                             bugged_components=get_bugged_components(commit_fix=commit,
+                                                                                     commit_bug=parent, module=module))
                     module_bugs.append(bug)
-            passed_delta_bugs = list(filter(lambda b: b.type ==mvn_bug.Bug_type.DELTA and b.desctiption ==mvn_bug.invalid_passed_desc, module_bugs))
-            passed_delta_testcases = list(map(lambda b: b.bugged_testcase,passed_delta_bugs))
+            passed_delta_bugs = list(
+                filter(lambda b: b.type == mvn_bug.Bug_type.DELTA and b.desctiption == mvn_bug.invalid_passed_desc,
+                       module_bugs))
+            passed_delta_testcases = list(map(lambda b: b.bugged_testcase, passed_delta_bugs))
             dict_testcases_files = store_test_files(passed_delta_testcases)
             try:
-                if len(passed_delta_bugs)>0:
-                    ans += try_grandparents(issue=issue,testcases=passed_delta_testcases,dict_testcases_files=dict_testcases_files , commit=commit, parent=parent)
+                if len(passed_delta_bugs) > 0:
+                    ans += try_grandparents(issue=issue, testcases=passed_delta_testcases,
+                                            dict_testcases_files=dict_testcases_files, commit=commit, parent=parent)
             except Exception as e:
                 logging.info('SHOULD NOT HAPPEN EXCEPRION DELTA TO THE POWER ' + str(e) + '\n' + traceback.format_exc())
-            ans+=module_bugs
+            ans += module_bugs
             end_time = time.time()
             if GENERATE_DATA:
                 bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time)
         except mvn_bug.BugError as e:
             end_time = time.time()
-            logging.info('failed inspecting module : '+ module+'. The reason is: '+e.msg)
+            logging.info('failed inspecting module : ' + module + '. The reason is: ' + e.msg)
             if GENERATE_DATA:
-                bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time, 'Failed - '+e.msg)
+                bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time,
+                                          'Failed - ' + e.msg)
         except mvn.MVNError as e:
             end_time = time.time()
             logging.info('failed inspecting module : ' + module)
             if GENERATE_DATA:
-                bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time, 'Failed: '+str(e))
-
+                bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time,
+                                          'Failed: ' + str(e))
 
     for b in list(filter(lambda b: b.valid, ans, )):
         logging.info('VALID BUG: ' + str(b))
@@ -164,12 +196,13 @@ def extract_bugs(issue, commit, tests_paths):
     git_cmds_wrapper(lambda: repo.git.reset('--hard'))
     return ans
 
+
 # Tries to run the tests in grandparents commits
-def try_grandparents(issue ,parent, commit, testcases,dict_testcases_files):
+def try_grandparents(issue, parent, commit, testcases, dict_testcases_files):
     ans = []
     testcases_copy = list(map(lambda t: copy.deepcopy(t), testcases))
-    i=0
-    typs = [mvn_bug.Bug_type.DELTA_2,mvn_bug.Bug_type.DELTA_3]
+    i = 0
+    typs = [mvn_bug.Bug_type.DELTA_2, mvn_bug.Bug_type.DELTA_3]
     curr_comit = parent
     while i < 2:
         curr_parent = get_parent(curr_comit)
@@ -190,18 +223,17 @@ def try_grandparents(issue ,parent, commit, testcases,dict_testcases_files):
                 if bug.valid:
                     testcases_copy.remove(testcase)
                     ans.append(bug)
-        if len(testcases_copy) ==0:
+        if len(testcases_copy) == 0:
             break
         curr_comit = curr_parent
-        i+=1
+        i += 1
 
     return ans
 
 
-
 # Handles running maven. Will try to run the smallest module possib;e
 def run_mvn_tests(testcases, module):
-    build_report = mvn_repo.test(tests=testcases, module=module, time_limit = LIMIT_TIME_FOR_BUILD)
+    build_report = mvn_repo.test(tests=testcases, module=module, time_limit=LIMIT_TIME_FOR_BUILD)
     if mvn.has_compilation_error(build_report):
         raise mvn.MVNError(msg='Failed due to compilation error', report=build_report)
     return build_report
@@ -232,7 +264,8 @@ def attach_reports(testcases):
                 testclass.attach_report_to_testcase(testcase)
                 attatched.append(testcase)
             except TestObjects.TestParserException as e:
-                logging.info(str(e)+' the testcalss of this testcase had his report attached. So this testcase must have gotten report')
+                logging.info(str(
+                    e) + ' the testcalss of this testcase had his report attached. So this testcase must have gotten report')
                 no_attatched.append(testcase)
 
     return ans
@@ -240,18 +273,18 @@ def attach_reports(testcases):
 
 # Returns a list of methods that are associated with a change in the diff of the commits
 def get_bugged_components(commit_fix, commit_bug, module):
-    ans  = []
+    ans = []
     commit_diff = commitsdiff.CommitsDiff(
-        commit_a= Commit.init_commit_by_git_commit(commit_bug, 0), commit_b=Commit.init_commit_by_git_commit(commit_fix, 0))
+        commit_a=Commit.init_commit_by_git_commit(commit_bug, 0),
+        commit_b=Commit.init_commit_by_git_commit(commit_fix, 0))
     for file_diff in commit_diff.diffs:
         if file_diff.file_name.endswith('.java'):
             file_path = os.path.join(repo.working_tree_dir, file_diff.file_name)
             ans += list(
-                map(lambda m: mvn.generate_mvn_class_names(src_path=file_path, module=module)+'#'+m,file_diff.changed_methods)
+                map(lambda m: mvn.generate_mvn_class_names(src_path=file_path, module=module) + '#' + m,
+                    file_diff.changed_methods)
             )
     return ans
-
-
 
 
 # Returns tupls of (issue,commit,tests) that may contain bugs
@@ -271,6 +304,7 @@ def extract_possible_bugs(bug_issues):
             ans.append((bug_issue.key, commit.hexsha, issue_tests))
     return ans
 
+
 # Returns dictionar mapping testcases to the file currently contains them.
 def store_test_files(passed_delta_testcases):
     ans = {}
@@ -281,8 +315,6 @@ def store_test_files(passed_delta_testcases):
             shutil.copy2(source, destination)
         ans[testcase.id] = destination
     return ans
-
-
 
 
 # Returns tests that have been changed in the commit in the current state of the project
@@ -367,14 +399,15 @@ def patch_testcases(commit_testcases, commit, prev_commit, module_path):
                     diff = dict_file_diff[error.path]
                     git_cmds_wrapper(lambda: repo.git.execute(['git', 'apply', '-R', dict_diff_patch[diff]]))
                     for testcase in dict_diff_testcases[diff]:
-                        unpatchable_testcases.append((testcase,'Testclass file is not compiling because compilation error not related to testcases: ' + str(
+                        unpatchable_testcases.append((testcase,
+                                                      'Testclass file is not compiling because compilation error not related to testcases: ' + str(
                                                           error)))
                         ans.remove(testcase)
                     continue
                 else:
                     tmp = [tc for tc in error_testclass.testcases if tc.contains_line(error.line)]
                     assert len(tmp) == 1
-                    unpatchable_testcases.append((tmp[0],'Generated compilation error'))
+                    unpatchable_testcases.append((tmp[0], 'Generated compilation error'))
                     not_compiling_testcases.append(tmp[0])
         still_patched_not_compiling_testcases = list(filter(lambda t: t in ans, not_compiling_testcases))
         unpatch_testcases(still_patched_not_compiling_testcases)
@@ -624,7 +657,7 @@ def git_cmds_wrapper(git_cmd):
             pass
         elif 'Please move or remove them before you switch branches.' in str(e):
             logging.info(str(e))
-            git_cmds_wrapper(lambda:repo.index.add('.'))
+            git_cmds_wrapper(lambda: repo.index.add('.'))
             git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
             git_cmds_wrapper(lambda: repo.git.reset('--hard'))
             time.sleep(2)
@@ -642,6 +675,7 @@ def bugs_filter(possible_bug):
         number = int(key.split('-')[1])
         return number >= EARLIEST_BUG
     return True
+
 
 def set_up(argv):
     global all_commits
@@ -683,23 +717,24 @@ def set_up(argv):
     if GENERATE_DATA:
         if os.path.isdir(data_dir):
             raise mvn_bug.BugError('The data currently in the project result dir ({}) will be overwritten.'
-                                  ' Please backup it in another directory'.format(proj_results_dir))
+                                   ' Please backup it in another directory'.format(proj_results_dir))
         os.makedirs(data_dir)
         bug_data_handler = mvn_bug.Bug_data_handler(data_dir)
     LOG_FILENAME = os.path.join(proj_results_dir, 'log.log')
     logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO, format='%(asctime)s %(message)s')
     logging.info('Started cloning ' + argv[1] + '... ')
     git_cmds_wrapper(lambda: git.Git(os.getcwd() + '\\tested_project').init())
-    repo_url = git_url.geturl().replace('\\', '/').replace('////','//')
+    repo_url = git_url.geturl().replace('\\', '/').replace('////', '//')
     git_cmds_wrapper(
         lambda: git.Git(os.getcwd() + '\\tested_project').clone(repo_url))
     logging.info('Finshed cloning ' + argv[1] + '...')
     repo = Repo(mvn_repo.repo_dir)
     if not os.path.isdir(cache_dir):
         os.makedirs(cache_dir)
-    branch_inspected = str(repo.branches[0])
+    if branch_inspected == None or branch_inspected == '':
+        branch_inspected = str(repo.branches[0])
     all_commits = list(repo.iter_commits(branch_inspected))
-    if len(argv)>2:
+    if len(argv) > 2:
         jira_url = urlparse(argv[2])
         jira_proj_name = os.path.basename(jira_url.path)
         JQL_QUERY = JQL_QUERY.format(jira_proj_name)
@@ -712,7 +747,6 @@ def set_up(argv):
         logging.info(e)
     for issue in bug_issues:
         dict_key_issue[issue.key] = issue
-
 
 
 if __name__ == '__main__':
