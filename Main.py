@@ -27,7 +27,7 @@ all_commits = []
 bug_issues = []
 branch_inspected = ''
 repo = None
-mvn_repo = None
+mvn_repo= None
 proj_name = ''
 jira_proj_name = ''
 orig_wd = os.getcwd()
@@ -99,7 +99,8 @@ def extract_bugs(issue, commit, tests_paths):
                 print(colored('### Generating tests ###', 'blue'))
                 bugged_classes = list(map(lambda c: re.sub('\#.*','',c), get_bugged_components(commit_fix=commit, commit_bug=parent, module=module)))
                 mvn_repo.generate_tests(classes=bugged_classes, module=module)
-                dict_modules_testcases[module]+= mvn_repo.get_generated_testcases(module=module)
+                generated_testcases = mvn_repo.get_generated_testcases(module=module)
+                dict_modules_testcases[module]+= generated_testcases
             print(colored('### Running tests in commit ###', 'green'))
             mvn_repo.change_surefire_ver(surefire_version)
             build_log = run_mvn_tests(dict_modules_testcases[module], module)
@@ -109,7 +110,7 @@ def extract_bugs(issue, commit, tests_paths):
                 print(colored('### Running generated tests ###', 'blue'))
                 build_log = run_mvn_tests(dict_modules_testcases[module],module)
                 (gen_commit_valid_testcases, gen_no_report_testcases) = attach_reports(dict_modules_testcases[module])
-                commit_tests_object+=gen_commit_valid_testcases
+                commit_valid_testcases+=gen_commit_valid_testcases
                 no_report_testcases+=gen_no_report_testcases
             if len(commit_valid_testcases) == 0:
                 raise mvn.MVNError(msg='No reports', report=build_log)
@@ -124,12 +125,12 @@ def extract_bugs(issue, commit, tests_paths):
             for unpatchable_testcase in unpatchable_testcases:
                 ans.append(mvn_bug(issue_key=issue.key, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
                                    bugged_testcase=unpatchable_testcase[0], fixed_testcase=unpatchable_testcase[0],
-                                   type=mvn_bug.determine_type(unpatchable_testcase[0], delta_testcases), valid=False,
+                                   type=mvn_bug.determine_type(unpatchable_testcase[0], delta_testcases, generated_testcases), valid=False,
                                    desc=unpatchable_testcase[1]))
             for no_report_testcase in no_report_testcases:
                 ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
                                        bugged_testcase=no_report_testcase, fixed_testcase=no_report_testcase,
-                                       type=mvn_bug.determine_type(no_report_testcase, delta_testcases), valid=False,
+                                       type=mvn_bug.determine_type(no_report_testcase, delta_testcases, gen_commit_valid_testcases), valid=False,
                                        desc='No report'))
             print(colored('### Running tests in parent ###', 'green'))
             if TRACE:
@@ -158,7 +159,7 @@ def extract_bugs(issue, commit, tests_paths):
                     parent_testcase = [t for t in parent_valid_testcases if t == testcase][0]
                     bug = mvn_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
                                              parent_testcase=parent_testcase,
-                                             type=mvn_bug.determine_type(testcase, delta_testcases),
+                                             type=mvn_bug.determine_type(testcase, delta_testcases,generated_testcases),
                                              traces=mvn_repo.get_trace(parent_testcase.mvn_name),
                                              bugged_components=get_bugged_components(commit_fix=commit,
                                                                                      commit_bug=parent, module=module))
