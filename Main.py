@@ -142,6 +142,8 @@ def extract_bugs(issue, commit, tests_paths):
             # parent_tests = test_parser.get_tests(module)
             parent_tests = list(map(lambda t_path: TestObjects.TestClass(t_path), tests_paths))
             all_parent_testcases = mvn.get_testcases(parent_tests)
+            if GENERATE_TESTS:
+                all_parent_testcases = mvn_repo.get_generated_testcases(module=module)
             relevant_parent_testcases = list(filter(lambda t: t in commit_valid_testcases, all_parent_testcases))
             (parent_valid_testcases, no_report_testcases) = attach_reports(relevant_parent_testcases)
             for no_report_testcase in no_report_testcases:
