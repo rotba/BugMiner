@@ -108,9 +108,9 @@ def extract_bugs(issue, commit, tests_paths):
             if GENERATE_TESTS:
                 mvn_repo.change_surefire_ver(evosuite_surefire_version)
                 print(colored('### Running generated tests ###', 'blue'))
-                build_log = run_mvn_tests(dict_modules_testcases[module],module)
+                build_log = run_mvn_tests(set(map(lambda t: t.parent,dict_modules_testcases[module])),module)
                 (gen_commit_valid_testcases, gen_no_report_testcases) = attach_reports(dict_modules_testcases[module])
-                commit_valid_testcases+=gen_commit_valid_testcases
+                commit_valid_testcases =gen_commit_valid_testcases
                 no_report_testcases+=gen_no_report_testcases
             if len(commit_valid_testcases) == 0:
                 raise mvn.MVNError(msg='No reports', report=build_log)
