@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp_file.txt" afterDir="false" />
@@ -13,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/BugMiner$specific.coverage" NAME="specific Coverage Results" MODIFIED="1562851079048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMiner$specific.coverage" NAME="specific Coverage Results" MODIFIED="1563018738103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Test_test_parser.coverage" NAME="Test_test_parser Coverage Results" MODIFIED="1537189344462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$TestApplier.coverage" NAME="TestApplier Coverage Results" MODIFIED="1538312311785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Bug_extraction_tests.coverage" NAME="Bug extraction tests Coverage Results" MODIFIED="1562846881385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
@@ -23,11 +24,12 @@
     <SUITE FILE_PATH="coverage/BugMiner$generate_watch.coverage" NAME="generate_watch Coverage Results" MODIFIED="1538479433243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Test.coverage" NAME="Test Coverage Results" MODIFIED="1562849874147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Test_mvn_parsers.coverage" NAME="Test_mvn_parsers Coverage Results" MODIFIED="1538659435918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvn_parsers" />
+    <SUITE FILE_PATH="coverage/BugMiner$all.coverage" NAME="all Coverage Results" MODIFIED="1563018155996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$TestMain.coverage" NAME="TestMain Coverage Results" MODIFIED="1538659865294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMinerTest$Test.coverage" NAME="Test Coverage Results" MODIFIED="1537609482120" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests.coverage" NAME="all Coverage Results" MODIFIED="1562851121122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1539511064782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BugMiner$auto_gen.coverage" NAME="auto_gen Coverage Results" MODIFIED="1562945713613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMiner$auto_gen.coverage" NAME="auto_gen Coverage Results" MODIFIED="1563027356069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/tests/results/extract_bugs_5" userTempatePath="" />
   <component name="FileEditorManager">
@@ -35,8 +37,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/Repo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="91">
-              <caret line="62" column="65" selection-start-line="62" selection-start-column="65" selection-end-line="62" selection-end-column="65" />
+            <state relative-caret-position="25">
+              <caret line="411" column="68" selection-start-line="411" selection-start-column="68" selection-end-line="411" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -44,7 +46,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
+            <state relative-caret-position="105">
               <caret line="110" selection-start-line="110" selection-end-line="110" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
@@ -54,9 +56,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/mvn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="279" column="18" selection-start-line="279" selection-start-column="18" selection-end-line="279" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/bug.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
+            <state relative-caret-position="6300">
               <caret line="322" selection-start-line="322" selection-end-line="322" />
             </state>
           </provider>
@@ -65,8 +76,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="284" column="59" selection-start-line="284" selection-start-column="8" selection-end-line="284" selection-end-column="59" />
+            <state relative-caret-position="124">
+              <caret line="335" column="82" selection-start-line="335" selection-start-column="82" selection-end-line="335" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv_p3/Lib/site-packages/GitPython-2.1.11-py3.7.egg/git/repo/base.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="32">
+              <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -82,7 +102,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>try_o</find>
       <find>wrap</find>
       <find>Popen</find>
       <find>p.</find>
@@ -112,6 +131,7 @@
       <find>gen_commit_valid_testcases</find>
       <find>MavenRepo</find>
       <find>commit_tests_object</find>
+      <find>test_extract_bugs_a</find>
     </findStrings>
     <replaceStrings>
       <replace>proj_dir</replace>
@@ -183,17 +203,17 @@
         <option value="$PROJECT_DIR$/diff/filediff.py" />
         <option value="$USER_HOME$/Anaconda2/Lib/site-packages/AIDnD_mvnpy-1.0.1-py2.7.egg/mvnpy/Repo.py" />
         <option value="$PROJECT_DIR$/Test.py" />
-        <option value="$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/Repo.py" />
         <option value="$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/TestObjects.py" />
         <option value="$PROJECT_DIR$/Main.py" />
+        <option value="$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/Repo.py" />
         <option value="$PROJECT_DIR$/tests/test.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-11" />
-    <option name="width" value="980" />
-    <option name="height" value="1031" />
+    <option name="x" value="-12" />
+    <option name="width" value="981" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -201,6 +221,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,7 +233,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -310,7 +330,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_pattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;tests.test.TestMain.test_extract_bugs_4&quot;" />
+      <option name="_new_additionalArguments" value="&quot;tests.test.TestMain.test_extract_bugs_1&quot;" />
       <option name="_new_target" value="&quot;&quot;" />
       <option name="_new_targetType" value="&quot;CUSTOM&quot;" />
       <method v="2" />
@@ -341,44 +361,45 @@
       <workItem from="1562839834458" duration="158000" />
       <workItem from="1562842844945" duration="11372000" />
       <workItem from="1562856661760" duration="8681000" />
-      <workItem from="1562939799287" duration="5343000" />
+      <workItem from="1562939799287" duration="8329000" />
+      <workItem from="1563018142175" duration="4999000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="auto_gen - 2019.07.12 at 18h 07m 53s.xml">
+    <history-entry file="auto_gen - 2019.07.13 at 16h 47m 04s.xml">
       <configuration name="auto_gen" configurationId="tests" />
     </history-entry>
-    <history-entry file="auto_gen - 2019.07.12 at 18h 14m 00s.xml">
+    <history-entry file="auto_gen - 2019.07.13 at 16h 48m 38s.xml">
       <configuration name="auto_gen" configurationId="tests" />
     </history-entry>
-    <history-entry file="auto_gen - 2019.07.12 at 18h 14m 56s.xml">
+    <history-entry file="auto_gen - 2019.07.13 at 16h 52m 30s.xml">
       <configuration name="auto_gen" configurationId="tests" />
     </history-entry>
-    <history-entry file="auto_gen - 2019.07.12 at 18h 20m 52s.xml">
+    <history-entry file="auto_gen - 2019.07.13 at 16h 53m 08s.xml">
       <configuration name="auto_gen" configurationId="tests" />
     </history-entry>
-    <history-entry file="auto_gen - 2019.07.12 at 18h 21m 32s.xml">
+    <history-entry file="auto_gen - 2019.07.13 at 16h 53m 57s.xml">
       <configuration name="auto_gen" configurationId="tests" />
     </history-entry>
-    <history-entry file="auto_gen - 2019.07.12 at 18h 24m 34s.xml">
+    <history-entry file="auto_gen - 2019.07.13 at 16h 55m 54s.xml">
       <configuration name="auto_gen" configurationId="tests" />
     </history-entry>
-    <history-entry file="auto_gen - 2019.07.12 at 18h 28m 02s.xml">
+    <history-entry file="auto_gen - 2019.07.13 at 17h 05m 54s.xml">
       <configuration name="auto_gen" configurationId="tests" />
     </history-entry>
-    <history-entry file="auto_gen - 2019.07.12 at 18h 31m 38s.xml">
+    <history-entry file="auto_gen - 2019.07.13 at 17h 08m 19s.xml">
       <configuration name="auto_gen" configurationId="tests" />
     </history-entry>
-    <history-entry file="auto_gen - 2019.07.12 at 18h 33m 11s.xml">
+    <history-entry file="auto_gen - 2019.07.13 at 17h 15m 37s.xml">
       <configuration name="auto_gen" configurationId="tests" />
     </history-entry>
-    <history-entry file="auto_gen - 2019.07.12 at 18h 33m 57s.xml">
+    <history-entry file="auto_gen - 2019.07.13 at 17h 17m 48s.xml">
       <configuration name="auto_gen" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49967000" />
+    <option name="totallyTimeSpent" value="57952000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -391,21 +412,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.097165994" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09878542" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32871974" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.63139015" visible="true" weight="0.41666666" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.5730942" weight="0.43333334" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.7502246" visible="true" weight="0.33333334" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.885894" weight="0.32037038" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.36860988" side_tool="true" visible="true" weight="0.41666666" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.24977538" side_tool="true" visible="true" weight="0.33333334" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49924356" weight="0.32827735" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="12" weight="0.3289689" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32936078" />
@@ -460,8 +482,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tests/test.py</url>
-          <line>247</line>
-          <option name="timeStamp" value="107" />
+          <line>245</line>
+          <option name="timeStamp" value="108" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -475,6 +497,18 @@
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>exp_testcase_id</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>exp_testcase_id = [os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test4()',
+                           os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test04()',
+                           os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test01()']</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>self.get_evosuite_tests(module=module) + list(
             filter(lambda x: self.is_generated(x), self.get_tests(module=module)))</expression-string>
@@ -511,24 +545,6 @@
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>ans = 0
-i =0
-while i&lt;100:
-    ans+= len(possible_bugs[i][2])
-    i+=1
-print(ans)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>{'issue': bug.issue.key,
-                'commit': bug.commit.hexsha,
-                'testcase': bug.test.get_id(),
-                'description': bug.desctiption}</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
     </expressions>
     <expressions id="breakpointCondition">
       <expression>
@@ -546,54 +562,53 @@ print(ans)</expression-string>
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type == Main.mvn_bug.Bug_type.GEN</expression-string>
+        <expression-string>filter(lambda x: x.valid, res)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>bug.bugged_testcase.id == exp_testcase_id</expression-string>
+        <expression-string>filter(lambda x: x.valid: res)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>filter()res</expression-string>
+        <expression-string>y.bugged_testcase.id</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>bug.bugged_testcase.id</expression-string>
+        <expression-string>y.bugged_testcase.id in exp_testcase_id</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>str(bug.bugged_testcase.id) , exp_testcase_id</expression-string>
+        <expression-string>y.bugged_testcase in exp_testcase_id</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>bug.bugged_testcase.id , exp_testcase_id</expression-string>
+        <expression-string>y.bugged_testcase</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>bug</expression-string>
+        <expression-string>y</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>res = filter(lambda x: x.valid,res )</expression-string>
+        <expression-string>y = (filter(lambda x: x.valid, res))[0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>filter(lambda x: x.valid,res )</expression-string>
+        <expression-string>y = (fitler(lambda x: x.valid, res))[0]</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/requests/models.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/csv.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/logging/__init__.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/xml/etree/ElementTree.py" />
@@ -696,13 +711,6 @@ print(ans)</expression-string>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/AIDnD_mvnpy-1.0.1-py2.7.egg/mvnpy/bug.py" />
-    <entry file="file://$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/mvn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="264" selection-start-line="264" selection-end-line="264" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Anaconda2/Lib/unittest/case.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -722,21 +730,35 @@ print(ans)</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/bug.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
+        <state relative-caret-position="6300">
           <caret line="322" selection-start-line="322" selection-end-line="322" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv_p3/Lib/site-packages/GitPython-2.1.11-py3.7.egg/git/repo/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/mvn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="279" column="18" selection-start-line="279" selection-start-column="18" selection-end-line="279" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/Repo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="91">
-          <caret line="62" column="65" selection-start-line="62" selection-start-column="65" selection-end-line="62" selection-end-column="65" />
+        <state relative-caret-position="25">
+          <caret line="411" column="68" selection-start-line="411" selection-start-column="68" selection-end-line="411" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
+        <state relative-caret-position="105">
           <caret line="110" selection-start-line="110" selection-end-line="110" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
@@ -746,8 +768,8 @@ print(ans)</expression-string>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="65">
-          <caret line="284" column="59" selection-start-line="284" selection-start-column="8" selection-end-line="284" selection-end-column="59" />
+        <state relative-caret-position="124">
+          <caret line="335" column="82" selection-start-line="335" selection-start-column="82" selection-end-line="335" selection-end-column="82" />
         </state>
       </provider>
     </entry>

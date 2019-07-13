@@ -138,6 +138,7 @@ def extract_bugs(issue, commit, tests_paths):
             mvn_repo.change_surefire_ver(surefire_version)
             run_mvn_tests(dict_modules_testcases[module], module)
             if GENERATE_TESTS:
+                print(colored('### Running generated tests in parent ###', 'blue'))
                 mvn_repo.change_surefire_ver(evosuite_surefire_version)
                 run_mvn_tests([], module)
             # parent_tests = test_parser.get_tests(module)
