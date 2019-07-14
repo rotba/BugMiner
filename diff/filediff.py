@@ -160,5 +160,6 @@ def generate_method_signiture(method):
                 parameters += ', ' + param.type.name
         parameters += ')'
     #TODO IN ORDER TO DISTUNGUISH BTWEEN METHODS WITH EQUAL NAME THE TRACER SHOULD TAKE IN TO ACCOUNT THE FULL SIGNATURE
-    #return ret_type + '_' + method.name + parameters
-    return method.name
+    return ret_type + '_' + method.name + parameters
+    #return method.name
+

@@ -1,0 +1,11 @@
+[inst2] + org.apache.commons.math.random.RandomDataTest@testNextPermutation
+[inst2] + org.apache.commons.math.random.RandomDataImpl@nextPermutation
+[inst2] + org.apache.commons.math.random.RandomDataImpl@getNatural
+[inst2] + org.apache.commons.math.random.RandomDataImpl@shuffle
+[inst2] + org.apache.commons.math.random.RandomDataImpl@nextInt
+[inst2] + org.apache.commons.math.random.RandomDataImpl@getRan
+[inst2] + org.apache.commons.math.random.RandomDataTest@findPerm
+[inst2] + org.apache.commons.math.stat.inference.ChiSquareTestImpl@chiSquare
+[inst2] + org.apache.commons.math.stat.inference.ChiSquareTestImpl@isPositive
+[inst2] + org.apache.commons.math.stat.inference.ChiSquareTestImpl@isNonNegative
+[inst2] + org.apache.commons.math.RetryTestCase@runTest

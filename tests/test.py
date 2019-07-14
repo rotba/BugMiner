@@ -317,7 +317,8 @@ class TestMain(unittest.TestCase):
         exp_testcase_id = [os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test4()',
                            os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test04()',
                            os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test01()',
-                           os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test00()']
+                           os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test00()',
+                           os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test0()']
         commit = [c for c in Main.all_commits if c.hexsha == '23270ce01dbf36cd0cf2ccc9438dce641822abb8'][0]
         module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
         Main.repo.git.reset('--hard')
@@ -333,7 +334,7 @@ class TestMain(unittest.TestCase):
         Main.repo.git.add('--all')
         Main.repo.git.checkout('HEAD', '-f')
         if not success:
-            self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
+            self.fail('Did not extracted the bug of testcase -' + str(exp_testcase_id))
 
     def test_extract_bugs_pick_up_failures(self):
         print('test_extract_bugs_pick_up_failures')
@@ -404,8 +405,11 @@ class TestMain(unittest.TestCase):
 
     def test_generate_data(self):
         print('test_generate_data')
+        if os.path.exists(os.path.join(os.getcwd(), 'results')):
+            shutil.rmtree(os.path.join(os.getcwd(), 'results'))
         Main.USE_CACHE=False
         Main.GENERATE_DATA = True
+        Main.GENERATE_TESTS = False
         Main.main(['','https://github.com/apache/tika','http:\issues.apache.org\jira\projects\TIKA','TIKA-56'])
         expected_issue_dir = os.path.join(Main.data_dir,'TIKA-56')
         expected_commit_dir = os.path.join(expected_issue_dir, 'b12c01d9b56053554cec501aab0530f7f4352daf')
@@ -419,10 +423,12 @@ class TestMain(unittest.TestCase):
         self.assertTrue(os.path.isfile(expected_testcase_pickle))
         self.assertTrue(os.path.isfile(expected_report_xml))
         self.assertTrue(os.path.isfile(expected_patch))
-        #shutil.rmtree(Main.data_dir)
+
 
     def test_generate_matrix(self):
         print('test_generate_matrix')
+        if os.path.exists(os.path.join(os.getcwd(), 'results')):
+            shutil.rmtree(os.path.join(os.getcwd(), 'results'))
         Main.USE_CACHE=False
         Main.GENERATE_DATA = True
         Main.TRACE = True

@@ -84,6 +84,7 @@ def extract_bugs(issue, commit, tests_paths):
     parent = get_parent(commit)
     if parent == None:
         return ans
+    git_cmds_wrapper(lambda: repo.git.add('.'))
     git_cmds_wrapper(lambda: repo.git.checkout(commit.hexsha, '-f'))
     commit_tests_object = list(map(lambda t_path: TestObjects.TestClass(t_path), tests_paths))
     if GENERATE_DATA:
@@ -95,6 +96,7 @@ def extract_bugs(issue, commit, tests_paths):
             start_time = time.time()
             module_bugs = []
             commit_valid_testcases = []
+            generated_testcases = []
             if GENERATE_TESTS:
                 print(colored('### Generating tests ###', 'blue'))
                 bugged_classes = list(map(lambda c: re.sub('\#.*','',c), get_bugged_components(commit_fix=commit, commit_bug=parent, module=module)))
@@ -105,6 +107,7 @@ def extract_bugs(issue, commit, tests_paths):
             mvn_repo.change_surefire_ver(surefire_version)
             build_log = run_mvn_tests(dict_modules_testcases[module], module)
             (commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
+            gen_commit_valid_testcases = filter(lambda x: x in commit_valid_testcases,commit_valid_testcases)
             if GENERATE_TESTS:
                 mvn_repo.change_surefire_ver(evosuite_surefire_version)
                 print(colored('### Running generated tests ###', 'blue'))
@@ -142,16 +145,17 @@ def extract_bugs(issue, commit, tests_paths):
                 mvn_repo.change_surefire_ver(evosuite_surefire_version)
                 run_mvn_tests([], module)
             # parent_tests = test_parser.get_tests(module)
-            parent_tests = list(map(lambda t_path: TestObjects.TestClass(t_path), tests_paths))
-            all_parent_testcases = mvn.get_testcases(parent_tests)
             if GENERATE_TESTS:
                 all_parent_testcases = mvn_repo.get_generated_testcases(module=module)
+            else:
+                parent_tests = list(map(lambda t_path: TestObjects.TestClass(t_path), tests_paths))
+                all_parent_testcases = mvn.get_testcases(parent_tests)
             relevant_parent_testcases = list(filter(lambda t: t in commit_valid_testcases, all_parent_testcases))
             (parent_valid_testcases, no_report_testcases) = attach_reports(relevant_parent_testcases)
             for no_report_testcase in no_report_testcases:
                 ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
                                        bugged_testcase=no_report_testcase, fixed_testcase=no_report_testcase,
-                                       type=mvn_bug.determine_type(no_report_testcase, delta_testcases), valid=False,
+                                       type=mvn_bug.determine_type(no_report_testcase, delta_testcases, gen_commit_valid_testcases), valid=False,
                                        desc='No report'))
             if GENERATE_DATA:
                 bug_data_handler.attach_reports(issue, commit, parent_valid_testcases)
@@ -736,7 +740,8 @@ def set_up(argv):
     if not os.path.isdir(cache_dir):
         os.makedirs(cache_dir)
     if branch_inspected == None or branch_inspected == '':
-        branch_inspected = str(repo.branches[0])
+        # branch_inspected = repo.branches[0] if len(repo.branches) > 1 else repo.active_branch
+        branch_inspected = repo.branches[0].name
     all_commits = list(repo.iter_commits(branch_inspected))
     if len(argv) > 2:
         jira_url = urlparse(argv[2])
