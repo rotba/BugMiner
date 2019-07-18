@@ -289,32 +289,6 @@ class TestMain(unittest.TestCase):
 				return
 		self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
-	def test_extract_bugs_auto_generated_test_basic_project(self):
-		print('test_extract_bugs_5')
-		Main.branch_inspected = 'test_extract_bugs_5'
-		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		issue = Main.jira.issue('TIKA-19')
-		exp_testcase_id = [
-			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test4()',
-			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test04()',
-			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test01()',
-			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test00()']
-		commit = [c for c in Main.all_commits if c.hexsha == '23270ce01dbf36cd0cf2ccc9438dce641822abb8'][0]
-		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
-		Main.repo.git.reset('--hard')
-		Main.repo.git.checkout(commit.hexsha, '-f')
-		tests_paths = Main.get_tests_paths_from_commit(commit)
-		Main.GENERATE_TESTS = True
-		res = Main.extract_bugs(issue, commit, tests_paths)
-		success = False
-		for bug in res:
-			if bug.valid and bug.bugged_testcase.id in exp_testcase_id and bug.type == Main.mvn_bug.Bug_type.GEN:
-				success = True
-
-		Main.repo.git.add('--all')
-		Main.repo.git.checkout('HEAD', '-f')
-		if not success:
-			self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
 	def test_extract_bugs_auto_generated_test_basic_project(self):
 		print('test_extract_bugs_5')
@@ -337,13 +311,11 @@ class TestMain(unittest.TestCase):
 		success = False
 		num_of_success_bugs = 0
 		for bug in res:
-			# if bug.valid and bug.bugged_testcase.id in exp_testcase_id and bug.type == Main.mvn_bug.Bug_type.GEN:
 			if bug.valid and bug.type == Main.mvn_bug.Bug_type.GEN:
-				success = True
 				num_of_success_bugs+=1
 		Main.repo.git.add('--all')
 		Main.repo.git.checkout('HEAD', '-f')
-		if 0< num_of_success_bugs <=3:
+		if not 0< num_of_success_bugs <=3:
 			self.fail('Did not extracted the bug of testcase -' + str(exp_testcase_id))
 
 
