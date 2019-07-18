@@ -124,7 +124,7 @@ def extract_bugs(issue, commit, tests_paths):
                 mvn_repo.evosuite_clean(module = module)
                 git_cmds_wrapper(lambda: repo.git.add('.'))
                 git_cmds_wrapper(lambda: repo.git.commit('-m', 'GARBAGE_COMMIT'))
-                generated_tests_diffs = parent.diff('HEAD')
+                generated_tests_diffs = filter(lambda x: is_evosuite_generated_test_file(x.a_path), parent.diff('HEAD'))
                 gen_commit = repo.commit(repo.head.commit.hexsha)
                 commit_valid_testcases =gen_commit_valid_testcases
                 no_report_testcases+=gen_no_report_testcases
@@ -395,6 +395,7 @@ def patch_testcases(commit_testcases, commit, prev_commit, module_path, generate
     dict_file_diff = {}
     not_compiling_testcases = []
     set_up_patches_dir()
+    DELETE_ME = set(list((list(commit.diff(prev_commit))+generated_tests_diff)))
     for diff in set(list((list(commit.diff(prev_commit))+generated_tests_diff))):
         associeted_testcases = get_associated_test_case(diff, commit_testcases)
         if not len(associeted_testcases) == 0:
@@ -437,6 +438,8 @@ def patch_testcases(commit_testcases, commit, prev_commit, module_path, generate
             ans.remove(testcase)
     return (ans, unpatchable_testcases)
 
+def is_evosuite_generated_test_file(path):
+    return '_ESTest.java' in path or '_ESTest_scaffolding.java' in path
 
 def get_diff_src_path(associeted_testcases, diff):
     if 'ESTest_scaffolding' in diff.a_path:
