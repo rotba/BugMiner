@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/mvn_parsers/static_files/tika" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_project" vcs="Git" />
@@ -10,6 +11,7 @@
     <mapping directory="$PROJECT_DIR$/tested_project" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/GitMavenTrackingProject" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/MavenProj" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_project/MavenProj - Copy" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/accumulo" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/camel" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/cayenne" vcs="Git" />

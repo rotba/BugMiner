@@ -4,6 +4,11 @@ import shutil
 import time
 import unittest
 
+from PossibleBugMiner.jira_extractor import JiraExtractor
+from jira import JIRA
+
+jira = JIRA(options={'server': 'https://issues.apache.org/jira'})
+
 import git
 
 import Main
@@ -23,8 +28,11 @@ class TestMain(unittest.TestCase):
 	def test_check_out_and_get_tests_from_commit(self):
 		print('test_check_out_and_get_tests_from_commit')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		commit = [c for c in Main.all_commits if c.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b'][0]
-		tests_paths = Main.get_tests_paths_from_commit(commit)
+		possible_bugs_extractor = JiraExtractor(
+			repo=Main.repo, branch_inspected=Main.branch_inspected, jira_url=''
+		)
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b'][0]
+		tests_paths = possible_bugs_extractor.get_tests_paths_from_commit(commit)
 		tests = list(map(lambda t_path: Main.TestObjects.TestClass(t_path), tests_paths))
 		self.assertEqual(len(tests), 1,
 		                 'Only one test should be associated with 52e80f56a2f2877ff2261889b1dc180c51b72f6b')
@@ -35,8 +43,8 @@ class TestMain(unittest.TestCase):
 	def test_created_test_extract_bugs(self):
 		print('test_created_test_extract_bugs')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		self.issue_19 = Main.jira.issue('TIKA-19')
-		commit = [c for c in Main.all_commits if c.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b'][0]
+		self.issue_19 = jira.issue('TIKA-19')
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == '52e80f56a2f2877ff2261889b1dc180c51b72f6b'][0]
 		tests_paths = Main.get_tests_paths_from_commit(commit)
 		res = Main.extract_bugs(self.issue_19, commit, tests_paths)
 		for bug in res:
@@ -47,7 +55,7 @@ class TestMain(unittest.TestCase):
 	def test_find_test_cases_diff(self):
 		print('test_find_test_cases_diff')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		commit = [c for c in Main.all_commits if c.hexsha == '14ef5aa7f71f2beb78f38227399ec4b3388b4127'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == '14ef5aa7f71f2beb78f38227399ec4b3388b4127'][0]
 		test_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_2\src\test\java\p_1\AssafTest.java'
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_2'
 		Main.prepare_project_repo_for_testing(commit, module_path)
@@ -63,7 +71,7 @@ class TestMain(unittest.TestCase):
 	def test_get_commit_created_testclasses(self):
 		print('test_get_commit_created_testclasses')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		commit = [c for c in Main.all_commits if c.hexsha == 'e00037324027af30134ee1554b93f5969f8f100e'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == 'e00037324027af30134ee1554b93f5969f8f100e'][0]
 		test_report_path = os.getcwd() + 'r\tested_project\MavenProj\sub_mod_1\target\surefire-reports\TEST-p_1.AmitTest.xml'
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
 		Main.prepare_project_repo_for_testing(commit, module_path)
@@ -78,7 +86,7 @@ class TestMain(unittest.TestCase):
 	def test_patch_tescases(self):
 		print('test_patch_tescases')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		commit = [c for c in Main.all_commits if c.hexsha == 'e00037324027af30134ee1554b93f5969f8f100e'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == 'e00037324027af30134ee1554b93f5969f8f100e'][0]
 		parent = commit.parents[0]
 		test_report_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\target\surefire-reports\TEST-p_1.AmitTest.xml'
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
@@ -100,7 +108,7 @@ class TestMain(unittest.TestCase):
 	def test_patch_tescases_not_compiling_testcases(self):
 		print('test_patch_tescases_not_compiling_testcases')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		commit = [c for c in Main.all_commits if c.hexsha == 'a71cdc161b0d87e7ee808f5078ed5fefab758773'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == 'a71cdc161b0d87e7ee808f5078ed5fefab758773'][0]
 		parent = commit.parents[0]
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
 		Main.prepare_project_repo_for_testing(commit, module_path)
@@ -127,7 +135,7 @@ class TestMain(unittest.TestCase):
 	def test_patch_tescases_not_compiling_testcases_exclusive_patching(self):
 		print('test_patch_tescases_not_compiling_testcases_exclusive_patching')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		commit = [c for c in Main.all_commits if c.hexsha == 'e4d2bb8efdfa576632b99d0e91b35cf0262e70be'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == 'e4d2bb8efdfa576632b99d0e91b35cf0262e70be'][0]
 		parent = commit.parents[0]
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_2'
 		Main.prepare_project_repo_for_testing(commit, module_path)
@@ -160,7 +168,7 @@ class TestMain(unittest.TestCase):
 		else:
 			shutil.rmtree(test_dir)
 			os.makedirs(test_dir)
-		commit = [c for c in Main.all_commits if c.hexsha == 'e4d2bb8efdfa576632b99d0e91b35cf0262e70be'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == 'e4d2bb8efdfa576632b99d0e91b35cf0262e70be'][0]
 		parent = commit.parents[0]
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_2'
 		Main.prepare_project_repo_for_testing(commit, module_path)
@@ -198,7 +206,7 @@ class TestMain(unittest.TestCase):
 		else:
 			shutil.rmtree(test_dir)
 			os.makedirs(test_dir)
-		commit = [c for c in Main.all_commits if c.hexsha == 'b12c01d9b56053554cec501aab0530f7f4352daf'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == 'b12c01d9b56053554cec501aab0530f7f4352daf'][0]
 		parent = commit.parents[0]
 		module_path = os.getcwd() + r'\tested_project\tika'
 		Main.prepare_project_repo_for_testing(commit, module_path)
@@ -228,7 +236,7 @@ class TestMain(unittest.TestCase):
 	def test_get_uncompiled_testcases(self):
 		print('test_get_compilation_error_testcases')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		commit = [c for c in Main.all_commits if c.hexsha == 'a71cdc161b0d87e7ee808f5078ed5fefab758773'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == 'a71cdc161b0d87e7ee808f5078ed5fefab758773'][0]
 		parent = commit.parents[0]
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
 		Main.repo.git.reset('--hard')
@@ -245,12 +253,15 @@ class TestMain(unittest.TestCase):
 	def test_extract_bugs_1(self):
 		print('test_extract_bugs_1')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		issue = Main.jira.issue('TIKA-19')
+		possible_bugs_extractor = JiraExtractor(
+			repo=Main.repo, branch_inspected=Main.branch_inspected, jira_url=''
+		)
+		issue = jira.issue('TIKA-19')
 		exp_testcase_id = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#None_fooTest()'
-		commit = [c for c in Main.all_commits if c.hexsha == '19f6c78889f9e929bc964d420315a043b62c7967'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == '19f6c78889f9e929bc964d420315a043b62c7967'][0]
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
 		Main.repo.git.checkout(commit.hexsha, '-f')
-		tests_paths = Main.get_tests_paths_from_commit(commit)
+		tests_paths = possible_bugs_extractor.get_tests_paths_from_commit(commit)
 		res = Main.extract_bugs(issue, commit, tests_paths)
 		for bug in res:
 			if bug.valid == True and bug.bugged_testcase.id == exp_testcase_id and bug.type == Main.mvn_bug.Bug_type.DELTA:
@@ -260,13 +271,16 @@ class TestMain(unittest.TestCase):
 	def test_extract_bugs_2(self):
 		print('test_extract_bugs_2')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		issue = Main.jira.issue('TIKA-19')
+		possible_bugs_extractor = JiraExtractor(
+			repo=Main.repo, branch_inspected=Main.branch_inspected, jira_url=''
+		)
+		issue = jira.issue('TIKA-19')
 		exp_testcase_id = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#None_fooTest()'
-		commit = [c for c in Main.all_commits if c.hexsha == '19f6c78889f9e929bc964d420315a043b62c7967'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == '19f6c78889f9e929bc964d420315a043b62c7967'][0]
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
 		Main.repo.git.reset('--hard')
 		Main.repo.git.checkout(commit.hexsha)
-		tests_paths = Main.get_tests_paths_from_commit(commit)
+		tests_paths = possible_bugs_extractor.get_tests_paths_from_commit(commit)
 		res = Main.extract_bugs(issue, commit, tests_paths)
 		for bug in res:
 			if bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type == Main.mvn_bug.Bug_type.DELTA:
@@ -277,9 +291,9 @@ class TestMain(unittest.TestCase):
 	def test_extract_bugs_4(self):
 		print('test_extract_bugs_4')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		issue = Main.jira.issue('TIKA-19')
+		issue = jira.issue('TIKA-19')
 		exp_testcase_id = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#None_delta_3_Test()'
-		commit = [c for c in Main.all_commits if c.hexsha == 'c94e2644725de71039b8f916555176146069a68f'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == 'c94e2644725de71039b8f916555176146069a68f'][0]
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
 		Main.repo.git.checkout(commit.hexsha, '-f')
 		tests_paths = Main.get_tests_paths_from_commit(commit)
@@ -294,18 +308,22 @@ class TestMain(unittest.TestCase):
 		print('test_extract_bugs_5')
 		Main.branch_inspected = 'origin/test_extract_bugs_5'
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		issue = Main.jira.issue('TIKA-19')
+		Main.USE_CACHED_STATE = False
+		issue = jira.issue('TIKA-19')
+		possible_bugs_extractor = JiraExtractor(
+			repo=Main.repo, branch_inspected=Main.branch_inspected, jira_url=''
+		)
 		exp_testcase_id = [
 			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test4()',
 			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test04()',
 			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test01()',
 			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test00()',
 			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test0()']
-		commit = [c for c in Main.all_commits if c.hexsha == '23270ce01dbf36cd0cf2ccc9438dce641822abb8'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == '23270ce01dbf36cd0cf2ccc9438dce641822abb8'][0]
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
 		Main.repo.git.reset('--hard')
 		Main.repo.git.checkout(commit.hexsha, '-f')
-		tests_paths = Main.get_tests_paths_from_commit(commit)
+		tests_paths = possible_bugs_extractor.get_tests_paths_from_commit(commit)
 		Main.GENERATE_TESTS = True
 		res = Main.extract_bugs(issue, commit, tests_paths)
 		success = False
@@ -325,13 +343,16 @@ class TestMain(unittest.TestCase):
 	def test_extract_bugs_pick_up_failures(self):
 		print('test_extract_bugs_pick_up_failures')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		issue = Main.jira.issue('TIKA-19')
+		issue = jira.issue('TIKA-19')
+		possible_bugs_extractor = JiraExtractor(
+			repo=Main.repo, branch_inspected=Main.branch_inspected, jira_url=''
+		)
 		exp_testcase_id = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#None_RTerrorTest()'
-		commit = [c for c in Main.all_commits if c.hexsha == '1d3c81c1f7a4722408264cc5279df7abb22a3c04'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == '1d3c81c1f7a4722408264cc5279df7abb22a3c04'][0]
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
 		Main.repo.git.reset('--hard')
 		Main.repo.git.checkout(commit.hexsha)
-		tests_paths = Main.get_tests_paths_from_commit(commit)
+		tests_paths = possible_bugs_extractor.get_tests_paths_from_commit(commit)
 		res = Main.extract_bugs(issue, commit, tests_paths)
 		for bug in res:
 			if not bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type == Main.mvn_bug.Bug_type.REGRESSION \
@@ -342,13 +363,16 @@ class TestMain(unittest.TestCase):
 	def test_extract_bugs_delta_testcases_that_passed_in_parrent(self):
 		print('test_extract_bugs_pick_up_failures')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		issue = Main.jira.issue('TIKA-19')
+		issue = jira.issue('TIKA-19')
+		possible_bugs_extractor = JiraExtractor(
+			repo=Main.repo, branch_inspected=Main.branch_inspected, jira_url=''
+		)
 		exp_testcase_id = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#None_deltaPassedTest()'
-		commit = [c for c in Main.all_commits if c.hexsha == 'd03e45c84ad903435fae8f1814a56569906663eb'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == 'd03e45c84ad903435fae8f1814a56569906663eb'][0]
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
 		Main.repo.git.reset('--hard')
 		Main.repo.git.checkout(commit.hexsha)
-		tests_paths = Main.get_tests_paths_from_commit(commit)
+		tests_paths = possible_bugs_extractor.get_tests_paths_from_commit(commit)
 		res = Main.extract_bugs(issue, commit, tests_paths)
 		for bug in res:
 			if not bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type == Main.mvn_bug.Bug_type.DELTA \
@@ -360,9 +384,9 @@ class TestMain(unittest.TestCase):
 	def test_extract_bugs_pick_up_failures_change_inly_in_src(self):
 		print('test_extract_bugs_pick_up_failures')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
-		issue = Main.jira.issue('TIKA-19')
+		issue = jira.issue('TIKA-19')
 		exp_testcase_id = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\src\test\java\p_1\AmitTest.java#AmitTest#None_RTerrorTest()'
-		commit = [c for c in Main.all_commits if c.hexsha == '5fb9ab18c99088ecad3f67df97c2bc530180a499'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == '5fb9ab18c99088ecad3f67df97c2bc530180a499'][0]
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
 		Main.repo.git.reset('--hard')
 		Main.repo.git.checkout(commit.hexsha)
@@ -377,7 +401,7 @@ class TestMain(unittest.TestCase):
 		print('test_get_commit_created_testcases')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
 		exp_test_src_patch = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\src\test\java\MainTest.java'
-		commit = [c for c in Main.all_commits if c.hexsha == '1fd244f006c96fa820efa850f5f31e3f9a727d84'][0]
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if c.hexsha == '1fd244f006c96fa820efa850f5f31e3f9a727d84'][0]
 		parent = commit.parents[0]
 		module_path = os.getcwd() + r'\tested_project\MavenProj'
 		Main.repo.git.reset('--hard')
