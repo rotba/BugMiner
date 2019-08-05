@@ -10,13 +10,13 @@
 [WARNING] 
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
-Progress (1): 2.2/14 kBProgress (2): 2.2/14 kB | 2.2/20 kBProgress (2): 5.0/14 kB | 2.2/20 kBProgress (2): 5.0/14 kB | 5.0/20 kBProgress (2): 7.8/14 kB | 5.0/20 kBProgress (2): 7.8/14 kB | 6.3/20 kBProgress (2): 7.8/14 kB | 9.1/20 kBProgress (2): 11/14 kB | 9.1/20 kB Progress (2): 13/14 kB | 9.1/20 kBProgress (2): 14 kB | 9.1/20 kB   Progress (2): 14 kB | 10/20 kB Progress (2): 14 kB | 13/20 kBProgress (2): 14 kB | 15/20 kBProgress (2): 14 kB | 17/20 kBProgress (2): 14 kB | 20/20 kBProgress (2): 14 kB | 20 kB                              Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 19 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (20 kB at 28 kB/s)
+Progress (1): 2.2/14 kBProgress (2): 2.2/14 kB | 2.2/20 kBProgress (2): 5.0/14 kB | 2.2/20 kBProgress (2): 5.0/14 kB | 5.0/20 kBProgress (2): 7.8/14 kB | 5.0/20 kBProgress (2): 7.8/14 kB | 7.8/20 kBProgress (2): 11/14 kB | 7.8/20 kB Progress (2): 11/14 kB | 11/20 kB Progress (2): 13/14 kB | 11/20 kBProgress (2): 13/14 kB | 13/20 kBProgress (2): 14 kB | 13/20 kB   Progress (2): 14 kB | 16/20 kBProgress (2): 14 kB | 19/20 kBProgress (2): 14 kB | 20 kB                              Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (20 kB at 32 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 21 kB/s)
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.602 s
-[INFO] Finished at: 2019-08-03T18:35:00+03:00
+[INFO] Total time:  1.818 s
+[INFO] Finished at: 2019-08-05T13:02:19+03:00
 [INFO] ------------------------------------------------------------------------
 [ERROR] No plugin found for prefix 'evosuite' in the current project and in the plugin groups [org.apache.maven.plugins, org.codehaus.mojo] available from the repositories [local (C:\Users\rotem\.m2\repository), central (https://repo.maven.apache.org/maven2)] -> [Help 1]
 [ERROR] 
