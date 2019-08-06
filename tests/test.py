@@ -526,6 +526,15 @@ class TestMain(unittest.TestCase):
 		self.assertTrue('Main#int_foo()' in changed_methods)
 		self.assertTrue('Main#void_goo()' in changed_methods)
 
+	def test_issue(self):
+		if os.path.exists(os.path.join(os.getcwd(), 'results')):
+			time.sleep(5)
+			shutil.rmtree(os.path.join(os.getcwd(), 'results'),ignore_errors=True)
+		Main.USE_CACHE = False
+		Main.GENERATE_DATA = True
+		Main.GENERATE_TESTS = True
+		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-209'])
+
 
 if __name__ == '__main__':
 	unittest.main()

@@ -52,7 +52,7 @@ LIMIT_TIME_FOR_BUILD = 180
 def main(argv):
 	bug_data_set = []
 	set_up(argv)
-	speceific_issue = argv[3] if len(argv) > 2 else None
+	speceific_issue = argv[3] if len(argv) > 3 else None
 	possible_bugs = JiraExtractor(
 		repo_dir=repo.working_dir, branch_inspected=branch_inspected, jira_url=argv[2], issue_key=speceific_issue
 	).extract_possible_bugs()

@@ -4,6 +4,7 @@ import tempfile
 import gc
 
 import javalang
+from javalang.tree import ConstructorDeclaration
 
 
 class FileDiff(object):
@@ -62,7 +63,7 @@ class FileDiff(object):
         tree_2 = javalang.parse.parse(after_content_text)
         class_decls = [class_dec for _, class_dec in tree_1.filter(javalang.tree.ClassDeclaration)]
         for class_decl in class_decls:
-            for method in class_decl.methods:
+            for method in class_decl.methods + class_decl.constructors:
                 method_start = method.position[0]
                 method_end = find_end_line(before_content_text, method.position[0])
                 method_sig = generate_method_signiture(method)
@@ -71,7 +72,7 @@ class FileDiff(object):
                     before_methods[method_sig].append(self.before_contents[i])
         class_decls = [class_dec for _, class_dec in tree_2.filter(javalang.tree.ClassDeclaration)]
         for class_decl in class_decls:
-            for method in class_decl.methods:
+            for method in class_decl.methods + class_decl.constructors:
                 method_start = method.position[0]
                 method_end = find_end_line(after_content_text, method.position[0])
                 method_sig = generate_method_signiture(method)
@@ -145,7 +146,9 @@ def find_end_line(src_text, line_num):
 
 #Generates string representation of java method signiture
 def generate_method_signiture(method):
-    if method.return_type is None:
+    if isinstance(method, ConstructorDeclaration):
+        ret_type = ''
+    elif method.return_type is None:
         ret_type = 'void'
     else:
         ret_type = method.return_type.name
