@@ -53,8 +53,9 @@ def main(argv):
 	bug_data_set = []
 	set_up(argv)
 	speceific_issue = argv[3] if len(argv) > 3 else None
+	jql_query = argv[4] if len(argv) > 4 else None
 	possible_bugs = JiraExtractor(
-		repo_dir=repo.working_dir, branch_inspected=branch_inspected, jira_url=argv[2], issue_key=speceific_issue
+		repo_dir=repo.working_dir, branch_inspected=branch_inspected, jira_url=argv[2], issue_key=speceific_issue, query=jql_query
 	).extract_possible_bugs()
 	for possible_bug in possible_bugs:
 		try:
@@ -363,7 +364,7 @@ def patch_testcases(commit_testcases, commit, prev_commit, module_path, generate
 	not_compiling_testcases = []
 	set_up_patches_dir()
 	DELETE_ME = set(list((list(commit.diff(prev_commit)) + generated_tests_diff)))
-	for diff in set(list((list(commit.diff(prev_commit)) + generated_tests_diff))):
+	for diff in DELETE_ME:
 		associeted_testcases = get_associated_test_case(diff, commit_testcases)
 		if not len(associeted_testcases) == 0:
 			test_path = get_diff_src_path(associeted_testcases, diff)
@@ -376,6 +377,7 @@ def patch_testcases(commit_testcases, commit, prev_commit, module_path, generate
 			dict_diff_patch[diff] = patch_path
 			dict_file_diff[test_path] = diff
 			ans.extend(associeted_testcases)
+	ans = list(set(ans))
 	tries = 0
 	mvn_repo.clean(module_path)
 	build_report = mvn_repo.test_compile(module_path)
@@ -402,7 +404,7 @@ def patch_testcases(commit_testcases, commit, prev_commit, module_path, generate
 						raise mvn_bug.BugError('unexpeced :' + str(tmp))
 					unpatchable_testcases.append((tmp[0], 'Generated compilation error'))
 					not_compiling_testcases.append(tmp[0])
-		still_patched_not_compiling_testcases = list(filter(lambda t: t in ans, not_compiling_testcases))
+		still_patched_not_compiling_testcases = list(filter(lambda t: t in ans, set(not_compiling_testcases)))
 		unpatch_testcases(still_patched_not_compiling_testcases)
 		for testcase in still_patched_not_compiling_testcases:
 			ans.remove(testcase)

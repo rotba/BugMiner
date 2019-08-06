@@ -1,0 +1,7 @@
+[inst2] + org.apache.commons.math.random.RandomDataTest@testNextPoisson
+[inst2] + org.apache.commons.math.random.RandomDataImpl@nextPoisson
+[inst2] + org.apache.commons.math.random.RandomDataImpl@getRan
+[inst2] + org.apache.commons.math.stat.Frequency@addValue
+[inst2] + org.apache.commons.math.stat.Frequency@getCount
+[inst2] + org.apache.commons.math.stat.Frequency@getSumFreq
+[inst2] + org.apache.commons.math.RetryTestCase@runTest
