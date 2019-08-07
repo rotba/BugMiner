@@ -26,7 +26,6 @@ class TestMain(unittest.TestCase):
 		pass
 
 	def test_check_out_and_get_tests_from_commit(self):
-		print('test_check_out_and_get_tests_from_commit')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
 		possible_bugs_extractor = JiraExtractor(
 			repo_dir =Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=''
@@ -535,6 +534,26 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = True
 		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-209'])
+
+	def test_issue_and_commit(self):
+		if os.path.exists(os.path.join(os.getcwd(), 'results')):
+			time.sleep(5)
+			shutil.rmtree(os.path.join(os.getcwd(), 'results'),ignore_errors=True)
+		Main.USE_CACHE = False
+		Main.GENERATE_DATA = True
+		Main.GENERATE_TESTS = True
+		Main.USE_CACHED_STATE = True
+		issue_key = 'TIKA-209'
+		commit_h = '655afb51b95e4bff1c4b86d40023da112544cad2'
+		github = 'https://github.com/apache/tika'
+		issue_tracker = 'http:\issues.apache.org\jira\projects\TIKA'
+		Main.set_up(['', github])
+		extractor = JiraExtractor(
+			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=issue_tracker, issue_key=issue_key
+		)
+		bug = filter(lambda x: commit_h in x[1],extractor.extract_possible_bugs())[0]
+		bug_commit =Main.repo.commit(bug[1])
+		Main.extract_bugs(bug[0], bug_commit, extractor.get_tests_paths_from_commit(bug_commit))
 
 
 if __name__ == '__main__':
