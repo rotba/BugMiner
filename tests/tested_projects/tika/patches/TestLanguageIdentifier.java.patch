@@ -1,0 +1,13 @@
+diff --git a/tika-core/src/test/java/org/apache/tika/language/TestLanguageIdentifier.java b/tika-core/src/test/java/org/apache/tika/language/TestLanguageIdentifier.java
+index 38ae0e256..5a5156bfb 100644
+--- a/tika-core/src/test/java/org/apache/tika/language/TestLanguageIdentifier.java
++++ b/tika-core/src/test/java/org/apache/tika/language/TestLanguageIdentifier.java
+@@ -28,8 +28,6 @@ import junit.framework.TestCase;
+ import junit.framework.TestSuite;
+ import junit.textui.TestRunner;
+ 
+-import org.apache.tika.language.NGramProfile.NGramEntry;
+-
+ /**
+  * JUnit based test of class {@link LanguageIdentifier}.
+  *

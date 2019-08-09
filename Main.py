@@ -19,6 +19,7 @@ from mvnpy import Repo as MavenRepo
 from mvnpy import TestObjects
 from mvnpy import bug as mvn_bug
 from mvnpy import mvn
+from patcher.patcher import TestcasePatcher
 from termcolor import colored
 
 from diff import commitsdiff
@@ -55,7 +56,8 @@ def main(argv):
 	speceific_issue = argv[3] if len(argv) > 3 else None
 	jql_query = argv[4] if len(argv) > 4 else None
 	possible_bugs = JiraExtractor(
-		repo_dir=repo.working_dir, branch_inspected=branch_inspected, jira_url=argv[2], issue_key=speceific_issue, query=jql_query
+		repo_dir=repo.working_dir, branch_inspected=branch_inspected, jira_url=argv[2], issue_key=speceific_issue,
+		query=jql_query
 	).extract_possible_bugs()
 	for possible_bug in possible_bugs:
 		try:
@@ -132,11 +134,12 @@ def extract_bugs(issue, commit, tests_paths):
 			print(colored('### Patching delta testcases###', 'green'))
 			if GENERATE_TESTS:
 				mvn_repo.setup_tests_generator(module)
-			(patched_testcases, unpatchable_testcases) = patch_testcases(commit_valid_testcases, commit, parent, module,
-			                                                             generated_tests_diffs, gen_commit)
+			patch = TestcasePatcher(testcases=commit_valid_testcases, commit_fix=commit, commit_bug=parent,
+			                        module_path=module, proj_dir=repo.working_dir,
+			                        generated_tests_diff=generated_tests_diffs, gen_commit=gen_commit).patch()
 			if GENERATE_DATA:
-				dict_testcase_patch = get_bug_patches(patched_testcases, dict_testclass_bug_dir)
-			for unpatchable_testcase in unpatchable_testcases:
+				dict_testcase_patch = get_bug_patches(patch.get_patched(), dict_testclass_bug_dir)
+			for unpatchable_testcase in patch.get_all_unpatched():
 				ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
 				                       bugged_testcase=unpatchable_testcase[0], fixed_testcase=unpatchable_testcase[0],
 				                       type=mvn_bug.determine_type(unpatchable_testcase[0], delta_testcases,
@@ -354,80 +357,8 @@ def get_modified_testcases(testcases):
 	return ans
 
 
-# Patches tests in the project. Returns the patches that didn't generate compilation errors
-def patch_testcases(commit_testcases, commit, prev_commit, module_path, generated_tests_diff, gen_commit):
-	ans = []
-	unpatchable_testcases = []
-	dict_diff_testcases = {}
-	dict_diff_patch = {}
-	dict_file_diff = {}
-	not_compiling_testcases = []
-	set_up_patches_dir()
-	DELETE_ME = set(list((list(commit.diff(prev_commit)) + generated_tests_diff)))
-	for diff in DELETE_ME:
-		associeted_testcases = get_associated_test_case(diff, commit_testcases)
-		if not len(associeted_testcases) == 0:
-			test_path = get_diff_src_path(associeted_testcases, diff)
-			target_commit = commit if gen_commit == None else gen_commit
-			patch_path = generate_patch(git_dir=mvn_repo.repo_dir, prev_commit=prev_commit,
-			                            commit=target_commit, file=test_path,
-			                            patch_name=os.path.basename(test_path), target_dir=patches_dir)
-			git_cmds_wrapper(lambda: repo.git.execute(['git', 'apply', patch_path]))
-			dict_diff_testcases[diff] = associeted_testcases
-			dict_diff_patch[diff] = patch_path
-			dict_file_diff[test_path] = diff
-			ans.extend(associeted_testcases)
-	ans = list(set(ans))
-	tries = 0
-	mvn_repo.clean(module_path)
-	build_report = mvn_repo.test_compile(module_path)
-	compilation_error_report = mvn.get_compilation_error_report(build_report)
-	# if not len(compilation_error_report) == 0:
-	while not len(compilation_error_report) == 0 and tries < 2:
-		compilation_errors = mvn.get_compilation_errors(compilation_error_report)
-		dict_file_errors = divide_errors_to_files(compilation_errors)
-		for file in dict_file_errors:
-			error_testclass = TestObjects.TestClass(file)
-			for error in dict_file_errors[file]:
-				if is_unrelated_testcase(error, error_testclass):
-					diff = dict_file_diff[error.path]
-					git_cmds_wrapper(lambda: repo.git.execute(['git', 'apply', '-R', dict_diff_patch[diff]]))
-					for testcase in dict_diff_testcases[diff]:
-						unpatchable_testcases.append((testcase,
-						                              'Testclass file is not compiling because compilation error not related to testcases: ' + str(
-							                              error)))
-						ans.remove(testcase)
-					continue
-				else:
-					tmp = [tc for tc in error_testclass.testcases if tc.contains_line(error.line)]
-					if not len(tmp) == 1:
-						raise mvn_bug.BugError('unexpeced :' + str(tmp))
-					unpatchable_testcases.append((tmp[0], 'Generated compilation error'))
-					not_compiling_testcases.append(tmp[0])
-		still_patched_not_compiling_testcases = list(filter(lambda t: t in ans, set(not_compiling_testcases)))
-		unpatch_testcases(still_patched_not_compiling_testcases)
-		for testcase in still_patched_not_compiling_testcases:
-			ans.remove(testcase)
-		not_compiling_testcases = []
-		tries += 1
-		mvn_repo.clean(module_path)
-		build_report = mvn_repo.test_compile(module_path)
-		compilation_error_report = mvn.get_compilation_error_report(build_report)
-	return (ans, unpatchable_testcases)
-
-
 def is_evosuite_generated_test_file(path):
 	return '_ESTest.java' in path or '_ESTest_scaffolding.java' in path
-
-
-def get_diff_src_path(associeted_testcases, diff):
-	if 'ESTest_scaffolding' in diff.a_path:
-		return generate_ESTest_scaffolding_path(associeted_testcases, diff)
-	return associeted_testcases[0].src_path
-
-
-def generate_ESTest_scaffolding_path(associeted_testcases, diff):
-	return os.path.normpath(os.path.join(repo.working_dir, diff.a_path))
 
 
 # Returns dictionary that maps patched testcase to its patch
@@ -449,49 +380,6 @@ def get_bug_patches(patched_testcases, dict_testclass_dir):
 		for testcase in patched_testcases:
 			if testcase in testclass.testcases:
 				ans[testcase.id] = patch
-	return ans
-
-
-# Returns true if the given compilation error report object is unrelated to any testcase in it's file
-def is_unrelated_testcase(error, error_testclass):
-	return not any([t.contains_line(error.line) for t in error_testclass.testcases])
-
-
-# Returns dictionary mapping file path to it's related compilation error in the given errors
-def divide_errors_to_files(compilation_errors):
-	ans = {}
-	for error in compilation_errors:
-		if not error.path in ans.keys():
-			ans[error.path] = []
-		ans[error.path].append(error)
-	return ans
-
-
-# Removes the testcases from their files
-def unpatch_testcases(testcases):
-	dict_file_testcases = divide_to_files(testcases)
-	for file in dict_file_testcases.keys():
-		positions_to_delete = list(map(lambda t: t.get_lines_range(), dict_file_testcases[file]))
-		with open(file, 'r') as f:
-			lines = f.readlines()
-		with open(file, 'w') as f:
-			i = 1
-			for line in lines:
-				if any(p[0] <= i <= p[1] for p in positions_to_delete):
-					f.write('')
-				else:
-					f.write(line)
-				i += 1
-
-
-# Returns dictionary mapping path to group of associated testcases
-def divide_to_files(testcases):
-	ans = {}
-	for testcase in testcases:
-		path_to_file = testcase.src_path
-		if not path_to_file in ans.keys():
-			ans[path_to_file] = []
-		ans[path_to_file].append(testcase)
 	return ans
 
 
@@ -605,15 +493,6 @@ def divide_to_modules(tests):
 		if not test.module in ans.keys():
 			ans[test.module] = []
 		ans[test.module].append(test)
-	return ans
-
-
-# Returns list of all the diffs associated with test case
-def get_associated_test_case(diff, testcases):
-	ans = []
-	for testcase in testcases:
-		if are_associated_test_paths(diff.a_path, testcase.src_path):
-			ans.append(testcase)
 	return ans
 
 
