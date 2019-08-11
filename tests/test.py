@@ -363,6 +363,8 @@ class TestMain(unittest.TestCase):
 		expected_issue_dir = os.path.join(Main.data_dir, 'TIKA-56')
 		expected_commit_dir = os.path.join(expected_issue_dir, 'b12c01d9b56053554cec501aab0530f7f4352daf')
 		expected_testclass_dir = os.path.join(expected_commit_dir, 'tika#org.apache.tika.mime.TestMimeTypes')
+		expected_pom_dir = os.path.join(expected_commit_dir, 'tika#pom')
+		expected_pom_patch_file = os.path.join(expected_pom_dir, 'patch.patch')
 		expected_testcase_pickle = os.path.join(expected_testclass_dir, 'testCaseSensitivity.pickle')
 		expected_report_xml = os.path.join(expected_testclass_dir, 'TEST-org.apache.tika.mime.TestMimeTypes.xml')
 		expected_patch = os.path.join(expected_testclass_dir, 'patch.patch')
@@ -372,6 +374,7 @@ class TestMain(unittest.TestCase):
 		self.assertTrue(os.path.isfile(expected_testcase_pickle))
 		self.assertTrue(os.path.isfile(expected_report_xml))
 		self.assertTrue(os.path.isfile(expected_patch))
+		self.assertTrue(os.path.isfile(expected_pom_patch_file))
 
 	def test_generate_data_auto_generated_tests(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
@@ -461,7 +464,7 @@ class TestMain(unittest.TestCase):
 		self.assertTrue('Main#int_foo()' in changed_methods)
 		self.assertTrue('Main#void_goo()' in changed_methods)
 
-	@unittest.skip('Ment to be run manulay')
+	# @unittest.skip('Ment to be run manulay')
 	def test_issue(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
@@ -470,9 +473,9 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = True
-		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-209'])
+		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-483'])
 
-	@unittest.skip('Ment to be run manulay')
+	# @unittest.skip('Ment to be run manulay')
 	def test_issue_and_commit(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
@@ -480,9 +483,9 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = True
-		issue_key = 'TIKA-209'
-		commit_h = '655afb51b95e4bff1c4b86d40023da112544cad2'
+		Main.USE_CACHED_STATE = False
+		issue_key = 'TIKA-483'
+		commit_h = '98eb0b0ec46c8a826a8a76a52636d8cc617d3201'
 		github = 'https://github.com/apache/tika'
 		issue_tracker = 'http:\issues.apache.org\jira\projects\TIKA'
 		Main.set_up(['', github])
@@ -490,9 +493,10 @@ class TestMain(unittest.TestCase):
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=issue_tracker,
 			issue_key=issue_key
 		)
+		k = extractor.extract_possible_bugs()
 		bug = filter(lambda x: commit_h in x[1], extractor.extract_possible_bugs())[0]
 		bug_commit = Main.repo.commit(bug[1])
-		Main.extract_bugs(bug[0], bug_commit, extractor.get_tests_paths_from_commit(bug_commit))
+		Main.extract_bugs(bug[0], bug_commit, bug[2])
 
 
 if __name__ == '__main__':

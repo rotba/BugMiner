@@ -1,23 +1,24 @@
 [INFO] Scanning for projects...
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Build Order:
-[INFO] 
-[INFO] GMT_P                                                              [pom]
-[INFO] sub_mod_1                                                          [jar]
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for org.apache.commons:commons-math:jar:2.0-SNAPSHOT
+[WARNING] 'parent.relativePath' of POM org.apache.commons:commons-math:2.0-SNAPSHOT (C:\Code\Lab\BugMiner\tested_project\commons-math\pom.xml) points at org.apache.tika:tika instead of org.apache.commons:commons-parent, please verify your project structure @ line 19, column 11
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-idea-plugin is missing. @ org.apache.commons:commons-parent:11, C:\Users\rotem\.m2\repository\org\apache\commons\commons-parent\11\commons-parent-11.pom, line 255, column 15
+[WARNING] The expression ${pom.version} is deprecated. Please use ${project.version} instead.
+[WARNING] The expression ${pom.version} is deprecated. Please use ${project.version} instead.
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
 Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
 Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
-Progress (1): 2.2/20 kBProgress (2): 2.2/20 kB | 2.2/14 kBProgress (2): 5.0/20 kB | 2.2/14 kBProgress (2): 5.0/20 kB | 5.0/14 kBProgress (2): 7.8/20 kB | 5.0/14 kBProgress (2): 7.8/20 kB | 7.8/14 kBProgress (2): 11/20 kB | 7.8/14 kB Progress (2): 11/20 kB | 11/14 kB Progress (2): 11/20 kB | 13/14 kBProgress (2): 11/20 kB | 14 kB   Progress (2): 13/20 kB | 14 kBProgress (2): 16/20 kB | 14 kBProgress (2): 19/20 kB | 14 kBProgress (2): 20 kB | 14 kB                              Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 21 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (20 kB at 32 kB/s)
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Summary for GMT_P 1.0-SNAPSHOT:
-[INFO] 
-[INFO] GMT_P .............................................. SKIPPED
-[INFO] sub_mod_1 .......................................... SKIPPED
+Progress (1): 2.2/20 kBProgress (2): 2.2/20 kB | 2.2/14 kBProgress (2): 5.0/20 kB | 2.2/14 kBProgress (2): 5.0/20 kB | 5.0/14 kBProgress (2): 7.8/20 kB | 5.0/14 kBProgress (2): 7.8/20 kB | 7.8/14 kBProgress (2): 11/20 kB | 7.8/14 kB Progress (2): 13/20 kB | 7.8/14 kBProgress (2): 16/20 kB | 7.8/14 kBProgress (2): 16/20 kB | 11/14 kB Progress (2): 19/20 kB | 11/14 kBProgress (2): 19/20 kB | 13/14 kBProgress (2): 19/20 kB | 14 kB   Progress (2): 20 kB | 14 kB                              Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 14 kB/s)
+Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (20 kB at 20 kB/s)
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.364 s
-[INFO] Finished at: 2019-08-09T16:08:50+03:00
+[INFO] Total time:  3.210 s
+[INFO] Finished at: 2019-08-10T12:35:32+03:00
 [INFO] ------------------------------------------------------------------------
 [ERROR] No plugin found for prefix 'evosuite' in the current project and in the plugin groups [org.apache.maven.plugins, org.codehaus.mojo] available from the repositories [local (C:\Users\rotem\.m2\repository), central (https://repo.maven.apache.org/maven2)] -> [Help 1]
 [ERROR] 
@@ -26,4 +27,3 @@ Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/
 [ERROR] 
 [ERROR] For more information about the errors and possible solutions, please read the following articles:
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoPluginFoundForPrefixException
-[INFO] Build failures were ignored.

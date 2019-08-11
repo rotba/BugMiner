@@ -13,7 +13,7 @@ from urlparse import urlparse
 
 import git
 import javalang
-from PossibleBugMiner.jira_extractor import JiraExtractor
+from PossibleBugMiner.extractor_factory import ExtractorFactory
 from git import Repo
 from mvnpy import Repo as MavenRepo
 from mvnpy import TestObjects
@@ -55,8 +55,8 @@ def main(argv):
 	set_up(argv)
 	speceific_issue = argv[3] if len(argv) > 3 else None
 	jql_query = argv[4] if len(argv) > 4 else None
-	possible_bugs = JiraExtractor(
-		repo_dir=repo.working_dir, branch_inspected=branch_inspected, jira_url=argv[2], issue_key=speceific_issue,
+	possible_bugs = ExtractorFactory.create(
+		repo_dir=repo.working_dir, branch_inspected=branch_inspected, issue_tracker_url=argv[2], issue_key=speceific_issue,
 		query=jql_query
 	).extract_possible_bugs()
 	for possible_bug in possible_bugs:
@@ -101,13 +101,14 @@ def extract_bugs(issue, commit, tests_paths):
 					bugged_classes = list(map(lambda c: re.sub('\#.*', '', c),
 					                          get_bugged_components(commit_fix=commit, commit_bug=parent,
 					                                                module=module)))
+					if len(bugged_classes) ==0: raise Exception()
 					mvn_repo.generate_tests(classes=bugged_classes, module=module)
 					cache_project_state()
 				generated_testcases = mvn_repo.get_generated_testcases(module=module)
 				commit_tests_object += set(list(map(lambda t: t.parent, generated_testcases)))
 				dict_modules_testcases[module] += generated_testcases
 			if GENERATE_DATA:
-				dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(issue, commit, commit_tests_object)
+				dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(issue, commit, commit_tests_object, module=module)
 			print(colored('### Running tests in commit ###', 'green'))
 			mvn_repo.change_surefire_ver(surefire_version)
 			build_log = run_mvn_tests(dict_modules_testcases[module], module)
@@ -118,8 +119,6 @@ def extract_bugs(issue, commit, tests_paths):
 				print(colored('### Running generated tests ###', 'blue'))
 				build_log = run_mvn_tests(set(map(lambda t: t.parent, dict_modules_testcases[module])), module)
 				(gen_commit_valid_testcases, gen_no_report_testcases) = attach_reports(dict_modules_testcases[module])
-				# changed_files = set(list(map(lambda x: x.src_path,gen_commit_valid_testcases)))
-				# map(lambda x: git_cmds_wrapper(lambda: repo.git.add(x)), changed_files)
 				mvn_repo.evosuite_clean(module=module)
 				git_cmds_wrapper(lambda: repo.git.add('.'))
 				git_cmds_wrapper(lambda: repo.git.commit('-m', 'GARBAGE_COMMIT'))
@@ -141,8 +140,8 @@ def extract_bugs(issue, commit, tests_paths):
 				dict_testcase_patch = get_bug_patches(patch.get_patched(), dict_testclass_bug_dir)
 			for unpatchable_testcase in patch.get_all_unpatched():
 				ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
-				                       bugged_testcase=unpatchable_testcase[0], fixed_testcase=unpatchable_testcase[0],
-				                       type=mvn_bug.determine_type(unpatchable_testcase[0], delta_testcases,
+				                       bugged_testcase=unpatchable_testcase, fixed_testcase=unpatchable_testcase,
+				                       type=mvn_bug.determine_type(unpatchable_testcase, delta_testcases,
 				                                                   generated_testcases), valid=False,
 				                       desc=unpatchable_testcase))
 			for no_report_testcase in no_report_testcases:
@@ -363,6 +362,8 @@ def is_evosuite_generated_test_file(path):
 
 # Returns dictionary that maps patched testcase to its patch
 def get_bug_patches(patched_testcases, dict_testclass_dir):
+	def pom_patch_exist(module):
+		return os.path.isfile(os.path.join(dict_testclass_dir[module], 'patch.patch'))
 	ans = {}
 	testclasses = []
 	for testcase in patched_testcases:
@@ -376,6 +377,9 @@ def get_bug_patches(patched_testcases, dict_testclass_dir):
 			scaffolding_path = testclass.src_path.replace('.java', '_scaffolding.java')
 			patch = generate_patch(git_dir=mvn_repo.repo_dir, file=scaffolding_path, patch_name='patch',
 			                       target_dir=dict_testclass_dir[testclass.id + '_scaffolding'])
+		if not pom_patch_exist(testclass.module):
+			ans[testclass.module] = generate_patch(git_dir=mvn_repo.repo_dir, file=mvn_repo.get_pom(testclass.module), patch_name='patch',
+			                       target_dir=dict_testclass_dir[testclass.module])
 		git_cmds_wrapper(lambda: repo.git.reset())
 		for testcase in patched_testcases:
 			if testcase in testclass.testcases:
