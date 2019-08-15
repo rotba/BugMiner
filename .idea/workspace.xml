@@ -1,30 +1,666 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/Main.py" description="ans = []" line="298" />
+    <bookmark url="file://$PROJECT_DIR$/Main.py" description="ans = []" line="301" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/.evosuite/tmp_2019_08_13_10_52_11/logs/org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer/std_err_CLIENT.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/.evosuite/tmp_2019_08_13_10_52_11/logs/org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer/std_err_MASTER.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/.evosuite/tmp_2019_08_13_10_52_11/logs/org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer/std_out_CLIENT.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/.evosuite/tmp_2019_08_13_10_52_11/logs/org.apache.commons.math.optimization.general.LevenbergMarquardtOptimizer/std_out_MASTER.log" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/apidocs/META-INF/LICENSE.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/apidocs/META-INF/NOTICE.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/META-INF/LICENSE.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/META-INF/NOTICE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/surefire/surefirebooter1617416809794922921.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/surefire/surefirebooter1902132481495084747.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/surefire/surefirebooter2430926184997072660.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/surefire/surefirebooter4211324640958072028.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/surefire/surefirebooter4294305640613540061.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/surefire/surefirebooter4698619110582886179.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/surefire/surefirebooter5239390313946192452.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/surefire/surefirebooter6262226270303125226.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/surefire/surefirebooter6440528135774455873.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/surefire/surefirebooter6617937543007045390.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/META-INF/localization/LocalizedFormats_fr.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ArgumentOutsideDomainException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ConvergenceException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ConvergingAlgorithm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ConvergingAlgorithmImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/DimensionMismatchException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/DuplicateSampleAbscissaException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/Field.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/FieldElement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/FunctionEvaluationException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MathConfigurationException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MathException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MathRuntimeException$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MathRuntimeException$10.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MathRuntimeException$11.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MathRuntimeException$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MathRuntimeException$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MathRuntimeException$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MathRuntimeException$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MathRuntimeException$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MathRuntimeException$7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MathRuntimeException$8.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MathRuntimeException$9.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MathRuntimeException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MaxEvaluationsExceededException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/MaxIterationsExceededException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/BinaryFunction$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/BinaryFunction$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/BinaryFunction$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/BinaryFunction$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/BinaryFunction$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/BinaryFunction$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/BinaryFunction$7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/BinaryFunction$8.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/BinaryFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/BivariateRealFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$10.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$11.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$12.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$13.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$14.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$15.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$16.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$17.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$18.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$19.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$20.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$21.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$22.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$23.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$24.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$25.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$26.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$27.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$28.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$29.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$30.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$31.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$32.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$33.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$34.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$35.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$36.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$37.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$6.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$7.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$8.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction$9.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/ComposableFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/DifferentiableMultivariateRealFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/DifferentiableMultivariateVectorialFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/DifferentiableUnivariateMatrixFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/DifferentiableUnivariateRealFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/DifferentiableUnivariateVectorialFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/MultivariateMatrixFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/MultivariateRealFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/MultivariateVectorialFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/TrivariateRealFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/UnivariateMatrixFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/UnivariateRealFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/UnivariateVectorialFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/integration/LegendreGaussIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/integration/RombergIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/integration/SimpsonIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/integration/TrapezoidIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/integration/UnivariateRealIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/integration/UnivariateRealIntegratorImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/BicubicSplineFunction$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/BicubicSplineFunction$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/BicubicSplineFunction$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/BicubicSplineFunction$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/BicubicSplineFunction$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/BicubicSplineFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/BicubicSplineInterpolatingFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/BicubicSplineInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/BivariateRealGridInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/DividedDifferenceInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/LinearInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/LoessInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/MicrosphereInterpolatingFunction$MicrosphereSurfaceElement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/MicrosphereInterpolatingFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/MicrosphereInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/MultivariateRealInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/NevilleInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/SmoothingBicubicSplineInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/SmoothingPolynomialBicubicSplineInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/SplineInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/TricubicSplineFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/TricubicSplineInterpolatingFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/TricubicSplineInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/TrivariateRealGridInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/interpolation/UnivariateRealInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/polynomials/PolynomialFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/polynomials/PolynomialFunctionLagrangeForm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/polynomials/PolynomialFunctionNewtonForm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/polynomials/PolynomialSplineFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/polynomials/PolynomialsUtils$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/polynomials/PolynomialsUtils$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/polynomials/PolynomialsUtils$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/polynomials/PolynomialsUtils$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/polynomials/PolynomialsUtils$RecurrenceCoefficientsGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/polynomials/PolynomialsUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/solvers/BisectionSolver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/solvers/BrentSolver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/solvers/LaguerreSolver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/solvers/MullerSolver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/solvers/NewtonSolver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/solvers/RiddersSolver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/solvers/SecantSolver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/solvers/UnivariateRealSolver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/solvers/UnivariateRealSolverFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/solvers/UnivariateRealSolverFactoryImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils$LazyHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/analysis/solvers/UnivariateRealSolverUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/complex/Complex.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/complex/ComplexField$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/complex/ComplexField$LazyHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/complex/ComplexField.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/complex/ComplexFormat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/complex/ComplexUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/AbstractContinuousDistribution$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/AbstractContinuousDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/AbstractDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/AbstractIntegerDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/BetaDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/BetaDistributionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/BinomialDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/BinomialDistributionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/CauchyDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/CauchyDistributionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/ChiSquaredDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/ChiSquaredDistributionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/ContinuousDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/DiscreteDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/Distribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/ExponentialDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/ExponentialDistributionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/FDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/FDistributionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/GammaDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/GammaDistributionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/HasDensity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/HypergeometricDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/HypergeometricDistributionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/IntegerDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/NormalDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/NormalDistributionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/PascalDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/PascalDistributionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/PoissonDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/PoissonDistributionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/SaddlePointExpansion.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/TDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/TDistributionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/WeibullDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/WeibullDistributionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/ZipfDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/distribution/ZipfDistributionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/estimation/AbstractEstimator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/estimation/EstimatedParameter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/estimation/EstimationException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/estimation/EstimationProblem.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/estimation/Estimator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/estimation/GaussNewtonEstimator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/estimation/LevenbergMarquardtEstimator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/estimation/SimpleEstimationProblem.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/estimation/WeightedMeasurement.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/ConvergenceException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/DimensionMismatchException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/MathIllegalArgumentException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/MathIllegalNumberException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/MathIllegalStateException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/MathUnsupportedOperationException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/MaxCountExceededException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/NoDataException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/NonMonotonousSequenceException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/NotPositiveException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/NotStrictlyPositiveException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/NullArgumentException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/NumberIsTooLargeException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/NumberIsTooSmallException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/OutOfRangeException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/TooManyEvaluationsException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/ZeroException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/util/ArgUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/util/DummyLocalizable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/util/Localizable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/util/LocalizedFormats.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/exception/util/MessageFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/fraction/AbstractFormat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/fraction/BigFraction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/fraction/BigFractionField$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/fraction/BigFractionField$LazyHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/fraction/BigFractionField.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/fraction/BigFractionFormat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/fraction/Fraction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/fraction/FractionConversionException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/fraction/FractionField$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/fraction/FractionField$LazyHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/fraction/FractionField.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/fraction/FractionFormat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/fraction/ProperBigFractionFormat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/fraction/ProperFractionFormat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/AbstractListChromosome.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/BinaryChromosome.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/BinaryMutation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/Chromosome.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/ChromosomePair.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/CrossoverPolicy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/ElitisticListPopulation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/Fitness.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/FixedGenerationCount.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/GeneticAlgorithm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/InvalidRepresentationException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/ListPopulation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/MutationPolicy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/OnePointCrossover.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/PermutationChromosome.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/Population.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/RandomKey.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/RandomKeyMutation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/SelectionPolicy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/StoppingCondition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/TournamentSelection$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/genetics/TournamentSelection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/geometry/CardanEulerSingularityException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/geometry/NotARotationMatrixException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/geometry/Rotation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/geometry/RotationOrder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/geometry/Vector3D.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/geometry/Vector3DFormat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/AbstractFieldMatrix$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/AbstractFieldMatrix$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/AbstractFieldMatrix$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/AbstractFieldMatrix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/AbstractRealMatrix$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/AbstractRealMatrix$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/AbstractRealMatrix$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/AbstractRealMatrix$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/AbstractRealMatrix$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/AbstractRealMatrix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/AbstractRealVector$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/AbstractRealVector$EntryImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/AbstractRealVector$SparseEntryIterator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/AbstractRealVector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/AnyMatrix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/Array2DRowFieldMatrix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/Array2DRowRealMatrix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/ArrayFieldVector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/ArrayRealVector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/BiDiagonalTransformer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/BigMatrix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/BigMatrixImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/BlockFieldMatrix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/BlockRealMatrix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/CholeskyDecomposition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/CholeskyDecompositionImpl$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/CholeskyDecompositionImpl$Solver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/CholeskyDecompositionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/DecompositionSolver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/DefaultFieldMatrixChangingVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/DefaultFieldMatrixPreservingVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/DefaultRealMatrixChangingVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/DefaultRealMatrixPreservingVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/EigenDecomposition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/EigenDecompositionImpl$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/EigenDecompositionImpl$Solver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/EigenDecompositionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/FieldDecompositionSolver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/FieldLUDecomposition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/FieldLUDecompositionImpl$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/FieldLUDecompositionImpl$Solver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/FieldLUDecompositionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/FieldMatrix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/FieldMatrixChangingVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/FieldMatrixPreservingVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/FieldVector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/InvalidMatrixException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/LUDecomposition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/LUDecompositionImpl$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/LUDecompositionImpl$Solver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/LUDecompositionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/MatrixIndexException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/MatrixUtils$BigFractionMatrixConverter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/MatrixUtils$FractionMatrixConverter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/MatrixUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/MatrixVisitorException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/NonSquareMatrixException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/NotPositiveDefiniteMatrixException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/NotSymmetricMatrixException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/OpenMapRealMatrix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/OpenMapRealVector$OpenMapEntry.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/OpenMapRealVector$OpenMapSparseIterator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/OpenMapRealVector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/QRDecomposition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/QRDecompositionImpl$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/QRDecompositionImpl$Solver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/QRDecompositionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/RealMatrix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/RealMatrixChangingVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/RealMatrixImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/RealMatrixPreservingVisitor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/RealVector$Entry.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/RealVector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/RealVectorFormat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/SingularMatrixException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/SingularValueDecomposition.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/SingularValueDecompositionImpl$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/SingularValueDecompositionImpl$Solver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/SingularValueDecompositionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/SparseFieldMatrix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/SparseFieldVector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/SparseRealMatrix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/SparseRealVector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/linear/TriDiagonalTransformer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/AbstractIntegrator$EndTimeChecker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/AbstractIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/ContinuousOutputModel.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/DerivativeException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/ExtendedFirstOrderDifferentialEquations.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/FirstOrderConverter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/FirstOrderDifferentialEquations.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/FirstOrderIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/IntegratorException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/MultistepIntegrator$CountingDifferentialEquations.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/MultistepIntegrator$InitializationCompletedMarkerException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/MultistepIntegrator$NordsieckInitializer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/MultistepIntegrator$NordsieckTransformer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/MultistepIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/ODEIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/SecondOrderDifferentialEquations.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/SecondOrderIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/events/CombinedEventsManager.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/events/EventException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/events/EventHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/events/EventState$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/events/EventState.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/jacobians/EventHandlerWithJacobians.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/jacobians/FirstOrderIntegratorWithJacobians$EventHandlerWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/jacobians/FirstOrderIntegratorWithJacobians$FiniteDifferencesWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/jacobians/FirstOrderIntegratorWithJacobians$MappingWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/jacobians/FirstOrderIntegratorWithJacobians$StepHandlerWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/jacobians/FirstOrderIntegratorWithJacobians$StepInterpolatorWrapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/jacobians/FirstOrderIntegratorWithJacobians.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/jacobians/ODEWithJacobians.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/jacobians/ParameterizedODE.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/jacobians/StepHandlerWithJacobians.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/jacobians/StepInterpolatorWithJacobians.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/AdamsBashforthIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/AdamsIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator$Corrector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/AdamsMoultonIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/AdamsNordsieckTransformer$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/AdamsNordsieckTransformer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/ClassicalRungeKuttaIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/ClassicalRungeKuttaStepInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/DormandPrince54Integrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/DormandPrince54StepInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/DormandPrince853Integrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/DormandPrince853StepInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/EulerIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/EulerStepInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/GillIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/GillStepInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/GraggBulirschStoerIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/GraggBulirschStoerStepInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/HighamHall54Integrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/HighamHall54StepInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/MidpointIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/MidpointStepInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/RungeKuttaIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/RungeKuttaStepInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/ThreeEighthesIntegrator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/nonstiff/ThreeEighthesStepInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/sampling/AbstractStepInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/sampling/DummyStepHandler$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/sampling/DummyStepHandler$LazyHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/sampling/DummyStepHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/sampling/DummyStepInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/sampling/FixedStepHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/sampling/NordsieckStepInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/sampling/StepHandler.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/sampling/StepInterpolator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/ode/sampling/StepNormalizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/AbstractConvergenceChecker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/BaseMultiStartMultivariateRealOptimizer$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/BaseMultiStartMultivariateRealOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/BaseMultiStartMultivariateVectorialOptimizer$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/BaseMultiStartMultivariateVectorialOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/BaseMultivariateRealOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/BaseMultivariateVectorialOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/BaseOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/ConvergenceChecker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/DifferentiableMultivariateRealOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/DifferentiableMultivariateVectorialOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/GoalType.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/LeastSquaresConverter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/MultiStartDifferentiableMultivariateRealOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/MultiStartDifferentiableMultivariateVectorialOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/MultiStartMultivariateRealOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/MultivariateRealOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/OptimizationException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/RealConvergenceChecker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/RealPointValuePair.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/SimpleRealPointChecker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/SimpleScalarValueChecker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/SimpleVectorialPointChecker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/SimpleVectorialValueChecker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/VectorialConvergenceChecker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/VectorialPointValuePair.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/direct/DirectSearchOptimizer$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/direct/DirectSearchOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/direct/MultiDirectional.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/direct/NelderMead.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/CurveFitter$TheoreticalValuesFunction$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/CurveFitter$TheoreticalValuesFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/CurveFitter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/GaussianDerivativeFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/GaussianFitter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/GaussianFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/GaussianParametersGuesser$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/GaussianParametersGuesser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/HarmonicCoefficientsGuesser.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/HarmonicFitter$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/HarmonicFitter$ParametricHarmonicFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/HarmonicFitter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/HarmonicFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/ParametricGaussianFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/ParametricRealFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/PolynomialFitter$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/PolynomialFitter$ParametricPolynomial.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/PolynomialFitter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/fitting/WeightedObservedPoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/AbstractLeastSquaresOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/AbstractScalarDifferentiableOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/AbstractScalarOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/BaseAbstractScalarOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/BaseAbstractVectorialOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/ConjugateGradientFormula.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/GaussNewtonOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/NonLinearConjugateGradientOptimizer$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/NonLinearConjugateGradientOptimizer$IdentityPreconditioner.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/NonLinearConjugateGradientOptimizer$LineSearchFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/NonLinearConjugateGradientOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/PowellOptimizer$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/PowellOptimizer$LineSearch$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/PowellOptimizer$LineSearch.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/PowellOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/general/Preconditioner.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/linear/AbstractLinearOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/linear/LinearConstraint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/linear/LinearObjectiveFunction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/linear/LinearOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/linear/NoFeasibleSolutionException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/linear/Relationship$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/linear/Relationship.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/linear/SimplexSolver.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/linear/SimplexTableau.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/linear/UnboundedSolutionException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/univariate/AbstractUnivariateRealOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/univariate/BaseUnivariateRealOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/univariate/BracketFinder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/univariate/BrentOptimizer$BrentConvergenceChecker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/univariate/BrentOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/univariate/UnivariateRealOptimizer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/optimization/univariate/UnivariateRealPointValuePair.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/AbstractRandomGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/BitsStreamGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/CorrelatedRandomVectorGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/EmpiricalDistribution.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/EmpiricalDistributionImpl$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/EmpiricalDistributionImpl$ArrayDataAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/EmpiricalDistributionImpl$DataAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/EmpiricalDistributionImpl$DataAdapterFactory.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/EmpiricalDistributionImpl$StreamDataAdapter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/EmpiricalDistributionImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/GaussianRandomGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/JDKRandomGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/MersenneTwister.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/NormalizedRandomGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/RandomAdaptor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/RandomData.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/RandomDataImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/RandomGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/RandomVectorGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/UncorrelatedRandomVectorGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/UniformRandomGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/UnitSphereRandomVectorGenerator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/random/ValueServer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/special/Beta$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/special/Beta.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/special/Erf.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/special/Gamma$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/special/Gamma.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/Frequency$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/Frequency$NaturalComparator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/Frequency.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/StatUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/clustering/Cluster.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/clustering/Clusterable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/clustering/EuclideanIntegerPoint.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/correlation/Covariance.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/correlation/PearsonsCorrelation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/correlation/SpearmansCorrelation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/AbstractStorelessUnivariateStatistic.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/AbstractUnivariateStatistic.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/AggregateSummaryStatistics$AggregatingSummaryStatistics.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/AggregateSummaryStatistics.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/DescriptiveStatistics.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/MultivariateSummaryStatistics.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/StatisticalMultivariateSummary.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/StatisticalSummary.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/StatisticalSummaryValues.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/SummaryStatistics.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/SynchronizedDescriptiveStatistics.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/SynchronizedMultivariateSummaryStatistics.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/SynchronizedSummaryStatistics.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/UnivariateStatistic.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/WeightedEvaluation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/moment/FirstMoment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/moment/FourthMoment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/moment/GeometricMean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/moment/Kurtosis.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/moment/Mean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/moment/SecondMoment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/moment/SemiVariance$Direction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/moment/SemiVariance.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/moment/Skewness.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/moment/StandardDeviation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/moment/ThirdMoment.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/moment/Variance.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/moment/VectorialCovariance.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/moment/VectorialMean.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/rank/Max.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/rank/Median.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/rank/Min.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/rank/Percentile.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/summary/Product.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/summary/Sum.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/summary/SumOfLogs.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/descriptive/summary/SumOfSquares.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/inference/ChiSquareTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/inference/ChiSquareTestImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/inference/OneWayAnova.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/inference/OneWayAnovaImpl$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/inference/OneWayAnovaImpl$AnovaStats.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/inference/OneWayAnovaImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/inference/TTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/inference/TTestImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/inference/TestUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/inference/UnknownDistributionChiSquareTest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/ranking/NaNStrategy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/ranking/NaturalRanking$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/ranking/NaturalRanking$IntDoublePair.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/ranking/NaturalRanking.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/ranking/RankingAlgorithm.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/ranking/TiesStrategy.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/regression/AbstractMultipleLinearRegression.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/regression/GLSMultipleLinearRegression.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/regression/MultipleLinearRegression.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/regression/OLSMultipleLinearRegression.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/stat/regression/SimpleRegression.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/transform/FastCosineTransformer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/transform/FastFourierTransformer$MultiDimensionalComplexMatrix.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/transform/FastFourierTransformer$RootsOfUnity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/transform/FastFourierTransformer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/transform/FastHadamardTransformer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/transform/FastSineTransformer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/transform/RealTransformer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/BigReal.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/BigRealField$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/BigRealField$LazyHolder.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/BigRealField.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/CompositeFormat.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/ContinuedFraction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/DefaultTransformer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/DoubleArray.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/FastMath.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/Incrementor.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/MathUtils$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/MathUtils$OrderDirection.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/MathUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/MultidimensionalCounter$Iterator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/MultidimensionalCounter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/NumberTransformer.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/OpenIntToDoubleHashMap$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/OpenIntToDoubleHashMap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/OpenIntToFieldHashMap$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/OpenIntToFieldHashMap$Iterator.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/OpenIntToFieldHashMap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/ResizableDoubleArray.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/classes/org/apache/commons/math/util/TransformerMap.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/surefire/surefirebooter2696683854665754886.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/surefire/surefirebooter3487388902641867486.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/surefire/surefirebooter4809479640859439687.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/commons-math/target/surefire/surefirebooter581914709340677584.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/MavenProj/sub_mod_1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/MavenProj/sub_mod_1/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/commons-math/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/tika/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-bundle/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-bundle/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-dotnet/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-dotnet/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-parent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-parent/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-parsers/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-parsers/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-xmp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-xmp/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/commons-math/patches/BrentSolverTest.java.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/patches/DWGParserTest.java.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/patches/OOXMLParserTest.java.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/patches/PowerPointParserTest.java.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/patches/WordParserTest.java.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
@@ -34,8 +670,10 @@
       <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/test-classes/NaimTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tested_projects/tika/patches/TestLanguageIdentifier.java.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tested_projects/tika/patches/TestNGramProfile.java.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tested_projects/commons-math/patches/RandomDataTest.java.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tested_projects/tika/patches/TaggedInputStreamTest.java.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tested_projects/tika/patches/TaggedInputStream_ESTest.java.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tested_projects/tika/patches/TaggedInputStream_ESTest_scaffolding.java.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/tmp_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tmp_file.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp_file.txt" afterDir="false" />
     </list>
@@ -48,9 +686,9 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/BugMiner$specific.coverage" NAME="specific Coverage Results" MODIFIED="1563369897636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_extract_bugs_pick_up_failures.coverage" NAME="Unittests for test.TestMain.test_extract_bugs_pick_up_failures Coverage Results" MODIFIED="1563029395994" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue.coverage" NAME="Unittests for test.TestMain.test_issue Coverage Results" MODIFIED="1565530855093" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue.coverage" NAME="Unittests for test.TestMain.test_issue Coverage Results" MODIFIED="1565789864523" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_extract_bugs_2.coverage" NAME="Unittests for test.TestMain.test_extract_bugs_2 Coverage Results" MODIFIED="1564842897223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data_auto_generated_tests.coverage" NAME="Unittests for test.TestMain.test_generate_data_auto_generated_tests Coverage Results" MODIFIED="1565530631291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data_auto_generated_tests.coverage" NAME="Unittests for test.TestMain.test_generate_data_auto_generated_tests Coverage Results" MODIFIED="1565788973996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_get_bugged_components_1.coverage" NAME="Unittests for test.TestMain.test_get_bugged_components_1 Coverage Results" MODIFIED="1565073853926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$tmp.coverage" NAME="tmp Coverage Results" MODIFIED="1536665877421" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMinerTest$Main.coverage" NAME="Main Coverage Results" MODIFIED="1537369841363" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -59,12 +697,13 @@
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_extract_bugs_4.coverage" NAME="Unittests for test.TestMain.test_extract_bugs_4 Coverage Results" MODIFIED="1563029587419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$all.coverage" NAME="all Coverage Results" MODIFIED="1565359330884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$TestMain.coverage" NAME="TestMain Coverage Results" MODIFIED="1538659865294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue_and_commit.coverage" NAME="Unittests for test.TestMain.test_issue_and_commit Coverage Results" MODIFIED="1565513971632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue_and_commit.coverage" NAME="Unittests for test.TestMain.test_issue_and_commit Coverage Results" MODIFIED="1565792903511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data.coverage" NAME="Unittests for test.TestMain.test_generate_data Coverage Results" MODIFIED="1565530162277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$auto_gen.coverage" NAME="auto_gen Coverage Results" MODIFIED="1565356983990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_patch_tescases_not_compiling_testcases_exclusive_patching.coverage" NAME="Unittests for test.TestMain.test_patch_tescases_not_compiling_testcases_exclusive_patching Coverage Results" MODIFIED="1563284986449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_get_bug_patches_1.coverage" NAME="Unittests for test.TestMain.test_get_bug_patches_1 Coverage Results" MODIFIED="1565359060729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Test_test_parser.coverage" NAME="Test_test_parser Coverage Results" MODIFIED="1537189344462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data_auto_generated_tests_cmd_strategy.coverage" NAME="Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy Coverage Results" MODIFIED="1565786023862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$TestApplier.coverage" NAME="TestApplier Coverage Results" MODIFIED="1538312311785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$patching.coverage" NAME="patching Coverage Results" MODIFIED="1563624216390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Bug_extraction_tests.coverage" NAME="Bug extraction tests Coverage Results" MODIFIED="1562846881385" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
@@ -81,28 +720,30 @@
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_extract_bugs_auto_generated_test_basic_project.coverage" NAME="Unittests for test.TestMain.test_extract_bugs_auto_generated_test_basic_project Coverage Results" MODIFIED="1564843526990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_matrix.coverage" NAME="Unittests for test.TestMain.test_generate_matrix Coverage Results" MODIFIED="1564846253943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/tests/results/tests_reports" userTempatePath="" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-889">
-              <caret line="171" column="51" selection-start-line="171" selection-start-column="51" selection-end-line="171" selection-end-column="51" />
+            <state relative-caret-position="75">
+              <caret line="108" column="53" selection-start-line="108" selection-start-column="53" selection-end-line="108" selection-end-column="53" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="475" column="112" selection-start-line="475" selection-start-column="112" selection-end-line="475" selection-end-column="112" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -119,15 +760,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>JQL_QUERY</find>
-      <find>def pos</find>
-      <find>extract_</find>
-      <find>extract_p</find>
-      <find>possible_bugs_extractor</find>
-      <find>ADDED</find>
-      <find>get_from_cache</find>
-      <find>extract_bu</find>
-      <find>TestO</find>
       <find>divide_errors_to_files</find>
       <find>is_unrelated_testcase</find>
       <find>patch</find>
@@ -144,11 +776,20 @@
       <find>generate_da</find>
       <find>issue</find>
       <find>generate_te</find>
-      <find>generate_tests</find>
       <find>pom</find>
       <find>module</find>
       <find>generate_mvn_te</find>
       <find>set_up_bug_dir</find>
+      <find>TestParserException</find>
+      <find>MVNError</find>
+      <find>Repo</find>
+      <find>generate_tests</find>
+      <find>export</find>
+      <find>generate_tests(</find>
+      <find>strate</find>
+      <find>self.repo_dir</find>
+      <find>compile(</find>
+      <find>EXTRACT_BUGS</find>
     </findStrings>
     <replaceStrings>
       <replace>commit_tests</replace>
@@ -221,32 +862,50 @@
         <option value="$PROJECT_DIR$/Test.py" />
         <option value="$PROJECT_DIR$/../../Libraries/python/PossibleBugMiner/PossibleBugMiner/extractor.py" />
         <option value="$PROJECT_DIR$/diff/filediff.py" />
-        <option value="$PROJECT_DIR$/../../Libraries/python/PossibleBugMiner/PossibleBugMiner/jira_extractor.py" />
         <option value="$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/CompilationErrorObject.py" />
-        <option value="$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/TestObjects.py" />
         <option value="$PROJECT_DIR$/../../Libraries/python/patcher/patcher/patcher.py" />
         <option value="$PROJECT_DIR$/../../Libraries/python/PossibleBugMiner/PossibleBugMiner/extractor_factory.py" />
         <option value="$PROJECT_DIR$/../../Libraries/python/PossibleBugMiner/PossibleBugMiner/commit_analyzer.py" />
         <option value="$PROJECT_DIR$/../../Libraries/python/Diff/aidnd_diff/filediff.py" />
         <option value="$PROJECT_DIR$/../../Libraries/python/PossibleBugMiner/PossibleBugMiner/sourceforge_extractor.py" />
-        <option value="$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/Repo.py" />
-        <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/bug.py" />
+        <option value="$PROJECT_DIR$/venv_p3/Lib/site-packages/mvnpy/TestObjects.py" />
+        <option value="$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/TestObjects.py" />
+        <option value="$PROJECT_DIR$/venv_p3/Lib/site-packages/mvnpy/mvn.py" />
+        <option value="$PROJECT_DIR$/../../Libraries/python/PossibleBugMiner/PossibleBugMiner/jira_extractor.py" />
+        <option value="$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/mvn.py" />
+        <option value="$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/Repo.py" />
         <option value="$PROJECT_DIR$/tests/test.py" />
+        <option value="$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/plugins/evosuite/evosuite.py" />
+        <option value="$PROJECT_DIR$/Main.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="953" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="1943" />
+    <option name="height" value="1043" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="testma&#9;FILE&#9;file://C:/Users/TEMP/BugMiner/TestMain.py" />
@@ -330,7 +989,7 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test.TestMain.test_get_bug_patches_2" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -341,7 +1000,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.TestMain.test_get_bug_patches_2&quot;" />
+      <option name="_new_target" value="&quot;test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -447,17 +1106,17 @@
       <item itemvalue="Python tests.specific" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests" />
-      <item itemvalue="Python tests.Unittests for test.TestMain.test_get_bug_patches_2" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_issue" />
+      <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Unittests for test.TestMain.test_issue" />
-        <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests" />
-        <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data" />
         <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit" />
-        <item itemvalue="Python tests.Unittests for test.TestMain.test_get_bug_patches_2" />
+        <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests" />
+        <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy" />
+        <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data" />
       </list>
     </recent_temporary>
   </component>
@@ -509,44 +1168,48 @@
       <workItem from="1565418711194" duration="1686000" />
       <workItem from="1565426705546" duration="8000" />
       <workItem from="1565436057258" duration="1629000" />
-      <workItem from="1565438093914" duration="13908000" />
+      <workItem from="1565438093914" duration="15279000" />
+      <workItem from="1565599533140" duration="14694000" />
+      <workItem from="1565687840752" duration="11312000" />
+      <workItem from="1565781629383" duration="11317000" />
+      <workItem from="1565788088978" duration="2794000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_test_TestMain_test_generate_data - 2019.08.11 at 14h 37m 39s.xml">
-      <configuration name="Unittests for test.TestMain.test_generate_data" configurationId="tests" />
+    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2019.08.14 at 17h 21m 18s.xml">
+      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue - 2019.08.11 at 14h 41m 41s.xml">
+    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2019.08.14 at 17h 26m 09s.xml">
+      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2019.08.14 at 17h 32m 23s.xml">
+      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_TestMain_test_issue - 2019.08.14 at 17h 35m 29s.xml">
       <configuration name="Unittests for test.TestMain.test_issue" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue - 2019.08.11 at 15h 27m 28s.xml">
+    <history-entry file="Unittests_for_test_TestMain_test_issue - 2019.08.14 at 18h 03m 08s.xml">
       <configuration name="Unittests for test.TestMain.test_issue" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue - 2019.08.11 at 15h 33m 42s.xml">
+    <history-entry file="Unittests_for_test_TestMain_test_issue - 2019.08.14 at 16h 11m 31s.xml">
       <configuration name="Unittests for test.TestMain.test_issue" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue - 2019.08.11 at 16h 21m 38s.xml">
+    <history-entry file="Unittests_for_test_TestMain_test_issue - 2019.08.14 at 16h 25m 15s.xml">
       <configuration name="Unittests for test.TestMain.test_issue" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue - 2019.08.11 at 16h 27m 03s.xml">
+    <history-entry file="Unittests_for_test_TestMain_test_issue - 2019.08.14 at 16h 25m 24s.xml">
       <configuration name="Unittests for test.TestMain.test_issue" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_generate_data - 2019.08.11 at 16h 29m 49s.xml">
-      <configuration name="Unittests for test.TestMain.test_generate_data" configurationId="tests" />
+    <history-entry file="Unittests_for_test_TestMain_test_issue - 2019.08.14 at 16h 27m 48s.xml">
+      <configuration name="Unittests for test.TestMain.test_issue" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_generate_data_auto_generated_tests - 2019.08.11 at 16h 32m 34s.xml">
-      <configuration name="Unittests for test.TestMain.test_generate_data_auto_generated_tests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_generate_data_auto_generated_tests - 2019.08.11 at 16h 39m 47s.xml">
-      <configuration name="Unittests for test.TestMain.test_generate_data_auto_generated_tests" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue - 2019.08.11 at 16h 43m 38s.xml">
+    <history-entry file="Unittests_for_test_TestMain_test_issue - 2019.08.14 at 16h 48m 07s.xml">
       <configuration name="Unittests for test.TestMain.test_issue" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="272745000" />
+    <option name="totallyTimeSpent" value="314233000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -558,16 +1221,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.0282516" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25263157" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32592592" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8375815" visible="true" weight="0.50666666" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8346177" weight="0.49666667" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8375815" weight="0.33333334" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8346177" weight="0.4888889" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
@@ -582,8 +1244,8 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Coverage" order="5" side_tool="true" />
+      <window_info anchor="right" id="Coverage" order="4" side_tool="true" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32955465" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0282516" />
@@ -666,69 +1328,84 @@
     <expressions id="evaluateCodeFragment">
       <expression>
         <expression-string>reduce(
-	lambda acc, curr: acc if acc != None or self.get_bug_id_from_doc(curr) == None
-	else self.get_bug_id_from_doc(curr),
-	positive_delta,
-	None)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>10 == None</expression-string>
+            lambda acc, curr: acc + ';' + curr,
+            map(lambda x: os.path.relpath(os.path.join(self.get_dependecy_dir(module),x),module),
+                os.listdir(self.get_dependecy_dir(module)))
+        )</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
       <expression>
         <expression-string>reduce(
-	lambda acc, curr: acc if acc != None or self.get_bug_id_from_doc(curr) == None else self.get_bug_id_from_doc(curr),
+            lambda acc, curr: acc + ';' + curr,
+            map(lambda x: os.path.relpath(os.path.join(self.get_dependecy_dir(module),x),module),
+                os.listdir(self.get_dependecy_dir(module))),
+            ''
+        )</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>reduce(
+            lambda acc, curr: acc + ';' + curr,
+            map(lambda x: os.path.relpath(module,x),
+                os.listdir(self.get_dependecy_dir(module))),
+            ''
+        )</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>reduce(
+	lambda acc, curr: acc + ';' + curr,
+	map(lambda x: os.path.relpath(module, x),
+	    os.listdir(self.get_dependecy_dir(module))),
+	''
+)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>reduce(
+            lambda acc, curr: acc + ';' + curr,
+            map(lambda x: os.path.relpath(x, module),
+                os.listdir(self.get_dependecy_dir(module))),
+            ''
+        )</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>eturn reduce(
+            lambda acc, curr: acc + ';' + curr,
+            map(lambda x: os.path.relpath(x, module),
+                os.listdir(self.get_dependecy_dir(module))),
+            ''
+        )</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>module</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>reduce(
+            lambda acc, curr: acc + ';' + curr,
+            map(lambda x: os.path.relpath(x, module),
+                os.listdir(os.path.join(module, self.get_dependecy_dir(module)))),
+            ''
+        )</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>reduce(
+	lambda acc, curr: acc if acc != None or self.get_bug_id_from_doc(curr) == None
+	else self.get_bug_id_from_doc(curr),
 	positive_delta,
 	None)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>return reduce(
-                lambda acc, curr: acc if acc != None or self.get_bug_id_from_doc(curr) == None
-                else self.get_bug_id_from_doc(curr),
-                positive_delta,
-                None)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>filter(
-            lambda x: self.is_associated_to_commit(issue, x),
-            self.get_all_commits()
-        )</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>return filter(
-            lambda x: self.is_associated_to_commit(issue, x),
-            self.get_all_commits()
-        )</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>\
-        'project = {} AND issuetype = Bug AND createdDate &lt;= &quot;2018/10/03&quot; ORDER BY  createdDate ASC'\
-        .format(self.jira_proj_name)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>'''\
-        'project = {} AND issuetype = Bug AND createdDate &lt;= &quot;2018/10/03&quot; ORDER BY  createdDate ASC'
-        '''.format(self.jira_proj_name)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>'''\+
-        'project = {} AND issuetype = Bug AND createdDate &lt;= &quot;2018/10/03&quot; ORDER BY  createdDate ASC'
-        '''.format(self.jira_proj_name)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -759,69 +1436,53 @@
     </expressions>
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>path_to_bug_dir,os.path.join(path_to_bug_dir, os.path.basename(module))</expression-string>
+        <expression-string>reduce(lambda acc, curr: os.path.join(acc, curr), [module, '.evosuite', 'best-tests'])</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>path_to_bug_dir,os.path.join(path_to_bug_dir, 'tika')</expression-string>
+        <expression-string>reduce(lambda acc, curr: os.path.join(acc, curr), ['target', 'dependency'], module)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>path_to_bug_dir,os.path.join(path_to_bug_dir, module)</expression-string>
+        <expression-string>reduce(lambda acc, curr: os.path.join(acc, curr), ['target', 'dependecy'], module)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>os.path.join(path_to_bug_dir, module)</expression-string>
+        <expression-string>self.get_dependecy_dir(module)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>extractor.extract_possible_bugs()</expression-string>
+        <expression-string>parseString(rough_string)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>re.search(&quot;bug ([0-9])+&quot;, line, re.IGNORECASE)</expression-string>
+        <expression-string>parseString(rough_string).toprettyxml()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>re.search(&quot;/bug ([0-9])+/i&quot;, line)</expression-string>
+        <expression-string>elem.tag[1:].partition(&quot;}&quot;)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>re.search(&quot;G[bug] ([0-9])+&quot;, line)</expression-string>
+        <expression-string>analyzer.is_bug_commit()</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>match != None</expression-string>
+        <expression-string>relpath.replace('\\', '.')</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/mvnpy/Repo.py" />
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/AIDnD_mvnpy-1.0.1-py2.7.egg/mvnpy/Repo.py" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="1688" selection-start-line="1688" selection-end-line="1688" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/unittest/suite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/AIDnD_mvnpy-1.0.1-py2.7.egg/mvnpy/bug.py" />
     <entry file="file://$PROJECT_DIR$/venv_p3/Lib/site-packages/GitPython-2.1.11-py3.7.egg/git/repo/base.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -841,13 +1502,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="196" selection-start-line="196" selection-end-line="196" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8160">
-          <caret line="421" selection-start-line="421" selection-end-line="421" />
         </state>
       </provider>
     </entry>
@@ -897,13 +1551,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="101" selection-start-line="101" selection-end-line="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/ntpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="207" selection-start-line="207" selection-end-line="207" />
         </state>
       </provider>
     </entry>
@@ -1057,27 +1704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/mvn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5280">
-          <caret line="271" column="4" selection-start-line="271" selection-start-column="4" selection-end-line="271" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Libraries/python/PossibleBugMiner/PossibleBugMiner/jira_extractor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1180">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/TestObjects.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2920">
-          <caret line="150" selection-start-line="150" selection-end-line="150" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Libraries/python/patcher/patcher/git_cmd_wrapper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -1120,13 +1746,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/Repo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="405" column="40" selection-start-line="405" selection-start-column="16" selection-end-line="405" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/bug.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -1134,22 +1753,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/unittest/case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-889">
-          <caret line="171" column="51" selection-start-line="171" selection-start-column="51" selection-end-line="171" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="166">
+          <caret line="328" selection-start-line="328" selection-end-line="328" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/TestObjects.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="97" column="17" selection-start-line="97" selection-start-column="17" selection-end-line="97" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/ntpath.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1640">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Libraries/python/PossibleBugMiner/PossibleBugMiner/jira_extractor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv_p3/Lib/site-packages/mvnpy/mvn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6600">
+          <caret line="337" column="8" selection-start-line="337" selection-start-column="8" selection-end-line="337" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv_p3/Lib/site-packages/mvnpy/TestObjects.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="92" selection-start-line="92" selection-end-line="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/enum/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="746" selection-start-line="746" selection-end-line="746" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/Repo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="475" column="112" selection-start-line="475" selection-start-column="112" selection-end-line="475" selection-end-column="112" />
+        <state relative-caret-position="9460">
+          <caret line="481" column="112" selection-start-line="481" selection-start-column="112" selection-end-line="481" selection-end-column="112" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/mvn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="274" column="4" selection-start-line="274" selection-start-column="4" selection-end-line="274" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/plugins/evosuite/evosuite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2400">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="108" column="53" selection-start-line="108" selection-start-column="53" selection-end-line="108" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>

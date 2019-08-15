@@ -22,6 +22,7 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_TESTS = False
 		Main.branch_inspected = 'master'
+		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
 
 	def tearDown(self):
 		pass
@@ -400,6 +401,10 @@ class TestMain(unittest.TestCase):
 		self.assertTrue(os.path.isfile(expected_patch))
 		self.assertTrue(os.path.isfile(expected_patch_2))
 
+	def test_generate_data_auto_generated_tests_cmd_strategy(self):
+		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.CMD
+		self.test_generate_data_auto_generated_tests()
+
 	def test_generate_matrix(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
@@ -473,7 +478,8 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
-		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-828'])
+		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.CMD
+		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-391'])
 
 	# @unittest.skip('Ment to be run manulay')
 	def test_issue_and_commit(self):
@@ -484,8 +490,9 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
-		issue_key = 'TIKA-483'
-		commit_h = '98eb0b0ec46c8a826a8a76a52636d8cc617d3201'
+		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
+		issue_key = 'TIKA-391'
+		commit_h = '6f48f57a6a0f21e6589a1d512a25574425dcc4cb'
 		github = 'https://github.com/apache/tika'
 		issue_tracker = 'http:\issues.apache.org\jira\projects\TIKA'
 		Main.set_up(['', github])
@@ -496,7 +503,8 @@ class TestMain(unittest.TestCase):
 		k = extractor.extract_possible_bugs()
 		bug = filter(lambda x: commit_h in x[1], extractor.extract_possible_bugs())[0]
 		bug_commit = Main.repo.commit(bug[1])
-		Main.extract_bugs(bug[0], bug_commit, bug[2])
+		bugs = Main.extract_bugs(bug[0], bug_commit, bug[2])
+		x = 1
 
 
 if __name__ == '__main__':

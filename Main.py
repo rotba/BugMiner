@@ -16,6 +16,7 @@ import javalang
 from PossibleBugMiner.extractor_factory import ExtractorFactory
 from git import Repo
 from mvnpy import Repo as MavenRepo
+from mvnpy.Repo import TestGenerationStrategy
 from mvnpy import TestObjects
 from mvnpy import bug as mvn_bug
 from mvnpy import mvn
@@ -48,6 +49,7 @@ GENERATE_DATA = True
 GENERATE_TESTS = True
 TRACE = False
 LIMIT_TIME_FOR_BUILD = 180
+TESTS_GEN_STRATEGY = TestGenerationStrategy.CMD
 
 
 def main(argv):
@@ -56,7 +58,8 @@ def main(argv):
 	speceific_issue = argv[3] if len(argv) > 3 else None
 	jql_query = argv[4] if len(argv) > 4 else None
 	possible_bugs = ExtractorFactory.create(
-		repo_dir=repo.working_dir, branch_inspected=branch_inspected, issue_tracker_url=argv[2], issue_key=speceific_issue,
+		repo_dir=repo.working_dir, branch_inspected=branch_inspected, issue_tracker_url=argv[2],
+		issue_key=speceific_issue,
 		query=jql_query
 	).extract_possible_bugs()
 	for possible_bug in possible_bugs:
@@ -101,14 +104,18 @@ def extract_bugs(issue, commit, tests_paths):
 					bugged_classes = list(map(lambda c: re.sub('\#.*', '', c),
 					                          get_bugged_components(commit_fix=commit, commit_bug=parent,
 					                                                module=module)))
-					if len(bugged_classes) ==0: raise Exception()
-					mvn_repo.generate_tests(classes=bugged_classes, module=module)
+					if len(bugged_classes) == 0: raise Exception()
+					mvn_repo.generate_tests(classes=bugged_classes, module=module,
+					                        strategy=TESTS_GEN_STRATEGY)
 					cache_project_state()
 				generated_testcases = mvn_repo.get_generated_testcases(module=module)
+				if len(generated_testcases) == 0:
+					logging.info('0 tests generated!')
 				commit_tests_object += set(list(map(lambda t: t.parent, generated_testcases)))
 				dict_modules_testcases[module] += generated_testcases
 			if GENERATE_DATA:
-				dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(issue, commit, commit_tests_object, module=module)
+				dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(issue, commit, commit_tests_object,
+				                                                         module=module)
 			print(colored('### Running tests in commit ###', 'green'))
 			mvn_repo.change_surefire_ver(surefire_version)
 			build_log = run_mvn_tests(dict_modules_testcases[module], module)
@@ -127,7 +134,7 @@ def extract_bugs(issue, commit, tests_paths):
 				commit_valid_testcases = gen_commit_valid_testcases
 				no_report_testcases += gen_no_report_testcases
 			if len(commit_valid_testcases) == 0:
-				raise mvn.MVNError(msg='No reports', report=build_log)
+				raise mvn.MVNError(msg='No reports', report=build_log, trace=traceback.format_exc())
 			git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha, '-f'))
 			delta_testcases = get_delta_testcases(dict_modules_testcases[module])
 			print(colored('### Patching delta testcases###', 'green'))
@@ -207,9 +214,17 @@ def extract_bugs(issue, commit, tests_paths):
 			if GENERATE_DATA:
 				bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time,
 				                          'Failed - ' + e.msg)
+		except mvn.MVNTimeoutError as e:
+			end_time = time.time()
+			logging.info('TIMEOUT! failed inspecting module : ' + module)
+			logging.info(traceback.format_exc())
+			if GENERATE_DATA:
+				bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time,
+				                          'Failed: ' + str(e))
 		except mvn.MVNError as e:
 			end_time = time.time()
 			logging.info('failed inspecting module : ' + module)
+			logging.info(traceback.format_exc())
 			if GENERATE_DATA:
 				bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time,
 				                          'Failed: ' + str(e))
@@ -260,7 +275,7 @@ def try_grandparents(issue, parent, commit, testcases, dict_testcases_files):
 def run_mvn_tests(testcases, module):
 	build_report = mvn_repo.test(tests=testcases, module=module, time_limit=LIMIT_TIME_FOR_BUILD)
 	if mvn.has_compilation_error(build_report):
-		raise mvn.MVNError(msg='Failed due to compilation error', report=build_report)
+		raise mvn.MVNError(msg='Failed due to compilation error', report=build_report, trace=traceback.format_exc())
 	return build_report
 
 
@@ -364,6 +379,7 @@ def is_evosuite_generated_test_file(path):
 def get_bug_patches(patched_testcases, dict_testclass_dir):
 	def pom_patch_exist(module):
 		return os.path.isfile(os.path.join(dict_testclass_dir[module], 'patch.patch'))
+
 	ans = {}
 	testclasses = []
 	for testcase in patched_testcases:
@@ -378,8 +394,9 @@ def get_bug_patches(patched_testcases, dict_testclass_dir):
 			patch = generate_patch(git_dir=mvn_repo.repo_dir, file=scaffolding_path, patch_name='patch',
 			                       target_dir=dict_testclass_dir[testclass.id + '_scaffolding'])
 		if not pom_patch_exist(testclass.module):
-			ans[testclass.module] = generate_patch(git_dir=mvn_repo.repo_dir, file=mvn_repo.get_pom(testclass.module), patch_name='patch',
-			                       target_dir=dict_testclass_dir[testclass.module])
+			ans[testclass.module] = generate_patch(git_dir=mvn_repo.repo_dir, file=mvn_repo.get_pom(testclass.module),
+			                                       patch_name='patch',
+			                                       target_dir=dict_testclass_dir[testclass.module])
 		git_cmds_wrapper(lambda: repo.git.reset())
 		for testcase in patched_testcases:
 			if testcase in testclass.testcases:
