@@ -491,8 +491,8 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
-		issue_key = 'TIKA-391'
-		commit_h = '6f48f57a6a0f21e6589a1d512a25574425dcc4cb'
+		issue_key = 'TIKA-705'
+		commit_h = '6187e037e0c72294440ef38e9fc3b76a002180ca'
 		github = 'https://github.com/apache/tika'
 		issue_tracker = 'http:\issues.apache.org\jira\projects\TIKA'
 		Main.set_up(['', github])

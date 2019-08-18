@@ -16,9 +16,9 @@ def get_module(path):
 
 
 ISSUE_COLUMN = 2
-COMMIT_COLUMN = 4
 MODULE_COLUMN = 3
-TESTCASE_COLUMN = 5
+COMMIT_COLUMN = 4
+TESTCASE_COLUMN = 6
 template_path = os.path.join(os.getcwd(), 'static_files\\watch.xlsx')
 data_handler = Bug_data_handler(sys.argv[1])
 wb = load_workbook(template_path)
@@ -91,22 +91,28 @@ report_ws['C3'] = '=COUNTIF(valid_bugs!B3:B{},"*Regression*")'.format(3+len(vali
 report_ws['C4'] = '=COUNTIF(valid_bugs!B3:B{},"*Delta*")'.format(3+len(valid_bugs_tups))
 report_ws['C5'] = '=COUNTIF(valid_bugs!B3:B{},"*Delta^2*")'.format(3+len(valid_bugs_tups))
 report_ws['C6'] = '=COUNTIF(valid_bugs!B3:B{},"*Delta^3*")'.format(3+len(valid_bugs_tups))
-report_ws['C10'] = '=COUNTIFS(invalid_bugs!B3:B{},"*Regression*", invalid_bugs!I3:I{},"*runtime*")'.format(3+len(invalid_bugs_tups),3+len(invalid_bugs_tups))
-report_ws['C11'] = '=COUNTIFS(invalid_bugs!B3:B{},"*Regression*", invalid_bugs!I3:I{},"*compilation*")'.format(3+len(invalid_bugs_tups),3+len(invalid_bugs_tups))
-report_ws['C12'] = '=COUNTIFS(invalid_bugs!B3:B{},"*Delta*", invalid_bugs!I3:I{},"*runtime*")'.format(3+len(invalid_bugs_tups),3+len(invalid_bugs_tups))
-report_ws['C13'] = '=COUNTIFS(invalid_bugs!B3:B{},"*Delta*", invalid_bugs!I3:I{},"*compilation*")'.format(3+len(invalid_bugs_tups),3+len(invalid_bugs_tups))
-report_ws['C14'] = '=COUNTIFS(invalid_bugs!B3:B{},"*Delta*", invalid_bugs!I3:I{},"*passed*")'.format(3+len(invalid_bugs_tups),3+len(invalid_bugs_tups))
-report_ws['C18'] = len(valid_issues)/len(all_issues)
-report_ws['C19'] = len(valid_commits)/len(all_commits)
-report_ws['C20'] = len(valid_module_inspections)/len(all_module_inspections)
-report_ws['C23'] = reduce(lambda x, y: x + y, issues_times.values()) / len(issues_times.values())
-report_ws['C24'] = reduce(lambda x, y: x + y, commit_times.values()) / len(commit_times.values())
-report_ws['C25'] = reduce(lambda x, y: x + y, module_times) / len(module_times)
-report_ws['C28'] = '=COUNTIF(times!E3:E{},"*[ERROR] COMPILATION ERROR*")/'.format(3+len(times_tups)) +str(len(module_times))
-report_ws['C29'] = '=COUNTIF(invalid_bugs!I3:I{},"*No report*")'.format(3+len(invalid_bugs_tups))
-report_ws['C32'] = len(all_issues)
-report_ws['C32'] = len(all_commits)
-report_ws['C34'] = len(all_module_inspections)
+report_ws['C7'] = '=COUNTIF(valid_bugs!B3:B{},"*Auto-generated*")'.format(3+len(valid_bugs_tups))
+report_ws['C11'] = '=COUNTIFS(invalid_bugs!B3:B{},"*Regression*", invalid_bugs!I3:I{},"*runtime*")'.format(3+len(invalid_bugs_tups),3+len(invalid_bugs_tups))
+report_ws['C12'] = '=COUNTIFS(invalid_bugs!B3:B{},"*Regression*", invalid_bugs!I3:I{},"*compilation*")'.format(3+len(invalid_bugs_tups),3+len(invalid_bugs_tups))
+report_ws['C13'] = '=COUNTIFS(invalid_bugs!B3:B{},"*Delta*", invalid_bugs!I3:I{},"*runtime*")'.format(3+len(invalid_bugs_tups),3+len(invalid_bugs_tups))
+report_ws['C14'] = '=COUNTIFS(invalid_bugs!B3:B{},"*Delta*", invalid_bugs!I3:I{},"*compilation*")'.format(3+len(invalid_bugs_tups),3+len(invalid_bugs_tups))
+report_ws['C15'] = '=COUNTIFS(invalid_bugs!B3:B{},"*Delta*", invalid_bugs!I3:I{},"*passed*")'.format(3+len(invalid_bugs_tups),3+len(invalid_bugs_tups))
+report_ws['C16'] = '=COUNTIFS(invalid_bugs!B3:B{},"*Auto-generated*", invalid_bugs!I3:I{},"*runtime*")'.format(3+len(invalid_bugs_tups),3+len(invalid_bugs_tups))
+report_ws['C17'] = '=COUNTIFS(invalid_bugs!B3:B{},"*Auto-generated*", invalid_bugs!I3:I{},"*compilation*")'.format(3+len(invalid_bugs_tups),3+len(invalid_bugs_tups))
+report_ws['C18'] = '=COUNTIFS(invalid_bugs!B3:B{},"*Auto-generated*", invalid_bugs!I3:I{},"*passed*")'.format(3+len(invalid_bugs_tups),3+len(invalid_bugs_tups))
+report_ws['C22'] = float(len(valid_issues))/float(len(all_issues))
+report_ws['C23'] = float(len(valid_commits))/float(len(all_commits))
+report_ws['C24'] = float(len(valid_module_inspections))/float(len(all_module_inspections))
+report_ws['C27'] = float(reduce(lambda x, y: x + y, issues_times.values())) / float(len(issues_times.values()))
+report_ws['C28'] = float(reduce(lambda x, y: x + y, commit_times.values())) / float(len(commit_times.values()))
+report_ws['C29'] = float(reduce(lambda x, y: x + y, module_times)) / float(len(module_times))
+report_ws['C32'] = '=COUNTIF(times!E3:E{},"*[ERROR] COMPILATION ERROR*")/'.format(3+len(times_tups)) +str(len(module_times))
+report_ws['C33'] = '=COUNTIF(invalid_bugs!I3:I{},"*No report*")'.format(3+len(invalid_bugs_tups))
+report_ws['C34'] = '=COUNTIF(times!E3:E{},"*Build took too long*")'.format(3+len(invalid_bugs_tups))
+report_ws['C35'] = '=COUNTIF(invalid_bugs!I3:I{},"*Unexpected failure*")'.format(3+len(invalid_bugs_tups))
+report_ws['C38'] = len(all_issues)
+report_ws['C39'] = len(all_commits)
+report_ws['C40'] = len(all_module_inspections)
 wb.save(os.path.join(data_handler.path, 'watch.xlsx'))
 
 

@@ -229,6 +229,16 @@ def extract_bugs(issue, commit, tests_paths):
 				bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time,
 				                          'Failed: ' + str(e))
 
+		except Exception as e:
+			end_time = time.time()
+			logging.info('failed inspecting module : ' + module)
+			logging.info(traceback.format_exc())
+			if GENERATE_DATA:
+				bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time,
+				                          'Unexpected failure: ' + str(e))
+			print('Unexpected failure!')
+			print(traceback.format_exc())
+
 	for b in list(filter(lambda b: b.valid, ans, )):
 		logging.info('VALID BUG: ' + str(b))
 	for b in list(filter(lambda b: not b.valid, ans)):
