@@ -16,10 +16,10 @@ import javalang
 from PossibleBugMiner.extractor_factory import ExtractorFactory
 from git import Repo
 from mvnpy import Repo as MavenRepo
-from mvnpy.Repo import TestGenerationStrategy
 from mvnpy import TestObjects
 from mvnpy import bug as mvn_bug
 from mvnpy import mvn
+from mvnpy.Repo import TestGenerationStrategy
 from patcher.patcher import TestcasePatcher
 from termcolor import colored
 
@@ -42,14 +42,13 @@ invalid_bugs_csv_handler = None
 dict_key_issue = {}
 surefire_version = '2.22.0'
 evosuite_surefire_version = '2.17'
-EARLIEST_BUG = 0
 USE_CACHE = False
 USE_CACHED_STATE = False
 GENERATE_DATA = True
 GENERATE_TESTS = True
 TRACE = False
 LIMIT_TIME_FOR_BUILD = 180
-TESTS_GEN_STRATEGY = TestGenerationStrategy.CMD
+TESTS_GEN_STRATEGY = TestGenerationStrategy.MAVEN
 
 
 def main(argv):
@@ -61,7 +60,7 @@ def main(argv):
 		repo_dir=repo.working_dir, branch_inspected=branch_inspected, issue_tracker_url=argv[2],
 		issue_key=speceific_issue,
 		query=jql_query
-	).extract_possible_bugs()
+	).extract_possible_bugs_wrapper(use_cache=USE_CACHE)
 	for possible_bug in possible_bugs:
 		try:
 			bugs = extract_bugs(issue=possible_bug[0], commit=repo.commit(possible_bug[1]),
@@ -589,6 +588,12 @@ def git_cmds_wrapper(git_cmd):
 			raise e
 
 
+def generate_state_patch_name(state_label='state'):
+	sha = repo.git.rev_parse(repo.head.commit.hexsha, short=5)
+	now = datetime.datetime.now().strftime("%m-%d-%Y--%H-%M-%S")
+	return '_'.join([state_label, sha, now])
+
+
 def cache_project_state(state_label=''):
 	git_cmds_wrapper(lambda: repo.git.add('.'))
 	path_to_patch = os.path.join(state_patches_cache_dir, generate_state_patch_name(state_label) + '.patch')
@@ -598,12 +603,6 @@ def cache_project_state(state_label=''):
 	os.chdir(orig_wd)
 	git_cmds_wrapper(lambda: repo.git.reset('.'))
 	return path_to_patch
-
-
-def generate_state_patch_name(state_label='state'):
-	sha = repo.git.rev_parse(repo.head.commit.hexsha, short=5)
-	now = datetime.datetime.now().strftime("%m-%d-%Y--%H-%M-%S")
-	return '_'.join([state_label, sha, now])
 
 
 # Returns boolean. Filter the bugs to inspect

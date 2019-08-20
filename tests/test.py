@@ -478,8 +478,8 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
-		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.CMD
-		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-391'])
+		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
+		Main.main(['', 'https://github.com/apache/flink', 'http:\issues.apache.org\jira\projects\FLINK','FLINK-10157'])
 
 	# @unittest.skip('Ment to be run manulay')
 	def test_issue_and_commit(self):
@@ -491,10 +491,10 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
-		issue_key = 'TIKA-705'
-		commit_h = '6187e037e0c72294440ef38e9fc3b76a002180ca'
-		github = 'https://github.com/apache/tika'
-		issue_tracker = 'http:\issues.apache.org\jira\projects\TIKA'
+		issue_key = 'MATH-1302'
+		commit_h = 'c9b1c8f9662f865a613632e1d390922050130b60'
+		github = 'https://github.com/apache/commons-math'
+		issue_tracker = 'http:\issues.apache.org\jira\projects\MATH'
 		Main.set_up(['', github])
 		extractor = JiraExtractor(
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=issue_tracker,
