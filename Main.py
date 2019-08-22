@@ -64,7 +64,7 @@ def main(argv):
 	for possible_bug in possible_bugs:
 		try:
 			bugs = extract_bugs(issue=possible_bug[0], commit=repo.commit(possible_bug[1]),
-			                    tests_paths=possible_bug[2])
+			                    tests_paths=possible_bug[2], changed_classes=possible_bug[3])
 			if GENERATE_DATA:
 				bug_data_handler.add_bugs(bugs)
 		except mvn_bug.BugError as e:
@@ -78,7 +78,7 @@ def main(argv):
 
 
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
-def extract_bugs(issue, commit, tests_paths):
+def extract_bugs(issue, commit, tests_paths, changed_classes=[]):
 	logging.info("extract_bugs(): working on issue " + issue.key + ' in commit ' + commit.hexsha)
 	ans = []
 	parent = get_parent(commit)
@@ -100,11 +100,9 @@ def extract_bugs(issue, commit, tests_paths):
 			if GENERATE_TESTS:
 				print(colored('### Generating tests ###', 'blue'))
 				if not USE_CACHED_STATE:
-					bugged_classes = list(map(lambda c: re.sub('\#.*', '', c),
-					                          get_bugged_components(commit_fix=commit, commit_bug=parent,
-					                                                module=module)))
-					if len(bugged_classes) == 0: raise Exception()
-					mvn_repo.generate_tests(classes=bugged_classes, module=module,
+					module_changed_classes = filter(lambda x: is_in_module(x, module), changed_classes)
+					if len(module_changed_classes) == 0: raise Exception()
+					mvn_repo.generate_tests(classes=map(lambda x: convert_to_mvn_name(x, module),changed_classes), module=module,
 					                        strategy=TESTS_GEN_STRATEGY)
 					cache_project_state()
 				generated_testcases = mvn_repo.get_generated_testcases(module=module)
@@ -241,7 +239,8 @@ def extract_bugs(issue, commit, tests_paths):
 	for b in list(filter(lambda b: b.valid, ans, )):
 		logging.info('VALID BUG: ' + str(b))
 	for b in list(filter(lambda b: not b.valid, ans)):
-		logging.info('INVALID BUG: ' + str(b))
+		# logging.info('INVALID BUG: ' + str(b))
+		pass
 	git_cmds_wrapper(lambda: repo.git.reset('--hard'))
 	return ans
 
@@ -524,6 +523,13 @@ def divide_to_modules(tests):
 			ans[test.module] = []
 		ans[test.module].append(test)
 	return ans
+
+
+def is_in_module(class_mvn_name, module):
+	return class_mvn_name.startswith(os.path.basename(module))
+
+def convert_to_mvn_name(class_mvn_name, module):
+	return re.sub('\#.*', '', class_mvn_name[len(os.path.basename(module)+'#'):])
 
 
 # Returns data stored in the cache dir. If not found, retrieves the data using the retrieve func

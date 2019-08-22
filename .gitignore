@@ -114,12 +114,15 @@ results/
 #stuff
 ignore_me/
 tested_project/
+tested_projects/
 test_files/
 tmp_files/
 tests/tmp_files/
 run_projects.bat
 idea/
 tests/tested_project/
+tests/tested_projects/
 tmp_file.txt
 tests/tmp_file.txt
 tests/DebuggerTests/
+.idea/*

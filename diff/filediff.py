@@ -66,6 +66,7 @@ class FileDiff(object):
             for method in class_decl.methods + class_decl.constructors:
                 method_start = method.position[0]
                 method_end = find_end_line(before_content_text, method.position[0])
+                if method_end ==None: return []
                 method_sig = generate_method_signiture(method)
                 before_methods[method_sig] = []
                 for i in range(method_start-1, method_end):

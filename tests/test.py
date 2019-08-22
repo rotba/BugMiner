@@ -200,7 +200,7 @@ class TestMain(unittest.TestCase):
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
 		Main.repo.git.checkout(commit.hexsha, '-f')
 		tests_paths = possible_bugs_extractor.get_tests_paths_from_commit(commit)
-		res = Main.extract_bugs(issue, commit, tests_paths)
+		res = Main.extract_bugs(issue, commit, tests_paths, possible_bugs_extractor.get_changed_components(commit))
 		for bug in res:
 			if bug.valid == True and bug.bugged_testcase.id == exp_testcase_id and bug.type == Main.mvn_bug.Bug_type.DELTA:
 				return
@@ -220,7 +220,7 @@ class TestMain(unittest.TestCase):
 		Main.repo.git.reset('--hard')
 		Main.repo.git.checkout(commit.hexsha)
 		tests_paths = possible_bugs_extractor.get_tests_paths_from_commit(commit)
-		res = Main.extract_bugs(issue, commit, tests_paths)
+		res = Main.extract_bugs(issue, commit, tests_paths,possible_bugs_extractor.get_changed_components(commit))
 		for bug in res:
 			if bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type == Main.mvn_bug.Bug_type.DELTA:
 				return
@@ -265,7 +265,7 @@ class TestMain(unittest.TestCase):
 		Main.repo.git.checkout(commit.hexsha, '-f')
 		tests_paths = possible_bugs_extractor.get_tests_paths_from_commit(commit)
 		Main.GENERATE_TESTS = True
-		res = Main.extract_bugs(issue, commit, tests_paths)
+		res = Main.extract_bugs(issue, commit, tests_paths, possible_bugs_extractor.get_changed_components(commit))
 		success = False
 		num_of_success_bugs = 0
 		for bug in res:
@@ -290,7 +290,7 @@ class TestMain(unittest.TestCase):
 		Main.repo.git.reset('--hard')
 		Main.repo.git.checkout(commit.hexsha)
 		tests_paths = possible_bugs_extractor.get_tests_paths_from_commit(commit)
-		res = Main.extract_bugs(issue, commit, tests_paths)
+		res = Main.extract_bugs(issue, commit, tests_paths, possible_bugs_extractor.get_changed_components(commit))
 		for bug in res:
 			if not bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type == Main.mvn_bug.Bug_type.REGRESSION \
 					and bug.desctiption.startswith(Main.mvn_bug.invalid_rt_error_desc):
@@ -311,7 +311,7 @@ class TestMain(unittest.TestCase):
 		Main.repo.git.reset('--hard')
 		Main.repo.git.checkout(commit.hexsha)
 		tests_paths = possible_bugs_extractor.get_tests_paths_from_commit(commit)
-		res = Main.extract_bugs(issue, commit, tests_paths)
+		res = Main.extract_bugs(issue, commit, tests_paths, possible_bugs_extractor.get_changed_components(commit))
 		for bug in res:
 			if not bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type == Main.mvn_bug.Bug_type.DELTA \
 					and bug.desctiption == Main.mvn_bug.invalid_passed_desc:
@@ -443,8 +443,8 @@ class TestMain(unittest.TestCase):
 		changed_methods = Main.get_bugged_components(commit_fix=commit_fix, commit_bug=commit_bug,
 		                                             module=os.path.join(repo_path, 'sub_mod_1'))
 		self.assertTrue(len(changed_methods) == 2)
-		self.assertTrue('Main#int_foo()' in changed_methods)
-		self.assertTrue('Main#void_goo()' in changed_methods)
+		self.assertTrue('sub_mod_1#Main#int_foo()' in changed_methods)
+		self.assertTrue('sub_mod_1#Main#void_goo()' in changed_methods)
 
 	def test_get_bugged_components_2(self):
 		repo_path = os.path.join(os.getcwd(), 'tested_project\MavenProj')
@@ -466,8 +466,8 @@ class TestMain(unittest.TestCase):
 		changed_methods = Main.get_bugged_components(commit_fix=commit_fix, commit_bug=commit_bug,
 		                                             module=os.path.join(repo_path, 'sub_mod_1'))
 		self.assertTrue(len(changed_methods) == 2)
-		self.assertTrue('Main#int_foo()' in changed_methods)
-		self.assertTrue('Main#void_goo()' in changed_methods)
+		self.assertTrue('sub_mod_1#Main#int_foo()' in changed_methods)
+		self.assertTrue('sub_mod_1#Main#void_goo()' in changed_methods)
 
 	# @unittest.skip('Ment to be run manulay')
 	def test_issue(self):
@@ -479,7 +479,7 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
-		Main.main(['', 'https://github.com/apache/flink', 'http:\issues.apache.org\jira\projects\FLINK','FLINK-10157'])
+		Main.main(['', 'https://github.com/apache/spark', 'http:\issues.apache.org\jira\projects\SPARK','SPARK-28780'])
 
 	# @unittest.skip('Ment to be run manulay')
 	def test_issue_and_commit(self):
@@ -490,11 +490,11 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
-		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
-		issue_key = 'MATH-1302'
-		commit_h = 'c9b1c8f9662f865a613632e1d390922050130b60'
-		github = 'https://github.com/apache/commons-math'
-		issue_tracker = 'http:\issues.apache.org\jira\projects\MATH'
+		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.MAVEN
+		issue_key = 'TIKA-209'
+		commit_h = '7a6089c0fd2f52119b5519ac30907875186e8815'
+		github = 'https://github.com/apache/tika'
+		issue_tracker = 'http:\issues.apache.org\jira\projects\TIKA'
 		Main.set_up(['', github])
 		extractor = JiraExtractor(
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=issue_tracker,
@@ -503,7 +503,7 @@ class TestMain(unittest.TestCase):
 		k = extractor.extract_possible_bugs()
 		bug = filter(lambda x: commit_h in x[1], extractor.extract_possible_bugs())[0]
 		bug_commit = Main.repo.commit(bug[1])
-		bugs = Main.extract_bugs(bug[0], bug_commit, bug[2])
+		bugs = Main.extract_bugs(bug[0], bug_commit, bug[2], bug[3])
 		x = 1
 
 
