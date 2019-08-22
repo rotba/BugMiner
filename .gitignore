@@ -116,5 +116,10 @@ ignore_me/
 tested_project/
 test_files/
 tmp_files/
+tests/tmp_files/
 run_projects.bat
 idea/
+tests/tested_project/
+tmp_file.txt
+tests/tmp_file.txt
+tests/DebuggerTests/
