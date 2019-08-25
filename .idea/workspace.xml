@@ -2,102 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/.evosuite/tmp_2019_08_22_11_02_18/logs/org.apache.tika.utils.RereadableInputStream/std_err_CLIENT.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/.evosuite/tmp_2019_08_22_11_02_18/logs/org.apache.tika.utils.RereadableInputStream/std_err_MASTER.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/.evosuite/tmp_2019_08_22_11_02_18/logs/org.apache.tika.utils.RereadableInputStream/std_out_CLIENT.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/.evosuite/tmp_2019_08_22_11_02_18/logs/org.apache.tika.utils.RereadableInputStream/std_out_MASTER.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/.evosuite/tmp_2019_08_22_11_02_18/logs/org.apache.tika.utils.Utils/std_err_CLIENT.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/.evosuite/tmp_2019_08_22_11_02_18/logs/org.apache.tika.utils.Utils/std_err_MASTER.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/.evosuite/tmp_2019_08_22_11_02_18/logs/org.apache.tika.utils.Utils/std_out_CLIENT.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/.evosuite/tmp_2019_08_22_11_02_18/logs/org.apache.tika.utils.Utils/std_out_MASTER.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/.evosuite/tmp_2019_08_22_11_02_18/pools/org.apache.tika.utils.RereadableInputStream.pool" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/.evosuite/tmp_2019_08_22_11_02_18/reports/org.apache.tika.utils.RereadableInputStream/statistics.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/.evosuite/tmp_2019_08_22_11_02_18/seeds/org.apache.tika.utils.RereadableInputStream.seed" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/.evosuite/tmp_2019_08_22_11_02_18/tests/org/apache/tika/utils/RereadableInputStream_ESTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/.evosuite/tmp_2019_08_22_11_02_18/tests/org/apache/tika/utils/RereadableInputStream_ESTest_scaffolding.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/META-INF/LICENSE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/META-INF/NOTICE.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/META-INF/README.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/log4j/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/mime/tika-mimetypes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/config/Content.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/config/ParserConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/config/TikaConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/exception/TikaException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/log/TikaLogger.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/metadata/CreativeCommons.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/metadata/DublinCore.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/metadata/HttpHeaders.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/metadata/MSOffice.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/metadata/Metadata.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/metadata/SpellCheckedMetadata.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/metadata/TikaMimeKeys.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/Clause$False.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/Clause$True.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/Clause.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/HexCoDec.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/Magic.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/MagicClause.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/MagicMatch.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/MimeType$RootXML.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/MimeType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/MimeTypeException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/MimeTypes$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/MimeTypes$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/MimeTypes$MimeInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/MimeTypes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/MimeTypesReader.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/MimeUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/Operator$And.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/Operator$Or.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/Operator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/Patterns.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/mime/tika-mimetypes.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/Parser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/ParserFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/html/HtmlParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/msexcel/ExcelExtractor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/msexcel/MsExcelParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/mspowerpoint/ContentReaderListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/mspowerpoint/FilteredStringWriter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/mspowerpoint/MsPowerPointParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/mspowerpoint/PPTConstants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/mspowerpoint/PPTExtractor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/mspowerpoint/Slide.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/mspowerpoint/TextBox.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/msword/FastSavedException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/msword/MsWordParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/msword/PasswordProtectedException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/msword/Word6Extractor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/msword/WordExtractor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/msword/WordTextBuffer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/msword/WordTextPiece.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/msword/chp/Word6CHPBinTable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/opendocument/OpenOfficeEntityResolver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/opendocument/OpenOfficeParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/pdf/PDFParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/rtf/RTFParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/txt/TXTParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/parser/xml/XMLParser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/tika-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/utils/MSExtractor$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/utils/MSExtractor$PropertiesReaderListener.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/utils/MSExtractor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/utils/ParseUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/utils/RegexUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/utils/RereadableInputStream.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/utils/StringUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/org/apache/tika/utils/Utils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/classes/tika-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tested_project/tika/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/BugMiner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BugMiner.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diff/filediff.py" beforeDir="false" afterPath="$PROJECT_DIR$/diff/filediff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_projects.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run_projects.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jackrabbit-oak/oak-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/jackrabbit-oak/oak-core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/README.md" beforeDir="false" />
@@ -1232,29 +1138,8 @@
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/svg/js/src/KeyedValuesDataset.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/svg/js/src/Utils.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/svg/lib/jfreechart_utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_project/tika/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-math/patches/MathUtilsTest.java.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/tika/patches/MimeDetectionTest.java.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/tika/patches/MimeType_ESTest.java.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/tika/patches/MimeType_ESTest_scaffolding.java.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/tika/patches/MimeTypes_ESTest.java.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/tika/patches/MimeTypes_ESTest_scaffolding.java.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/classes/Naim.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/surefire-reports/NaimTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/surefire-reports/TEST-NaimTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/test-classes/NaimTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tested_project/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tested_project/commons-math/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tested_project/tika/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tested_project/tika/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tested_projects/MavenProj/patches/AssafTest.java.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tested_projects/commons-math/patches/RandomDataTest.java.patch" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tested_projects/commons-math/patches/RandomDataTest.java.patch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/tested_projects/tika/patches/TestMimeTypes.java.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tmp_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tmp_file.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp_file.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp_file.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -1323,7 +1208,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1PgKtUzE98ksmbYBcalHch63OUu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -1357,7 +1242,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test.TestMain.test_issue">
+  <component name="RunManager" selected="Python.Main">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -1372,7 +1257,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="https:\github.com\apache\spark http:\issues.apache.org\jira\projects\SPARK SPARK-28780" />
+      <option name="PARAMETERS" value="https:\github.com\apache\tika http:\issues.apache.org\jira\projects\TIKA" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -1621,7 +1506,7 @@
       <workItem from="1566290515632" duration="220000" />
       <workItem from="1566290754705" duration="2445000" />
       <workItem from="1566302822541" duration="1615000" />
-      <workItem from="1566304889388" duration="22015000" />
+      <workItem from="1566304889388" duration="26217000" />
     </task>
     <servers />
   </component>
@@ -1689,9 +1574,9 @@
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tests/test.py</url>
-          <line>442</line>
-          <option name="timeStamp" value="130" />
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="137" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -1704,11 +1589,11 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue.coverage" NAME="Unittests for test.TestMain.test_issue Coverage Results" MODIFIED="1566463441382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue.coverage" NAME="Unittests for test.TestMain.test_issue Coverage Results" MODIFIED="1566468296492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data.coverage" NAME="Unittests for test.TestMain.test_generate_data Coverage Results" MODIFIED="1566459498208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_extract_bugs_1.coverage" NAME="Unittests for test.TestMain.test_extract_bugs_1 Coverage Results" MODIFIED="1566396094306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_get_bugged_components_1.coverage" NAME="Unittests for test.TestMain.test_get_bugged_components_1 Coverage Results" MODIFIED="1566461904723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1566463385091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1566489190068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data_auto_generated_tests.coverage" NAME="Unittests for test.TestMain.test_generate_data_auto_generated_tests Coverage Results" MODIFIED="1566396990895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$all.coverage" NAME="all Coverage Results" MODIFIED="1566460730130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue_and_commit.coverage" NAME="Unittests for test.TestMain.test_issue_and_commit Coverage Results" MODIFIED="1566393606297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
