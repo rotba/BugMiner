@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jackrabbit-oak/oak-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/jackrabbit-oak/oak-core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/.gitignore" beforeDir="false" />
@@ -1139,6 +1138,14 @@
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/svg/js/src/Utils.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/svg/lib/jfreechart_utils.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/classes/Naim.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/test-classes/NaimTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/tested_projects/tika/patches/TestMimeTypes.java.patch" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1208,7 +1215,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PgKtUzE98ksmbYBcalHch63OUu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -1242,7 +1249,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python tests.Unittests for test.TestMain.test_issue">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -1257,7 +1264,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="https:\github.com\apache\tika http:\issues.apache.org\jira\projects\TIKA" />
+      <option name="PARAMETERS" value="https:\github.com\apache\tika http:\issues.apache.org\jira\projects\TIKA hey_brother 'project = TIKA AND issuetype = Bug AND createdDate &gt;= &quot;2007/12/08&quot; ORDER BY  createdDate ASC'" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -1442,9 +1449,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Unittests for test.TestMain.test_issue" />
-        <item itemvalue="Python tests.Unittests for test.TestMain.test_get_bugged_components_1" />
-        <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data" />
         <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests" />
+        <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data" />
+        <item itemvalue="Python tests.Unittests for test.TestMain.test_get_bugged_components_1" />
         <item itemvalue="Python tests.Unittests for test.TestMain.test_extract_bugs_1" />
       </list>
     </recent_temporary>
@@ -1506,7 +1513,8 @@
       <workItem from="1566290515632" duration="220000" />
       <workItem from="1566290754705" duration="2445000" />
       <workItem from="1566302822541" duration="1615000" />
-      <workItem from="1566304889388" duration="26217000" />
+      <workItem from="1566304889388" duration="32924000" />
+      <workItem from="1566736016646" duration="1516000" />
     </task>
     <servers />
   </component>
@@ -1573,11 +1581,6 @@
           <line>286</line>
           <option name="timeStamp" value="103" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>63</line>
-          <option name="timeStamp" value="137" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -1589,13 +1592,13 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue.coverage" NAME="Unittests for test.TestMain.test_issue Coverage Results" MODIFIED="1566468296492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data.coverage" NAME="Unittests for test.TestMain.test_generate_data Coverage Results" MODIFIED="1566459498208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue.coverage" NAME="Unittests for test.TestMain.test_issue Coverage Results" MODIFIED="1566736204311" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data.coverage" NAME="Unittests for test.TestMain.test_generate_data Coverage Results" MODIFIED="1566726512325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_extract_bugs_1.coverage" NAME="Unittests for test.TestMain.test_extract_bugs_1 Coverage Results" MODIFIED="1566396094306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_get_bugged_components_1.coverage" NAME="Unittests for test.TestMain.test_get_bugged_components_1 Coverage Results" MODIFIED="1566461904723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1566489190068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data_auto_generated_tests.coverage" NAME="Unittests for test.TestMain.test_generate_data_auto_generated_tests Coverage Results" MODIFIED="1566396990895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$all.coverage" NAME="all Coverage Results" MODIFIED="1566460730130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1566734310618" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data_auto_generated_tests.coverage" NAME="Unittests for test.TestMain.test_generate_data_auto_generated_tests Coverage Results" MODIFIED="1566726626787" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$all.coverage" NAME="all Coverage Results" MODIFIED="1566728447046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue_and_commit.coverage" NAME="Unittests for test.TestMain.test_issue_and_commit Coverage Results" MODIFIED="1566393606297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>

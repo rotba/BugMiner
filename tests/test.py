@@ -479,7 +479,8 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
-		Main.main(['', 'https://github.com/apache/spark', 'http:\issues.apache.org\jira\projects\SPARK','SPARK-28780'])
+		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'hey_brother',
+		           '(issuekey =TIKA-107 OR issuekey =TIKA-121) AND project = TIKA AND issuetype = Bug AND createdDate <= "2019/10/03" ORDER BY  createdDate ASC'])
 
 	# @unittest.skip('Ment to be run manulay')
 	def test_issue_and_commit(self):
