@@ -26,7 +26,7 @@ from termcolor import colored
 from diff import commitsdiff
 from diff.commit import Commit
 
-branch_inspected = ''
+branch_inspected = 'origin/master'
 repo = None  # type: MavenRepo
 mvn_repo = None
 proj_name = ''
@@ -64,7 +64,7 @@ def main(argv):
 	for possible_bug in possible_bugs:
 		try:
 			bugs = extract_bugs(issue=possible_bug[0], commit=repo.commit(possible_bug[1]),
-			                    tests_paths=possible_bug[2], changed_classes=possible_bug[3])
+			                    tests_paths=possible_bug[2], changed_classes_diffs=possible_bug[3])
 			if GENERATE_DATA:
 				bug_data_handler.add_bugs(bugs)
 		except mvn_bug.BugError as e:
@@ -78,7 +78,7 @@ def main(argv):
 
 
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
-def extract_bugs(issue, commit, tests_paths, changed_classes=[]):
+def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 	logging.info("extract_bugs(): working on issue " + issue.key + ' in commit ' + commit.hexsha)
 	ans = []
 	parent = get_parent(commit)
@@ -100,10 +100,9 @@ def extract_bugs(issue, commit, tests_paths, changed_classes=[]):
 			if GENERATE_TESTS:
 				print(colored('### Generating tests ###', 'blue'))
 				if not USE_CACHED_STATE:
-					module_changed_classes = filter(lambda x: is_in_module(x, module), changed_classes)
+					module_changed_classes = get_chacnged_classes(module, changed_classes_diffs)
 					if len(module_changed_classes) == 0: raise Exception()
-					mvn_repo.generate_tests(classes=map(lambda x: convert_to_mvn_name(x, module),changed_classes), module=module,
-					                        strategy=TESTS_GEN_STRATEGY)
+					mvn_repo.generate_tests(classes=module_changed_classes, module=module, strategy=TESTS_GEN_STRATEGY)
 					cache_project_state()
 				generated_testcases = mvn_repo.get_generated_testcases(module=module)
 				if len(generated_testcases) == 0:
@@ -347,6 +346,21 @@ def store_test_files(passed_delta_testcases):
 	return ans
 
 
+def get_chacnged_classes(module,changed_classes_diffs):
+	def diff_to_mvn_components(diff):
+		file_path = os.path.join(repo.working_tree_dir, diff.file_name)
+		return convert_to_mvn_name(class_mvn_name=mvn.generate_mvn_class_names(src_path=file_path),module=module)
+	def diff_in_module(diff):
+		file_path = os.path.join(repo.working_tree_dir, diff.file_name)
+		return is_in_module(class_mvn_name=mvn.generate_mvn_class_names(src_path=file_path), module=module)
+	return map(
+		lambda x: diff_to_mvn_components(x),
+		filter(lambda y: diff_in_module(y), changed_classes_diffs)
+	)
+
+
+
+
 # Returns list of testcases that exist in commit_tests and not exist in the current state (commit)
 def get_delta_testcases(testcases):
 	ans = []
@@ -528,8 +542,9 @@ def divide_to_modules(tests):
 def is_in_module(class_mvn_name, module):
 	return class_mvn_name.startswith(os.path.basename(module))
 
+
 def convert_to_mvn_name(class_mvn_name, module):
-	return re.sub('\#.*', '', class_mvn_name[len(os.path.basename(module)+'#'):])
+	return re.sub('\#.*', '', class_mvn_name[len(os.path.basename(module) + '#'):])
 
 
 # Returns data stored in the cache dir. If not found, retrieves the data using the retrieve func
