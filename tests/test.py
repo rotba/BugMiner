@@ -188,7 +188,6 @@ class TestMain(unittest.TestCase):
 		                "'MainTest#gooTest should have been picked as for compilation error")
 
 	def test_extract_bugs_1(self):
-		print('test_extract_bugs_1')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
 		possible_bugs_extractor = JiraExtractor(
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=''
@@ -207,7 +206,6 @@ class TestMain(unittest.TestCase):
 		self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
 	def test_extract_bugs_2(self):
-		print('test_extract_bugs_2')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
 		possible_bugs_extractor = JiraExtractor(
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=''
@@ -244,7 +242,6 @@ class TestMain(unittest.TestCase):
 		self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
 	def test_extract_bugs_auto_generated_test_basic_project(self):
-		print('test_extract_bugs_5')
 		Main.branch_inspected = 'origin/test_extract_bugs_5'
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
 		Main.USE_CACHED_STATE = False
@@ -477,11 +474,12 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = False
+		Main.USE_CACHED_STATE = True
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
-		Main.main(['', 'https://github.com/apache/spark', 'http:\issues.apache.org\jira\projects\SPARK','SPARK-28780'])
+		Main.LIMIT_TIME_FOR_BUILD = 600
+		Main.main(['', 'https://github.com/apache/commons-math', 'http:\issues.apache.org\jira\projects\MATH', 'MATH-1342'])
 
-	# @unittest.skip('Ment to be run manulay')
+	@unittest.skip('Ment to be run manulay')
 	def test_issue_and_commit(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
@@ -505,6 +503,7 @@ class TestMain(unittest.TestCase):
 		bug_commit = Main.repo.commit(bug[1])
 		bugs = Main.extract_bugs(bug[0], bug_commit, bug[2], bug[3])
 		x = 1
+
 
 
 if __name__ == '__main__':
