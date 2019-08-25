@@ -49,6 +49,7 @@ GENERATE_TESTS = True
 TRACE = False
 LIMIT_TIME_FOR_BUILD = 180
 TESTS_GEN_STRATEGY = TestGenerationStrategy.MAVEN
+DEBUG = True
 
 
 def main(argv):
@@ -98,7 +99,8 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			generated_tests_diffs = []
 			gen_commit = None
 			if GENERATE_TESTS:
-				print(colored('### Generating tests ###', 'blue'))
+				debug_blue('### Generating tests ###')
+				# print(colored('### Generating tests ###', 'blue'))
 				if not USE_CACHED_STATE:
 					module_changed_classes = get_chacnged_classes(module, changed_classes_diffs)
 					if len(module_changed_classes) == 0: raise Exception()
@@ -112,14 +114,16 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			if GENERATE_DATA:
 				dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(issue, commit, commit_tests_object,
 				                                                         module=module)
-			print(colored('### Running tests in commit ###', 'green'))
+			debug_green('### Running tests in commit ###')
+			# print(colored('### Running tests in commit ###', 'green'))
 			mvn_repo.change_surefire_ver(surefire_version)
 			build_log = run_mvn_tests(dict_modules_testcases[module], module)
 			(commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
 			gen_commit_valid_testcases = filter(lambda x: x in commit_valid_testcases, commit_valid_testcases)
 			if GENERATE_TESTS:
 				mvn_repo.change_surefire_ver(evosuite_surefire_version)
-				print(colored('### Running generated tests ###', 'blue'))
+				debug_blue('### Running generated tests ###')
+				# print(colored('### Running generated tests ###', 'blue'))
 				build_log = run_mvn_tests(set(map(lambda t: t.parent, dict_modules_testcases[module])), module)
 				(gen_commit_valid_testcases, gen_no_report_testcases) = attach_reports(dict_modules_testcases[module])
 				mvn_repo.evosuite_clean(module=module)
@@ -133,7 +137,8 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				raise mvn.MVNError(msg='No reports', report=build_log, trace=traceback.format_exc())
 			git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha, '-f'))
 			delta_testcases = get_delta_testcases(dict_modules_testcases[module])
-			print(colored('### Patching delta testcases###', 'green'))
+			debug_green('### Patching delta testcases###')
+			# print(colored('### Patching delta testcases###', 'green'))
 			if GENERATE_TESTS:
 				mvn_repo.setup_tests_generator(module)
 			patch = TestcasePatcher(testcases=commit_valid_testcases, commit_fix=commit, commit_bug=parent,
@@ -153,15 +158,18 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				                       type=mvn_bug.determine_type(no_report_testcase, delta_testcases,
 				                                                   gen_commit_valid_testcases), valid=False,
 				                       desc='No report'))
-			print(colored('### Running tests in parent ###', 'green'))
+			debug_green('### Running tests in parent ###')
+			# print(colored('### Running tests in parent ###', 'green'))
 			if TRACE:
 				mvn_repo.setup_tracer()
 			mvn_repo.change_surefire_ver(surefire_version)
 			run_mvn_tests(dict_modules_testcases[module], module)
 			if GENERATE_TESTS:
-				print(colored('### Running generated tests in parent ###', 'blue'))
+				debug_blue('### Running generated tests in parent ###')
+				# print(colored('### Running generated tests in parent ###', 'blue'))
 				mvn_repo.change_surefire_ver(evosuite_surefire_version)
-				run_mvn_tests([], module)
+
+				run_mvn_tests(set(map(lambda t: t.parent,filter(lambda x: mvn_repo.is_generated_test(x.parent), patch.get_patched()))), module)
 			# parent_tests = test_parser.get_tests(module)
 			if GENERATE_TESTS:
 				all_parent_testcases = mvn_repo.get_generated_testcases(module=module)
@@ -232,8 +240,8 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			if GENERATE_DATA:
 				bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time,
 				                          'Unexpected failure: ' + str(e))
-			print('Unexpected failure!')
-			print(traceback.format_exc())
+			debug_regular('Unexpected failure!')
+			debug_regular(traceback.format_exc())
 
 	for b in list(filter(lambda b: b.valid, ans, )):
 		logging.info('VALID BUG: ' + str(b))
@@ -634,6 +642,15 @@ def bugs_filter(possible_bug):
 		return number >= EARLIEST_BUG
 	return True
 
+def debug_regular(str):
+	if DEBUG:
+		print(str)
+def debug_green(str):
+	if DEBUG:
+		print(colored(str, 'green'))
+def debug_blue(str):
+	if DEBUG:
+		print(colored(str, 'blue'))
 
 def set_up(argv):
 	global dict_key_issue
