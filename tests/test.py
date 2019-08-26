@@ -474,10 +474,10 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = True
+		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
-		Main.LIMIT_TIME_FOR_BUILD = 600
-		Main.main(['', 'https://github.com/apache/commons-math', 'http:\issues.apache.org\jira\projects\MATH', 'MATH-1342'])
+		Main.LIMIT_TIME_FOR_BUILD = 300
+		Main.main(['', 'https://github.com/apache/commons-math', 'http:\issues.apache.org\jira\projects\MATH', 'MATH-1477'])
 
 	@unittest.skip('Ment to be run manulay')
 	def test_issue_and_commit(self):
