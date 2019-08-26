@@ -49,7 +49,7 @@ GENERATE_TESTS = True
 TRACE = False
 LIMIT_TIME_FOR_BUILD = 180
 TESTS_GEN_STRATEGY = TestGenerationStrategy.MAVEN
-DEBUG = True
+DEBUG = False
 
 
 def main(argv):

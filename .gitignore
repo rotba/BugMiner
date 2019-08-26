@@ -125,4 +125,3 @@ tests/tested_projects/
 tmp_file.txt
 tests/tmp_file.txt
 tests/DebuggerTests/
-.idea/*
