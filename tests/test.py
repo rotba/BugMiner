@@ -493,8 +493,8 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.MAVEN
-		issue_key = 'TIKA-209'
-		commit_h = '7a6089c0fd2f52119b5519ac30907875186e8815'
+		issue_key = 'TIKA-1584'
+		commit_h = '90bc595d'
 		github = 'https://github.com/apache/tika'
 		issue_tracker = 'http:\issues.apache.org\jira\projects\TIKA'
 		Main.set_up(['', github])

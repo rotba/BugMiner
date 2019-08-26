@@ -100,7 +100,6 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			gen_commit = None
 			if GENERATE_TESTS:
 				debug_blue('### Generating tests ###')
-				# print(colored('### Generating tests ###', 'blue'))
 				if not USE_CACHED_STATE:
 					module_changed_classes = get_chacnged_classes(module, changed_classes_diffs)
 					if len(module_changed_classes) == 0: raise Exception()
@@ -115,7 +114,6 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(issue, commit, commit_tests_object,
 				                                                         module=module)
 			debug_green('### Running tests in commit ###')
-			# print(colored('### Running tests in commit ###', 'green'))
 			mvn_repo.change_surefire_ver(surefire_version)
 			build_log = run_mvn_tests(dict_modules_testcases[module], module)
 			(commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
@@ -123,7 +121,6 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			if GENERATE_TESTS:
 				mvn_repo.change_surefire_ver(evosuite_surefire_version)
 				debug_blue('### Running generated tests ###')
-				# print(colored('### Running generated tests ###', 'blue'))
 				build_log = run_mvn_tests(set(map(lambda t: t.parent, dict_modules_testcases[module])), module)
 				(gen_commit_valid_testcases, gen_no_report_testcases) = attach_reports(dict_modules_testcases[module])
 				mvn_repo.evosuite_clean(module=module)
@@ -159,16 +156,13 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				                                                   gen_commit_valid_testcases), valid=False,
 				                       desc='No report'))
 			debug_green('### Running tests in parent ###')
-			# print(colored('### Running tests in parent ###', 'green'))
 			if TRACE:
 				mvn_repo.setup_tracer()
 			mvn_repo.change_surefire_ver(surefire_version)
 			run_mvn_tests(dict_modules_testcases[module], module)
 			if GENERATE_TESTS:
 				debug_blue('### Running generated tests in parent ###')
-				# print(colored('### Running generated tests in parent ###', 'blue'))
 				mvn_repo.change_surefire_ver(evosuite_surefire_version)
-
 				run_mvn_tests(set(map(lambda t: t.parent,filter(lambda x: mvn_repo.is_generated_test(x.parent), patch.get_patched()))), module)
 			# parent_tests = test_parser.get_tests(module)
 			if GENERATE_TESTS:
