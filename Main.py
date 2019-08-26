@@ -20,6 +20,7 @@ from mvnpy import TestObjects
 from mvnpy import bug as mvn_bug
 from mvnpy import mvn
 from mvnpy.Repo import TestGenerationStrategy
+from mvnpy.plugins.evosuite.evosuite import TestsGenerationError
 from patcher.patcher import TestcasePatcher
 from termcolor import colored
 
@@ -104,11 +105,10 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				if not USE_CACHED_STATE:
 					module_changed_classes = get_chacnged_classes(module, changed_classes_diffs)
 					if len(module_changed_classes) == 0: raise Exception()
-					mvn_repo.generate_tests(classes=module_changed_classes, module=module, strategy=TESTS_GEN_STRATEGY)
+					gen_report = mvn_repo.generate_tests(classes=module_changed_classes, module=module, strategy=TESTS_GEN_STRATEGY)
 					cache_project_state()
 				generated_testcases = mvn_repo.get_generated_testcases(module=module)
-				if len(generated_testcases) == 0:
-					logging.info('0 tests generated!')
+				if len(generated_testcases) ==0: raise TestsGenerationError(msg='Generated no tests',report =gen_report)
 				commit_tests_object += set(list(map(lambda t: t.parent, generated_testcases)))
 				dict_modules_testcases[module] += generated_testcases
 			if GENERATE_DATA:
@@ -218,6 +218,13 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			if GENERATE_DATA:
 				bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time,
 				                          'Failed - ' + e.msg)
+		except TestsGenerationError as e:
+			end_time = time.time()
+			logging.info('Tests generation problem! failed inspecting module : ' + module)
+			logging.info(traceback.format_exc())
+			if GENERATE_DATA:
+				bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time,
+				                          'Failed:\n ' + str(e))
 		except mvn.MVNTimeoutError as e:
 			end_time = time.time()
 			logging.info('TIMEOUT! failed inspecting module : ' + module)
