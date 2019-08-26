@@ -5,3 +5,4 @@ python Main.py https:\github.com\apache\maven http:\issues.apache.org\jira\proje
 python Main.py https:\github.com\apache\flink http:\issues.apache.org\jira\projects\FLINK
 python Main.py https:\github.com\apache\commons-logging http:\issues.apache.org\jira\projects\LOGGING
 python Main.py https:\github.com\apache\commons-math http:\issues.apache.org\jira\projects\MATH
+python Main.py https:\github.com\apache\tika http:\issues.apache.org\jira\projects\TIKA hey_brother "project = TIKA AND issuetype = Bug AND createdDate >= '2007/12/08' ORDER BY  createdDate ASC"
