@@ -21,6 +21,7 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_DATA = False
 		Main.USE_CACHE = False
 		Main.GENERATE_TESTS = False
+		Main.DEBUG =True
 		Main.branch_inspected = 'master'
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
 
