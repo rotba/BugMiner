@@ -104,18 +104,21 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				if not USE_CACHED_STATE:
 					module_changed_classes = get_chacnged_classes(module, changed_classes_diffs)
 					if len(module_changed_classes) == 0: raise Exception()
-					gen_report = mvn_repo.generate_tests(classes=module_changed_classes, module=module, strategy=TESTS_GEN_STRATEGY)
+					gen_report = mvn_repo.generate_tests(classes=module_changed_classes, module=module,
+					                                     strategy=TESTS_GEN_STRATEGY)
 					cache_project_state()
 				generated_testcases = mvn_repo.get_generated_testcases(module=module)
-				if len(generated_testcases) ==0: raise TestsGenerationError(msg='Generated no tests',report =gen_report)
+				if len(generated_testcases) == 0: raise TestsGenerationError(msg='Generated no tests',
+				                                                             report=gen_report)
 				commit_tests_object += set(list(map(lambda t: t.parent, generated_testcases)))
 				dict_modules_testcases[module] += generated_testcases
 			if GENERATE_DATA:
 				dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(issue, commit, commit_tests_object,
 				                                                         module=module)
+
 			debug_green('### Running tests in commit ###')
 			mvn_repo.change_surefire_ver(surefire_version)
-			build_log = run_mvn_tests(dict_modules_testcases[module], module)
+			build_log = run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
 			(commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
 			gen_commit_valid_testcases = filter(lambda x: x in commit_valid_testcases, commit_valid_testcases)
 			if GENERATE_TESTS:
@@ -159,11 +162,13 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			if TRACE:
 				mvn_repo.setup_tracer()
 			mvn_repo.change_surefire_ver(surefire_version)
-			run_mvn_tests(dict_modules_testcases[module], module)
+			run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
 			if GENERATE_TESTS:
 				debug_blue('### Running generated tests in parent ###')
 				mvn_repo.change_surefire_ver(evosuite_surefire_version)
-				run_mvn_tests(set(map(lambda t: t.parent,filter(lambda x: mvn_repo.is_generated_test(x.parent), patch.get_patched()))), module)
+				run_mvn_tests(set(map(lambda t: t.parent,
+				                      filter(lambda x: mvn_repo.is_generated_test(x.parent), patch.get_patched()))),
+				              module)
 			# parent_tests = test_parser.get_tests(module)
 			if GENERATE_TESTS:
 				all_parent_testcases = mvn_repo.get_generated_testcases(module=module)
@@ -355,19 +360,19 @@ def store_test_files(passed_delta_testcases):
 	return ans
 
 
-def get_chacnged_classes(module,changed_classes_diffs):
+def get_chacnged_classes(module, changed_classes_diffs):
 	def diff_to_mvn_components(diff):
 		file_path = os.path.join(repo.working_tree_dir, diff.file_name)
-		return convert_to_mvn_name(class_mvn_name=mvn.generate_mvn_class_names(src_path=file_path),module=module)
+		return convert_to_mvn_name(class_mvn_name=mvn.generate_mvn_class_names(src_path=file_path), module=module)
+
 	def diff_in_module(diff):
 		file_path = os.path.join(repo.working_tree_dir, diff.file_name)
 		return is_in_module(class_mvn_name=mvn.generate_mvn_class_names(src_path=file_path), module=module)
+
 	return map(
 		lambda x: diff_to_mvn_components(x),
 		filter(lambda y: diff_in_module(y), changed_classes_diffs)
 	)
-
-
 
 
 # Returns list of testcases that exist in commit_tests and not exist in the current state (commit)
@@ -635,6 +640,21 @@ def cache_project_state(state_label=''):
 	return path_to_patch
 
 
+def pick_tests(testcases, module):
+	if mvn_repo.too_much_testcases_to_generate_cmd(testcases, module):
+		logging.info('To manny tests. Filtering in order to execute build\nAmount of tests:{}'.format(len(testcases)))
+		if not GENERATE_TESTS:
+			return set(
+				map(lambda y: y.parent, testcases)
+			)
+		else:
+			return set(
+				map(lambda y: y.parent,
+				    filter(lambda x: mvn_repo.is_generated_test(x.parent), testcases))
+			)
+	return testcases
+
+
 # Returns boolean. Filter the bugs to inspect
 def bugs_filter(possible_bug):
 	if EARLIEST_BUG > 0:
@@ -643,15 +663,21 @@ def bugs_filter(possible_bug):
 		return number >= EARLIEST_BUG
 	return True
 
+
 def debug_regular(str):
 	if DEBUG:
 		print(str)
+
+
 def debug_green(str):
 	if DEBUG:
 		print(colored(str, 'green'))
+
+
 def debug_blue(str):
 	if DEBUG:
 		print(colored(str, 'blue'))
+
 
 def set_up(argv):
 	global dict_key_issue
