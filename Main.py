@@ -99,6 +99,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			generated_testcases = []
 			generated_tests_diffs = []
 			gen_commit = None
+			mvn_repo.config(module=module)
 			if GENERATE_TESTS:
 				debug_blue('### Generating tests ###')
 				if not USE_CACHED_STATE:
@@ -162,6 +163,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			if TRACE:
 				mvn_repo.setup_tracer()
 			mvn_repo.change_surefire_ver(surefire_version)
+			mvn_repo.config(module=module)
 			run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
 			if GENERATE_TESTS:
 				debug_blue('### Running generated tests in parent ###')

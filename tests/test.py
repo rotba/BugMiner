@@ -189,7 +189,6 @@ class TestMain(unittest.TestCase):
 		                "'MainTest#gooTest should have been picked as for compilation error")
 
 	def test_extract_bugs_1(self):
-		print('test_extract_bugs_1')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
 		possible_bugs_extractor = JiraExtractor(
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=''
@@ -208,7 +207,6 @@ class TestMain(unittest.TestCase):
 		self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
 	def test_extract_bugs_2(self):
-		print('test_extract_bugs_2')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
 		possible_bugs_extractor = JiraExtractor(
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=''
@@ -245,7 +243,6 @@ class TestMain(unittest.TestCase):
 		self.fail('Did not extracted the bug of testcase -' + exp_testcase_id)
 
 	def test_extract_bugs_auto_generated_test_basic_project(self):
-		print('test_extract_bugs_5')
 		Main.branch_inspected = 'origin/test_extract_bugs_5'
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
 		Main.USE_CACHED_STATE = False
