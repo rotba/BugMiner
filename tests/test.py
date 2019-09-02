@@ -382,6 +382,7 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
+		Main.USE_CACHED_STATE = False
 		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-56'])
 		expected_issue_dir = os.path.join(Main.data_dir, 'TIKA-56')
 		expected_commit_dir = os.path.join(expected_issue_dir, 'b12c01d9b56053554cec501aab0530f7f4352daf')
@@ -477,10 +478,11 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
-		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'hey_brother',
-		           '(issuekey =TIKA-107 OR issuekey =TIKA-121) AND project = TIKA AND issuetype = Bug AND createdDate <= "2019/10/03" ORDER BY  createdDate ASC'])
+		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-121'])
+		# Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'hey_brother',
+		#            '(issuekey =TIKA-107 OR issuekey =TIKA-121) AND project = TIKA AND issuetype = Bug AND createdDate <= "2019/10/03" ORDER BY  createdDate ASC'])
 
-	# @unittest.skip('Ment to be run manulay')
+	@unittest.skip('Ment to be run manulay')
 	def test_issue_and_commit(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
@@ -488,10 +490,10 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = False
+		Main.USE_CACHED_STATE = True
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.MAVEN
-		issue_key = 'TIKA-1584'
-		commit_h = '90bc595d'
+		issue_key = 'TIKA-121'
+		commit_h = 'acf76a64d81eb9c901d92fe718c0f0ffb4d14ced'
 		github = 'https://github.com/apache/tika'
 		issue_tracker = 'http:\issues.apache.org\jira\projects\TIKA'
 		Main.set_up(['', github])

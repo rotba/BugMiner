@@ -42,7 +42,6 @@ valid_bugs_csv_handler = None
 invalid_bugs_csv_handler = None
 dict_key_issue = {}
 surefire_version = '2.22.0'
-evosuite_surefire_version = '2.17'
 USE_CACHE = False
 USE_CACHED_STATE = False
 GENERATE_DATA = True
@@ -98,8 +97,10 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			commit_valid_testcases = []
 			generated_testcases = []
 			generated_tests_diffs = []
+			no_report_testcases = []
 			gen_commit = None
-			mvn_repo.config(module=module)
+			if not USE_CACHED_STATE:
+				mvn_repo.config(module=module)
 			module_changed_classes = get_chacnged_classes(module, changed_classes_diffs)
 			if GENERATE_TESTS:
 				debug_blue('### Generating tests ###')
@@ -117,13 +118,9 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(issue, commit, commit_tests_object,
 				                                                         module=module)
 
-			debug_green('### Running tests in commit ###')
-			mvn_repo.change_surefire_ver(surefire_version)
-			build_log = run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
-			(commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
 			gen_commit_valid_testcases = filter(lambda x: x in commit_valid_testcases, commit_valid_testcases)
 			if GENERATE_TESTS:
-				mvn_repo.change_surefire_ver(evosuite_surefire_version)
+				mvn_repo.config_for_evosuite(module=module)
 				debug_blue('### Running generated tests ###')
 				build_log = run_mvn_tests(set(map(lambda t: t.parent, dict_modules_testcases[module])), module)
 				(gen_commit_valid_testcases, gen_no_report_testcases) = attach_reports(dict_modules_testcases[module])
@@ -134,6 +131,12 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				gen_commit = repo.commit(repo.head.commit.hexsha)
 				commit_valid_testcases = gen_commit_valid_testcases
 				no_report_testcases += gen_no_report_testcases
+			else:
+				debug_green('### Running tests in commit ###')
+				mvn_repo.change_surefire_ver(surefire_version)
+				build_log = run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
+				(commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
+			gen_commit_valid_testcases = filter(lambda x: x in commit_valid_testcases, commit_valid_testcases)
 			if len(commit_valid_testcases) == 0:
 				raise mvn.MVNError(msg='No reports', report=build_log, trace=traceback.format_exc())
 			git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha, '-f'))
@@ -159,19 +162,20 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				                       type=mvn_bug.determine_type(no_report_testcase, delta_testcases,
 				                                                   gen_commit_valid_testcases), valid=False,
 				                       desc='No report'))
-			debug_green('### Running tests in parent ###')
-			if TRACE:
-				mvn_repo.setup_tracer()
-			mvn_repo.change_surefire_ver(surefire_version)
-			mvn_repo.config(module=module)
-			run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
 			if GENERATE_TESTS:
 				debug_blue('### Running generated tests in parent ###')
-				mvn_repo.change_surefire_ver(evosuite_surefire_version)
+				mvn_repo.config_for_evosuite(module)
 				run_mvn_tests(set(
 					map(lambda t: t.parent,
 					    filter(lambda x: mvn_repo.is_generated_test(x.parent), patch.get_patched()))),module
 				)
+			else:
+				debug_green('### Running tests in parent ###')
+				if TRACE:
+					mvn_repo.setup_tracer()
+				mvn_repo.change_surefire_ver(surefire_version)
+				mvn_repo.config(module=module)
+				run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
 			# parent_tests = test_parser.get_tests(module)
 			if GENERATE_TESTS:
 				all_parent_testcases = mvn_repo.get_generated_testcases(module=module)
