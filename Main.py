@@ -100,10 +100,10 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			generated_tests_diffs = []
 			gen_commit = None
 			mvn_repo.config(module=module)
+			module_changed_classes = get_chacnged_classes(module, changed_classes_diffs)
 			if GENERATE_TESTS:
 				debug_blue('### Generating tests ###')
 				if not USE_CACHED_STATE:
-					module_changed_classes = get_chacnged_classes(module, changed_classes_diffs)
 					if len(module_changed_classes) == 0: raise Exception()
 					gen_report = mvn_repo.generate_tests(classes=module_changed_classes, module=module,
 					                                     strategy=TESTS_GEN_STRATEGY)
@@ -168,9 +168,10 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			if GENERATE_TESTS:
 				debug_blue('### Running generated tests in parent ###')
 				mvn_repo.change_surefire_ver(evosuite_surefire_version)
-				run_mvn_tests(set(map(lambda t: t.parent,
-				                      filter(lambda x: mvn_repo.is_generated_test(x.parent), patch.get_patched()))),
-				              module)
+				run_mvn_tests(set(
+					map(lambda t: t.parent,
+					    filter(lambda x: mvn_repo.is_generated_test(x.parent), patch.get_patched()))),module
+				)
 			# parent_tests = test_parser.get_tests(module)
 			if GENERATE_TESTS:
 				all_parent_testcases = mvn_repo.get_generated_testcases(module=module)
@@ -195,8 +196,8 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 					                         type=mvn_bug.determine_type(testcase, delta_testcases,
 					                                                     generated_testcases),
 					                         traces=mvn_repo.get_trace(parent_testcase.mvn_name),
-					                         bugged_components=get_bugged_components(commit_fix=commit,
-					                                                                 commit_bug=parent, module=module))
+					                         bugged_components=module_changed_classes
+					                         )
 					module_bugs.append(bug)
 			passed_delta_bugs = list(
 				filter(lambda b: b.type == mvn_bug.Bug_type.DELTA and b.desctiption == mvn_bug.invalid_passed_desc,
