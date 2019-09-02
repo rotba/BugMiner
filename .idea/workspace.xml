@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tested_project/tika/tika-parsers/.evosuite/tmp_2019_09_02_16_54_17/logs/org.apache.tika.parser.microsoft.HSLFExtractor/std_err_MASTER.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tested_project/tika/tika-parsers/.evosuite/tmp_2019_09_02_16_54_17/logs/org.apache.tika.parser.microsoft.HSLFExtractor/std_out_MASTER.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diff/filediff.py" beforeDir="false" afterPath="$PROJECT_DIR$/diff/filediff.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_projects.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run_projects.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jackrabbit-oak/oak-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/jackrabbit-oak/oak-core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/README.md" beforeDir="false" />
@@ -1138,6 +1142,7 @@
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/svg/js/src/KeyedValuesDataset.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/svg/js/src/Utils.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/svg/lib/jfreechart_utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-parsers/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-parsers/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
@@ -1250,7 +1255,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test.TestMain.test_issue">
+  <component name="RunManager" selected="Python tests.Unittests for test.TestMain.test_issue_and_commit">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -1449,11 +1454,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit" />
         <item itemvalue="Python tests.Unittests for test.TestMain.test_issue" />
         <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests" />
         <item itemvalue="Python tests.Unittests for test.TestMain" />
         <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data" />
-        <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit" />
       </list>
     </recent_temporary>
   </component>
@@ -1519,7 +1524,7 @@
       <workItem from="1566712893894" duration="19306000" />
       <workItem from="1566738144530" duration="28681000" />
       <workItem from="1566926578912" duration="11336000" />
-      <workItem from="1567410841559" duration="1870000" />
+      <workItem from="1567410841559" duration="7847000" />
     </task>
     <servers />
   </component>
@@ -1601,9 +1606,9 @@
           <option name="timeStamp" value="103" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>111</line>
-          <option name="timeStamp" value="129" />
+          <url>file://$PROJECT_DIR$/../Libraries_For_BugMiner/mvnpy/mvnpy/plugins/evosuite/evosuite.py</url>
+          <line>174</line>
+          <option name="timeStamp" value="131" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -1624,6 +1629,6 @@
     <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1566463385091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$all.coverage" NAME="all Coverage Results" MODIFIED="1566460730130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data_auto_generated_tests.coverage" NAME="Unittests for test.TestMain.test_generate_data_auto_generated_tests Coverage Results" MODIFIED="1567413242603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue_and_commit.coverage" NAME="Unittests for test.TestMain.test_issue_and_commit Coverage Results" MODIFIED="1567408060895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue_and_commit.coverage" NAME="Unittests for test.TestMain.test_issue_and_commit Coverage Results" MODIFIED="1567432778939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>

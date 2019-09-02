@@ -50,6 +50,7 @@ TRACE = False
 LIMIT_TIME_FOR_BUILD = 180
 TESTS_GEN_STRATEGY = TestGenerationStrategy.MAVEN
 DEBUG = False
+CONFIG = True
 
 
 def main(argv):
@@ -99,7 +100,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			generated_tests_diffs = []
 			no_report_testcases = []
 			gen_commit = None
-			if not USE_CACHED_STATE:
+			if CONFIG:
 				mvn_repo.config(module=module)
 			module_changed_classes = get_chacnged_classes(module, changed_classes_diffs)
 			if GENERATE_TESTS:
@@ -174,7 +175,8 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				if TRACE:
 					mvn_repo.setup_tracer()
 				mvn_repo.change_surefire_ver(surefire_version)
-				mvn_repo.config(module=module)
+				if CONFIG:
+					mvn_repo.config(module=module)
 				run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
 			# parent_tests = test_parser.get_tests(module)
 			if GENERATE_TESTS:

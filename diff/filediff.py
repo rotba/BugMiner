@@ -1,4 +1,6 @@
 import difflib
+import logging
+import traceback
 from subprocess import Popen, PIPE
 import tempfile
 import gc
@@ -59,8 +61,13 @@ class FileDiff(object):
         after_methods = {}
         before_content_text = ''.join(self.before_contents)
         after_content_text = ''.join(self.after_contents)
-        tree_1 = javalang.parse.parse(before_content_text)
-        tree_2 = javalang.parse.parse(after_content_text)
+        try:
+            tree_1 = javalang.parse.parse(before_content_text)
+            tree_2 = javalang.parse.parse(after_content_text)
+        except javalang.parser.JavaSyntaxError as e:
+            logging.info('javalang.parser.JavaSyntaxError')
+            logging.info(traceback.format_exc())
+            return []
         class_decls = [class_dec for _, class_dec in tree_1.filter(javalang.tree.ClassDeclaration)]
         for class_decl in class_decls:
             for method in class_decl.methods + class_decl.constructors:
@@ -78,6 +85,7 @@ class FileDiff(object):
                 method_end = find_end_line(after_content_text, method.position[0])
                 method_sig = generate_method_signiture(method)
                 after_methods[method_sig] = []
+                if method_end == None: return []
                 for i in range(method_start-1, method_end):
                     after_methods[method_sig].append(self.after_contents[i])
         for method in before_methods.keys():
