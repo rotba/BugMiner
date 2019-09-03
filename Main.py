@@ -109,6 +109,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 					if len(module_changed_classes) == 0: raise Exception()
 					gen_report = mvn_repo.generate_tests(classes=module_changed_classes, module=module,
 					                                     strategy=TESTS_GEN_STRATEGY)
+					debug_regular(gen_report)
 					cache_project_state()
 				generated_testcases = mvn_repo.get_generated_testcases(module=module)
 				if len(generated_testcases) == 0: raise TestsGenerationError(msg='Generated no tests',
@@ -124,6 +125,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				mvn_repo.config_for_evosuite(module=module)
 				debug_blue('### Running generated tests ###')
 				build_log = run_mvn_tests(set(map(lambda t: t.parent, dict_modules_testcases[module])), module)
+				debug_regular(build_log)
 				(gen_commit_valid_testcases, gen_no_report_testcases) = attach_reports(dict_modules_testcases[module])
 				mvn_repo.evosuite_clean(module=module)
 				git_cmds_wrapper(lambda: repo.git.add('.'))
@@ -136,6 +138,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				debug_green('### Running tests in commit ###')
 				mvn_repo.change_surefire_ver(surefire_version)
 				build_log = run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
+				debug_regular(build_log)
 				(commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
 			gen_commit_valid_testcases = filter(lambda x: x in commit_valid_testcases, commit_valid_testcases)
 			if len(commit_valid_testcases) == 0:
@@ -143,7 +146,6 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha, '-f'))
 			delta_testcases = get_delta_testcases(dict_modules_testcases[module])
 			debug_green('### Patching delta testcases###')
-			# print(colored('### Patching delta testcases###', 'green'))
 			if GENERATE_TESTS:
 				mvn_repo.setup_tests_generator(module)
 			patch = TestcasePatcher(testcases=commit_valid_testcases, commit_fix=commit, commit_bug=parent,
@@ -166,10 +168,11 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			if GENERATE_TESTS:
 				debug_blue('### Running generated tests in parent ###')
 				mvn_repo.config_for_evosuite(module)
-				run_mvn_tests(set(
+				build_report = run_mvn_tests(set(
 					map(lambda t: t.parent,
 					    filter(lambda x: mvn_repo.is_generated_test(x.parent), patch.get_patched()))),module
 				)
+				debug_regular(build_report)
 			else:
 				debug_green('### Running tests in parent ###')
 				if TRACE:
@@ -177,7 +180,8 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				mvn_repo.change_surefire_ver(surefire_version)
 				if CONFIG:
 					mvn_repo.config(module=module)
-				run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
+				build_report = run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
+				debug_regular(build_report)
 			# parent_tests = test_parser.get_tests(module)
 			if GENERATE_TESTS:
 				all_parent_testcases = mvn_repo.get_generated_testcases(module=module)
@@ -675,16 +679,19 @@ def bugs_filter(possible_bug):
 
 def debug_regular(str):
 	if DEBUG:
+		logging.info(str)
 		print(str)
 
 
 def debug_green(str):
 	if DEBUG:
+		logging.info(str)
 		print(colored(str, 'green'))
 
 
 def debug_blue(str):
 	if DEBUG:
+		logging.info(str)
 		print(colored(str, 'blue'))
 
 

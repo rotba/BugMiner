@@ -468,7 +468,7 @@ class TestMain(unittest.TestCase):
 		self.assertTrue('sub_mod_1#Main#int_foo()' in changed_methods)
 		self.assertTrue('sub_mod_1#Main#void_goo()' in changed_methods)
 
-	# @unittest.skip('Ment to be run manulay')
+	@unittest.skip('Ment to be run manulay')
 	def test_issue(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
@@ -491,9 +491,9 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
-		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.MAVEN
-		issue_key = 'TIKA-2580'
-		commit_h = 'f8b1d9a87c0954c7efb32606d2cce380fddc82a1'
+		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
+		issue_key = 'TIKA-2555'
+		commit_h = '919768a649ebb4585ce45cf0f0a37ee0bb371355'
 		github = 'https://github.com/apache/tika'
 		issue_tracker = 'http:\issues.apache.org\jira\projects\TIKA'
 		Main.set_up(['', github])
@@ -501,6 +501,8 @@ class TestMain(unittest.TestCase):
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=issue_tracker,
 			issue_key=issue_key
 		)
+		Main.repo.git.add('.')
+		Main.repo.git.checkout(commit_h, '-f')
 		k = extractor.extract_possible_bugs()
 		bug = filter(lambda x: commit_h in x[1], extractor.extract_possible_bugs())[0]
 		bug_commit = Main.repo.commit(bug[1])
