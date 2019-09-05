@@ -3,7 +3,7 @@ import os
 import shutil
 import time
 import unittest
-
+from PossibleBugMiner import settings as PossibleBugMiner_settings
 from PossibleBugMiner.jira_extractor import JiraExtractor
 from jira import JIRA
 from patcher.patcher import TestcasePatcher
@@ -23,6 +23,7 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = False
 		Main.DEBUG =True
 		Main.branch_inspected = 'master'
+		PossibleBugMiner_settings.DEBUG = True
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
 
 	def tearDown(self):
@@ -476,13 +477,13 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = False
+		Main.USE_CACHED_STATE = True
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
-		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-121'])
+		Main.main(['', 'https://github.com/apache/commons-compress', 'http:\issues.apache.org\jira\projects\COMPRESS', 'COMPRESS-492'])
 		# Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'hey_brother',
 		#            '(issuekey =TIKA-107 OR issuekey =TIKA-121) AND project = TIKA AND issuetype = Bug AND createdDate <= "2019/10/03" ORDER BY  createdDate ASC'])
 
-	@unittest.skip('Ment to be run manulay')
+	# @unittest.skip('Ment to be run manulay')
 	def test_issue_and_commit(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
@@ -490,12 +491,12 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = True
+		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.MAVEN
-		issue_key = 'TIKA-121'
-		commit_h = 'acf76a64d81eb9c901d92fe718c0f0ffb4d14ced'
-		github = 'https://github.com/apache/tika'
-		issue_tracker = 'http:\issues.apache.org\jira\projects\TIKA'
+		issue_key = 'COMPRESS-455'
+		commit_h = 'af6fe141036d30bfd1613758b7a9fb413bf2bafc'
+		github = 'https://github.com/apache/commons-compress'
+		issue_tracker = 'http:\issues.apache.org\jira\projects\COMPRESS'
 		Main.set_up(['', github])
 		extractor = JiraExtractor(
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=issue_tracker,
