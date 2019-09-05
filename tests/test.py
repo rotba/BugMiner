@@ -91,7 +91,6 @@ class TestMain(unittest.TestCase):
 
 
 	def test_get_bug_patches_1(self):
-		print('test_get_bug_patches_1')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
 		test_dir = os.path.join(os.getcwd(), r'test_files/test_get_bug_patches')
 		if not os.path.exists(test_dir):
@@ -132,7 +131,6 @@ class TestMain(unittest.TestCase):
 		shutil.rmtree(test_dir)
 
 	def test_get_bug_patches_2(self):
-		print('test_get_bug_patches_2')
 		Main.set_up(['', 'https://github.com/apache/tika'])
 		test_dir = os.path.join(os.getcwd(), r'test_files/test_get_bug_patches_2')
 		if not os.path.exists(test_dir):
@@ -361,6 +359,7 @@ class TestMain(unittest.TestCase):
 		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-56'])
 		expected_issue_dir = os.path.join(Main.data_dir, 'TIKA-56')
 		expected_commit_dir = os.path.join(expected_issue_dir, 'b12c01d9b56053554cec501aab0530f7f4352daf')
+		expected_module_extraction_dir = os.path.join(expected_commit_dir, 'root')
 		expected_testclass_dir = os.path.join(expected_commit_dir, 'tika#org.apache.tika.mime.TestMimeTypes')
 		expected_pom_dir = os.path.join(expected_commit_dir, 'tika#pom')
 		expected_pom_patch_file = os.path.join(expected_pom_dir, 'patch.patch')
@@ -374,6 +373,7 @@ class TestMain(unittest.TestCase):
 		self.assertTrue(os.path.isfile(expected_report_xml))
 		self.assertTrue(os.path.isfile(expected_patch))
 		self.assertTrue(os.path.isfile(expected_pom_patch_file))
+		self.assertTrue(os.path.isdir(expected_module_extraction_dir))
 
 	def test_generate_data_auto_generated_tests(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
@@ -468,7 +468,7 @@ class TestMain(unittest.TestCase):
 		self.assertTrue('sub_mod_1#Main#int_foo()' in changed_methods)
 		self.assertTrue('sub_mod_1#Main#void_goo()' in changed_methods)
 
-	@unittest.skip('Ment to be run manulay')
+	#@unittest.skip('Ment to be run manulay')
 	def test_issue(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
@@ -476,9 +476,9 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = False
+		Main.USE_CACHED_STATE = True
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
-		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-121'])
+		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-56'])
 		# Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'hey_brother',
 		#            '(issuekey =TIKA-107 OR issuekey =TIKA-121) AND project = TIKA AND issuetype = Bug AND createdDate <= "2019/10/03" ORDER BY  createdDate ASC'])
 
@@ -490,7 +490,7 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = False
+		Main.USE_CACHED_STATE = True
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
 		issue_key = 'TIKA-2555'
 		commit_h = '919768a649ebb4585ce45cf0f0a37ee0bb371355'

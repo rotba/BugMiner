@@ -48,7 +48,7 @@ GENERATE_DATA = True
 GENERATE_TESTS = True
 TRACE = False
 LIMIT_TIME_FOR_BUILD = 180
-TESTS_GEN_STRATEGY = TestGenerationStrategy.MAVEN
+TESTS_GEN_STRATEGY = TestGenerationStrategy.CMD
 DEBUG = False
 CONFIG = True
 
@@ -86,6 +86,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 	parent = get_parent(commit)
 	if parent == None:
 		return ans
+	mvn_repo.clean()
 	git_cmds_wrapper(lambda: repo.git.add('.'))
 	git_cmds_wrapper(lambda: repo.git.checkout(commit.hexsha, '-f'))
 	commit_tests_object = list(map(lambda t_path: TestObjects.TestClass(t_path), tests_paths))
@@ -109,6 +110,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 					if len(module_changed_classes) == 0: raise Exception()
 					gen_report = mvn_repo.generate_tests(classes=module_changed_classes, module=module,
 					                                     strategy=TESTS_GEN_STRATEGY)
+					mvn_repo.clean(module=module)
 					debug_regular(gen_report)
 					cache_project_state()
 				generated_testcases = mvn_repo.get_generated_testcases(module=module)
@@ -116,10 +118,11 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				                                                             report=gen_report)
 				commit_tests_object += set(list(map(lambda t: t.parent, generated_testcases)))
 				dict_modules_testcases[module] += generated_testcases
+
 			if GENERATE_DATA:
 				dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(issue, commit, commit_tests_object,
-				                                                         module=module)
-
+				                                                         module=module,
+				                                                         root_module=mvn_repo.repo_dir)
 			gen_commit_valid_testcases = filter(lambda x: x in commit_valid_testcases, commit_valid_testcases)
 			if GENERATE_TESTS:
 				mvn_repo.config_for_evosuite(module=module)
@@ -170,7 +173,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				mvn_repo.config_for_evosuite(module)
 				build_report = run_mvn_tests(set(
 					map(lambda t: t.parent,
-					    filter(lambda x: mvn_repo.is_generated_test(x.parent), patch.get_patched()))),module
+					    filter(lambda x: mvn_repo.is_generated_test(x.parent), patch.get_patched()))), module
 				)
 				debug_regular(build_report)
 			else:
@@ -223,42 +226,42 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			ans += module_bugs
 			end_time = time.time()
 			if GENERATE_DATA:
-				bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time)
+				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time, mvn_repo.repo_dir)
 		except mvn_bug.BugError as e:
 			end_time = time.time()
 			logging.info('failed inspecting module : ' + module + '. The reason is: ' + e.msg)
 			if GENERATE_DATA:
-				bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time,
-				                          'Failed - ' + e.msg)
+				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
+				                          mvn_repo.repo_dir, 'Failed - ' + e.msg)
 		except TestsGenerationError as e:
 			end_time = time.time()
 			logging.info('Tests generation problem! failed inspecting module : ' + module)
 			logging.info(traceback.format_exc())
 			if GENERATE_DATA:
-				bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time,
-				                          'Failed:\n ' + str(e))
+				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
+				                          mvn_repo.repo_dir, 'Failed:\n ' + str(e))
 		except mvn.MVNTimeoutError as e:
 			end_time = time.time()
 			logging.info('TIMEOUT! failed inspecting module : ' + module)
 			logging.info(traceback.format_exc())
 			if GENERATE_DATA:
-				bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time,
-				                          'Failed: ' + str(e))
+				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
+				                          mvn_repo.repo_dir, 'Failed: ' + str(e))
 		except mvn.MVNError as e:
 			end_time = time.time()
 			logging.info('failed inspecting module : ' + module)
 			logging.info(traceback.format_exc())
 			if GENERATE_DATA:
-				bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time,
-				                          'Failed: ' + str(e))
+				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
+				                          mvn_repo.repo_dir, 'Failed: ' + str(e))
 
 		except Exception as e:
 			end_time = time.time()
 			logging.info('failed inspecting module : ' + module)
 			logging.info(traceback.format_exc())
 			if GENERATE_DATA:
-				bug_data_handler.add_time(issue.key, commit.hexsha, os.path.basename(module), end_time - start_time,
-				                          'Unexpected failure: ' + str(e))
+				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
+				                          mvn_repo.repo_dir, 'Unexpected failure: ' + str(e))
 			debug_regular('Unexpected failure!')
 			debug_regular(traceback.format_exc())
 
