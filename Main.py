@@ -101,13 +101,17 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			generated_tests_diffs = []
 			no_report_testcases = []
 			gen_commit = None
+			if GENERATE_DATA:
+				dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(issue, commit, commit_tests_object,
+				                                                         module=module,
+				                                                         root_module=mvn_repo.repo_dir)
 			if CONFIG:
 				mvn_repo.config(module=module)
 			module_changed_classes = get_chacnged_classes(module, changed_classes_diffs)
 			if GENERATE_TESTS:
 				debug_blue('### Generating tests ###')
 				if not USE_CACHED_STATE:
-					if len(module_changed_classes) == 0: raise Exception()
+					if len(module_changed_classes) == 0: raise mvn_bug.NoAssociatedChangedClasses(msg='No classes associated this module')
 					gen_report = mvn_repo.generate_tests(classes=module_changed_classes, module=module,
 					                                     strategy=TESTS_GEN_STRATEGY)
 					mvn_repo.clean(module=module)
@@ -118,11 +122,9 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				                                                             report=gen_report)
 				commit_tests_object += set(list(map(lambda t: t.parent, generated_testcases)))
 				dict_modules_testcases[module] += generated_testcases
+				if GENERATE_DATA:
+					dict_testclass_bug_dir.update(bug_data_handler.cast_tests(issue, commit, commit_tests_object))
 
-			if GENERATE_DATA:
-				dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(issue, commit, commit_tests_object,
-				                                                         module=module,
-				                                                         root_module=mvn_repo.repo_dir)
 			gen_commit_valid_testcases = filter(lambda x: x in commit_valid_testcases, commit_valid_testcases)
 			if GENERATE_TESTS:
 				mvn_repo.config_for_evosuite(module=module)
@@ -232,7 +234,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			logging.info('failed inspecting module : ' + module + '. The reason is: ' + e.msg)
 			if GENERATE_DATA:
 				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
-				                          mvn_repo.repo_dir, 'Failed - ' + e.msg)
+				                          mvn_repo.repo_dir, 'Failed - ' + e.msg+'\n'+traceback.format_exc())
 		except TestsGenerationError as e:
 			end_time = time.time()
 			logging.info('Tests generation problem! failed inspecting module : ' + module)
@@ -246,14 +248,14 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			logging.info(traceback.format_exc())
 			if GENERATE_DATA:
 				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
-				                          mvn_repo.repo_dir, 'Failed: ' + str(e))
+				                          mvn_repo.repo_dir, 'Failed: ' + str(e)+'\n'+traceback.format_exc())
 		except mvn.MVNError as e:
 			end_time = time.time()
 			logging.info('failed inspecting module : ' + module)
 			logging.info(traceback.format_exc())
 			if GENERATE_DATA:
 				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
-				                          mvn_repo.repo_dir, 'Failed: ' + str(e))
+				                          mvn_repo.repo_dir, 'Failed: ' + str(e)+'\n'+traceback.format_exc())
 
 		except Exception as e:
 			end_time = time.time()
@@ -261,7 +263,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			logging.info(traceback.format_exc())
 			if GENERATE_DATA:
 				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
-				                          mvn_repo.repo_dir, 'Unexpected failure: ' + str(e))
+				                          mvn_repo.repo_dir, 'Unexpected failure: ' + str(e)+'\n'+traceback.format_exc())
 			debug_regular('Unexpected failure!')
 			debug_regular(traceback.format_exc())
 

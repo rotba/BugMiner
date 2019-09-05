@@ -476,9 +476,9 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = True
-		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
-		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-56'])
+		Main.USE_CACHED_STATE = False
+		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.CMD
+		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-2550'])
 		# Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'hey_brother',
 		#            '(issuekey =TIKA-107 OR issuekey =TIKA-121) AND project = TIKA AND issuetype = Bug AND createdDate <= "2019/10/03" ORDER BY  createdDate ASC'])
 
@@ -492,10 +492,10 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = True
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
-		issue_key = 'TIKA-2555'
-		commit_h = '919768a649ebb4585ce45cf0f0a37ee0bb371355'
-		github = 'https://github.com/apache/tika'
-		issue_tracker = 'http:\issues.apache.org\jira\projects\TIKA'
+		issue_key = 'WICKET-6529'
+		commit_h = '7a5ba65c1ee8364e5fd749ead5e8836eb0c87bd8'
+		github = 'https://github.com/apache/wicket'
+		issue_tracker = 'http:\issues.apache.org\jira\projects\WICKET'
 		Main.set_up(['', github])
 		extractor = JiraExtractor(
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=issue_tracker,
