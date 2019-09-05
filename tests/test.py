@@ -92,7 +92,6 @@ class TestMain(unittest.TestCase):
 
 
 	def test_get_bug_patches_1(self):
-		print('test_get_bug_patches_1')
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
 		test_dir = os.path.join(os.getcwd(), r'test_files/test_get_bug_patches')
 		if not os.path.exists(test_dir):
@@ -133,7 +132,6 @@ class TestMain(unittest.TestCase):
 		shutil.rmtree(test_dir)
 
 	def test_get_bug_patches_2(self):
-		print('test_get_bug_patches_2')
 		Main.set_up(['', 'https://github.com/apache/tika'])
 		test_dir = os.path.join(os.getcwd(), r'test_files/test_get_bug_patches_2')
 		if not os.path.exists(test_dir):
@@ -362,6 +360,7 @@ class TestMain(unittest.TestCase):
 		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-56'])
 		expected_issue_dir = os.path.join(Main.data_dir, 'TIKA-56')
 		expected_commit_dir = os.path.join(expected_issue_dir, 'b12c01d9b56053554cec501aab0530f7f4352daf')
+		expected_module_extraction_dir = os.path.join(expected_commit_dir, 'root')
 		expected_testclass_dir = os.path.join(expected_commit_dir, 'tika#org.apache.tika.mime.TestMimeTypes')
 		expected_pom_dir = os.path.join(expected_commit_dir, 'tika#pom')
 		expected_pom_patch_file = os.path.join(expected_pom_dir, 'patch.patch')
@@ -375,6 +374,7 @@ class TestMain(unittest.TestCase):
 		self.assertTrue(os.path.isfile(expected_report_xml))
 		self.assertTrue(os.path.isfile(expected_patch))
 		self.assertTrue(os.path.isfile(expected_pom_patch_file))
+		self.assertTrue(os.path.isdir(expected_module_extraction_dir))
 
 	def test_generate_data_auto_generated_tests(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
@@ -469,7 +469,7 @@ class TestMain(unittest.TestCase):
 		self.assertTrue('sub_mod_1#Main#int_foo()' in changed_methods)
 		self.assertTrue('sub_mod_1#Main#void_goo()' in changed_methods)
 
-	# @unittest.skip('Ment to be run manulay')
+	#@unittest.skip('Ment to be run manulay')
 	def test_issue(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
@@ -478,8 +478,8 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = True
-		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
-		Main.main(['', 'https://github.com/apache/commons-compress', 'http:\issues.apache.org\jira\projects\COMPRESS', 'COMPRESS-492'])
+		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.CMD
+		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-2550'])
 		# Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'hey_brother',
 		#            '(issuekey =TIKA-107 OR issuekey =TIKA-121) AND project = TIKA AND issuetype = Bug AND createdDate <= "2019/10/03" ORDER BY  createdDate ASC'])
 
@@ -492,16 +492,18 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
-		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.MAVEN
-		issue_key = 'COMPRESS-455'
-		commit_h = 'af6fe141036d30bfd1613758b7a9fb413bf2bafc'
-		github = 'https://github.com/apache/commons-compress'
-		issue_tracker = 'http:\issues.apache.org\jira\projects\COMPRESS'
+		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
+		issue_key = 'WICKET-6529'
+		commit_h = '7a5ba65c1ee8364e5fd749ead5e8836eb0c87bd8'
+		github = 'https://github.com/apache/wicket'
+		issue_tracker = 'http:\issues.apache.org\jira\projects\WICKET'
 		Main.set_up(['', github])
 		extractor = JiraExtractor(
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=issue_tracker,
 			issue_key=issue_key
 		)
+		Main.repo.git.add('.')
+		Main.repo.git.checkout(commit_h, '-f')
 		k = extractor.extract_possible_bugs()
 		bug = filter(lambda x: commit_h in x[1], extractor.extract_possible_bugs())[0]
 		bug_commit = Main.repo.commit(bug[1])
