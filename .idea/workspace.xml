@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run_projects.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run_projects.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/commons-math/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jackrabbit-oak/oak-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/jackrabbit-oak/oak-core/pom.xml" afterDir="false" />
@@ -1141,6 +1139,7 @@
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/svg/js/src/KeyedValuesDataset.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/svg/js/src/Utils.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/jfreechart/svg/lib/jfreechart_utils.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_project/tika/tika-parsers/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/tika/tika-parsers/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_project/wicket/wicket-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_project/wicket/wicket-core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
@@ -1151,7 +1150,6 @@
       <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/tested_project/MavenProj/sub_mod_2/target/test-classes/NaimTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tested_project/wicket/wicket-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tested_project/wicket/wicket-core/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -1526,7 +1524,8 @@
       <workItem from="1566926578912" duration="11336000" />
       <workItem from="1567410841559" duration="27815000" />
       <workItem from="1567592800352" duration="691000" />
-      <workItem from="1567593635594" duration="33084000" />
+      <workItem from="1567593635594" duration="38366000" />
+      <workItem from="1567947838681" duration="1572000" />
     </task>
     <servers />
   </component>
@@ -1629,6 +1628,6 @@
     <SUITE FILE_PATH="coverage/BugMiner$all.coverage" NAME="all Coverage Results" MODIFIED="1566460730130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_get_bug_patches_1.coverage" NAME="Unittests for test.TestMain.test_get_bug_patches_1 Coverage Results" MODIFIED="1567612390331" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data_auto_generated_tests.coverage" NAME="Unittests for test.TestMain.test_generate_data_auto_generated_tests Coverage Results" MODIFIED="1567683400351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue_and_commit.coverage" NAME="Unittests for test.TestMain.test_issue_and_commit Coverage Results" MODIFIED="1567693521512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue_and_commit.coverage" NAME="Unittests for test.TestMain.test_issue_and_commit Coverage Results" MODIFIED="1567942581525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
 </project>

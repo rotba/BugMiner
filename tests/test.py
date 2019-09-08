@@ -490,12 +490,12 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = True
+		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
-		issue_key = 'WICKET-6529'
-		commit_h = '7a5ba65c1ee8364e5fd749ead5e8836eb0c87bd8'
-		github = 'https://github.com/apache/wicket'
-		issue_tracker = 'http:\issues.apache.org\jira\projects\WICKET'
+		issue_key = 'TIKA-207'
+		commit_h = 'e082a039f895458c231226e66f39e39cbf3b5ef2'
+		github = 'https://github.com/apache/commons-math'
+		issue_tracker = 'http:\issues.apache.org\jira\projects\MATH'
 		Main.set_up(['', github])
 		extractor = JiraExtractor(
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=issue_tracker,
