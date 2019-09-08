@@ -16,6 +16,7 @@
     <mapping directory="$PROJECT_DIR$/tested_project/camel" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/cayenne" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/chainsaw" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_project/commons-compress" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/commons-lang" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/commons-logging" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/commons-math" vcs="Git" />
@@ -32,6 +33,7 @@
     <mapping directory="$PROJECT_DIR$/tested_project/wicket" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tests/tested_project" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tests/tested_project/MavenProj" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tests/tested_project/commons-compress" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tests/tested_project/commons-lang" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tests/tested_project/commons-math" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tests/tested_project/flink" vcs="Git" />
