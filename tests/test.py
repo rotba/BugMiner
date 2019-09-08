@@ -3,6 +3,7 @@ import os
 import shutil
 import time
 import unittest
+
 from PossibleBugMiner import settings as PossibleBugMiner_settings
 from PossibleBugMiner.jira_extractor import JiraExtractor
 from jira import JIRA
@@ -21,7 +22,7 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_DATA = False
 		Main.USE_CACHE = False
 		Main.GENERATE_TESTS = False
-		Main.DEBUG =True
+		Main.DEBUG = True
 		Main.branch_inspected = 'master'
 		PossibleBugMiner_settings.DEBUG = True
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
@@ -89,7 +90,6 @@ class TestMain(unittest.TestCase):
 		Main.prepare_project_repo_for_testing(commit.parents[0], module_path)
 		diff_testclasses = Main.get_commit_created_testclasses(commit_tests)
 		self.assertTrue(expected_delta_testclass in diff_testclasses)
-
 
 	def test_get_bug_patches_1(self):
 		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
@@ -218,7 +218,7 @@ class TestMain(unittest.TestCase):
 		Main.repo.git.reset('--hard')
 		Main.repo.git.checkout(commit.hexsha)
 		tests_paths = possible_bugs_extractor.get_tests_paths_from_commit(commit)
-		res = Main.extract_bugs(issue, commit, tests_paths,possible_bugs_extractor.get_changed_components(commit))
+		res = Main.extract_bugs(issue, commit, tests_paths, possible_bugs_extractor.get_changed_components(commit))
 		for bug in res:
 			if bug.valid and bug.bugged_testcase.id == exp_testcase_id and bug.type == Main.mvn_bug.Bug_type.DELTA:
 				return
@@ -469,7 +469,7 @@ class TestMain(unittest.TestCase):
 		self.assertTrue('sub_mod_1#Main#int_foo()' in changed_methods)
 		self.assertTrue('sub_mod_1#Main#void_goo()' in changed_methods)
 
-	#@unittest.skip('Ment to be run manulay')
+	# @unittest.skip('Ment to be run manulay')
 	def test_issue(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
@@ -479,9 +479,12 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = True
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.CMD
-		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-2550'])
-		# Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'hey_brother',
-		#            '(issuekey =TIKA-107 OR issuekey =TIKA-121) AND project = TIKA AND issuetype = Bug AND createdDate <= "2019/10/03" ORDER BY  createdDate ASC'])
+		Main.main(['', 'https://github.com/apache/commons-compress', 'http:\issues.apache.org\jira\projects\COMPRESS',
+		           'HEY_BROTHER',
+		           "project = COMPRESS AND issuetype = Bug AND createdDate >= '2000/01/22' ORDER BY  createdDate DESC"])
+
+	# Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'hey_brother',
+	#            '(issuekey =TIKA-107 OR issuekey =TIKA-121) AND project = TIKA AND issuetype = Bug AND createdDate <= "2019/10/03" ORDER BY  createdDate ASC'])
 
 	# @unittest.skip('Ment to be run manulay')
 	def test_issue_and_commit(self):
@@ -492,11 +495,11 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
-		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
-		issue_key = 'WICKET-6529'
-		commit_h = '7a5ba65c1ee8364e5fd749ead5e8836eb0c87bd8'
-		github = 'https://github.com/apache/wicket'
-		issue_tracker = 'http:\issues.apache.org\jira\projects\WICKET'
+		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.CMD
+		issue_key = 'COMPRESS-28'
+		commit_h = '004124ac5dbf5edbf925078652526267468821e7'
+		github = 'https://github.com/apache/commons-compress'
+		issue_tracker = 'http:\issues.apache.org\jira\projects\COMPRESS'
 		Main.set_up(['', github])
 		extractor = JiraExtractor(
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=issue_tracker,

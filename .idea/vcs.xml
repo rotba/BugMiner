@@ -16,6 +16,7 @@
     <mapping directory="$PROJECT_DIR$/tested_project/camel" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/cayenne" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/chainsaw" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_project/commons-compress" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/commons-lang" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/commons-logging" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_project/commons-math" vcs="Git" />
