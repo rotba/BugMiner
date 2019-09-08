@@ -492,7 +492,7 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
-		issue_key = 'TIKA-207'
+		issue_key = 'MATH-207'
 		commit_h = 'e082a039f895458c231226e66f39e39cbf3b5ef2'
 		github = 'https://github.com/apache/commons-math'
 		issue_tracker = 'http:\issues.apache.org\jira\projects\MATH'

@@ -49,7 +49,7 @@ GENERATE_TESTS = True
 TRACE = False
 LIMIT_TIME_FOR_BUILD = 180
 TESTS_GEN_STRATEGY = TestGenerationStrategy.CMD
-DEBUG = False
+DEBUG = True
 CONFIG = True
 
 
