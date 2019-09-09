@@ -492,8 +492,8 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
-		issue_key = 'MATH-207'
-		commit_h = 'e082a039f895458c231226e66f39e39cbf3b5ef2'
+		issue_key = 'MATH-267'
+		commit_h = '9989286b4934d12a832162c715243dd499e6ad31'
 		github = 'https://github.com/apache/commons-math'
 		issue_tracker = 'http:\issues.apache.org\jira\projects\MATH'
 		Main.set_up(['', github])
@@ -501,6 +501,7 @@ class TestMain(unittest.TestCase):
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=issue_tracker,
 			issue_key=issue_key
 		)
+		Main.mvn_repo.clean()
 		Main.repo.git.add('.')
 		Main.repo.git.checkout(commit_h, '-f')
 		k = extractor.extract_possible_bugs()

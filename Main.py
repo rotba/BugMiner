@@ -48,9 +48,10 @@ GENERATE_DATA = True
 GENERATE_TESTS = True
 TRACE = False
 LIMIT_TIME_FOR_BUILD = 180
+MAX_CLASSES_TO_GENERATE_TESTS_FOR = 3
 TESTS_GEN_STRATEGY = TestGenerationStrategy.CMD
-DEBUG = True
-CONFIG = True
+DEBUG = False
+CONFIG = False
 
 
 def main(argv):
@@ -112,6 +113,8 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				debug_blue('### Generating tests ###')
 				if not USE_CACHED_STATE:
 					if len(module_changed_classes) == 0: raise mvn_bug.NoAssociatedChangedClasses(msg='No classes associated this module')
+					if len(module_changed_classes) > MAX_CLASSES_TO_GENERATE_TESTS_FOR: raise mvn_bug.TooManyClassesToGenerateTestsFor(
+						msg='Too many classes are associated this module', amount = len(module_changed_classes))
 					gen_report = mvn_repo.generate_tests(classes=module_changed_classes, module=module,
 					                                     strategy=TESTS_GEN_STRATEGY)
 					mvn_repo.clean(module=module)
