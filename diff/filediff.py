@@ -68,6 +68,10 @@ class FileDiff(object):
 			logging.info('javalang.parser.JavaSyntaxError')
 			logging.info(traceback.format_exc())
 			return []
+		except javalang.tokenizer.LexerError as e:
+			logging.info('javalang.tokenizer.LexerError')
+			logging.info(traceback.format_exc())
+			return []
 		class_decls = [class_dec for _, class_dec in tree_1.filter(javalang.tree.ClassDeclaration)]
 		for class_decl in class_decls:
 			for method in class_decl.methods + class_decl.constructors:
