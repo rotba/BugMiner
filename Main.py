@@ -110,6 +110,8 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				mvn_repo.config(module=module)
 			module_changed_classes = get_chacnged_classes(module, changed_classes_diffs)
 			if GENERATE_TESTS:
+
+
 				debug_blue('### Generating tests ###')
 				if not USE_CACHED_STATE:
 					if len(module_changed_classes) == 0: raise mvn_bug.NoAssociatedChangedClasses(msg='No classes associated this module')
@@ -166,7 +168,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				                       bugged_testcase=unpatchable_testcase, fixed_testcase=unpatchable_testcase,
 				                       type=mvn_bug.determine_type(unpatchable_testcase, delta_testcases,
 				                                                   generated_testcases), valid=False,
-				                       desc=unpatchable_testcase))
+				                       desc=mvn_bug.invalid_comp_error_desc))
 			for no_report_testcase in no_report_testcases:
 				ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
 				                       bugged_testcase=no_report_testcase, fixed_testcase=no_report_testcase,

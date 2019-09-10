@@ -490,10 +490,10 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = False
+		Main.USE_CACHED_STATE = True
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
 		issue_key = 'MATH-267'
-		commit_h = '9989286b4934d12a832162c715243dd499e6ad31'
+		commit_h = 'af79797eaaac647cdb7f90c1387a918a0073d752'
 		github = 'https://github.com/apache/commons-math'
 		issue_tracker = 'http:\issues.apache.org\jira\projects\MATH'
 		Main.set_up(['', github])
