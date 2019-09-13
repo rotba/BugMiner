@@ -110,13 +110,13 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				mvn_repo.config(module=module)
 			module_changed_classes = get_chacnged_classes(module, changed_classes_diffs)
 			if GENERATE_TESTS:
-
-
 				debug_blue('### Generating tests ###')
 				if not USE_CACHED_STATE:
-					if len(module_changed_classes) == 0: raise mvn_bug.NoAssociatedChangedClasses(msg='No classes associated this module')
-					if len(module_changed_classes) > MAX_CLASSES_TO_GENERATE_TESTS_FOR: raise mvn_bug.TooManyClassesToGenerateTestsFor(
-						msg='Too many classes are associated this module', amount = len(module_changed_classes))
+					if len(module_changed_classes) == 0: raise mvn_bug.NoAssociatedChangedClasses(
+						msg='No classes associated this module')
+					if len(
+							module_changed_classes) > MAX_CLASSES_TO_GENERATE_TESTS_FOR: raise mvn_bug.TooManyClassesToGenerateTestsFor(
+						msg='Too many classes are associated this module', amount=len(module_changed_classes))
 					gen_report = mvn_repo.generate_tests(classes=module_changed_classes, module=module,
 					                                     strategy=TESTS_GEN_STRATEGY)
 					mvn_repo.clean(module=module)
@@ -239,7 +239,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			logging.info('failed inspecting module : ' + module + '. The reason is: ' + e.msg)
 			if GENERATE_DATA:
 				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
-				                          mvn_repo.repo_dir, 'Failed - ' + e.msg+'\n'+traceback.format_exc())
+				                          mvn_repo.repo_dir, 'Failed - ' + e.msg + '\n' + traceback.format_exc())
 		except TestsGenerationError as e:
 			end_time = time.time()
 			logging.info('Tests generation problem! failed inspecting module : ' + module)
@@ -253,14 +253,14 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			logging.info(traceback.format_exc())
 			if GENERATE_DATA:
 				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
-				                          mvn_repo.repo_dir, 'Failed: ' + str(e)+'\n'+traceback.format_exc())
+				                          mvn_repo.repo_dir, 'Failed: ' + str(e) + '\n' + traceback.format_exc())
 		except mvn.MVNError as e:
 			end_time = time.time()
 			logging.info('failed inspecting module : ' + module)
 			logging.info(traceback.format_exc())
 			if GENERATE_DATA:
 				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
-				                          mvn_repo.repo_dir, 'Failed: ' + str(e)+'\n'+traceback.format_exc())
+				                          mvn_repo.repo_dir, 'Failed: ' + str(e) + '\n' + traceback.format_exc())
 
 		except Exception as e:
 			end_time = time.time()
@@ -268,7 +268,8 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			logging.info(traceback.format_exc())
 			if GENERATE_DATA:
 				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
-				                          mvn_repo.repo_dir, 'Unexpected failure: ' + str(e)+'\n'+traceback.format_exc())
+				                          mvn_repo.repo_dir,
+				                          'Unexpected failure: ' + str(e) + '\n' + traceback.format_exc())
 			debug_regular('Unexpected failure!')
 			debug_regular(traceback.format_exc())
 
@@ -278,7 +279,22 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 		# logging.info('INVALID BUG: ' + str(b))
 		pass
 	git_cmds_wrapper(lambda: repo.git.reset('--hard'))
-	return ans
+	return filter_results(ans)
+
+def filter_results(ans):
+	def is_relevant_bug_for_res(bug):
+		if not (bug.valid==True or bug.valid==False):
+			return False
+		if GENERATE_TESTS:
+			if not bug.type == mvn_bug.Bug_type.GEN:
+				return False
+			if '_ESTest_scaffolding' in bug.bugged_testcase.mvn_name:
+				return False
+		return True
+	return filter(
+		lambda x: is_relevant_bug_for_res(x) ,
+		ans
+	)
 
 
 # Tries to run the tests in grandparents commits
