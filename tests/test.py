@@ -490,12 +490,12 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = True
+		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
-		issue_key = 'MATH-267'
-		commit_h = 'af79797eaaac647cdb7f90c1387a918a0073d752'
-		github = 'https://github.com/apache/commons-math'
-		issue_tracker = 'http:\issues.apache.org\jira\projects\MATH'
+		issue_key = 'TIKA-16'
+		commit_h = 'd7dabee5ce14240f3c5ba2f6147c963d03604dd3'
+		github = 'https://github.com/apache/tika'
+		issue_tracker = 'http:\issues.apache.org\jira\projects\TIKA'
 		Main.set_up(['', github])
 		extractor = JiraExtractor(
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=issue_tracker,

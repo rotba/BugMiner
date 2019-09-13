@@ -10,7 +10,7 @@ import time
 import traceback
 from functools import reduce
 from urlparse import urlparse
-
+from javadiff import diff as java_diff
 import git
 import javalang
 from PossibleBugMiner.extractor_factory import ExtractorFactory
@@ -108,15 +108,12 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				                                                         root_module=mvn_repo.repo_dir)
 			if CONFIG:
 				mvn_repo.config(module=module)
-			module_changed_classes = get_chacnged_classes(module, changed_classes_diffs)
+			module_changed_classes = get_most_chenged_classes(module, changed_classes_diffs, commit)
 			if GENERATE_TESTS:
 				debug_blue('### Generating tests ###')
 				if not USE_CACHED_STATE:
 					if len(module_changed_classes) == 0: raise mvn_bug.NoAssociatedChangedClasses(
 						msg='No classes associated this module')
-					if len(
-							module_changed_classes) > MAX_CLASSES_TO_GENERATE_TESTS_FOR: raise mvn_bug.TooManyClassesToGenerateTestsFor(
-						msg='Too many classes are associated this module', amount=len(module_changed_classes))
 					gen_report = mvn_repo.generate_tests(classes=module_changed_classes, module=module,
 					                                     strategy=TESTS_GEN_STRATEGY)
 					mvn_repo.clean(module=module)
@@ -281,9 +278,46 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 	git_cmds_wrapper(lambda: repo.git.reset('--hard'))
 	return filter_results(ans)
 
+
+def get_most_chenged_classes(module, changed_classes_diffs, commit):
+	def diff_to_mvn_components(diff):
+		file_path = os.path.join(repo.working_tree_dir, diff.file_name)
+		return convert_to_mvn_name(class_mvn_name=mvn.generate_mvn_class_names(src_path=file_path), module=module)
+
+	def diff_in_module(diff):
+		file_path = os.path.join(repo.working_tree_dir, diff.file_name)
+		return is_in_module(class_mvn_name=mvn.generate_mvn_class_names(src_path=file_path), module=module)
+
+
+	return reduce(
+		lambda acc, curr: acc + [curr] if len(acc) < MAX_CLASSES_TO_GENERATE_TESTS_FOR else acc,
+		map(
+			lambda x: diff_to_mvn_components(x),
+			sorted(
+				filter(
+					lambda y: diff_in_module(y),
+					changed_classes_diffs
+				),
+				key=lambda z: calc_importance_index(z, commit),
+				reverse=True
+			)
+		),
+		[]
+	)
+
+
+def calc_importance_index(diff, commit):
+	def calc_diffed_methods_associated_to_class_from_all_diffed_methods_percanetage(diff):
+		all = java_diff.get_changed_methods(repo.working_dir, commit)
+		associated_to_class = filter(lambda x: diff.file_name in x, all)
+		return float(len(associated_to_class))/float(len(all))
+
+	return calc_diffed_methods_associated_to_class_from_all_diffed_methods_percanetage(diff)
+
+
 def filter_results(ans):
 	def is_relevant_bug_for_res(bug):
-		if not (bug.valid==True or bug.valid==False):
+		if not (bug.valid == True or bug.valid == False):
 			return False
 		if GENERATE_TESTS:
 			if not bug.type == mvn_bug.Bug_type.GEN:
@@ -291,8 +325,9 @@ def filter_results(ans):
 			if '_ESTest_scaffolding' in bug.bugged_testcase.mvn_name:
 				return False
 		return True
+
 	return filter(
-		lambda x: is_relevant_bug_for_res(x) ,
+		lambda x: is_relevant_bug_for_res(x),
 		ans
 	)
 
