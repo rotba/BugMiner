@@ -478,7 +478,7 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.CMD
-		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-2550'])
+		Main.main(['', 'https://github.com/apache/commons-math', 'http:\issues.apache.org\jira\projects\MATH', 'MATH-209'])
 		# Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'hey_brother',
 		#            '(issuekey =TIKA-107 OR issuekey =TIKA-121) AND project = TIKA AND issuetype = Bug AND createdDate <= "2019/10/03" ORDER BY  createdDate ASC'])
 
@@ -490,10 +490,10 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = False
+		Main.USE_CACHED_STATE = True
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
-		issue_key = 'LANG-624'
-		commit_h = 'eb79f7c6f37d0d9c4d9252b1020bc19a617a4d23'
+		issue_key = 'LANG-393'
+		commit_h = '9adbbb0bbfe1d76549dd8b6704f183dacb1de29f'
 		github = 'https://github.com/apache/commons-lang'
 		issue_tracker = 'http:\issues.apache.org\jira\projects\LANG'
 		Main.set_up(['', github])

@@ -108,7 +108,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				                                                         root_module=mvn_repo.repo_dir)
 			if CONFIG:
 				mvn_repo.config(module=module)
-			module_changed_classes = get_most_chenged_classes(module, changed_classes_diffs, commit)
+			module_changed_classes = get_most_chenged_classes(module, changed_classes_diffs, commit, parent)
 			if GENERATE_TESTS:
 				debug_blue('### Generating tests ###')
 				if not USE_CACHED_STATE:
@@ -279,7 +279,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 	return filter_results(ans)
 
 
-def get_most_chenged_classes(module, changed_classes_diffs, commit):
+def get_most_chenged_classes(module, changed_classes_diffs, commit, parent):
 	def diff_to_mvn_components(diff):
 		file_path = os.path.join(repo.working_tree_dir, diff.file_name)
 		return convert_to_mvn_name(class_mvn_name=mvn.generate_mvn_class_names(src_path=file_path), module=module)
@@ -298,7 +298,7 @@ def get_most_chenged_classes(module, changed_classes_diffs, commit):
 					lambda y: diff_in_module(y),
 					changed_classes_diffs
 				),
-				key=lambda z: calc_importance_index(z, commit),
+				key=lambda z: calc_importance_index(z, commit, parent),
 				reverse=True
 			)
 		),
@@ -306,9 +306,11 @@ def get_most_chenged_classes(module, changed_classes_diffs, commit):
 	)
 
 
-def calc_importance_index(diff, commit):
+def calc_importance_index(diff, commit, parent):
 	def calc_diffed_methods_associated_to_class_from_all_diffed_methods_percanetage(diff):
 		all = java_diff.get_changed_methods(repo.working_dir, commit)
+		if len(all) == 0:
+			raise mvn_bug.BugError('No changed methods')
 		associated_to_class = filter(lambda x: diff.file_name in x, all)
 		return float(len(associated_to_class))/float(len(all))
 
