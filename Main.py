@@ -693,6 +693,9 @@ def git_cmds_wrapper(git_cmd):
 			pass
 		elif 'warning: squelched' in str(e) and 'trailing whitespace.' in str(e):
 			pass
+		elif 'Filename too long' in str(e):
+			mvn_repo.clean()
+			git_cmds_wrapper(lambda: git_cmd())
 		else:
 			raise e
 
