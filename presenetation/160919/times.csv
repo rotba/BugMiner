@@ -1,0 +1,408 @@
+project name,issue,commit,module,time,description
+commons-lang,LANG-69,ec4a0fdfac5f8e27aec46f9e04a255cf31b40686,commons-lang,24.08999991416931,Compilation failure
+commons-lang,LANG-59,9cbf70d82285d7ebdd190f7cd59f2a9d82a09c61,commons-lang,3.3330001831054688,Unexpected
+commons-lang,LANG-100,b01434196523fc67daa5d9379c4465b68961fd53,commons-lang,2.3510000705718994,Unexpected
+commons-lang,LANG-259,07b7795b336b301def8a7dc6059c8e616ce5582e,commons-lang,3.382999897003174,Unexpected
+commons-lang,LANG-261,80e957ecc44a5f0404baeb0f36484e4d560e7bce,commons-lang,4.960000038146973,Unexpected
+commons-lang,LANG-277,462a89b82ee3e5fd5d6f69289297f77df83f689a,commons-lang,5.039999961853027,Unexpected
+commons-lang,LANG-278,ba57d261f1dfa1926e6bea34726e396865b0411c,commons-lang,5.190000057220459,Unexpected
+commons-lang,LANG-279,b33bbaa7c84bcc8a5ccaac35cfe4a42b8558add8,commons-lang,3.11299991607666,Unexpected
+commons-lang,LANG-281,1d5c03fac601d6ce291c3fe3e5e51a11881e2fc0,commons-lang,2.566999912261963,Unexpected
+commons-lang,LANG-292,d8b6f5b5c6b92adff8965ab634b672e7b333f583,commons-lang,2.5820000171661377,Unexpected
+commons-lang,LANG-294,8e52e2169b20f7bc3c6c520d4f0c98e5bf06b076,commons-lang,4.401000022888184,Unexpected
+commons-lang,LANG-295,1a158281aa058ee2dc9cfae3b56012a9f92f3b2b,commons-lang,4.444000005722046,Unexpected
+commons-lang,LANG-299,9b0b19a9162ae8d217b06716962b982703ab4d1b,commons-lang,12.338000059127808,Compilation failure
+commons-lang,LANG-300,15360774099b2a7230e020751acdf6979b6e3f58,commons-lang,15.888000011444092,Compilation failure
+commons-lang,LANG-303,e9e167f9ebc7a73c5847745688ae127ecff6e2b1,commons-lang,10.868000030517578,Compilation failure
+commons-lang,LANG-304,cf20d13c64da51becd1351befe02a06144fd6fc1,commons-lang,10.40499997138977,Compilation failure
+commons-lang,LANG-315,b16235ad108c4fcdb7117493394d26d2f0faeace,commons-lang,9.860000133514404,Compilation failure
+commons-lang,LANG-328,75d931a3264b73caa9cdd7d3373375cc33008ddf,commons-lang,10.544000148773193,Compilation failure
+commons-lang,LANG-346,050fe8e916507c9716983868284d64e58c1b56d2,commons-lang,348.3139998912811,Compilation failure
+commons-lang,LANG-360,659b20c0375b574a5d2b9e14f66c975405bfee42,commons-lang,256.1949999332428,Compilation failure
+commons-lang,LANG-363,c22d9d59e5b86c33f91d7fa93d71cdc514c2edd9,commons-lang,238.6710000038147,Compilation failure
+commons-lang,LANG-365,796b898281af571a510d96487dcd95699ac1e435,commons-lang,256.7220001220703,Compilation failure
+commons-lang,LANG-368,127e6e338f088b82eea1967d31c1abf8d51a364f,commons-lang,283.91600012779236,Compilation failure
+commons-lang,LANG-381,bee5b923c54e59f877d392e35cb04ab62484c723,commons-lang,369.22900009155273,Compilation failure
+commons-lang,LANG-393,9adbbb0bbfe1d76549dd8b6704f183dacb1de29f,commons-lang,1.6719999313354492,Unexpected
+commons-lang,LANG-393,e199d381f8c199801fee2d40a7f3ea1380700631,commons-lang,258.0440001487732,Compilation failure
+commons-lang,LANG-412,1fe5439baf32af2114958e3cfc3512bd72c84773,commons-lang,286.06699991226196,Compilation failure
+commons-lang,LANG-418,bb8b6f4b0c54f25024b17d1f2abcd4bb98289983,commons-lang,295.8110001087189,Compilation failure
+commons-lang,LANG-419,4342bd5d69d122a16c735416039b4b2ca27897ad,commons-lang,221.04999995231628,Compilation failure
+commons-lang,LANG-421,dd0deed066e728d7b09e5fd69855c5ad7bf6bdb4,commons-lang,225.7370002269745,Compilation failure
+commons-lang,LANG-428,3c4f60d71bc4bee0158d713be93c2151411d2e98,commons-lang,335.1730000972748,Compilation failure
+commons-lang,LANG-432,711e204e73f24e32acb3727a5d9d3b351b6639d1,commons-lang,393.4159998893738,Success
+commons-lang,LANG-436,585e4c6eb3a49dbbd18f39acc4c94d5d64100eff,commons-lang,215.91899991035461,Compilation failure
+commons-lang,LANG-440,a6a2d04877d91a4c7cfff889bb64e2627ca60994,commons-lang,255.35899996757507,Compilation failure
+commons-lang,LANG-456,9bd439b4e0aa69050ef1baa537e552fa4620e5d4,commons-lang,1.2909998893737793,Unexpected
+commons-lang,LANG-456,b5749b4f54b30c0c2050e456c12cfcf516434f13,commons-lang,277.5169999599457,Unexpected
+commons-lang,LANG-457,0d0061f247b9c28b59b1af7e7a10def74718ac94,commons-lang,267.3950002193451,Compilation failure
+commons-lang,LANG-467,9adbbb0bbfe1d76549dd8b6704f183dacb1de29f,commons-lang,2.0309998989105225,Unexpected
+commons-lang,LANG-477,a38e2e942d622c1a84ed35bedb9aba045db7ab79,commons-lang,251.42900013923645,Compilation failure
+commons-lang,LANG-480,c0683957931ffa3df218ff68ca31e257174a6466,commons-lang,234.52100014686584,Compilation failure
+commons-lang,LANG-521,26bc3fe010d5154d3ccac526ec22c429fc3af499,commons-lang,373.6890001296997,Success
+commons-lang,LANG-530,1b85d8ba9e7bea6e4c7742b57bf71c38f1bf0a27,commons-lang,413.13899993896484,Success
+commons-lang,LANG-535,2dc56182579703153e5c9886b3ecd22bbc348b49,commons-lang,326.42500019073486,Success
+commons-lang,LANG-538,825481f019e4482e5ea74d5b0b5e5c438535cb68,commons-lang,398.239000082016,Success
+commons-lang,LANG-552,56550bf2779990da78d2bac1d8287c8a693c6e4b,commons-lang,422.5519998073578,Success
+commons-lang,LANG-567,2f8f67ab2939f1c23f09c8764e04ea2da0479332,commons-lang,372.5979998111725,Success
+commons-math,MATH-85,075008dcd42adcc6924d048a376e611f9219e52b,commons-math,2.247999906539917,Unexpected
+commons-math,MATH-60,9ebfb870a2edb2fbf2741928efc53c2deb352e90,commons-math,2.984999895095825,Unexpected
+commons-math,MATH-151,7ec35cf7f5d760cb6b31928c2622d528af11e406,commons-math,4.444000005722046,Unexpected
+commons-math,MATH-153,409d56d206891f76a3e751e4dcdcd22a8c898acc,commons-math,300.06699991226196,Success
+commons-math,MATH-166,35414bc4f4ef03ef12e99c027398e5dc84682a9e,commons-math,282.2890000343323,Compilation failure
+commons-math,MATH-167,b8b6c66e1caceb44ce7250c999e63a12659a45e4,commons-math,213.0130000114441,Compilation failure
+commons-math,MATH-175,a3dc59a94da24e46c252453f08c4b4b4a91c3ce7,commons-math,221.14000010490417,Compilation failure
+commons-math,MATH-182,9fec47b79bbb40a78eb79e5a66716697c91ae0be,commons-math,249.55200004577637,Compilation failure
+commons-math,MATH-184,8eba63863c102b144fe43d008baf719997599fc9,commons-math,197.8309998512268,Compilation failure
+commons-math,MATH-185,0152e67e9eb57de2da0df28f396c9e36cd6e12c4,commons-math,316.1119999885559,Compilation failure
+commons-math,MATH-191,f18c6b1affed026d32bd380526526e4b411f265b,commons-math,272.0840001106262,Compilation failure
+commons-math,MATH-197,24f51faee2e231cb65feef7b11749fd62ec4b1a2,commons-math,284.12600016593933,Success
+commons-math,MATH-198,cd5f65c4c7bd17d81ecb3924f444f2078a3ff580,commons-math,218.6710000038147,Compilation failure
+commons-math,MATH-199,faead6c3fbe343ba97e70f8eda74a488c916b29a,commons-math,210.44900012016296,Compilation failure
+commons-math,MATH-200,2c443ab8b0efce5485f63eed62213091a188c993,commons-math,139.66999983787537,Compilation failure
+commons-math,MATH-204,f11d7217fd977897eb3ef6c443770795f947599c,commons-math,231.52900004386902,Success
+commons-math,MATH-204,9232ea98fc333c8ede952406d3f70da8ae89682a,commons-math,144.83599996566772,Compilation failure
+commons-math,MATH-205,f11d7217fd977897eb3ef6c443770795f947599c,commons-math,194.15300011634827,Success
+commons-math,MATH-207,e082a039f895458c231226e66f39e39cbf3b5ef2,commons-math,432.1439998149872,Compilation failure
+commons-math,MATH-209,6f4e48d42aa880e7ba49ff651aa701313e1aec31,commons-math,575.8940000534058,Success
+commons-math,MATH-214,b0b7c6ef38a23246938bef934e4c1592adf19540,commons-math,7.849999904632568,Compilation failure
+commons-math,MATH-221,94cf29c4e3b6a7f37ad9d85ba572409691ed7f23,commons-math,242.4190001487732,Success
+commons-math,MATH-226,e1e21f2f6895333304f6efe8272549d32ede20be,commons-math,158.62700009346008,Success
+commons-math,MATH-227,dbd8ffb54f72f45acc644f1f16709dd549d0cfc9,commons-math,155.65899991989136,Success
+commons-math,MATH-227,57e0c33a52a0f1e641161e6bf1278e63ee6384cc,commons-math,136.07699990272522,Compilation failure
+commons-math,MATH-238,dabf3a5beb9ab697d570154b9961078a8586c787,commons-math,266.5400002002716,Success
+commons-math,MATH-240,e4886c0a39944ba9fb7a2175cb2d1026747910e1,commons-math,270.81500005722046,Success
+commons-math,MATH-241,944446a1a8a3004ddd81298e0e922e4d47b99997,commons-math,265.8269999027252,Success
+commons-math,MATH-243,8bf548c5e83e067503d10f304d9f855ced1a449c,commons-math,292.6670000553131,Success
+commons-math,MATH-252,99b46033f5ac900f7771305f6f0b0fe8c259e318,commons-math,241.89100003242493,Success
+commons-math,MATH-255,22d13e12320f2d878880eba50a5bcdc48aa63cc3,commons-math,212.7279999256134,Success
+commons-math,MATH-258,9f0ea4e9c43295713c1fc422a1b40b15e902d665,commons-math,232.4649999141693,Success
+commons-math,MATH-259,392e2c455c04985e9e55257ad04951307ffddb38,commons-math,233.12599992752075,Success
+commons-math,MATH-259,aa13ac4d77bed5c1c8b8394ea92c48aeb75277d0,commons-math,236.2149999141693,Success
+commons-math,MATH-267,af79797eaaac647cdb7f90c1387a918a0073d752,commons-math,179.31700015068054,Success
+commons-math,MATH-267,9989286b4934d12a832162c715243dd499e6ad31,commons-math,179.69199991226196,Success
+commons-math,MATH-272,ed813abf79e11a2c7ab7f2368acf8f3174db80e5,commons-math,255.59500002861023,Success
+commons-math,MATH-273,59434c2dce49e0104b4c7d51b7502e4eae7d2773,commons-math,249.00099992752075,Success
+commons-math,MATH-274,6b547ba222e6d70b0351cfd354e1d3497da9e24f,commons-math,234.20099997520447,Success
+commons-math,MATH-279,e4a8fdfdf114eba50a955bf3bf24a4e4ce516fda,commons-math,239.9319999217987,Success
+commons-math,MATH-280,ea0ea8267309e94a8f2393829cbf1c1669abf5c9,commons-math,165.9319999217987,Success
+commons-math,MATH-280,b9d8c68e2f5f7f3a13773140a7ee4bf62972f17c,commons-math,249.92000007629395,Success
+commons-math,MATH-282,439cb994d17bf227e47db9ae076c0f3ea9f3d61c,commons-math,261.68299984931946,Not part of maven module
+commons-math,MATH-282,09a4643e101e9b42537806eea6601eb2f389f4b9,commons-math,321.19400000572205,Not part of maven module
+tika,TIKA-16,d7dabee5ce14240f3c5ba2f6147c963d03604dd3,tika,2556.414999961853,Success
+tika,TIKA-19,d7dabee5ce14240f3c5ba2f6147c963d03604dd3,tika,515.2079999446869,Success
+tika,TIKA-21,033a07cf008dfaf63c2d4bb76bebf184f8b7a338,tika,382.16100001335144,Success
+tika,TIKA-44,d4bb41f7968cb40d39f66b2c0430dde3eef2e618,tika,483.6879999637604,Success
+tika,TIKA-51,838fe5fc64d02bbab15e71131aca84a233558755,tika,352.08799982070923,Success
+tika,TIKA-56,b12c01d9b56053554cec501aab0530f7f4352daf,tika,327.5380001068115,Success
+tika,TIKA-107,fa6bb7e3c92145d29cd97820718ece69fd6ffd62,tika,524.0340001583099,Success
+tika,TIKA-121,acf76a64d81eb9c901d92fe718c0f0ffb4d14ced,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-121,acf76a64d81eb9c901d92fe718c0f0ffb4d14ced,tika-core,239.44400000572205,Unexpected
+tika,TIKA-140,836c4b953552c4dd4359d45197b0f241824ba32c,tika,373.85599994659424,Success
+tika,TIKA-179,e43a19e433b6085b91bf44f534dbf055db313026,tika,311.0039999485016,Success
+tika,TIKA-180,717833ad539511dc9c48eb488ce88c4337b05651,tika,268.96200013160706,Success
+tika,TIKA-185,e77e233f0e74edc6271a5dad2c8b1a7fe22925e2,tika,349.4859998226166,Success
+tika,TIKA-189,dd352d27c1b955103b2be76f2d5bca88f3b8e48b,tika,276.91099977493286,Success
+tika,TIKA-197,f6f9d4fe18590bfd8b03e5e87b75af9a18ee059e,tika,269.72900009155273,Success
+tika,TIKA-209,7a6089c0fd2f52119b5519ac30907875186e8815,tika-core,463.20700001716614,Success
+tika,TIKA-209,84587e3bd3333f0424e78e58982240e16afa0fe6,tika-core,249.39100003242493,Success
+tika,TIKA-209,655afb51b95e4bff1c4b86d40023da112544cad2,tika-core,430.9340000152588,Success
+tika,TIKA-209,27e6e47d03c13d3bf53f759426f0b3e9c3aaff58,tika-core,370.3139998912811,Success
+tika,TIKA-209,62697affaf3fb93c5f667f76fe54deb78003ef4e,tika-core,247.9390001296997,Success
+tika,TIKA-209,8c130bad35f52ddfa7df2252243d86168d29a41e,tika-core,448.8309998512268,Git error
+tika,TIKA-210,60c9b0e05868fb786180b3d7403537b2e66dce03,tika,388.768000125885,Success
+tika,TIKA-214,f49c4bdbe322506c6ddbf301cf842ac14eac3d67,tika-parsers,371.17700004577637,Dependencies resolution failure
+tika,TIKA-225,368e6fafc5bce2abd9efeba0800d098a876cbcfc,tika-core,468.7960000038147,Success
+tika,TIKA-240,f04edc5024a25ce5ce6d178fd8027b62ecc58b40,tika-parsers,381.3990001678467,Success
+tika,TIKA-257,3d8a58aa28f15e17c21158d096e24b1f65e750cf,tika-parsers,645.9900000095367,Success
+tika,TIKA-268,a09f5af5dd6e5b81bf7d3393851cc65f4855c619,tika-parsers,371.7519998550415,Success
+tika,TIKA-305,03be219a6d7646d07c56b1cc98899d139cb62727,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-309,39469baa4c0a991b171dd71b36f65c205058e462,tika-core,306.077999830246,Success
+tika,TIKA-311,99c2dd5ea17081585bf559962e33366c4b2428d1,tika-parsers,457.720999956131,Success
+tika,TIKA-339,16db6681ebfcbb622255f81f5006020af07c2d1e,tika-parsers,11.692000150680542,Compilation failure
+tika,TIKA-343,5df8f87c4c865942a0c0990bc2c00a6d2ad0320d,tika-parsers,10.718999862670898,Compilation failure
+tika,TIKA-343,ebe7995a870c96ad5a7c9b05ed24bdb940bd166a,tika-core,287.71399998664856,Success
+tika,TIKA-343,2f0fa3b65a48bc4042491324cc546f9c32536c20,tika-parsers,10.55299997329712,Compilation failure
+tika,TIKA-346,4d89ea2c6349fe07b5dfc1134fa5cd4960a33710,tika-parsers,15.89299988746643,Compilation failure
+tika,TIKA-371,11970650568d41bd2318d3513c011240b7be3ecf,tika-parsers,234.24200010299683,Dependencies resolution failure
+tika,TIKA-379,dd6330f7dfa0f836918306ee718e48f9c4418dbe,tika-parsers,310.8270001411438,Dependencies resolution failure
+tika,TIKA-389,5451e28bc4506703205741b2163d785aa4e27826,tika-parsers,13.272000074386597,Compilation failure
+tika,TIKA-391,6f48f57a6a0f21e6589a1d512a25574425dcc4cb,tika-core,431.2330000400543,Success
+tika,TIKA-394,8a5f28845f28f5a5e2debdfc0fa3f89c738cd2fe,tika-core,283.202999830246,Success
+tika,TIKA-395,cca6e63be096b1f1225ff7dea5336ee2048cb41b,tika-parsers,11.85099983215332,Compilation failure
+tika,TIKA-418,b471e61c790dcd9f6ad6be77f46f2e07afc56947,tika-parsers,162.82400012016296,Dependencies resolution failure
+tika,TIKA-422,cd4dff4df0699bcaebf4fc7f3e59ef77b9a9ba47,tika-parsers,13.17300009727478,Compilation failure
+tika,TIKA-431,7d89a5e455686a945f2e3302f0d201e5e6c4a985,tika-parsers,628.8719999790192,Success
+tika,TIKA-431,7d89a5e455686a945f2e3302f0d201e5e6c4a985,tika-core,345.1600000858307,Git error
+tika,TIKA-434,31ce68f698019a9051011faa6bbb47b082ed210a,tika-parsers,14.395000219345093,Compilation failure
+tika,TIKA-453,ed34e70f0ba7fc01769bed8dbf7f65a1a9058ec0,tika-core,265.4670000076294,Success
+tika,TIKA-457,e347b9887b6f02c00082c393b5a80d2126539995,tika-parsers,0.016000032424926758,No classes associated to this module
+tika,TIKA-457,163d93c4e1e78a27b5dcd9502c2a4757fbd53b7d,tika-parsers,235.42899990081787,Dependencies resolution failure
+tika,TIKA-462,d4a401460f56870c5085d87ec4f4856b6e6aacf3,tika-parsers,12.91700005531311,Compilation failure
+tika,TIKA-463,ed7a1d1bda0d981359261c20e8617a73d7dc482b,tika-parsers,235.91200017929077,Dependencies resolution failure
+tika,TIKA-463,e347b9887b6f02c00082c393b5a80d2126539995,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-463,163d93c4e1e78a27b5dcd9502c2a4757fbd53b7d,tika-parsers,278.21799993515015,Dependencies resolution failure
+tika,TIKA-463,31345be7c8cd6e347d0f7aeab12d99ed44187145,tika-parsers,235.52699995040894,Dependencies resolution failure
+tika,TIKA-478,a1c050381e3cd2fff0ee9144f2d867d0491a1cdc,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-478,486281b69d4d0f83ec4c35b85514b18b90a17eb8,tika-parsers,162.55200004577637,Dependencies resolution failure
+tika,TIKA-480,fed8c465cd4b6b6fd4158b284b317806064f0a33,tika-parsers,162.99500012397766,Dependencies resolution failure
+tika,TIKA-481,4f6a589842f4648f23a0d9e4bac5283893cac9da,tika-parsers,236.01199984550476,Dependencies resolution failure
+tika,TIKA-483,98eb0b0ec46c8a826a8a76a52636d8cc617d3201,tika-core,381.13899993896484,Success
+tika,TIKA-501,05acb51341cf2fd112ecbc8da517a33141b3a434,tika-parsers,161.47099995613098,Dependencies resolution failure
+tika,TIKA-515,c496ffa3a53dab8d8992b75e27b7475fb6e407f3,tika-core,276.5680000782013,Success
+tika,TIKA-520,0abbfee21acacabadd74211921ed7c047201f68a,tika-parsers,162.1819999217987,Dependencies resolution failure
+tika,TIKA-521,9fbce438928982a43fa2ffac51d8550d39a47bef,tika-parsers,14.972999811172485,Compilation failure
+tika,TIKA-533,d60651e489947e4a57eac775928e4b82d77fbd6d,tika-parsers,235.12400007247925,Dependencies resolution failure
+tika,TIKA-534,cd45bd25057d9718afac37c69e6b4ab5b1b91a7b,tika-parsers,12.913000106811523,Compilation failure
+tika,TIKA-548,8e58142f50588e11c75529c0489a04d9cb167e1e,tika-parsers,12.038000106811523,Compilation failure
+tika,TIKA-592,ca6b5ca5614867a682b966fdfa35a6f7b48c1591,tika-parsers,13.27999997138977,Compilation failure
+tika,TIKA-618,8b87a3848fc28ffaf536c5d3e5954239959cac2f,tika-parsers,12.556000232696533,Compilation failure
+tika,TIKA-632,c80eee31e10872648a1d23fefc8e13bb3b0e65a4,tika-parsers,480.97699999809265,Success
+tika,TIKA-632,7aeed0b52f5fbd5a1955270046220350d9a72885,tika-parsers,350.24000000953674,Success
+tika,TIKA-633,7dc399b99823bbbd77ab6e6ab0b9cc1870210c0c,tika-parsers,13.6010000705719,Compilation failure
+tika,TIKA-645,c2f7fe03d7bbaf0ce42f9c0ea08c0871f39a9c24,tika-core,471.14400005340576,Git error
+tika,TIKA-650,77c7847b54d396de91f281f4c58ff69d67ee9910,tika-parsers,14.51200008392334,Compilation failure
+tika,TIKA-651,77ebfcd04dfb16f9f856dbcf6fe9098217c779c3,tika-core,268.4579999446869,Not part of maven module
+tika,TIKA-651,fcde81cfbf6f7d4a7ba4e148471f1ce622d59f92,tika-core,358.1520001888275,Not part of maven module
+tika,TIKA-655,87fd9affb574d62ed26d669adaa3d7cf37e124fb,tika-parsers,14.45199990272522,Compilation failure
+tika,TIKA-656,8ef4561642c3b0b4173480b82708e192ac06d2a3,tika-parsers,13.707000017166138,Compilation failure
+tika,TIKA-656,469aa10c4736a905e343fe77e64fa9c7bec843b6,tika-parsers,12.677000045776367,Compilation failure
+tika,TIKA-661,49a9c4ffeebd479501cba457d5215dc9ec12991b,tika-core,371.289999961853,Success
+tika,TIKA-672,2942530968d8b5a990b369eb619a7bf371c14c5c,tika-parsers,355.1190001964569,Git error
+tika,TIKA-672,bc8f90a5d1fd8286f04fa7088c324db96e8cb36f,tika-parsers,478.27100014686584,Not part of maven module
+tika,TIKA-672,2608c791c41fb82a55fbf8718e748b4d587032c5,tika-parsers,427.49699997901917,Git error
+tika,TIKA-683,5c22595f655362f983e73aca4fb79149f37a17ec,tika-parsers,475.79900002479553,Not part of maven module
+tika,TIKA-683,ca890e427a1623b0e100ebe45a49edaacf17db39,tika-parsers,13.464999914169312,Compilation failure
+tika,TIKA-692,24ef1035df8f53a1750884e8cff91d277528e6a9,tika-parsers,405.33000016212463,Success
+tika,TIKA-692,332e4986fc077212784ada8d5f3048473ccd06b4,tika-parsers,13.951000213623047,Compilation failure
+tika,TIKA-693,e7b51f0ea9a76e351fef07c806dce00ff47a2888,tika-parsers,13.528000116348267,Compilation failure
+tika,TIKA-695,0c52b66e9dd568cd9af1529cd1b0fa0819c53e9d,tika-parsers,817.1380000114441,Success
+tika,TIKA-695,4b51beae8e08e82458792a63dd867319cb40e1e4,tika-parsers,437.08200001716614,Success
+tika,TIKA-697,4885ea7e2eb8a557879a08be9eae85224b718063,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-698,4c5599b6694a31e8ce84a1a0d88100827d98490e,tika-parsers,0.04699993133544922,No classes associated to this module
+tika,TIKA-698,4c5599b6694a31e8ce84a1a0d88100827d98490e,tika-core,281.71400022506714,Unexpected
+tika,TIKA-698,9c9763a5ac67683553f155a33338bdf98e1a6937,tika-core,230.66599988937378,Not part of maven module
+tika,TIKA-701,6bc0e0554fff5cb287caa56a10eecea60bf840bf,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-701,3e832b08f0b7b2f528af65bd2c10b414e21ded07,tika-parsers,19.39800000190735,Compilation failure
+tika,TIKA-701,3e832b08f0b7b2f528af65bd2c10b414e21ded07,tika-core,0.014999866485595703,No classes associated to this module
+tika,TIKA-702,9d5cf328f700e655a38cdf547fc86a273b854b78,tika-parsers,476.6779999732971,Not part of maven module
+tika,TIKA-711,af7df6bfaedc6b097a91eda6c789e5ee576401f6,tika-parsers,382.52999997138977,Success
+tika,TIKA-712,20ab62de27c7e34d1c09b3cd0a14c0e32e59994b,tika-parsers,462.64299988746643,Success
+tika,TIKA-712,51a7c9ccacde4f0a40d3f3a0a0c7b2d270d22684,tika-parsers,456.2660000324249,Success
+tika,TIKA-717,fdb902bcea910756c9f498b0db9bf3a1870cb2f2,tika-parsers,353.268000125885,Success
+tika,TIKA-720,aa944e848894e16adec24eeffe29e11b96ad29a8,tika-parsers,530.4769999980927,Success
+tika,TIKA-720,eb73a4be05f53e33679146810c28e74224f8b359,tika-parsers,530.6390001773834,Not part of maven module
+tika,TIKA-724,94356cb82bdefc805b8d09bd00057ed8e260199e,tika-parsers,2165.0280001163483,Not part of maven module
+tika,TIKA-725,39a63cad3ad912f412f75a2dcdca400ab8e37ab6,tika-app,243.73300004005432,Dependencies resolution failure
+tika,TIKA-736,3083e916b9a58aabca69a4cb7462415d4a7468e4,tika-parsers,591.433000087738,Not part of maven module
+tika,TIKA-738,9769f860a20af595c85ba751c4b6652a8690a2e6,tika-parsers,471.1599998474121,Not part of maven module
+tika,TIKA-741,84d1ee3915c676005fdf741b2f18d7917761465d,tika-core,240.00799989700317,Not part of maven module
+tika,TIKA-742,4e0b3e6cef33706b8e2eb510e4a1a04433b5938c,tika-parsers,362.10700011253357,Success
+tika,TIKA-748,c256022ce85a05be039e81f152fe895cb4f38b3a,tika-parsers,361.4590001106262,Success
+tika,TIKA-777,2c3dbde39c16161dafc4b5cc03db4e259bf7fb7f,tika-parsers,363.1870000362396,Success
+tika,TIKA-778,6ef64ddbeff4b23ee25e3d3f51f8a07c49d37c2b,tika-parsers,377.58200001716614,Success
+tika,TIKA-781,ad78ecd3a85fcfc61b22cb045b3881cc9c170b13,tika-parsers,367.95300006866455,Success
+tika,TIKA-786,2b39c7599a9930f8847f8839e9612ae5cdc56407,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-787,f8e3364bfd7fa5d4d80c7b249894ebbe6a146b85,tika-parsers,379.28200006484985,Success
+tika,TIKA-793,3bdf69a7d2e119aa722a097d81a99fd63d76be78,tika-parsers,577.8829998970032,Not part of maven module
+tika,TIKA-793,554605b284b0c4ac32b8cdda512700d780915a8d,tika-parsers,382.279000043869,Success
+tika,TIKA-794,96c92f509db1f424147ac0f1b7a5cfcfe6211435,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-801,b73dccb6bc47d33bdb6f1e51b723c7ef6bf3e1a3,tika-parsers,366.470999956131,Success
+tika,TIKA-811,8630e56468e1d25920030251d9d97a862cc719f3,tika-parsers,491.5610001087189,Not part of maven module
+tika,TIKA-817,9227e9f3d5090be28e28639ab92732c5be0507cf,tika-parsers,0.016000032424926758,No classes associated to this module
+tika,TIKA-820,8fd76a41b32b80353820d4a8bdaa08de5529f7ee,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-822,48b28a6d31c3afb741ffa5ace4c0c4738101b539,tika-core,245.2170000076294,Success
+tika,TIKA-826,9e22f46f2403b89dbc8454cefb8b83881f437419,tika-parsers,539.6660001277924,Success
+tika,TIKA-828,edb6775bf356eaaf656730589cc3340a15b602ea,tika-core,245.91300010681152,Success
+tika,TIKA-830,bc075703823e7250a7ad7db93ef58712133920f2,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-831,915be4f4fb999a79ea1f3f90b3a2637ea086ae26,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-854,5498c0eeea7d2a5d6d314bcddc7d307830e97c27,tika-parsers,385.45099997520447,Success
+tika,TIKA-866,a547dde812cce268518796e116f63ef0a3f4c8f3,tika-core,430.7539999485016,Not part of maven module
+tika,TIKA-866,1f16bf8e5ef4848d9d2e91e1566c1cfb5617f311,tika-core,276.6340000629425,Success
+tika,TIKA-869,56237e39f39092ede166eb790f3d5c0b4644d8e0,tika-parsers,302.57599997520447,Success
+tika,TIKA-877,44d14a51ff1c93fc597aa85fc828507d214269d3,tika-server,40.51699995994568,Generated no tests
+tika,TIKA-877,e91ba0c53057f51623ede0a4c0440f7651444501,tika-app,241.77500009536743,Dependencies resolution failure
+tika,TIKA-903,27fbb0a2303433efb077ec449a591114c264e3c1,tika-parsers,365.15899991989136,Not part of maven module
+tika,TIKA-910,5eb3dc1d76fe98ccdf522a0beb69f3d123ccfe98,tika-parsers,226.25300002098083,Generated no tests
+tika,TIKA-915,99ad6801379ee8e0918d51b7d4bba762694afbbf,tika-parsers,411.2190001010895,Success
+tika,TIKA-915,8630e56468e1d25920030251d9d97a862cc719f3,tika-parsers,477.9430000782013,Not part of maven module
+tika,TIKA-916,00a14bb29de9d26224720194d596604f90570480,tika-parsers,449.3989999294281,Success
+tika,TIKA-918,bf24bc0a11daa83ab707c1576a5605609b35d786,tika-parsers,387.16100001335144,Success
+tika,TIKA-920,8d38e36c861acdfbf6996c924f66e31bbfb01088,tika-app,233.22099995613098,Dependencies resolution failure
+tika,TIKA-923,8fd2a5298a5dbb2272279ea6b01087e9a96237ad,tika-parsers,225.4210000038147,Generated no tests
+tika,TIKA-924,527f3d72120f6be58735c437d1f6453029485b15,tika-parsers,225.0899999141693,Generated no tests
+tika,TIKA-935,914cafdbbe3748003cfc766c5d9b99339d08ce79,tika-parsers,380.1730000972748,Success
+tika,TIKA-948,f28f04af7e60ffc04550030c0c99e8c7dd931442,tika-parsers,405.8380000591278,Not part of maven module
+tika,TIKA-948,f28f04af7e60ffc04550030c0c99e8c7dd931442,tika-app,0.15600013732910156,No classes associated to this module
+tika,TIKA-948,218352a1ce7de0881416eff741d832a1abc51f07,tika-parsers,628.8150000572205,Not part of maven module
+tika,TIKA-961,a7e03539f9944f4847164b4bfa14b1f2db077331,tika-parsers,394.5590000152588,Success
+tika,TIKA-962,efdb4679cb28841da7ba9d8e755596602b630893,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-963,c36e5a0461b66a7941156dd9ee502c73aa0ee28c,tika-parsers,381.9779999256134,Success
+tika,TIKA-965,dfcf3d4c7cee2dac641ea5b331965ad03ce37364,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-973,ffc3b3cc73f7f931ac82425d9a0803e1c672aba3,tika-parsers,386.8310000896454,Success
+tika,TIKA-973,dcbe0d27ed0575fab0f2176503e5a5bc1014dfe2,tika-parsers,498.46200013160706,Not part of maven module
+tika,TIKA-981,4cdcefd5a87ed11e84ee4a016b989102bc84cdf1,tika-parsers,386.66800022125244,Success
+tika,TIKA-982,0ce025c5cf0ab44a87bc56835e34803827f74b97,tika-parsers,542.3489999771118,Success
+tika,TIKA-986,4f920c7bc5fd262c2a83fe44a7fb7b7bcb2798b7,tika-parsers,398.97000002861023,Success
+tika,TIKA-990,3e7e7c95e68a8b3be8204e9c4120cc8199b5df57,tika-parsers,379.489000082016,Success
+tika,TIKA-992,aa18a7989e73510ac148ef56a47d151385e3b268,tika-parsers,391.91799998283386,Success
+tika,TIKA-995,2697354c7e50b9b06c44441accd09f3cff594c6e,tika-core,267.0189998149872,Success
+tika,TIKA-999,9c0f4ca22c79a049b9459ce6f4dba8ba527da5d2,tika-parsers,373.4300000667572,Success
+tika,TIKA-999,a06209b1d5e263fd579afe66318560deeda7f66c,tika-parsers,373.61899995803833,Success
+tika,TIKA-1005,4e09c6360355b73801b95c97e139619acbe012bd,tika-parsers,443.335000038147,Success
+tika,TIKA-1006,433f21c4805e7bb930964f87d15c30f62e0eb5d5,tika-parsers,445.54500007629395,Success
+tika,TIKA-1010,55310ec7f4c8f2bfe6ff29485dfee156e6c9de84,tika-parsers,682.0360000133514,Not part of maven module
+tika,TIKA-1010,55310ec7f4c8f2bfe6ff29485dfee156e6c9de84,tika-core,222.8420000076294,Git error
+tika,TIKA-1011,a64d33c78c143f401d2d7ef795872fcc35fb2200,tika-parsers,375.82800006866455,Success
+tika,TIKA-1015,acdb2b0ea9082dad8120431ebbf34e68b76aafe2,tika-app,234.17300009727478,Dependencies resolution failure
+tika,TIKA-1019,363ee3bf4604a36515df8deb49c520bc3a488184,tika-parsers,437.0329999923706,Success
+tika,TIKA-1019,1d637c8e872ada489b3e928b854be0959ed0a0c4,tika-parsers,438.52500009536743,Success
+tika,TIKA-1019,a2ddd8cffdb3c69d5e8fbfec24a939ab7c3f3bed,tika-parsers,442.57800006866455,Success
+tika,TIKA-1021,7171855cd159df475f3eaa98177916616288db30,tika-parsers,370.60199999809265,Success
+tika,TIKA-1022,355eba97dfd9ae2e61ca856f0c70e001b203a0c0,tika-parsers,367.146999835968,Success
+tika,TIKA-1024,a3f156bfa445f5c0172a90107c6c15402bfa120e,tika-parsers,390.470999956131,Success
+tika,TIKA-1025,963100eb1806048809b1fb2cb5076afdd640cdfa,tika-parsers,1995.210000038147,Generated no tests
+tika,TIKA-1028,58b7c17d1833caffd5e8693d656a6efc02463c43,tika-parsers,501.8329999446869,Success
+tika,TIKA-1031,e10c23b3ad00dd9d8fb059fdbfc40273b8e2469c,tika-app,236.2610001564026,Dependencies resolution failure
+tika,TIKA-1032,9ec715349810ab8e2d149028679ba6baebeae14b,tika-parsers,574.0900001525879,Not part of maven module
+tika,TIKA-1033,e9206475e683c35b09810a857ddd7bdbfa8f60fb,tika-parsers,783.0980000495911,Success
+tika,TIKA-1035,01c02e671a82fc89fca8748175a741a5c5605962,tika-parsers,384.760999917984,Success
+tika,TIKA-1035,771e368ba531ef5063b89811d98a3c756920f870,tika-parsers,383.1269998550415,Success
+tika,TIKA-1044,ab9f799ae4a3eec42e00a109ca3171cbdf7b6cd0,tika-parsers,628.4319999217987,Success
+tika,TIKA-1048,71166dea776a676601d35bef3922717aa2d56301,tika-parsers,315.9630000591278,Success
+tika,TIKA-1063,794595c85cffc6cc811c60b1d8ae6fd3a341bcb1,tika-parsers,446.3910000324249,Success
+tika,TIKA-1078,94ff74c029ab8ea6dfd121938b2e6a6bc414a8b3,tika-core,228.99100017547607,Not part of maven module
+tika,TIKA-1109,5dd29c4fd97c9a9de8d716e52e4998db1e92176d,tika-parsers,663.9789998531342,Success
+tika,TIKA-1110,8d794b56dc413f41f0cb0a288aa55b55a7f198e9,tika-parsers,355.1159999370575,Success
+tika,TIKA-1115,5ffe387253086d52017d32f7d5b20cbd912d56a5,tika-parsers,418.5380001068115,Success
+tika,TIKA-1117,c46f54556357b08dc0d092cab3d316a1205b7d51,tika-parsers,475.5829999446869,Success
+tika,TIKA-1124,ba80052ad7c7992a15aae7445488bed7584187f7,tika-parsers,507.9100000858307,Not part of maven module
+tika,TIKA-1127,9d81bddc52fc3eb851f52099263d28b18bacde69,tika-server,209.52199983596802,Dependencies resolution failure
+tika,TIKA-1128,14aa5bfbab763cb00677d89b7e6cc0077c8a6ca7,tika-parsers,446.01700019836426,Success
+tika,TIKA-1130,970bafe849a6aa2e4e5ed1140e033fdb9c8abe32,tika-parsers,473.29900002479553,Success
+tika,TIKA-1145,c7d7f66f8c9e389d8654a6a57f0e14040f2e9d51,tika-core,445.7350001335144,Not part of maven module
+tika,TIKA-1146,22fc879bf987c2ab1fa24d68c10a97cb4797614e,tika-core,248.33599996566772,Not part of maven module
+tika,TIKA-1147,a852c4f55cc320087d4cfa300fca5ffb9c759918,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-1171,20ab62de27c7e34d1c09b3cd0a14c0e32e59994b,tika-parsers,452.2760000228882,Success
+tika,TIKA-1191,6a398bd3f6245543091fd7c0e9e4facb34a26882,tika-core,295.38899993896484,Success
+tika,TIKA-1192,ceccd0b65b0a24bf44f4566a94c901c7c40135f6,tika-parsers,380.95700001716614,Success
+tika,TIKA-1196,6f7177ff791539fd277e7dc59e0f7fbe5e3f0e5a,tika-server,295.93499994277954,Dependencies resolution failure
+tika,TIKA-1221,359aae57ce045de191a14bb369e7980154deffc6,tika-parsers,391.59800004959106,Success
+tika,TIKA-1222,7b7ad9596116b402a938d5ded50a2ef621677c03,tika-parsers,492.19599986076355,Success
+tika,TIKA-1226,7d3194a3be19dc81a425ad4247b85dc7891b8660,tika-parsers,398.8900001049042,Success
+tika,TIKA-1228,1ca0efd92bf7068fb1ff0366dfe0f55612d56068,tika-parsers,407.69599986076355,Success
+tika,TIKA-1229,2aaec12dbd492d716aab53f7ee32bdb247404c35,tika-parsers,449.85000014305115,Success
+tika,TIKA-1248,a360ec5add94fad571114f6090e363df6c9295e7,tika-parsers,399.3269999027252,Success
+tika,TIKA-1251,8e0c444b1f1bf61215a298c2b782b5cb451f9cde,tika-parsers,455.1970000267029,Success
+tika,TIKA-1252,3cfe5ad70d02b22c8464b6073de9fe55830964ac,tika-parsers,442.4980001449585,Success
+tika,TIKA-1255,80efc84b675c8defa5e86b01b85e1dabc84d32f5,tika-parsers,965.6530001163483,Success
+tika,TIKA-1257,beff3947978d4573e35a40a7b0ad8fb7ec89a2f6,tika-parsers,457.42700004577637,Success
+tika,TIKA-1279,3a9afb5d5dae8b5e4db84679ec39738d41d8fd75,tika-parsers,379.4690001010895,Success
+tika,TIKA-1291,0b57b5c2d885b9223c0c77133844a3fc39f5bcc4,tika-app,701.1260001659393,Success
+tika,TIKA-1292,f689fa7ee25c0c9c4bd4d68aa51941eb558f7026,tika-core,279.44900012016296,Success
+tika,TIKA-1295,c2da98e37eaff64a0b12a253b7406385cd80b253,tika-parsers,471.89400005340576,Success
+tika,TIKA-1303,b97ef3208fe5848c96c86d6d7b6a6bfb962e0568,tika-parsers,398.11699986457825,Success
+tika,TIKA-1305,d0ced9671ef45210a1d0545f32281f3bd7724862,tika-parsers,394.914999961853,Success
+tika,TIKA-1310,0b57b5c2d885b9223c0c77133844a3fc39f5bcc4,tika-app,673.7030000686646,Not part of maven module
+tika,TIKA-1317,a13fdace85d18eccc4ec9ee918e86541204374b1,tika-parsers,476.55400013923645,Success
+tika,TIKA-1322,375fde60b42c44b57c6931894ddee177b063fbae,tika-parsers,385.47899985313416,Success
+tika,TIKA-1341,6a306fbbe256c267cd1c5a863c78707f4c43085f,tika-parsers,519.7539999485016,Success
+tika,TIKA-1353,a9a5c03c4581fc43e0e17372dc4c4863e280e762,tika-parsers,432.8430001735687,Success
+tika,TIKA-1362,4a75eefea9d04499c7cd4c9e99c9df3e4b73a97b,tika-translate,141.87400007247925,Generated no tests
+tika,TIKA-1370,15521f132f69f80a42496a5fc38a49caa27c09cc,tika-translate,141.239000082016,Generated no tests
+tika,TIKA-1373,f1d00dbf40f16ce8669628951b813d7972c07c45,tika-parsers,388.35599994659424,Success
+tika,TIKA-1378,65aea2b06b33c6b53999b6c52e017c38bf2af0b4,tika-translate,270.02099990844727,Success
+tika,TIKA-1385,eb9495e194c90d18ed5c48eb53f8ccab664e5e71,tika-translate,342.57999992370605,Unexpected
+tika,TIKA-1389,7e6448348853234fe76c732ffeccb76200fe464c,tika-parsers,862.7929999828339,Success
+tika,TIKA-1389,7e6448348853234fe76c732ffeccb76200fe464c,tika-core,415.1889998912811,Unexpected
+tika,TIKA-1389,7e6448348853234fe76c732ffeccb76200fe464c,tika-serialization,0.016000032424926758,No classes associated to this module
+tika,TIKA-1389,7e6448348853234fe76c732ffeccb76200fe464c,tika-xmp,0.015000104904174805,No classes associated to this module
+tika,TIKA-1389,7e6448348853234fe76c732ffeccb76200fe464c,tika-translate,0.016000032424926758,No classes associated to this module
+tika,TIKA-1400,9688c77128e5c3d53c1eeb4e72db62ff10dfafda,tika-parsers,611.6670000553131,Success
+tika,TIKA-1413,0365ed2e430f3513931c01994e75fa55d1fb1b01,tika-parsers,478.5409998893738,Success
+tika,TIKA-1422,cf55425220f3c0dcab2fe6318e19560bf4c7827b,tika-parsers,369.54900002479553,Compilation failure
+tika,TIKA-1422,eb7202d524dbf45d2d0e21b473e73e5401ed10b9,tika-parsers,2001.2379999160767,Generated no tests
+tika,TIKA-1427,e8fac5b3060b8af39ff787fbf8038980b999c611,tika-parsers,476.8710000514984,Success
+tika,TIKA-1427,4f421985cb2d1c75b8c2474719ab2d5e38d2793e,tika-parsers,468.7869999408722,Success
+tika,TIKA-1445,0a176a5aad749a0b15559b705b906937760d4a77,tika-parsers,402.5019998550415,Success
+tika,TIKA-1445,5cf7785cf2540cc8cdfd7d21b4f8bf540fbdc55f,tika-parsers,401.8589999675751,Success
+tika,TIKA-1445,7dc73cee673ffde25441b1adba6d467873ed134c,tika-core,509.76200008392334,Success
+tika,TIKA-1446,1cc2725cecf73a1156af53d21801a9196154f389,tika-parsers,411.71799993515015,Success
+tika,TIKA-1446,65977bba2a5900c43dbb9f4c8512daf38b9163b5,tika-parsers,762.1449999809265,Success
+tika,TIKA-1446,65977bba2a5900c43dbb9f4c8512daf38b9163b5,tika-core,315.3600001335144,Git error
+tika,TIKA-1454,bb78082b0028b57a5bf1ae30858dda6aebeacf63,tika-parsers,904.5950000286102,Success
+tika,TIKA-1454,69852e4cb55d34e6513e0b66af7d75cb1b1408ba,tika-parsers,1204.5480000972748,Success
+tika,TIKA-1459,e2293d302bc5f447563c5c6c93907b55bba6e91b,tika-core,248.22099995613098,Success
+tika,TIKA-1463,eacb983cb6155dc00e98f5ad4c9d71244b7dba83,tika-parsers,2008.4059998989105,Generated no tests
+tika,TIKA-1467,0aa8bca3ede9bec545b7228733df67905b7e8663,tika-parsers,550.614000082016,Success
+tika,TIKA-1477,74c231a575c9ac307b617c2c322d0f4151baeb64,tika-parsers,388.625,Success
+tika,TIKA-1489,d1e8d7176952d7e82e2d72ae08b2ee40df17902e,tika-parsers,324.6579999923706,Dependencies resolution failure
+tika,TIKA-1506,f5ad49dc58e0309b88084f6dda2d73fea3612804,tika-parsers,391.10900020599365,Success
+tika,TIKA-1512,990c0c2096fdabec508371cbf96f9e77bd61f12d,tika-parsers,543.2320001125336,Success
+tika,TIKA-1519,7d231d03247b9171dcce6e1758deb5c49560a6a1,tika-parsers,483.4059998989105,Success
+tika,TIKA-1519,6194e6854392740a157cce3bb252af10244af8af,tika-parsers,503.4739999771118,Success
+tika,TIKA-1529,892f3a8b1e44efdf86ec9aed0887de7afcbf01ea,tika-parsers,1050.7850000858307,Success
+tika,TIKA-1529,892f3a8b1e44efdf86ec9aed0887de7afcbf01ea,tika-app,895.7070000171661,Git error
+tika,TIKA-1529,892f3a8b1e44efdf86ec9aed0887de7afcbf01ea,tika-core,631.5169999599457,Git error
+tika,TIKA-1529,892f3a8b1e44efdf86ec9aed0887de7afcbf01ea,tika-server,1406.776999950409,Compilation failure
+tika,TIKA-1544,e12bb7a68d1e1cf60bacdbd2e68afe6b0b6863a8,tika-parsers,168.7170000076294,Dependencies resolution failure
+tika,TIKA-1548,8fc3a0925db66e3a15d7ad5f790f0201ed73b214,tika-parsers,165.00999999046326,Dependencies resolution failure
+tika,TIKA-1549,8494d9310defb3bebbbc2d9f46393840f292a5e1,tika-core,321.8019998073578,Success
+tika,TIKA-1562,f54cb9e354b71e720602acfa0b4da8f100b400c2,tika-example,1229.4379999637604,Dependencies resolution failure
+tika,TIKA-1567,4aab1c1777a314644507d2acf27c814390f685d9,tika-server,229.0239999294281,Dependencies resolution failure
+tika,TIKA-1568,7175b9027fb4c8566822c57b428363bc35893d74,tika-parsers,0.015999794006347656,No classes associated to this module
+tika,TIKA-1584,90bc595d756376cc40ca17ec13cdbae5fb023a90,tika-server,1230.3840000629425,Success
+tika,TIKA-1589,671b314b1c25c3d4b390a61ef6c0d7d03b062806,tika-parsers,451.095999956131,Success
+tika,TIKA-1600,f2c263dd409f62c6c3520e48816c9fca9244e854,tika-parsers,816.3860001564026,Success
+tika,TIKA-1605,3e9db56e11340c06c39e71df4d320033eda5810c,tika-core,243.7960000038147,Unexpected
+tika,TIKA-1622,d3c776ce35940cfb5f4b8127d239e580860a5bbd,tika-server,487.10399985313416,Dependencies resolution failure
+tika,TIKA-1623,a85081207afc8d5bc7c9a9e9c09ad72b3c6743c2,tika-server,810.0329999923706,Dependencies resolution failure
+tika,TIKA-1629,88f140f5cfd63202a48bab7a43e2c6cae05ea8da,tika-parsers,848.4619998931885,Success
+tika,TIKA-1629,88f140f5cfd63202a48bab7a43e2c6cae05ea8da,tika-app,1106.1280000209808,Dependencies resolution failure
+tika,TIKA-1629,88f140f5cfd63202a48bab7a43e2c6cae05ea8da,tika-example,3103.8420000076294,Dependencies resolution failure
+tika,TIKA-1629,88f140f5cfd63202a48bab7a43e2c6cae05ea8da,tika-core,373.1710000038147,Dependencies resolution failure
+tika,TIKA-1629,88f140f5cfd63202a48bab7a43e2c6cae05ea8da,tika-server,3250.4130001068115,Dependencies resolution failure
+tika,TIKA-1646,cc326059cd05b9df51bbc82fba6528cb09f4395e,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-1646,cc326059cd05b9df51bbc82fba6528cb09f4395e,tika-batch,517.0920000076294,Dependencies resolution failure
+tika,TIKA-1653,b93a7d267f8d1899354c5e2b8c1c56651e50d99c,tika-core,289.8619999885559,Success
+tika,TIKA-1669,761273f9e69c4a7595e50ccd6a2d9304c398d0b1,tika-core,237.1470000743866,Success
+tika,TIKA-1673,2764fb8606964c3350c781ecf5df4042706b4099,tika-parsers,0.016000032424926758,No classes associated to this module
+tika,TIKA-1673,2764fb8606964c3350c781ecf5df4042706b4099,tika-app,0.0,No classes associated to this module
+tika,TIKA-1673,2764fb8606964c3350c781ecf5df4042706b4099,tika-example,0.0,No classes associated to this module
+tika,TIKA-1678,1ecb5f93b3af6ab23cbf2eaa329fca7ae140f530,tika-parsers,837.0529999732971,Timeout failure
+tika,TIKA-1681,320b2890038dfcb9191ba856c0e84e368851d24e,tika-parsers,1219.5289998054504,Success
+tika,TIKA-1689,58a757e0f7295af14bb8051a42d75bb0ccc8cfe6,tika-parsers,0.016000032424926758,No classes associated to this module
+tika,TIKA-1700,abd6b8744917816a4695aca42e9f8e9cf9f09263,tika-core,554.3869998455048,Success
+tika,TIKA-1700,cd129b5741d96d169823daadf6f40038ce773041,tika-core,351.49000000953674,Compilation failure
+tika,TIKA-1703,38697cbec28a90ed7b4726b081a82ecf98cd47fd,tika-parsers,2361.8799998760223,Success
+tika,TIKA-1708,3f784c6708e594956a5a62d9f421eec99a4b5f4a,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-1708,98b088d6f1cdd44aacabc60346b8b065ae2eb94e,tika-parsers,551.1159999370575,Success
+tika,TIKA-1708,98b088d6f1cdd44aacabc60346b8b065ae2eb94e,tika-core,0.0,No classes associated to this module
+tika,TIKA-1716,24b8c2a918ac599b5aff1265f2e08014de1a2fe0,tika-server,630.7449998855591,Dependencies resolution failure
+tika,TIKA-1728,e7a3a49561cc1f9ffa4cd34307005f559dcefe19,tika-parsers,555.2130000591278,Success
+tika,TIKA-1742,5d50c2e9391a9f31ea435724aef9e0bb73624984,tika-parsers,0.6100001335144043,Unexpected
+tika,TIKA-1777,5a7027a1d2a82895b49d4131ef20f3e59e417712,tika-parsers,677.574000120163,Success
+tika,TIKA-1782,f43de5a24b56cdd6a3c5abc3e5a38e2410089d69,tika-core,267.470999956131,Success
+tika,TIKA-1788,9653e77d935bb00b7a38be483991e8e185f751ff,tika-parsers,567.8909997940063,Success
+tika,TIKA-1788,18aa69a16f09232413e06d04e921427ff4356cec,tika-parsers,689.6779999732971,Success
+tika,TIKA-1795,f682eeec632bcfba9c879de077a968b926c3fc31,tika-parsers,507.19000005722046,Success
+tika,TIKA-1804,1760249f26536047e54e3932f47910217a6c81f5,tika-parsers,929.8910000324249,Success
+tika,TIKA-1835,fe841bc8760027eae3f9d0105238780815451346,tika-core,319.9450001716614,Git error
+tika,TIKA-1837,16290d86c3a976f7c323b0be6750ad07f4840018,tika-parsers,551.5429999828339,Success
+tika,TIKA-1845,1e0159b733dc7a8f48ce8943e1f15046c791349a,tika-server,684.2050001621246,Dependencies resolution failure
+tika,TIKA-1870,3b7922db1a2e72181e1a00168d2aee33bfe1d4a3,tika-core,230.54800009727478,Success
+tika,TIKA-1877,e105088729ef12acbda1fe4e71f462f84d98f981,tika-parsers,1028.4969999790192,Success
+tika,TIKA-1914,7a4301ed3ac21f73b049d4111f46ba6cda69145c,tika-parsers,564.545000076294,Success
+tika,TIKA-1916,5e170d4373c28a4b520196591c4d94ab8073bfbf,tika-parsers,639.7149999141693,Success
+tika,TIKA-1927,4f22b085b1569d66d711b79751478dfb8448c353,tika-parsers,866.2459998130798,Success
+tika,TIKA-1928,b2821d921ac4cfd3be468e8bea9123f5cb627cbf,tika-core,255.32599997520447,Success
+tika,TIKA-1937,1c5e96cf617b231ce8d902fc86eca84edb9cafe7,tika-core,326.2019999027252,Git error
+tika,TIKA-1938,b6d23c189e852fa2e41b441c18bfe3e66e3f67c4,tika-parsers,565.1670000553131,Success
+tika,TIKA-1945,7842600560e02a4fd213d175301b4397bbe030a3,tika-parsers,1308.7089998722076,Success
+tika,TIKA-1960,64b7ded37f981e298fcb62a996cbaf4ccabb2a96,tika-core,586.8700001239777,Success
+tika,TIKA-1970,89881ce207444a9d53f041bf9a14b5b7d623dca6,tika-parsers,697.2249999046326,Success
+tika,TIKA-1970,09cc658a30ae194323f1e444be73d396544efc6b,tika-parsers,661.2369999885559,Success
+tika,TIKA-1980,9024f12e0fbef206330b6317a537354fafbe9cd7,tika-parsers,0.0,No classes associated to this module
+tika,TIKA-1990,6ad18f44cdfef5e80b343d9c06787b850fcfc9fd,tika-parsers,685.6029999256134,Timeout failure
+tika,TIKA-1999,3e14505381eefa603adabe61171c0c19fc685b2f,tika-parsers,1346.146999835968,Success
+tika,TIKA-2019,7ae760e29ad3ed5874f7f50c27c6f850ab1d8025,tika-parsers,1006.2809998989105,Success

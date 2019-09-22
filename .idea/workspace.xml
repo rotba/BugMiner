@@ -4,9 +4,15 @@
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presenetation/combined/invalid_bugs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/presenetation/combined/invalid_bugs.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presenetation/combined/presentation.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/presenetation/combined/presentation.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presenetation/combined/times.csv" beforeDir="false" afterPath="$PROJECT_DIR$/presenetation/combined/times.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presenetation/combined/valid_bugs.csv" beforeDir="false" afterPath="$PROJECT_DIR$/presenetation/combined/valid_bugs.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presenetation/combined_tmp/invalid_bugs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/presenetation/combined_tmp/times.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/presenetation/combined_tmp/valid_bugs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/presenetation/combined_tmptmp/invalid_bugs.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/presenetation/combined_tmptmp/times.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/presenetation/combined_tmptmp/valid_bugs.csv" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
