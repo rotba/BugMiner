@@ -59,15 +59,15 @@ def main(argv):
 	set_up(argv)
 	speceific_issue = argv[3] if len(argv) > 3 else None
 	jql_query = argv[4] if len(argv) > 4 else None
-	possible_bugs = ExtractorFactory.create(
+	candidates = ExtractorFactory.create(
 		repo_dir=repo.working_dir, branch_inspected=branch_inspected, issue_tracker_url=argv[2],
 		issue_key=speceific_issue,
 		query=jql_query
 	).extract_possible_bugs_wrapper(use_cache=USE_CACHE)
-	for possible_bug in possible_bugs:
+	for candidate in candidates:
 		try:
-			bugs = extract_bugs(issue=possible_bug[0], commit=repo.commit(possible_bug[1]),
-			                    tests_paths=possible_bug[2], changed_classes_diffs=possible_bug[3])
+			bugs = extract_bugs(issue=candidate.issue, commit=repo.commit(candidate.fix_commit),
+			                    tests_paths=candidate.tests, changed_classes_diffs=candidate.diffed_components)
 			if GENERATE_DATA:
 				bug_data_handler.add_bugs(bugs)
 		except mvn_bug.BugError as e:

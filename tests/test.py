@@ -492,10 +492,10 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = True
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
-		issue_key = 'LANG-393'
-		commit_h = '9adbbb0bbfe1d76549dd8b6704f183dacb1de29f'
-		github = 'https://github.com/apache/commons-lang'
-		issue_tracker = 'http:\issues.apache.org\jira\projects\LANG'
+		issue_key = 'MATH-209'
+		commit_h = '6f4e48d42aa880e7ba49ff651aa701313e1aec31'
+		github = 'https://github.com/apache/commons-math'
+		issue_tracker = 'http:\issues.apache.org\jira\projects\MATH'
 		Main.set_up(['', github])
 		extractor = JiraExtractor(
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=issue_tracker,
