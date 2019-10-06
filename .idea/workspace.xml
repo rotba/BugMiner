@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_projects.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run_projects.bat" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -540,22 +538,22 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.present candidates compress" />
-      <item itemvalue="Python.present candidates tika" />
-      <item itemvalue="Python.present candidates lang" />
-      <item itemvalue="Python.present candidates math" />
+      <item itemvalue="Python.Main" />
       <item itemvalue="Python.combine" />
       <item itemvalue="Python.gen watch" />
-      <item itemvalue="Python.Main" />
+      <item itemvalue="Python.present candidates compress" />
+      <item itemvalue="Python.present candidates lang" />
+      <item itemvalue="Python.present candidates math" />
+      <item itemvalue="Python.present candidates tika" />
+      <item itemvalue="Python tests.Unittests for test.TestMain" />
+      <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data" />
+      <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy" />
+      <item itemvalue="Python tests.Unittests for test.TestMain.test_issue" />
+      <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit" />
       <item itemvalue="Python tests.all" />
       <item itemvalue="Python tests.auto_gen" />
       <item itemvalue="Python tests.patching" />
       <item itemvalue="Python tests.specific" />
-      <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy" />
-      <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data" />
-      <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit" />
-      <item itemvalue="Python tests.Unittests for test.TestMain.test_issue" />
-      <item itemvalue="Python tests.Unittests for test.TestMain" />
     </list>
     <recent_temporary>
       <list>
@@ -649,7 +647,7 @@
       <workItem from="1568530265008" duration="17899000" />
       <workItem from="1568875391633" duration="1280000" />
       <workItem from="1569140554732" duration="3506000" />
-      <workItem from="1569147866185" duration="4487000" />
+      <workItem from="1569147866185" duration="4999000" />
     </task>
     <servers />
   </component>
@@ -686,7 +684,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28321000" />
+    <option name="totallyTimeSpent" value="28833000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -705,7 +703,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44666666" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.44666666" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
