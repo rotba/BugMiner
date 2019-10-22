@@ -1,9 +1,0 @@
-[inst2] + org.apache.commons.math.random.RandomDataTest@testNextLong
-[inst2] + org.apache.commons.math.random.RandomDataImpl@nextLong
-[inst2] + org.apache.commons.math.random.RandomDataImpl@getRan
-[inst2] + org.apache.commons.math.stat.Frequency@addValue
-[inst2] + org.apache.commons.math.stat.Frequency@getCount
-[inst2] + org.apache.commons.math.stat.inference.ChiSquareTestImpl@chiSquare
-[inst2] + org.apache.commons.math.stat.inference.ChiSquareTestImpl@isPositive
-[inst2] + org.apache.commons.math.stat.inference.ChiSquareTestImpl@isNonNegative
-[inst2] + org.apache.commons.math.RetryTestCase@runTest
