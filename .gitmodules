@@ -4,3 +4,9 @@
 [submodule "mvnpy"]
 	path = mvnpy
 	url = https://github.com/rotba/mvnpy.git
+[submodule "patcher"]
+	path = patcher
+	url = https://github.com/rotba/patcher.git
+[submodule "PossibleBugMiner"]
+	path = PossibleBugMiner
+	url = https://github.com/rotba/PossibleBugMiner.git
