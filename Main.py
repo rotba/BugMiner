@@ -24,6 +24,7 @@ from mvnpy.plugins.evosuite.evosuite import TestsGenerationError
 from patcher.patcher import TestcasePatcher
 from termcolor import colored
 
+import settings
 from diff import commitsdiff
 from diff.commit import Commit
 
@@ -777,18 +778,19 @@ def set_up(argv):
 	global state_patches_cache_dir
 	git_url = urlparse(argv[1])
 	proj_name = os.path.basename(git_url.path)
-	cache_dir = os.path.join(os.getcwd(), 'cache\\{}'.format(proj_name))
-	state_patches_cache_dir = os.path.join(cache_dir, 'states')
-	tmp_files_dir = os.path.join(os.getcwd(), 'tmp_files\\{}'.format(proj_name))
-	mvn_repo = MavenRepo.Repo(os.getcwd() + '\\tested_project\\' + proj_name)
-	patches_dir = mvn_repo.repo_dir + '\\patches'
-	results_dir = os.path.join(os.getcwd(), 'results')
+	proj_files = settings.ProjFiles(proj_name)
+	cache_dir = proj_files.cache
+	state_patches_cache_dir = proj_files.states
+	tmp_files_dir = proj_files.tmp
+	mvn_repo = MavenRepo.Repo(proj_files.repo)
+	patches_dir = proj_files.patches
+	results_dir = settings.RESULTS_DIR
 	proj_results_dir = os.path.join(results_dir, proj_name)
 	data_dir = os.path.join(proj_results_dir, 'data')
 	if not os.path.isdir(proj_results_dir):
 		os.makedirs(proj_results_dir)
-	if not os.path.isdir(os.getcwd() + '\\tested_project'):
-		os.makedirs(os.getcwd() + '\\tested_project')
+	if not os.path.isdir(settings.TESTED_PROJECTS_DIR):
+		os.makedirs(settings.TESTED_PROJECTS_DIR)
 	if not os.path.isdir(cache_dir):
 		os.makedirs(cache_dir)
 	if not os.path.isdir(state_patches_cache_dir):
@@ -807,10 +809,10 @@ def set_up(argv):
 	LOG_FILENAME = os.path.join(proj_results_dir, 'log.log')
 	logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO, format='%(asctime)s %(message)s')
 	logging.info('Started cloning ' + argv[1] + '... ')
-	git_cmds_wrapper(lambda: git.Git(os.getcwd() + '\\tested_project').init())
+	git_cmds_wrapper(lambda: git.Git(proj_files.base).init())
 	repo_url = git_url.geturl().replace('\\', '/').replace('////', '//')
 	git_cmds_wrapper(
-		lambda: git.Git(os.getcwd() + '\\tested_project').clone(repo_url))
+		lambda: git.Git(proj_files.base).clone(repo_url))
 	logging.info('Finshed cloning ' + argv[1] + '...')
 	repo = Repo(mvn_repo.repo_dir)
 	if not os.path.isdir(cache_dir):
