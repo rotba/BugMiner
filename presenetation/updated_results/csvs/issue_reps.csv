@@ -1,0 +1,12 @@
+project name,rep0,rep1,rep2,rep3,complete
+tika,23,28,30,33,264
+commons-compress,14,17,17,18,81
+commons-math,65,78,83,87,283
+commons-lang,14,23,24,25,181
+,,,,,
+,,,,,
+project name,$|\cup_{i=0}^{0} rep_i|$,$|\cup_{i=0}^{0} rep_i|$,$|\cup_{i=0}^{0} rep_i|$,$|\cup_{i=0}^{0} rep_i|$,complete issues#
+tika,23,28,30,33,264
+commons-compress,14,17,17,18,81
+commons-math,65,78,83,87,283
+commons-lang,14,23,24,25,181

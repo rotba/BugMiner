@@ -1,0 +1,14 @@
+project name,rep0,rep1,rep2,rep3,total
+tika,24,50,68,92,331
+commons-compress,14,28,41,57,96
+commons-math,69,142,211,281,320
+commons-lang,15,37,52,59,203
+,,,,,
+$|\sum_{i=0}^{0} rep_i|$,$|\sum_{i=0}^{0} rep_i|$,$|\sum_{i=0}^{0} rep_i|$,$|\sum_{i=0}^{0} rep_i|$,,
+,,,,,
+,,,,,
+project name,$|\cup_{i=0}^{0} rep_i|$,$|\cup_{i=0}^{0} rep_i|$,$|\cup_{i=0}^{0} rep_i|$,$|\cup_{i=0}^{0} rep_i|$,complete issues#
+tika,24,50,68,92,331
+commons-compress,14,28,41,57,99
+commons-math,69,142,211,281,320
+commons-lang,15,37,52,59,203
