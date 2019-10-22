@@ -2,8 +2,228 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tests_ignore_ignore/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1540475221035.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1563633353004.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1564843285394.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1564845305828.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1564846689132.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1564999623355.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1565086280820.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1540475221660.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1563633352260.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1564843284344.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1564845305788.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1564846687924.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1564999621528.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1565086280744.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1540475219988.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1563633353021.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1564843285005.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1564845305861.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1564846688706.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1564999622263.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1565086281452.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1540475220472.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1563633353508.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1564843284370.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1564845306294.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1564846687972.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1564999622743.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1565086280831.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1540475221691.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1563633352991.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1564843284329.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1564845305761.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1564846687250.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1564999622259.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1565086280791.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1540475221051.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1563633353404.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1564843285395.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1564845305846.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1564846687961.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1564999622730.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1565086280810.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1540475221644.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1563633354097.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1564843285517.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1564845307004.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1564846689134.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1564999623478.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1565086281923.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1540475221035.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1563633352994.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1564843285383.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1564845306283.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1564846689121.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1564999623467.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1565086280821.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1540475221644.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1563633352981.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1564843284318.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1564845305818.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1564846687952.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1564999621506.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1565086280772.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1540475219847.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1563633353414.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1564843285409.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1564845306916.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1564846688618.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1564999623357.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1565086281835.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1540475221066.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1563633353005.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1564843285498.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1564845305830.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1564846689099.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1564999623445.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1565086280794.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1540475221082.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1563633352363.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1564843283673.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1564845305083.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1564846687274.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1564999621616.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1565086280133.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1540475221707.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1563633352346.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1564843283620.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1564845305778.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1564846687198.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1564999621556.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1565086280086.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1540475221691.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1563633352301.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1564843284331.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1564845305765.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1564846687255.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1564999621600.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1565086280781.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1540475219816.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1563633353398.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1564843285405.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1564845305857.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1564846689117.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1564999623463.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1565086281448.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate_watch.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/presenetation/candidates.py" beforeDir="false" afterPath="$PROJECT_DIR$/presenetation/candidates.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static_files/watch.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static_files/watch_old.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static_files/watch_old_old.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stuff.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1563088512167.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1563088512167.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1563090713766.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1563090713766.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1563090840296.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1563090840296.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1565357996505.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1565357996505.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1565359735490.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1565359735490.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1566120562167.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testConfig_1566120562167.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1563088513883.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1563088513883.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1563090713793.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1563090713793.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1563090841421.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1563090841421.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1565357997335.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1565357997335.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1565359735363.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1565359735363.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1566120563361.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextExponential_1566120563361.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1563088512787.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1563088512787.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1563090712846.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1563090712846.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1563090840452.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1563090840452.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1565357996073.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1565357996073.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1565359735493.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1565359735493.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1566120561310.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextGaussian_1566120561310.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1563088512216.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1563088512216.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1563090713210.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1563090713210.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1563090839687.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1563090839687.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1565357996652.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1565357996652.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1565359735899.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1565359735899.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1566120559707.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextHex_1566120559707.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1563088513254.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1563088513254.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1563090714432.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1563090714432.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1563090840807.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1563090840807.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1565357997331.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1565357997331.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1565359735361.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1565359735361.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1566120563400.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues_1566120563400.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1563088512178.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1563088512178.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1563090713776.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1563090713776.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1563090840796.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1563090840796.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1565357996030.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1565357996030.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1565359736491.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1565359736491.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1566120562155.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextInt_1566120562155.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1563088512110.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1563088512110.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1563090712693.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1563090712693.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1563090839648.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1563090839648.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1565357998097.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1565357998097.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1565359736529.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1565359736529.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1566120562186.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLongExtremeValues_1566120562186.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1563088512116.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1563088512116.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1563090712836.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1563090712836.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1563090839652.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1563090839652.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1565357996523.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1565357996523.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1565359736518.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1565359736518.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1566120561293.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextLong_1566120561293.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1563088513865.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1563088513865.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1563090713819.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1563090713819.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1563090841455.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1563090841455.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1565357997364.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1565357997364.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1565359734681.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1565359734681.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1566120563416.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPermutation_1566120563416.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1563088513166.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1563088513166.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1563090712725.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1563090712725.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1563090840356.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1563090840356.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1565357996558.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1565357996558.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1565359735403.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1565359735403.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1566120561029.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextPoisson_1566120561029.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1563088512193.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1563088512193.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1563090712698.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1563090712698.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1563090840309.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1563090840309.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1565357996536.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1565357996536.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1565359736501.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1565359736501.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1566120559665.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSample_1566120559665.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1563088513268.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1563088513268.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1563090713851.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1563090713851.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1563090840820.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1563090840820.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1565357997387.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1565357997387.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1565359734700.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1565359734700.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1566120562265.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureHex_1566120562265.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1563088513255.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1563088513255.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1563090713840.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1563090713840.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1563090841444.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1563090841444.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1565357997372.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1565357997372.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1565359735389.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1565359735389.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1566120562201.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureInt_1566120562201.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1563088513873.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1563088513873.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1563090713827.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1563090713827.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1563090840808.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1563090840808.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1565357998081.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1565357998081.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1565359735350.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1565359735350.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1566120563402.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextSecureLong_1566120563402.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1563088512161.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1563088512161.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1563090713788.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1563090713788.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1563090840349.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1563090840349.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1565357996519.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1565357996519.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1565359735400.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1565359735400.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1566120561287.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/DebuggerTests/Trace_org.apache.commons.math.random.RandomDataTest@testNextUniform_1566120561287.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/presenetation/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/src/test/resources/org/apache/tika/parser/ner/opennlp/en-pos-maxent.bin" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/src/test/resources/org/apache/tika/parser/ner/opennlp/en-pos-maxent.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/src/test/resources/org/apache/tika/parser/ner/opennlp/en-sent.bin" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/src/test/resources/org/apache/tika/parser/ner/opennlp/en-sent.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/src/test/resources/org/apache/tika/parser/ner/opennlp/en-token.bin" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/src/test/resources/org/apache/tika/parser/ner/opennlp/en-token.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/src/test/resources/org/apache/tika/parser/ner/opennlp/ner-date.bin" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/src/test/resources/org/apache/tika/parser/ner/opennlp/ner-date.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/src/test/resources/org/apache/tika/parser/ner/opennlp/ner-location.bin" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/src/test/resources/org/apache/tika/parser/ner/opennlp/ner-location.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/src/test/resources/org/apache/tika/parser/ner/opennlp/ner-organization.bin" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/src/test/resources/org/apache/tika/parser/ner/opennlp/ner-organization.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/src/test/resources/org/apache/tika/parser/ner/opennlp/ner-person.bin" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/src/test/resources/org/apache/tika/parser/ner/opennlp/ner-person.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/src/test/resources/org/apache/tika/parser/recognition/classify-bigram.bin" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/src/test/resources/org/apache/tika/parser/recognition/classify-bigram.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/src/test/resources/org/apache/tika/parser/recognition/regression-global.bin" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/src/test/resources/org/apache/tika/parser/recognition/regression-global.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tested_projects/MavenProj/patches/AssafTest.java.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tests_results/Test Results - all 11_07_19_16_22.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore_ignore/tests_results/Test Results - all 11_07_19_16_22.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/tmp_file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests_ignore/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests_ignore/tested_project/MavenProj/sub_mod_2/target/classes/Naim.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests_ignore/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests_ignore/tested_project/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
@@ -13,6 +233,7 @@
       <change beforePath="$PROJECT_DIR$/tests_ignore/tested_project/MavenProj/sub_mod_2/target/surefire-reports/TEST-NaimTest.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests_ignore/tested_project/MavenProj/sub_mod_2/target/test-classes/NaimTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tests_ignore/tested_project/tika/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tests_ignore/tested_project/tika/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp_file.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,15 +259,16 @@
     <SUITE FILE_PATH="coverage/BugMiner$Test_mvn_parsers.coverage" NAME="Test_mvn_parsers Coverage Results" MODIFIED="1538659435918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mvn_parsers" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_extract_bugs_4.coverage" NAME="Unittests for test.TestMain.test_extract_bugs_4 Coverage Results" MODIFIED="1563029587419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$process_reps.coverage" NAME="process reps Coverage Results" MODIFIED="1570700710003" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/presenetation" />
-    <SUITE FILE_PATH="coverage/BugMiner$all.coverage" NAME="all Coverage Results" MODIFIED="1566719660322" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$all.coverage" NAME="all Coverage Results" MODIFIED="1571753256361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/BugMiner$TestMain.coverage" NAME="TestMain Coverage Results" MODIFIED="1538659865294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue_and_commit.coverage" NAME="Unittests for test.TestMain.test_issue_and_commit Coverage Results" MODIFIED="1568876458568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data.coverage" NAME="Unittests for test.TestMain.test_generate_data Coverage Results" MODIFIED="1569143971755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data.coverage" NAME="Unittests for test.TestMain.test_generate_data Coverage Results" MODIFIED="1571752565429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/BugMiner$auto_gen.coverage" NAME="auto_gen Coverage Results" MODIFIED="1565356983990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_patch_tescases_not_compiling_testcases_exclusive_patching.coverage" NAME="Unittests for test.TestMain.test_patch_tescases_not_compiling_testcases_exclusive_patching Coverage Results" MODIFIED="1563284986449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_get_bug_patches_1.coverage" NAME="Unittests for test.TestMain.test_get_bug_patches_1 Coverage Results" MODIFIED="1565359060729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Test_test_parser.coverage" NAME="Test_test_parser Coverage Results" MODIFIED="1537189344462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data_auto_generated_tests_cmd_strategy.coverage" NAME="Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy Coverage Results" MODIFIED="1569147880013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_tests_ignore_ignore_test_TestMain_test_generate_data_auto_generated_tests_cmd_strategy.coverage" NAME="Unittests for tests_ignore_ignore.test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy Coverage Results" MODIFIED="1571752808147" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/BugMiner$TestApplier.coverage" NAME="TestApplier Coverage Results" MODIFIED="1538312311785" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BugMiner$process_filtering_rate_reps_.coverage" NAME="process filtering rate reps  Coverage Results" MODIFIED="1571128681774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/presenetation" />
     <SUITE FILE_PATH="coverage/BugMiner$patching.coverage" NAME="patching Coverage Results" MODIFIED="1563624216390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
@@ -85,11 +307,11 @@
   <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/tests/results/tests_reports" userTempatePath="" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="786" column="20" lean-forward="true" selection-start-line="786" selection-start-column="20" selection-end-line="786" selection-end-column="20" />
+            <state relative-caret-position="75">
+              <caret line="234" selection-start-line="234" selection-end-line="234" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -97,11 +319,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="3" column="46" selection-end-line="13" />
+            <state relative-caret-position="80">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -138,7 +360,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/Repo.py" />
-        <option value="$PROJECT_DIR$/../../Libraries/python/patcher/patcher/patcher.py" />
         <option value="$PROJECT_DIR$/../../Libraries/python/mvnpy/mvnpy/bug.py" />
         <option value="$PROJECT_DIR$/tests/test.py" />
         <option value="$PROJECT_DIR$/../../Libraries/python/PossibleBugMiner/PossibleBugMiner/jira_extractor.py" />
@@ -152,6 +373,7 @@
         <option value="$PROJECT_DIR$/presenetation/times_rep_processor.py" />
         <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/settings.py" />
+        <option value="$PROJECT_DIR$/../../Libraries/python/patcher/patcher/patcher.py" />
       </list>
     </option>
   </component>
@@ -195,13 +417,14 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Code\Lab\BugMiner\presenetation" />
+      <recent name="C:\Users\user\Code\Python\BugMiner\mvn_parsers" />
+      <recent name="C:\Users\user\Code\Python\BugMinerTest" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Code\Lab\BugMiner\presenetation" />
       <recent name="C:\Users\user\Code\Python\BugMiner" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\user\Code\Python\BugMiner\mvn_parsers" />
-      <recent name="C:\Users\user\Code\Python\BugMinerTest" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -216,7 +439,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for test.TestMain.test_generate_data">
+  <component name="RunManager" selected="Python tests.all">
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -274,7 +497,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/generate_watch.py" />
+      <option name="SCRIPT_NAME" value="C:\Code\Lab\BugMiner\presenetation\generate_watch.py" />
       <option name="PARAMETERS" value="C:\Code\Lab\BugMiner\ignore_me\results\tika\data" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -481,21 +704,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test.TestMain" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="BugMiner" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.TestMain&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests for test.TestMain.test_generate_data" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -512,48 +720,64 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for tests_ignore_ignore.test.TestMain" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_ignore_ignore" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy&quot;" />
+      <option name="_new_target" value="&quot;tests_ignore_ignore.test.TestMain&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test.TestMain.test_issue" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for tests_ignore_ignore.test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_pattern" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.TestMain.test_issue&quot;" />
+      <option name="_new_target" value="&quot;tests_ignore_ignore.test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test.TestMain.test_issue_and_commit" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for tests_ignore_ignore.test.TestMain.test_issue" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_ignore_ignore" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.TestMain.test_issue_and_commit&quot;" />
+      <option name="_new_target" value="&quot;tests_ignore_ignore.test.TestMain.test_issue&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for tests_ignore_ignore.test.TestMain.test_issue_and_commit" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="BugMiner" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_ignore_ignore" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tests_ignore_ignore.test.TestMain.test_issue_and_commit&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -562,7 +786,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="C:\Users\rotem\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -578,7 +802,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="C:\Users\rotem\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_ignore_ignore" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -594,7 +818,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="C:\Users\rotem\Anaconda2\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests_ignore_ignore" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -638,19 +862,19 @@
       <item itemvalue="Python tests.auto_gen" />
       <item itemvalue="Python tests.patching" />
       <item itemvalue="Python tests.specific" />
-      <item itemvalue="Python tests.Unittests for test.TestMain" />
+      <item itemvalue="Python tests.Unittests for tests_ignore_ignore.test.TestMain" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data" />
-      <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy" />
-      <item itemvalue="Python tests.Unittests for test.TestMain.test_issue" />
-      <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit" />
+      <item itemvalue="Python tests.Unittests for tests_ignore_ignore.test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy" />
+      <item itemvalue="Python tests.Unittests for tests_ignore_ignore.test.TestMain.test_issue" />
+      <item itemvalue="Python tests.Unittests for tests_ignore_ignore.test.TestMain.test_issue_and_commit" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy" />
+        <item itemvalue="Python tests.Unittests for tests_ignore_ignore.test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy" />
         <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data" />
-        <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit" />
-        <item itemvalue="Python tests.Unittests for test.TestMain.test_issue" />
-        <item itemvalue="Python tests.Unittests for test.TestMain" />
+        <item itemvalue="Python tests.Unittests for tests_ignore_ignore.test.TestMain.test_issue_and_commit" />
+        <item itemvalue="Python tests.Unittests for tests_ignore_ignore.test.TestMain.test_issue" />
+        <item itemvalue="Python tests.Unittests for tests_ignore_ignore.test.TestMain" />
       </list>
     </recent_temporary>
   </component>
@@ -747,24 +971,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2019.09.18 at 16h 44m 22s.xml">
-      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2019.09.18 at 16h 50m 00s.xml">
-      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2019.09.18 at 16h 50m 43s.xml">
-      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2019.09.18 at 16h 53m 41s.xml">
-      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_generate_data_auto_generated_tests_cmd_strategy - 2019.09.18 at 17h 01m 29s.xml">
-      <configuration name="Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2019.09.19 at 09h 52m 08s.xml">
-      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2019.09.19 at 10h 00m 49s.xml">
       <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
     </history-entry>
@@ -777,9 +983,27 @@
     <history-entry file="Unittests_for_test_TestMain_test_generate_data_auto_generated_tests_cmd_strategy - 2019.09.22 at 13h 31m 49s.xml">
       <configuration name="Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_for_test_TestMain_test_generate_data - 2019.10.22 at 16h 45m 58s.xml">
+      <configuration name="Unittests for test.TestMain.test_generate_data" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_TestMain_test_generate_data - 2019.10.22 at 16h 50m 29s.xml">
+      <configuration name="Unittests for test.TestMain.test_generate_data" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_TestMain_test_generate_data - 2019.10.22 at 16h 51m 59s.xml">
+      <configuration name="Unittests for test.TestMain.test_generate_data" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_TestMain_test_generate_data - 2019.10.22 at 16h 52m 33s.xml">
+      <configuration name="Unittests for test.TestMain.test_generate_data" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_test_TestMain_test_generate_data - 2019.10.22 at 16h 57m 55s.xml">
+      <configuration name="Unittests for test.TestMain.test_generate_data" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_tests_ignore_ignore_test_TestMain_test_generate_data_auto_generated_tests_cmd_strategy - 2019.10.22 at 17h 05m 25s.xml">
+      <configuration name="Unittests for tests_ignore_ignore.test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62135000" />
+    <option name="totallyTimeSpent" value="63492000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -791,7 +1015,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24939272" />
@@ -799,8 +1023,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32962963" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.50555557" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.50555557" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.098148145" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -917,11 +1141,6 @@
           <option name="timeStamp" value="63" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Test.py</url>
-          <line>286</line>
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../Libraries_For_BugMiner/mvnpy/mvnpy/CompilationErrorObject.py</url>
           <line>9</line>
           <option name="timeStamp" value="107" />
@@ -933,7 +1152,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../../Libraries/python/patcher/patcher/patcher.py</url>
-          <line>146</line>
+          <line>148</line>
           <option name="timeStamp" value="124" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -979,6 +1198,11 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateCodeFragment">
       <expression>
+        <expression-string>repo.working_dir</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>float(complete_issues[0].time)</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
@@ -1022,11 +1246,6 @@
             range(0, rep_num + 1),
             0.0
         )</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>self.get_rep_filtering_rate(curr,proj) * (1.0 / (rep_num + 1)),</expression-string>
         <language-id>Python</language-id>
         <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
       </expression>
@@ -1133,16 +1352,6 @@
     <entry file="file://$PROJECT_DIR$/../../Libraries/python/patcher/patcher/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../Libraries/python/patcher/patcher/patcher.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="60" column="36" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/GitPython-2.1.11-py2.7.egg/git/objects/base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1171,7 +1380,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test.py">
+    <entry file="file://$PROJECT_DIR$/tests_ignore_ignore/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9680">
           <caret line="492" column="36" selection-start-line="492" selection-start-column="36" selection-end-line="492" selection-end-column="36" />
@@ -1286,20 +1495,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
+    <entry file="file://$PROJECT_DIR$/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="786" column="20" lean-forward="true" selection-start-line="786" selection-start-column="20" selection-end-line="786" selection-end-column="20" />
+        <state relative-caret-position="80">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/presenetation/generate_watch.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../Libraries/python/patcher/patcher/patcher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="11" column="47" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/settings.py">
+    <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="46" selection-end-line="13" />
+        <state relative-caret-position="75">
+          <caret line="234" selection-start-line="234" selection-end-line="234" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

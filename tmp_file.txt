@@ -1,31 +1,0 @@
-[INFO] Scanning for projects...
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Build Order:
-[INFO] 
-[INFO] Apache Tika parent                                                 [pom]
-[INFO] Apache Tika core                                                [bundle]
-[INFO] Apache Tika parsers                                             [bundle]
-Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
-Downloading from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml
-Progress (1): 2.2/20 kBProgress (2): 2.2/20 kB | 2.2/14 kBProgress (2): 2.2/20 kB | 5.0/14 kBProgress (2): 2.2/20 kB | 7.8/14 kBProgress (2): 2.2/20 kB | 11/14 kB Progress (2): 5.0/20 kB | 11/14 kBProgress (2): 7.8/20 kB | 11/14 kBProgress (2): 7.8/20 kB | 13/14 kBProgress (2): 11/20 kB | 13/14 kB Progress (2): 13/20 kB | 13/14 kBProgress (2): 13/20 kB | 14 kB   Progress (2): 16/20 kB | 14 kBProgress (2): 19/20 kB | 14 kBProgress (2): 20 kB | 14 kB                              Downloaded from central: https://repo.maven.apache.org/maven2/org/codehaus/mojo/maven-metadata.xml (20 kB at 29 kB/s)
-Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml (14 kB at 19 kB/s)
-[INFO] ------------------------------------------------------------------------
-[INFO] Reactor Summary for Apache Tika parent 2.0.0-SNAPSHOT:
-[INFO] 
-[INFO] Apache Tika parent ................................. SKIPPED
-[INFO] Apache Tika core ................................... SKIPPED
-[INFO] Apache Tika parsers ................................ SKIPPED
-[INFO] ------------------------------------------------------------------------
-[INFO] BUILD FAILURE
-[INFO] ------------------------------------------------------------------------
-[INFO] Total time:  3.360 s
-[INFO] Finished at: 2019-08-20T14:55:05+03:00
-[INFO] ------------------------------------------------------------------------
-[ERROR] No plugin found for prefix 'evosuite' in the current project and in the plugin groups [org.apache.maven.plugins, org.codehaus.mojo] available from the repositories [local (C:\Users\amirelm\.m2\repository), central (https://repo.maven.apache.org/maven2)] -> [Help 1]
-[ERROR] 
-[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
-[ERROR] Re-run Maven using the -X switch to enable full debug logging.
-[ERROR] 
-[ERROR] For more information about the errors and possible solutions, please read the following articles:
-[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/NoPluginFoundForPrefixException
-[INFO] Build failures were ignored.

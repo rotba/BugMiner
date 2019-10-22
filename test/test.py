@@ -249,11 +249,11 @@ class TestMain(unittest.TestCase):
 			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=''
 		)
 		exp_testcase_id = [
-			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test4()',
-			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test04()',
-			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test01()',
-			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test00()',
-			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests\p_1\Amit_ESTest.java#Amit_ESTest#None_test0()']
+			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests_ignore_ignore\p_1\Amit_ESTest.java#Amit_ESTest#None_test4()',
+			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests_ignore_ignore\p_1\Amit_ESTest.java#Amit_ESTest#None_test04()',
+			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests_ignore_ignore\p_1\Amit_ESTest.java#Amit_ESTest#None_test01()',
+			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests_ignore_ignore\p_1\Amit_ESTest.java#Amit_ESTest#None_test00()',
+			os.getcwd() + r'\tested_project\MavenProj\sub_mod_1\.evosuite\best-tests_ignore_ignore\p_1\Amit_ESTest.java#Amit_ESTest#None_test0()']
 		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if
 		          c.hexsha == '23270ce01dbf36cd0cf2ccc9438dce641822abb8'][0]
 		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'

@@ -81,7 +81,7 @@ def main(argv):
 			logging.info('SHOULD NOT HAPPEN EXCEPTION ' + str(e) + '\n' + traceback.format_exc())
 
 
-# Returns bugs solved in the given commit regarding the issue, indicated by the tests
+# Returns bugs solved in the given commit regarding the issue, indicated by the tests_ignore_ignore
 def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 	logging.info("extract_bugs(): working on issue " + issue.key + ' in commit ' + commit.hexsha)
 	ans = []
@@ -111,7 +111,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				mvn_repo.config(module=module)
 			module_changed_classes = get_most_chenged_classes(module, changed_classes_diffs, commit, parent)
 			if GENERATE_TESTS:
-				debug_blue('### Generating tests ###')
+				debug_blue('### Generating tests_ignore_ignore ###')
 				if not USE_CACHED_STATE:
 					if len(module_changed_classes) == 0: raise mvn_bug.NoAssociatedChangedClasses(
 						msg='No classes associated this module')
@@ -121,7 +121,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 					debug_regular(gen_report)
 					cache_project_state()
 				generated_testcases = mvn_repo.get_generated_testcases(module=module)
-				if len(generated_testcases) == 0: raise TestsGenerationError(msg='Generated no tests',
+				if len(generated_testcases) == 0: raise TestsGenerationError(msg='Generated no tests_ignore_ignore',
 				                                                             report=gen_report)
 				commit_tests_object += set(list(map(lambda t: t.parent, generated_testcases)))
 				dict_modules_testcases[module] += generated_testcases
@@ -131,7 +131,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			gen_commit_valid_testcases = filter(lambda x: x in commit_valid_testcases, commit_valid_testcases)
 			if GENERATE_TESTS:
 				mvn_repo.config_for_evosuite(module=module)
-				debug_blue('### Running generated tests ###')
+				debug_blue('### Running generated tests_ignore_ignore ###')
 				build_log = run_mvn_tests(set(map(lambda t: t.parent, dict_modules_testcases[module])), module)
 				debug_regular(build_log)
 				(gen_commit_valid_testcases, gen_no_report_testcases) = attach_reports(dict_modules_testcases[module])
@@ -143,7 +143,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				commit_valid_testcases = gen_commit_valid_testcases
 				no_report_testcases += gen_no_report_testcases
 			else:
-				debug_green('### Running tests in commit ###')
+				debug_green('### Running tests_ignore_ignore in commit ###')
 				mvn_repo.change_surefire_ver(surefire_version)
 				build_log = run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
 				debug_regular(build_log)
@@ -174,7 +174,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				                                                   gen_commit_valid_testcases), valid=False,
 				                       desc='No report'))
 			if GENERATE_TESTS:
-				debug_blue('### Running generated tests in parent ###')
+				debug_blue('### Running generated tests_ignore_ignore in parent ###')
 				mvn_repo.config_for_evosuite(module)
 				build_report = run_mvn_tests(set(
 					map(lambda t: t.parent,
@@ -182,7 +182,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				)
 				debug_regular(build_report)
 			else:
-				debug_green('### Running tests in parent ###')
+				debug_green('### Running tests_ignore_ignore in parent ###')
 				if TRACE:
 					mvn_repo.setup_tracer()
 				mvn_repo.change_surefire_ver(surefire_version)
@@ -335,7 +335,7 @@ def filter_results(ans):
 	)
 
 
-# Tries to run the tests in grandparents commits
+# Tries to run the tests_ignore_ignore in grandparents commits
 def try_grandparents(issue, parent, commit, testcases, dict_testcases_files):
 	ans = []
 	testcases_copy = list(map(lambda t: copy.deepcopy(t), testcases))
@@ -589,7 +589,7 @@ def testcase_in_class(class_decl, testcase):
 	return any(testcase.mvn_name.endswith(m_name) for m_name in method_names)
 
 
-# Returns list of strings describing tests or testcases that are not in module dir
+# Returns list of strings describing tests_ignore_ignore or testcases that are not in module dir
 def find_test_cases_diff(commit_test_class, src_path):
 	ans = []
 	testcases_in_src = []
@@ -617,7 +617,7 @@ def find_test_cases_diff(commit_test_class, src_path):
 def are_associated_test_paths(path, test_path):
 	n_path = os.path.normcase(path)
 	n_test_path = os.path.normcase(test_path)
-	return n_path in n_test_path or n_path.strip('.evosuite\\best-tests').strip('_scaffolding.java') in n_test_path
+	return n_path in n_test_path or n_path.strip('.evosuite\\best-tests_ignore_ignore').strip('_scaffolding.java') in n_test_path
 
 
 # Returns dictionary containing pairs of module and it's associated testcases
@@ -722,7 +722,7 @@ def cache_project_state(state_label=''):
 
 def pick_tests(testcases, module):
 	if mvn_repo.too_much_testcases_to_generate_cmd(testcases, module):
-		logging.info('To manny tests. Filtering in order to execute build\nAmount of tests:{}'.format(len(testcases)))
+		logging.info('To manny tests_ignore_ignore. Filtering in order to execute build\nAmount of tests_ignore_ignore:{}'.format(len(testcases)))
 		if not GENERATE_TESTS:
 			return set(
 				map(lambda y: y.parent, testcases)

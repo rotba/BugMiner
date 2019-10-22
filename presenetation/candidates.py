@@ -25,7 +25,7 @@ class CandidatedPresentor(object):
 	PROJ_HEADER = 'project name'
 	ISSUE_COL = 'issue'
 	FIX_COMMIT_COL = 'fix-commit'
-	TESTS_COL = 'tests'
+	TESTS_COL = 'tests_ignore_ignore'
 
 	def __init__(self, git_dir, issue_tracker_url, specific_issue = None, jql_query=None, branch_insptected = 'origin/master',candidates_path=DEFAULT_PATH):
 

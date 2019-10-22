@@ -1,4 +1,0 @@
-[inst2] + org.apache.commons.math.random.RandomDataTest@testNextIntExtremeValues
-[inst2] + org.apache.commons.math.random.RandomDataImpl@nextInt
-[inst2] + org.apache.commons.math.random.RandomDataImpl@getRan
-[inst2] + org.apache.commons.math.RetryTestCase@runTest

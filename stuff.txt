@@ -1,1 +1,0 @@
-issuetype = Bug AND project = LANG AND resolution = Fixed  ORDER BY createdDate  DESC
