@@ -571,7 +571,7 @@ class TestEvosuiteAdjustment(unittest.TestCase):
 		Main.repo.git.checkout(commit.hexsha, '-f')
 		tests_paths = possible_bugs_extractor.get_tests_paths_from_commit(commit)
 		Main.GENERATE_TESTS = True
-		Main.TESTS_GEN_SEED = 111111
+		Main.TESTS_GEN_SEED = 3333333
 		res = Main.extract_bugs(issue, commit, tests_paths, possible_bugs_extractor.get_changed_components(commit))
 		num_of_success_bugs = reduce(
 			lambda acc, curr: acc +int(is_bp_test_cases(curr)),
