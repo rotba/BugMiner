@@ -2,6 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PossibleBugMiner" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/evosuite" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/mvnpy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/patcher" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/MavenProj" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/commons-math" vcs="Git" />

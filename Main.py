@@ -10,11 +10,17 @@ import time
 import traceback
 from functools import reduce
 from urlparse import urlparse
-from javadiff import diff as java_diff
+
 import git
 import javalang
-from PossibleBugMiner.extractor_factory import ExtractorFactory
 from git import Repo
+from javadiff import diff as java_diff
+from termcolor import colored
+
+import settings
+from PossibleBugMiner.extractor_factory import ExtractorFactory
+from diff import commitsdiff
+from diff.commit import Commit
 from mvnpy import Repo as MavenRepo
 from mvnpy import TestObjects
 from mvnpy import bug as mvn_bug
@@ -22,11 +28,6 @@ from mvnpy import mvn
 from mvnpy.Repo import TestGenerationStrategy
 from mvnpy.plugins.evosuite.evosuite import TestsGenerationError
 from patcher.patcher import TestcasePatcher
-from termcolor import colored
-
-import settings
-from diff import commitsdiff
-from diff.commit import Commit
 
 branch_inspected = 'origin/master'
 repo = None  # type: MavenRepo
@@ -51,6 +52,7 @@ TRACE = False
 LIMIT_TIME_FOR_BUILD = 180
 MAX_CLASSES_TO_GENERATE_TESTS_FOR = 3
 TESTS_GEN_STRATEGY = TestGenerationStrategy.CMD
+TESTS_GEN_SEED = None
 DEBUG = False
 CONFIG = False
 
@@ -104,9 +106,9 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			no_report_testcases = []
 			gen_commit = None
 			if GENERATE_DATA:
-				dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(issue, commit, commit_tests_object,
-				                                                         module=module,
-				                                                         root_module=mvn_repo.repo_dir)
+				dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(
+					issue, commit, commit_tests_object, module=module, root_module=mvn_repo.repo_dir
+				)
 			if CONFIG:
 				mvn_repo.config(module=module)
 			module_changed_classes = get_most_chenged_classes(module, changed_classes_diffs, commit, parent)
@@ -115,14 +117,15 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				if not USE_CACHED_STATE:
 					if len(module_changed_classes) == 0: raise mvn_bug.NoAssociatedChangedClasses(
 						msg='No classes associated this module')
-					gen_report = mvn_repo.generate_tests(classes=module_changed_classes, module=module,
-					                                     strategy=TESTS_GEN_STRATEGY)
+					gen_report = mvn_repo.generate_tests(
+						classes=module_changed_classes, module=module, seed=TESTS_GEN_SEED, strategy=TESTS_GEN_STRATEGY
+					)
 					mvn_repo.clean(module=module)
 					debug_regular(gen_report)
 					cache_project_state()
 				generated_testcases = mvn_repo.get_generated_testcases(module=module)
-				if len(generated_testcases) == 0: raise TestsGenerationError(msg='Generated no tests',
-				                                                             report=gen_report)
+				if len(generated_testcases) == 0:
+					raise TestsGenerationError(msg='Generated no tests',report=gen_report)
 				commit_tests_object += set(list(map(lambda t: t.parent, generated_testcases)))
 				dict_modules_testcases[module] += generated_testcases
 				if GENERATE_DATA:
@@ -289,7 +292,6 @@ def get_most_chenged_classes(module, changed_classes_diffs, commit, parent):
 		file_path = os.path.join(repo.working_tree_dir, diff.file_name)
 		return is_in_module(class_mvn_name=mvn.generate_mvn_class_names(src_path=file_path), module=module)
 
-
 	return reduce(
 		lambda acc, curr: acc + [curr] if len(acc) < MAX_CLASSES_TO_GENERATE_TESTS_FOR else acc,
 		map(
@@ -313,7 +315,7 @@ def calc_importance_index(diff, commit, parent):
 		if len(all) == 0:
 			raise mvn_bug.BugError('No changed methods')
 		associated_to_class = filter(lambda x: diff.file_name in x, all)
-		return float(len(associated_to_class))/float(len(all))
+		return float(len(associated_to_class)) / float(len(all))
 
 	return calc_diffed_methods_associated_to_class_from_all_diffed_methods_percanetage(diff)
 

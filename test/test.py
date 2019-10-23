@@ -4,6 +4,8 @@ import shutil
 import time
 import unittest
 
+from termcolor import colored
+
 from PossibleBugMiner.jira_extractor import JiraExtractor
 from jira import JIRA
 from patcher.patcher import TestcasePatcher
@@ -26,6 +28,7 @@ class TestMain(unittest.TestCase):
 		Main.DEBUG =True
 		Main.branch_inspected = 'master'
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
+		Main.TESTS_GEN_SEED = None
 
 	def tearDown(self):
 		pass
@@ -538,5 +541,52 @@ class TestMain(unittest.TestCase):
 		x = 1
 
 
+class TestEvosuiteAdjustment(unittest.TestCase):
+
+	def setUp(self):
+		Main.GENERATE_DATA = False
+		Main.USE_CACHE = False
+		Main.GENERATE_TESTS = False
+		Main.DEBUG =True
+		Main.branch_inspected = 'master'
+		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.CMD_BM
+
+	def tearDown(self):
+		pass
+
+	def test_extract_bugs_auto_generated_test_basic_project(self):
+		def is_bp_test_cases(test_case):
+			return test_case.valid and test_case.type == Main.mvn_bug.Bug_type.GEN
+		Main.branch_inspected = 'origin/test_extract_bugs_5'
+		Main.set_up(['', 'https://github.com/rotba/MavenProj'])
+		Main.USE_CACHED_STATE = False
+		issue = jira.issue('TIKA-19')
+		possible_bugs_extractor = JiraExtractor(
+			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=''
+		)
+		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if
+		          c.hexsha == '23270ce01dbf36cd0cf2ccc9438dce641822abb8'][0]
+		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_1'
+		Main.repo.git.reset('--hard')
+		Main.repo.git.checkout(commit.hexsha, '-f')
+		tests_paths = possible_bugs_extractor.get_tests_paths_from_commit(commit)
+		Main.GENERATE_TESTS = True
+		res = Main.extract_bugs(issue, commit, tests_paths, possible_bugs_extractor.get_changed_components(commit))
+		num_of_success_bugs = reduce(
+			lambda acc, curr: acc +int(is_bp_test_cases(curr)),
+			res,
+			0
+		)
+		Main.repo.git.add('--all')
+		Main.repo.git.checkout('HEAD', '-f')
+		print(colored("The number of BP-test-cases generated is:", 'blue'))
+		print(colored(num_of_success_bugs, 'blue'))
+
+
+
+
+
 if __name__ == '__main__':
 	unittest.main()
+
+
