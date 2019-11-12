@@ -8,6 +8,9 @@
     <mapping directory="$PROJECT_DIR$/patcher" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/MavenProj" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/test/tested_projects/MavenProj/buggy/MavenProj" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/test/tested_projects/MavenProj/regression" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/test/tested_projects/MavenProj/regression/MavenProj" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/commons-math" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/commons-math/commons-math" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/tika" vcs="Git" />

@@ -30,8 +30,10 @@ from mvnpy.plugins.evosuite.evosuite import TestsGenerationError
 from patcher.patcher import TestcasePatcher
 
 branch_inspected = 'origin/master'
-repo = None  # type: MavenRepo
-mvn_repo = None
+repo = None
+reg_repo = None
+mvn_repo = None  # type: MavenRepo
+reg_mvn_repo = None  # type: MavenRepo
 proj_name = ''
 orig_wd = os.getcwd()
 patches_dir = ''
@@ -93,6 +95,8 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 	mvn_repo.clean()
 	git_cmds_wrapper(lambda: repo.git.add('.'))
 	git_cmds_wrapper(lambda: repo.git.checkout(commit.hexsha, '-f'))
+	git_cmds_wrapper(lambda: reg_repo.git.add('.'), spec_repo=reg_repo)
+	git_cmds_wrapper(lambda: reg_repo.git.checkout(parent.hexsha, '-f'), spec_repo=reg_repo)
 	commit_tests_object = list(map(lambda t_path: TestObjects.TestClass(t_path), tests_paths))
 	commit_testcases = mvn.get_testcases(commit_tests_object)
 	dict_modules_testcases = divide_to_modules(commit_testcases)
@@ -118,14 +122,15 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 					if len(module_changed_classes) == 0: raise mvn_bug.NoAssociatedChangedClasses(
 						msg='No classes associated this module')
 					gen_report = mvn_repo.generate_tests(
-						classes=module_changed_classes, module=module, seed=TESTS_GEN_SEED, strategy=TESTS_GEN_STRATEGY
+						classes=module_changed_classes, module=module, seed=TESTS_GEN_SEED,
+						strategy=TESTS_GEN_STRATEGY, regression_repo=reg_mvn_repo
 					)
 					mvn_repo.clean(module=module)
 					debug_regular(gen_report)
 					cache_project_state()
 				generated_testcases = mvn_repo.get_generated_testcases(module=module)
 				if len(generated_testcases) == 0:
-					raise TestsGenerationError(msg='Generated no tests',report=gen_report)
+					raise TestsGenerationError(msg='Generated no tests', report=gen_report)
 				commit_tests_object += set(list(map(lambda t: t.parent, generated_testcases)))
 				dict_modules_testcases[module] += generated_testcases
 				if GENERATE_DATA:
@@ -677,7 +682,8 @@ def set_up_patches_dir():
 
 
 # Wraps git command. Handles excpetions mainly
-def git_cmds_wrapper(git_cmd):
+def git_cmds_wrapper(git_cmd, spec_repo = None):
+	spec_repo = spec_repo if spec_repo is not None else repo
 	try:
 		git_cmd()
 	except git.exc.GitCommandError as e:
@@ -689,9 +695,9 @@ def git_cmds_wrapper(git_cmd):
 			pass
 		elif 'Please move or remove them before you switch branches.' in str(e):
 			logging.info(str(e))
-			git_cmds_wrapper(lambda: repo.index.add('.'))
-			git_cmds_wrapper(lambda: repo.git.clean('-xdf'))
-			git_cmds_wrapper(lambda: repo.git.reset('--hard'))
+			git_cmds_wrapper(lambda: spec_repo.index.add('.'))
+			git_cmds_wrapper(lambda: spec_repo.git.clean('-xdf'))
+			git_cmds_wrapper(lambda: spec_repo.git.reset('--hard'))
 			time.sleep(2)
 			git_cmds_wrapper(lambda: git_cmd())
 		elif 'already exists and is not an empty directory.' in str(e):
@@ -767,7 +773,10 @@ def debug_blue(str):
 def set_up(argv):
 	global dict_key_issue
 	global dict_hash_commit
+	global reg_repo
+	global reg_mvn_repo
 	global repo
+	global mvn_repo
 	global patches_dir
 	global proj_results_dir
 	global proj_name
@@ -776,7 +785,6 @@ def set_up(argv):
 	global tmp_files_dir
 	global data_dir
 	global branch_inspected
-	global mvn_repo
 	global state_patches_cache_dir
 	git_url = urlparse(argv[1])
 	proj_name = os.path.basename(git_url.path)
@@ -784,7 +792,6 @@ def set_up(argv):
 	cache_dir = proj_files.cache
 	state_patches_cache_dir = proj_files.states
 	tmp_files_dir = proj_files.tmp
-	mvn_repo = MavenRepo.Repo(proj_files.repo)
 	patches_dir = proj_files.patches
 	results_dir = settings.RESULTS_DIR
 	proj_results_dir = os.path.join(results_dir, proj_name)
@@ -797,6 +804,8 @@ def set_up(argv):
 		os.makedirs(cache_dir)
 	if not os.path.isdir(state_patches_cache_dir):
 		os.makedirs(state_patches_cache_dir)
+	if not os.path.isdir(proj_files.reg):
+		os.makedirs(proj_files.reg)
 	if not os.path.isdir(tmp_files_dir):
 		os.makedirs(tmp_files_dir)
 	else:
@@ -812,11 +821,20 @@ def set_up(argv):
 	logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO, format='%(asctime)s %(message)s')
 	logging.info('Started cloning ' + argv[1] + '... ')
 	git_cmds_wrapper(lambda: git.Git(proj_files.base).init())
+	git_cmds_wrapper(lambda: git.Git(proj_files.reg).init())
 	repo_url = git_url.geturl().replace('\\', '/').replace('////', '//')
 	git_cmds_wrapper(
-		lambda: git.Git(proj_files.base).clone(repo_url))
-	logging.info('Finshed cloning ' + argv[1] + '...')
-	repo = Repo(mvn_repo.repo_dir)
+		lambda: git.Git(proj_files.base).clone(repo_url)
+	)
+	logging.info('Finshed cloning ' + argv[1] )
+	git_cmds_wrapper(
+		lambda: git.Git(proj_files.reg).clone(repo_url)
+	)
+	logging.info('Finshed cloning ' + argv[1] + ' regression')
+	mvn_repo = MavenRepo.Repo(proj_files.repo)
+	repo = Repo(proj_files.repo)
+	reg_mvn_repo = MavenRepo.Repo(proj_files.reg_repo)
+	reg_repo = Repo(proj_files.reg_repo)
 	if not os.path.isdir(cache_dir):
 		os.makedirs(cache_dir)
 	if branch_inspected == None or branch_inspected == '':

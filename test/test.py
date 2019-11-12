@@ -549,12 +549,12 @@ class TestEvosuiteAdjustment(unittest.TestCase):
 		Main.GENERATE_TESTS = False
 		Main.DEBUG =True
 		Main.branch_inspected = 'master'
-		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.CMD_BM
+
 
 	def tearDown(self):
 		pass
 
-	def test_extract_bugs_auto_generated_test_basic_project(self):
+	def extract_bugs_auto_generated_test_basic_project(self):
 		def is_bp_test_cases(test_case):
 			return test_case.valid and test_case.type == Main.mvn_bug.Bug_type.GEN
 		Main.branch_inspected = 'origin/test_extract_bugs_5'
@@ -582,6 +582,14 @@ class TestEvosuiteAdjustment(unittest.TestCase):
 		Main.repo.git.checkout('HEAD', '-f')
 		print(colored("The number of BP-test-cases generated is:", 'blue'))
 		print(colored(num_of_success_bugs, 'blue'))
+
+	def test_extract_bugs_auto_generated_test_basic_project_cmd_bm(self):
+		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.CMD_BM
+		self.extract_bugs_auto_generated_test_basic_project()
+
+	def test_extract_bugs_auto_generated_test_basic_project_evosuiter(self):
+		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.EVOSUITER
+		self.extract_bugs_auto_generated_test_basic_project()
 
 
 
