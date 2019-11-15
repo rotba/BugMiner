@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evosuite" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evosuite/master/src/test/java/org/evosuite/EvoSuiteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite/master/src/test/java/org/evosuite/EvoSuiteTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evosuite/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patcher" beforeDir="false" afterPath="$PROJECT_DIR$/patcher" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patcher/tested_projects/MavenProj/patches/AmitTest.java.patch" beforeDir="false" afterPath="$PROJECT_DIR$/patcher/tested_projects/MavenProj/patches/AmitTest.java.patch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_1/src/test/java/p_1/AmitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_1/src/test/java/p_1/AmitTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/classes/Naim.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/surefire-reports/NaimTest.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/surefire-reports/TEST-NaimTest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/test-classes/NaimTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/tested_projects/commons-math/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/tested_projects/commons-math/commons-math/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -94,7 +91,7 @@
   <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/tests/results/tests_reports" userTempatePath="" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="260">
@@ -109,8 +106,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="264" column="17" selection-start-line="264" selection-start-column="17" selection-end-line="264" selection-end-column="17" />
+            <state relative-caret-position="-436">
+              <caret line="381" column="8" selection-start-line="381" selection-start-column="8" selection-end-line="381" selection-end-column="8" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -118,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="225" column="67" selection-start-line="225" selection-start-column="12" selection-end-line="225" selection-end-column="67" />
+            <state relative-caret-position="320">
+              <caret line="238" column="16" selection-start-line="238" selection-start-column="16" selection-end-line="238" selection-end-column="16" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -165,7 +162,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/mvnpy" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -187,9 +184,9 @@
         <option value="$PROJECT_DIR$/mvnpy/config/config.json" />
         <option value="$PROJECT_DIR$/mvnpy/Repo.py" />
         <option value="$PROJECT_DIR$/settings.py" />
-        <option value="$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py" />
         <option value="$PROJECT_DIR$/Main.py" />
         <option value="$PROJECT_DIR$/test/test.py" />
+        <option value="$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py" />
       </list>
     </option>
   </component>
@@ -719,7 +716,7 @@
       <workItem from="1572283627661" duration="843000" />
       <workItem from="1573546663485" duration="10725000" />
       <workItem from="1573638526216" duration="3880000" />
-      <workItem from="1573741370281" duration="1597000" />
+      <workItem from="1573741370281" duration="2070000" />
     </task>
     <servers />
   </component>
@@ -756,7 +753,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101977000" />
+    <option name="totallyTimeSpent" value="102450000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -769,13 +766,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29211086" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32962963" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.56666666" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.54333335" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.24555555" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1313,32 +1311,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="225" column="67" selection-start-line="225" selection-start-column="12" selection-end-line="225" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="264" column="17" selection-start-line="264" selection-start-column="17" selection-end-line="264" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
           <caret line="833" column="46" selection-start-line="833" selection-start-column="46" selection-end-line="833" selection-end-column="46" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-436">
+          <caret line="381" column="8" selection-start-line="381" selection-start-column="8" selection-end-line="381" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="238" column="16" selection-start-line="238" selection-start-column="16" selection-end-line="238" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
