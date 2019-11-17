@@ -95,8 +95,8 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 	mvn_repo.clean()
 	git_cmds_wrapper(lambda: repo.git.add('.'))
 	git_cmds_wrapper(lambda: repo.git.checkout(commit.hexsha, '-f'))
-	git_cmds_wrapper(lambda: reg_repo.git.add('.'), spec_repo=reg_repo)
-	git_cmds_wrapper(lambda: reg_repo.git.checkout(parent.hexsha, '-f'), spec_repo=reg_repo)
+	git_cmds_wrapper(lambda: reg_repo.git.add('.'), spec_repo=reg_repo, spec_mvn_repo=reg_mvn_repo)
+	git_cmds_wrapper(lambda: reg_repo.git.checkout(parent.hexsha, '-f'), spec_repo=reg_repo, spec_mvn_repo=reg_mvn_repo)
 	commit_tests_object = list(map(lambda t_path: TestObjects.TestClass(t_path), tests_paths))
 	commit_testcases = mvn.get_testcases(commit_tests_object)
 	dict_modules_testcases = divide_to_modules(commit_testcases)
@@ -682,8 +682,7 @@ def set_up_patches_dir():
 
 
 # Wraps git command. Handles excpetions mainly
-def git_cmds_wrapper(git_cmd, spec_repo = None):
-	spec_repo = spec_repo if spec_repo is not None else repo
+def git_cmds_wrapper(git_cmd, spec_repo=repo, spec_mvn_repo=mvn_repo):
 	try:
 		git_cmd()
 	except git.exc.GitCommandError as e:
@@ -705,7 +704,7 @@ def git_cmds_wrapper(git_cmd, spec_repo = None):
 		elif 'warning: squelched' in str(e) and 'trailing whitespace.' in str(e):
 			pass
 		elif 'Filename too long' in str(e):
-			mvn_repo.clean()
+			spec_mvn_repo.clean()
 			git_cmds_wrapper(lambda: git_cmd())
 		else:
 			raise e
@@ -771,14 +770,15 @@ def debug_blue(str):
 
 
 def set_up(argv):
-	def clone_repo(base, url, label = ''):
+	def clone_repo(base, url, label=''):
 		logging.info('Started cloning ' + argv[1] + ' {}'.format(label))
 		git_cmds_wrapper(lambda: git.Git(base).init())
 		repo_url = url.geturl().replace('\\', '/').replace('////', '//')
 		git_cmds_wrapper(
 			lambda: git.Git(base).clone(repo_url)
 		)
-		logging.info('Finshed cloning ' + argv[1]+ ' {}'.format(label))
+		logging.info('Finshed cloning ' + argv[1] + ' {}'.format(label))
+
 	global dict_key_issue
 	global dict_hash_commit
 	global reg_repo
