@@ -1,0 +1,2 @@
+Create git ignore for patcher
+fix the bug on running tika
