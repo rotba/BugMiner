@@ -27,7 +27,7 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = False
 		Main.DEBUG =True
 		Main.branch_inspected = 'master'
-		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.MAVEN
+		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.EVOSUITER
 		Main.TESTS_GEN_SEED = None
 
 	def tearDown(self):
@@ -498,7 +498,7 @@ class TestMain(unittest.TestCase):
 		self.assertTrue('sub_mod_1#Main#int_foo()' in changed_methods)
 		self.assertTrue('sub_mod_1#Main#void_goo()' in changed_methods)
 
-	#@unittest.skip('Ment to be run manulay')
+	@unittest.skip('Ment to be run manulay')
 	def test_issue(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
@@ -512,7 +512,7 @@ class TestMain(unittest.TestCase):
 		# Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'hey_brother',
 		#            '(issuekey =TIKA-107 OR issuekey =TIKA-121) AND project = TIKA AND issuetype = Bug AND createdDate <= "2019/10/03" ORDER BY  createdDate ASC'])
 
-	# @unittest.skip('Ment to be run manulay')
+	@unittest.skip('Ment to be run manulay')
 	def test_issue_and_commit(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)

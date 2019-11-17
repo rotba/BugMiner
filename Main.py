@@ -771,6 +771,14 @@ def debug_blue(str):
 
 
 def set_up(argv):
+	def clone_repo(base, url, label = ''):
+		logging.info('Started cloning ' + argv[1] + ' {}'.format(label))
+		git_cmds_wrapper(lambda: git.Git(base).init())
+		repo_url = url.geturl().replace('\\', '/').replace('////', '//')
+		git_cmds_wrapper(
+			lambda: git.Git(base).clone(repo_url)
+		)
+		logging.info('Finshed cloning ' + argv[1]+ ' {}'.format(label))
 	global dict_key_issue
 	global dict_hash_commit
 	global reg_repo
@@ -819,18 +827,8 @@ def set_up(argv):
 		bug_data_handler = mvn_bug.Bug_data_handler(data_dir)
 	LOG_FILENAME = os.path.join(proj_results_dir, 'log.log')
 	logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO, format='%(asctime)s %(message)s')
-	logging.info('Started cloning ' + argv[1] + '... ')
-	git_cmds_wrapper(lambda: git.Git(proj_files.base).init())
-	git_cmds_wrapper(lambda: git.Git(proj_files.reg).init())
-	repo_url = git_url.geturl().replace('\\', '/').replace('////', '//')
-	git_cmds_wrapper(
-		lambda: git.Git(proj_files.base).clone(repo_url)
-	)
-	logging.info('Finshed cloning ' + argv[1] )
-	git_cmds_wrapper(
-		lambda: git.Git(proj_files.reg).clone(repo_url)
-	)
-	logging.info('Finshed cloning ' + argv[1] + ' regression')
+	clone_repo(proj_files.base, git_url)
+	clone_repo(proj_files.reg, git_url, 'regression')
 	mvn_repo = MavenRepo.Repo(proj_files.repo)
 	repo = Repo(proj_files.repo)
 	reg_mvn_repo = MavenRepo.Repo(proj_files.reg_repo)
