@@ -540,7 +540,7 @@ class TestMain(unittest.TestCase):
 		bugs = Main.extract_bugs(bug[0], bug_commit, bug[2], bug[3])
 		x = 1
 
-@unittest.skip("Don't have time for it")
+# @unittest.skip("Don't have time for it")
 class TestEvosuiteAdjustment(unittest.TestCase):
 
 	def setUp(self):
@@ -589,6 +589,7 @@ class TestEvosuiteAdjustment(unittest.TestCase):
 
 	def test_extract_bugs_auto_generated_test_basic_project_evosuiter(self):
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.EVOSUITER
+		Main.surefire_version = '2.22.0'
 		self.extract_bugs_auto_generated_test_basic_project()
 
 
