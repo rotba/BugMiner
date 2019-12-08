@@ -540,7 +540,7 @@ class TestMain(unittest.TestCase):
 		bugs = Main.extract_bugs(bug[0], bug_commit, bug[2], bug[3])
 		x = 1
 
-@unittest.skip("Don't have time for it")
+# @unittest.skip("Don't have time for it")
 class TestEvosuiteAdjustment(unittest.TestCase):
 
 	def setUp(self):

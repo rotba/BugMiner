@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher" beforeDir="false" afterPath="$PROJECT_DIR$/patcher" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patcher/tested_projects/MavenProj/patches/AmitTest.java.patch" beforeDir="false" afterPath="$PROJECT_DIR$/patcher/tested_projects/MavenProj/patches/AmitTest.java.patch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patcher/tested_projects/commons-math/patches/RandomDataTest.java.patch" beforeDir="false" afterPath="$PROJECT_DIR$/patcher/tested_projects/commons-math/patches/RandomDataTest.java.patch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest.java.patch" beforeDir="false" afterPath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest.java.patch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest_scaffolding.java.patch" beforeDir="false" afterPath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest_scaffolding.java.patch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patcher/tested_projects/commons-math/patches/RandomDataTest.java.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_projects.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run_projects.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/classes/Naim.class" beforeDir="false" />
@@ -128,13 +125,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-12" />
-    <option name="y" value="-12" />
-    <option name="width" value="984" />
-    <option name="height" value="1044" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/mvnpy" />
   </component>
   <component name="ProjectId" id="1PgKtUzE98ksmbYBcalHch63OUu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -174,7 +165,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Main two issues">
+  <component name="RunManager" selected="Python tests.Unittests for test.TestEvosuiteAdjustment.test_extract_bugs_auto_generated_test_basic_project_evosuiter">
     <configuration name="Main two issues" type="PythonConfigurationType" factoryName="Python">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -558,8 +549,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for test.TestMain" />
         <item itemvalue="Python tests.Unittests for test.TestEvosuiteAdjustment.test_extract_bugs_auto_generated_test_basic_project_evosuiter" />
+        <item itemvalue="Python tests.Unittests for test.TestMain" />
         <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests" />
         <item itemvalue="Python tests.Unittests for test.TestEvosuiteAdjustment.test_extract_bugs_auto_generated_test_basic_project" />
         <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy" />
@@ -661,7 +652,7 @@
       <workItem from="1573546663485" duration="10725000" />
       <workItem from="1573638526216" duration="3880000" />
       <workItem from="1573741370281" duration="5316000" />
-      <workItem from="1574000472872" duration="2648000" />
+      <workItem from="1574000472872" duration="3042000" />
     </task>
     <servers />
   </component>
@@ -796,6 +787,11 @@
           <line>773</line>
           <option name="timeStamp" value="155" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py</url>
+          <line>217</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -814,6 +810,7 @@
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain.coverage" NAME="Unittests for test.TestMain Coverage Results" MODIFIED="1574001178813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data.coverage" NAME="Unittests for test.TestMain.test_generate_data Coverage Results" MODIFIED="1568187707493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_extract_bugs_1.coverage" NAME="Unittests for test.TestMain.test_extract_bugs_1 Coverage Results" MODIFIED="1566396094306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestEvosuiteAdjustment_test_extract_bugs_auto_generated_test_basic_project_evosuiter.coverage" NAME="Unittests for test.TestEvosuiteAdjustment.test_extract_bugs_auto_generated_test_basic_project_evosuiter Coverage Results" MODIFIED="1575793938632" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_get_bug_patches_2.coverage" NAME="Unittests for test.TestMain.test_get_bug_patches_2 Coverage Results" MODIFIED="1567612761023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data_auto_generated_tests_cmd_strategy.coverage" NAME="Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy Coverage Results" MODIFIED="1568388142752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/BugMiner$all.coverage" NAME="all Coverage Results" MODIFIED="1566460730130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
