@@ -589,6 +589,7 @@ class TestEvosuiteAdjustment(unittest.TestCase):
 
 	def test_extract_bugs_auto_generated_test_basic_project_evosuiter(self):
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.EVOSUITER
+		Main.surefire_version = '2.22.0'
 		self.extract_bugs_auto_generated_test_basic_project()
 
 
