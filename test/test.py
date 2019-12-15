@@ -111,7 +111,7 @@ class TestMain(unittest.TestCase):
 		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if
 		          c.hexsha == 'e4d2bb8efdfa576632b99d0e91b35cf0262e70be'][0]
 		parent = commit.parents[0]
-		module_path = os.getcwd() + r'\tested_project\MavenProj\sub_mod_2'
+		module_path = os.getcwd() + r'\tested_projects\MavenProj\MavenProj\sub_mod_2'
 		Main.prepare_project_repo_for_testing(commit, module_path)
 		os.system(
 			'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
@@ -151,7 +151,7 @@ class TestMain(unittest.TestCase):
 		commit = [c for c in list(Main.repo.iter_commits(Main.branch_inspected)) if
 		          c.hexsha == 'b12c01d9b56053554cec501aab0530f7f4352daf'][0]
 		parent = commit.parents[0]
-		module_path = os.getcwd() + r'\tested_project\tika'
+		module_path = os.getcwd() + r'\tested_projects\tika\tika'
 		Main.prepare_project_repo_for_testing(commit, module_path)
 		os.system(
 			'mvn clean test surefire:test -DfailIfNoTests=false -Dmaven.test.failure.ignore=true -f ' + module_path)
@@ -498,7 +498,7 @@ class TestMain(unittest.TestCase):
 		self.assertTrue('sub_mod_1#Main#int_foo()' in changed_methods)
 		self.assertTrue('sub_mod_1#Main#void_goo()' in changed_methods)
 
-	# @unittest.skip('Ment to be run manulay')
+	@unittest.skip('Ment to be run manulay')
 	def test_issue(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
