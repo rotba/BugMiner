@@ -498,7 +498,7 @@ class TestMain(unittest.TestCase):
 		self.assertTrue('sub_mod_1#Main#int_foo()' in changed_methods)
 		self.assertTrue('sub_mod_1#Main#void_goo()' in changed_methods)
 
-	@unittest.skip('Ment to be run manulay')
+	# @unittest.skip('Ment to be run manulay')
 	def test_issue(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
@@ -507,8 +507,16 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
-		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.CMD
-		Main.main(['', 'https://github.com/apache/commons-math', 'http:\issues.apache.org\jira\projects\MATH', 'MATH-209'])
+		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.EVOSUITER
+		Main.main(
+			[
+				'',
+				'https://github.com/apache/tika',
+				'http:\issues.apache.org\jira\projects\TIKA',
+				'HEY',
+				'project = TIKA AND issuekey = TIKA-16 OR issuekey = TIKA-19 ORDER BY issue ASC'
+			]
+		)
 		# Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'hey_brother',
 		#            '(issuekey =TIKA-107 OR issuekey =TIKA-121) AND project = TIKA AND issuetype = Bug AND createdDate <= "2019/10/03" ORDER BY  createdDate ASC'])
 
@@ -520,10 +528,10 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = True
+		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
-		issue_key = 'MATH-209'
-		commit_h = '6f4e48d42aa880e7ba49ff651aa701313e1aec31'
+		issue_key = 'MATH-258'
+		commit_h = '9f0ea4e9c43295713c1fc422a1b40b15e902d665'
 		github = 'https://github.com/apache/commons-math'
 		issue_tracker = 'http:\issues.apache.org\jira\projects\MATH'
 		Main.set_up(['', github])
@@ -535,9 +543,9 @@ class TestMain(unittest.TestCase):
 		Main.repo.git.add('.')
 		Main.repo.git.checkout(commit_h, '-f')
 		k = extractor.extract_possible_bugs()
-		bug = filter(lambda x: commit_h in x[1], extractor.extract_possible_bugs())[0]
-		bug_commit = Main.repo.commit(bug[1])
-		bugs = Main.extract_bugs(bug[0], bug_commit, bug[2], bug[3])
+		bug = filter(lambda x: commit_h in x.fix_commit, extractor.extract_possible_bugs())[0]
+		bug_commit = Main.repo.commit(bug.fix_commit)
+		bugs = Main.extract_bugs(bug.issue, bug_commit, bug.tests, bug.diffed_components)
 		x = 1
 
 # @unittest.skip("Don't have time for it")
@@ -589,7 +597,6 @@ class TestEvosuiteAdjustment(unittest.TestCase):
 
 	def test_extract_bugs_auto_generated_test_basic_project_evosuiter(self):
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.EVOSUITER
-		Main.surefire_version = '2.22.0'
 		self.extract_bugs_auto_generated_test_basic_project()
 
 
