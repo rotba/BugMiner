@@ -682,7 +682,8 @@ def set_up_patches_dir():
 
 
 # Wraps git command. Handles excpetions mainly
-def git_cmds_wrapper(git_cmd, spec_repo=repo, spec_mvn_repo=mvn_repo):
+def git_cmds_wrapper(git_cmd, spec_repo=repo, spec_mvn_repo=None):
+	spec_mvn_repo = mvn_repo if spec_mvn_repo is None else spec_mvn_repo
 	try:
 		git_cmd()
 	except git.exc.GitCommandError as e:
