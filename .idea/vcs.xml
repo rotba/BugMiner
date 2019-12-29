@@ -19,10 +19,22 @@
     <mapping directory="$PROJECT_DIR$/test/tested_projects/tika/regression" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/tika/regression/tika" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/tika/tika" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/commons-compress" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/commons-compress/commons-compress" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/commons-compress/regression" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/commons-compress/regression/commons-compress" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/commons-lang" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/commons-lang/commons-lang" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/commons-lang/regression" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/commons-lang/regression/commons-lang" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-math" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-math/commons-math" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-math/regression" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-math/regression/commons-math" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/tika" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/tika/regression" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/tika/regression/tika" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/tika/tika" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tests_ignore/tested_project" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tests_ignore/tested_project/MavenProj" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tests_ignore/tested_project/tika" vcs="Git" />

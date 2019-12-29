@@ -520,7 +520,7 @@ class TestMain(unittest.TestCase):
 		# Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'hey_brother',
 		#            '(issuekey =TIKA-107 OR issuekey =TIKA-121) AND project = TIKA AND issuetype = Bug AND createdDate <= "2019/10/03" ORDER BY  createdDate ASC'])
 
-	@unittest.skip('Ment to be run manulay')
+	# @unittest.skip('Ment to be run manulay')
 	def test_issue_and_commit(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
@@ -530,8 +530,8 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
-		issue_key = 'MATH-258'
-		commit_h = '9f0ea4e9c43295713c1fc422a1b40b15e902d665'
+		issue_key = 'MATH-255'
+		commit_h = '22d13e12320f2d878880eba50a5bcdc48aa63cc3'
 		github = 'https://github.com/apache/commons-math'
 		issue_tracker = 'http:\issues.apache.org\jira\projects\MATH'
 		Main.set_up(['', github])
