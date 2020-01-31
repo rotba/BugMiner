@@ -2,26 +2,709 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evosuite" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnpy" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patcher" beforeDir="false" afterPath="$PROJECT_DIR$/patcher" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patcher/tested_projects/commons-math/patches/RandomDataTest.java.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_projects.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run_projects.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/src/test/java/p_1/AssafTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/src/test/java/p_1/AssafTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/classes/Naim.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_2/target/test-classes/NaimTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/patcher/tested_projects/MavenProj/patches/AmitTest.java.patch" beforeDir="false" afterPath="$PROJECT_DIR$/patcher/tested_projects/MavenProj/patches/AmitTest.java.patch" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/tested_projects/tika/regression/tika/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/tested_projects/tika/regression/tika/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-lang/regression/commons-lang/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-lang/regression/commons-lang/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-math/regression/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-math/regression/commons-math/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/java/org/apache/hadoop/mapreduce/v2/api/protocolrecords/impl/pb/GetTaskAttemptCompletionEventsRequestPBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-mapreduce-client/hadoop-mapreduce-client-common/src/main/java/org/apache/hadoop/mapreduce/v2/api/protocolrecords/impl/pb/GetTaskAttemptCompletionEventsResponsePBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-applications-distributedshell/src/main/java/org/apache/hadoop/yarn/applications/distributedshell/ApplicationMaster.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-applications/hadoop-yarn-applications-distributedshell/src/test/java/org/apache/hadoop/yarn/applications/distributedshell/TestDistributedShell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/api/impl/pb/client/LocalizationProtocolPBClientImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/api/impl/pb/service/LocalizationProtocolPBServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/api/protocolrecords/LocalizerHeartbeatResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/api/protocolrecords/impl/pb/LocalResourceStatusPBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/api/protocolrecords/impl/pb/LocalizerHeartbeatResponsePBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/api/protocolrecords/impl/pb/LocalizerStatusPBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/application/ApplicationContainerFinishedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/application/ApplicationContainerInitEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/application/ApplicationEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/application/ApplicationEventType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/application/ApplicationInitEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/application/ApplicationInitedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/application/ApplicationState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/container/ContainerDiagnosticsUpdateEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/container/ContainerEventType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/container/ContainerExitEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/container/ContainerInitEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/container/ContainerKillEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/container/ContainerResourceEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/container/ContainerResourceFailedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/container/ContainerResourceLocalizedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/launcher/ContainersLauncherEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/launcher/ContainersLauncherEventType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/ContainerLocalizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/LocalResourceRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/LocalResourcesTracker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/LocalResourcesTrackerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/ResourceLocalizationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/ResourceRetentionSet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/event/ApplicationLocalizationEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/event/ContainerLocalizationCleanupEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/event/ContainerLocalizationEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/event/ContainerLocalizationRequestEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/event/LocalizationEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/event/LocalizationEventType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/event/LocalizerEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/event/LocalizerEventType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/event/LocalizerResourceRequestEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/event/ResourceEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/event/ResourceEventType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/event/ResourceLocalizedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/event/ResourceReleaseEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/event/ResourceRequestEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/security/LocalizerSecurityInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/security/LocalizerTokenIdentifier.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/security/LocalizerTokenSecretManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/security/LocalizerTokenSelector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/logaggregation/AppLogAggregator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/logaggregation/AppLogAggregatorImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/logaggregation/LogAggregationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/loghandler/NonAggregatingLogHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/loghandler/event/LogHandlerAppFinishedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/loghandler/event/LogHandlerAppStartedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/loghandler/event/LogHandlerContainerFinishedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/loghandler/event/LogHandlerEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/loghandler/event/LogHandlerEventType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/monitor/ContainerStartMonitoringEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/monitor/ContainerStopMonitoringEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/monitor/ContainersMonitorEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/monitor/ContainersMonitorEventType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/main/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/monitor/ContainersMonitorImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java/org/apache/hadoop/yarn/server/nodemanager/api/protocolrecords/impl/pb/TestPBLocalizerRPC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/launcher/TestContainerLaunch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/FakeFSDataInputStream.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/MockLocalResourceStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/MockLocalizerHeartbeatResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/MockLocalizerStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/TestContainerLocalizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/TestLocalResourcesTrackerImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/TestLocalizedResource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/TestResourceLocalizationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/localizer/TestResourceRetention.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/logaggregation/TestLogAggregationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/loghandler/TestNonAggregatingLogHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-nodemanager/src/test/java/org/apache/hadoop/yarn/server/nodemanager/containermanager/monitor/TestContainersMonitor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/impl/pb/client/RMAdminProtocolPBClientImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/impl/pb/service/RMAdminProtocolPBServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/RefreshAdminAclsRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/RefreshAdminAclsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/RefreshNodesRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/RefreshNodesResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/RefreshQueuesRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/RefreshQueuesResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/RefreshServiceAclsRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/RefreshServiceAclsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/RefreshSuperUserGroupsConfigurationRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/RefreshSuperUserGroupsConfigurationResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/RefreshUserToGroupsMappingsRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/RefreshUserToGroupsMappingsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/impl/pb/RefreshAdminAclsRequestPBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/impl/pb/RefreshAdminAclsResponsePBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/impl/pb/RefreshNodesRequestPBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/impl/pb/RefreshNodesResponsePBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/impl/pb/RefreshQueuesRequestPBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/impl/pb/RefreshQueuesResponsePBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/impl/pb/RefreshServiceAclsRequestPBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/impl/pb/RefreshServiceAclsResponsePBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/impl/pb/RefreshSuperUserGroupsConfigurationRequestPBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/impl/pb/RefreshSuperUserGroupsConfigurationResponsePBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/impl/pb/RefreshUserToGroupsMappingsRequestPBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/api/protocolrecords/impl/pb/RefreshUserToGroupsMappingsResponsePBImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/rmapp/attempt/event/RMAppAttemptContainerAcquiredEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/rmapp/attempt/event/RMAppAttemptContainerAllocatedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/rmapp/attempt/event/RMAppAttemptContainerFinishedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/rmapp/attempt/event/RMAppAttemptLaunchFailedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/rmapp/attempt/event/RMAppAttemptRegistrationEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/rmapp/attempt/event/RMAppAttemptRejectedEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/rmapp/attempt/event/RMAppAttemptStatusupdateEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/rmapp/attempt/event/RMAppAttemptUnregistrationEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/rmcontainer/ContainerAllocationExpirer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/capacity/CapacitySchedulerConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/capacity/CapacitySchedulerContext.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/event/AppAddedSchedulerEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/event/AppRemovedSchedulerEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/event/ContainerExpiredSchedulerEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/event/NodeAddedSchedulerEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/event/NodeRemovedSchedulerEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/event/NodeUpdateSchedulerEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/webapp/dao/CapacitySchedulerLeafQueueInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/main/java/org/apache/hadoop/yarn/server/resourcemanager/webapp/dao/CapacitySchedulerQueueInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/test/java/org/apache/hadoop/yarn/server/resourcemanager/applicationsmanager/TestAMLaunchFailure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/test/java/org/apache/hadoop/yarn/server/resourcemanager/applicationsmanager/TestAMRMRPCResponseId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/test/java/org/apache/hadoop/yarn/server/resourcemanager/applicationsmanager/TestASMStateMachine.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/test/java/org/apache/hadoop/yarn/server/resourcemanager/applicationsmanager/TestApplicationMasterExpiry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/test/java/org/apache/hadoop/yarn/server/resourcemanager/applicationsmanager/TestSchedulerNegotiator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/test/java/org/apache/hadoop/yarn/server/resourcemanager/resourcetracker/TestRMNMRPCResponseId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/test/java/org/apache/hadoop/yarn/server/resourcemanager/rmapp/attempt/TestRMAppAttemptTransitions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/test/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/capacity/TestApplicationLimits.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/test/java/org/apache/hadoop/yarn/server/resourcemanager/scheduler/capacity/TestCapacityScheduler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/hadoop/hadoop/hadoop-mapreduce-project/hadoop-yarn/hadoop-yarn-server/hadoop-yarn-server-resourcemanager/src/test/java/org/apache/hadoop/yarn/server/resourcemanager/webapp/TestRMWebServicesCapacitySched.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/Jenkinsfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/NOTICE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/README" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/ArchetypeCreationRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/ArchetypeCreationResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/ArchetypeGenerationRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/ArchetypeGenerationResult.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/ArchetypeManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/DefaultArchetypeManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/common/ArchetypeArtifactManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/common/ArchetypeFilesResolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/common/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/common/DefaultArchetypeArtifactManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/common/DefaultArchetypeFilesResolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/common/DefaultPomManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/common/MavenJDOMWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/common/PomManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/common/util/FileCharsetDetector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/common/util/Format.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/common/util/ListScanner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/common/util/NamespaceStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/common/util/PathUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/common/util/PomUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/common/util/XMLOutputter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/creator/ArchetypeCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/creator/FilesetArchetypeCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/downloader/DefaultDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/downloader/DownloadException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/downloader/DownloadNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/downloader/Downloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/exception/ArchetypeException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/exception/ArchetypeGenerationConfigurationFailure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/exception/ArchetypeGenerationFailure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/exception/ArchetypeNotConfigured.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/exception/ArchetypeNotDefined.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/exception/ArchetypeSelectionFailure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/exception/InvalidPackaging.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/exception/OutputFileExists.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/exception/PomFileExists.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/exception/ProjectDirectoryExists.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/exception/TemplateCreationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/exception/UnknownArchetype.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/exception/UnknownGroup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/generator/ArchetypeGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/generator/DefaultArchetypeGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/generator/DefaultFilesetArchetypeGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/generator/FilesetArchetypeGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/old/ArchetypeDescriptorException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/old/ArchetypeNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/old/ArchetypeTemplateProcessingException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/old/DefaultOldArchetype.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/old/OldArchetype.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/old/descriptor/ArchetypeDescriptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/old/descriptor/ArchetypeDescriptorBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/old/descriptor/ArchetypeDescriptorGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/old/descriptor/TemplateDescriptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/repositorycrawler/DefaultRepositoryCrawler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/repositorycrawler/RepositoryCrawler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/source/ArchetypeDataSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/source/ArchetypeDataSourceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/source/CatalogArchetypeDataSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/source/InternalCatalogArchetypeDataSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/source/LocalCatalogArchetypeDataSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/java/org/apache/maven/archetype/source/RemoteCatalogArchetypeDataSource.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/mdo/archetype.mdo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/resources/archetype-catalog.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/resources/org/apache/maven/archetype/creator/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/resources/org/apache/maven/archetype/creator/goal.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/main/resources/org/apache/maven/archetype/creator/pom-prototype.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/site/apt/internal.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/basic-1.0/META-INF/maven/archetype-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/basic-1.0/META-INF/maven/archetypes/basic/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/basic-1.0/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/basic-1.0/archetype-resources/src/main/c/App.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/basic-1.0/archetype-resources/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/basic-1.0/archetype-resources/src/main/java/inner/package/App2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/basic-1.0/archetype-resources/src/main/mdo/App.mdo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/basic-1.0/archetype-resources/src/main/resources/App.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/basic-1.0/archetype-resources/src/main/resources/inner/dir/App2.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/basic-1.0/archetype-resources/src/test/c/AppTest.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/basic-1.0/archetype-resources/src/test/java/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/basic-1.0/archetype-resources/src/test/mdo/AppTest.mdo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/basic-1.0/archetype-resources/src/test/resources/AppTest.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/META-INF/maven/archetype-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/META-INF/maven/archetypes/fileset/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/profiles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/src/main/java/App.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/src/main/java/inner/package/App2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/src/main/resources/App.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/src/main/resources/__artifactId__/touch.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/src/main/resources/__rootArtifactId__/touch_root.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/src/main/resources/some-dir/App.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/src/site/apt/usage.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/subproject/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/subproject/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/subproject/subsubproject/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/subproject/subsubproject/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/subproject/subsubproject/src/main/java/ArbitraryProperty-__property-with-default-1__.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/subproject/subsubproject/src/main/java/M___artifactId_____property_underscored_1__Test__property_underscored-2____property-with-default-1__.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/subproject/subsubproject/src/main/java/SkipsUndefinedProperty-__undefined-property__-__property-with-default-2__.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset-1.0/archetype-resources/subproject/subsubproject/src/main/java/__rootArtifactId__/inner/__artifactId__/innest/Some__rootArtifactId__Class__artifactId__.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/META-INF/archetype-post-generate.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/META-INF/maven/archetype-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/META-INF/maven/archetypes/fileset_with_postscript/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/profiles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/src/main/java/App.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/src/main/java/ToDelete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/src/main/java/inner/package/App2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/src/main/resources/App.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/src/main/resources/__artifactId__/touch.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/src/main/resources/__rootArtifactId__/touch_root.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/src/main/resources/some-dir/App.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/src/site/apt/usage.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/subproject/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/subproject/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/subproject/subsubproject/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/subproject/subsubproject/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/subproject/subsubproject/src/main/java/ArbitraryProperty-__property-with-default-1__.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/subproject/subsubproject/src/main/java/SkipsUndefinedProperty-__undefined-property__-__property-with-default-2__.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/fileset_with_postscript-1.0/archetype-resources/subproject/subsubproject/src/main/java/__rootArtifactId__/inner/__artifactId__/innest/Some__rootArtifactId__Class__artifactId__.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/old-1.0/META-INF/archetype.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/old-1.0/META-INF/maven/archetypes/old/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/old-1.0/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/old-1.0/archetype-resources/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/old-1.0/archetype-resources/src/main/resources/App.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/old-1.0/archetype-resources/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/partial-1.0/META-INF/maven/archetype-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/partial-1.0/META-INF/maven/archetypes/partial/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/partial-1.0/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/partial-1.0/archetype-resources/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/partial-1.0/archetype-resources/src/test/java/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/site-1.0/META-INF/maven/archetype-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/site-1.0/META-INF/maven/archetypes/site/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/site-1.0/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/site-1.0/archetype-resources/src/site/apt/test.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/archetypes/site-1.0/archetype-resources/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/central-repository/basic/maven-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/central-repository/fileset/maven-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/central-repository/maven-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/central-repository/old/maven-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/central-repository/partial/maven-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/central-repository/site/maven-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/java/org/apache/maven/archetype/common/TestDefaultArchetypeFilesResolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/java/org/apache/maven/archetype/common/util/TestListScanner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/java/org/apache/maven/archetype/common/util/TestXMLOutputter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/java/org/apache/maven/archetype/generator/DefaultArchetypeGeneratorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/java/org/apache/maven/archetype/old/ArchetypeTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/java/org/apache/maven/archetype/old/descriptor/ArchetypeDescriptorBuilderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/java/org/apache/maven/archetype/old/descriptor/ArchetypeXsdTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/java/org/apache/maven/archetype/repositorycrawler/DefaultRepositoryCrawlerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/java/org/apache/maven/archetype/source/LocalCatalogArchetypeDataSourceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/java/org/apache/maven/archetype/test/ArchetypeGenerationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/java/org/apache/maven/archetype/test/InternalCatalogArchetypesVerificationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/repository/org/apache/maven/archetypes/maven-archetype-quickstart/1.0-alpha-1-SNAPSHOT/maven-archetype-quickstart-1.0-alpha-1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/repository/org/apache/maven/archetypes/maven-archetype-quickstart/1.0-alpha-1-SNAPSHOT/maven-archetype-quickstart-1.0-alpha-1-SNAPSHOT.pom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/repository/org/apache/maven/archetypes/maven-archetypes/1.0-alpha-1-SNAPSHOT/maven-archetypes-1.0-alpha-1-SNAPSHOT.pom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/repository/org/apache/maven/maven-archetype/1.0-alpha-1-SNAPSHOT/maven-archetype-1.0-alpha-1-SNAPSHOT.pom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/META-INF/maven/org.apache.maven.archetype/archetype-common/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/org/apache/maven/archetype/old/descriptor/sample-archetype.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/archetyper-generate-1/dummy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-1/dummy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-10/archetype.properties.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-11/archetype.properties.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-12/archetype.properties.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-2/archetype.properties.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-3/archetype.properties.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-4/archetype.properties.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-5/archetype.properties.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-5/pom.xml.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-6/archetype.properties.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-7/archetype.properties.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-7/pom.xml.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-8/archetype.properties.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-8/file-value/pom.xml.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-8/pom.xml.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-9/archetype.properties.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-9/file-value/pom.xml.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/projects/generate-9/pom.xml.sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/repositories/central/archetype-catalog.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/repositories/central/dummy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/repositories/local/dummy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/wiki/wiki-source.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/xdocs/index.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-common/src/test/resources/xdocs/navigation.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-models/archetype-catalog/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-models/archetype-catalog/src/main/mdo/archetype-catalog.mdo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-models/archetype-catalog/src/site/apt/index.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-models/archetype-catalog/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-models/archetype-descriptor/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-models/archetype-descriptor/src/main/mdo/archetype-descriptor.mdo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-models/archetype-descriptor/src/site/apt/index.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-models/archetype-descriptor/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-models/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-models/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-packaging/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-packaging/src/main/resources/META-INF/plexus/components.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-packaging/src/site/apt/archetype-packaging.apt.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-packaging/src/site/apt/index.apt.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-packaging/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-samples/mojo/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-samples/mojo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-samples/mojo/src/main/java/org/apache/maven/plugins/HelloMojo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-samples/mojo/src/test/java/org/apache/maven/plugins/HelloMojoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-samples/mojo/src/test/resources/unit/project-to-test/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-samples/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-samples/quickstart/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-samples/quickstart/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-samples/quickstart/src/main/java/org/apache/maven/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-samples/quickstart/src/test/java/org/apache/maven/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-samples/webapp/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-samples/webapp/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/archetype-samples/webapp/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/deploySite.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/mrm/archetype-repository/3rdparty-archetype-1.0.jar/META-INF/maven/archetype-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/mrm/archetype-repository/3rdparty-archetype-1.0.jar/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/mrm/archetype-repository/3rdparty-archetype-1.0.pom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/mrm/archetype-repository/archetype-catalog.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/mrm/repository/archetype-catalog.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/mrm/repository/custom-archetype-1.0.jar/META-INF/maven/archetype-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/mrm/repository/custom-archetype-1.0.jar/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/mrm/repository/custom-archetype-1.0.pom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/mrm/settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-241_filter-directory/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-241_filter-directory/archetype/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-241_filter-directory/archetype/src/main/resources/META-INF/maven/archetype-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-241_filter-directory/archetype/src/main/resources/archetype-resources/__projectName__-test2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-241_filter-directory/archetype/src/main/resources/archetype-resources/__projectName__-test2/src/main/java/Test-__projectName__.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-241_filter-directory/archetype/src/main/resources/archetype-resources/__rootArtifactId__-test1/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-241_filter-directory/archetype/src/main/resources/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-241_filter-directory/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-241_filter-directory/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-241_filter-directory/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-241_filter-directory/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-517_failing-goals/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-517_failing-goals/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-517_failing-goals/setup.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-517_failing-goals/test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-517_failing-goals/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-520_mirror/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-520_mirror/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-520_mirror/test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-520_mirror/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-521_archetype-repo/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-521_archetype-repo/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-521_archetype-repo/test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-521_archetype-repo/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-536_groovy-grape/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-536_groovy-grape/archetype/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-536_groovy-grape/archetype/src/main/resources/META-INF/archetype-post-generate.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-536_groovy-grape/archetype/src/main/resources/META-INF/maven/archetype-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-536_groovy-grape/archetype/src/main/resources/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-536_groovy-grape/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-536_groovy-grape/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-536_groovy-grape/project.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/ARCHETYPE-536_groovy-grape/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-and-run-its/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-and-run-its/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-and-run-its/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-and-run-its/src/main/resources/META-INF/maven/archetype-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-and-run-its/src/main/resources/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-and-run-its/src/main/resources/archetype-resources/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-and-run-its/src/test/resources/projects/archetype.pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-and-run-its/src/test/resources/projects/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-and-run-its/src/test/resources/projects/basic/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-and-run-its/src/test/resources/projects/basic/goal.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-and-run-its/src/test/resources/projects/basic/reference/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-and-run-its/src/test/resources/projects/basic/reference/src/main/java/build/archetype/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-and-run-its/src/test/resources/projects/basic/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-and-run-its/test-settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-and-run-its/verify.bsh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/setup.bsh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/src/main/resources/META-INF/maven/archetype-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/src/main/resources/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/src/main/resources/archetype-resources/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/src/main/resources/archetype-resources/src/main/resources/__packageInPathFormat__/__package__.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/src/main/resources/archetype-resources/src/main/resources/test-__artifactId__.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/src/main/resources/archetype-resources/src/site/apt/__artifactId__.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/src/test/resources/projects/basic/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/src/test/resources/projects/basic/goal.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/src/test/resources/projects/basic/reference/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/src/test/resources/projects/basic/reference/src/main/java/build/archetype/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/src/test/resources/projects/basic/reference/src/main/resources/build/archetype/build.archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/src/test/resources/projects/basic/reference/src/main/resources/test-basic.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/src/test/resources/projects/basic/reference/src/site/build/archetype/apt/basic.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/src/test/resources/projects/basic/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/test-settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-archetype/verify.bsh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/setup.bsh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/src/main/resources/META-INF/maven/archetype-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/src/main/resources/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/src/main/resources/archetype-resources/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/src/main/resources/archetype-resources/src/main/resources/__packageInPathFormat__/__package__.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/src/main/resources/archetype-resources/src/main/resources/test-__artifactId__.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/src/main/resources/archetype-resources/src/site/apt/__artifactId__.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/src/test/resources/projects/basic/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/src/test/resources/projects/basic/goal.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/src/test/resources/projects/basic/reference/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/src/test/resources/projects/basic/reference/src/main/java/build/archetype/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/src/test/resources/projects/basic/reference/src/main/resources/build/archetype/build.archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/src/test/resources/projects/basic/reference/src/main/resources/test-basic.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/src/test/resources/projects/basic/reference/src/site/build/archetype/apt/basic.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/src/test/resources/projects/basic/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/test-settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/build-ignore-eol/verify.bsh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/change-file-with-property/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/change-file-with-property/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/change-file-with-property/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/change-file-with-property/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/change-file-with-property/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-1/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-1/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-1/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-1/src/main/java/archetype/subfolder1/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-1/src/main/java/archetype/subfolder2/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-1/src/main/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-1/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-1/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-1/src/test/java/archetype/test/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-1/src/test/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-1/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-2/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-2/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-2/src/it-test/java/org/apache/maven/archetype/subfolder1/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-2/src/it-test/java/org/apache/maven/archetype/subfolder2/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-2/src/it-test/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-2/src/main/java/org/apache/maven/archetype/subfolder1/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-2/src/main/java/org/apache/maven/archetype/subfolder2/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-2/src/main/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-2/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-2/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-2/src/test/java/org/apache/maven/archetype/test/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-2/src/test/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-2/subModule/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/application/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/application/src/it-test/java/ItTestAll.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/application/src/it-test/java/org/apache/maven/archetype/test/ItTest1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/application/src/it-test/resources/ItTest1Result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/application/src/main/java/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/application/src/main/java/org/apache/maven/archetype/test/application/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/application/src/main/java/org/apache/maven/archetype/test/application/audios/Application.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/application/src/main/java/org/apache/maven/archetype/test/application/images/Application.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/application/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/application/src/main/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/application/src/main/resources/org/apache/maven/archetype/test/application/some/Gro.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/application/src/main/resources/splash.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/application/src/test/java/TestAll.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/application/src/test/java/org/apache/maven/archetype/test/application/ApplicationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/libs/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/libs/prj-a/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/libs/prj-a/src/main/mdo/descriptor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/libs/prj-b/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/libs/prj-b/src/main/java/org/apache/maven/archetype/test/com/Component.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/libs/prj-b/src/main/java/org/apache/maven/archetype/test/com/package.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/libs/prj-b/src/test/java/org/apache/maven/archetype/test/common/ComponentTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/src/site/apt/index.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/src/site/resources/site.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-3/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-4/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-4/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-4/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-4/subModuleEAR/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-4/subModuleWar/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-4/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-5/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-5/dummy.file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-5/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-5/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-5/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-6/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-6/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-6/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-6/src/main/webapp/resources/create-6/a.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-6/src/main/webapp/resources/create-6/a.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-6/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project-exclude-patterns/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project-exclude-patterns/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project-exclude-patterns/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project-exclude-patterns/src/main/resources/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project-exclude-patterns/src/main/resources/file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project-exclude-patterns/src/main/resources/toexclude/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project-exclude-patterns/src/main/resources/toexclude/file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project-exclude-patterns/src/main/toexclude/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project-exclude-patterns/src/main/toexclude/file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project-exclude-patterns/src/toexclude/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project-exclude-patterns/src/toexclude/file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project-exclude-patterns/toexclude/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project-exclude-patterns/toexclude/file.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project-exclude-patterns/verify.bsh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project/src/main/java/foo/bar/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/create-from-project/verify.bsh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/exclude-patterns-2/.sonar/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/exclude-patterns-2/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/exclude-patterns-2/folder/.sonar/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/exclude-patterns-2/folder/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/exclude-patterns-2/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/exclude-patterns-2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/exclude-patterns-2/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/exclude-patterns/.toexclude/dummy.file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/exclude-patterns/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/exclude-patterns/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/exclude-patterns/nottoexclude/dummy.file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/exclude-patterns/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/exclude-patterns/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/generate-basic/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/generate-basic/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/generate-basic/verify.bsh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/include-file-with-no-extension/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/include-file-with-no-extension/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/include-file-with-no-extension/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/include-file-with-no-extension/src/main/csharp/filewithnoextension" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/include-file-with-no-extension/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/included-system-properties/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/included-system-properties/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/included-system-properties/pom-parent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/included-system-properties/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/included-system-properties/src/main/java/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/included-system-properties/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/property-setting-cli/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/property-setting-cli/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/property-setting-cli/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/property-setting-cli/src/main/resources/META-INF/maven/archetype-metadata.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/property-setting-cli/src/main/resources/archetype-resources/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/property-setting-cli/src/test/resources/projects/basic/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/property-setting-cli/src/test/resources/projects/basic/goal.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/property-setting-cli/src/test/resources/projects/basic/reference/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/property-setting-cli/src/test/resources/projects/basic/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-1-project/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-1-project/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-1-project/project.pom" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-1-project/src/main/java/org/apache/maven/test/App.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-1-project/src/test/java/org/apache/maven/test/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-1-project/test-generate.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-1-project/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/.checkstyle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/archetype.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/invoker.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-api/.checkstyle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-api/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-api/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-api/src/main/java/com/company/proficio/api/Api.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-cli/.checkstyle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-cli/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-cli/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-cli/src/main/java/com/company/proficio/cli/Cli.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-core/.checkstyle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-core/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-core/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-core/src/main/java/com/company/proficio/core/Core.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-model/.checkstyle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-model/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-model/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-model/src/main/java/org/company/proficio/model/Model.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-stores/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-stores/proficio-store-memory/.checkstyle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-stores/proficio-store-memory/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-stores/proficio-store-memory/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-stores/proficio-store-memory/src/main/java/com/company/proficio/store/memory/Memory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-stores/proficio-store-xstream/.checkstyle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-stores/proficio-store-xstream/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-stores/proficio-store-xstream/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/proficio-stores/proficio-store-xstream/src/main/java/com/company/proficio/store/xstream/XStream.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/test-generate.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/it/projects/roundtrip-multi/verify.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/mojos/CrawlRepositoryMojo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/mojos/CreateArchetypeFromProjectMojo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/mojos/CreateProjectFromArchetypeMojo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/mojos/FileLogger.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/mojos/IntegrationTestMojo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/mojos/JarMojo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/mojos/UpdateLocalCatalogMojo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/ArchetypeConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/ArchetypeDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/ArchetypeFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/ArchetypePrompter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/DefaultArchetypeFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/creation/ArchetypeCreationConfigurator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/creation/ArchetypeCreationQueryer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/creation/DefaultArchetypeCreationConfigurator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/creation/DefaultArchetypeCreationQueryer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/creation/package.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/generation/ArchetypeGenerationConfigurator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/generation/ArchetypeGenerationQueryer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/generation/ArchetypeSelectionQueryer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/generation/ArchetypeSelector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/generation/ArchetypeSelectorUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/generation/DefaultArchetypeGenerationConfigurator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/generation/DefaultArchetypeGenerationQueryer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/generation/DefaultArchetypeSelectionQueryer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/generation/DefaultArchetypeSelector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/generation/package.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/main/java/org/apache/maven/archetype/ui/package.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/advanced-usage.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/archetype-overview.odg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/archetype-repository.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/examples/create-multi-module-project.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/examples/create-with-property-file.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/examples/generate-alternative-catalog.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/examples/generate-batch.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/index.apt.vm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/specification/archetype-catalog.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/specification/archetype-metadata.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/specification/archetype.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/specification/crawl-repository.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/specification/create-from-project.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/specification/generate.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/specification/specification.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/specification/update-catalog.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/apt/usage.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/fml/faq.fml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/resources/images/archetype-overview.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/java/org/apache/maven/archetype/ui/generation/DefaultArchetypeGenerationConfigurator2Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/java/org/apache/maven/archetype/ui/generation/DefaultArchetypeGenerationConfiguratorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/java/org/apache/maven/archetype/ui/generation/DefaultArchetypeGenerationQueryerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/java/org/apache/maven/archetype/ui/generation/DefaultArchetypeSelectionQueryerTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/java/org/apache/maven/archetype/ui/generation/DefaultArchetypeSelectorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/java/org/apache/maven/archetype/ui/generation/RequiredPropertyComparatorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/projects/deep-inheritence/a/b/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/projects/deep-inheritence/a/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/projects/deep-inheritence/nbactions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/projects/deep-inheritence/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/projects/sibling-dependency/a/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/projects/sibling-dependency/b/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/projects/sibling-dependency/nbactions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/projects/sibling-dependency/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/projects/simple-inheritence/enforcer-rules/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/maven-archetype-plugin/src/test/projects/simple-inheritence/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/src/site/apt/index.apt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/src/site/resources/download.cgi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/src/site/site.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-archetype/maven-archetype/src/site/xdoc/download.xml.vm" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/tika/regression/tika/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/regression/tika/pom.xml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,15 +794,21 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="testma&#9;FILE&#9;file://C:/Users/TEMP/BugMiner/TestMain.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -133,19 +822,7 @@
       <recent name="C:\Users\user\Code\Python\BugMinerTest" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests">
+  <component name="RunManager" selected="Python tests.Unittests for test.TestMain">
     <configuration name="Main two issues" type="PythonConfigurationType" factoryName="Python">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -432,6 +1109,36 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests for test.TestMain" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="BugMiner" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test.TestMain&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test.TestMain.test_extract_bugs_1" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="BugMiner" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test.TestMain.test_extract_bugs_1&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unittests for test.TestMain.test_generate_data_auto_generated_tests" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -499,23 +1206,17 @@
       <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit_2" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests" />
+      <item itemvalue="Python tests.Unittests for test.TestMain" />
+      <item itemvalue="Python tests.Unittests for test.TestMain.test_extract_bugs_1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Unittests for test.TestMain" />
+        <item itemvalue="Python tests.Unittests for test.TestMain.test_extract_bugs_1" />
         <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests" />
         <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand />
-          <select />
-        </treeState>
-      </serviceView>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -611,6 +1312,8 @@
       <workItem from="1577606138937" duration="530000" />
       <workItem from="1577607789643" duration="2628000" />
       <workItem from="1578393916538" duration="722000" />
+      <workItem from="1580486394089" duration="539000" />
+      <workItem from="1580487551890" duration="3089000" />
     </task>
     <servers />
   </component>
@@ -707,6 +1410,36 @@
       <path value="$PROJECT_DIR$/tests/tested_project/wicket" />
     </ignored-roots>
   </component>
+  <component name="WindowStateProjectService">
+    <state x="419" y="250" key="FileChooserDialogImpl" timestamp="1580490624333">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="419" y="250" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1580490624333" />
+    <state width="1237" height="247" key="GridCell.Tab.0.bottom" timestamp="1580491088375">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="247" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1580491088375" />
+    <state width="1237" height="247" key="GridCell.Tab.0.center" timestamp="1580491088375">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="247" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1580491088375" />
+    <state width="1237" height="247" key="GridCell.Tab.0.left" timestamp="1580491088374">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="247" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1580491088374" />
+    <state width="1237" height="247" key="GridCell.Tab.0.right" timestamp="1580491088375">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state width="1237" height="247" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1580491088375" />
+    <state x="143" y="138" key="SettingsEditor" timestamp="1580490631077">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="143" y="138" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1580490631077" />
+    <state x="347" y="320" key="com.intellij.ide.util.TipDialog" timestamp="1580487552568">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="347" y="320" key="com.intellij.ide.util.TipDialog/0.0.1280.984@0.0.1280.984" timestamp="1580487552568" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -761,14 +1494,24 @@
           <option name="timeStamp" value="168" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>380</line>
-          <option name="timeStamp" value="169" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test/test.py</url>
           <line>547</line>
           <option name="timeStamp" value="170" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/test.py</url>
+          <line>199</line>
+          <option name="timeStamp" value="171" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/test.py</url>
+          <line>216</line>
+          <option name="timeStamp" value="175" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/test.py</url>
+          <line>215</line>
+          <option name="timeStamp" value="176" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -781,22 +1524,22 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_get_bugged_components_1.coverage" NAME="Unittests for test.TestMain.test_get_bugged_components_1 Coverage Results" MODIFIED="1566461904723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue_and_commit_2.coverage" NAME="Unittests for test.TestMain.test_issue_and_commit_2 Coverage Results" MODIFIED="1577606047878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1576415681947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestEvosuiteAdjustment_test_extract_bugs_auto_generated_test_basic_project_cmd_bm.coverage" NAME="Unittests for test.TestEvosuiteAdjustment.test_extract_bugs_auto_generated_test_basic_project_cmd_bm Coverage Results" MODIFIED="1575810495668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$combine.coverage" NAME="combine Coverage Results" MODIFIED="1568110791717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/presenetation" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain.coverage" NAME="Unittests for test.TestMain Coverage Results" MODIFIED="1574001178813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue.coverage" NAME="Unittests for test.TestMain.test_issue Coverage Results" MODIFIED="1576408192533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data.coverage" NAME="Unittests for test.TestMain.test_generate_data Coverage Results" MODIFIED="1575810979685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_extract_bugs_1.coverage" NAME="Unittests for test.TestMain.test_extract_bugs_1 Coverage Results" MODIFIED="1566396094306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestEvosuiteAdjustment_test_extract_bugs_auto_generated_test_basic_project_evosuiter.coverage" NAME="Unittests for test.TestEvosuiteAdjustment.test_extract_bugs_auto_generated_test_basic_project_evosuiter Coverage Results" MODIFIED="1575810279405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_get_bug_patches_2.coverage" NAME="Unittests for test.TestMain.test_get_bug_patches_2 Coverage Results" MODIFIED="1567612761023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue_and_commit.coverage" NAME="Unittests for test.TestMain.test_issue_and_commit Coverage Results" MODIFIED="1577606607617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain.coverage" NAME="Unittests for test.TestMain Coverage Results" MODIFIED="1580491088354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_get_bugged_components_1.coverage" NAME="Unittests for test.TestMain.test_get_bugged_components_1 Coverage Results" MODIFIED="1566461904723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestEvosuiteAdjustment_test_extract_bugs_auto_generated_test_basic_project_cmd_bm.coverage" NAME="Unittests for test.TestEvosuiteAdjustment.test_extract_bugs_auto_generated_test_basic_project_cmd_bm Coverage Results" MODIFIED="1575810495668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1576415681947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMiner$Main_two_issues.coverage" NAME="Main two issues Coverage Results" MODIFIED="1574002262803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue_and_commit_2.coverage" NAME="Unittests for test.TestMain.test_issue_and_commit_2 Coverage Results" MODIFIED="1577606047878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data_auto_generated_tests_cmd_strategy.coverage" NAME="Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy Coverage Results" MODIFIED="1568388142752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_get_bug_patches_2.coverage" NAME="Unittests for test.TestMain.test_get_bug_patches_2 Coverage Results" MODIFIED="1567612761023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$combine.coverage" NAME="combine Coverage Results" MODIFIED="1568110791717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/presenetation" />
     <SUITE FILE_PATH="coverage/BugMiner$all.coverage" NAME="all Coverage Results" MODIFIED="1566460730130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_extract_bugs_1.coverage" NAME="Unittests for test.TestMain.test_extract_bugs_1 Coverage Results" MODIFIED="1580490911629" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data.coverage" NAME="Unittests for test.TestMain.test_generate_data Coverage Results" MODIFIED="1575810979685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestEvosuiteAdjustment_test_extract_bugs_auto_generated_test_basic_project_evosuiter.coverage" NAME="Unittests for test.TestEvosuiteAdjustment.test_extract_bugs_auto_generated_test_basic_project_evosuiter Coverage Results" MODIFIED="1575810279405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_get_bug_patches_1.coverage" NAME="Unittests for test.TestMain.test_get_bug_patches_1 Coverage Results" MODIFIED="1576408689718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data_auto_generated_tests.coverage" NAME="Unittests for test.TestMain.test_generate_data_auto_generated_tests Coverage Results" MODIFIED="1577613283716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue_and_commit.coverage" NAME="Unittests for test.TestMain.test_issue_and_commit Coverage Results" MODIFIED="1577606607617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$Main_two_issues.coverage" NAME="Main two issues Coverage Results" MODIFIED="1574002262803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
