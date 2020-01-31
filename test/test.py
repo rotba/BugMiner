@@ -520,7 +520,7 @@ class TestMain(unittest.TestCase):
 		# Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'hey_brother',
 		#            '(issuekey =TIKA-107 OR issuekey =TIKA-121) AND project = TIKA AND issuetype = Bug AND createdDate <= "2019/10/03" ORDER BY  createdDate ASC'])
 
-	# @unittest.skip('Ment to be run manulay')
+	@unittest.skip('Manual test')
 	def test_issue_and_commit(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
@@ -530,22 +530,22 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
 		Main.TESTS_GEN_STRATEGY= Main.TestGenerationStrategy.CMD
-		issue_key = 'MATH-255'
-		commit_h = '22d13e12320f2d878880eba50a5bcdc48aa63cc3'
 		github = 'https://github.com/apache/commons-math'
 		issue_tracker = 'http:\issues.apache.org\jira\projects\MATH'
 		Main.set_up(['', github])
-		extractor = JiraExtractor(
-			repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=issue_tracker,
-			issue_key=issue_key
-		)
-		Main.mvn_repo.clean()
-		Main.repo.git.add('.')
-		Main.repo.git.checkout(commit_h, '-f')
-		k = extractor.extract_possible_bugs()
-		bug = filter(lambda x: commit_h in x.fix_commit, extractor.extract_possible_bugs())[0]
-		bug_commit = Main.repo.commit(bug.fix_commit)
-		bugs = Main.extract_bugs(bug.issue, bug_commit, bug.tests, bug.diffed_components)
+		for issue_key, commit_h in zip(['MATH-255', 'MATH-258'],['22d13e12320f2d878880eba50a5bcdc48aa63cc3', '9f0ea4e9c43295713c1fc422a1b40b15e902d665']):
+			extractor = JiraExtractor(
+				repo_dir=Main.repo.working_dir, branch_inspected=Main.branch_inspected, jira_url=issue_tracker,
+				issue_key=issue_key
+			)
+			Main.mvn_repo.clean()
+			Main.repo.git.add('.')
+			Main.repo.git.checkout(commit_h, '-f')
+			k = extractor.extract_possible_bugs()
+			bug = filter(lambda x: commit_h in x.fix_commit, extractor.extract_possible_bugs())[0]
+			bug_commit = Main.repo.commit(bug.fix_commit)
+			Main.USE_CACHED_STATE = not Main.USE_CACHED_STATE
+			bugs = Main.extract_bugs(bug.issue, bug_commit, bug.tests, bug.diffed_components)
 		x = 1
 
 # @unittest.skip("Don't have time for it")

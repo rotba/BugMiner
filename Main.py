@@ -687,6 +687,7 @@ def git_cmds_wrapper(git_cmd, spec_repo=repo, spec_mvn_repo=None):
 	try:
 		git_cmd()
 	except git.exc.GitCommandError as e:
+		debug_red("Git bug:\n{}".format(str(e)))
 		if 'Another git process seems to be running in this repository, e.g.' in str(e):
 			logging.info(str(e))
 			time.sleep(2)
@@ -705,8 +706,8 @@ def git_cmds_wrapper(git_cmd, spec_repo=repo, spec_mvn_repo=None):
 		elif 'warning: squelched' in str(e) and 'trailing whitespace.' in str(e):
 			pass
 		elif 'Filename too long' in str(e):
-			spec_mvn_repo.clean()
-			git_cmds_wrapper(lambda: git_cmd(),spec_repo=repo, spec_mvn_repo=mvn_repo)
+			spec_mvn_repo.hard_clean()
+			git_cmds_wrapper(lambda: git_cmd(),spec_repo=spec_repo, spec_mvn_repo=spec_mvn_repo)
 		else:
 			raise e
 
@@ -768,6 +769,11 @@ def debug_blue(str):
 	if DEBUG:
 		logging.info(str)
 		print(colored(str, 'blue'))
+
+def debug_red(str):
+	if DEBUG:
+		logging.info(str)
+		print(colored(str, 'red'))
 
 
 def set_up(argv):
