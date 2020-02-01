@@ -690,23 +690,23 @@ def git_cmds_wrapper(git_cmd, spec_repo=repo, spec_mvn_repo=None):
 		if 'Another git process seems to be running in this repository, e.g.' in str(e):
 			logging.info(str(e))
 			time.sleep(2)
-			git_cmds_wrapper(lambda: git_cmd(),spec_repo=repo, spec_mvn_repo=mvn_repo)
+			git_cmds_wrapper(lambda: git_cmd(),spec_repo=spec_repo, spec_mvn_repo=spec_mvn_repo)
 		elif 'nothing to commit, working tree clean' in str(e):
 			pass
 		elif 'Please move or remove them before you switch branches.' in str(e):
 			logging.info(str(e))
-			git_cmds_wrapper(lambda: spec_repo.index.add('.'),spec_repo=repo, spec_mvn_repo=mvn_repo)
-			git_cmds_wrapper(lambda: spec_repo.git.clean('-xdf'),spec_repo=repo, spec_mvn_repo=mvn_repo)
-			git_cmds_wrapper(lambda: spec_repo.git.reset('--hard'),spec_repo=repo, spec_mvn_repo=mvn_repo)
+			git_cmds_wrapper(lambda: spec_repo.index.add('.'),spec_repo=spec_repo, spec_mvn_repo=spec_mvn_repo)
+			git_cmds_wrapper(lambda: spec_repo.git.clean('-xdf'),spec_repo=spec_repo, spec_mvn_repo=spec_mvn_repo)
+			git_cmds_wrapper(lambda: spec_repo.git.reset('--hard'),spec_repo=spec_repo, spec_mvn_repo=spec_mvn_repo)
 			time.sleep(2)
-			git_cmds_wrapper(lambda: git_cmd(),spec_repo=repo, spec_mvn_repo=mvn_repo)
+			git_cmds_wrapper(lambda: git_cmd(),spec_repo=spec_repo, spec_mvn_repo=spec_mvn_repo)
 		elif 'already exists and is not an empty directory.' in str(e):
 			pass
 		elif 'warning: squelched' in str(e) and 'trailing whitespace.' in str(e):
 			pass
 		elif 'Filename too long' in str(e):
 			spec_mvn_repo.clean()
-			git_cmds_wrapper(lambda: git_cmd(),spec_repo=repo, spec_mvn_repo=mvn_repo)
+			git_cmds_wrapper(lambda: git_cmd(),spec_repo=spec_repo, spec_mvn_repo=spec_mvn_repo)
 		else:
 			raise e
 
