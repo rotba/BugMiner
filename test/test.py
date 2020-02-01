@@ -498,7 +498,7 @@ class TestMain(unittest.TestCase):
 		self.assertTrue('sub_mod_1#Main#int_foo()' in changed_methods)
 		self.assertTrue('sub_mod_1#Main#void_goo()' in changed_methods)
 
-	@unittest.skip('Ment to be run manulay')
+
 	def test_issue(self):
 		if os.path.exists(os.path.join(os.getcwd(), 'results')):
 			time.sleep(5)
@@ -506,15 +506,15 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = False
+		Main.USE_CACHED_STATE = True
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.EVOSUITER
 		Main.main(
 			[
 				'',
-				'https://github.com/apache/tika',
-				'http:\issues.apache.org\jira\projects\TIKA',
+				'https://github.com/apache/commons-math',
+				'http:\issues.apache.org\jira\projects\MATH',
 				'HEY',
-				'project = TIKA AND issuekey = TIKA-16 OR issuekey = TIKA-19 ORDER BY issue ASC'
+				'project = MATH AND issuekey = MATH-153 OR issuekey = MATH-163 ORDER BY issue ASC'
 			]
 		)
 		# Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'hey_brother',
