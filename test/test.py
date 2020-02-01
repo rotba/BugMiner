@@ -506,7 +506,8 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
-		Main.USE_CACHED_STATE = True
+		Main.USE_CACHED_STATE = False
+		Main.DEBUG = False
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.EVOSUITER
 		Main.main(
 			[
