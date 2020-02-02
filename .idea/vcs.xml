@@ -6,6 +6,7 @@
     <mapping directory="$PROJECT_DIR$/evosuite" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/mvnpy" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/patcher" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/test/bckzzvzdjq" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/MavenProj" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/MavenProj/buggy/MavenProj" vcs="Git" />
@@ -13,12 +14,15 @@
     <mapping directory="$PROJECT_DIR$/test/tested_projects/MavenProj/regression/MavenProj" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/commons-math" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/commons-math/commons-math" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/test/tested_projects/commons-math/hsghahnasf" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/commons-math/regression" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/commons-math/regression/commons-math" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/test/tested_projects/commons-math/regression/fgjshgsssj" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/tika" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/tika/regression" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/tika/regression/tika" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/tested_projects/tika/tika" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/test/thziwpuqok" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-compress" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-compress/commons-compress" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-compress/regression" vcs="Git" />

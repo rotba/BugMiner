@@ -10,13 +10,13 @@ import time
 import traceback
 from functools import reduce
 from urlparse import urlparse
-
 import git
 import javalang
 from git import Repo
 from javadiff import diff as java_diff
 from termcolor import colored
-
+import string
+import random
 import settings
 from PossibleBugMiner.extractor_factory import ExtractorFactory
 from diff import commitsdiff
@@ -81,8 +81,15 @@ def main(argv):
 			logging.info('TEST PARSER ERROR  ' + e.msg + '\n' + traceback.format_exc())
 		except git.exc.GitCommandError as e:
 			logging.info('SHOULD NOT HAPPEN GIT ' + str(e) + '\n' + traceback.format_exc())
+			logging.info('Resetting repos')
+			reset_repos(argv)
 		except Exception as e:
-			logging.info('SHOULD NOT HAPPEN EXCEPTION ' + str(e) + '\n' + traceback.format_exc())
+			if 'IOError: [Errno 22]' in str(e):
+				logging.info('SHOULD NOT HAPPEN EXCEPTION ' + str(e) + '\n' + traceback.format_exc())
+				logging.info('Resetting repos')
+				reset_repos(argv)
+			else:
+				logging.info('SHOULD NOT HAPPEN EXCEPTION ' + str(e) + '\n' + traceback.format_exc())
 
 
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
@@ -682,16 +689,19 @@ def set_up_patches_dir():
 
 
 # Wraps git command. Handles excpetions mainly
-def git_cmds_wrapper(git_cmd, spec_repo=repo, spec_mvn_repo=None):
-	spec_mvn_repo = mvn_repo if spec_mvn_repo is None else spec_mvn_repo
+def git_cmds_wrapper(git_cmd, spec_repo=repo, spec_mvn_repo=None, counter = 0):
+	spec_mvn_repo = mvn_repo if spec_mvn_repo == None else spec_mvn_repo
 	try:
 		git_cmd()
 	except git.exc.GitCommandError as e:
 		debug_red("Git bug:\n{}".format(str(e)))
 		if 'Another git process seems to be running in this repository, e.g.' in str(e):
+			if counter > 10:
+				raise e
+			counter+=1
 			logging.info(str(e))
 			time.sleep(2)
-			git_cmds_wrapper(lambda: git_cmd(), spec_repo=spec_repo, spec_mvn_repo=spec_mvn_repo)
+			git_cmds_wrapper(lambda: git_cmd(), spec_repo=spec_repo, spec_mvn_repo=spec_mvn_repo, counter=counter)
 		elif 'nothing to commit, working tree clean' in str(e):
 			pass
 		elif 'Please move or remove them before you switch branches.' in str(e):
@@ -706,8 +716,11 @@ def git_cmds_wrapper(git_cmd, spec_repo=repo, spec_mvn_repo=None):
 		elif 'warning: squelched' in str(e) and 'trailing whitespace.' in str(e):
 			pass
 		elif 'Filename too long' in str(e):
+			if counter > 10:
+				raise e
+			counter +=1
 			spec_mvn_repo.hard_clean()
-			git_cmds_wrapper(lambda: git_cmd(), spec_repo=spec_repo, spec_mvn_repo=spec_mvn_repo)
+			git_cmds_wrapper(lambda: git_cmd(), spec_repo=spec_repo, spec_mvn_repo=spec_mvn_repo, counter=counter)
 		else:
 			raise e
 
@@ -776,8 +789,19 @@ def debug_red(str):
 		logging.info(str)
 		print(colored(str, 'red'))
 
+def reset_repos(argv):
+	letters ='sjhfgasjfahjsgfhjasgfhjasgfncdjs'
+	orig_base_dir = os.path.dirname(repo.working_dir)
+	reg_base_dir = os.path.dirname(reg_repo.working_dir)
+	rename_orig = os.path.join(orig_base_dir, ''.join(random.choice(letters) for i in range(10)))
+	rename_reg = os.path.join(reg_base_dir, ''.join(random.choice(letters) for i in range(10)))
+	os.rename(repo.working_dir,rename_orig)
+	os.rename(reg_repo.working_dir, rename_reg)
+	# shutil.rmtree(repo.working_dir,ignore_errors=True)
+	# shutil.rmtree(reg_repo.working_dir,ignore_errors=True)
+	set_up(argv, RESET=True)
 
-def set_up(argv):
+def set_up(argv, RESET = False):
 	def clone_repo(base, url, label=''):
 		logging.info('Started cloning ' + argv[1] + ' {}'.format(label))
 		git_cmds_wrapper(lambda: git.Git(base).init())
@@ -827,14 +851,15 @@ def set_up(argv):
 	else:
 		shutil.rmtree(tmp_files_dir)
 		os.makedirs(tmp_files_dir)
-	if GENERATE_DATA:
+	if GENERATE_DATA and not RESET:
 		if os.path.isdir(data_dir):
 			raise mvn_bug.BugError('The data currently in the project result dir ({}) will be overwritten.'
 			                       ' Please backup it in another directory'.format(proj_results_dir))
 		os.makedirs(data_dir)
 		bug_data_handler = mvn_bug.Bug_data_handler(data_dir)
-	LOG_FILENAME = os.path.join(proj_results_dir, 'log.log')
-	logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO, format='%(asctime)s %(message)s')
+	if not RESET:
+		LOG_FILENAME = os.path.join(proj_results_dir, 'log.log')
+		logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO, format='%(asctime)s %(message)s')
 	clone_repo(proj_files.base, git_url)
 	clone_repo(proj_files.reg, git_url, 'regression')
 	mvn_repo = MavenRepo.Repo(proj_files.repo)
