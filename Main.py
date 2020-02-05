@@ -84,7 +84,7 @@ def main(argv):
 			logging.info('Resetting repos')
 			reset_repos(argv)
 		except Exception as e:
-			if 'IOError: [Errno 22]' in str(e):
+			if '[Errno 22]' in str(e):
 				logging.info('SHOULD NOT HAPPEN EXCEPTION ' + str(e) + '\n' + traceback.format_exc())
 				logging.info('Resetting repos')
 				reset_repos(argv)
