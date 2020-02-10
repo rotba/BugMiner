@@ -1,5 +1,3 @@
-project name,rep0,rep1,rep2,rep3
-tika,23,28,30,33
-commons-compress,14,17,17,18
-commons-math,65,78,83,87
-commons-lang,14,23,24,25
+project name,rep0
+tika,0
+commons-lang,0
