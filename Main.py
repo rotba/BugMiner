@@ -295,6 +295,25 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 	git_cmds_wrapper(lambda: repo.git.reset('--hard'))
 	return filter_results(ans)
 
+def reset_repos(argv):
+	try:
+		letters = 'sjhfgasjfahjsgfhjasgfhjasgfncdjs'
+		repo.hard_clean()
+		reg_repo.hard_clean()
+		orig_base_dir = os.path.dirname(repo.working_dir)
+		reg_base_dir = os.path.dirname(reg_repo.working_dir)
+		rename_orig = os.path.join(orig_base_dir, ''.join(random.choice(letters) for i in range(10)))
+		rename_reg = os.path.join(reg_base_dir, ''.join(random.choice(letters) for i in range(10)))
+		os.rename(repo.working_dir, rename_orig)
+		os.rename(reg_repo.working_dir, rename_reg)
+		# shutil.rmtree(repo.working_dir,ignore_errors=True)
+		# shutil.rmtree(reg_repo.working_dir,ignore_errors=True)
+		set_up(argv, RESET=True)
+	except Exception as e:
+		logging.info(
+			'SHOULD NOT HAPPEN EXCEPTION, reset_repo_failed with :\n' + str(e) + '\n' + traceback.format_exc()
+		)
+
 
 def get_most_chenged_classes(module, changed_classes_diffs, commit, parent):
 	def diff_to_mvn_components(diff):
@@ -790,17 +809,7 @@ def debug_red(str):
 		logging.info(str)
 		print(colored(str, 'red'))
 
-def reset_repos(argv):
-	letters ='sjhfgasjfahjsgfhjasgfhjasgfncdjs'
-	orig_base_dir = os.path.dirname(repo.working_dir)
-	reg_base_dir = os.path.dirname(reg_repo.working_dir)
-	rename_orig = os.path.join(orig_base_dir, ''.join(random.choice(letters) for i in range(10)))
-	rename_reg = os.path.join(reg_base_dir, ''.join(random.choice(letters) for i in range(10)))
-	os.rename(repo.working_dir,rename_orig)
-	os.rename(reg_repo.working_dir, rename_reg)
-	# shutil.rmtree(repo.working_dir,ignore_errors=True)
-	# shutil.rmtree(reg_repo.working_dir,ignore_errors=True)
-	set_up(argv, RESET=True)
+
 
 def set_up(argv, RESET = False):
 	def clone_repo(base, url, label=''):
