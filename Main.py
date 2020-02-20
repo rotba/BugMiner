@@ -298,8 +298,8 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 def reset_repos(argv):
 	try:
 		letters = 'sjhfgasjfahjsgfhjasgfhjasgfncdjs'
-		repo.hard_clean()
-		reg_repo.hard_clean()
+		reg_mvn_repo.hard_clean()
+		mvn_repo.hard_clean()
 		orig_base_dir = os.path.dirname(repo.working_dir)
 		reg_base_dir = os.path.dirname(reg_repo.working_dir)
 		rename_orig = os.path.join(orig_base_dir, ''.join(random.choice(letters) for i in range(10)))
