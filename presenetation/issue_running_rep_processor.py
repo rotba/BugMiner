@@ -201,7 +201,7 @@ class TestCase(object):
 
 	@property
 	def is_success(self):
-		return self._row[TestCase.SUCCESS_FIELD_NAME] == 'TRUE'
+		return self._row[TestCase.SUCCESS_FIELD_NAME] == 'TRUE' or self._row[TestCase.SUCCESS_FIELD_NAME] == 'True'
 
 	def is_matching_running(self, running):
 		return self.issue == running.issue and \

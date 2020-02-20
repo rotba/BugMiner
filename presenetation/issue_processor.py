@@ -71,7 +71,11 @@ class IssuesProcessor(object):
 
 	def is_valid(self, issue, rep):
 		def is_valid_test_case(row):
-			return row[IssuesProcessor.PROJECT_NAME_FIELD_NAME].endswith("_" +str(rep)) and row[IssuesProcessor.VALID_FIELD_NAME] == 'TRUE'
+			return row[IssuesProcessor.PROJECT_NAME_FIELD_NAME].endswith("_" +str(rep)) and \
+			       (
+					       row[IssuesProcessor.VALID_FIELD_NAME] == 'TRUE' or
+					       row[IssuesProcessor.VALID_FIELD_NAME] == 'True'
+			       )
 
 		return any(
 			map(lambda x: is_valid_test_case(x), self.get_test_cases(issue))
