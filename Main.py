@@ -297,6 +297,14 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 
 def reset_repos(argv):
 	try:
+		# i = 1000000
+		# while i>0:
+		# 	try:
+		# 		p = subprocess.Popen(["rd", "/q", repo.working_dir], shell=True)
+		# 		p = subprocess.Popen(["rd", "/q", reg_repo.working_dir], shell=True)
+		# 	except Exception as e:
+		# 		pass
+		# 	i=i-1
 		letters = 'sjhfgasjfahjsgfhjasgfhjasgfncdjs'
 		reg_mvn_repo.hard_clean()
 		mvn_repo.hard_clean()
