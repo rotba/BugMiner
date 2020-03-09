@@ -3,19 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnpy" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnpy/Repo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/Repo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evosuite" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/TestSuiteGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/TestSuiteGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/ga/metaheuristics/MonotonicGA.java" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/ga/metaheuristics/MonotonicGA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/regression/RegressionAssertionCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/regression/RegressionAssertionCounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/statistics/StatisticsSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/statistics/StatisticsSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evosuite/master/src/test/java/org/evosuite/EvoSuiteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite/master/src/test/java/org/evosuite/EvoSuiteTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/evosuite/plugins/eclipse/evosuite-eclipse-core/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite/plugins/eclipse/evosuite-eclipse-core/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher" beforeDir="false" afterPath="$PROJECT_DIR$/patcher" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patcher/tested_projects/MavenProj/patches/AmitTest.java.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher/tested_projects/commons-math/patches/RandomDataTest.java.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest.java.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest_scaffolding.java.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/MavenProj/sub_mod_1/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/MavenProj/regression/MavenProj/sub_mod_1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/tested_projects/MavenProj/regression/MavenProj/sub_mod_1/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tested_projects/commons-math/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/tested_projects/commons-math/commons-math/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/tested_projects/commons-math/regression/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/tested_projects/commons-math/regression/commons-math/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/commons-compress/regression/commons-compress/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-compress/regression/commons-compress/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/commons-lang/regression/commons-lang/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-lang/regression/commons-lang/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-math/regression/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-math/regression/commons-math/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/regression/tika/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/regression/tika/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -95,10 +100,10 @@
   <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/tests/results/tests_reports" userTempatePath="" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="-1625">
               <caret line="448" column="28" selection-start-line="448" selection-start-column="28" selection-end-line="448" selection-end-column="28" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
@@ -110,7 +115,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Anaconda2/Lib/unittest/case.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
+            <state relative-caret-position="6300">
               <caret line="328" selection-start-line="328" selection-end-line="328" />
             </state>
           </provider>
@@ -119,7 +124,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mvnpy/Repo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
+            <state relative-caret-position="1700">
               <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
@@ -128,11 +133,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="793" column="54" lean-forward="true" selection-start-line="793" selection-start-column="20" selection-end-line="793" selection-end-column="54" />
+            <state relative-caret-position="-280">
+              <caret line="758" selection-start-line="758" selection-end-line="758" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -143,7 +148,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
+            <state relative-caret-position="2600">
               <caret line="134" selection-start-line="134" selection-end-line="134" />
             </state>
           </provider>
@@ -199,7 +204,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -207,15 +211,11 @@
               <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
               <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
-              <item name="mvnpy" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -617,8 +617,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Main" />
       <item itemvalue="Python.Main two issues" />
+      <item itemvalue="Python.Main" />
       <item itemvalue="Python.combine" />
       <item itemvalue="Python.gen watch" />
       <item itemvalue="Python.present candidates compress" />
@@ -630,11 +630,11 @@
       <item itemvalue="Python.process issues" />
       <item itemvalue="Python.process reps" />
       <item itemvalue="Python.process times rate reps" />
-      <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit" />
-      <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests" />
       <item itemvalue="Python tests.Unittests for test.TestMain" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data" />
+      <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_issue" />
+      <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit" />
     </list>
     <recent_temporary>
       <list>
@@ -751,6 +751,7 @@
       <workItem from="1580479949421" duration="3063000" />
       <workItem from="1580483161019" duration="7686000" />
       <workItem from="1580560149695" duration="4855000" />
+      <workItem from="1583769059916" duration="386000" />
     </task>
     <servers />
   </component>
@@ -787,7 +788,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21558000" />
+    <option name="totallyTimeSpent" value="21944000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -801,7 +802,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -957,11 +958,6 @@
           <line>102</line>
           <option name="timeStamp" value="180" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>792</line>
-          <option name="timeStamp" value="184" />
-        </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
@@ -1110,16 +1106,16 @@ os.rmdir(repo.working_dir)</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py">
+    <entry file="file://$USER_HOME$/Anaconda2/Lib/unittest/case.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="134" selection-start-line="134" selection-end-line="134" />
+        <state relative-caret-position="6300">
+          <caret line="328" selection-start-line="328" selection-end-line="328" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mvnpy/Repo.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
+        <state relative-caret-position="1700">
           <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -1127,29 +1123,29 @@ os.rmdir(repo.working_dir)</expression-string>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/unittest/case.py">
+    <entry file="file://$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="328" selection-start-line="328" selection-end-line="328" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="448" column="28" selection-start-line="448" selection-start-column="28" selection-end-line="448" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="2600">
+          <caret line="134" selection-start-line="134" selection-end-line="134" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="793" column="54" lean-forward="true" selection-start-line="793" selection-start-column="20" selection-end-line="793" selection-end-column="54" />
+        <state relative-caret-position="-280">
+          <caret line="758" selection-start-line="758" selection-end-line="758" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1625">
+          <caret line="448" column="28" selection-start-line="448" selection-start-column="28" selection-end-line="448" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
