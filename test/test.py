@@ -541,15 +541,15 @@ class TestMain(unittest.TestCase):
 				issue_key=issue_key
 			)
 			Main.mvn_repo.clean()
-			try:
-				if i ==0:
-					Main.reset_repos(['', github])
-					i+=1
-					continue
-				Main.repo.git.add('.')
-			except git.exc.GitCommandError as e:
-				Main.reset_repos(['', github])
-				continue
+			# try:
+			# 	if i ==0:
+			# 		Main.reset_repos(['', github])
+			# 		i+=1
+			# 		continue
+			# 	Main.repo.git.add('.')
+			# except git.exc.GitCommandError as e:
+			# 	Main.reset_repos(['', github])
+			# 	continue
 			Main.repo.git.checkout(commit_h, '-f')
 			k = extractor.extract_possible_bugs()
 			bug = filter(lambda x: commit_h in x.fix_commit, extractor.extract_possible_bugs())[0]

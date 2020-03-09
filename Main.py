@@ -790,15 +790,22 @@ def debug_red(str):
 		print(colored(str, 'red'))
 
 def reset_repos(argv):
-	letters ='sjhfgasjfahjsgfhjasgfhjasgfncdjs'
-	orig_base_dir = os.path.dirname(repo.working_dir)
-	reg_base_dir = os.path.dirname(reg_repo.working_dir)
-	rename_orig = os.path.join(orig_base_dir, ''.join(random.choice(letters) for i in range(10)))
-	rename_reg = os.path.join(reg_base_dir, ''.join(random.choice(letters) for i in range(10)))
-	os.rename(repo.working_dir,rename_orig)
-	os.rename(reg_repo.working_dir, rename_reg)
-	# shutil.rmtree(repo.working_dir,ignore_errors=True)
-	# shutil.rmtree(reg_repo.working_dir,ignore_errors=True)
+	try:
+		logging.info('Trying renaiming')
+		letters = 'sjhfgasjfahjsgfhjasgfhjasgfncdjs'
+		orig_base_dir = os.path.dirname(repo.working_dir)
+		reg_base_dir = os.path.dirname(reg_repo.working_dir)
+		rename_orig = os.path.join(orig_base_dir, ''.join(random.choice(letters) for i in range(10)))
+		rename_reg = os.path.join(reg_base_dir, ''.join(random.choice(letters) for i in range(10)))
+		os.rename(repo.working_dir, rename_orig)
+		os.rename(reg_repo.working_dir, rename_reg)
+		set_up(argv, RESET=True)
+		return
+	except Exception as e:
+		logging.info('Failed renaiming with:  ' + str(e) + '\n' + traceback.format_exc())
+	logging.info('Trying deletting')
+	shutil.rmtree(repo.working_dir,ignore_errors=True)
+	shutil.rmtree(reg_repo.working_dir,ignore_errors=True)
 	set_up(argv, RESET=True)
 
 def set_up(argv, RESET = False):
