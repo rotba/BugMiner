@@ -49,8 +49,8 @@ surefire_version = '2.22.0'
 USE_CACHE = False
 USE_CACHED_STATE = False
 GENERATE_DATA = True
-GENERATE_TESTS = True
-TRACE = False
+GENERATE_TESTS = False
+TRACE = True
 LIMIT_TIME_FOR_BUILD = 180
 MAX_CLASSES_TO_GENERATE_TESTS_FOR = 3
 TESTS_GEN_STRATEGY = TestGenerationStrategy.EVOSUITER
@@ -198,8 +198,6 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				debug_regular(build_report)
 			else:
 				debug_green('### Running tests in parent ###')
-				if TRACE:
-					mvn_repo.setup_tracer()
 				mvn_repo.change_surefire_ver(surefire_version)
 				if CONFIG:
 					mvn_repo.config(module=module)
@@ -385,7 +383,12 @@ def try_grandparents(issue, parent, commit, testcases, dict_testcases_files):
 
 # Handles running maven. Will try to run the smallest module possib;e
 def run_mvn_tests(testcases, module):
-	build_report = mvn_repo.test(tests=testcases, module=module, time_limit=LIMIT_TIME_FOR_BUILD)
+	if TRACE:
+		target = r"c:\temp\traces_temp"
+		mvn_repo.run_under_jcov(target, module=module, testcases=testcases)
+		build_report = mvn_repo.build_report
+	else:
+		build_report = mvn_repo.test(tests=testcases, module=module, time_limit=LIMIT_TIME_FOR_BUILD)
 	if mvn.has_compilation_error(build_report):
 		raise mvn.MVNError(msg='Failed due to compilation error', report=build_report, trace=traceback.format_exc())
 	return build_report
@@ -880,4 +883,4 @@ def set_up(argv, RESET = False):
 
 
 if __name__ == '__main__':
-	main(sys.argv);
+	main(sys.argv)

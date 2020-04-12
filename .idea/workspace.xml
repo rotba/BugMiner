@@ -2,27 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evosuite" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/TestSuiteGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/TestSuiteGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/ga/metaheuristics/MonotonicGA.java" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/ga/metaheuristics/MonotonicGA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/regression/RegressionAssertionCounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/regression/RegressionAssertionCounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/statistics/StatisticsSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite/client/src/main/java/org/evosuite/statistics/StatisticsSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evosuite/master/src/test/java/org/evosuite/EvoSuiteTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite/master/src/test/java/org/evosuite/EvoSuiteTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evosuite/plugins/eclipse/evosuite-eclipse-core/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/evosuite/plugins/eclipse/evosuite-eclipse-core/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BugMiner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BugMiner.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PossibleBugMiner" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PossibleBugMiner/candidate.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/candidate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PossibleBugMiner/sourceforge_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/sourceforge_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnpy" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnpy/Repo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/Repo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher" beforeDir="false" afterPath="$PROJECT_DIR$/patcher" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patcher/tested_projects/MavenProj/patches/AmitTest.java.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/patcher/tested_projects/commons-math/patches/RandomDataTest.java.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest.java.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest_scaffolding.java.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/commons-math/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/tested_projects/commons-math/commons-math/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/tested_projects/commons-math/regression/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/test/tested_projects/commons-math/regression/commons-math/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-compress/regression/commons-compress/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-compress/regression/commons-compress/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-lang/regression/commons-lang/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-lang/regression/commons-lang/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-math/regression/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-math/regression/commons-math/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/tika/regression/tika/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/regression/tika/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/src/test/java/org/apache/tika/TestParsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/src/test/java/org/apache/tika/TestParsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/src/test/java/org/apache/tika/utils/MimeTypesUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/src/test/java/org/apache/tika/utils/MimeTypesUtilsTest.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,64 +95,6 @@
     <select />
   </component>
   <component name="ExportTestResults" outputFolder="$PROJECT_DIR$/tests/results/tests_reports" userTempatePath="" />
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1625">
-              <caret line="448" column="28" selection-start-line="448" selection-start-column="28" selection-end-line="448" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Anaconda2/Lib/unittest/case.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6300">
-              <caret line="328" selection-start-line="328" selection-end-line="328" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvnpy/Repo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-280">
-              <caret line="758" selection-start-line="758" selection-end-line="758" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2600">
-              <caret line="134" selection-start-line="134" selection-end-line="134" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -163,60 +102,17 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>repo</find>
-      <find>spec_repo=repo</find>
-      <find>spec_mvn_repo=mvn_repo</find>
-      <find>hard</find>
-      <find>shu</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>spec_repo</replace>
-      <replace>spec_repo=spec_repo</replace>
-      <replace>spec_mvn_repo=spec_mvn_repo</replace>
-    </replaceStrings>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/mvnpy/Repo.py" />
-        <option value="$PROJECT_DIR$/test/test.py" />
-        <option value="$PROJECT_DIR$/Main.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="y" value="-8" />
-    <option name="width" value="976" />
-    <option name="height" value="1056" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/PossibleBugMiner" />
   </component>
   <component name="ProjectId" id="1PgKtUzE98ksmbYBcalHch63OUu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="BugMiner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BugMiner" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
@@ -226,7 +122,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -240,19 +136,7 @@
       <recent name="C:\Users\user\Code\Python\BugMinerTest" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python tests.Unittests for test.TestMain.test_issue_and_commit">
+  <component name="RunManager" selected="Python.Main">
     <configuration name="Main two issues" type="PythonConfigurationType" factoryName="Python">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -289,7 +173,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="https:\github.com\apache\commons-math http:\issues.apache.org\jira\projects\MATH MATH-1458" />
+      <option name="PARAMETERS" value="https:\github.com\apache\tika http:\issues.apache.org\jira\projects\TIKA TIKA-16" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -647,13 +531,15 @@
     </recent_temporary>
   </component>
   <component name="ServiceViewManager">
-    <option name="allServicesViewState">
-      <serviceView>
-        <treeState>
-          <expand />
-          <select />
-        </treeState>
-      </serviceView>
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
     </option>
   </component>
   <component name="SvnConfiguration">
@@ -755,38 +641,6 @@
     </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2020.02.02 at 21h 07m 27s.xml">
-      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2020.02.02 at 21h 07m 46s.xml">
-      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2020.02.02 at 21h 08m 34s.xml">
-      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2020.02.02 at 21h 09m 32s.xml">
-      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2020.02.02 at 21h 19m 35s.xml">
-      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2020.02.02 at 21h 23m 22s.xml">
-      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2020.02.02 at 21h 24m 17s.xml">
-      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2020.02.02 at 21h 24m 53s.xml">
-      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2020.02.02 at 21h 26m 04s.xml">
-      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_for_test_TestMain_test_issue_and_commit - 2020.02.02 at 21h 33m 56s.xml">
-      <configuration name="Unittests for test.TestMain.test_issue_and_commit" configurationId="tests" />
-    </history-entry>
-  </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="21944000" />
   </component>
@@ -799,32 +653,6 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.033333335" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.6566667" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -834,12 +662,6 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -915,6 +737,76 @@
       <path value="$PROJECT_DIR$/tests/tested_project/wicket" />
     </ignored-roots>
   </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586733326655">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1586733326655" />
+    <state x="560" y="66" width="628" height="595" key="#xdebugger.evaluate" timestamp="1586734275607">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="560" y="66" width="628" height="595" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1586734275607" />
+    <state width="1345" height="192" key="GridCell.Tab.0.bottom" timestamp="1586734771055">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="192" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586734771055" />
+    <state width="1345" height="192" key="GridCell.Tab.0.center" timestamp="1586734771054">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="192" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586734771054" />
+    <state width="1345" height="192" key="GridCell.Tab.0.left" timestamp="1586734771054">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="192" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586734771054" />
+    <state width="1345" height="192" key="GridCell.Tab.0.right" timestamp="1586734771055">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="192" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586734771055" />
+    <state width="1345" height="192" key="GridCell.Tab.1.bottom" timestamp="1586734771055">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="192" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586734771055" />
+    <state width="1345" height="192" key="GridCell.Tab.1.center" timestamp="1586734771055">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="192" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1586734771055" />
+    <state width="1345" height="192" key="GridCell.Tab.1.left" timestamp="1586734771055">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="192" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1586734771055" />
+    <state width="1345" height="192" key="GridCell.Tab.1.right" timestamp="1586734771055">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="192" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1586734771055" />
+    <state x="-1" y="54" width="1342" height="673" key="MergeDialog" timestamp="1586636256742">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="-1" y="54" width="1342" height="673" key="MergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1586636256742" />
+    <state x="395" y="79" key="MultipleFileMergeDialog" timestamp="1586636261854">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="395" y="79" key="MultipleFileMergeDialog/0.0.1366.728@0.0.1366.728" timestamp="1586636261854" />
+    <state x="184" y="6" key="SettingsEditor" timestamp="1586532835525">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586532835525" />
+    <state x="378" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1585592599476">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="378" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585592599476" />
+    <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1585668259536">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1585668259536" />
+    <state x="380" y="101" width="755" height="596" key="find.popup" timestamp="1586729360152">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="380" y="101" width="755" height="596" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1586729360152" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586639410231">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1586639410231" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -949,14 +841,59 @@
           <option name="timeStamp" value="151" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>137</line>
-          <option name="timeStamp" value="176" />
+          <url>file://$PROJECT_DIR$/PossibleBugMiner/extractor.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="184" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PossibleBugMiner/extractor.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="185" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>102</line>
-          <option name="timeStamp" value="180" />
+          <line>224</line>
+          <option name="timeStamp" value="205" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>388</line>
+          <option name="timeStamp" value="206" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>96</line>
+          <option name="timeStamp" value="209" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>287</line>
+          <option name="timeStamp" value="210" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>168</line>
+          <option name="timeStamp" value="211" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>106</line>
+          <option name="timeStamp" value="214" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>104</line>
+          <option name="timeStamp" value="215" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mvnpy/Repo.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="217" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>160</line>
+          <option name="timeStamp" value="218" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -967,188 +904,5 @@
         </breakpoint>
       </default-breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_get_bugged_components_1.coverage" NAME="Unittests for test.TestMain.test_get_bugged_components_1 Coverage Results" MODIFIED="1566461904723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue_and_commit_2.coverage" NAME="Unittests for test.TestMain.test_issue_and_commit_2 Coverage Results" MODIFIED="1577606047878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$Main.coverage" NAME="Main Coverage Results" MODIFIED="1576415681947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestEvosuiteAdjustment_test_extract_bugs_auto_generated_test_basic_project_cmd_bm.coverage" NAME="Unittests for test.TestEvosuiteAdjustment.test_extract_bugs_auto_generated_test_basic_project_cmd_bm Coverage Results" MODIFIED="1575810495668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$combine.coverage" NAME="combine Coverage Results" MODIFIED="1568110791717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/presenetation" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain.coverage" NAME="Unittests for test.TestMain Coverage Results" MODIFIED="1574001178813" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue.coverage" NAME="Unittests for test.TestMain.test_issue Coverage Results" MODIFIED="1576408192533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data.coverage" NAME="Unittests for test.TestMain.test_generate_data Coverage Results" MODIFIED="1575810979685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_extract_bugs_1.coverage" NAME="Unittests for test.TestMain.test_extract_bugs_1 Coverage Results" MODIFIED="1566396094306" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestEvosuiteAdjustment_test_extract_bugs_auto_generated_test_basic_project_evosuiter.coverage" NAME="Unittests for test.TestEvosuiteAdjustment.test_extract_bugs_auto_generated_test_basic_project_evosuiter Coverage Results" MODIFIED="1575810279405" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_get_bug_patches_2.coverage" NAME="Unittests for test.TestMain.test_get_bug_patches_2 Coverage Results" MODIFIED="1567612761023" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data_auto_generated_tests_cmd_strategy.coverage" NAME="Unittests for test.TestMain.test_generate_data_auto_generated_tests_cmd_strategy Coverage Results" MODIFIED="1568388142752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$all.coverage" NAME="all Coverage Results" MODIFIED="1566460730130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_get_bug_patches_1.coverage" NAME="Unittests for test.TestMain.test_get_bug_patches_1 Coverage Results" MODIFIED="1576408689718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_generate_data_auto_generated_tests.coverage" NAME="Unittests for test.TestMain.test_generate_data_auto_generated_tests Coverage Results" MODIFIED="1576415601733" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$Unittests_for_test_TestMain_test_issue_and_commit.coverage" NAME="Unittests for test.TestMain.test_issue_and_commit Coverage Results" MODIFIED="1577606607617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
-    <SUITE FILE_PATH="coverage/BugMiner$Main_two_issues.coverage" NAME="Main two issues Coverage Results" MODIFIED="1574002262803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateCodeFragment">
-      <expression>
-        <expression-string>reg_repo.working_dir</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>reg_repo</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>repo.git.rm('./data/tmp', r=True)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>repo.git.rm('./data/tmp', r=true)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>repo.git.rm('.git')</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>shutil.rmtree(repo.working_dir,ignore_errors=True)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>shutil.rmtree(repo.working_dir+'/.git',ignore_errors=True)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>shutil.rmtree(repo.working_dir+'\.git',ignore_errors=True)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>shutil.rmtree(repo.working_dir+'.git',ignore_errors=True)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>shutil.rmtree(repo.working_dir,ignore_errors=True)
-os.rmdir(repo.working_dir)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-    </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PossibleBugMiner/candidate.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/GitPython-2.1.11-py2.7.egg/git/cmd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="1064" selection-start-line="1064" selection-end-line="1064" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/GitPython-2.1.11-py2.7.egg/git/db.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/GitPython-2.1.11-py2.7.egg/git/objects/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/GitPython-2.1.11-py2.7.egg/git/repo/fun.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="149" selection-start-line="149" selection-end-line="149" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/site-packages/GitPython-2.1.11-py2.7.egg/git/repo/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="465" selection-start-line="465" selection-end-line="465" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PossibleBugMiner/extractor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvnpy/mvn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="284" selection-start-line="284" selection-end-line="284" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-300">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Anaconda2/Lib/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6300">
-          <caret line="328" selection-start-line="328" selection-end-line="328" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvnpy/Repo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="100" column="39" selection-start-line="100" selection-start-column="39" selection-end-line="100" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2600">
-          <caret line="134" selection-start-line="134" selection-end-line="134" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-280">
-          <caret line="758" selection-start-line="758" selection-end-line="758" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1625">
-          <caret line="448" column="28" selection-start-line="448" selection-start-column="28" selection-end-line="448" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
   </component>
 </project>
