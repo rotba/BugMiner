@@ -19,8 +19,7 @@ import string
 import random
 import settings
 from PossibleBugMiner.extractor_factory import ExtractorFactory
-from diff import commitsdiff
-from diff.commit import Commit
+from diff import CommitsDiff
 from mvnpy import Repo as MavenRepo
 from mvnpy import TestObjects
 from mvnpy import bug as mvn_bug
@@ -50,7 +49,7 @@ USE_CACHE = False
 USE_CACHED_STATE = False
 GENERATE_DATA = True
 GENERATE_TESTS = False
-TRACE = True
+TRACE = False
 LIMIT_TIME_FOR_BUILD = 180
 MAX_CLASSES_TO_GENERATE_TESTS_FOR = 3
 TESTS_GEN_STRATEGY = TestGenerationStrategy.EVOSUITER
@@ -429,9 +428,9 @@ def attach_reports(testcases):
 # Returns a list of methods that are associated with a change in the diff of the commits
 def get_bugged_components(commit_fix, commit_bug, module):
 	ans = []
-	commit_diff = commitsdiff.CommitsDiff(
-		commit_a=Commit.init_commit_by_git_commit(commit_bug, 0),
-		commit_b=Commit.init_commit_by_git_commit(commit_fix, 0))
+	commit_diff = CommitsDiff.CommitsDiff(
+		commit_a=commit_bug,
+		commit_b=commit_fix)
 	for file_diff in commit_diff.diffs:
 		if file_diff.file_name.endswith('.java'):
 			file_path = os.path.join(repo.working_tree_dir, file_diff.file_name)

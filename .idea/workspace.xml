@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/BugMiner.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BugMiner.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner" afterDir="false" />
@@ -11,14 +9,13 @@
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/sourceforge_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/sourceforge_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diff/commit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/diff/commitsdiff.py" beforeDir="false" afterPath="$PROJECT_DIR$/diff/commitsdiff.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diff/filediff.py" beforeDir="false" afterPath="$PROJECT_DIR$/diff/filediff.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvnpy" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnpy/Repo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/Repo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher" beforeDir="false" afterPath="$PROJECT_DIR$/patcher" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest.java.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest_scaffolding.java.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/src/test/java/org/apache/tika/TestParsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/src/test/java/org/apache/tika/TestParsers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/src/test/java/org/apache/tika/utils/MimeTypesUtilsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/src/test/java/org/apache/tika/utils/MimeTypesUtilsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +100,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/PossibleBugMiner" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PgKtUzE98ksmbYBcalHch63OUu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -746,22 +743,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="560" y="66" width="628" height="595" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1586734275607" />
-    <state width="1345" height="192" key="GridCell.Tab.0.bottom" timestamp="1586734771055">
+    <state width="1345" height="164" key="GridCell.Tab.0.bottom" timestamp="1586735924646">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586734771055" />
-    <state width="1345" height="192" key="GridCell.Tab.0.center" timestamp="1586734771054">
+    <state width="1345" height="164" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586735924646" />
+    <state width="1345" height="164" key="GridCell.Tab.0.center" timestamp="1586735924646">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586734771054" />
-    <state width="1345" height="192" key="GridCell.Tab.0.left" timestamp="1586734771054">
+    <state width="1345" height="164" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586735924646" />
+    <state width="1345" height="164" key="GridCell.Tab.0.left" timestamp="1586735924646">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586734771054" />
-    <state width="1345" height="192" key="GridCell.Tab.0.right" timestamp="1586734771055">
+    <state width="1345" height="164" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586735924646" />
+    <state width="1345" height="164" key="GridCell.Tab.0.right" timestamp="1586735924646">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586734771055" />
+    <state width="1345" height="164" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586735924646" />
     <state width="1345" height="192" key="GridCell.Tab.1.bottom" timestamp="1586734771055">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -798,10 +795,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1585668259536" />
-    <state x="380" y="101" width="755" height="596" key="find.popup" timestamp="1586729360152">
+    <state x="380" y="101" width="755" height="596" key="find.popup" timestamp="1586735848505">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="380" y="101" width="755" height="596" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1586729360152" />
+    <state x="380" y="101" width="755" height="596" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1586735848505" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586639410231">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -852,37 +849,37 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>224</line>
+          <line>223</line>
           <option name="timeStamp" value="205" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>388</line>
+          <line>387</line>
           <option name="timeStamp" value="206" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>96</line>
+          <line>95</line>
           <option name="timeStamp" value="209" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>287</line>
+          <line>286</line>
           <option name="timeStamp" value="210" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>168</line>
+          <line>167</line>
           <option name="timeStamp" value="211" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>106</line>
+          <line>105</line>
           <option name="timeStamp" value="214" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>104</line>
+          <line>103</line>
           <option name="timeStamp" value="215" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -892,7 +889,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>160</line>
+          <line>159</line>
           <option name="timeStamp" value="218" />
         </line-breakpoint>
       </breakpoints>
