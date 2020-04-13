@@ -49,7 +49,7 @@ USE_CACHE = False
 USE_CACHED_STATE = False
 GENERATE_DATA = True
 GENERATE_TESTS = False
-TRACE = False
+TRACE = True
 LIMIT_TIME_FOR_BUILD = 180
 MAX_CLASSES_TO_GENERATE_TESTS_FOR = 3
 TESTS_GEN_STRATEGY = TestGenerationStrategy.EVOSUITER
@@ -221,13 +221,20 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			for testcase in commit_valid_testcases:
 				if testcase in parent_valid_testcases:
 					parent_testcase = [t for t in parent_valid_testcases if t == testcase][0]
+					blamed_components = []
+					if TRACE:
+						traced_components = set(reduce(list.__add__, map(lambda t: t.get_trace(), mvn_repo.traces), []))
+						changed_components = set(map(lambda m: m.full_method_name, set(reduce(list.__add__, map(lambda d: d.get_changed_methods(), changed_classes_diffs), []))))
+						blamed_components = list(traced_components.intersection(changed_components))
+					repo.git.add("-N", "*.java")
+					diff = repr(repo.git.diff("--", "*.java"))
 					bug = mvn_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
 					                         parent_testcase=parent_testcase,
 					                         type=mvn_bug.determine_type(testcase, delta_testcases,
 					                                                     generated_testcases),
 					                         traces=mvn_repo.get_trace(parent_testcase.mvn_name),
-					                         bugged_components=module_changed_classes
-					                         )
+					                         bugged_components=module_changed_classes,
+					                         blamed_components=blamed_components, diff=diff, check_trace=TRACE)
 					module_bugs.append(bug)
 			passed_delta_bugs = list(
 				filter(lambda b: b.type == mvn_bug.Bug_type.DELTA and b.desctiption == mvn_bug.invalid_passed_desc,
@@ -383,8 +390,7 @@ def try_grandparents(issue, parent, commit, testcases, dict_testcases_files):
 # Handles running maven. Will try to run the smallest module possib;e
 def run_mvn_tests(testcases, module):
 	if TRACE:
-		target = r"c:\temp\traces_temp"
-		mvn_repo.run_under_jcov(target, module=module, testcases=testcases)
+		mvn_repo.run_under_jcov(target_dir=None, module=module, testcases=testcases)
 		build_report = mvn_repo.build_report
 	else:
 		build_report = mvn_repo.test(tests=testcases, module=module, time_limit=LIMIT_TIME_FOR_BUILD)

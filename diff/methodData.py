@@ -31,7 +31,8 @@ class MethodData(object):
         self.method_used_lines = method_used_lines
         self.parameters = parameters
         self.file_name = file_name
-        self.id = self.file_name + "@" + self.method_name + "(" + ",".join(self.parameters) + ")"
+        self.full_method_name = self.method_name + "(" + ",".join(self.parameters) + ")"
+        self.id = self.file_name + "@" + self.full_method_name
         self.source_lines = SourceLine.get_source_lines(start_line, end_line, contents, changed_indices, method_used_lines)
         self.changed = self._is_changed()
 

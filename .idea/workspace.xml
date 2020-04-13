@@ -9,10 +9,10 @@
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/sourceforge_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/sourceforge_extractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diff/commit.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/diff/commitsdiff.py" beforeDir="false" afterPath="$PROJECT_DIR$/diff/commitsdiff.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diff/filediff.py" beforeDir="false" afterPath="$PROJECT_DIR$/diff/filediff.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diff/methodData.py" beforeDir="false" afterPath="$PROJECT_DIR$/diff/methodData.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvnpy" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnpy/Repo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/Repo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnpy/bug.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/bug.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher" beforeDir="false" afterPath="$PROJECT_DIR$/patcher" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest.java.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest_scaffolding.java.patch" beforeDir="false" />
@@ -100,7 +100,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/mvnpy" />
   </component>
   <component name="ProjectId" id="1PgKtUzE98ksmbYBcalHch63OUu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -170,7 +170,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="https:\github.com\apache\tika http:\issues.apache.org\jira\projects\TIKA TIKA-16" />
+      <option name="PARAMETERS" value="https:\github.com\apache\tika http:\issues.apache.org\jira\projects\TIKA TIKA-56" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -735,46 +735,46 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586733326655">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586741631685">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1586733326655" />
-    <state x="560" y="66" width="628" height="595" key="#xdebugger.evaluate" timestamp="1586734275607">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1586741631685" />
+    <state x="334" y="66" width="854" height="595" key="#xdebugger.evaluate" timestamp="1586744419658">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="560" y="66" width="628" height="595" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1586734275607" />
-    <state width="1345" height="164" key="GridCell.Tab.0.bottom" timestamp="1586735924646">
+    <state x="334" y="66" width="854" height="595" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1586744419658" />
+    <state width="1345" height="192" key="GridCell.Tab.0.bottom" timestamp="1586744762446">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586735924646" />
-    <state width="1345" height="164" key="GridCell.Tab.0.center" timestamp="1586735924646">
+    <state width="1345" height="192" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586744762446" />
+    <state width="1345" height="192" key="GridCell.Tab.0.center" timestamp="1586744762446">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586735924646" />
-    <state width="1345" height="164" key="GridCell.Tab.0.left" timestamp="1586735924646">
+    <state width="1345" height="192" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586744762446" />
+    <state width="1345" height="192" key="GridCell.Tab.0.left" timestamp="1586744762446">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586735924646" />
-    <state width="1345" height="164" key="GridCell.Tab.0.right" timestamp="1586735924646">
+    <state width="1345" height="192" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586744762446" />
+    <state width="1345" height="192" key="GridCell.Tab.0.right" timestamp="1586744762446">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586735924646" />
-    <state width="1345" height="192" key="GridCell.Tab.1.bottom" timestamp="1586734771055">
+    <state width="1345" height="192" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586744762446" />
+    <state width="1345" height="192" key="GridCell.Tab.1.bottom" timestamp="1586744762447">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586734771055" />
-    <state width="1345" height="192" key="GridCell.Tab.1.center" timestamp="1586734771055">
+    <state width="1345" height="192" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586744762447" />
+    <state width="1345" height="192" key="GridCell.Tab.1.center" timestamp="1586744762446">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1586734771055" />
-    <state width="1345" height="192" key="GridCell.Tab.1.left" timestamp="1586734771055">
+    <state width="1345" height="192" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1586744762446" />
+    <state width="1345" height="192" key="GridCell.Tab.1.left" timestamp="1586744762446">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1586734771055" />
-    <state width="1345" height="192" key="GridCell.Tab.1.right" timestamp="1586734771055">
+    <state width="1345" height="192" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1586744762446" />
+    <state width="1345" height="192" key="GridCell.Tab.1.right" timestamp="1586744762447">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1586734771055" />
+    <state width="1345" height="192" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1586744762447" />
     <state x="-1" y="54" width="1342" height="673" key="MergeDialog" timestamp="1586636256742">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -787,6 +787,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586532835525" />
+    <state width="691" height="372" key="XDebugger.FullValuePopup" timestamp="1586743594084">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="691" height="372" key="XDebugger.FullValuePopup/0.0.1366.728@0.0.1366.728" timestamp="1586743594084" />
     <state x="378" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1585592599476">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -795,10 +799,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1585668259536" />
-    <state x="380" y="101" width="755" height="596" key="find.popup" timestamp="1586735848505">
+    <state x="380" y="101" width="755" height="596" key="find.popup" timestamp="1586739358315">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="380" y="101" width="755" height="596" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1586735848505" />
+    <state x="380" y="101" width="755" height="596" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1586739358315" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586639410231">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -849,48 +853,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>223</line>
-          <option name="timeStamp" value="205" />
+          <line>442</line>
+          <option name="timeStamp" value="221" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>387</line>
-          <option name="timeStamp" value="206" />
+          <line>375</line>
+          <option name="timeStamp" value="230" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>95</line>
-          <option name="timeStamp" value="209" />
+          <line>379</line>
+          <option name="timeStamp" value="231" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>286</line>
-          <option name="timeStamp" value="210" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>167</line>
-          <option name="timeStamp" value="211" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>105</line>
-          <option name="timeStamp" value="214" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>103</line>
-          <option name="timeStamp" value="215" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mvnpy/Repo.py</url>
-          <line>65</line>
-          <option name="timeStamp" value="217" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>159</line>
-          <option name="timeStamp" value="218" />
+          <url>file://$PROJECT_DIR$/mvnpy/bug.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="239" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
