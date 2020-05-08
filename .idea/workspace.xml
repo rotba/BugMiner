@@ -2,20 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/run_process.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/candidate.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/candidate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/sourceforge_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/sourceforge_extractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diff/methodData.py" beforeDir="false" afterPath="$PROJECT_DIR$/diff/methodData.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvnpy" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnpy/Repo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/Repo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnpy/bug.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/bug.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher" beforeDir="false" afterPath="$PROJECT_DIR$/patcher" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest.java.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest_scaffolding.java.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +98,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/mvnpy" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PgKtUzE98ksmbYBcalHch63OUu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -122,18 +120,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Code\Lab\BugMiner\mvnpy\config" />
-      <recent name="C:\Code\Lab\BugMiner\presenetation" />
-      <recent name="C:\Users\user\Code\Python\BugMiner" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Code\Lab\BugMiner\presenetation" />
       <recent name="C:\Users\user\Code\Python\BugMiner\mvn_parsers" />
       <recent name="C:\Users\user\Code\Python\BugMinerTest" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\amirelm\Documents\GitHub\BugMiner" />
+      <recent name="C:\Code\Lab\BugMiner\mvnpy\config" />
+      <recent name="C:\Code\Lab\BugMiner\presenetation" />
+      <recent name="C:\Users\user\Code\Python\BugMiner" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.Main">
+  <component name="RunManager" selected="Python.run_process">
     <configuration name="Main two issues" type="PythonConfigurationType" factoryName="Python">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -170,7 +169,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="https:\github.com\apache\tika http:\issues.apache.org\jira\projects\TIKA TIKA-56" />
+      <option name="PARAMETERS" value="https:\github.com\apache\tinkerpop http:\issues.apache.org\jira\projects\TINKERPOP" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -420,20 +419,25 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test.TestMain" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="run_process" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_pattern" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test.TestMain&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_process.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
     <configuration name="Unittests for test.TestMain.test_generate_data" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
@@ -511,19 +515,19 @@
       <item itemvalue="Python.process issues" />
       <item itemvalue="Python.process reps" />
       <item itemvalue="Python.process times rate reps" />
-      <item itemvalue="Python tests.Unittests for test.TestMain" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_issue" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit" />
+      <item itemvalue="Python.run_process" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.run_process" />
         <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit" />
         <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data" />
         <item itemvalue="Python tests.Unittests for test.TestMain.test_issue" />
         <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests" />
-        <item itemvalue="Python tests.Unittests for test.TestMain" />
       </list>
     </recent_temporary>
   </component>
@@ -735,46 +739,50 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586741631685">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588951493931">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1586741631685" />
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1588951493931" />
     <state x="334" y="66" width="854" height="595" key="#xdebugger.evaluate" timestamp="1586744419658">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="334" y="66" width="854" height="595" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1586744419658" />
-    <state width="1345" height="192" key="GridCell.Tab.0.bottom" timestamp="1586744762446">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1588535146155">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586744762446" />
-    <state width="1345" height="192" key="GridCell.Tab.0.center" timestamp="1586744762446">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1588535146155" />
+    <state width="1345" height="164" key="GridCell.Tab.0.bottom" timestamp="1588951564774">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1586744762446" />
-    <state width="1345" height="192" key="GridCell.Tab.0.left" timestamp="1586744762446">
+    <state width="1345" height="164" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588951564774" />
+    <state width="1345" height="164" key="GridCell.Tab.0.center" timestamp="1588951564774">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1586744762446" />
-    <state width="1345" height="192" key="GridCell.Tab.0.right" timestamp="1586744762446">
+    <state width="1345" height="164" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588951564774" />
+    <state width="1345" height="164" key="GridCell.Tab.0.left" timestamp="1588951564774">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1586744762446" />
-    <state width="1345" height="192" key="GridCell.Tab.1.bottom" timestamp="1586744762447">
+    <state width="1345" height="164" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588951564774" />
+    <state width="1345" height="164" key="GridCell.Tab.0.right" timestamp="1588951564774">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1586744762447" />
-    <state width="1345" height="192" key="GridCell.Tab.1.center" timestamp="1586744762446">
+    <state width="1345" height="164" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588951564774" />
+    <state width="1345" height="185" key="GridCell.Tab.1.bottom" timestamp="1588951466009">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1586744762446" />
-    <state width="1345" height="192" key="GridCell.Tab.1.left" timestamp="1586744762446">
+    <state width="1345" height="185" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588951466009" />
+    <state width="1345" height="185" key="GridCell.Tab.1.center" timestamp="1588951466009">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1586744762446" />
-    <state width="1345" height="192" key="GridCell.Tab.1.right" timestamp="1586744762447">
+    <state width="1345" height="185" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1588951466009" />
+    <state width="1345" height="185" key="GridCell.Tab.1.left" timestamp="1588951466009">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="192" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1586744762447" />
+    <state width="1345" height="185" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1588951466009" />
+    <state width="1345" height="185" key="GridCell.Tab.1.right" timestamp="1588951466009">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="185" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1588951466009" />
     <state x="-1" y="54" width="1342" height="673" key="MergeDialog" timestamp="1586636256742">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -795,14 +803,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="378" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585592599476" />
-    <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1585668259536">
+    <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588863899120">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1585668259536" />
-    <state x="380" y="101" width="755" height="596" key="find.popup" timestamp="1586739358315">
+    <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1588863899120" />
+    <state x="380" y="101" width="755" height="596" key="find.popup" timestamp="1587921001328">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="380" y="101" width="755" height="596" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1586739358315" />
+    <state x="380" y="101" width="755" height="596" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1587921001328" />
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586639410231">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -872,13 +880,6 @@
           <option name="timeStamp" value="239" />
         </line-breakpoint>
       </breakpoints>
-      <default-breakpoints>
-        <breakpoint type="python-exception">
-          <properties notifyOnTerminate="true" exception="BaseException">
-            <option name="notifyOnTerminate" value="true" />
-          </properties>
-        </breakpoint>
-      </default-breakpoints>
     </breakpoint-manager>
   </component>
 </project>

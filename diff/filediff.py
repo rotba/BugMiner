@@ -49,6 +49,8 @@ class FileDiff(object):
                     with open(path) as f:
                         after_contents = f.readlines()
                 gc.collect()
+        before_contents = list(map(lambda x: x.decode("utf-8"), before_contents))
+        after_contents = list(map(lambda x: x.decode("utf-8"), after_contents))
         before_indices, after_indices = self.get_changed_indices(before_contents, after_contents)
         self.before_file = SourceFile(before_contents, diff.a_path, before_indices)
         self.after_file = SourceFile(after_contents, diff.b_path, after_indices)
@@ -59,26 +61,26 @@ class FileDiff(object):
     @staticmethod
     def get_changed_indices(before_contents, after_contents):
         def get_lines_by_prefixes(lines, prefixes):
-            return filter(lambda x: any(map(lambda p: x.startswith(p), prefixes)), lines)
+            return list(filter(lambda x: any(map(lambda p: x.startswith(p), prefixes)), lines))
 
         def get_indices_by_prefix(lines, prefix):
-            return map(lambda x: x[0], filter(lambda x: x[1].startswith(prefix), enumerate(lines)))
+            return list(map(lambda x: x[0], filter(lambda x: x[1].startswith(prefix), enumerate(lines))))
 
         diff = list(difflib.ndiff(before_contents, after_contents))
 
         diff_before_lines = get_lines_by_prefixes(diff, FileDiff.BEFORE_PREFIXES)
-        assert map(lambda x: x[2:], diff_before_lines) == before_contents
+        assert list(map(lambda x: x[2:], diff_before_lines)) == before_contents
         before_indices = get_indices_by_prefix(diff_before_lines, FileDiff.REMOVED)
 
         diff_after_lines = get_lines_by_prefixes(diff, FileDiff.AFTER_PREFIXES)
-        assert map(lambda x: x[2:], diff_after_lines) == after_contents
+        assert list(map(lambda x: x[2:], diff_after_lines)) == after_contents
         after_indices = get_indices_by_prefix(diff_after_lines, FileDiff.ADDED)
 
         return before_indices, after_indices
 
     def get_changed_methods(self):
-        return filter(lambda method: method.changed,
-                      self.before_file.methods.values() + self.after_file.methods.values())
+        return list(filter(lambda method: method.changed,
+                      list(self.before_file.methods.values()) + list(self.after_file.methods.values())))
 
     def __repr__(self):
         return self.file_name
