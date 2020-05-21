@@ -1,7 +1,7 @@
 import os
 
 BASE_DIR = os.getcwd()
-TESTED_PROJECTS_DIR = os.path.join(BASE_DIR, 'tested_projects')
+TESTED_PROJECTS_DIR = os.path.join(r"Z:\mining", 'tested_projects')
 RESULTS_DIR = os.path.join(BASE_DIR, 'results')
 
 

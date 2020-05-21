@@ -93,7 +93,7 @@ def main(argv):
 
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
 def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
-	logging.info("extract_bugs(): working on issue " + issue.key + ' in commit ' + commit.hexsha)
+	logging.info("extract_bugs(): working on issue " + issue + ' in commit ' + commit.hexsha)
 	ans = []
 	parent = get_parent(commit)
 	if parent == None:
@@ -121,8 +121,8 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				)
 			if CONFIG:
 				mvn_repo.config(module=module)
-			module_changed_classes = get_most_chenged_classes(module, changed_classes_diffs, commit, parent)
 			if GENERATE_TESTS:
+				module_changed_classes = get_most_chenged_classes(module, changed_classes_diffs, commit, parent)
 				debug_blue('### Generating tests ###')
 				if not USE_CACHED_STATE:
 					if len(module_changed_classes) == 0: raise mvn_bug.NoAssociatedChangedClasses(
@@ -160,6 +160,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				debug_green('### Running tests in commit ###')
 				mvn_repo.change_surefire_ver(surefire_version)
 				build_log = run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
+				mvn_repo.observe_tests()
 				debug_regular(build_log)
 				(commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
 			gen_commit_valid_testcases = filter(lambda x: x in commit_valid_testcases, commit_valid_testcases)
@@ -176,13 +177,13 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			if GENERATE_DATA:
 				dict_testcase_patch = get_bug_patches(patch.get_patched(), dict_testclass_bug_dir)
 			for unpatchable_testcase in patch.get_all_unpatched():
-				ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
+				ans.append(mvn_bug.Bug(issue_key=issue, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
 				                       bugged_testcase=unpatchable_testcase, fixed_testcase=unpatchable_testcase,
 				                       type=mvn_bug.determine_type(unpatchable_testcase, delta_testcases,
 				                                                   generated_testcases), valid=False,
 				                       desc=mvn_bug.invalid_comp_error_desc))
 			for no_report_testcase in no_report_testcases:
-				ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
+				ans.append(mvn_bug.Bug(issue_key=issue, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
 				                       bugged_testcase=no_report_testcase, fixed_testcase=no_report_testcase,
 				                       type=mvn_bug.determine_type(no_report_testcase, delta_testcases,
 				                                                   gen_commit_valid_testcases), valid=False,
@@ -211,7 +212,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			relevant_parent_testcases = list(filter(lambda t: t in commit_valid_testcases, all_parent_testcases))
 			(parent_valid_testcases, no_report_testcases) = attach_reports(relevant_parent_testcases)
 			for no_report_testcase in no_report_testcases:
-				ans.append(mvn_bug.Bug(issue_key=issue.key, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
+				ans.append(mvn_bug.Bug(issue_key=issue, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
 				                       bugged_testcase=no_report_testcase, fixed_testcase=no_report_testcase,
 				                       type=mvn_bug.determine_type(no_report_testcase, delta_testcases,
 				                                                   gen_commit_valid_testcases), valid=False,
@@ -223,8 +224,8 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 					parent_testcase = [t for t in parent_valid_testcases if t == testcase][0]
 					blamed_components = []
 					if TRACE:
-						traced_components = set(reduce(list.__add__, map(lambda t: t.get_trace(), mvn_repo.traces), []))
-						changed_components = set(map(lambda m: m.full_method_name, set(reduce(list.__add__, map(lambda d: d.get_changed_methods(), changed_classes_diffs), []))))
+						traced_components = set(reduce(list.__add__, map(lambda t: map(lambda x: x.lower(), t.get_trace()), mvn_repo.traces), []))
+						changed_components = set(map(lambda m: m.method_name_parameters.lower(), set(reduce(list.__add__, map(lambda d: d.get_changed_methods(), changed_classes_diffs), []))))
 						blamed_components = list(traced_components.intersection(changed_components))
 					repo.git.add("-N", "*.java")
 					diff = repr(repo.git.diff("--", "*.java"))
@@ -232,8 +233,8 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 					                         parent_testcase=parent_testcase,
 					                         type=mvn_bug.determine_type(testcase, delta_testcases,
 					                                                     generated_testcases),
-					                         traces=mvn_repo.get_trace(parent_testcase.mvn_name),
-					                         bugged_components=module_changed_classes,
+					                         traces=mvn_repo.get_trace(parent_testcase.mvn_name).get_trace(),
+					                         bugged_components=[],
 					                         blamed_components=blamed_components, diff=diff, check_trace=TRACE)
 					module_bugs.append(bug)
 			passed_delta_bugs = list(
@@ -250,33 +251,33 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			ans += module_bugs
 			end_time = time.time()
 			if GENERATE_DATA:
-				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time, mvn_repo.repo_dir)
+				bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time, mvn_repo.repo_dir)
 		except mvn_bug.BugError as e:
 			end_time = time.time()
 			logging.info('failed inspecting module : ' + module + '. The reason is: ' + e.msg)
 			if GENERATE_DATA:
-				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
+				bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time,
 				                          mvn_repo.repo_dir, 'Failed - ' + e.msg + '\n' + traceback.format_exc())
 		except TestsGenerationError as e:
 			end_time = time.time()
 			logging.info('Tests generation problem! failed inspecting module : ' + module)
 			logging.info(traceback.format_exc())
 			if GENERATE_DATA:
-				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
+				bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time,
 				                          mvn_repo.repo_dir, 'Failed:\n ' + str(e))
 		except mvn.MVNTimeoutError as e:
 			end_time = time.time()
 			logging.info('TIMEOUT! failed inspecting module : ' + module)
 			logging.info(traceback.format_exc())
 			if GENERATE_DATA:
-				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
+				bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time,
 				                          mvn_repo.repo_dir, 'Failed: ' + str(e) + '\n' + traceback.format_exc())
 		except mvn.MVNError as e:
 			end_time = time.time()
 			logging.info('failed inspecting module : ' + module)
 			logging.info(traceback.format_exc())
 			if GENERATE_DATA:
-				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
+				bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time,
 				                          mvn_repo.repo_dir, 'Failed: ' + str(e) + '\n' + traceback.format_exc())
 
 		except Exception as e:
@@ -284,7 +285,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			logging.info('failed inspecting module : ' + module)
 			logging.info(traceback.format_exc())
 			if GENERATE_DATA:
-				bug_data_handler.add_time(issue.key, commit.hexsha, module, end_time - start_time,
+				bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time,
 				                          mvn_repo.repo_dir,
 				                          'Unexpected failure: ' + str(e) + '\n' + traceback.format_exc())
 			debug_regular('Unexpected failure!')
@@ -411,7 +412,8 @@ def attach_reports(testcases):
 		testclass = testcase.parent
 		if testclass.report is None:
 			try:
-				testclass.report = TestObjects.TestClassReport(testclass.get_report_path(), testclass.module)
+				observed_tests = filter(lambda x: x.report_file == testclass.get_report_path(), mvn_repo.test_results.values())
+				testclass.report = TestObjects.TestClassReport(testclass.get_report_path(), testclass.module, observed_tests)
 				testclass.attach_report_to_testcase(testcase)
 				attatched.append(testcase)
 			except TestObjects.TestParserException as e:
@@ -441,7 +443,7 @@ def get_bugged_components(commit_fix, commit_bug, module):
 		if file_diff.file_name.endswith('.java'):
 			file_path = os.path.join(repo.working_tree_dir, file_diff.file_name)
 			ans += list(
-				map(lambda m: mvn.generate_mvn_class_names(src_path=file_path, module=module) + '#' + m,
+				map(lambda m: mvn.generate_mvn_class_names(src_path=file_path, module=module) + '.' + m,
 				    file_diff.changed_methods)
 			)
 	return ans
@@ -607,7 +609,7 @@ def get_parent(commit):
 
 # Returns true if testcase is in class_decl
 def testcase_in_class(class_decl, testcase):
-	method_names = list(map(lambda m: class_decl.name + '#' + m.name, class_decl.methods))
+	method_names = list(map(lambda m: class_decl.name + '.' + m.name, class_decl.methods))
 	return any(testcase.mvn_name.endswith(m_name) for m_name in method_names)
 
 
@@ -622,7 +624,7 @@ def find_test_cases_diff(commit_test_class, src_path):
 		return commit_test_class.testcases
 	class_decl = [c for c in tree.children[2] if c.name in commit_test_class.mvn_name][0]
 	for method in class_decl.methods:
-		testcases_in_src.append(commit_test_class.mvn_name + '#' + method.name)
+		testcases_in_src.append(commit_test_class.mvn_name + '.' + method.name)
 	for testcase in commit_test_class.testcases:
 		i = 0
 		for testcase_in_src in testcases_in_src:
@@ -657,7 +659,7 @@ def is_in_module(class_mvn_name, module):
 
 
 def convert_to_mvn_name(class_mvn_name, module):
-	return re.sub('\#.*', '', class_mvn_name[len(os.path.basename(module) + '#'):])
+	return re.sub('\#.*', '', class_mvn_name[len(os.path.basename(module) + '.'):])
 
 
 # Returns data stored in the cache dir. If not found, retrieves the data using the retrieve func
@@ -754,14 +756,9 @@ def pick_tests(testcases, module):
 	if mvn_repo.too_much_testcases_to_generate_cmd(testcases, module):
 		logging.info('To manny tests. Filtering in order to execute build\nAmount of tests:{}'.format(len(testcases)))
 		if not GENERATE_TESTS:
-			return set(
-				map(lambda y: y.parent, testcases)
-			)
+			return set(map(lambda y: y.parent, testcases))
 		else:
-			return set(
-				map(lambda y: y.parent,
-				    filter(lambda x: mvn_repo.is_generated_test(x.parent), testcases))
-			)
+			return set(map(lambda y: y.parent, filter(lambda x: mvn_repo.is_generated_test(x.parent), testcases)))
 	return testcases
 
 

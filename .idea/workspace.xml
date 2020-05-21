@@ -2,17 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/run_process.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/candidate.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/candidate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/sourceforge_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/sourceforge_extractor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvnpy" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnpy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnpy/Repo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/Repo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnpy/bug.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/bug.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnpy/jcov_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/jcov_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnpy/jcov_tracer.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/jcov_tracer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnpy/mvn.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/mvn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnpy/pom_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/pom_file.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher" beforeDir="false" afterPath="$PROJECT_DIR$/patcher" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest.java.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/patcher/tested_projects/tika/patches/MimeTypes_ESTest_scaffolding.java.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/patcher/patcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/patcher/patcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_process.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -98,7 +105,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/PossibleBugMiner" />
   </component>
   <component name="ProjectId" id="1PgKtUzE98ksmbYBcalHch63OUu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -114,7 +121,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="testma&#9;FILE&#9;file://C:/Users/TEMP/BugMiner/TestMain.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mvnpy" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
@@ -169,7 +176,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="https:\github.com\apache\tinkerpop http:\issues.apache.org\jira\projects\TINKERPOP" />
+      <option name="PARAMETERS" value="https:\github.com\apache\commons-compress  http:\issues.apache.org\jira\projects\COMPRESS" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -515,11 +522,11 @@
       <item itemvalue="Python.process issues" />
       <item itemvalue="Python.process reps" />
       <item itemvalue="Python.process times rate reps" />
+      <item itemvalue="Python.run_process" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_generate_data_auto_generated_tests" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_issue" />
       <item itemvalue="Python tests.Unittests for test.TestMain.test_issue_and_commit" />
-      <item itemvalue="Python.run_process" />
     </list>
     <recent_temporary>
       <list>
@@ -739,50 +746,59 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588951493931">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589115120057">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1588951493931" />
-    <state x="334" y="66" width="854" height="595" key="#xdebugger.evaluate" timestamp="1586744419658">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1589115120057" />
+    <state x="468" y="133" width="950" height="595" key="#xdebugger.evaluate" timestamp="1589418304528">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="334" y="66" width="854" height="595" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1586744419658" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1588535146155">
+    <state x="468" y="133" width="854" height="595" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1589418304528" />
+    <state x="671" y="262" width="950" height="595" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1589292699623" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1590023291723">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1588535146155" />
-    <state width="1345" height="164" key="GridCell.Tab.0.bottom" timestamp="1588951564774">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1590023291723" />
+    <state width="1345" height="239" key="GridCell.Tab.0.bottom" timestamp="1590020764435">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588951564774" />
-    <state width="1345" height="164" key="GridCell.Tab.0.center" timestamp="1588951564774">
+    <state width="1345" height="239" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590020764435" />
+    <state width="1899" height="329" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589361739798" />
+    <state width="1345" height="239" key="GridCell.Tab.0.center" timestamp="1590020764435">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1588951564774" />
-    <state width="1345" height="164" key="GridCell.Tab.0.left" timestamp="1588951564774">
+    <state width="1345" height="239" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590020764435" />
+    <state width="1899" height="329" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589361739798" />
+    <state width="1345" height="239" key="GridCell.Tab.0.left" timestamp="1590020764435">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1588951564774" />
-    <state width="1345" height="164" key="GridCell.Tab.0.right" timestamp="1588951564774">
+    <state width="1345" height="239" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590020764435" />
+    <state width="1899" height="329" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589361739798" />
+    <state width="1345" height="239" key="GridCell.Tab.0.right" timestamp="1590020764435">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="164" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1588951564774" />
-    <state width="1345" height="185" key="GridCell.Tab.1.bottom" timestamp="1588951466009">
+    <state width="1345" height="239" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590020764435" />
+    <state width="1899" height="329" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589361739798" />
+    <state width="1345" height="170" key="GridCell.Tab.1.bottom" timestamp="1589418393511">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="185" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1588951466009" />
-    <state width="1345" height="185" key="GridCell.Tab.1.center" timestamp="1588951466009">
+    <state width="1345" height="170" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589418393511" />
+    <state width="1899" height="329" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589360529747" />
+    <state width="1345" height="170" key="GridCell.Tab.1.center" timestamp="1589418393511">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="185" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1588951466009" />
-    <state width="1345" height="185" key="GridCell.Tab.1.left" timestamp="1588951466009">
+    <state width="1345" height="170" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1589418393511" />
+    <state width="1899" height="329" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589360529746" />
+    <state width="1345" height="170" key="GridCell.Tab.1.left" timestamp="1589418393510">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="185" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1588951466009" />
-    <state width="1345" height="185" key="GridCell.Tab.1.right" timestamp="1588951466009">
+    <state width="1345" height="170" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1589418393510" />
+    <state width="1899" height="329" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589360529746" />
+    <state width="1345" height="170" key="GridCell.Tab.1.right" timestamp="1589418393511">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="185" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1588951466009" />
+    <state width="1345" height="170" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1589418393511" />
+    <state width="1899" height="329" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589360529746" />
     <state x="-1" y="54" width="1342" height="673" key="MergeDialog" timestamp="1586636256742">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -795,89 +811,112 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="184" y="6" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1586532835525" />
-    <state width="691" height="372" key="XDebugger.FullValuePopup" timestamp="1586743594084">
+    <state width="691" height="372" key="XDebugger.FullValuePopup" timestamp="1589198006963">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="691" height="372" key="XDebugger.FullValuePopup/0.0.1366.728@0.0.1366.728" timestamp="1586743594084" />
+    <state width="691" height="372" key="XDebugger.FullValuePopup/0.0.1366.728@0.0.1366.728" timestamp="1589198006963" />
     <state x="378" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1585592599476">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="378" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585592599476" />
-    <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1588863899120">
+    <state x="342" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1589360581905">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1589201699973" />
+    <state x="342" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1589360581905" />
+    <state x="365" y="46" width="755" height="596" key="find.popup" timestamp="1590022179385">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1588863899120" />
-    <state x="380" y="101" width="755" height="596" key="find.popup" timestamp="1587921001328">
+    <state x="365" y="46" width="755" height="596" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1590022179385" />
+    <state x="513" y="66" width="1062" height="852" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589360394342" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1590020731522">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="380" y="101" width="755" height="596" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1587921001328" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586639410231">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1586639410231" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1590020731522" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../mvnpy/mvnpy/bug.py</url>
           <line>100</line>
           <option name="timeStamp" value="63" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../Libraries_For_BugMiner/mvnpy/mvnpy/CompilationErrorObject.py</url>
           <line>9</line>
           <option name="timeStamp" value="107" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../Libraries_For_BugMiner/patcher/patcher/patcher.py</url>
           <line>164</line>
           <option name="timeStamp" value="113" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/../../Libraries/python/patcher/patcher/patcher.py</url>
           <line>148</line>
           <option name="timeStamp" value="124" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/presenetation/times_rep_processor.py</url>
           <line>77</line>
           <option name="timeStamp" value="146" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>jar://$USER_HOME$/Anaconda2/Lib/site-packages/BugMiner-1.0.1-py2.7.egg!/tests/test.py</url>
           <line>201</line>
           <option name="timeStamp" value="151" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/PossibleBugMiner/extractor.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="184" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/PossibleBugMiner/extractor.py</url>
-          <line>38</line>
-          <option name="timeStamp" value="185" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>442</line>
+          <line>444</line>
           <option name="timeStamp" value="221" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>375</line>
+          <line>376</line>
           <option name="timeStamp" value="230" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>379</line>
+          <line>380</line>
           <option name="timeStamp" value="231" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/diff/diff.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="275" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mvnpy/Repo.py</url>
+          <line>725</line>
+          <option name="timeStamp" value="280" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mvnpy/Repo.py</url>
+          <line>724</line>
+          <option name="timeStamp" value="292" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <condition expression="traces != []" language="Python" />
+          <url>file://$PROJECT_DIR$/mvnpy/bug.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="307" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>333</line>
+          <option name="timeStamp" value="317" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py</url>
+          <line>88</line>
+          <option name="timeStamp" value="319" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mvnpy/bug.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="239" />
+          <line>493</line>
+          <option name="timeStamp" value="320" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
