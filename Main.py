@@ -19,7 +19,8 @@ import string
 import random
 import settings
 from PossibleBugMiner.extractor_factory import ExtractorFactory
-from diff import CommitsDiff
+# from diff import CommitsDiff
+from javadiff import CommitsDiff
 from mvnpy import Repo as MavenRepo
 from mvnpy import TestObjects
 from mvnpy import bug as mvn_bug
@@ -67,7 +68,7 @@ def main(argv):
 		repo_dir=repo.working_dir, branch_inspected=branch_inspected, issue_tracker_url=argv[2],
 		issue_key=speceific_issue,
 		query=jql_query
-	).extract_possible_bugs_wrapper(use_cache=USE_CACHE)
+	).extract_possible_bugs_wrapper(use_cache=USE_CACHE, check_trace=TRACE)
 	for candidate in candidates:
 		try:
 			bugs = extract_bugs(issue=candidate.issue, commit=repo.commit(candidate.fix_commit),
@@ -83,7 +84,7 @@ def main(argv):
 			logging.info('Resetting repos')
 			reset_repos(argv)
 		except Exception as e:
-			if 'IOError: [Errno 22]' in str(e):
+			if 'IOError: [Errno 22]' in e.message:
 				logging.info('SHOULD NOT HAPPEN EXCEPTION ' + str(e) + '\n' + traceback.format_exc())
 				logging.info('Resetting repos')
 				reset_repos(argv)
@@ -98,16 +99,22 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 	parent = get_parent(commit)
 	if parent == None:
 		return ans
-	mvn_repo.clean()
-	git_cmds_wrapper(lambda: repo.git.add('.'))
-	git_cmds_wrapper(lambda: repo.git.checkout(commit.hexsha, '-f'))
-	git_cmds_wrapper(lambda: reg_repo.git.add('.'), spec_repo=reg_repo, spec_mvn_repo=reg_mvn_repo)
-	git_cmds_wrapper(lambda: reg_repo.git.checkout(parent.hexsha, '-f'), spec_repo=reg_repo, spec_mvn_repo=reg_mvn_repo)
-	commit_tests_object = list(map(lambda t_path: TestObjects.TestClass(t_path), tests_paths))
+	commit_tests_object = list(map(lambda t_path: TestObjects.TestClass(t_path, commit.repo.working_dir), tests_paths))
+	test_files = filter(lambda x: "test" in x[1],
+						map(lambda x: (os.path.join(repo.working_dir, x), os.path.normpath(x.lower()).replace(".java", "").replace(os.path.sep, ".")),
+							repo.git.ls_files().split()))
+	diffs_packages = map(lambda x: x.after_file.package_name, changed_classes_diffs)
+	# commit_tests_object.extend(list(map(lambda x: TestObjects.TestClass(x[0], repo.working_dir), filter(lambda x: any(map(lambda y: y in x[1] and x[0].endswith("java"), diffs_packages)), test_files))))
 	commit_testcases = mvn.get_testcases(commit_tests_object)
 	dict_modules_testcases = divide_to_modules(commit_testcases)
 	for module in dict_modules_testcases:
 		try:
+			mvn_repo.clean()
+			git_cmds_wrapper(lambda: repo.git.add('.'))
+			git_cmds_wrapper(lambda: repo.git.checkout(commit.hexsha, '-f'))
+			git_cmds_wrapper(lambda: reg_repo.git.add('.'), spec_repo=reg_repo, spec_mvn_repo=reg_mvn_repo)
+			git_cmds_wrapper(lambda: reg_repo.git.checkout(parent.hexsha, '-f'), spec_repo=reg_repo,
+							 spec_mvn_repo=reg_mvn_repo)
 			start_time = time.time()
 			module_bugs = []
 			commit_valid_testcases = []
@@ -136,7 +143,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 					cache_project_state()
 				generated_testcases = mvn_repo.get_generated_testcases(module=module)
 				if len(generated_testcases) == 0:
-					raise TestsGenerationError(msg='Generated no tests', report=gen_report)
+					raise TestsGenerationError(msg='Generated no tests',  report=repr(gen_report.split("\n")))
 				commit_tests_object += set(list(map(lambda t: t.parent, generated_testcases)))
 				dict_modules_testcases[module] += generated_testcases
 				if GENERATE_DATA:
@@ -160,12 +167,11 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				debug_green('### Running tests in commit ###')
 				mvn_repo.change_surefire_ver(surefire_version)
 				build_log = run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
-				mvn_repo.observe_tests()
 				debug_regular(build_log)
 				(commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
 			gen_commit_valid_testcases = filter(lambda x: x in commit_valid_testcases, commit_valid_testcases)
 			if len(commit_valid_testcases) == 0:
-				raise mvn.MVNError(msg='No reports', report=build_log, trace=traceback.format_exc())
+				raise mvn.MVNError(msg='No reports', report= repr(build_log.split("\n")), trace=traceback.format_exc())
 			git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha, '-f'))
 			delta_testcases = get_delta_testcases(dict_modules_testcases[module])
 			debug_green('### Patching delta testcases###')
@@ -207,7 +213,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			if GENERATE_TESTS:
 				all_parent_testcases = mvn_repo.get_generated_testcases(module=module)
 			else:
-				parent_tests = list(map(lambda t_path: TestObjects.TestClass(t_path), tests_paths))
+				parent_tests = list(map(lambda t_path: TestObjects.TestClass(t_path, commit.repo.working_dir), tests_paths))
 				all_parent_testcases = mvn.get_testcases(parent_tests)
 			relevant_parent_testcases = list(filter(lambda t: t in commit_valid_testcases, all_parent_testcases))
 			(parent_valid_testcases, no_report_testcases) = attach_reports(relevant_parent_testcases)
@@ -396,7 +402,7 @@ def run_mvn_tests(testcases, module):
 	else:
 		build_report = mvn_repo.test(tests=testcases, module=module, time_limit=LIMIT_TIME_FOR_BUILD)
 	if mvn.has_compilation_error(build_report):
-		raise mvn.MVNError(msg='Failed due to compilation error', report=build_report, trace=traceback.format_exc())
+		raise mvn.MVNError(msg='Failed due to compilation error', report=repr(build_report.split("\n")), trace=traceback.format_exc())
 	return build_report
 
 
@@ -405,6 +411,7 @@ def run_mvn_tests(testcases, module):
 def attach_reports(testcases):
 	attatched = []
 	no_attatched = []
+	mvn_repo.observe_tests()
 	for testcase in testcases:
 		testcase.parent.clear_report()
 	ans = (attatched, no_attatched)
@@ -412,24 +419,24 @@ def attach_reports(testcases):
 		testclass = testcase.parent
 		if testclass.report is None:
 			try:
-				observed_tests = filter(lambda x: x.report_file == testclass.get_report_path(), mvn_repo.test_results.values())
+				# observed_tests = filter(lambda x: x.report_file.lower() == testclass.get_report_path().lower() and testcase.method.name.lower() == x.name.lower(), mvn_repo.test_results.values())
+				observed_tests = filter(lambda x: x.report_file.lower() == testclass.get_report_path().lower(), mvn_repo.test_results.values())
+				if len(observed_tests) == 0:
+					no_attatched.append(testcase)
+					continue
 				testclass.report = TestObjects.TestClassReport(testclass.get_report_path(), testclass.module, observed_tests)
-				testclass.attach_report_to_testcase(testcase)
-				attatched.append(testcase)
 			except TestObjects.TestParserException as e:
 				for t in testclass.testcases:
 					if t in testcases:
 						no_attatched.append(t)
 				continue
-		else:
-			try:
-				testclass.attach_report_to_testcase(testcase)
-				attatched.append(testcase)
-			except TestObjects.TestParserException as e:
-				logging.info(str(
-					e) + ' the testcalss of this testcase had his report attached. So this testcase must have gotten report')
-				no_attatched.append(testcase)
-
+		try:
+			testclass.attach_report_to_testcase(testcase)
+			attatched.append(testcase)
+		except TestObjects.TestParserException as e:
+			logging.info(str(
+				e) + ' the testcalss of this testcase had his report attached. So this testcase must have gotten report')
+			no_attatched.append(testcase)
 	return ans
 
 
@@ -729,7 +736,8 @@ def git_cmds_wrapper(git_cmd, spec_repo=repo, spec_mvn_repo=None, counter = 0):
 			if counter > 10:
 				raise e
 			counter +=1
-			spec_mvn_repo.hard_clean()
+			if spec_mvn_repo:
+				spec_mvn_repo.hard_clean()
 			git_cmds_wrapper(lambda: git_cmd(), spec_repo=spec_repo, spec_mvn_repo=spec_mvn_repo, counter=counter)
 		else:
 			raise e
@@ -756,7 +764,7 @@ def pick_tests(testcases, module):
 	if mvn_repo.too_much_testcases_to_generate_cmd(testcases, module):
 		logging.info('To manny tests. Filtering in order to execute build\nAmount of tests:{}'.format(len(testcases)))
 		if not GENERATE_TESTS:
-			return set(map(lambda y: y.parent, testcases))
+			return set(testcases)
 		else:
 			return set(map(lambda y: y.parent, filter(lambda x: mvn_repo.is_generated_test(x.parent), testcases)))
 	return testcases

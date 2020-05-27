@@ -7,17 +7,27 @@
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/candidate.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/candidate.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PossibleBugMiner/extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/extractor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PossibleBugMiner/sourceforge_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/sourceforge_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/diff/SourceFile.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/diff/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/diff/commitsdiff.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/diff/diff.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/diff/filediff.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/diff/methodData.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mvnpy" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvnpy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvnpy/Repo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/Repo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnpy/TestObjects.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/TestObjects.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvnpy/bug.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/bug.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvnpy/jcov_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/jcov_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvnpy/jcov_tracer.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/jcov_tracer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvnpy/mvn.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/mvn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvnpy/pom_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/pom_file.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher" beforeDir="false" afterPath="$PROJECT_DIR$/patcher" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patcher/patch_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/patcher/patch_files.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/patcher/patcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/patcher/patcher.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_process.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
@@ -105,7 +115,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/PossibleBugMiner" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PgKtUzE98ksmbYBcalHch63OUu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -139,7 +149,7 @@
       <recent name="C:\Users\user\Code\Python\BugMiner" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.run_process">
+  <component name="RunManager" selected="Python.Main">
     <configuration name="Main two issues" type="PythonConfigurationType" factoryName="Python">
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -176,10 +186,32 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="https:\github.com\apache\commons-compress  http:\issues.apache.org\jira\projects\COMPRESS" />
+      <option name="PARAMETERS" value="https://github.com/apache/tika http:\issues.apache.org\jira\projects\TIKA" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="cProfile" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <output_file path="c:/temp/progile.txt" is_save="true" />
+      <module name="BugMiner" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\amirelm\AppData\Local\Continuum\anaconda2\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="cProfile" />
+      <option name="PARAMETERS" value="-s tottime C:\Users\amirelm\Documents\GitHub\BugMiner\Main.py https://github.com/apache/distributedlog http:\issues.apache.org\jira\projects\DL" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="true" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
       <method v="2" />
@@ -511,6 +543,7 @@
     <list>
       <item itemvalue="Python.Main two issues" />
       <item itemvalue="Python.Main" />
+      <item itemvalue="Python.cProfile" />
       <item itemvalue="Python.combine" />
       <item itemvalue="Python.gen watch" />
       <item itemvalue="Python.present candidates compress" />
@@ -746,58 +779,62 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589115120057">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590107198056">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1589115120057" />
-    <state x="468" y="133" width="950" height="595" key="#xdebugger.evaluate" timestamp="1589418304528">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1590107198056" />
+    <state x="271" y="69" width="950" height="595" key="#xdebugger.evaluate" timestamp="1590307088322">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="468" y="133" width="854" height="595" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1589418304528" />
+    <state x="271" y="69" width="854" height="595" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1590307088322" />
     <state x="671" y="262" width="950" height="595" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1589292699623" />
+    <state width="967" height="466" key="DebuggerActiveHint" timestamp="1590089100206">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="967" height="466" key="DebuggerActiveHint/0.0.1366.728@0.0.1366.728" timestamp="1590089100206" />
     <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1590023291723">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1590023291723" />
-    <state width="1345" height="239" key="GridCell.Tab.0.bottom" timestamp="1590020764435">
+    <state width="1345" height="178" key="GridCell.Tab.0.bottom" timestamp="1590613440859">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="239" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590020764435" />
+    <state width="1345" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590613440859" />
     <state width="1899" height="329" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589361739798" />
-    <state width="1345" height="239" key="GridCell.Tab.0.center" timestamp="1590020764435">
+    <state width="1345" height="178" key="GridCell.Tab.0.center" timestamp="1590613440859">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="239" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590020764435" />
+    <state width="1345" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590613440859" />
     <state width="1899" height="329" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589361739798" />
-    <state width="1345" height="239" key="GridCell.Tab.0.left" timestamp="1590020764435">
+    <state width="1345" height="178" key="GridCell.Tab.0.left" timestamp="1590613440859">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="239" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590020764435" />
+    <state width="1345" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590613440859" />
     <state width="1899" height="329" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589361739798" />
-    <state width="1345" height="239" key="GridCell.Tab.0.right" timestamp="1590020764435">
+    <state width="1345" height="178" key="GridCell.Tab.0.right" timestamp="1590613440859">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="239" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590020764435" />
+    <state width="1345" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590613440859" />
     <state width="1899" height="329" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589361739798" />
-    <state width="1345" height="170" key="GridCell.Tab.1.bottom" timestamp="1589418393511">
+    <state width="1341" height="207" key="GridCell.Tab.1.bottom" timestamp="1590357015981">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="170" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1589418393511" />
+    <state width="1341" height="207" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590357015981" />
     <state width="1899" height="329" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589360529747" />
-    <state width="1345" height="170" key="GridCell.Tab.1.center" timestamp="1589418393511">
+    <state width="1341" height="207" key="GridCell.Tab.1.center" timestamp="1590357015981">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="170" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1589418393511" />
+    <state width="1341" height="207" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1590357015981" />
     <state width="1899" height="329" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589360529746" />
-    <state width="1345" height="170" key="GridCell.Tab.1.left" timestamp="1589418393510">
+    <state width="1341" height="207" key="GridCell.Tab.1.left" timestamp="1590357015981">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="170" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1589418393510" />
+    <state width="1341" height="207" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1590357015981" />
     <state width="1899" height="329" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589360529746" />
-    <state width="1345" height="170" key="GridCell.Tab.1.right" timestamp="1589418393511">
+    <state width="1341" height="207" key="GridCell.Tab.1.right" timestamp="1590357015981">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="170" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1589418393511" />
+    <state width="1341" height="207" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1590357015981" />
     <state width="1899" height="329" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589360529746" />
     <state x="-1" y="54" width="1342" height="673" key="MergeDialog" timestamp="1586636256742">
       <screen x="0" y="0" width="1366" height="728" />
@@ -819,20 +856,24 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="378" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585592599476" />
-    <state x="342" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1589360581905">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1590088986791">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1589201699973" />
+    <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1590088986791" />
     <state x="342" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1589360581905" />
-    <state x="365" y="46" width="755" height="596" key="find.popup" timestamp="1590022179385">
+    <state x="92" y="92" width="1182" height="544" key="dock-window-1" timestamp="1590067280105">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="365" y="46" width="755" height="596" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1590022179385" />
+    <state x="92" y="92" width="1182" height="544" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1590067280105" />
+    <state x="41" y="-2" width="1079" height="644" key="find.popup" timestamp="1590617884091">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="41" y="-2" width="1079" height="644" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1590617884091" />
     <state x="513" y="66" width="1062" height="852" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1589360394342" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1590020731522">
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1590107151998">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1590020731522" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1590107151998" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -869,17 +910,17 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>444</line>
+          <line>451</line>
           <option name="timeStamp" value="221" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>376</line>
+          <line>382</line>
           <option name="timeStamp" value="230" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>380</line>
+          <line>386</line>
           <option name="timeStamp" value="231" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -889,12 +930,12 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mvnpy/Repo.py</url>
-          <line>725</line>
+          <line>734</line>
           <option name="timeStamp" value="280" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/mvnpy/Repo.py</url>
-          <line>724</line>
+          <line>733</line>
           <option name="timeStamp" value="292" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -905,18 +946,43 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>333</line>
+          <line>339</line>
           <option name="timeStamp" value="317" />
         </line-breakpoint>
-        <line-breakpoint suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py</url>
-          <line>88</line>
-          <option name="timeStamp" value="319" />
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>191</line>
+          <option name="timeStamp" value="333" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mvnpy/bug.py</url>
-          <line>493</line>
-          <option name="timeStamp" value="320" />
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>220</line>
+          <option name="timeStamp" value="334" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py</url>
+          <line>68</line>
+          <option name="timeStamp" value="349" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mvnpy/TestObjects.py</url>
+          <line>25</line>
+          <option name="timeStamp" value="374" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mvnpy/TestObjects.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="375" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>428</line>
+          <option name="timeStamp" value="379" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>168</line>
+          <option name="timeStamp" value="386" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
