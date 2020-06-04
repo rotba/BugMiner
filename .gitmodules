@@ -1,6 +1,3 @@
-[submodule "evosuite"]
-	path = evosuite
-	url = https://github.com/rotba/evosuite.git
 [submodule "mvnpy"]
 	path = mvnpy
 	url = https://github.com/rotba/mvnpy.git

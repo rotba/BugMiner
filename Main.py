@@ -153,7 +153,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			if GENERATE_TESTS:
 				mvn_repo.config_for_evosuite(module=module)
 				debug_blue('### Running generated tests ###')
-				build_log = run_mvn_tests(set(map(lambda t: t.parent, dict_modules_testcases[module])), module)
+				build_log = run_mvn_tests(set(map(lambda t: t.parent, dict_modules_testcases[module])), module, TRACE, changed_classes_diffs)
 				debug_regular(build_log)
 				(gen_commit_valid_testcases, gen_no_report_testcases) = attach_reports(dict_modules_testcases[module])
 				mvn_repo.evosuite_clean(module=module)
@@ -166,7 +166,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			else:
 				debug_green('### Running tests in commit ###')
 				mvn_repo.change_surefire_ver(surefire_version)
-				build_log = run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
+				build_log = run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module, TRACE, changed_classes_diffs)
 				debug_regular(build_log)
 				(commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
 			gen_commit_valid_testcases = filter(lambda x: x in commit_valid_testcases, commit_valid_testcases)
@@ -199,7 +199,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				mvn_repo.config_for_evosuite(module)
 				build_report = run_mvn_tests(set(
 					map(lambda t: t.parent,
-					    filter(lambda x: mvn_repo.is_generated_test(x.parent), patch.get_patched()))), module
+					    filter(lambda x: mvn_repo.is_generated_test(x.parent), patch.get_patched()))), module, TRACE, changed_classes_diffs
 				)
 				debug_regular(build_report)
 			else:
@@ -207,7 +207,7 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				mvn_repo.change_surefire_ver(surefire_version)
 				if CONFIG:
 					mvn_repo.config(module=module)
-				build_report = run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module)
+				build_report = run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module, False, changed_classes_diffs)
 				debug_regular(build_report)
 			# parent_tests = test_parser.get_tests(module)
 			if GENERATE_TESTS:
@@ -231,8 +231,9 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 					blamed_components = []
 					if TRACE:
 						traced_components = set(reduce(list.__add__, map(lambda t: map(lambda x: x.lower(), t.get_trace()), mvn_repo.traces), []))
+						# java_diff.diff.get_changed_methods
 						changed_components = set(map(lambda m: m.method_name_parameters.lower(), set(reduce(list.__add__, map(lambda d: d.get_changed_methods(), changed_classes_diffs), []))))
-						blamed_components = list(traced_components.intersection(changed_components))
+						blamed_components = list(filter(lambda x: "test" not in x.lower(), traced_components.intersection(changed_components)))
 					repo.git.add("-N", "*.java")
 					diff = repr(repo.git.diff("--", "*.java"))
 					bug = mvn_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
@@ -375,7 +376,7 @@ def try_grandparents(issue, parent, commit, testcases, dict_testcases_files):
 			if os.path.isfile(testcase.src_path):
 				os.remove(testcase.src_path)
 			shutil.copyfile(dict_testcases_files[testcase.id], testcase.src_path)
-		run_mvn_tests(testcases_copy, testcases_copy[0].module)
+		run_mvn_tests(testcases_copy, testcases_copy[0].module, False, changed_classes_diffs)
 		(grand_parent_valid_testcases, no_report_testcases) = attach_reports(testcases_copy)
 		for testcase in testcases:
 			if testcase in grand_parent_valid_testcases:
@@ -395,9 +396,9 @@ def try_grandparents(issue, parent, commit, testcases, dict_testcases_files):
 
 
 # Handles running maven. Will try to run the smallest module possib;e
-def run_mvn_tests(testcases, module):
-	if TRACE:
-		mvn_repo.run_under_jcov(target_dir=None, module=module, testcases=testcases)
+def run_mvn_tests(testcases, module, trace=False, classes_to_trace=None):
+	if trace:
+		mvn_repo.run_under_jcov(target_dir=None, module=module, testcases=testcases, classes_to_trace=classes_to_trace)
 		build_report = mvn_repo.build_report
 	else:
 		build_report = mvn_repo.test(tests=testcases, module=module, time_limit=LIMIT_TIME_FOR_BUILD)
