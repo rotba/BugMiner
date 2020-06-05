@@ -3,34 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PossibleBugMiner" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PossibleBugMiner/candidate.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/candidate.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PossibleBugMiner/extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/extractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PossibleBugMiner/sourceforge_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/PossibleBugMiner/sourceforge_extractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/diff/SourceFile.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/diff/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/diff/commitsdiff.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/diff/diff.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/diff/filediff.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/diff/methodData.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mvnpy" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnpy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnpy/Repo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/Repo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnpy/TestObjects.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/TestObjects.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mvnpy/bug.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/bug.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnpy/jcov_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/jcov_parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnpy/jcov_tracer.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/jcov_tracer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnpy/mvn.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/mvn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/plugins/evosuite/evosuite.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnpy/pom_file.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/pom_file.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patcher" beforeDir="false" afterPath="$PROJECT_DIR$/patcher" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patcher/patch_files.py" beforeDir="false" afterPath="$PROJECT_DIR$/patcher/patch_files.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/patcher/patcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/patcher/patcher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_process.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_process.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +89,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/PossibleBugMiner" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PgKtUzE98ksmbYBcalHch63OUu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -783,10 +757,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1590107198056" />
-    <state x="271" y="69" width="950" height="595" key="#xdebugger.evaluate" timestamp="1590307088322">
+    <state x="512" y="133" width="950" height="595" key="#xdebugger.evaluate" timestamp="1591318246726">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="271" y="69" width="854" height="595" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1590307088322" />
+    <state x="512" y="133" width="854" height="595" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1591318246726" />
     <state x="671" y="262" width="950" height="595" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1589292699623" />
     <state width="967" height="466" key="DebuggerActiveHint" timestamp="1590089100206">
       <screen x="0" y="0" width="1366" height="728" />
@@ -796,45 +770,45 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1590023291723" />
-    <state width="1899" height="330" key="GridCell.Tab.0.bottom" timestamp="1591202980105">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1345" height="192" key="GridCell.Tab.0.bottom" timestamp="1591318976470">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="178" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590623226276" />
+    <state width="1345" height="192" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591318976470" />
     <state width="1899" height="330" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591202980105" />
-    <state width="1899" height="330" key="GridCell.Tab.0.center" timestamp="1591202980105">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1345" height="192" key="GridCell.Tab.0.center" timestamp="1591318976470">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="178" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1590623226276" />
+    <state width="1345" height="192" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1591318976470" />
     <state width="1899" height="330" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591202980105" />
-    <state width="1899" height="330" key="GridCell.Tab.0.left" timestamp="1591202980105">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1345" height="192" key="GridCell.Tab.0.left" timestamp="1591318976469">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="178" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1590623226276" />
+    <state width="1345" height="192" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1591318976469" />
     <state width="1899" height="330" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591202980105" />
-    <state width="1899" height="330" key="GridCell.Tab.0.right" timestamp="1591202980105">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1345" height="192" key="GridCell.Tab.0.right" timestamp="1591318976470">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="178" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1590623226276" />
+    <state width="1345" height="192" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1591318976470" />
     <state width="1899" height="330" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591202980105" />
-    <state width="1341" height="207" key="GridCell.Tab.1.bottom" timestamp="1591202980013">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1345" height="192" key="GridCell.Tab.1.bottom" timestamp="1591318653181">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1341" height="207" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1590357015981" />
+    <state width="1345" height="192" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1591318653181" />
     <state width="1341" height="207" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1591202980013" />
-    <state width="1341" height="207" key="GridCell.Tab.1.center" timestamp="1591202980013">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1345" height="192" key="GridCell.Tab.1.center" timestamp="1591318653181">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1341" height="207" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1590357015981" />
+    <state width="1345" height="192" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1591318653181" />
     <state width="1341" height="207" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1591202980013" />
-    <state width="1341" height="207" key="GridCell.Tab.1.left" timestamp="1591202980013">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1345" height="192" key="GridCell.Tab.1.left" timestamp="1591318653181">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1341" height="207" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1590357015981" />
+    <state width="1345" height="192" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1591318653181" />
     <state width="1341" height="207" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1591202980013" />
-    <state width="1341" height="207" key="GridCell.Tab.1.right" timestamp="1591202980013">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1345" height="192" key="GridCell.Tab.1.right" timestamp="1591318653181">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1341" height="207" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1590357015981" />
+    <state width="1345" height="192" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1591318653181" />
     <state width="1341" height="207" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1591202980013" />
     <state x="-1" y="54" width="1342" height="673" key="MergeDialog" timestamp="1586636256742">
       <screen x="0" y="0" width="1366" height="728" />
@@ -980,9 +954,9 @@
           <option name="timeStamp" value="387" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/PossibleBugMiner/commit_analyzer.py</url>
-          <line>103</line>
-          <option name="timeStamp" value="388" />
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>110</line>
+          <option name="timeStamp" value="404" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

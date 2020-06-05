@@ -66,6 +66,11 @@ class Extractor(object):
 	def get_all_commits(self):
 		return list(self.repo.iter_commits(self.inspected_branch))
 
+	def get_java_commits(self):
+		data = self.repo.git.log('--pretty=format:"sha: %H"', '--name-only').split("sha: ")
+		comms = dict(map(lambda d: (d[0], d[1:-1]), map(lambda d: d.replace('"', '').replace('\n\n', '\n').split('\n'), data)))
+		return map(lambda x: self.repo.commit(x), filter(lambda x: any(map(lambda y: y.endswith(".java"), comms[x])), comms))
+
 	# Returns boolean. Filter the bugs to inspect
 	def bugs_filter(self, possible_bug):
 		if Extractor.EARLIEST_BUG > 0:

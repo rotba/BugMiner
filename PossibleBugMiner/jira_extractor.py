@@ -34,7 +34,7 @@ class JiraExtractor(Extractor):
 		jira_conn = JIRA(url)
 		all_issues = []
 		extracted_issues = 0
-		while True and len(all_issues) > 100:
+		while True:
 			issues = jira_conn.search_issues("project={0}".format(project_name), maxResults=bunch, startAt=extracted_issues)
 			all_issues.extend(issues)
 			extracted_issues = extracted_issues + bunch
@@ -65,17 +65,17 @@ class JiraExtractor(Extractor):
 
 		issues_d = {}
 		issues_ids = map(lambda issue: issue.split("-")[1], issues)
-		for git_commit in self.get_all_commits():
+		for git_commit in self.get_java_commits():
 			if not self.has_parent(git_commit):
 				logging.info('commit {0} has no parent '.format(git_commit.hexsha))
 				continue
 			commit_text = clean_commit_message(git_commit.summary)
 			bug_id = get_bug_num_from_comit_text(commit_text, issues_ids)
 			if bug_id != '0':
-				if not any(map(lambda f: f.b_path.endswith(".java"), self.get_parent(git_commit).tree.diff(git_commit.tree))):
-					# added here because stats is heavy
-					# logging.info('commit {0} has no java files '.format(git_commit.hexsha))
-					continue
+				# if not any(map(lambda f: f.b_path.endswith(".java"), self.get_parent(git_commit).tree.diff(git_commit.tree))):
+				# 	# added here because stats is heavy
+				# 	# logging.info('commit {0} has no java files '.format(git_commit.hexsha))
+				# 	continue
 				issues_d.setdefault(bug_id, []).append(git_commit)
 		return issues_d
 
