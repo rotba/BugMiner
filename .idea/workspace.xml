@@ -94,7 +94,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/mvnpy" />
   </component>
   <component name="ProjectId" id="1PgKtUzE98ksmbYBcalHch63OUu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -846,10 +846,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1590067280105" />
-    <state x="41" y="-2" width="1079" height="644" key="find.popup" timestamp="1592045682320">
+    <state x="41" y="-2" width="1079" height="644" key="find.popup" timestamp="1592066486771">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="41" y="-2" width="1079" height="644" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1592045682320" />
+    <state x="41" y="-2" width="1079" height="644" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1592066486771" />
     <state x="513" y="66" width="1062" height="852" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591903881012" />
     <state x="324" y="90" width="700" height="530" key="recent.locations.popup" timestamp="1591485465057">
       <screen x="0" y="0" width="1366" height="728" />
@@ -896,17 +896,17 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>456</line>
+          <line>460</line>
           <option name="timeStamp" value="221" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>385</line>
+          <line>389</line>
           <option name="timeStamp" value="230" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>389</line>
+          <line>393</line>
           <option name="timeStamp" value="231" />
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
@@ -932,17 +932,17 @@
         </line-breakpoint>
         <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>342</line>
+          <line>346</line>
           <option name="timeStamp" value="317" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>539</line>
+          <line>543</line>
           <option name="timeStamp" value="484" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>114</line>
+          <line>118</line>
           <option name="timeStamp" value="512" />
         </line-breakpoint>
       </breakpoints>

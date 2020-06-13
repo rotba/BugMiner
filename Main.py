@@ -13,14 +13,18 @@ from urlparse import urlparse
 import git
 import javalang
 from git import Repo
-from javadiff import diff as java_diff
+try:
+	from javadiff import diff as java_diff
+	from javadiff import CommitsDiff
+except:
+	from javadiff.javadiff import diff as java_diff
+	from javadiff.javadiff import CommitsDiff
 from termcolor import colored
 import string
 import random
 import settings
 from PossibleBugMiner.jira_extractor import JiraExtractor
 # from diff import CommitsDiff
-from javadiff import CommitsDiff
 from mvnpy import Repo as MavenRepo
 from mvnpy import TestObjects
 from mvnpy import bug as mvn_bug

@@ -1,9 +1,11 @@
 import logging
-import settings
 from pathlib import Path
 import os
-from javadiff.diff import get_changed_exists_methods, get_changed_methods
-from javadiff import CommitsDiff
+try:
+    from javadiff import CommitsDiff
+except:
+    from javadiff.javadiff import CommitsDiff
+
 
 class IsBugCommitAnalyzer(object):
     TESTS_DIFFS_IS_CRITERIA = False
