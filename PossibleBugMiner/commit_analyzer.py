@@ -14,6 +14,7 @@ class IsBugCommitAnalyzer(object):
         self._repo = repo
         self.associated_tests_paths = None
         self.diffed_components = None
+        self.source_diffed_components = None
         self.changed_exists_methods = None
         self.changed_methods = None
 
@@ -39,9 +40,9 @@ class IsBugCommitAnalyzer(object):
         if not self.has_associated_tests_paths():
             logging.info('commit {0} has not associated test paths'.format(self.commit.hexsha))
             return False
-        if self.has_added_methods():
-            logging.info('commit {0} has new methods'.format(self.commit.hexsha))
-            return False
+        # if self.has_added_methods():
+        #     logging.info('commit {0} has new methods'.format(self.commit.hexsha))
+        #     return False
         self.associated_tests_paths = self.get_tests_paths_from_commit()
         if check_trace:
             import mvnpy.Repo
@@ -76,7 +77,8 @@ class IsBugCommitAnalyzer(object):
 
     def has_associated_diffed_components(self):
         self.diffed_components = self.get_diffed_components()
-        return self.diffed_components is not None and len(self.diffed_components) > 0
+        self.source_diffed_components = list(filter(lambda x: not self.is_test_file(x.file_name), self.diffed_components))
+        return self.source_diffed_components is not None and len(self.source_diffed_components) > 0
 
     def is_test_file(self, file):
         name = os.path.basename(file.lower())
