@@ -28,7 +28,7 @@ class JiraExtractor(Extractor):
 
 	def get_data(self):
 		if self.commit:
-			return {"-1", self.repo.commit(self.commit)}
+			return {"-1": [self.repo.commit(self.commit)]}
 		issues = []
 		if self.issue_key:
 			issues = [self.issue_key]
