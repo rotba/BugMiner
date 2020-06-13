@@ -13,10 +13,6 @@ from urlparse import urlparse
 import git
 import javalang
 from git import Repo
-try:
-	from javadiff import diff as java_diff
-except:
-	from javadiff.javadiff import diff as java_diff
 from termcolor import colored
 import random
 import settings
@@ -335,6 +331,10 @@ def get_most_chenged_classes(module, changed_classes_diffs, commit, parent):
 
 
 def calc_importance_index(diff, commit, parent):
+	try:
+		from javadiff import diff as java_diff
+	except:
+		from javadiff.javadiff import diff as java_diff
 	def calc_diffed_methods_associated_to_class_from_all_diffed_methods_percanetage(diff):
 		all = java_diff.get_changed_methods(repo.working_dir, commit)
 		if len(all) == 0:
