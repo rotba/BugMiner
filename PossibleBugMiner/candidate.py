@@ -1,9 +1,3 @@
-import logging
-import settings
-from mvnpy import mvn
-from pathlib import Path
-import os
-
 
 class Candidate(object):
     TESTS_DIFFS_IS_CRITERIA = False
