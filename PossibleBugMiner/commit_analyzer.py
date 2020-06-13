@@ -2,9 +2,9 @@ import logging
 from pathlib import Path
 import os
 try:
-    from javadiff import CommitsDiff
+    from javadiff.CommitsDiff import CommitsDiff
 except:
-    from javadiff.javadiff import CommitsDiff
+    from javadiff.javadiff.CommitsDiff import CommitsDiff
 
 
 class IsBugCommitAnalyzer(object):
@@ -99,7 +99,7 @@ class IsBugCommitAnalyzer(object):
     def get_diffed_components(self):
         ans = []
         try:
-            commit_diff = CommitsDiff.CommitsDiff(child=self.commit, parent=self.parent, analyze_source_lines=False)
+            commit_diff = CommitsDiff(child=self.commit, parent=self.parent, analyze_source_lines=False)
         except AssertionError as e:
             raise e
         for file_diff in commit_diff.diffs:

@@ -17,21 +17,14 @@ try:
 	from javadiff import diff as java_diff
 except:
 	from javadiff.javadiff import diff as java_diff
-try:
-	from javadiff import CommitsDiff
-except:
-	from javadiff.javadiff import CommitsDiff
 from termcolor import colored
-import string
 import random
 import settings
 from PossibleBugMiner.jira_extractor import JiraExtractor
-# from diff import CommitsDiff
 from mvnpy import Repo as MavenRepo
 from mvnpy import TestObjects
 from mvnpy import bug as mvn_bug
 from mvnpy import mvn
-# from mvnpy.Repo import TestGenerationStrategy
 from mvnpy.plugins.evosuite.evosuite import TestsGenerationError
 from patcher.patcher import TestcasePatcher
 
@@ -449,23 +442,6 @@ def attach_reports(testcases):
 				e) + ' the testcalss of this testcase had his report attached. So this testcase must have gotten report')
 			no_attatched.append(testcase)
 	return ans
-
-
-# Returns a list of methods that are associated with a change in the diff of the commits
-def get_bugged_components(commit_fix, commit_bug, module):
-	ans = []
-	commit_diff = CommitsDiff.CommitsDiff(
-		commit_a=commit_bug,
-		commit_b=commit_fix)
-	for file_diff in commit_diff.diffs:
-		if file_diff.file_name.endswith('.java'):
-			file_path = os.path.join(repo.working_tree_dir, file_diff.file_name)
-			ans += list(
-				map(lambda m: mvn.generate_mvn_class_names(src_path=file_path, module=module) + '.' + m,
-				    file_diff.changed_methods)
-			)
-	return ans
-
 
 # Returns dictionar mapping testcases to the file currently contains them.
 def store_test_files(passed_delta_testcases):
