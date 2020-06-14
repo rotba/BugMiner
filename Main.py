@@ -400,12 +400,12 @@ def try_grandparents(issue, parent, commit, testcases, dict_testcases_files):
 def run_mvn_tests(testcases, module, trace=False, classes_to_trace=None):
 	if trace:
 		mvn_repo.run_under_jcov(target_dir=None, module=module, tests_to_run=map(lambda t: t.mvn_name, testcases),
-								classes_to_trace=list(reduce(list.__add__, map(lambda x: x.modified_names, classes_to_trace), [])))
+								classes_to_trace=list(reduce(list.__add__, map(lambda x: x.modified_names, classes_to_trace), [])), check_comp_error=False)
 		build_report = mvn_repo.build_report
 	else:
 		# build_report = mvn_repo.test(tests=testcases, module=module, time_limit=LIMIT_TIME_FOR_BUILD)
 		build_report = mvn_repo.install(module=module, tests_to_run=map(lambda t: t.mvn_name, testcases))
-	if mvn.has_compilation_error(build_report):
+	if mvn.has_compilation_error(build_report) and False:
 		raise mvn.MVNError(msg='Failed due to compilation error', report='', trace=traceback.format_exc())
 	return build_report
 
@@ -811,7 +811,7 @@ def reset_repos(argv):
 def set_up(argv, RESET = False):
 	def clone_repo(base, url, label=''):
 		logging.info('Started cloning ' + argv[1] + ' {}'.format(label))
-		git_cmds_wrapper(lambda: git.Git(base).init())
+		# git_cmds_wrapper(lambda: git.Git(base).init())
 		repo_url = url.geturl().replace('\\', '/').replace('////', '//')
 		git_cmds_wrapper(
 			lambda: git.Git(base).clone(repo_url)

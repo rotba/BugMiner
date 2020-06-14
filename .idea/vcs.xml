@@ -37,6 +37,10 @@
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-math/commons-math" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-math/regression" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-math/regression/commons-math" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/maven" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/maven/maven" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/maven/regression" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/maven/regression/maven" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/tika" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/tika/regression" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/tika/regression/tika" vcs="Git" />
