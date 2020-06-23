@@ -23,6 +23,7 @@ from mvnpy import bug as mvn_bug
 from mvnpy import mvn
 from mvnpy.plugins.evosuite.evosuite import TestsGenerationError
 from patcher.patcher import TestcasePatcher
+from copy import deepcopy
 
 branch_inspected = 'origin/master'
 repo = None
@@ -108,53 +109,40 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			commit_valid_testcases = []
 			generated_testcases = []
 			generated_tests_diffs = []
-			no_report_testcases = []
 			tests = dict_modules_testcases[module]
 
 			git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha, '-f'))
 			mvn_repo.change_surefire_ver(surefire_version)
 			delta_testcases = get_delta_testcases(tests)
-			parent_tests = list(map(lambda t_path: TestObjects.TestClass(t_path, commit.repo.working_dir),
-									filter(lambda t: os.path.exists(os.path.realpath(t)), tests_paths)))
-			all_parent_testcases = mvn.get_testcases(parent_tests)
-			patch = TestcasePatcher(testcases=all_parent_testcases, commit_fix=commit, commit_bug=parent,
+			patch = TestcasePatcher(testcases=tests, commit_fix=commit, commit_bug=parent,
 									module_path=module, proj_dir=repo.working_dir,
 									generated_tests_diff=generated_tests_diffs, gen_commit=None)
 			patch.patch()
-			build_report = run_mvn_tests(tests, module, TRACE, changed_classes_diffs)
-			(parent_valid_testcases, no_report_testcases) = attach_reports(all_parent_testcases)
+
+			build_report = run_mvn_tests(tests, module, False, changed_classes_diffs)
+			(parent_valid_testcases, no_report_testcases) = attach_reports(deepcopy(tests))
 			if len(parent_valid_testcases) == 0:
 				raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))),
 								   report="no", trace=traceback.format_exc())
+			if TRACE:
+				mvn_repo.clean()
+				build_report = run_mvn_tests(tests, module, True, changed_classes_diffs)
+				(parent_valid_testcases, no_report_testcases) = attach_reports(deepcopy(tests))
+				if len(parent_valid_testcases) == 0:
+					raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))),
+									   report="no", trace=traceback.format_exc())
 
 
 			git_cmds_wrapper(lambda: repo.git.checkout(commit.hexsha, '-f'))
 			mvn_repo.change_surefire_ver(surefire_version)
 			build_log = run_mvn_tests(tests, module, False, changed_classes_diffs)
-			(commit_valid_testcases, no_report_testcases) = attach_reports(tests)
+			(commit_valid_testcases, no_report_testcases) = attach_reports(deepcopy(tests))
 			if len(commit_valid_testcases) == 0:
 				raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))), report= "no", trace=traceback.format_exc())
 
 			relevant_parent_testcases = list(filter(lambda t: t in commit_valid_testcases, parent_valid_testcases))
-
-
 			git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha, '-f'))
-			mvn_repo.change_surefire_ver(surefire_version)
-			delta_testcases = get_delta_testcases(tests)
-			patch = TestcasePatcher(testcases=commit_valid_testcases, commit_fix=commit, commit_bug=parent,
-									module_path=module, proj_dir=repo.working_dir,
-									generated_tests_diff=generated_tests_diffs, gen_commit=None)
 			patch.patch()
-			# build_report = run_mvn_tests(tests, module, TRACE, changed_classes_diffs)
-			# parent_tests = list(map(lambda t_path: TestObjects.TestClass(t_path, commit.repo.working_dir),
-			# 						filter(lambda t: os.path.exists(os.path.realpath(t)), tests_paths)))
-			# all_parent_testcases = mvn.get_testcases(parent_tests)
-			# (parent_valid_testcases, no_report_testcases) = attach_reports(all_parent_testcases)
-			# if len(parent_valid_testcases) == 0:
-			# 	raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))), report= "no", trace=traceback.format_exc())
-
-
-
 
 			for no_report_testcase in no_report_testcases:
 				ans.append(mvn_bug.Bug(issue_key=issue, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
@@ -187,12 +175,12 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 					   module_bugs))
 			passed_delta_testcases = list(map(lambda b: b.bugged_testcase, passed_delta_bugs))
 			dict_testcases_files = store_test_files(passed_delta_testcases)
-			try:
-				if len(passed_delta_bugs) > 0:
-					ans += try_grandparents(issue=issue, testcases=passed_delta_testcases,
-											dict_testcases_files=dict_testcases_files, commit=commit, parent=parent, changed_classes_diffs=changed_classes_diffs)
-			except Exception as e:
-				logging.info('SHOULD NOT HAPPEN EXCEPTION DELTA TO THE POWER ' + str(e) + '\n' + traceback.format_exc())
+			# try:
+			# 	if len(passed_delta_bugs) > 0:
+			# 		ans += try_grandparents(issue=issue, testcases=passed_delta_testcases,
+			# 								dict_testcases_files=dict_testcases_files, commit=commit, parent=parent, changed_classes_diffs=changed_classes_diffs)
+			# except Exception as e:
+			# 	logging.info('SHOULD NOT HAPPEN EXCEPTION DELTA TO THE POWER ' + str(e) + '\n' + traceback.format_exc())
 			ans += module_bugs
 			end_time = time.time()
 			bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time, mvn_repo.repo_dir)
@@ -323,7 +311,7 @@ def try_grandparents(issue, parent, commit, testcases, dict_testcases_files, cha
 			if os.path.isfile(testcase.src_path):
 				os.remove(testcase.src_path)
 			shutil.copyfile(dict_testcases_files[testcase.id], testcase.src_path)
-		run_mvn_tests(testcases_copy, testcases_copy[0].module, False, changed_classes_diffs)
+		run_mvn_tests(testcases_copy, testcases_copy[0].module, TRACE, changed_classes_diffs)
 		(grand_parent_valid_testcases, no_report_testcases) = attach_reports(testcases_copy)
 		for testcase in testcases:
 			if testcase in grand_parent_valid_testcases:

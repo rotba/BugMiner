@@ -30,15 +30,15 @@ class TestcasePatcher(object):
 		self.files_manager = ProjectFilesManager(self.proj_dir)
 
 	def patch(self):
-		self.patch = self.patch_all(self.testcases)
-		self.unpatch = self.unpatch_comp_errors(self.patch)
+		self._patch = self.patch_all(self.testcases)
+		self.unpatch = self.unpatch_comp_errors(self._patch)
 		return self
 
 	def get_patched(self):
 		return [x for x in self.get_all_patched() if x not in self.get_all_unpatched()]
 
 	def get_all_patched(self):
-		return self.patch.testcases
+		return self._patch.testcases
 
 	def get_all_unpatched(self):
 		return reduce(lambda acc, curr: self.get_unpatched(curr) + acc, self.unpatch.errored_files, [])
@@ -47,7 +47,7 @@ class TestcasePatcher(object):
 		if isinstance(file, OnlyTestcasesErroredFile):
 			return file.testcases
 		else:
-			return self.patch.get_changed_file(file.path).testcases
+			return self._patch.get_changed_file(file.path).testcases
 
 	def patch_all(self, testcases):
 		patch = Patch()
