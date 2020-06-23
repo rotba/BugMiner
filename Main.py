@@ -111,6 +111,22 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			no_report_testcases = []
 			tests = dict_modules_testcases[module]
 
+			git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha, '-f'))
+			mvn_repo.change_surefire_ver(surefire_version)
+			delta_testcases = get_delta_testcases(tests)
+			parent_tests = list(map(lambda t_path: TestObjects.TestClass(t_path, commit.repo.working_dir),
+									filter(lambda t: os.path.exists(os.path.realpath(t)), tests_paths)))
+			all_parent_testcases = mvn.get_testcases(parent_tests)
+			patch = TestcasePatcher(testcases=all_parent_testcases, commit_fix=commit, commit_bug=parent,
+									module_path=module, proj_dir=repo.working_dir,
+									generated_tests_diff=generated_tests_diffs, gen_commit=None)
+			patch.patch()
+			build_report = run_mvn_tests(tests, module, TRACE, changed_classes_diffs)
+			(parent_valid_testcases, no_report_testcases) = attach_reports(all_parent_testcases)
+			if len(parent_valid_testcases) == 0:
+				raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))),
+								   report="no", trace=traceback.format_exc())
+
 
 			git_cmds_wrapper(lambda: repo.git.checkout(commit.hexsha, '-f'))
 			mvn_repo.change_surefire_ver(surefire_version)
@@ -119,22 +135,25 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			if len(commit_valid_testcases) == 0:
 				raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))), report= "no", trace=traceback.format_exc())
 
+			relevant_parent_testcases = list(filter(lambda t: t in commit_valid_testcases, parent_valid_testcases))
+
+
 			git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha, '-f'))
 			mvn_repo.change_surefire_ver(surefire_version)
 			delta_testcases = get_delta_testcases(tests)
 			patch = TestcasePatcher(testcases=commit_valid_testcases, commit_fix=commit, commit_bug=parent,
 									module_path=module, proj_dir=repo.working_dir,
-									generated_tests_diff=generated_tests_diffs, gen_commit=None).patch()
-			build_report = run_mvn_tests(tests, module, TRACE, changed_classes_diffs)
-			parent_tests = list(map(lambda t_path: TestObjects.TestClass(t_path, commit.repo.working_dir),
-									filter(lambda t: os.path.exists(os.path.realpath(t)), tests_paths)))
-			all_parent_testcases = mvn.get_testcases(parent_tests)
-			(parent_valid_testcases, no_report_testcases) = attach_reports(all_parent_testcases)
-			if len(parent_valid_testcases) == 0:
-				raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))), report= "no", trace=traceback.format_exc())
+									generated_tests_diff=generated_tests_diffs, gen_commit=None)
+			patch.patch()
+			# build_report = run_mvn_tests(tests, module, TRACE, changed_classes_diffs)
+			# parent_tests = list(map(lambda t_path: TestObjects.TestClass(t_path, commit.repo.working_dir),
+			# 						filter(lambda t: os.path.exists(os.path.realpath(t)), tests_paths)))
+			# all_parent_testcases = mvn.get_testcases(parent_tests)
+			# (parent_valid_testcases, no_report_testcases) = attach_reports(all_parent_testcases)
+			# if len(parent_valid_testcases) == 0:
+			# 	raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))), report= "no", trace=traceback.format_exc())
 
 
-			relevant_parent_testcases = list(filter(lambda t: t in commit_valid_testcases, parent_valid_testcases))
 
 
 			for no_report_testcase in no_report_testcases:
