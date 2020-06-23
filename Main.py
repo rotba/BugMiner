@@ -43,7 +43,6 @@ dict_key_issue = {}
 surefire_version = '2.22.0'
 USE_CACHE = False
 USE_CACHED_STATE = False
-GENERATE_DATA = True
 GENERATE_TESTS = False
 TRACE = True
 LIMIT_TIME_FOR_BUILD = 180
@@ -64,8 +63,7 @@ def main(argv):
 		try:
 			bugs = extract_bugs(issue=candidate.issue, commit=repo.commit(candidate.fix_commit),
 			                    tests_paths=candidate.tests, changed_classes_diffs=candidate.diffed_components)
-			if GENERATE_DATA:
-				bug_data_handler.add_bugs(bugs)
+			bug_data_handler.add_bugs(bugs)
 		except mvn_bug.BugError as e:
 			logging.info('BUG ERROR  ' + e.msg + '\n' + traceback.format_exc())
 		except TestObjects.TestParserException as e:
@@ -96,20 +94,12 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 	git_cmds_wrapper(lambda: reg_repo.git.add('.'), spec_repo=reg_repo, spec_mvn_repo=reg_mvn_repo)
 	git_cmds_wrapper(lambda: reg_repo.git.checkout(parent.hexsha, '-f'), spec_repo=reg_repo,
 					 spec_mvn_repo=reg_mvn_repo)
-	diffs_packages = map(lambda x: x.after_file.package_name, changed_classes_diffs)
-	test_files = filter(lambda x: "test" in x[1] and x[0].endswith("java"),
-						map(lambda x: (os.path.join(repo.working_dir, x), os.path.normpath(x.lower()).replace(".java", "").replace(os.path.sep, ".")),
-							repo.git.ls_files().split()))
-	tests_paths.extend(list(map(lambda x: x[0], filter(lambda x: any(map(lambda y: y in x[1], diffs_packages)), test_files))))
-	commit_tests_object = list(map(lambda t_path: TestObjects.TestClass(t_path, commit.repo.working_dir),
-			 filter(lambda t: os.path.exists(os.path.realpath(t)), tests_paths)))
-	commit_testcases = mvn.get_testcases(commit_tests_object)
+	commit_testcases = get_relevant_tests(changed_classes_diffs, tests_paths, commit)
 	dict_modules_testcases = divide_to_modules(commit_testcases)
 	for module in dict_modules_testcases:
 		try:
 			mvn_repo.clean()
 			git_cmds_wrapper(lambda: repo.git.add('.'))
-			git_cmds_wrapper(lambda: repo.git.checkout(commit.hexsha, '-f'))
 			git_cmds_wrapper(lambda: reg_repo.git.add('.'), spec_repo=reg_repo, spec_mvn_repo=reg_mvn_repo)
 			git_cmds_wrapper(lambda: reg_repo.git.checkout(parent.hexsha, '-f'), spec_repo=reg_repo,
 							 spec_mvn_repo=reg_mvn_repo)
@@ -119,46 +109,43 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 			generated_testcases = []
 			generated_tests_diffs = []
 			no_report_testcases = []
-			gen_commit = None
-			if GENERATE_DATA:
-				dict_testclass_bug_dir = bug_data_handler.set_up_bug_dir(
-					issue, commit, commit_tests_object, module=module, root_module=mvn_repo.repo_dir
-				)
-			debug_green('### Running tests in commit ###')
+			tests = dict_modules_testcases[module]
+
+
+			git_cmds_wrapper(lambda: repo.git.checkout(commit.hexsha, '-f'))
 			mvn_repo.change_surefire_ver(surefire_version)
-			tests = pick_tests(dict_modules_testcases[module], module)
 			build_log = run_mvn_tests(tests, module, False, changed_classes_diffs)
-			debug_regular(build_log)
-			(commit_valid_testcases, no_report_testcases) = attach_reports(dict_modules_testcases[module])
-			gen_commit_valid_testcases = filter(lambda x: x in commit_valid_testcases, commit_valid_testcases)
+			(commit_valid_testcases, no_report_testcases) = attach_reports(tests)
 			if len(commit_valid_testcases) == 0:
 				raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))), report= "no", trace=traceback.format_exc())
+
 			git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha, '-f'))
-			delta_testcases = get_delta_testcases(dict_modules_testcases[module])
-			debug_green('### Patching delta testcases###')
-			patch = TestcasePatcher(testcases=commit_valid_testcases, commit_fix=commit, commit_bug=parent,
-			                        module_path=module, proj_dir=repo.working_dir,
-			                        generated_tests_diff=generated_tests_diffs, gen_commit=gen_commit).patch()
-			debug_green('### Running tests in parent ###')
 			mvn_repo.change_surefire_ver(surefire_version)
-			if CONFIG:
-				mvn_repo.config(module=module)
-			build_report = run_mvn_tests(pick_tests(dict_modules_testcases[module], module), module, TRACE, changed_classes_diffs)
-			debug_regular(build_report)
+			delta_testcases = get_delta_testcases(tests)
+			patch = TestcasePatcher(testcases=commit_valid_testcases, commit_fix=commit, commit_bug=parent,
+									module_path=module, proj_dir=repo.working_dir,
+									generated_tests_diff=generated_tests_diffs, gen_commit=None).patch()
+			build_report = run_mvn_tests(tests, module, TRACE, changed_classes_diffs)
 			parent_tests = list(map(lambda t_path: TestObjects.TestClass(t_path, commit.repo.working_dir),
 									filter(lambda t: os.path.exists(os.path.realpath(t)), tests_paths)))
 			all_parent_testcases = mvn.get_testcases(parent_tests)
-			relevant_parent_testcases = list(filter(lambda t: t in commit_valid_testcases, all_parent_testcases))
-			(parent_valid_testcases, no_report_testcases) = attach_reports(relevant_parent_testcases)
+			(parent_valid_testcases, no_report_testcases) = attach_reports(all_parent_testcases)
+			if len(parent_valid_testcases) == 0:
+				raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))), report= "no", trace=traceback.format_exc())
+
+
+			relevant_parent_testcases = list(filter(lambda t: t in commit_valid_testcases, parent_valid_testcases))
+
+
 			for no_report_testcase in no_report_testcases:
 				ans.append(mvn_bug.Bug(issue_key=issue, parent_hexsha=parent.hexsha, commit_hexsha=commit.hexsha,
-				                       bugged_testcase=no_report_testcase, fixed_testcase=no_report_testcase,
-				                       type=mvn_bug.determine_type(no_report_testcase, delta_testcases,
-				                                                   gen_commit_valid_testcases), valid=False,
-				                       desc='No report'))
+									   bugged_testcase=no_report_testcase, fixed_testcase=no_report_testcase,
+									   type=mvn_bug.determine_type(no_report_testcase, delta_testcases,
+																   commit_valid_testcases), valid=False,
+									   desc='No report'))
 			for testcase in commit_valid_testcases:
-				if testcase in parent_valid_testcases:
-					parent_testcase = [t for t in parent_valid_testcases if t == testcase][0]
+				if testcase in relevant_parent_testcases:
+					parent_testcase = [t for t in relevant_parent_testcases if t == testcase][0]
 					blamed_components = []
 					if TRACE:
 						blamed_components = []
@@ -169,74 +156,79 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 					repo.git.add("-N", "*.java")
 					diff = repr(repo.git.diff("--", "*.java"))
 					bug = mvn_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
-					                         parent_testcase=parent_testcase,
-					                         type=mvn_bug.determine_type(testcase, delta_testcases,
-					                                                     generated_testcases),
-					                         traces=[],
-					                         bugged_components=[],
-					                         blamed_components=blamed_components, diff=diff, check_trace=TRACE)
+											 parent_testcase=parent_testcase,
+											 type=mvn_bug.determine_type(testcase, delta_testcases,
+																		 generated_testcases),
+											 traces=[],
+											 bugged_components=[],
+											 blamed_components=blamed_components, diff=diff, check_trace=TRACE)
 					module_bugs.append(bug)
 			passed_delta_bugs = list(
 				filter(lambda b: b.type == mvn_bug.Bug_type.DELTA and b.desctiption == mvn_bug.invalid_passed_desc,
-				       module_bugs))
+					   module_bugs))
 			passed_delta_testcases = list(map(lambda b: b.bugged_testcase, passed_delta_bugs))
 			dict_testcases_files = store_test_files(passed_delta_testcases)
 			try:
 				if len(passed_delta_bugs) > 0:
 					ans += try_grandparents(issue=issue, testcases=passed_delta_testcases,
-					                        dict_testcases_files=dict_testcases_files, commit=commit, parent=parent)
+											dict_testcases_files=dict_testcases_files, commit=commit, parent=parent, changed_classes_diffs=changed_classes_diffs)
 			except Exception as e:
 				logging.info('SHOULD NOT HAPPEN EXCEPTION DELTA TO THE POWER ' + str(e) + '\n' + traceback.format_exc())
 			ans += module_bugs
 			end_time = time.time()
-			if GENERATE_DATA:
-				bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time, mvn_repo.repo_dir)
+			bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time, mvn_repo.repo_dir)
 		except mvn_bug.BugError as e:
 			end_time = time.time()
 			logging.info('failed inspecting module : ' + module + '. The reason is: ' + e.msg)
-			if GENERATE_DATA:
-				bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time,
-				                          mvn_repo.repo_dir, 'Failed - ' + e.msg + '\n' + traceback.format_exc())
+			bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time,
+									  mvn_repo.repo_dir, 'Failed - ' + e.msg + '\n' + traceback.format_exc())
 		except TestsGenerationError as e:
 			end_time = time.time()
 			logging.info('Tests generation problem! failed inspecting module : ' + module)
 			logging.info(traceback.format_exc())
-			if GENERATE_DATA:
-				bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time,
-				                          mvn_repo.repo_dir, 'Failed:\n ' + str(e))
+			bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time,
+									  mvn_repo.repo_dir, 'Failed:\n ' + str(e))
 		except mvn.MVNTimeoutError as e:
 			end_time = time.time()
 			logging.info('TIMEOUT! failed inspecting module : ' + module)
 			logging.info(traceback.format_exc())
-			if GENERATE_DATA:
-				bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time,
-				                          mvn_repo.repo_dir, 'Failed: ' + str(e) + '\n' + traceback.format_exc())
+			bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time,
+									  mvn_repo.repo_dir, 'Failed: ' + str(e) + '\n' + traceback.format_exc())
 		except mvn.MVNError as e:
 			end_time = time.time()
 			logging.info('failed inspecting module : ' + module)
 			logging.info(traceback.format_exc())
-			if GENERATE_DATA:
-				bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time,
+			bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time,
 				                          mvn_repo.repo_dir, 'Failed: ' + str(e) + '\n' + traceback.format_exc())
 
 		except Exception as e:
 			end_time = time.time()
 			logging.info('failed inspecting module : ' + module)
 			logging.info(traceback.format_exc())
-			if GENERATE_DATA:
-				bug_data_handler.add_time(issue, commit.hexsha, module, 0,
-				                          mvn_repo.repo_dir,
-				                          'Unexpected failure: ' + str(e) + '\n' + traceback.format_exc())
+			bug_data_handler.add_time(issue, commit.hexsha, module, 0,
+									  mvn_repo.repo_dir,
+									  'Unexpected failure: ' + str(e) + '\n' + traceback.format_exc())
 			debug_regular('Unexpected failure!')
 			debug_regular(traceback.format_exc())
 
 	for b in list(filter(lambda b: b.valid, ans, )):
 		logging.info('VALID BUG: ' + str(b))
-	for b in list(filter(lambda b: not b.valid, ans)):
-		# logging.info('INVALID BUG: ' + str(b))
-		pass
 	git_cmds_wrapper(lambda: repo.git.reset('--hard'))
 	return filter_results(ans)
+
+
+def get_relevant_tests(changed_classes_diffs, tests_paths, commit):
+	diffs_packages = map(lambda x: x.after_file.package_name, changed_classes_diffs)
+	test_files = filter(lambda x: "test" in x[1] and x[0].endswith("java"),
+						map(lambda x: (os.path.join(repo.working_dir, x),
+									   os.path.normpath(x.lower()).replace(".java", "").replace(os.path.sep, ".")),
+							repo.git.ls_files().split()))
+	tests_paths.extend(
+		list(map(lambda x: x[0], filter(lambda x: any(map(lambda y: y in x[1], diffs_packages)), test_files))))
+	commit_tests_object = list(map(lambda t_path: TestObjects.TestClass(t_path, commit.repo.working_dir),
+								   filter(lambda t: os.path.exists(os.path.realpath(t)), tests_paths)))
+	commit_testcases = mvn.get_testcases(commit_tests_object)
+	return commit_testcases
 
 
 def get_most_chenged_classes(module, changed_classes_diffs, commit, parent):
@@ -298,7 +290,7 @@ def filter_results(ans):
 
 
 # Tries to run the tests in grandparents commits
-def try_grandparents(issue, parent, commit, testcases, dict_testcases_files):
+def try_grandparents(issue, parent, commit, testcases, dict_testcases_files, changed_classes_diffs):
 	ans = []
 	testcases_copy = list(map(lambda t: copy.deepcopy(t), testcases))
 	i = 0
@@ -338,7 +330,6 @@ def run_mvn_tests(testcases, module, trace=False, classes_to_trace=None):
 								classes_to_trace=list(reduce(list.__add__, map(lambda x: x.modified_names, classes_to_trace), [])), check_comp_error=False)
 		build_report = mvn_repo.build_report
 	else:
-		# build_report = mvn_repo.test(tests=testcases, module=module, time_limit=LIMIT_TIME_FOR_BUILD)
 		build_report = mvn_repo.install(module=module, tests_to_run=map(lambda t: t.mvn_name, testcases))
 	if mvn.has_compilation_error(build_report) and False:
 		raise mvn.MVNError(msg='Failed due to compilation error', report='', trace=traceback.format_exc())
@@ -577,9 +568,9 @@ def are_associated_test_paths(path, test_path):
 def divide_to_modules(tests):
 	ans = {}
 	for test in tests:
-		if not test.module in ans.keys():
-			ans[test.module] = []
-		ans[test.module].append(test)
+		if not test.module in ans:
+			ans[test.module] = set()
+		ans[test.module].add(test)
 	return ans
 
 
@@ -685,10 +676,6 @@ def cache_project_state(state_label=''):
 def pick_tests(testcases, module):
 	if mvn_repo.too_much_testcases_to_generate_cmd(testcases, module):
 		logging.info('To manny tests. Filtering in order to execute build\nAmount of tests:{}'.format(len(testcases)))
-		if not GENERATE_TESTS:
-			return set(testcases)
-		else:
-			return set(map(lambda y: y.parent, filter(lambda x: mvn_repo.is_generated_test(x.parent), testcases)))
 	return testcases
 
 
@@ -771,13 +758,14 @@ def set_up(argv, RESET = False):
 	git_url = urlparse(argv[1])
 	proj_name = os.path.basename(git_url.path)
 	proj_files = settings.ProjFiles(proj_name)
+	if os.path.exists(proj_files.base):
+		shutil.rmtree(proj_files.base, ignore_errors=True)
 	cache_dir = proj_files.cache
 	state_patches_cache_dir = proj_files.states
 	tmp_files_dir = proj_files.tmp
 	patches_dir = proj_files.patches
 	results_dir = settings.RESULTS_DIR
 	proj_results_dir = os.path.join(results_dir, proj_name)
-	data_dir = os.path.join(proj_results_dir, 'data')
 	if not os.path.isdir(proj_results_dir):
 		os.makedirs(proj_results_dir)
 	if not os.path.isdir(settings.TESTED_PROJECTS_DIR):
@@ -793,12 +781,8 @@ def set_up(argv, RESET = False):
 	else:
 		shutil.rmtree(tmp_files_dir)
 		os.makedirs(tmp_files_dir)
-	if GENERATE_DATA and not RESET:
-		if os.path.isdir(data_dir):
-			raise mvn_bug.BugError('The data currently in the project result dir ({}) will be overwritten.'
-			                       ' Please backup it in another directory'.format(proj_results_dir))
-		os.makedirs(data_dir)
-		bug_data_handler = mvn_bug.Bug_data_handler(data_dir)
+	if not RESET:
+		bug_data_handler = mvn_bug.Bug_data_handler(proj_results_dir)
 	if not RESET:
 		LOG_FILENAME = os.path.join(proj_results_dir, 'log.log')
 		logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO, format='%(asctime)s %(message)s')
