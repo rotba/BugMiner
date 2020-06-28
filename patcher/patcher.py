@@ -145,11 +145,17 @@ class TestcasePatcher(object):
 		self.unpatch_testcases(file.path, file.testcases)
 
 	def clean_whole_file(self, file, patch):
-		diff = patch.get_changed_file(file.path).diff
+		changed_file = patch.get_changed_file(file.path)
+		if changed_file is None:
+			git_cmds_wrapper(
+				lambda: self.git_repo.git.execute(['git', 'checkout', '--', '-R', file.path]),
+				self.git_repo)
+			return
+		diff = changed_file.diff
 		if self.file_is_untracked(file):
 			os.remove(file.path)
 		else:
-			git_cmds_wrapper(lambda: self.git_repo.git.execute(['git', 'apply', '-R', diff.patch_path]), self.git_repo)
+			git_cmds_wrapper(lambda: self.git_repo.git.execute(['git', 'apply', '--whitespace=nowarn', '-R', diff.patch_path]), self.git_repo)
 
 	def file_is_untracked(self, file):
 		status = self.git_repo.git.status()
