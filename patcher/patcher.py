@@ -148,7 +148,7 @@ class TestcasePatcher(object):
 		changed_file = patch.get_changed_file(file.path)
 		if changed_file is None:
 			git_cmds_wrapper(
-				lambda: self.git_repo.git.execute(['git', 'checkout', '--', '-R', file.path]),
+				lambda: self.git_repo.git.execute(['git', 'checkout', '--', file.path]),
 				self.git_repo)
 			return
 		diff = changed_file.diff
