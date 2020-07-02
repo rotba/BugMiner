@@ -24,6 +24,7 @@ from mvnpy import mvn
 from mvnpy.plugins.evosuite.evosuite import TestsGenerationError
 from patcher.patcher import TestcasePatcher
 from copy import deepcopy
+import json
 
 branch_inspected = 'origin/master'
 repo = None
@@ -54,7 +55,7 @@ DEBUG = False
 CONFIG = False
 
 
-def main(argv):
+def execute(argv):
 	bug_data_set = []
 	set_up(argv)
 	specific_commit = argv[3] if len(argv) > 3 else None
@@ -178,13 +179,6 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 				filter(lambda b: b.type == mvn_bug.Bug_type.DELTA and b.desctiption == mvn_bug.invalid_passed_desc,
 					   module_bugs))
 			passed_delta_testcases = list(map(lambda b: b.bugged_testcase, passed_delta_bugs))
-			dict_testcases_files = store_test_files(passed_delta_testcases)
-			# try:
-			# 	if len(passed_delta_bugs) > 0:
-			# 		ans += try_grandparents(issue=issue, testcases=passed_delta_testcases,
-			# 								dict_testcases_files=dict_testcases_files, commit=commit, parent=parent, changed_classes_diffs=changed_classes_diffs)
-			# except Exception as e:
-			# 	logging.info('SHOULD NOT HAPPEN EXCEPTION DELTA TO THE POWER ' + str(e) + '\n' + traceback.format_exc())
 			ans += module_bugs
 			end_time = time.time()
 			bug_data_handler.add_time(issue, commit.hexsha, module, end_time - start_time, mvn_repo.repo_dir)
@@ -776,6 +770,7 @@ def set_up(argv, RESET = False):
 	tmp_files_dir = proj_files.tmp
 	patches_dir = proj_files.patches
 	results_dir = settings.RESULTS_DIR
+	data_dir = settings.DATA_DIR
 	proj_results_dir = os.path.join(results_dir, proj_name)
 	if not os.path.isdir(proj_results_dir):
 		os.makedirs(proj_results_dir)
@@ -809,5 +804,35 @@ def set_up(argv, RESET = False):
 		branch_inspected = repo.branches[0].name
 
 
+def generate_data(argv):
+	set_up(argv)
+	extractor = JiraExtractor(repo_dir=repo.working_dir, jira_url=argv[2], branch_inspected=branch_inspected,
+							  issue_key=None, query=None, commit=None)
+	commits = []
+	for candidate in extractor.extract_possible_bugs(check_trace=TRACE):
+		hexsha = get_parent(repo.commit(candidate.fix_commit)).hexsha
+		commits.append(hexsha)
+	out_path = os.path.join(settings.DATA_DIR, proj_name)
+	with open(out_path, "wb") as f:
+		json.dump(commits, f)
+
+	return commits
+
+
+def main(project_name, major_ind, minor_ind):
+	if not project_name in settings.projects:
+		return
+	git_url, jira_url = settings.projects.get(project_name)
+	out_path = os.path.join(settings.DATA_DIR, project_name)
+	commits = []
+	with open(out_path) as f:
+		commits = json.loads(f.read())
+	specific_commit_ind = int(major_ind) * 250 + int(minor_ind)
+	if len(commits) < specific_commit_ind:
+		return
+	execute(["", git_url, jira_url, commits[specific_commit_ind]])
+
+
 if __name__ == '__main__':
-	main(sys.argv)
+	main(*sys.argv[1:])
+	# execute(sys.argv)

@@ -386,7 +386,7 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = False
-		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-56'])
+		Main.execute(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-56'])
 		expected_issue_dir = os.path.join(Main.data_dir, 'TIKA-56')
 		expected_commit_dir = os.path.join(expected_issue_dir, 'b12c01d9b56053554cec501aab0530f7f4352daf')
 		expected_module_extraction_dir = os.path.join(expected_commit_dir, 'root')
@@ -413,7 +413,7 @@ class TestMain(unittest.TestCase):
 		Main.GENERATE_DATA = True
 		Main.GENERATE_TESTS = True
 		Main.USE_CACHED_STATE = False
-		Main.main(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-56'])
+		Main.execute(['', 'https://github.com/apache/tika', 'http:\issues.apache.org\jira\projects\TIKA', 'TIKA-56'])
 		expected_issue_dir = os.path.join(Main.data_dir, 'TIKA-56')
 		expected_commit_dir = os.path.join(expected_issue_dir, 'b12c01d9b56053554cec501aab0530f7f4352daf')
 		expected_testclass_dir = os.path.join(expected_commit_dir, 'tika#org.apache.tika.mime.MimeTypes_ESTest')
@@ -441,7 +441,7 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHE = False
 		Main.GENERATE_DATA = True
 		Main.TRACE = True
-		Main.main(
+		Main.execute(
 			['', 'https://github.com/apache/commons-math', 'http:\issues.apache.org\jira\projects\MATH', 'MATH-153'])
 		expected_issue_dir = os.path.join(Main.data_dir, 'MATH-153')
 		expected_commit_dir = os.path.join(expected_issue_dir, '409d56d206891f76a3e751e4dcdcd22a8c898acc')
@@ -509,7 +509,7 @@ class TestMain(unittest.TestCase):
 		Main.USE_CACHED_STATE = False
 		Main.DEBUG = False
 		Main.TESTS_GEN_STRATEGY = Main.TestGenerationStrategy.EVOSUITER
-		Main.main(
+		Main.execute(
 			[
 				'',
 				'https://github.com/apache/commons-math',

@@ -18,6 +18,7 @@ class JiraExtractor(Extractor):
 	# def __init__(self, repo_dir, branch_inspected, jira_url, issue_key=None, query = None, use_cash = False):
 	def __init__(self, repo_dir, branch_inspected, jira_url, issue_key=None, query=None, commit=None):
 		super(JiraExtractor, self).__init__(repo_dir, branch_inspected)
+		self.java_commits = []
 		self.jira_url = urlparse(jira_url)
 		self.jira_proj_name = os.path.basename(self.jira_url.path)
 		self.issue_key = issue_key
@@ -76,8 +77,8 @@ class JiraExtractor(Extractor):
 
 		issues_d = {}
 		issues_ids = map(lambda issue: issue.split("-")[1], issues)
-		java_commits = self.get_java_commits()
-		for git_commit in java_commits:
+		self.java_commits = self.get_java_commits()
+		for git_commit in self.java_commits:
 			if not self.has_parent(git_commit):
 				logging.info('commit {0} has no parent '.format(git_commit.hexsha))
 				continue
@@ -85,7 +86,7 @@ class JiraExtractor(Extractor):
 			bug_id = get_bug_num_from_comit_text(commit_text, issues_ids)
 			if bug_id != '0':
 				issues_d.setdefault(bug_id, []).append(git_commit)
-			elif any(map(lambda x: 'test' in x, java_commits[git_commit])) and any(map(lambda x: 'test' not in x, java_commits[git_commit])):
+			elif any(map(lambda x: 'test' in x, self.java_commits[git_commit])) and any(map(lambda x: 'test' not in x, self.java_commits[git_commit])):
 				# check if it change a test file and java
 				if self.issue_key is None:
 					issues_d.setdefault("-1", []).append(git_commit)
@@ -99,7 +100,7 @@ class JiraExtractor(Extractor):
 				logging.info('Couldn\'t find commits associated with ' + bug_issue)
 				continue
 			for commit in issue_commits:
-				analyzer = IsBugCommitAnalyzer(commit=commit, parent=self.get_parent(commit), repo=self.repo)
+				analyzer = IsBugCommitAnalyzer(commit=commit, parent=self.get_parent(commit), repo=self.repo, diffed_files=self.java_commits[commit])
 				if analyzer.is_bug_commit(check_trace):
 					yield Candidate(issue=bug_issue, fix_commit=analyzer.commit.hexsha, tests=analyzer.get_test_paths(), diffed_components=analyzer.source_diffed_components)
 				else:

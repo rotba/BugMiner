@@ -10,10 +10,11 @@ except:
 class IsBugCommitAnalyzer(object):
     TESTS_DIFFS_IS_CRITERIA = False
 
-    def __init__(self, commit, parent, repo):
+    def __init__(self, commit, parent, repo, diffed_files):
         self._commit = commit
         self._parent = parent
         self._repo = repo
+        self.diffed_files = diffed_files
         self.associated_tests_paths = None
         self.diffed_components = None
         self.source_diffed_components = None
@@ -67,9 +68,9 @@ class IsBugCommitAnalyzer(object):
 
     def get_tests_paths_from_commit(self):
         ans = []
-        for file_diff in self.diffed_components:
-            if self.is_test_file(file_diff.file_name):
-                ans.append(os.path.join(self._repo.working_dir, file_diff.file_name))
+        for file_diff in self.diffed_files:
+            if self.is_test_file(file_diff):
+                ans.append(os.path.join(self._repo.working_dir, file_diff))
         return ans
 
     def has_associated_tests_paths(self):
@@ -78,8 +79,8 @@ class IsBugCommitAnalyzer(object):
         return self.associated_tests_paths is not None and len(self.associated_tests_paths) > 0
 
     def has_associated_diffed_components(self):
-        self.diffed_components = self.get_diffed_components()
-        self.source_diffed_components = list(filter(lambda x: not self.is_test_file(x.file_name), self.diffed_components))
+        # self.diffed_components = self.get_diffed_components()
+        self.source_diffed_components = list(filter(lambda x: not self.is_test_file(x), self.diffed_files))
         return self.source_diffed_components is not None and len(self.source_diffed_components) > 0
 
     def is_test_file(self, file):
