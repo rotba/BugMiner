@@ -158,8 +158,12 @@ def extract_bugs(issue, commit, tests_paths, changed_classes_diffs=[]):
 						blamed_components = []
 						if mvn_repo.traces:
 							traced_components = set(reduce(list.__add__, map(lambda t: map(lambda x: x.lower(), t.get_trace()), mvn_repo.traces), []))
+							logging.info('traces are:' + str(traced_components))
 							changed_components = set(map(lambda m: m.method_name_parameters.lower(), set(reduce(list.__add__, map(lambda d: d.get_changed_methods(), changed_classes_diffs), []))))
+							logging.info('changed_components are:' + str(changed_components))
 							blamed_components = list(filter(lambda x: "test" not in x.lower(), traced_components.intersection(changed_components)))
+						else:
+							logging.info('No traces found in mvn_repo')
 					repo.git.add("-N", "*.java")
 					diff = repr(repo.git.diff("--", "*.java"))
 					bug = mvn_bug.create_bug(issue=issue, commit=commit, parent=parent, testcase=testcase,
