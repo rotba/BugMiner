@@ -804,9 +804,12 @@ def set_up(argv, RESET = False):
 		branch_inspected = repo.branches[0].name
 
 
-def generate_data(argv):
-	set_up(argv)
-	extractor = JiraExtractor(repo_dir=repo.working_dir, jira_url=argv[2], branch_inspected=branch_inspected,
+def generate_data(project_name):
+	if not project_name in settings.projects:
+		return
+	git_url, jira_url = settings.projects.get(project_name)
+	set_up(["", git_url])
+	extractor = JiraExtractor(repo_dir=repo.working_dir, jira_url=jira_url, branch_inspected=branch_inspected,
 							  issue_key=None, query=None, commit=None)
 	commits = []
 	for candidate in extractor.extract_possible_bugs(check_trace=TRACE):
@@ -819,7 +822,7 @@ def generate_data(argv):
 	return commits
 
 
-def main(project_name, major_ind, minor_ind):
+def main(project_name, minor_ind, major_ind):
 	if not project_name in settings.projects:
 		return
 	git_url, jira_url = settings.projects.get(project_name)
@@ -834,5 +837,6 @@ def main(project_name, major_ind, minor_ind):
 
 
 if __name__ == '__main__':
-	main(*sys.argv[1:])
-	# generate_data(sys.argv)
+	# main(*sys.argv[1:])
+	for p in settings.projects:
+		generate_data(p)
