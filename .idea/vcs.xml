@@ -290,6 +290,8 @@
     <mapping directory="$PROJECT_DIR$/tested_projects/wookie/wookie" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/zookeeper/regression/zookeeper" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/zookeeper/zookeeper" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects1/tika/regression/tika" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects1/tika/tika" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tests_ignore/tested_project" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tests_ignore/tested_project/MavenProj" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tests_ignore/tested_project/tika" vcs="Git" />

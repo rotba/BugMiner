@@ -18,13 +18,13 @@ class JiraExtractor(Extractor):
 	# def __init__(self, repo_dir, branch_inspected, jira_url, issue_key=None, query = None, use_cash = False):
 	def __init__(self, repo_dir, branch_inspected, jira_url, issue_key=None, query=None, commit=None):
 		super(JiraExtractor, self).__init__(repo_dir, branch_inspected)
-		self.java_commits = []
 		self.jira_url = urlparse(jira_url)
 		self.jira_proj_name = os.path.basename(self.jira_url.path)
 		self.issue_key = issue_key
 		self.commit = commit
 		self.query = query if query != None else self.generate_jql_find_bugs()
 		self.jira = JIRA(options={'server': 'https://issues.apache.org/jira'})
+		self.java_commits = self.get_java_commits()
 		self.issues_d = self.get_data()
 
 	def get_data(self):
@@ -77,7 +77,6 @@ class JiraExtractor(Extractor):
 
 		issues_d = {}
 		issues_ids = map(lambda issue: issue.split("-")[1], issues)
-		self.java_commits = self.get_java_commits()
 		for git_commit in self.java_commits:
 			if not self.has_parent(git_commit):
 				logging.info('commit {0} has no parent '.format(git_commit.hexsha))

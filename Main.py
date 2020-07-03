@@ -835,4 +835,4 @@ def main(project_name, major_ind, minor_ind):
 
 if __name__ == '__main__':
 	main(*sys.argv[1:])
-	# execute(sys.argv)
+	# generate_data(sys.argv)
