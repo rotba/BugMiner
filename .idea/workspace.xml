@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/distributedlog/distributedlog/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/distributedlog/distributedlog/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/griffin/griffin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/griffin/griffin/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/maven-source-plugin/maven-source-plugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-source-plugin/maven-source-plugin/pom.xml" afterDir="false" />
@@ -197,7 +197,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Main" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="Main" type="PythonConfigurationType" factoryName="Python" singleton="false">
       <output_file path="c:/temp/out.txt" is_save="true" />
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -212,7 +212,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="tika 0 2" />
+      <option name="PARAMETERS" value="tika 3 0" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -802,10 +802,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593790499137">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593795424039">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1593790499137" />
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1593795424039" />
     <state x="193" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593702361075" />
     <state x="170" y="49" width="1451" height="756" key="#xdebugger.evaluate" timestamp="1593792073852">
       <screen x="0" y="0" width="1366" height="728" />
@@ -821,28 +821,28 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592084006108" />
-    <state width="1345" height="188" key="GridCell.Tab.0.bottom" timestamp="1593792454132">
+    <state width="1345" height="188" key="GridCell.Tab.0.bottom" timestamp="1593795427693">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="188" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593792454132" />
+    <state width="1345" height="188" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593795427693" />
     <state width="1899" height="188" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.bottom/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
-    <state width="1345" height="188" key="GridCell.Tab.0.center" timestamp="1593792454132">
+    <state width="1345" height="188" key="GridCell.Tab.0.center" timestamp="1593795427693">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="188" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593792454132" />
+    <state width="1345" height="188" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593795427693" />
     <state width="1899" height="188" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.center/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
-    <state width="1345" height="188" key="GridCell.Tab.0.left" timestamp="1593792454132">
+    <state width="1345" height="188" key="GridCell.Tab.0.left" timestamp="1593795427692">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="188" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593792454132" />
+    <state width="1345" height="188" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593795427692" />
     <state width="1899" height="188" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.left/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
-    <state width="1345" height="188" key="GridCell.Tab.0.right" timestamp="1593792454132">
+    <state width="1345" height="188" key="GridCell.Tab.0.right" timestamp="1593795427693">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="188" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593792454132" />
+    <state width="1345" height="188" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593795427693" />
     <state width="1899" height="188" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.right/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
     <state width="1345" height="214" key="GridCell.Tab.1.bottom" timestamp="1593792113446">
