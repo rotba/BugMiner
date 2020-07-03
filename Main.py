@@ -837,6 +837,6 @@ def main(project_name, minor_ind, major_ind):
 
 
 if __name__ == '__main__':
-	# main(*sys.argv[1:])
-	for p in settings.projects:
-		generate_data(p)
+	main(*sys.argv[1:])
+	# for p in settings.projects:
+	# 	generate_data(p)
