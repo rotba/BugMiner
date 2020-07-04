@@ -332,7 +332,7 @@ def try_grandparents(issue, parent, commit, testcases, dict_testcases_files, cha
 def run_mvn_tests(testcases, module, trace=False, classes_to_trace=None):
 	if trace:
 		mvn_repo.run_under_jcov(target_dir=None, module=module, tests_to_run=map(lambda t: t.mvn_name, testcases),
-								classes_to_trace=list(reduce(list.__add__, map(lambda x: os.path.normpath(x.replace(".java", "")).replace(os.sep, ".").split("java.")[1], classes_to_trace), [])), check_comp_error=False)
+								classes_to_trace=map(lambda x: os.path.normpath(x.replace(".java", "")).replace(os.sep, ".").split("java.")[1], candidate.diffed_components), check_comp_error=False)
 		build_report = mvn_repo.build_report
 	else:
 		build_report = mvn_repo.install(module=module, tests_to_run=map(lambda t: t.mvn_name, testcases))
