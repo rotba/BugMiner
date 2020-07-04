@@ -833,7 +833,7 @@ def main(project_name, minor_ind, major_ind):
 	commits = []
 	with open(out_path) as f:
 		commits = json.loads(f.read())
-	specific_commit_ind = int(major_ind.strip()) * 250 + int(minor_ind)
+	specific_commit_ind = int(major_ind.strip()) * 100 + int(minor_ind)
 	if len(commits) < specific_commit_ind:
 		return
 	execute(["", git_url, jira_url, commits[specific_commit_ind]])
