@@ -29,6 +29,10 @@
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-jelly/commons-jelly/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-jelly/commons-jelly/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-math/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-math/commons-math/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-text/commons-text/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-text/commons-text/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/tika-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/tika-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/tika-batch/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/tika-batch/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/tika-bundle/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/tika-bundle/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
