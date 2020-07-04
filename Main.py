@@ -842,6 +842,7 @@ def main(project_name, minor_ind, major_ind):
 if __name__ == '__main__':
 	main(*sys.argv[1:])
 	# for p in settings.projects:
-	# 	if "common" in str(settings.projects[p]):
-	# 		generate_data(p)
-				pass
+	# 		try:
+	# 			generate_data(p)
+	# 		except:
+	# 			pass
