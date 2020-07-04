@@ -2,65 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-beanutils/commons-beanutils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-beanutils/commons-beanutils/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/apps/cookbook-examples/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/apps/cookbook-examples/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/apps/example1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/apps/example1/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/apps/example2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/apps/example2/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/apps/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/apps/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/base/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/base/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/build-tools/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/build-tools/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/configuration/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/configuration/api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/configuration/xml/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/configuration/xml/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/dist/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/dist/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/test-utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/test-utils/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-cli/commons-cli/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-cli/commons-cli/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-compress/commons-compress/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-compress/commons-compress/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-configuration/commons-configuration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-configuration/commons-configuration/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-crypto/commons-crypto/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-crypto/commons-crypto/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-dbcp/commons-dbcp/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-dbcp/commons-dbcp/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-functor/commons-functor/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-functor/commons-functor/api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-functor/commons-functor/build-tools/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-functor/commons-functor/build-tools/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-functor/commons-functor/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-functor/commons-functor/core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-functor/commons-functor/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-functor/commons-functor/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-io/commons-io/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-io/commons-io/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-jci/commons-jci/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-jci/commons-jci/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-jelly/commons-jelly/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-jelly/commons-jelly/core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-jelly/commons-jelly/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-jelly/commons-jelly/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-jxpath/commons-jxpath/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-jxpath/commons-jxpath/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-lang/commons-lang/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-lang/commons-lang/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-logging/commons-logging/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-logging/commons-logging/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-math/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-math/commons-math/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-ognl/commons-ognl/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-ognl/commons-ognl/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/asm/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/asm/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/build-tools/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/build-tools/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/cglib/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/cglib/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/dist/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/dist/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/javassist/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/javassist/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/jdk/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/jdk/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/test/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-proxy/commons-proxy/test/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-text/commons-text/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-text/commons-text/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-vfs/commons-vfs/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-vfs/commons-vfs/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/ant/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/ant/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/build-tools/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/build-tools/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/dist/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/dist/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/maven-plugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/maven-plugin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/modules/normalizer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/modules/normalizer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/modules/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/modules/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/modules/privilizer/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/modules/privilizer/api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/modules/privilizer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/modules/privilizer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/modules/privilizer/weaver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/modules/privilizer/weaver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/modules/privilizer/weaver/src/it/sample/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/modules/privilizer/weaver/src/it/sample/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/tika-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/tika-app/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/tika-batch/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/tika-batch/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/tika-bundle/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/tika-bundle/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/commons-bcel/commons-bcel/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-bcel/commons-bcel/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/commons-collections/commons-collections/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-collections/commons-collections/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/commons-pool/commons-pool/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-pool/commons-pool/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -847,49 +793,49 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592084006108" />
-    <state width="1345" height="214" key="GridCell.Tab.0.bottom" timestamp="1593862503749">
+    <state width="1345" height="188" key="GridCell.Tab.0.bottom" timestamp="1593888347418">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593862503749" />
+    <state width="1345" height="188" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593888347418" />
     <state width="1899" height="188" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.bottom/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
-    <state width="1345" height="214" key="GridCell.Tab.0.center" timestamp="1593862503749">
+    <state width="1345" height="188" key="GridCell.Tab.0.center" timestamp="1593888347418">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593862503749" />
+    <state width="1345" height="188" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593888347418" />
     <state width="1899" height="188" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.center/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
-    <state width="1345" height="214" key="GridCell.Tab.0.left" timestamp="1593862503749">
+    <state width="1345" height="188" key="GridCell.Tab.0.left" timestamp="1593888347417">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593862503749" />
+    <state width="1345" height="188" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593888347417" />
     <state width="1899" height="188" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.left/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
-    <state width="1345" height="214" key="GridCell.Tab.0.right" timestamp="1593862503749">
+    <state width="1345" height="188" key="GridCell.Tab.0.right" timestamp="1593888347418">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593862503749" />
+    <state width="1345" height="188" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593888347418" />
     <state width="1899" height="188" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.right/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
-    <state width="1345" height="214" key="GridCell.Tab.1.bottom" timestamp="1593862524846">
+    <state width="1345" height="214" key="GridCell.Tab.1.bottom" timestamp="1593869544143">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593862524846" />
+    <state width="1345" height="214" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593869544143" />
     <state width="1899" height="204" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593699958572" />
-    <state width="1345" height="214" key="GridCell.Tab.1.center" timestamp="1593862524846">
+    <state width="1345" height="214" key="GridCell.Tab.1.center" timestamp="1593869544143">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1593862524846" />
+    <state width="1345" height="214" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1593869544143" />
     <state width="1899" height="204" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593699958572" />
-    <state width="1345" height="214" key="GridCell.Tab.1.left" timestamp="1593862524846">
+    <state width="1345" height="214" key="GridCell.Tab.1.left" timestamp="1593869544143">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1593862524846" />
+    <state width="1345" height="214" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1593869544143" />
     <state width="1899" height="204" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593699958571" />
-    <state width="1345" height="214" key="GridCell.Tab.1.right" timestamp="1593862524846">
+    <state width="1345" height="214" key="GridCell.Tab.1.right" timestamp="1593869544143">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1593862524846" />
+    <state width="1345" height="214" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1593869544143" />
     <state width="1899" height="204" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593699958572" />
     <state x="-1" y="54" width="1342" height="673" key="MergeDialog" timestamp="1586636256742">
       <screen x="0" y="0" width="1366" height="728" />

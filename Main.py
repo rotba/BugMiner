@@ -809,6 +809,9 @@ def generate_data(project_name):
 	if not project_name in settings.projects:
 		return
 	git_url, jira_url = settings.projects.get(project_name)
+	out_path = os.path.join(settings.DATA_DIR, project_name)
+	if os.path.exists(out_path):
+		return
 	set_up(["", git_url])
 	extractor = JiraExtractor(repo_dir=repo.working_dir, jira_url=jira_url, branch_inspected=branch_inspected,
 							  issue_key=None, query=None, commit=None)
@@ -816,7 +819,6 @@ def generate_data(project_name):
 	for candidate in extractor.extract_possible_bugs(check_trace=TRACE):
 		hexsha = repo.commit(candidate.fix_commit).hexsha
 		commits.append(hexsha)
-	out_path = os.path.join(settings.DATA_DIR, proj_name)
 	with open(out_path, "wb") as f:
 		json.dump(commits, f)
 
@@ -842,3 +844,4 @@ if __name__ == '__main__':
 	# for p in settings.projects:
 	# 	if "common" in str(settings.projects[p]):
 	# 		generate_data(p)
+				pass
