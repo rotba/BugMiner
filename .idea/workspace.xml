@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-beanutils/commons-beanutils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-beanutils/commons-beanutils/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain/api/pom.xml" afterDir="false" />
