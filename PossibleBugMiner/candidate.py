@@ -36,10 +36,19 @@ class Candidate(object):
             return
         ans = []
         try:
-            self._commit_diff = CommitsDiff(child=self.commit, parent=self.parent, analyze_source_lines=False)
+            self._commit_diff = CommitsDiff(child=self.fix_commit, parent=self.get_parent(), analyze_source_lines=False)
         except AssertionError as e:
             raise e
         for file_diff in self._commit_diff.diffs:
             if file_diff.is_java_file():
                 ans.append(file_diff)
         self._changed_methods = set(reduce(list.__add__, map(lambda d: d.get_changed_methods(), ans), []))
+
+    def get_parent(self):
+        ans = None
+        for curr_parent in self.fix_commit.parents:
+            for branch in curr_parent.repo.refs:
+                if branch.name == 'master':
+                    ans = curr_parent
+                    break
+        return ans
