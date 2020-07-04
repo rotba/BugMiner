@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/commons-csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/commons-csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/commons-rng" beforeDir="false" afterPath="$PROJECT_DIR$/data/commons-rng" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/commons-validator" beforeDir="false" afterPath="$PROJECT_DIR$/data/commons-validator" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-cli/commons-cli/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-cli/commons-cli/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-crypto/commons-crypto/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-crypto/commons-crypto/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-functor/commons-functor/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-functor/commons-functor/api/pom.xml" afterDir="false" />
@@ -15,6 +11,7 @@
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-functor/commons-functor/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-functor/commons-functor/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-jelly/commons-jelly/core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-jelly/commons-jelly/core/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-jelly/commons-jelly/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-jelly/commons-jelly/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/commons-math/commons-math/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-math/commons-math/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -884,10 +881,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="324" y="90" width="700" height="530" key="recent.locations.popup/0.0.1366.728@0.0.1366.728" timestamp="1591485465057" />
-    <state x="486" y="70" width="945" height="969" key="search.everywhere.popup" timestamp="1593699529601">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1593856279376">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1593579730829" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1593856279376" />
     <state x="486" y="70" width="945" height="969" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593699529601" />
   </component>
   <component name="XDebuggerManager">
@@ -905,7 +902,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>642</line>
+          <line>643</line>
           <option name="timeStamp" value="549" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -915,8 +912,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>652</line>
+          <line>653</line>
           <option name="timeStamp" value="551" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>162</line>
+          <option name="timeStamp" value="566" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

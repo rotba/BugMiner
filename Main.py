@@ -159,7 +159,8 @@ def extract_bugs(candidate):
 						if mvn_repo.traces:
 							traced_components = set(reduce(list.__add__, map(lambda t: map(lambda x: x.lower(), t.get_trace()), mvn_repo.traces), []))
 							logging.info('traces are:' + str(traced_components))
-							changed_components = set(map(lambda m: m.method_name_parameters.lower(), set(reduce(list.__add__, map(lambda d: d.get_changed_methods(), candidate.diffed_components), []))))
+							candidate.calc_changed_methods()
+							changed_components = set(map(lambda m: m.method_name_parameters.lower(), candidate._changed_methods))
 							logging.info('changed_components are:' + str(changed_components))
 							blamed_components = list(filter(lambda x: "test" not in x.lower(), traced_components.intersection(changed_components)))
 						else:
