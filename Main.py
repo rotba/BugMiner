@@ -813,7 +813,7 @@ def generate_data(project_name):
 							  issue_key=None, query=None, commit=None)
 	commits = []
 	for candidate in extractor.extract_possible_bugs(check_trace=TRACE):
-		hexsha = get_parent(repo.commit(candidate.fix_commit)).hexsha
+		hexsha = repo.commit(candidate.fix_commit).hexsha
 		commits.append(hexsha)
 	out_path = os.path.join(settings.DATA_DIR, proj_name)
 	with open(out_path, "wb") as f:

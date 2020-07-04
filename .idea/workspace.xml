@@ -3,8 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/tika" beforeDir="false" afterPath="$PROJECT_DIR$/data/tika" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/distributedlog/distributedlog/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/distributedlog/distributedlog/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/griffin/griffin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/griffin/griffin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/james-jspf/james-jspf/assemble/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/james-jspf/james-jspf/assemble/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/james-jspf/james-jspf/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/james-jspf/james-jspf/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/james-jspf/james-jspf/resolver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/james-jspf/james-jspf/resolver/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/james-jspf/james-jspf/tester/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/james-jspf/james-jspf/tester/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/maven-source-plugin/maven-source-plugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-source-plugin/maven-source-plugin/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/maven-source-plugin/maven-source-plugin/src/it/MSOURCES-62/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-source-plugin/maven-source-plugin/src/it/MSOURCES-62/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/maven-source-plugin/maven-source-plugin/src/it/MSOURCES-64/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-source-plugin/maven-source-plugin/src/it/MSOURCES-64/pom.xml" afterDir="false" />
@@ -35,6 +41,11 @@
       <change beforePath="$PROJECT_DIR$/tested_projects/maven-source-plugin/maven-source-plugin/src/test/resources/unit/project-009/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-source-plugin/maven-source-plugin/src/test/resources/unit/project-009/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/maven-source-plugin/maven-source-plugin/src/test/resources/unit/project-010/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-source-plugin/maven-source-plugin/src/test/resources/unit/project-010/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/maven-stage-plugin/maven-stage-plugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-stage-plugin/maven-stage-plugin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/tika-app/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/tika-app/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/tika-batch/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/tika-batch/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tika/tika/tika-bundle/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tika/tika/tika-bundle/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/tinkerpop/tinkerpop/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tinkerpop/tinkerpop/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -802,15 +813,15 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593795424039">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593853149486">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1593795424039" />
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1593853149486" />
     <state x="193" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593702361075" />
-    <state x="170" y="49" width="1451" height="756" key="#xdebugger.evaluate" timestamp="1593792073852">
+    <state x="170" y="49" width="1451" height="756" key="#xdebugger.evaluate" timestamp="1593795737835">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="170" y="49" width="1064" height="623" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1593792073852" />
+    <state x="170" y="49" width="1064" height="623" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1593795737835" />
     <state x="444" y="284" width="1451" height="756" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1592839242782" />
     <state width="967" height="466" key="DebuggerActiveHint" timestamp="1592093185433">
       <screen x="0" y="0" width="1366" height="728" />
@@ -821,49 +832,49 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592084006108" />
-    <state width="1345" height="188" key="GridCell.Tab.0.bottom" timestamp="1593795427693">
+    <state width="1345" height="188" key="GridCell.Tab.0.bottom" timestamp="1593853175292">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="188" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593795427693" />
+    <state width="1345" height="188" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593853175292" />
     <state width="1899" height="188" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.bottom/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
-    <state width="1345" height="188" key="GridCell.Tab.0.center" timestamp="1593795427693">
+    <state width="1345" height="188" key="GridCell.Tab.0.center" timestamp="1593853175291">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="188" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593795427693" />
+    <state width="1345" height="188" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593853175291" />
     <state width="1899" height="188" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.center/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
-    <state width="1345" height="188" key="GridCell.Tab.0.left" timestamp="1593795427692">
+    <state width="1345" height="188" key="GridCell.Tab.0.left" timestamp="1593853175291">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="188" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593795427692" />
+    <state width="1345" height="188" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593853175291" />
     <state width="1899" height="188" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.left/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
-    <state width="1345" height="188" key="GridCell.Tab.0.right" timestamp="1593795427693">
+    <state width="1345" height="188" key="GridCell.Tab.0.right" timestamp="1593853175292">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="188" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593795427693" />
+    <state width="1345" height="188" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593853175292" />
     <state width="1899" height="188" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.right/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
-    <state width="1345" height="214" key="GridCell.Tab.1.bottom" timestamp="1593792113446">
+    <state width="1345" height="214" key="GridCell.Tab.1.bottom" timestamp="1593796521242">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593792113446" />
+    <state width="1345" height="214" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593796521242" />
     <state width="1899" height="204" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593699958572" />
-    <state width="1345" height="214" key="GridCell.Tab.1.center" timestamp="1593792113446">
+    <state width="1345" height="214" key="GridCell.Tab.1.center" timestamp="1593796521242">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1593792113446" />
+    <state width="1345" height="214" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1593796521242" />
     <state width="1899" height="204" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593699958572" />
-    <state width="1345" height="214" key="GridCell.Tab.1.left" timestamp="1593792113446">
+    <state width="1345" height="214" key="GridCell.Tab.1.left" timestamp="1593796521242">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1593792113446" />
+    <state width="1345" height="214" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1593796521242" />
     <state width="1899" height="204" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593699958571" />
-    <state width="1345" height="214" key="GridCell.Tab.1.right" timestamp="1593792113446">
+    <state width="1345" height="214" key="GridCell.Tab.1.right" timestamp="1593796521242">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1593792113446" />
+    <state width="1345" height="214" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1593796521242" />
     <state width="1899" height="204" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593699958572" />
     <state x="-1" y="54" width="1342" height="673" key="MergeDialog" timestamp="1586636256742">
       <screen x="0" y="0" width="1366" height="728" />
@@ -937,11 +948,6 @@
           <url>file://$PROJECT_DIR$/Main.py</url>
           <line>653</line>
           <option name="timeStamp" value="551" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/PossibleBugMiner/jira_extractor.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="563" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
