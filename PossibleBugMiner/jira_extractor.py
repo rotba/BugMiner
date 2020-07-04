@@ -101,7 +101,7 @@ class JiraExtractor(Extractor):
 			for commit in issue_commits:
 				analyzer = IsBugCommitAnalyzer(commit=commit, parent=self.get_parent(commit), repo=self.repo, diffed_files=self.java_commits[commit])
 				if analyzer.is_bug_commit(check_trace):
-					yield Candidate(issue=bug_issue, fix_commit=analyzer.commit.hexsha, tests=analyzer.get_test_paths(), diffed_components=analyzer.source_diffed_components)
+					yield Candidate(issue=bug_issue, fix_commit=analyzer.commit, tests=analyzer.get_test_paths(), diffed_components=analyzer.source_diffed_components)
 				else:
 					logging.info(
 						'Didn\'t associate ' + bug_issue + ' and commit ' + commit.hexsha + ' with any test')
