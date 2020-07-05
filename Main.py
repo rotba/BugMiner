@@ -845,4 +845,4 @@ if __name__ == '__main__':
 	# 		try:
 	# 			generate_data(p)
 	# 		except:
-	# 			pass
+	# 			raise
