@@ -4,10 +4,51 @@
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api-implementation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api-implementation/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api.utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api.utils/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/dataset/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/dataset/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/impl.sparql/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/impl.sparql/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/jaxrs.rdf.providers/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/jaxrs.rdf.providers/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/ontologies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/ontologies/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/parent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/parent/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-bcel/commons-bcel/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-bcel/commons-bcel/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-collections/commons-collections/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-collections/commons-collections/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-pool/commons-pool/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-pool/commons-pool/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/dangling-symlinks/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/dangling-symlinks/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/default/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/default/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/exclude-default-dirs/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/exclude-default-dirs/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-absolute-paths/child-a/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-absolute-paths/child-a/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-absolute-paths/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-absolute-paths/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-includes-excludes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-includes-excludes/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-relative-paths/child-a/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-relative-paths/child-a/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-relative-paths/child-b/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-relative-paths/child-b/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-relative-paths/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-relative-paths/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/non-existent-base-dirs/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/non-existent-base-dirs/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/only-test-clean/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/only-test-clean/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/special-characters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/special-characters/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/symlink-dont-follow/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/symlink-dont-follow/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/3rd-party-jar-with-extras/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/3rd-party-jar-with-extras/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/3rd-party-jar-without-pom/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/3rd-party-jar-without-pom/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/3rd-party-pom-with-extras/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/3rd-party-pom-with-extras/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/alt-deploy-repo-with-dist-mgmt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/alt-deploy-repo-with-dist-mgmt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/MEJB-72/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/MEJB-72/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/default/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/default/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/exclude-ejb-jar-xml/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/exclude-ejb-jar-xml/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/manifest-content/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/manifest-content/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/mejb-34-filtered/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/mejb-34-filtered/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/mejb-34-not-filtered/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/mejb-34-not-filtered/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/mejb-93/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/mejb-93/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/reactor/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/reactor/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/reactor/sub/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/reactor/sub/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/setup/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/setup/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/tinkerpop/tinkerpop/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tinkerpop/tinkerpop/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/velocity-tools/velocity-tools/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/velocity-tools/velocity-tools/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/zookeeper/zookeeper/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/zookeeper/zookeeper/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,7 +226,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="commons-email 3 0" />
+      <option name="PARAMETERS" value="commons-bsf 5 0" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -775,15 +816,15 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593862172177">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593939327281">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1593862172177" />
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1593939327281" />
     <state x="193" y="26" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1593702361075" />
-    <state x="256" y="122" width="1064" height="606" key="#xdebugger.evaluate" timestamp="1593863015934">
+    <state x="256" y="122" width="1064" height="606" key="#xdebugger.evaluate" timestamp="1593941205824">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="256" y="122" width="1064" height="606" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1593863015934" />
+    <state x="256" y="122" width="1064" height="606" key="#xdebugger.evaluate/0.0.1366.728@0.0.1366.728" timestamp="1593941205824" />
     <state x="444" y="284" width="1451" height="756" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1592839242782" />
     <state width="967" height="466" key="DebuggerActiveHint" timestamp="1592093185433">
       <screen x="0" y="0" width="1366" height="728" />
@@ -794,49 +835,49 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1592084006108" />
-    <state width="1345" height="188" key="GridCell.Tab.0.bottom" timestamp="1593890743741">
+    <state width="1345" height="214" key="GridCell.Tab.0.bottom" timestamp="1593941261725">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="188" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593890743741" />
+    <state width="1345" height="214" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593941261725" />
     <state width="1899" height="188" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.bottom/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
-    <state width="1345" height="188" key="GridCell.Tab.0.center" timestamp="1593890743741">
+    <state width="1345" height="214" key="GridCell.Tab.0.center" timestamp="1593941261725">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="188" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593890743741" />
+    <state width="1345" height="214" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593941261725" />
     <state width="1899" height="188" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.center/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
-    <state width="1345" height="188" key="GridCell.Tab.0.left" timestamp="1593890743741">
+    <state width="1345" height="214" key="GridCell.Tab.0.left" timestamp="1593941261725">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="188" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593890743741" />
+    <state width="1345" height="214" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593941261725" />
     <state width="1899" height="188" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.left/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
-    <state width="1345" height="188" key="GridCell.Tab.0.right" timestamp="1593890743741">
+    <state width="1345" height="214" key="GridCell.Tab.0.right" timestamp="1593941261725">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="188" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593890743741" />
+    <state width="1345" height="214" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593941261725" />
     <state width="1899" height="188" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593702602850" />
     <state width="1899" height="188" key="GridCell.Tab.0.right/1366.0.1920.1040/0.0.1366.728@1366.0.1920.1040" timestamp="1593012758823" />
-    <state width="1345" height="214" key="GridCell.Tab.1.bottom" timestamp="1593869544143">
+    <state width="1345" height="214" key="GridCell.Tab.1.bottom" timestamp="1593940904386">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593869544143" />
+    <state width="1345" height="214" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593940904386" />
     <state width="1899" height="204" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1593699958572" />
-    <state width="1345" height="214" key="GridCell.Tab.1.center" timestamp="1593869544143">
+    <state width="1345" height="214" key="GridCell.Tab.1.center" timestamp="1593940904385">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1593869544143" />
+    <state width="1345" height="214" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1593940904385" />
     <state width="1899" height="204" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1593699958572" />
-    <state width="1345" height="214" key="GridCell.Tab.1.left" timestamp="1593869544143">
+    <state width="1345" height="214" key="GridCell.Tab.1.left" timestamp="1593940904385">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1593869544143" />
+    <state width="1345" height="214" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1593940904385" />
     <state width="1899" height="204" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1593699958571" />
-    <state width="1345" height="214" key="GridCell.Tab.1.right" timestamp="1593869544143">
+    <state width="1345" height="214" key="GridCell.Tab.1.right" timestamp="1593940904386">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1345" height="214" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1593869544143" />
+    <state width="1345" height="214" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1593940904386" />
     <state width="1899" height="204" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1593699958572" />
     <state x="-1" y="54" width="1342" height="673" key="MergeDialog" timestamp="1586636256742">
       <screen x="0" y="0" width="1366" height="728" />
@@ -859,19 +900,19 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="378" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585592599476" />
-    <state x="342" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1591906659383">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1593940688017">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1590088986791" />
+    <state x="243" y="99" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1366.728@0.0.1366.728" timestamp="1593940688017" />
     <state x="342" y="141" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040@0.0.1920.1040" timestamp="1591906659383" />
     <state x="92" y="92" width="1182" height="544" key="dock-window-1" timestamp="1590067280105">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1590067280105" />
-    <state x="41" y="-2" width="1079" height="644" key="find.popup" timestamp="1593855813585">
+    <state x="41" y="-2" width="1079" height="644" key="find.popup" timestamp="1593940425199">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="41" y="-2" width="1079" height="644" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1593855813585" />
+    <state x="41" y="-2" width="1079" height="644" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1593940425199" />
     <state x="513" y="66" width="1062" height="852" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1593699880633" />
     <state x="324" y="90" width="700" height="530" key="recent.locations.popup" timestamp="1591485465057">
       <screen x="0" y="0" width="1366" height="728" />
@@ -925,6 +966,11 @@
           <url>file://$PROJECT_DIR$/Main.py</url>
           <line>98</line>
           <option name="timeStamp" value="569" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Main.py</url>
+          <line>229</line>
+          <option name="timeStamp" value="570" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

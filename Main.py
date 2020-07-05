@@ -227,8 +227,8 @@ def get_relevant_tests(changed_classes_diffs, tests_paths, commit):
 						map(lambda x: (os.path.join(repo.working_dir, x),
 									   os.path.normpath(x.lower()).replace(".java", "").replace(os.path.sep, ".")),
 							repo.git.ls_files().split()))
-	diffs_packages = map(lambda x: os.path.normpath(x.replace(".java", "")).replace(os.sep, ".").split("java.")[1].lower(), changed_classes_diffs)
-	diffs_packages = map(lambda x: ".".join(x.split('.')[:-1]), diffs_packages)
+	diffs_packages = map(lambda x: os.path.normpath(x.replace(".java", "")).replace(os.sep, ".").split("org.")[1].lower(), changed_classes_diffs)
+	diffs_packages = map(lambda x: ".".join(["org"] + x.split('.')[:-1]), diffs_packages)
 	tests_paths.extend(
 		list(map(lambda x: x[0], filter(lambda x: any(map(lambda y: y in x[1], diffs_packages)), test_files))))
 	commit_tests_object = list(map(lambda t_path: TestObjects.TestClass(t_path, commit.repo.working_dir),
