@@ -407,17 +407,26 @@ def get_chacnged_classes(module, changed_classes_diffs):
 # Returns list of testcases that exist in commit_tests and not exist in the current state (commit)
 def get_delta_testcases(testcases):
 	ans = []
-	for testcase in testcases:
-		src_path = testcase.src_path
-		if os.path.isfile(src_path):
-			with open(src_path, 'r') as src_file:
-				tree = javalang.parse.parse(src_file.read())
+	srcs = {}
+	for t in testcases:
+		src_path = t.src_path
+		if src_path in srcs:
+			srcs[src_path].append(t)
+		elif os.path.isfile(src_path):
+			srcs[src_path] = [t]
 		else:
-			ans.append(testcase)
-			continue
-		class_decls = [class_dec for _, class_dec in tree.filter(javalang.tree.ClassDeclaration)]
-		if not any([testcase_in_class(c, testcase) for c in class_decls]):
-			ans.append(testcase)
+			ans.append(t)
+
+	for src_path in srcs:
+		with open(src_path, 'r') as src_file:
+			tree = javalang.parse.parse(src_file.read())
+			class_decls = [class_dec for _, class_dec in tree.filter(javalang.tree.ClassDeclaration)]
+		method_names = []
+		for c in class_decls:
+			method_names.extend(list(map(lambda m: c.name + '.' + m.name, c.methods)))
+		for testcase in srcs[src_path]:
+			if any(testcase.mvn_name.endswith(m_name) for m_name in method_names):
+				ans.append(testcase)
 	return ans
 
 

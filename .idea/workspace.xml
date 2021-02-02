@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/commons-lang" beforeDir="false" afterPath="$PROJECT_DIR$/data/commons-lang" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/asterixdb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/asterixdb/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api-implementation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api-implementation/pom.xml" afterDir="false" />
@@ -21,7 +19,6 @@
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-bcel/commons-bcel/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-bcel/commons-bcel/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-collections/commons-collections/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-collections/commons-collections/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-dbutils/commons-dbutils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-dbutils/commons-dbutils/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-lang/commons-lang/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-lang/commons-lang/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-pool/commons-pool/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-pool/commons-pool/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/crunch/crunch/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/crunch/crunch/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/cxf-xjc-utils/cxf-xjc-utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/cxf-xjc-utils/cxf-xjc-utils/pom.xml" afterDir="false" />
@@ -298,7 +295,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="commons-bsf 5 0" />
+      <option name="PARAMETERS" value="commons-lang 10 5" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -888,54 +885,66 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="837" y="222" width="842" height="595" key="#xdebugger.evaluate" timestamp="1612271338984">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612279089772">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="837" y="222" width="842" height="595" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1612271338984" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612279089772" />
+    <state x="917" y="348" width="842" height="595" key="#xdebugger.evaluate" timestamp="1612283563929">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="917" y="348" width="842" height="595" key="#xdebugger.evaluate/0.0.1920.1040@0.0.1920.1040" timestamp="1612283563929" />
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1609329604258">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609329604258" />
-    <state width="1899" height="261" key="GridCell.Tab.0.bottom" timestamp="1612271355348">
+    <state width="1899" height="261" key="GridCell.Tab.0.bottom" timestamp="1612285059049">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612271355348" />
-    <state width="1899" height="261" key="GridCell.Tab.0.center" timestamp="1612271355348">
+    <state width="1899" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612285059049" />
+    <state width="1899" height="261" key="GridCell.Tab.0.center" timestamp="1612285059049">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612271355348" />
-    <state width="1899" height="261" key="GridCell.Tab.0.left" timestamp="1612271355348">
+    <state width="1899" height="261" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612285059049" />
+    <state width="1899" height="261" key="GridCell.Tab.0.left" timestamp="1612285059049">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612271355348" />
-    <state width="1899" height="261" key="GridCell.Tab.0.right" timestamp="1612271355348">
+    <state width="1899" height="261" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612285059049" />
+    <state width="1899" height="261" key="GridCell.Tab.0.right" timestamp="1612285059049">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612271355348" />
-    <state width="1899" height="261" key="GridCell.Tab.1.bottom" timestamp="1612271355349">
+    <state width="1899" height="261" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612285059049" />
+    <state width="1899" height="261" key="GridCell.Tab.1.bottom" timestamp="1612285059050">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612271355349" />
-    <state width="1899" height="261" key="GridCell.Tab.1.center" timestamp="1612271355348">
+    <state width="1899" height="261" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612285059050" />
+    <state width="1899" height="261" key="GridCell.Tab.1.center" timestamp="1612285059049">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612271355348" />
-    <state width="1899" height="261" key="GridCell.Tab.1.left" timestamp="1612271355348">
+    <state width="1899" height="261" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612285059049" />
+    <state width="1899" height="261" key="GridCell.Tab.1.left" timestamp="1612285059049">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612271355348" />
-    <state width="1899" height="261" key="GridCell.Tab.1.right" timestamp="1612271355348">
+    <state width="1899" height="261" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612285059049" />
+    <state width="1899" height="261" key="GridCell.Tab.1.right" timestamp="1612285059049">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612271355348" />
+    <state width="1899" height="261" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612285059049" />
+    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1612281967529">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="968" height="528" key="XDebugger.FullValuePopup/0.0.1920.1040@0.0.1920.1040" timestamp="1612281967529" />
     <state x="658" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1609080409423">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="658" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609080409423" />
-    <state x="657" y="257" width="720" height="526" key="find.popup" timestamp="1612271229332">
+    <state x="657" y="257" width="720" height="526" key="find.popup" timestamp="1612279384982">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="657" y="257" width="720" height="526" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612271229332" />
+    <state x="657" y="257" width="720" height="526" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612279384982" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1612277728650">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612277728650" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -952,7 +961,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>646</line>
+          <line>655</line>
           <option name="timeStamp" value="549" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -962,33 +971,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>656</line>
+          <line>665</line>
           <option name="timeStamp" value="551" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
           <line>164</line>
           <option name="timeStamp" value="566" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>335</line>
-          <option name="timeStamp" value="567" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>100</line>
-          <option name="timeStamp" value="569" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>845</line>
-          <option name="timeStamp" value="570" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>797</line>
-          <option name="timeStamp" value="571" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
