@@ -62,8 +62,9 @@ class JiraExtractor(Extractor):
 			return temp_s
 
 		def get_bug_num_from_comit_text(commit_text, issues_ids):
-			text = replace("[]?#,:(){}", "", commit_text.lower())
-			text = replace("-_", " ", text)
+			text = replace("[]?#,:(){}'\"", "", commit_text.lower())
+			text = replace("-_.=", " ", text)
+			text = text.replace('bug', '').replace('fix', '')
 			for word in text.split():
 				if word.isdigit():
 					if word in issues_ids:

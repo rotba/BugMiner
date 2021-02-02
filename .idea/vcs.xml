@@ -37,6 +37,8 @@
     <mapping directory="$PROJECT_DIR$/tested_projects/airavata/regression/airavata" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/ambari/ambari" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/ambari/regression/ambari" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/asterixdb/regression/asterixdb" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/avro/avro" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/avro/regression/avro" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/cayenne/cayenne" vcs="Git" />
@@ -44,10 +46,14 @@
     <mapping directory="$PROJECT_DIR$/tested_projects/chemistry/regression/chemistry" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/clerezza/clerezza" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/clerezza/regression/clerezza" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/cloudstack/cloudstack" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/cloudstack/regression/cloudstack" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/cocoon/cocoon" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-bcel/commons-bcel" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-bcel/regression/commons-bcel" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-beanutils/commons-beanutils" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/commons-bsf/commons-bsf" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/commons-bsf/regression/commons-bsf" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-chain/commons-chain" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-chain/regression/commons-chain" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-cli/commons-cli" vcs="Git" />
@@ -64,6 +70,8 @@
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-crypto/regression/commons-crypto" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-dbcp/commons-dbcp" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-dbcp/regression/commons-dbcp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/commons-dbutils/commons-dbutils" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/commons-dbutils/regression/commons-dbutils" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-email/commons-email" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-email/regression/commons-email" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-exec/commons-exec" vcs="Git" />
@@ -101,9 +109,16 @@
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-weaver/commons-weaver" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/commons-weaver/regression/commons-weaver" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/continuum/continuum" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/continuum/regression/continuum" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/crunch/crunch" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/crunch/regression/crunch" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/ctakes/ctakes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/ctakes/regression/ctakes" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/curator/curator" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/curator/regression/curator" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/cxf-fediz/cxf-fediz" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/cxf-xjc-utils/cxf-xjc-utils" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/cxf-xjc-utils/regression/cxf-xjc-utils" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/ddlutils/ddlutils" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/ddlutils/regression/ddlutils" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/directmemory/directmemory" vcs="Git" />
@@ -140,6 +155,8 @@
     <mapping directory="$PROJECT_DIR$/tested_projects/hama/regression/hama" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/hcatalog/hcatalog" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/hcatalog/regression/hcatalog" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/hive/hive" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/hive/regression/hive" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/jackrabbit-filevault/jackrabbit-filevault" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/jackrabbit-filevault/regression/jackrabbit-filevault" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/jackrabbit-oak/jackrabbit-oak" vcs="Git" />
@@ -155,9 +172,14 @@
     <mapping directory="$PROJECT_DIR$/tested_projects/james-mime4j/james-mime4j" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/james-postage/james-postage" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/james-postage/regression/james-postage" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/jclouds/jclouds" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/jclouds/regression/jclouds" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/johnzon/johnzon" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/johnzon/regression/johnzon" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/joshua/joshua" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/joshua/regression/joshua" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/jsecurity/jsecurity" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/jsecurity/regression/jsecurity" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/jspwiki/jspwiki" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/jspwiki/regression/jspwiki" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/juddi/juddi" vcs="Git" />
@@ -168,6 +190,8 @@
     <mapping directory="$PROJECT_DIR$/tested_projects/kalumet/regression/kalumet" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/knox/knox" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/knox/regression/knox" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/kylin/kylin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/kylin/regression/kylin" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/lens/lens" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/lens/regression/lens" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/manifoldcf/manifoldcf" vcs="Git" />
@@ -178,8 +202,14 @@
     <mapping directory="$PROJECT_DIR$/tested_projects/maven-changes-plugin/regression/maven-changes-plugin" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/maven-clean-plugin/regression/maven-clean-plugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/maven-dependency-plugin/maven-dependency-plugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/maven-dependency-plugin/regression/maven-dependency-plugin" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/regression/maven-deploy-plugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/maven-doap-plugin/maven-doap-plugin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/maven-doap-plugin/regression/maven-doap-plugin" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/maven-doxia-tools/maven-doxia-tools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/maven-doxia-tools/regression/maven-doxia-tools" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/regression/maven-ejb-plugin" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/maven-help-plugin/maven-help-plugin" vcs="Git" />
@@ -219,6 +249,8 @@
     <mapping directory="$PROJECT_DIR$/tested_projects/maven/regression/maven" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/metron/metron" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/metron/regression/metron" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/mina-sshd/mina-sshd" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/mina-sshd/regression/mina-sshd" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/mina/mina" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/mina/regression/mina" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/mnemonic/mnemonic" vcs="Git" />
@@ -269,19 +301,27 @@
     <mapping directory="$PROJECT_DIR$/tested_projects/servicemix/servicemix" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/stanbol/regression/stanbol" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/stanbol/stanbol" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/synapse/regression/synapse" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/synapse/synapse" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/syncope/regression/syncope" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/syncope/syncope" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/systemml/systemml" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/tez/regression/tez" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/tez/tez" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/tika" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/tika/regression" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/tika/regression/tika" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/tika/tika" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/tiles-autotag/regression/tiles-autotag" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/tiles-autotag/tiles-autotag" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/tiles-request/regression/tiles-request" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/tiles-request/tiles-request" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/tiles/regression/tiles" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/tiles/tiles" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/tinkerpop/regression/tinkerpop" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/tinkerpop/tinkerpop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/twill/regression/twill" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tested_projects/twill/twill" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/velocity-tools/regression/velocity-tools" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/velocity-tools/velocity-tools" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/tested_projects/wicket/regression/wicket" vcs="Git" />
