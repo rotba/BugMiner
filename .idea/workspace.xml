@@ -4,6 +4,7 @@
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/asterixdb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/asterixdb/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api-implementation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api-implementation/pom.xml" afterDir="false" />
@@ -295,7 +296,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
-      <option name="PARAMETERS" value="commons-lang 10 5" />
+      <option name="PARAMETERS" value="commons-lang 25 3" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -885,10 +886,11 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612279089772">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="274" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612441534659">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612279089772" />
+    <state x="274" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1612441534659" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612287923043" />
     <state x="917" y="348" width="842" height="595" key="#xdebugger.evaluate" timestamp="1612283563929">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -897,22 +899,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609329604258" />
-    <state width="1899" height="261" key="GridCell.Tab.0.bottom" timestamp="1612285059049">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1345" height="295" key="GridCell.Tab.0.bottom" timestamp="1612449799790">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612285059049" />
-    <state width="1899" height="261" key="GridCell.Tab.0.center" timestamp="1612285059049">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1345" height="295" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612449799790" />
+    <state width="1899" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612287937080" />
+    <state width="1345" height="295" key="GridCell.Tab.0.center" timestamp="1612449799790">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612285059049" />
-    <state width="1899" height="261" key="GridCell.Tab.0.left" timestamp="1612285059049">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1345" height="295" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612449799790" />
+    <state width="1899" height="295" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612287937080" />
+    <state width="1345" height="295" key="GridCell.Tab.0.left" timestamp="1612449799790">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612285059049" />
-    <state width="1899" height="261" key="GridCell.Tab.0.right" timestamp="1612285059049">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1345" height="295" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612449799790" />
+    <state width="1899" height="295" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612287937080" />
+    <state width="1345" height="295" key="GridCell.Tab.0.right" timestamp="1612449799790">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612285059049" />
+    <state width="1345" height="295" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612449799790" />
+    <state width="1899" height="295" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612287937080" />
     <state width="1899" height="261" key="GridCell.Tab.1.bottom" timestamp="1612285059050">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -937,9 +943,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="658" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609080409423" />
-    <state x="657" y="257" width="720" height="526" key="find.popup" timestamp="1612279384982">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="467" y="180" width="606" height="526" key="find.popup" timestamp="1612448285913">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="467" y="180" width="606" height="526" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1612448285913" />
     <state x="657" y="257" width="720" height="526" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1612279384982" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1612277728650">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -961,22 +968,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>655</line>
+          <line>665</line>
           <option name="timeStamp" value="549" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>74</line>
-          <option name="timeStamp" value="550" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>665</line>
+          <line>675</line>
           <option name="timeStamp" value="551" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>164</line>
+          <line>165</line>
           <option name="timeStamp" value="566" />
         </line-breakpoint>
       </breakpoints>

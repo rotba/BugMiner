@@ -34,6 +34,7 @@ reg_mvn_repo = None  # type: MavenRepo
 proj_name = ''
 orig_wd = os.getcwd()
 patches_dir = ''
+traces_dir = ''
 proj_results_dir = ''
 cache_dir = ''
 data_dir = ''
@@ -334,7 +335,7 @@ def try_grandparents(issue, parent, commit, testcases, dict_testcases_files, cha
 # Handles running maven. Will try to run the smallest module possible
 def run_mvn_tests(testcases, module, trace=False, classes_to_trace=None):
 	if trace:
-		mvn_repo.run_under_jcov(target_dir=None, module=module, tests_to_run=map(lambda t: t.mvn_name, testcases),
+		mvn_repo.run_under_jcov(target_dir=traces_dir, module=module, tests_to_run=map(lambda t: t.mvn_name, testcases),
 								classes_to_trace=map(lambda x: os.path.normpath(x.replace(".java", "")).replace(os.sep, ".").split("java.")[1], classes_to_trace), check_comp_error=False)
 		build_report = mvn_repo.build_report
 	else:
@@ -635,6 +636,15 @@ def set_up_patches_dir():
 		os.makedirs(patches_dir)
 
 
+# Sets up patches dir
+def set_up_traces_dir():
+	if not os.path.isdir(traces_dir):
+		os.makedirs(traces_dir)
+	else:
+		shutil.rmtree(traces_dir)
+		os.makedirs(traces_dir)
+
+
 # Wraps git command. Handles excpetions mainly
 def git_cmds_wrapper(git_cmd, spec_repo=repo, spec_mvn_repo=None, counter = 0):
 	spec_mvn_repo = mvn_repo if spec_mvn_repo == None else spec_mvn_repo
@@ -764,6 +774,7 @@ def set_up(argv, RESET = False):
 	global repo
 	global mvn_repo
 	global patches_dir
+	global traces_dir
 	global proj_results_dir
 	global proj_name
 	global bug_data_handler
@@ -781,6 +792,7 @@ def set_up(argv, RESET = False):
 	state_patches_cache_dir = proj_files.states
 	tmp_files_dir = proj_files.tmp
 	patches_dir = proj_files.patches
+	traces_dir = proj_files.traces
 	results_dir = settings.RESULTS_DIR
 	data_dir = settings.DATA_DIR
 	proj_results_dir = os.path.join(results_dir, proj_name)
@@ -799,6 +811,7 @@ def set_up(argv, RESET = False):
 	else:
 		shutil.rmtree(tmp_files_dir)
 		os.makedirs(tmp_files_dir)
+	set_up_traces_dir()
 	if not RESET:
 		bug_data_handler = mvn_bug.Bug_data_handler(proj_results_dir)
 	if not RESET:

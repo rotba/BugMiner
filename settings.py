@@ -493,6 +493,7 @@ class ProjFiles(object):
 		self.base = os.path.join(TESTED_PROJECTS_DIR, proj_name)
 		self.repo = os.path.join(self.base, proj_name)
 		self.tmp = os.path.join(self.base, 'tmp_files')
+		self.traces = os.path.join(self.tmp, 'traces')
 		self.patches = os.path.join(self.tmp, 'patches')
 		self.cache = os.path.join(self.base, 'cache')
 		self.states = os.path.join(self.cache, 'states')
