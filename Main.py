@@ -36,6 +36,7 @@ orig_wd = os.getcwd()
 patches_dir = ''
 traces_dir = ''
 outcomes_dir = ''
+xmls_dir = ''
 builds_dir = ''
 test_results_path = ''
 test_results_path_trace = ''
@@ -128,14 +129,14 @@ def extract_bugs(candidate):
 			patch.patch()
 
 			build_report = run_mvn_tests(tests, module, False, candidate.diffed_components, os.path.join(builds_dir, "reg.txt"))
-			(parent_valid_testcases, no_report_testcases) = attach_reports(deepcopy(tests), test_results_path)
+			(parent_valid_testcases, no_report_testcases) = attach_reports(deepcopy(tests), test_results_path, os.path.join(xmls_dir, "reg"))
 			if len(parent_valid_testcases) == 0:
 				raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))),
 								   report="no", trace=traceback.format_exc())
 			if TRACE:
 				mvn_repo.clean()
 				build_report = run_mvn_tests(tests, module, True, candidate.diffed_components, os.path.join(builds_dir, "trace.txt"))
-				(parent_valid_testcases, no_report_testcases) = attach_reports(deepcopy(tests), test_results_path_trace)
+				(parent_valid_testcases, no_report_testcases) = attach_reports(deepcopy(tests), test_results_path_trace, os.path.join(xmls_dir, "trace"))
 				if len(parent_valid_testcases) == 0:
 					raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))),
 									   report="no", trace=traceback.format_exc())
@@ -144,7 +145,7 @@ def extract_bugs(candidate):
 			git_cmds_wrapper(lambda: repo.git.checkout(candidate.fix_commit.hexsha, '-f'))
 			mvn_repo.change_surefire_ver(surefire_version)
 			build_log = run_mvn_tests(tests, module, False, candidate.diffed_components, os.path.join(builds_dir, "fix.txt"))
-			(commit_valid_testcases, no_report_testcases) = attach_reports(deepcopy(tests), test_results_path_fix)
+			(commit_valid_testcases, no_report_testcases) = attach_reports(deepcopy(tests), test_results_path_fix, os.path.join(xmls_dir, "fix"))
 			if len(commit_valid_testcases) == 0:
 				raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))), report= "no", trace=traceback.format_exc())
 
@@ -355,10 +356,14 @@ def run_mvn_tests(testcases, module, trace=False, classes_to_trace=None, save_to
 
 # Attaches reports to testcases and returns the testcases that reports were successfully attached to them.
 # Handles exceptions, updates invalid_bugs
-def attach_reports(testcases, save_to=None):
+def attach_reports(testcases, save_to=None, xmls_dir=None):
 	attatched = []
 	no_attatched = []
 	mvn_repo.observe_tests(save_to)
+	if xmls_dir:
+		os.makedirs(xmls_dir)
+		for f in mvn_repo.get_surefire_files():
+			shutil.copyfile(f, os.path.join(xmls_dir, os.path.basename(f)))
 	for testcase in testcases:
 		testcase.parent.clear_report()
 	ans = (attatched, no_attatched)
@@ -660,6 +665,14 @@ def set_up_outcomes_dir():
 		os.makedirs(outcomes_dir)
 
 # Sets up patches dir
+def set_up_xmls_dir():
+	if not os.path.isdir(xmls_dir):
+		os.makedirs(xmls_dir)
+	else:
+		shutil.rmtree(xmls_dir)
+		os.makedirs(xmls_dir)
+
+# Sets up patches dir
 def set_up_builds_dir():
 	if not os.path.isdir(builds_dir):
 		os.makedirs(builds_dir)
@@ -798,6 +811,7 @@ def set_up(argv, RESET = False):
 	global patches_dir
 	global traces_dir
 	global outcomes_dir
+	global xmls_dir
 	global builds_dir
 	global test_results_path
 	global test_results_path_trace
@@ -821,6 +835,7 @@ def set_up(argv, RESET = False):
 	patches_dir = proj_files.patches
 	traces_dir = proj_files.traces
 	outcomes_dir = proj_files.outcomes
+	xmls_dir = proj_files.xmls
 	builds_dir = proj_files.builds
 	test_results_path = proj_files.test_results
 	test_results_path_trace = proj_files.test_results_path_trace
@@ -845,6 +860,7 @@ def set_up(argv, RESET = False):
 		os.makedirs(tmp_files_dir)
 	set_up_traces_dir()
 	set_up_outcomes_dir()
+	set_up_xmls_dir()
 	set_up_builds_dir()
 	if not RESET:
 		bug_data_handler = mvn_bug.Bug_data_handler(proj_results_dir)
