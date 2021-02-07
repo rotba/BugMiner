@@ -36,6 +36,7 @@ orig_wd = os.getcwd()
 patches_dir = ''
 traces_dir = ''
 outcomes_dir = ''
+builds_dir = ''
 test_results_path = ''
 test_results_path_trace = ''
 test_results_path_fix = ''
@@ -126,14 +127,14 @@ def extract_bugs(candidate):
 									generated_tests_diff=generated_tests_diffs, gen_commit=None)
 			patch.patch()
 
-			build_report = run_mvn_tests(tests, module, False, candidate.diffed_components)
+			build_report = run_mvn_tests(tests, module, False, candidate.diffed_components, os.path.join(builds_dir, "reg.txt"))
 			(parent_valid_testcases, no_report_testcases) = attach_reports(deepcopy(tests), test_results_path)
 			if len(parent_valid_testcases) == 0:
 				raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))),
 								   report="no", trace=traceback.format_exc())
 			if TRACE:
 				mvn_repo.clean()
-				build_report = run_mvn_tests(tests, module, True, candidate.diffed_components)
+				build_report = run_mvn_tests(tests, module, True, candidate.diffed_components, os.path.join(builds_dir, "trace.txt"))
 				(parent_valid_testcases, no_report_testcases) = attach_reports(deepcopy(tests), test_results_path_trace)
 				if len(parent_valid_testcases) == 0:
 					raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))),
@@ -142,7 +143,7 @@ def extract_bugs(candidate):
 
 			git_cmds_wrapper(lambda: repo.git.checkout(candidate.fix_commit.hexsha, '-f'))
 			mvn_repo.change_surefire_ver(surefire_version)
-			build_log = run_mvn_tests(tests, module, False, candidate.diffed_components)
+			build_log = run_mvn_tests(tests, module, False, candidate.diffed_components, os.path.join(builds_dir, "fix.txt"))
 			(commit_valid_testcases, no_report_testcases) = attach_reports(deepcopy(tests), test_results_path_fix)
 			if len(commit_valid_testcases) == 0:
 				raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))), report= "no", trace=traceback.format_exc())
@@ -337,7 +338,7 @@ def try_grandparents(issue, parent, commit, testcases, dict_testcases_files, cha
 
 
 # Handles running maven. Will try to run the smallest module possible
-def run_mvn_tests(testcases, module, trace=False, classes_to_trace=None):
+def run_mvn_tests(testcases, module, trace=False, classes_to_trace=None, save_to=None):
 	if trace:
 		mvn_repo.run_under_jcov(target_dir=traces_dir, module=module, tests_to_run=map(lambda t: t.mvn_name, testcases),
 								classes_to_trace=map(lambda x: os.path.normpath(x.replace(".java", "")).replace(os.sep, ".").split("java.")[1], classes_to_trace), check_comp_error=False)
@@ -346,6 +347,9 @@ def run_mvn_tests(testcases, module, trace=False, classes_to_trace=None):
 		build_report = mvn_repo.install(module=module, tests_to_run=map(lambda t: t.mvn_name, testcases))
 	if mvn.has_compilation_error(build_report) and False:
 		raise mvn.MVNError(msg='Failed due to compilation error', report='', trace=traceback.format_exc())
+	if save_to:
+		with open(save_to, "wb") as f:
+			f.write(build_report)
 	return build_report
 
 
@@ -655,6 +659,14 @@ def set_up_outcomes_dir():
 		shutil.rmtree(outcomes_dir)
 		os.makedirs(outcomes_dir)
 
+# Sets up patches dir
+def set_up_builds_dir():
+	if not os.path.isdir(builds_dir):
+		os.makedirs(builds_dir)
+	else:
+		shutil.rmtree(builds_dir)
+		os.makedirs(builds_dir)
+
 # Wraps git command. Handles excpetions mainly
 def git_cmds_wrapper(git_cmd, spec_repo=repo, spec_mvn_repo=None, counter = 0):
 	spec_mvn_repo = mvn_repo if spec_mvn_repo == None else spec_mvn_repo
@@ -786,6 +798,7 @@ def set_up(argv, RESET = False):
 	global patches_dir
 	global traces_dir
 	global outcomes_dir
+	global builds_dir
 	global test_results_path
 	global test_results_path_trace
 	global test_results_path_fix
@@ -808,6 +821,7 @@ def set_up(argv, RESET = False):
 	patches_dir = proj_files.patches
 	traces_dir = proj_files.traces
 	outcomes_dir = proj_files.outcomes
+	builds_dir = proj_files.builds
 	test_results_path = proj_files.test_results
 	test_results_path_trace = proj_files.test_results_path_trace
 	test_results_path_fix = proj_files.test_results_path_fix
@@ -831,6 +845,7 @@ def set_up(argv, RESET = False):
 		os.makedirs(tmp_files_dir)
 	set_up_traces_dir()
 	set_up_outcomes_dir()
+	set_up_builds_dir()
 	if not RESET:
 		bug_data_handler = mvn_bug.Bug_data_handler(proj_results_dir)
 	if not RESET:

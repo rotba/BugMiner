@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnpy/Repo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy/Repo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/asterixdb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/asterixdb/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api-implementation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api-implementation/pom.xml" afterDir="false" />
@@ -19,6 +20,7 @@
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-bcel/commons-bcel/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-bcel/commons-bcel/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-collections/commons-collections/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-collections/commons-collections/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-dbutils/commons-dbutils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-dbutils/commons-dbutils/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tested_projects/commons-lang/commons-lang/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-lang/commons-lang/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/commons-pool/commons-pool/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-pool/commons-pool/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/crunch/crunch/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/crunch/crunch/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tested_projects/cxf-xjc-utils/cxf-xjc-utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/cxf-xjc-utils/cxf-xjc-utils/pom.xml" afterDir="false" />
@@ -202,7 +204,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/mvnpy" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1PgKtUzE98ksmbYBcalHch63OUu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -885,11 +887,11 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="274" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612441534659">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612694550941">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="274" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1612441534659" />
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612287923043" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612694550941" />
     <state x="917" y="348" width="842" height="595" key="#xdebugger.evaluate" timestamp="1612687995646">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -898,42 +900,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609329604258" />
-    <state width="1899" height="261" key="GridCell.Tab.0.bottom" timestamp="1612689312182">
+    <state width="1899" height="332" key="GridCell.Tab.0.bottom" timestamp="1612694075794">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="295" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1612449799790" />
-    <state width="1899" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612689312182" />
-    <state width="1899" height="261" key="GridCell.Tab.0.center" timestamp="1612689312182">
+    <state width="1899" height="332" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612694075794" />
+    <state width="1899" height="332" key="GridCell.Tab.0.center" timestamp="1612694075794">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="295" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1612449799790" />
-    <state width="1899" height="261" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612689312182" />
-    <state width="1899" height="261" key="GridCell.Tab.0.left" timestamp="1612689312182">
+    <state width="1899" height="332" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612694075794" />
+    <state width="1899" height="332" key="GridCell.Tab.0.left" timestamp="1612694075794">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="295" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1612449799790" />
-    <state width="1899" height="261" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612689312182" />
-    <state width="1899" height="261" key="GridCell.Tab.0.right" timestamp="1612689312182">
+    <state width="1899" height="332" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612694075794" />
+    <state width="1899" height="332" key="GridCell.Tab.0.right" timestamp="1612694075794">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="295" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1612449799790" />
-    <state width="1899" height="261" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612689312182" />
-    <state width="1899" height="261" key="GridCell.Tab.1.bottom" timestamp="1612689312003">
+    <state width="1899" height="332" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612694075794" />
+    <state width="1899" height="261" key="GridCell.Tab.1.bottom" timestamp="1612693989196">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612689312003" />
-    <state width="1899" height="261" key="GridCell.Tab.1.center" timestamp="1612689312003">
+    <state width="1899" height="261" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1612693989196" />
+    <state width="1899" height="261" key="GridCell.Tab.1.center" timestamp="1612693989196">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612689312003" />
-    <state width="1899" height="261" key="GridCell.Tab.1.left" timestamp="1612689312003">
+    <state width="1899" height="261" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1612693989196" />
+    <state width="1899" height="261" key="GridCell.Tab.1.left" timestamp="1612693989196">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612689312003" />
-    <state width="1899" height="261" key="GridCell.Tab.1.right" timestamp="1612689312003">
+    <state width="1899" height="261" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1612693989196" />
+    <state width="1899" height="261" key="GridCell.Tab.1.right" timestamp="1612693989196">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="261" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612689312003" />
+    <state width="1899" height="261" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1612693989196" />
     <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1612281967529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -967,12 +969,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>675</line>
+          <line>687</line>
           <option name="timeStamp" value="549" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Main.py</url>
-          <line>685</line>
+          <line>697</line>
           <option name="timeStamp" value="551" />
         </line-breakpoint>
       </breakpoints>

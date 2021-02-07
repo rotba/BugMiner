@@ -495,6 +495,7 @@ class ProjFiles(object):
 		self.tmp = os.path.join(self.base, 'tmp_files')
 		self.traces = os.path.join(self.tmp, 'traces')
 		self.outcomes = os.path.join(self.tmp, 'outcomes')
+		self.builds = os.path.join(self.tmp, 'builds')
 		self.test_results = os.path.join(self.outcomes, 'test_results.json')
 		self.test_results_path_trace = os.path.join(self.outcomes, 'test_results_trace.json')
 		self.test_results_path_fix = os.path.join(self.outcomes, 'test_results_fix.json')
