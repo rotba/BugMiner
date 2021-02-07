@@ -140,6 +140,16 @@ def extract_bugs(candidate):
 				if len(parent_valid_testcases) == 0:
 					raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))),
 									   report="no", trace=traceback.format_exc())
+				if mvn_repo.traces:
+					traced_components = set(
+						reduce(list.__add__, map(lambda t: map(lambda x: x.lower(), t.get_trace()), mvn_repo.traces),
+							   []))
+					logging.info('traces are:' + str(traced_components))
+					candidate.calc_changed_methods()
+					changed_components = set(map(lambda m: m.method_name_parameters.lower(), candidate._changed_methods))
+					logging.info('changed_components are:' + str(changed_components))
+					blamed_components = list(
+						filter(lambda x: "test" not in x.lower(), traced_components.intersection(changed_components)))
 
 
 			git_cmds_wrapper(lambda: repo.git.checkout(candidate.fix_commit.hexsha, '-f'))
@@ -149,7 +159,14 @@ def extract_bugs(candidate):
 			if len(commit_valid_testcases) == 0:
 				raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))), report= "no", trace=traceback.format_exc())
 
-			relevant_parent_testcases = list(filter(lambda t: t in commit_valid_testcases, parent_valid_testcases))
+			relevant_testcases = []
+			for parent_testcase in parent_valid_testcases:
+				if parent_testcase.skipped:
+					continue
+				testcase = [t for t in commit_valid_testcases if t == parent_testcase][0]
+				if not (testcase.passed and parent_testcase.passed):
+					relevant_testcases.append((testcase, parent_testcase))
+
 			git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha, '-f'))
 			patch.patch()
 
@@ -159,31 +176,17 @@ def extract_bugs(candidate):
 									   type=mvn_bug.determine_type(no_report_testcase, delta_testcases,
 																   commit_valid_testcases), valid=False,
 									   desc='No report'))
-			for testcase in commit_valid_testcases:
-				if testcase in relevant_parent_testcases:
-					parent_testcase = [t for t in relevant_parent_testcases if t == testcase][0]
-					blamed_components = []
-					if TRACE:
-						blamed_components = []
-						if mvn_repo.traces:
-							traced_components = set(reduce(list.__add__, map(lambda t: map(lambda x: x.lower(), t.get_trace()), mvn_repo.traces), []))
-							logging.info('traces are:' + str(traced_components))
-							candidate.calc_changed_methods()
-							changed_components = set(map(lambda m: m.method_name_parameters.lower(), candidate._changed_methods))
-							logging.info('changed_components are:' + str(changed_components))
-							blamed_components = list(filter(lambda x: "test" not in x.lower(), traced_components.intersection(changed_components)))
-						else:
-							logging.info('No traces found in mvn_repo')
-					repo.git.add("-N", "*.java")
-					diff = repr(repo.git.diff("--", "*.java"))
-					bug = mvn_bug.create_bug(issue=candidate.issue, commit=candidate.fix_commit, parent=parent, testcase=testcase,
-											 parent_testcase=parent_testcase,
-											 type=mvn_bug.determine_type(testcase, delta_testcases,
-																		 generated_testcases),
-											 traces=[],
-											 bugged_components=[],
-											 blamed_components=blamed_components, diff=diff, check_trace=TRACE)
-					module_bugs.append(bug)
+			repo.git.add("-N", "*.java")
+			diff = repr(repo.git.diff("--", "*.java"))
+			for testcase, parent_testcase in relevant_testcases:
+				bug = mvn_bug.create_bug(issue=candidate.issue, commit=candidate.fix_commit, parent=parent, testcase=testcase,
+										 parent_testcase=parent_testcase,
+										 type=mvn_bug.determine_type(testcase, delta_testcases,
+																	 generated_testcases),
+										 traces=[],
+										 bugged_components=[],
+										 blamed_components=blamed_components, diff=diff, check_trace=TRACE)
+				module_bugs.append(bug)
 			passed_delta_bugs = list(
 				filter(lambda b: b.type == mvn_bug.Bug_type.DELTA and b.desctiption == mvn_bug.invalid_passed_desc,
 					   module_bugs))
