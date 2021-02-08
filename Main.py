@@ -102,7 +102,7 @@ def extract_bugs(candidate):
 	git_cmds_wrapper(lambda: reg_repo.git.add('.'), spec_repo=reg_repo, spec_mvn_repo=reg_mvn_repo)
 	git_cmds_wrapper(lambda: reg_repo.git.checkout(parent.hexsha, '-f'), spec_repo=reg_repo,
 					 spec_mvn_repo=reg_mvn_repo)
-	if len(mvn_repo.get_all_pom_paths()) == 0 or not mvn_repo.has_surefire():
+	if len(mvn_repo.get_all_pom_paths()) == 0:
 		return ans
 	commit_testcases = get_relevant_tests(candidate.diffed_components, candidate.tests, candidate.fix_commit)
 	dict_modules_testcases = divide_to_modules(commit_testcases)

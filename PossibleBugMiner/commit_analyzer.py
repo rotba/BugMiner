@@ -15,6 +15,7 @@ class IsBugCommitAnalyzer(object):
         self._parent = parent
         self._repo = repo
         self.diffed_files = diffed_files
+        self.tree_files = None
         self.associated_tests_paths = None
         self.diffed_components = None
         self.source_diffed_components = None
@@ -37,6 +38,8 @@ class IsBugCommitAnalyzer(object):
         # if settings.DEBUG:
         #     if self.commit.hexsha == 'af6fe141036d30bfd1613758b7a9fb413bf2bafc':
         #         return True
+        if self.tree_files is None:
+            self.tree_files = self._repo.git.ls_tree("-r", "--name-only", self._parent.hexsha).split()
         if not self.has_associated_diffed_components():
             logging.info('commit {0} has no diffed components'.format(self.commit.hexsha))
             return False
@@ -46,12 +49,14 @@ class IsBugCommitAnalyzer(object):
         # if self.has_added_methods():
         #     logging.info('commit {0} has new methods'.format(self.commit.hexsha))
         #     return False
-        self.associated_tests_paths = self.get_tests_paths_from_commit()
         if check_trace:
-            import mvnpy.Repo
-            repo = mvnpy.Repo.Repo(self._repo.working_dir)
-            if repo.has_surefire():
-                return True
+            mvn_files = list(filter(lambda x: x.endswith('pom.xml'), self.tree_files))
+            if mvn_files:
+                import mvnpy.Repo
+                repo = mvnpy.Repo.Repo(self._repo.working_dir)
+                if repo.has_surefire():
+                    return True
+            return False
         return True
 
     def get_test_paths(self):
@@ -71,6 +76,8 @@ class IsBugCommitAnalyzer(object):
         for file_diff in self.diffed_files:
             if self.is_test_file(file_diff):
                 ans.append(os.path.join(self._repo.working_dir, file_diff))
+            else:
+                pass
         return ans
 
     def has_associated_tests_paths(self):
