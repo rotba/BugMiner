@@ -4,6 +4,7 @@ BASE_DIR = os.getcwd()
 TESTED_PROJECTS_DIR = os.path.join(BASE_DIR, 'tested_projects')
 RESULTS_DIR = os.path.join(BASE_DIR, 'results')
 DATA_DIR = os.path.join(BASE_DIR, 'data')
+NON_TRACE_DIR = os.path.join(BASE_DIR, 'non_trace_data')
 
 projects = {'distributedlog': ('https://github.com/apache/distributedlog',
   'http:\\issues.apache.org\\jira\\projects\\DL'),

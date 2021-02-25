@@ -62,15 +62,12 @@ DEBUG = False
 CONFIG = False
 
 
-def execute(argv):
+def execute(git_url, jira_url, specific_commit, check_trace=True):
 	bug_data_set = []
-	set_up(argv)
-	specific_commit = argv[3] if len(argv) > 3 else None
-	speceific_issue = argv[4] if len(argv) > 4 else None
-	extractor = JiraExtractor(repo_dir=repo.working_dir, jira_url=argv[2],branch_inspected=branch_inspected, issue_key=speceific_issue, query=None, commit=specific_commit)
-	for candidate in extractor.extract_possible_bugs(check_trace=TRACE):
+	extractor = JiraExtractor(repo_dir=repo.working_dir, jira_url=jira_url, branch_inspected=branch_inspected, commit=specific_commit)
+	for candidate in extractor.extract_possible_bugs(check_trace=check_trace):
 		try:
-			bugs = extract_bugs(candidate)
+			bugs = extract_bugs(candidate, check_trace)
 			bug_data_handler.add_bugs(bugs)
 		except mvn_bug.BugError as e:
 			logging.info('BUG ERROR  ' + e.msg + '\n' + traceback.format_exc())
@@ -79,18 +76,18 @@ def execute(argv):
 		except git.exc.GitCommandError as e:
 			logging.info('SHOULD NOT HAPPEN GIT ' + str(e) + '\n' + traceback.format_exc())
 			logging.info('Resetting repos')
-			reset_repos(argv)
+			reset_repos(git_url, jira_url, specific_commit)
 		except Exception as e:
 			if 'IOError: [Errno 22]' in e.message:
 				logging.info('SHOULD NOT HAPPEN EXCEPTION ' + str(e) + '\n' + traceback.format_exc())
 				logging.info('Resetting repos')
-				reset_repos(argv)
+				reset_repos(git_url, jira_url, specific_commit)
 			else:
 				logging.info('SHOULD NOT HAPPEN EXCEPTION ' + str(e) + '\n' + traceback.format_exc())
 
 
 # Returns bugs solved in the given commit regarding the issue, indicated by the tests
-def extract_bugs(candidate):
+def extract_bugs(candidate, trace=True):
 	logging.info("extract_bugs(): working on issue " + candidate.issue + ' in commit ' + candidate.fix_commit.hexsha)
 	ans = []
 	parent = get_parent(candidate.fix_commit)
@@ -133,7 +130,7 @@ def extract_bugs(candidate):
 			if len(parent_valid_testcases) == 0:
 				raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))),
 								   report="no", trace=traceback.format_exc())
-			if TRACE:
+			if trace:
 				mvn_repo.clean()
 				build_report = run_mvn_tests(tests, module, True, candidate.diffed_components, os.path.join(builds_dir, "trace.txt"))
 				(parent_valid_testcases, no_report_testcases) = attach_reports(deepcopy(tests), test_results_path_trace, os.path.join(xmls_dir, "trace"))
@@ -150,7 +147,6 @@ def extract_bugs(candidate):
 					logging.info('changed_components are:' + str(changed_components))
 					blamed_components = list(
 						filter(lambda x: "test" not in x.lower(), traced_components.intersection(changed_components)))
-
 
 			git_cmds_wrapper(lambda: repo.git.checkout(candidate.fix_commit.hexsha, '-f'))
 			mvn_repo.change_surefire_ver(surefire_version)
@@ -185,7 +181,7 @@ def extract_bugs(candidate):
 																	 generated_testcases),
 										 traces=[],
 										 bugged_components=[],
-										 blamed_components=blamed_components, diff=diff, check_trace=TRACE)
+										 blamed_components=blamed_components, diff=diff, check_trace=trace)
 				module_bugs.append(bug)
 			passed_delta_bugs = list(
 				filter(lambda b: b.type == mvn_bug.Bug_type.DELTA and b.desctiption == mvn_bug.invalid_passed_desc,
@@ -776,7 +772,7 @@ def debug_red(str):
 		logging.info(str)
 		print(colored(str, 'red'))
 
-def reset_repos(argv):
+def reset_repos(git_url, jira_url, specific_commit):
 	try:
 		logging.info('Trying renaiming')
 		letters = 'sjhfgasjfahjsgfhjasgfhjasgfncdjs'
@@ -786,24 +782,22 @@ def reset_repos(argv):
 		rename_reg = os.path.join(reg_base_dir, ''.join(random.choice(letters) for i in range(10)))
 		os.rename(repo.working_dir, rename_orig)
 		os.rename(reg_repo.working_dir, rename_reg)
-		set_up(argv, RESET=True)
+		set_up(git_url, jira_url, specific_commit, RESET=True)
 		return
 	except Exception as e:
 		logging.info('Failed renaiming with:  ' + str(e) + '\n' + traceback.format_exc())
 	logging.info('Trying deletting')
 	shutil.rmtree(repo.working_dir,ignore_errors=True)
 	shutil.rmtree(reg_repo.working_dir,ignore_errors=True)
-	set_up(argv, RESET=True)
+	set_up(git_url, jira_url, specific_commit, RESET=True)
 
-def set_up(argv, RESET = False):
+def set_up(git_url, jira_url, specific_commit=None, RESET = False):
 	def clone_repo(base, url, label=''):
-		logging.info('Started cloning ' + argv[1] + ' {}'.format(label))
 		# git_cmds_wrapper(lambda: git.Git(base).init())
 		repo_url = url.geturl().replace('\\', '/').replace('////', '//')
 		git_cmds_wrapper(
 			lambda: git.Git(base).clone(repo_url)
 		)
-		logging.info('Finshed cloning ' + argv[1] + ' {}'.format(label))
 
 	global dict_key_issue
 	global dict_hash_commit
@@ -827,7 +821,7 @@ def set_up(argv, RESET = False):
 	global data_dir
 	global branch_inspected
 	global state_patches_cache_dir
-	git_url = urlparse(argv[1])
+	git_url = urlparse(git_url)
 	proj_name = os.path.basename(git_url.path)
 	proj_files = settings.ProjFiles(proj_name)
 	if os.path.exists(proj_files.base):
@@ -882,18 +876,21 @@ def set_up(argv, RESET = False):
 		branch_inspected = repo.branches[0].name
 
 
-def generate_data(project_name):
+def generate_data(project_name, check_trace=True):
 	if not project_name in settings.projects:
 		return
 	git_url, jira_url = settings.projects.get(project_name)
-	out_path = os.path.join(settings.DATA_DIR, project_name)
+	if check_trace:
+		out_path = os.path.join(settings.DATA_DIR, project_name)
+	else:
+		out_path = os.path.join(settings.NON_TRACE_DIR, project_name)
 	if os.path.exists(out_path):
 		return
-	set_up(["", git_url])
+	set_up(git_url, jira_url)
 	extractor = JiraExtractor(repo_dir=repo.working_dir, jira_url=jira_url, branch_inspected=branch_inspected,
 							  issue_key=None, query=None, commit=None)
 	commits = []
-	for candidate in extractor.extract_possible_bugs(check_trace=TRACE):
+	for candidate in extractor.extract_possible_bugs(check_trace=check_trace):
 		hexsha = repo.commit(candidate.fix_commit).hexsha
 		commits.append(hexsha)
 	with open(out_path, "wb") as f:
@@ -902,20 +899,28 @@ def generate_data(project_name):
 	return commits
 
 
-def main(project_name, minor_ind, major_ind):
+def main(project_name, minor_ind, major_ind, check_trace=True):
 	if not project_name in settings.projects:
 		return
 	git_url, jira_url = settings.projects.get(project_name)
-	out_path = os.path.join(settings.DATA_DIR, project_name)
+	if check_trace:
+		out_path = os.path.join(settings.DATA_DIR, project_name)
+	else:
+		out_path = os.path.join(settings.NON_TRACE_DIR, project_name)
 	commits = []
 	with open(out_path) as f:
 		commits = json.loads(f.read())
 	specific_commit_ind = int(major_ind.strip()) * 100 + int(minor_ind)
 	if len(commits) < specific_commit_ind:
 		return
-	execute(["", git_url, jira_url, commits[specific_commit_ind]])
+	set_up(git_url, jira_url, commits[specific_commit_ind])
+	execute(git_url, jira_url, commits[specific_commit_ind], check_trace=check_trace)
 
 
 if __name__ == '__main__':
-	main(*sys.argv[1:])
-	# generate_data('commons-lang')
+	project_name, minor_ind, major_ind = sys.argv[1:4]
+	check_trace = True
+	if len(sys.argv) > 4:
+		check_trace = eval(sys.argv[4])
+	main(project_name, minor_ind, major_ind, check_trace)
+	# generate_data('commons-lang', False)
