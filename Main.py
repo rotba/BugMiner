@@ -101,7 +101,7 @@ def extract_bugs(candidate, trace=True):
 					 spec_mvn_repo=reg_mvn_repo)
 	if len(mvn_repo.get_all_pom_paths()) == 0:
 		return ans
-	commit_testcases = get_relevant_tests(candidate.diffed_components, candidate.tests, candidate.fix_commit)
+	commit_testcases = candidate.get_relevant_tests(repo)
 	dict_modules_testcases = divide_to_modules(commit_testcases)
 	for module in dict_modules_testcases:
 		try:
@@ -228,21 +228,6 @@ def extract_bugs(candidate, trace=True):
 		logging.info('VALID BUG: ' + str(b))
 	git_cmds_wrapper(lambda: repo.git.reset('--hard'))
 	return filter_results(ans)
-
-
-def get_relevant_tests(changed_classes_diffs, tests_paths, commit):
-	test_files = filter(lambda x: "test" in x[1] and x[0].endswith("java"),
-						map(lambda x: (os.path.join(repo.working_dir, x),
-									   os.path.normpath(x.lower()).replace(".java", "").replace(os.path.sep, ".")),
-							repo.git.ls_files().split()))
-	diffs_packages = map(lambda x: os.path.normpath(x.replace(".java", "")).replace(os.sep, ".").split("org.")[1].lower(), changed_classes_diffs)
-	diffs_packages = map(lambda x: ".".join(["org"] + x.split('.')[:-1]), diffs_packages)
-	tests_paths.extend(
-		list(map(lambda x: x[0], filter(lambda x: any(map(lambda y: y in x[1], diffs_packages)), test_files))))
-	commit_tests_object = list(map(lambda t_path: TestObjects.TestClass(t_path, commit.repo.working_dir),
-								   filter(lambda t: os.path.exists(os.path.realpath(t)), tests_paths)))
-	commit_testcases = mvn.get_testcases(commit_tests_object)
-	return commit_testcases
 
 
 def get_most_chenged_classes(module, changed_classes_diffs, commit, parent):
