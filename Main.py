@@ -91,6 +91,7 @@ def extract_bugs(candidate, trace=True):
 	logging.info("extract_bugs(): working on issue " + candidate.issue + ' in commit ' + candidate.fix_commit.hexsha)
 	ans = []
 	parent = get_parent(candidate.fix_commit)
+	blamed_components = []
 	if parent == None:
 		return ans
 	mvn_repo.clean()
