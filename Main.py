@@ -140,7 +140,7 @@ def extract_bugs(candidate, trace=True):
 									   report="no", trace=traceback.format_exc())
 				if mvn_repo.traces:
 					traced_components = set(
-						reduce(list.__add__, map(lambda t: map(lambda x: x.lower(), t.get_trace()), mvn_repo.traces),
+						reduce(list.__add__, map(lambda t: map(lambda x: x.lower().replace(';', ','), t.get_trace()), mvn_repo.traces),
 							   []))
 					logging.info('traces are:' + str(traced_components))
 					candidate.calc_changed_methods()
@@ -527,6 +527,8 @@ def is_test_file(file):
 	if name.endswith('test.java'):
 		return True
 	if name.startswith('test'):
+		return True
+	if 'test' in file.lower():
 		return True
 	return False
 

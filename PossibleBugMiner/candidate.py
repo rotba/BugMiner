@@ -55,17 +55,17 @@ class Candidate(object):
                     break
         return ans
 
+    def get_diffed_packages(self):
+        return set(map(
+            lambda x: ".".join(["org"] + os.path.normpath(x.replace(".java", "")).replace(os.sep, ".").split("org.")[1].lower().split('.')[:-1]),
+            self.diffed_components))
+
     def get_relevant_tests(self, repo):
-        test_files = filter(lambda x: "test" in x[1] and x[0].endswith("java"),
-                            map(lambda x: (os.path.join(repo.working_dir, x),
-                                           os.path.normpath(x.lower()).replace(".java", "").replace(os.path.sep, ".")),
-                                repo.git.ls_files().split()))
-        diffs_packages = map(
-            lambda x: os.path.normpath(x.replace(".java", "")).replace(os.sep, ".").split("org.")[1].lower(),
-            self.diffed_components)
-        diffs_packages = map(lambda x: ".".join(["org"] + x.split('.')[:-1]), diffs_packages)
-        self.tests.extend(
-            list(map(lambda x: x[0], filter(lambda x: any(map(lambda y: y in x[1], diffs_packages)), test_files))))
+        test_files = map(lambda x: (os.path.normpath(os.path.join(repo.working_dir, x)),
+                       ".".join(["org"] + os.path.normpath(x.lower()).replace(".java", "").replace(os.path.sep, ".").lower().split('org.')[1].split('.')[:-1])),
+            filter(lambda x: "test" in x and x.endswith("java"), repo.git.ls_files().split()))
+        relevant_tests_packages = set(zip(*test_files)[1]).intersection(self.get_diffed_packages())
+        self.tests.extend(list(map(lambda x: x[0], filter(lambda x: x[1] in relevant_tests_packages, test_files))))
         commit_tests_object = list(map(lambda t_path: TestObjects.TestClass(t_path, self.fix_commit.repo.working_dir),
                                        filter(lambda t: os.path.exists(os.path.realpath(t)), self.tests)))
         commit_testcases = mvn.get_testcases(commit_tests_object)
