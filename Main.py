@@ -156,13 +156,7 @@ def extract_bugs(candidate, trace=True):
 			if len(commit_valid_testcases) == 0:
 				raise mvn.MVNError(msg='No reports for tests {0}'.format(" ".join(map(lambda t: t.mvn_name, tests))), report= "no", trace=traceback.format_exc())
 
-			relevant_testcases = []
-			for parent_testcase in parent_valid_testcases:
-				if parent_testcase.skipped:
-					continue
-				testcase = [t for t in commit_valid_testcases if t == parent_testcase][0]
-				if not (testcase.passed and parent_testcase.passed):
-					relevant_testcases.append((testcase, parent_testcase))
+			relevant_testcases = filter(lambda x: not (x[0].passed and x[1].passed), map(lambda p: (filter(lambda c: c == p, commit_valid_testcases)[0], p), filter(lambda x: not x.skipped, parent_valid_testcases)))
 
 			git_cmds_wrapper(lambda: repo.git.checkout(parent.hexsha, '-f'))
 			patch.patch()
