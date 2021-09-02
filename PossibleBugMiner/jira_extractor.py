@@ -4,9 +4,9 @@ import re
 from urllib.parse import urlparse
 
 import settings
-from candidate import Candidate
-from commit_analyzer import IsBugCommitAnalyzer
-from extractor import Extractor
+from .candidate import Candidate
+from .commit_analyzer import IsBugCommitAnalyzer
+from .extractor import Extractor
 from jira import JIRA
 from jira import exceptions as jira_exceptions
 
