@@ -250,6 +250,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Main.py" />
       <option name="PARAMETERS" value="https://github.com/apache/maven-remote-resources-plugin http:\\issues.apache.org\\jira\\projects\\MRRESOURCES" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -282,7 +283,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Main" type="PythonConfigurationType" factoryName="Python" singleton="false">
-      <output_file path="c:/temp/out.txt" is_save="true" />
+      <output_file path="$PROJECT_DIR$/../../../../../temp/out.txt" is_save="true" />
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -305,7 +306,7 @@
       <method v="2" />
     </configuration>
     <configuration name="cProfile" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
-      <output_file path="c:/temp/profile.txt" is_save="true" />
+      <output_file path="$PROJECT_DIR$/../../../../../temp/profile.txt" is_save="true" />
       <module name="BugMiner" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -317,6 +318,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="cProfile" />
       <option name="PARAMETERS" value="-s tottime C:\Users\amirelm\Documents\GitHub\BugMiner\Main.py https://github.com/apache/commons-collections http:\\issues.apache.org\jira\projects\COLLECTIONS 527213decc04c4b45393cd0f67e96cb7a67a8f66" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -580,6 +582,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_process.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
