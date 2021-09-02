@@ -9,7 +9,7 @@ import sys
 import time
 import traceback
 from functools import reduce
-from urlparse import urlparse
+from urllib.parse import urlparse
 import git
 import javalang
 from git import Repo

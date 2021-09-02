@@ -1,7 +1,7 @@
 import logging
 import os
 import re
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 import settings
 from candidate import Candidate

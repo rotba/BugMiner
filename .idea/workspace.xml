@@ -2,122 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b82cc4e6-7621-4505-b907-fe5c5c400c6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/asterixdb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/asterixdb/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/asterixdb/asterixdb/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api-implementation/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api-implementation/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api.utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api.utils/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/dataset/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/dataset/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/impl.sparql/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/impl.sparql/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/jaxrs.rdf.providers/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/jaxrs.rdf.providers/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/ontologies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/ontologies/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/parent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/parent/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/clerezza/clerezza/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/cloudstack/cloudstack/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/cloudstack/cloudstack/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-bcel/commons-bcel/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-bcel/commons-bcel/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-collections/commons-collections/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-collections/commons-collections/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-dbutils/commons-dbutils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-dbutils/commons-dbutils/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/commons-pool/commons-pool/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/commons-pool/commons-pool/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/crunch/crunch/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/crunch/crunch/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/cxf-xjc-utils/cxf-xjc-utils/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/cxf-xjc-utils/cxf-xjc-utils/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/hive/hive/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/hive/hive/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/all/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/all/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/allblobstore/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/allblobstore/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/allcompute/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/allcompute/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/allloadbalancer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/allloadbalancer/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/atmos/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/atmos/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/byon/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/byon/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/chef/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/chef/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/cloudstack/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/cloudstack/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/cloudwatch/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/cloudwatch/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/docker/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/docker/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/ec2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/ec2/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/elasticstack/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/elasticstack/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/filesystem/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/filesystem/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/apis/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/jclouds/jclouds/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/johnzon/johnzon/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/johnzon/johnzon/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/assembly/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/assembly/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/cache/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/cache/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/core-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/core-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/core-cube/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/core-cube/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/core-dictionary/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/core-dictionary/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/core-job/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/core-job/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/core-metadata/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/core-metadata/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/core-metrics/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/core-metrics/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/core-storage/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/core-storage/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/cube-migration/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/cube-migration/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/datasource-sdk/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/datasource-sdk/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/engine-flink/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/engine-flink/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/engine-mr/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/engine-mr/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/engine-spark/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/engine-spark/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/external/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/external/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/external/shaded-guava/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/external/shaded-guava/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/jdbc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/jdbc/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/kylin-it/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/kylin-it/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/metrics-reporter-hive/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/metrics-reporter-hive/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/metrics-reporter-kafka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/metrics-reporter-kafka/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/query/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/query/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/server-base/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/server-base/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/source-hive/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/source-hive/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/source-jdbc/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/source-jdbc/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/source-kafka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/source-kafka/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/storage-hbase/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/storage-hbase/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/storage-stream/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/storage-stream/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/stream-coordinator/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/stream-coordinator/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/stream-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/stream-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/stream-receiver/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/stream-receiver/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/stream-source-kafka/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/stream-source-kafka/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/tomcat-ext/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/tomcat-ext/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/tool-assembly/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/tool-assembly/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/kylin/kylin/tool/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/kylin/kylin/tool/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/dangling-symlinks/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/dangling-symlinks/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/default/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/default/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/exclude-default-dirs/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/exclude-default-dirs/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-absolute-paths/child-a/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-absolute-paths/child-a/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-absolute-paths/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-absolute-paths/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-includes-excludes/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-includes-excludes/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-relative-paths/child-a/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-relative-paths/child-a/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-relative-paths/child-b/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-relative-paths/child-b/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-relative-paths/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/file-sets-relative-paths/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/non-existent-base-dirs/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/non-existent-base-dirs/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/only-test-clean/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/only-test-clean/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/special-characters/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/special-characters/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/symlink-dont-follow/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-clean-plugin/maven-clean-plugin/src/it/symlink-dont-follow/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-dependency-plugin/maven-dependency-plugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-dependency-plugin/maven-dependency-plugin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/3rd-party-jar-with-extras/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/3rd-party-jar-with-extras/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/3rd-party-jar-without-pom/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/3rd-party-jar-without-pom/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/3rd-party-pom-with-extras/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/3rd-party-pom-with-extras/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/alt-deploy-repo-with-dist-mgmt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-deploy-plugin/maven-deploy-plugin/src/it/alt-deploy-repo-with-dist-mgmt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-doap-plugin/maven-doap-plugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-doap-plugin/maven-doap-plugin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-doap-plugin/maven-doap-plugin/src/it/MDOAP-38/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-doap-plugin/maven-doap-plugin/src/it/MDOAP-38/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-doap-plugin/maven-doap-plugin/src/it/basic/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-doap-plugin/maven-doap-plugin/src/it/basic/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-doap-plugin/maven-doap-plugin/src/it/doapfile/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-doap-plugin/maven-doap-plugin/src/it/doapfile/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-doap-plugin/maven-doap-plugin/src/it/minimal/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-doap-plugin/maven-doap-plugin/src/it/minimal/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/MEJB-72/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/MEJB-72/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/default/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/default/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/exclude-ejb-jar-xml/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/exclude-ejb-jar-xml/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/manifest-content/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/manifest-content/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/mejb-34-filtered/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/mejb-34-filtered/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/mejb-34-not-filtered/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/mejb-34-not-filtered/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/mejb-93/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/mejb-93/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/reactor/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/reactor/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/reactor/sub/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/reactor/sub/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/setup/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/maven-ejb-plugin/maven-ejb-plugin/src/it/setup/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/mina-sshd/mina-sshd/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/mina-sshd/mina-sshd/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/synapse/synapse/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/synapse/synapse/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/tez/tez/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tez/tez/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/tinkerpop/tinkerpop/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/tinkerpop/tinkerpop/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/twill/twill/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/twill/twill/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/velocity-tools/velocity-tools/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/velocity-tools/velocity-tools/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tested_projects/zookeeper/zookeeper/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/tested_projects/zookeeper/zookeeper/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnpy" beforeDir="false" afterPath="$PROJECT_DIR$/mvnpy" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,21 +89,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="JupyterTrust" id="fdbd8c83-812f-498c-8b23-20a064f6e1da" />
   <component name="ProjectId" id="1PgKtUzE98ksmbYBcalHch63OUu" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SearchEverywhereHistoryKey" value="testma&#9;FILE&#9;file://C:/Users/TEMP/BugMiner/TestMain.py" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SZZUnleashed" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
@@ -680,18 +566,7 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -788,11 +663,9 @@
       <workItem from="1580483161019" duration="7686000" />
       <workItem from="1580560149695" duration="4855000" />
       <workItem from="1583769059916" duration="386000" />
+      <workItem from="1630572510373" duration="708000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21944000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -804,16 +677,14 @@
     </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -832,6 +703,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -892,56 +764,42 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="274" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1622641634395" />
-    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614265272180" />
     <state width="1345" height="120" key="GridCell.Tab.0.bottom" timestamp="1622641756488">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="120" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1622641756488" />
-    <state width="1899" height="194" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614265488555" />
     <state width="1345" height="120" key="GridCell.Tab.0.center" timestamp="1622641756488">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="120" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1622641756488" />
-    <state width="1899" height="194" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614265488555" />
     <state width="1345" height="120" key="GridCell.Tab.0.left" timestamp="1622641756488">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="120" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1622641756488" />
-    <state width="1899" height="194" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614265488555" />
     <state width="1345" height="120" key="GridCell.Tab.0.right" timestamp="1622641756488">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="120" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1622641756488" />
-    <state width="1899" height="194" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614265488555" />
     <state width="1345" height="120" key="GridCell.Tab.1.bottom" timestamp="1622641756301">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="120" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1622641756301" />
-    <state width="1899" height="194" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1614265488555" />
     <state width="1345" height="120" key="GridCell.Tab.1.center" timestamp="1622641756301">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="120" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1622641756301" />
-    <state width="1899" height="194" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1614265488555" />
     <state width="1345" height="120" key="GridCell.Tab.1.left" timestamp="1622641756301">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="120" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1622641756301" />
-    <state width="1899" height="194" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1614265488555" />
     <state width="1345" height="120" key="GridCell.Tab.1.right" timestamp="1622641756301">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="1345" height="120" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1622641756301" />
-    <state width="1899" height="194" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1614265488555" />
-    <state x="467" y="180" width="606" height="526" key="find.popup" timestamp="1622641645848">
+    <state x="389" y="97" width="587" height="534" key="find.popup" timestamp="1630573225804">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="467" y="180" width="606" height="526" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1622641645848" />
-    <state x="657" y="257" width="720" height="526" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614265006283" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1620030700324">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1620030700324" />
+    <state x="389" y="97" width="587" height="534" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1630573225804" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

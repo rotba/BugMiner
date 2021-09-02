@@ -1,6 +1,6 @@
 import os
 import unittest
-from urlparse import urlparse
+from urllib.parse import urlparse
 
 import git
 import javalang
