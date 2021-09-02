@@ -4,9 +4,9 @@ import shutil
 
 import git
 import mvnpy
-from git_cmd_wrapper import git_cmds_wrapper
+from .git_cmd_wrapper import git_cmds_wrapper
 from mvnpy import mvn
-from patch_files import ChangedFile, ErroredFile, OnlyTestcasesErroredFile
+from .patch_files import ChangedFile, ErroredFile, OnlyTestcasesErroredFile
 
 TESTED_PROJECTS_DIR = os.path.join(
 	os.path.dirname(os.path.realpath(__file__)), 'tested_projects'
