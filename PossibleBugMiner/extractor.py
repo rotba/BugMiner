@@ -2,12 +2,12 @@ import datetime
 import multiprocessing
 import os
 
-from commit_analyzer import IsBugCommitAnalyzer
+from .commit_analyzer import IsBugCommitAnalyzer
 from git import Repo
 # from jira_extractor import JiraExtractor
 # from sourceforge_extractor import SourceforgeExtractor
 from termcolor import colored
-from utils import get_from_cache
+from .utils import get_from_cache
 
 CACHE_DIR = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'cache')
 

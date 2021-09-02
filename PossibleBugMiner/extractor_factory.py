@@ -1,5 +1,5 @@
-from jira_extractor import JiraExtractor
-from sourceforge_extractor import SourceforgeExtractor
+from .jira_extractor import JiraExtractor
+from .sourceforge_extractor import SourceforgeExtractor
 
 
 class ExtractorFactory(object):

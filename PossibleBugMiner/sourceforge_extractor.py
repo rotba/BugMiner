@@ -3,8 +3,8 @@ import logging
 import re
 
 from javadiff.FileDiff import FileDiff
-from commit_analyzer import IsBugCommitAnalyzer
-from extractor import Extractor
+from .commit_analyzer import IsBugCommitAnalyzer
+from .extractor import Extractor
 from termcolor import colored
 
 
