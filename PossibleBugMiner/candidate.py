@@ -64,7 +64,7 @@ class Candidate(object):
         test_files = map(lambda x: (os.path.normpath(os.path.join(repo.working_dir, x)),
                        ".".join(["org"] + os.path.normpath(x.lower()).replace(".java", "").replace(os.path.sep, ".").lower().split('org.')[1].split('.')[:-1])),
             filter(lambda x: "test" in x and x.endswith("java"), repo.git.ls_files().split()))
-        relevant_tests_packages = set(zip(*test_files)[1]).intersection(self.get_diffed_packages())
+        relevant_tests_packages = set(list(zip(*test_files))[1]).intersection(self.get_diffed_packages())
         self.tests.extend(list(map(lambda x: x[0], filter(lambda x: x[1] in relevant_tests_packages, test_files))))
         commit_tests_object = list(map(lambda t_path: TestObjects.TestClass(t_path, self.fix_commit.repo.working_dir),
                                        filter(lambda t: os.path.exists(os.path.realpath(t)), self.tests)))
