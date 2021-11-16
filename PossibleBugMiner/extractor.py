@@ -68,8 +68,8 @@ class Extractor(object):
 
 	def get_java_commits(self):
 		data = self.repo.git.log('--pretty=format:"sha: %H"', '--name-only').split("sha: ")
-		comms = dict(map(lambda d: (d[0], filter(lambda x: x.endswith(".java"), d[1:-1])), map(lambda d: d.replace('"', '').replace('\n\n', '\n').split('\n'), data)))
-		return dict(map(lambda x: (self.repo.commit(x), comms[x]), filter(lambda x: comms[x], comms)))
+		comms = dict(map(lambda d: (d[0], list(filter(lambda x: x.endswith(".java"), d[1:-1]))), list(map(lambda d: d.replace('"', '').replace('\n\n', '\n').split('\n'), data))))
+		return dict(map(lambda x: (self.repo.commit(x), comms[x]), list(filter(lambda x: comms[x], comms))))
 
 	# Returns boolean. Filter the bugs to inspect
 	def bugs_filter(self, possible_bug):
@@ -80,7 +80,7 @@ class Extractor(object):
 		return True
 
 	def has_parent(self, commit):
-		return self.get_parent(commit) != None
+		return self.get_parent(commit) is not None
 
 	def get_tests_paths_from_commit(self, commit):
 		if not self.has_parent(commit): return []
